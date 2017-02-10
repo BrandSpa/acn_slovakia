@@ -1,0 +1,16 @@
+{
+  "name": "acn_int",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/developersoul/acn_int.git",
+    "type": "git"
+  },
+  "author": "Alejandro Sanabria <alesanabriav@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0"
+  }
+}
