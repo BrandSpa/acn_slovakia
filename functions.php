@@ -16,3 +16,4 @@ function modify_jquery() {
 
 add_action('init', 'modify_jquery');
 
+require('apis/index.php');
