@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?phpget_header() ?>
 
 <div class="container" >
   <? echo get_user_location() ?>
