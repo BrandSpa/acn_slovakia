@@ -16,4 +16,7 @@ function modify_jquery() {
 
 add_action('init', 'modify_jquery');
 
+//apis
 require('apis/index.php');
+//shortcodes
+require('shortcodes/contact_form.php');

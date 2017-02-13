@@ -2,3 +2,23 @@
 @import 'mixins';
 @import 'grid';
 @import 'form';
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+
+.hidden {
+	display: none;
+}
