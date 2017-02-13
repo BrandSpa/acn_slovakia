@@ -52,22 +52,17 @@
 
 	var _reactDom = __webpack_require__(32);
 
+	var _mutiple_render = __webpack_require__(206);
+
+	var _mutiple_render2 = _interopRequireDefault(_mutiple_render);
+
 	var _contact_form = __webpack_require__(178);
 
 	var _contact_form2 = _interopRequireDefault(_contact_form);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-	if (document.querySelectorAll(".contact-form").length > 1) {
-	  var forms = [].concat(_toConsumableArray(document.querySelectorAll(".contact-form")));
-	  forms.forEach(function (el) {
-	    var props = el.getAttribute("data-props") ? JSON.parse(el.getAttribute("data-props")) : {};
-
-	    (0, _reactDom.render)(_react2.default.createElement(_contact_form2.default, props), el);
-	  });
-	}
+	(0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
 
 /***/ },
 /* 1 */
@@ -23167,6 +23162,43 @@
 	};
 
 	exports.default = objToFormData;
+
+/***/ },
+/* 205 */,
+/* 206 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	exports.default = multipleRender;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(32);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	function multipleRender(selector, component) {
+	  if (document.querySelectorAll(selector).length > 1) {
+	    var forms = [].concat(_toConsumableArray(document.querySelectorAll(selector)));
+
+	    forms.forEach(function (el) {
+	      var props = el.getAttribute("data-props") ? JSON.parse(el.getAttribute("data-props")) : {};
+
+	      (0, _reactDom.render)(_react2.default.createElement(component, _extends({}, props)), el);
+	    });
+	  }
+	}
 
 /***/ }
 /******/ ]);
