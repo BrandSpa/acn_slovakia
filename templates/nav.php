@@ -1,1 +1,5 @@
-http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz
+<div id="nav">
+<div class="logo">
+	<a href="#"><img src="" alt=""></a>
+</div>
+</div>

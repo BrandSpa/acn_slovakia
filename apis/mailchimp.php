@@ -55,7 +55,6 @@ function mc_subscribe($data, $listId, $apiKey) {
   return $req->body;
 }
  
-
 }
 
 ?>
