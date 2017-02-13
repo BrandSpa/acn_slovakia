@@ -21571,7 +21571,7 @@
 	        contact = _state.contact,
 	        errors = _state.errors;
 
-	    console.log(this.props);
+
 	    return _react2.default.createElement(
 	      "form",
 	      { onSubmit: this.handleSubmit },

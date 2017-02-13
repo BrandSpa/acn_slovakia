@@ -38,7 +38,7 @@ const contactForm = React.createClass({
   },
   render() {
     let { contact, errors } = this.state;
-    console.log(this.props);
+
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="input-container">
