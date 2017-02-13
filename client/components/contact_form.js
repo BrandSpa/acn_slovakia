@@ -2,7 +2,7 @@ import React from "react";
 import request from "axios";
 import validator from "validator";
 import objToFormData from "../lib/obj_to_formdata";
-
+import qs from 'qs';
 const contactForm = React.createClass({
   getInitialState() {
     return {
@@ -29,7 +29,7 @@ const contactForm = React.createClass({
   },
 
   componentDidMount() {
-    let data = objToFormData({ action: "countries" });
+    let data = qs.stringify({ action: "countries", nea: 'nea', sub: {'yeah': 'yeah', deep: {city: 'hope', state: {maybe: 'ok'}}}});
 
     request.post("/wp-admin/admin-ajax.php", data)
     .then(res => {
@@ -72,8 +72,22 @@ const contactForm = React.createClass({
     .then(is => console.log(is))
     .catch(err => console.error(err));
 
-    request
-      .post("/wp-admin/admin-ajax.php", data)
+  },
+
+  storeContact() {
+    let {email, name, lastname, country} = this.state.contact;
+
+    let mc_data = {
+      email_address: email,
+      status: "subscribed",
+      merge_fields: { NAME: `${name} ${lastname}`, COUNTRY: country },
+      update_existing: true
+    };
+
+    let data = { action: "mailchimp_subscribe", data: mc_data };
+
+  request
+    .post("/wp-admin/admin-ajax.php", data)
       .then(res => console.log(res.data))
       .catch(err => console.error(err))
   },

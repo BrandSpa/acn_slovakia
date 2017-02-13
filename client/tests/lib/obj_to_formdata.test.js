@@ -8,4 +8,17 @@ describe("lib object to formdata ", () => {
     expected.append("lastname", "san");
     expect(data).toEqual(expected);
   });
+
+  it("should convert deep object to formdata", () => {
+    let data = objToFormData({
+      name: "ale",
+      lastname: "san",
+      subdata: { email: "ale@sanabria.com", moredeep: {anotherdata: 'nea'} }
+    });
+
+    let expected = new FormData();
+    expected.append('name', 'ale');
+    expect([]).toEqual(data);
+  });
+
 });
