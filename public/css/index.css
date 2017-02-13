@@ -19,6 +19,10 @@ html {
     clear: both;
     content: ''; }
 
+.row {
+  padding-left: -15px;
+  padding-right: -15px; }
+
 .col-1 {
   padding-left: 15px;
   padding-right: 15px;
@@ -327,12 +331,16 @@ html {
 .col-full {
   width: 100%; }
 
-input {
+input,
+select {
+  width: 100%;
+  display: block;
   height: 34px;
   border: 1px solid #ccc;
   transition: all 300ms;
   padding: 6px 12px; }
-  input:focus {
+  input:focus,
+  select:focus {
     border-color: #f7c723;
     box-shadow: none;
     outline: none; }
@@ -341,3 +349,6 @@ input {
   display: inline-block;
   vertical-align: middle;
   width: auto; }
+
+.input-container {
+  margin-bottom: 10px; }

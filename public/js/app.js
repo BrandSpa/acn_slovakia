@@ -58,8 +58,15 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	if (document.getElementById("contact-form")) {
-	  (0, _reactDom.render)(_react2.default.createElement(_contact_form2.default, null), document.getElementById("contact-form"));
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	if (document.querySelectorAll(".contact-form").length > 1) {
+	  var forms = [].concat(_toConsumableArray(document.querySelectorAll(".contact-form")));
+	  forms.forEach(function (el) {
+	    var props = el.getAttribute("data-props") ? JSON.parse(el.getAttribute("data-props")) : {};
+
+	    (0, _reactDom.render)(_react2.default.createElement(_contact_form2.default, props), el);
+	  });
 	}
 
 /***/ },
@@ -21506,6 +21513,8 @@
 	  value: true
 	});
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -21520,29 +21529,121 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 	var contactForm = _react2.default.createClass({
 	  displayName: "contactForm",
+	  getInitialState: function getInitialState() {
+	    return {
+	      contact: {
+	        name: "",
+	        lastname: "",
+	        email: "",
+	        country: ""
+	      },
+	      errors: {
+	        name: {},
+	        lastname: {},
+	        email: {},
+	        country: {}
+	      }
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    this.setState({
+	      contact: _extends({}, this.state.contact, { country: this.props.country })
+	    });
+	  },
 	  handleSubmit: function handleSubmit(e) {
 	    e.preventDefault();
-	    var data = (0, _obj_to_formdata2.default)({ action: "countries" });
+	    var data = (0, _obj_to_formdata2.default)(this.state.contact);
+
 	    _axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
 	      return console.log(res.data);
 	    });
 	  },
+	  handleChange: function handleChange(field, e) {
+	    var contact = _extends({}, this.state.contact, _defineProperty({}, field, e.target.value));
+	    this.setState({ contact: contact });
+	  },
 	  render: function render() {
+	    var _state = this.state,
+	        contact = _state.contact,
+	        errors = _state.errors;
+
+	    console.log(this.props);
 	    return _react2.default.createElement(
 	      "form",
 	      { onSubmit: this.handleSubmit },
-	      _react2.default.createElement("input", { type: "text", placeholder: "name" }),
-	      _react2.default.createElement("input", { type: "text", placeholder: "lastname" }),
-	      _react2.default.createElement("input", { type: "text", placeholder: "email" }),
 	      _react2.default.createElement(
-	        "select",
-	        { name: "", id: "" },
+	        "div",
+	        { className: "input-container" },
+	        _react2.default.createElement("input", {
+	          type: "text",
+	          placeholder: "name",
+	          onChange: this.handleChange.bind(null, "name"),
+	          value: contact.name
+	        }),
 	        _react2.default.createElement(
-	          "option",
-	          { value: "" },
-	          "Country"
+	          "div",
+	          { className: "input-error" },
+	          errors.name.message
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "input-container" },
+	        _react2.default.createElement("input", {
+	          type: "text",
+	          placeholder: "lastname",
+	          onChange: this.handleChange.bind(null, "lastname"),
+	          value: contact.lastname
+	        }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "input-error" },
+	          errors.lastname.message
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "input-container" },
+	        _react2.default.createElement("input", {
+	          type: "text",
+	          placeholder: "email",
+	          onChange: this.handleChange.bind(null, "email"),
+	          value: contact.email
+	        }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "input-error" },
+	          errors.email.message
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "input-container" },
+	        _react2.default.createElement(
+	          "select",
+	          {
+	            onChange: this.handleChange.bind(null, "country"),
+	            value: contact.country
+	          },
+	          _react2.default.createElement(
+	            "option",
+	            { value: "" },
+	            "Country"
+	          ),
+	          _react2.default.createElement(
+	            "option",
+	            { value: "Germany" },
+	            "Germany"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "input-error" },
+	          errors.country.message
 	        )
 	      ),
 	      _react2.default.createElement(

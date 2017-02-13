@@ -1,4 +1,7 @@
-input {
+input,
+select {
+	width: 100%;
+	display: block;
 	height: $bs-input-height;
 	border: 1px solid $bs-input-border-color;
 	transition: all 300ms;
@@ -14,4 +17,8 @@ input {
 	display: inline-block;
 	vertical-align: middle;
 	width: auto;
+}
+
+.input-container {
+	margin-bottom: 10px;
 }
