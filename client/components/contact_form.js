@@ -1,6 +1,6 @@
 import React from "react";
 import request from "axios";
-import validtor from "validator";
+import validator from "validator";
 import objToFormData from "../lib/obj_to_formdata";
 
 const contactForm = React.createClass({
@@ -13,33 +13,42 @@ const contactForm = React.createClass({
         country: ""
       },
       errors: {
-        name: true,
-        lastname: true,
-        email: true
+        name: false,
+        lastname: false,
+        email: false
       },
       countries: []
     };
   },
 
+  getDefaultProps() {
+    return {
+      validationMessages: {},
+      placeholders: {}
+    }
+  },
+
   componentDidMount() {
     let data = objToFormData({ action: "countries" });
 
-    request.post("/wp-admin/admin-ajax.php", data).then(res => {
+    request.post("/wp-admin/admin-ajax.php", data)
+    .then(res => {
       this.setState({ countries: res.data });
-    });
+    })
+    .catch(err => console.error(err));
 
     this.setState({
       contact: { ...this.state.contact, country: this.props.country }
     });
   },
 
-  	checkEmpty(field) {
-		return validator.isEmpty(this.state[field]);
+  checkEmpty(field) {
+		return validator.isEmpty(this.state.contact[field]);
 	},
 	
 	validate() {
 		let errors = {};
-		let validations = ['firstName', 'lastName', 'email', 'phone'].map((field) => {
+		let validations = Object.keys(this.state.errors).map((field) => {
 			let val = this.checkEmpty(field);
 			errors = {...errors, [field]: val };
 			return val;
@@ -51,17 +60,22 @@ const contactForm = React.createClass({
 	},
 
 	isValid() {
-		return this.validate().then(arr => arr.every(item => item == false) );
+		return this.validate()
+      .then(arr => arr.every(item => item == false) )
+      .catch(err => console.error(err));
 	},
-
 
   handleSubmit(e) {
     e.preventDefault();
     let data = objToFormData(this.state.contact);
+    this.isValid()
+    .then(is => console.log(is))
+    .catch(err => console.error(err));
 
     request
       .post("/wp-admin/admin-ajax.php", data)
-      .then(res => console.log(res.data));
+      .then(res => console.log(res.data))
+      .catch(err => console.error(err))
   },
 
   handleChange(field, e) {
@@ -96,6 +110,7 @@ const contactForm = React.createClass({
           />
           <div className={errors.lastname ? "input-error" : "hidden"}>{validationMessages.lastname}</div>
         </div>
+
         <div className="input-container">
           <input
             style={{'marginLeft': '-1px'}}
@@ -104,8 +119,9 @@ const contactForm = React.createClass({
             onChange={this.handleChange.bind(null, "email")}
             value={contact.email}
           />
-          <div className="input-error">{validationMessages.email}</div>
+          <div className={errors.email ? "input-error" : "hidden"}>{validationMessages.email}</div>
         </div>
+
         <div className="input-container">
           <select
             style={{'marginLeft': '-1px'}}

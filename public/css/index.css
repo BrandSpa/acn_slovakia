@@ -386,9 +386,11 @@ select {
 .input-error {
   background: #F4334A;
   color: #fff;
-  text-align: center;
+  text-align: left;
   width: 95%;
-  font-size: .9em; }
+  font-size: .9em;
+  padding: 3px 0 3px 12px;
+  border-radius: 3px; }
 
 button {
   height: 45px;
@@ -417,3 +419,12 @@ body {
 
 .hidden {
   display: none; }
+
+.nav {
+  height: 140px;
+  width: 100%;
+  padding: 45px 60px 0  60px;
+  background: #fff;
+  float: left; }
+  .nav .menu {
+    float: right; }

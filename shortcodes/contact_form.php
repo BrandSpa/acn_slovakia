@@ -7,7 +7,7 @@ function bs_contact_form_sc($atts, $content = null) {
 		'email-placeholder' => 'Email',
 		'country-placeholder' => 'Select country',
 		'name-validation' => 'Name required',
-		'lastname-validation' => 'lastName required',
+		'lastname-validation' => 'lastname required',
 		'email-validation' => 'Email required',
 	];
 

@@ -21577,11 +21577,17 @@
 	        country: ""
 	      },
 	      errors: {
-	        name: true,
-	        lastname: true,
-	        email: true
+	        name: false,
+	        lastname: false,
+	        email: false
 	      },
 	      countries: []
+	    };
+	  },
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      validationMessages: {},
+	      placeholders: {}
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
@@ -21591,6 +21597,8 @@
 
 	    _axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
 	      _this.setState({ countries: res.data });
+	    }).catch(function (err) {
+	      return console.error(err);
 	    });
 
 	    this.setState({
@@ -21598,13 +21606,13 @@
 	    });
 	  },
 	  checkEmpty: function checkEmpty(field) {
-	    return validator.isEmpty(this.state[field]);
+	    return _validator2.default.isEmpty(this.state.contact[field]);
 	  },
 	  validate: function validate() {
 	    var _this2 = this;
 
 	    var errors = {};
-	    var validations = ['firstName', 'lastName', 'email', 'phone'].map(function (field) {
+	    var validations = Object.keys(this.state.errors).map(function (field) {
 	      var val = _this2.checkEmpty(field);
 	      errors = _extends({}, errors, _defineProperty({}, field, val));
 	      return val;
@@ -21619,14 +21627,23 @@
 	      return arr.every(function (item) {
 	        return item == false;
 	      });
+	    }).catch(function (err) {
+	      return console.error(err);
 	    });
 	  },
 	  handleSubmit: function handleSubmit(e) {
 	    e.preventDefault();
 	    var data = (0, _obj_to_formdata2.default)(this.state.contact);
+	    this.isValid().then(function (is) {
+	      return console.log(is);
+	    }).catch(function (err) {
+	      return console.error(err);
+	    });
 
 	    _axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
 	      return console.log(res.data);
+	    }).catch(function (err) {
+	      return console.error(err);
 	    });
 	  },
 	  handleChange: function handleChange(field, e) {
@@ -21692,7 +21709,7 @@
 	        }),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "input-error" },
+	          { className: errors.email ? "input-error" : "hidden" },
 	          validationMessages.email
 	        )
 	      ),

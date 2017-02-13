@@ -3,5 +3,7 @@ import { shallow, mount } from "enzyme";
 import ContactForm from "../../components/header_slider";
 
 describe("header slider component", () => {
-
+	it('should change slide', () => {
+		
+	})
 });

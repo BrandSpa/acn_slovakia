@@ -11,3 +11,9 @@
 		 <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/css/index.css">
 </head>
 <body>
+
+<div class="nav">
+	<ul class="menu">
+		
+	</ul>
+</div>

@@ -45,9 +45,11 @@ select {
 .input-error {
 	background: #F4334A;
 	color: #fff;
-	text-align: center;
+	text-align: left;
 	width: 95%;
 	font-size: .9em;
+	padding: 3px 0 3px 12px;
+	border-radius: 3px;
 
 }
 
