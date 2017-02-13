@@ -23189,7 +23189,7 @@
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 	function multipleRender(selector, component) {
-	  if (document.querySelectorAll(selector).length > 1) {
+	  if (document.querySelectorAll(selector).length >= 1) {
 	    var forms = [].concat(_toConsumableArray(document.querySelectorAll(selector)));
 
 	    forms.forEach(function (el) {

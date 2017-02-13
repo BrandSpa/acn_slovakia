@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 
 export default function multipleRender(selector, component) {
-  if (document.querySelectorAll(selector).length > 1) {
+  if (document.querySelectorAll(selector).length >= 1) {
     let forms = [...document.querySelectorAll(selector)];
 
     forms.forEach(el => {
