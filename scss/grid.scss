@@ -2,6 +2,10 @@ html {
 	box-sizing: border-box;
 }
 
+body {
+	margin: 0;
+}
+
 *,
 *:before,
 *:after {
@@ -16,27 +20,32 @@ html {
 }
 
 .row {
-	padding-left: -#{$grid-gutter};
-	padding-right: -#{$grid-gutter};
+	margin-left: -#{$grid-gutter};
+	margin-right: -#{$grid-gutter};
 }
 
 $columns: 12;
 @for $i from 1 through $columns {
 	//global and mobile
-	.col-#{$i} {
-		padding-left: $grid-gutter;
-		padding-right: $grid-gutter;
-		position: relative;
-		float: left;
-		width: ($i / $columns) * 100%;
+	@media #{$s},
+	#{$xs} {
+		.col-#{$i} {
+			padding-left: $grid-gutter;
+			padding-right: $grid-gutter;
+			position: relative;
+			float: left;
+			width: ($i / $columns) * 100%;
+		}
 	}
 	//media query medium
-	.col-#{$i}-m {
-		padding-left: $grid-gutter;
-		padding-right: $grid-gutter;
-		position: relative;
-		float: left;
-		width: ($i / $columns) * 100%;
+	@media #{$m} {
+		.col-#{$i}-m {
+			padding-left: $grid-gutter;
+			padding-right: $grid-gutter;
+			position: relative;
+			float: left;
+			width: ($i / $columns) * 100%;
+		}
 	}
 	//media query large
 	@media #{$xl},

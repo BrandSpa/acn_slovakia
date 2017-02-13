@@ -5,10 +5,13 @@
 html {
   box-sizing: border-box; }
 
+body {
+  margin: 0; }
+
 *,
 *:before,
 *:after {
-  box-sizing: inherit; }
+  box-sizing: border-box; }
 
 .l-wrap {
   max-width: 1140px;
@@ -20,22 +23,24 @@ html {
     content: ''; }
 
 .row {
-  padding-left: -15px;
-  padding-right: -15px; }
+  margin-left: -15px;
+  margin-right: -15px; }
 
-.col-1 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 8.33333%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-1 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 8.33333%; } }
 
-.col-1-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 8.33333%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-1-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 8.33333%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-1-l {
@@ -45,19 +50,21 @@ html {
     float: left;
     width: 8.33333%; } }
 
-.col-2 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 16.66667%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-2 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 16.66667%; } }
 
-.col-2-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 16.66667%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-2-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 16.66667%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-2-l {
@@ -67,19 +74,21 @@ html {
     float: left;
     width: 16.66667%; } }
 
-.col-3 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 25%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-3 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 25%; } }
 
-.col-3-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 25%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-3-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 25%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-3-l {
@@ -89,19 +98,21 @@ html {
     float: left;
     width: 25%; } }
 
-.col-4 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 33.33333%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-4 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 33.33333%; } }
 
-.col-4-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 33.33333%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-4-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 33.33333%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-4-l {
@@ -111,19 +122,21 @@ html {
     float: left;
     width: 33.33333%; } }
 
-.col-5 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 41.66667%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-5 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 41.66667%; } }
 
-.col-5-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 41.66667%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-5-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 41.66667%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-5-l {
@@ -133,19 +146,21 @@ html {
     float: left;
     width: 41.66667%; } }
 
-.col-6 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 50%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-6 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 50%; } }
 
-.col-6-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 50%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-6-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 50%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-6-l {
@@ -155,19 +170,21 @@ html {
     float: left;
     width: 50%; } }
 
-.col-7 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 58.33333%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-7 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 58.33333%; } }
 
-.col-7-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 58.33333%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-7-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 58.33333%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-7-l {
@@ -177,19 +194,21 @@ html {
     float: left;
     width: 58.33333%; } }
 
-.col-8 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 66.66667%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-8 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 66.66667%; } }
 
-.col-8-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 66.66667%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-8-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 66.66667%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-8-l {
@@ -199,19 +218,21 @@ html {
     float: left;
     width: 66.66667%; } }
 
-.col-9 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 75%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-9 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 75%; } }
 
-.col-9-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 75%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-9-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 75%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-9-l {
@@ -221,19 +242,21 @@ html {
     float: left;
     width: 75%; } }
 
-.col-10 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 83.33333%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-10 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 83.33333%; } }
 
-.col-10-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 83.33333%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-10-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 83.33333%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-10-l {
@@ -243,19 +266,21 @@ html {
     float: left;
     width: 83.33333%; } }
 
-.col-11 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 91.66667%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-11 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 91.66667%; } }
 
-.col-11-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 91.66667%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-11-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 91.66667%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-11-l {
@@ -265,19 +290,21 @@ html {
     float: left;
     width: 91.66667%; } }
 
-.col-12 {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 100%; }
+@media (max-width: 767px), (max-width: 369px) {
+  .col-12 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%; } }
 
-.col-12-m {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  float: left;
-  width: 100%; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-12-m {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 100%; } }
 
 @media (min-width: 1200px), (min-width: 992px) and (max-width: 1199px) {
   .col-12-l {
