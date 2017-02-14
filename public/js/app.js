@@ -26739,6 +26739,9 @@
 	    var left = this.state.currentSlide < total ? this.state.currentSlide + 1 : 0;
 	    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
 	  },
+	  changeSlide: function changeSlide(e) {
+	    e.preventDefault();
+	  },
 	  render: function render() {
 	    var slides = this.props.slides;
 
@@ -26767,13 +26770,13 @@
 	        'div',
 	        { className: 'slider__btns' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'slider__btns__prev' },
+	          'button',
+	          { className: 'slider__btns__prev', onClick: this.changeSlide },
 	          _react2.default.createElement('i', { className: 'ion-chevron-left' })
 	        ),
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'slider__btns__next' },
+	          'button',
+	          { className: 'slider__btns__next', onClick: this.changeSlide },
 	          _react2.default.createElement('i', { className: 'ion-chevron-right' })
 	        )
 	      )

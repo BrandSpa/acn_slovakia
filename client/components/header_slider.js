@@ -27,6 +27,10 @@ const headerSlider = React.createClass({
     this.setState({left: '-' + (left * 100) + '%', currentSlide: left});
  },
 
+  changeSlide(e) {
+    e.preventDefault();
+  },
+
   render() {
     const { slides } = this.props;
     let viewportWidth = `${100 * slides.length}%`;
@@ -48,8 +52,8 @@ const headerSlider = React.createClass({
           })}
         </div>
         <div className="slider__btns">
-          <div className="slider__btns__prev"><i className="ion-chevron-left"></i></div>
-          <div className="slider__btns__next"><i className="ion-chevron-right"></i></div>
+          <button className="slider__btns__prev" onClick={this.changeSlide}><i className="ion-chevron-left"></i></button>
+          <button className="slider__btns__next" onClick={this.changeSlide}><i className="ion-chevron-right"></i></button>
         </div>
       </div>
     );
