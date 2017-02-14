@@ -1,0 +1,49 @@
+.modal {
+  background: RGBA(43, 55, 64, .9);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999999;
+  transition: all 300ms ease;
+  top: -100%;
+  opacity: 0;
+  display: block;
+
+  @media #{$tablet}, #{$mobile} {
+    width: 100%;
+  }
+
+  &__close {
+    color: $red_orange;
+    font-size: 32px;
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    z-index: 1010;
+  }
+
+  .iframe-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    
+    iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+  }
+  
+  &--show {
+    top: 0;
+    opacity: 1;
+    @media #{$tablet}, #{$mobile} {
+      top: 60px;
+    }
+
+  }
+}
