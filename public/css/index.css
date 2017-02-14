@@ -558,7 +558,9 @@ p {
 .slider__btns button {
   background: transparent;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 42px;
+  color: #fff; }
 
 .slider__btns__prev {
   position: absolute;
