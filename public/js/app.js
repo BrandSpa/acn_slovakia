@@ -26965,6 +26965,7 @@
 		},
 		changeContent: function changeContent(num) {
 			this.setState({ bg: backgroundColors[num] });
+			console.log(this.refs.projectIcons);
 			var offs = $('.projects__icons li:nth-child(' + num + ')').offset();
 			$('.projects__arrow').css({ left: offs.left + 'px' });
 		},
@@ -26987,7 +26988,7 @@
 			return _react2.default.createElement(
 				'div',
 				{ className: 'projects' },
-				_react2.default.createElement(_projects_icons2.default, { onChange: this.changeContent }),
+				_react2.default.createElement(_projects_icons2.default, { ref: 'projectIcons', onChange: this.changeContent }),
 				_react2.default.createElement(
 					'div',
 					{ className: 'projects__content' },

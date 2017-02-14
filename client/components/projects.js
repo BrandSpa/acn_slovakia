@@ -22,6 +22,7 @@ const Projects = React.createClass({
 
 	changeContent(num) {
 		this.setState({bg: backgroundColors[num]});
+		console.log(this.refs.projectIcons);
 		let offs = $(`.projects__icons li:nth-child(${num})`).offset();
 		$('.projects__arrow').css({left: `${offs.left}px`});
 	},
@@ -44,7 +45,7 @@ const Projects = React.createClass({
 
 		return (
 			<div className="projects">
-				<ProjectsIcons onChange={this.changeContent} />
+				<ProjectsIcons ref="projectIcons" onChange={this.changeContent} />
 				<div className="projects__content">
 					<div className="projects__arrow"></div>
 					<div className="col-4-l projects__content__content-left" style={styleLeft}>
