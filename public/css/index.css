@@ -452,7 +452,9 @@ body {
     -ms-flex-line-pack: end;
     align-content: flex-end;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
     .slider__slide h2, .slider__slide h3 {
       display: block;
       width: 100%;
