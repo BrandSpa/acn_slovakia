@@ -26786,23 +26786,28 @@
 			    imgUrl = _props.imgUrl,
 			    title = _props.title,
 			    subtitle = _props.subtitle,
+			    url = _props.url,
 			    width = _props.width,
 			    height = _props.height;
 
 			var bg = 'url(' + imgUrl + ')';
 			var style = { 'backgroundImage': bg, backgroundSize: 'cover', width: width, height: height };
 			return _react2.default.createElement(
-				'div',
-				{ className: 'slider__slide', style: style },
+				'a',
+				{ href: '#' },
 				_react2.default.createElement(
-					'h2',
-					null,
-					title
-				),
-				_react2.default.createElement(
-					'h3',
-					null,
-					subtitle
+					'div',
+					{ className: 'slider__slide', style: style },
+					_react2.default.createElement(
+						'h2',
+						null,
+						title
+					),
+					_react2.default.createElement(
+						'h3',
+						null,
+						subtitle
+					)
 				)
 			);
 		}
