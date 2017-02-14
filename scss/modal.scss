@@ -7,7 +7,7 @@
   transition: all 300ms ease;
   top: -100%;
   opacity: 0;
-  display: block;
+  display: none;
 
   @media #{$tablet}, #{$mobile} {
     width: 100%;
@@ -41,6 +41,7 @@
   &--show {
     top: 0;
     opacity: 1;
+		display: block;
     @media #{$tablet}, #{$mobile} {
       top: 60px;
     }
