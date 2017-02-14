@@ -1,4 +1,4 @@
- const WebpackShellPlugin = require('webpack-shell-plugin');
+
 
  module.exports = {
     watch: true,
@@ -10,9 +10,7 @@
          path: './public/js',
          filename: '[name].js'
      },
-      plugins: [
-        new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:['yarn jest']})
-    ],
+
      module: {
          loaders: [{
              test: /\.js$/,
