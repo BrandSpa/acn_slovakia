@@ -1,0 +1,21 @@
+  .slider {
+  	 width: 100%;
+    position: relative;
+    transition: left 400ms ease;
+		overflow: hidden;
+		&__viewport {
+    	width: 100%;
+    	position: relative;
+  		transition: left 400ms ease;
+    	height: 520px;
+  	}
+		
+		&__slide {
+  	float: left;
+    width: 100%;
+    background: #274F5E;
+    flex-wrap: wrap;
+    display: flex;
+  
+  }
+}

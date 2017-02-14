@@ -20,3 +20,4 @@ add_action('init', 'modify_jquery');
 require('apis/index.php');
 //shortcodes
 require('shortcodes/contact_form.php');
+require('shortcodes/header_slider.php');

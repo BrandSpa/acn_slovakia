@@ -432,3 +432,22 @@ body {
   float: left; }
   .nav .menu {
     float: right; }
+
+.slider {
+  width: 100%;
+  position: relative;
+  transition: left 400ms ease;
+  overflow: hidden; }
+  .slider__viewport {
+    width: 100%;
+    position: relative;
+    transition: left 400ms ease;
+    height: 520px; }
+  .slider__slide {
+    float: left;
+    width: 100%;
+    background: #274F5E;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: -ms-flexbox;
+    display: flex; }

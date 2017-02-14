@@ -60,9 +60,14 @@
 
 	var _contact_form2 = _interopRequireDefault(_contact_form);
 
+	var _header_slider = __webpack_require__(276);
+
+	var _header_slider2 = _interopRequireDefault(_header_slider);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
+	(0, _mutiple_render2.default)(".header-slider", _header_slider2.default);
 
 /***/ },
 /* 1 */
@@ -26686,6 +26691,125 @@
 	    return utils.compact(obj);
 	};
 
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _header_slide = __webpack_require__(277);
+
+	var _header_slide2 = _interopRequireDefault(_header_slide);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var headerSlider = _react2.default.createClass({
+	  displayName: 'headerSlider',
+	  getInitialState: function getInitialState() {
+	    return {
+	      currentSlide: 0,
+	      left: '0'
+	    };
+	  },
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      slides: []
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+
+	    setInterval(function () {
+	      _this.nextSlide();
+	    }, 2000);
+	  },
+	  nextSlide: function nextSlide() {
+	    var total = this.props.slides.length - 1;
+	    var left = this.state.currentSlide < total ? this.state.currentSlide + 1 : 0;
+
+	    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
+	  },
+	  render: function render() {
+	    var slides = this.props.slides;
+
+	    var viewportWidth = 100 * slides.length + '%';
+	    var slideWidth = 100 / slides.length + '%';
+	    var slideHeight = '520px';
+
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'slider' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'slider__viewport', style: { width: viewportWidth, left: this.state.left } },
+	        slides.map(function (slide, i) {
+	          slide = _extends({}, slide, { width: slideWidth, height: slideHeight });
+	          return _react2.default.createElement(_header_slide2.default, _extends({ key: i }, slide));
+	        })
+	      )
+	    );
+	  }
+	});
+
+	exports.default = headerSlider;
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var headerSlide = _react2.default.createClass({
+		displayName: 'headerSlide',
+		render: function render() {
+			var _props = this.props,
+			    imgUrl = _props.imgUrl,
+			    title = _props.title,
+			    subtitle = _props.subtitle,
+			    width = _props.width,
+			    height = _props.height;
+
+			var bg = 'url(' + imgUrl + ')';
+			var style = { 'backgroundImage': bg, backgroundSize: 'cover', width: width, height: height };
+			return _react2.default.createElement(
+				'div',
+				{ className: 'slider__slide', style: style },
+				_react2.default.createElement(
+					'h2',
+					null,
+					title
+				),
+				_react2.default.createElement(
+					'h3',
+					null,
+					subtitle
+				)
+			);
+		}
+	});
+
+	exports.default = headerSlide;
 
 /***/ }
 /******/ ]);
