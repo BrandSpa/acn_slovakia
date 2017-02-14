@@ -26886,7 +26886,7 @@
 						frameborder: "0",
 						height: "315",
 						width: "100%",
-						allowfullscreen: true
+						allowFullScreen: true
 					}) : ''
 				)
 			);
