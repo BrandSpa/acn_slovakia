@@ -26959,7 +26959,9 @@
 	var Projects = _react2.default.createClass({
 		displayName: 'Projects',
 		getInitialState: function getInitialState() {
-			return bg;
+			return {
+				bg: '#B91325'
+			};
 		},
 		changeContent: function changeContent(num) {
 			this.setState({ bg: backgroundColors[num] });

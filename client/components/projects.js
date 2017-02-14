@@ -15,9 +15,9 @@ const backgroundColors = {
 const Projects = React.createClass({
 
 	getInitialState() {
-		return (
+		return {
 			bg: '#B91325'
-		)
+		}
 	},
 
 	changeContent(num) {
