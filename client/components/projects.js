@@ -44,12 +44,12 @@ const Projects = React.createClass({
 			<div className="projects">
 				<ProjectsIcons onChange={this.changeContent} />
 				<div className="projects__content">
-					<div className="col-5-l projects__content__content-left" style={styleLeft}>
+					<div className="col-4-l projects__content__content-left" style={styleLeft}>
 						<h4>{title}</h4>
 						<p>{text}</p>
 						<button>DONATE</button>
 					</div>
-					<div className="col-7-l projects__content__content-right" style={styleRight}></div>
+					<div className="col-8-l projects__content__content-right" style={styleRight}></div>
 				</div>
 			</div>
 		)
