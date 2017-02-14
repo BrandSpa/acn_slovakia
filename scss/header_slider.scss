@@ -16,7 +16,10 @@
     background: #274F5E;
     flex-wrap: wrap;
     display: flex;
+
 		h2, h3 {
+			display: block;
+			width: 100%;
 			text-align: center;
 			color: #fff;
 		}

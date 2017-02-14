@@ -452,6 +452,8 @@ body {
     display: -ms-flexbox;
     display: flex; }
     .slider__slide h2, .slider__slide h3 {
+      display: block;
+      width: 100%;
       text-align: center;
       color: #fff; }
     .slider__slide h2 {
