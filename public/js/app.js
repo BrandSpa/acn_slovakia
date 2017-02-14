@@ -26737,7 +26737,6 @@
 	  nextSlide: function nextSlide() {
 	    var total = this.props.slides.length - 1;
 	    var left = this.state.currentSlide < total ? this.state.currentSlide + 1 : 0;
-
 	    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
 	  },
 	  render: function render() {
@@ -26745,16 +26744,16 @@
 
 	    var viewportWidth = 100 * slides.length + '%';
 	    var slideWidth = 100 / slides.length + '%';
-	    var slideHeight = '520px';
+	    var sliderHeight = '820px';
 
 	    return _react2.default.createElement(
 	      'div',
 	      { className: 'slider' },
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'slider__viewport', style: { width: viewportWidth, left: this.state.left } },
+	        { className: 'slider__viewport', style: { width: viewportWidth, left: this.state.left, height: sliderHeight } },
 	        slides.map(function (slide, i) {
-	          slide = _extends({}, slide, { width: slideWidth, height: slideHeight });
+	          slide = _extends({}, slide, { width: slideWidth, height: sliderHeight });
 	          return _react2.default.createElement(_header_slide2.default, _extends({ key: i }, slide));
 	        })
 	      )
