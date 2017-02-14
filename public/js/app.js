@@ -26966,7 +26966,7 @@
 		changeContent: function changeContent(num) {
 			this.setState({ bg: backgroundColors[num] });
 			var offs = $('.projects__icons li:nth-child(' + num + ')').offset();
-			console.log(offs);
+			$('.projects__arrow').css({ left: offs.left + 'px' });
 		},
 		render: function render() {
 			var title = 'Mass stipends';
