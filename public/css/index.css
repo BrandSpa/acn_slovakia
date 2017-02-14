@@ -448,16 +448,16 @@ body {
     background: #274F5E;
     display: -ms-flexbox;
     display: flex;
-    float: left; }
+    float: left;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+    -ms-flex-direction: column;
+    flex-direction: column; }
     .slider__slide h2, .slider__slide h3 {
       display: block;
       width: 100%;
       text-align: center;
-      color: #fff;
-      -ms-flex-item-align: end;
-      align-self: flex-end;
-      -ms-flex: 1;
-      flex: 1; }
+      color: #fff; }
     .slider__slide h2 {
       font-size: 72px;
       font-weight: 900;
