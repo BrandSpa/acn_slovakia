@@ -35,7 +35,13 @@ const headerSlider = React.createClass({
     
     return (
       <div className="slider">
-        <div className="slider__viewport" style={{width: viewportWidth, left: this.state.left, height: sliderHeight}}>
+        <div 
+          className="slider__viewport" 
+          style={{
+            width: viewportWidth, 
+            left: this.state.left, 
+            height: sliderHeight
+          }}>
           {slides.map((slide, i) => {
             slide = {...slide, width: slideWidth, height: sliderHeight};
             return <Slide key={i} {...slide} />  

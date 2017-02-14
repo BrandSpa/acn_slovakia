@@ -26751,7 +26751,13 @@
 	      { className: 'slider' },
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'slider__viewport', style: { width: viewportWidth, left: this.state.left, height: sliderHeight } },
+	        {
+	          className: 'slider__viewport',
+	          style: {
+	            width: viewportWidth,
+	            left: this.state.left,
+	            height: sliderHeight
+	          } },
 	        slides.map(function (slide, i) {
 	          slide = _extends({}, slide, { width: slideWidth, height: sliderHeight });
 	          return _react2.default.createElement(_header_slide2.default, _extends({ key: i }, slide));
@@ -26787,7 +26793,7 @@
 		displayName: 'headerSlide',
 		handleLink: function handleLink(e) {
 			e.preventDefault();
-			if (this.props.isVideo) console.log('video open modal');
+			if (this.props.isVideo) console.log('video open modal', this.refs);
 			console.log('redirect to url');
 		},
 		render: function render() {
