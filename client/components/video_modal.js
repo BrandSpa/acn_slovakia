@@ -2,16 +2,29 @@ import React from 'react';
 
 const Modal = React.createClass({
 	getInitialState(){
-		
+		return {
+			show: false
+		}
+	},
+
+	close(e) {
+		e.preventDefault();
+		this.setState({show: false});
+	},
+
+	show() {
+		this.setState({show: true});
 	},
 
 	render() {
 		let {url} = this.props;
 
 		return (
-			<div className="modal">
-				<div className="modal__close">
+			<div className={"modal modal--show": "modal"}>
+				<a className="modal__close" onClick={this.close}>
 					<i className="ion-close"></i>
+				</a>
+
 					<div className="iframe-container">
 						<iframe
 							src={`${url}?autoplay=1`}
@@ -21,7 +34,7 @@ const Modal = React.createClass({
 							allowfullscreen
 						></iframe>					
 					</div>
-				</div>
+				
 			</div>
 		)
 	}

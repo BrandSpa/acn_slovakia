@@ -26777,6 +26777,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _video_modal = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./video_modal\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _video_modal2 = _interopRequireDefault(_video_modal);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var headerSlide = _react2.default.createClass({
@@ -26801,6 +26805,7 @@
 			return _react2.default.createElement(
 				'a',
 				{ href: '#', onClick: this.handleLink },
+				this.props.isVideo ? _react2.default.createElement(_video_modal2.default, { ref: 'modal', url: this.props.url }) : '',
 				_react2.default.createElement(
 					'div',
 					{ className: 'slider__slide', style: style },
