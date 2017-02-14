@@ -3,7 +3,7 @@ import React from 'react';
 const ProjectsIcons = React.createClass({
 	changeContent(num, e) {
 		e.preventDefault();
-		console.log('content', num);
+		this.props.onChange(num);
 	},
 
 	render() {
