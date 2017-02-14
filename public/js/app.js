@@ -26762,6 +26762,20 @@
 	          slide = _extends({}, slide, { width: slideWidth, height: sliderHeight });
 	          return _react2.default.createElement(_header_slide2.default, _extends({ key: i }, slide));
 	        })
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { 'class': 'slider__btns' },
+	        _react2.default.createElement(
+	          'div',
+	          { 'class': 'slider__btns__prev' },
+	          _react2.default.createElement('div', { 'class': 'ion-chevron-left' })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { 'class': 'slider__btns__next' },
+	          _react2.default.createElement('i', { 'class': 'ion-chevron-right' })
+	        )
 	      )
 	    );
 	  }
