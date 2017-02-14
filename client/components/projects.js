@@ -42,6 +42,7 @@ const Projects = React.createClass({
 
 		return (
 			<div className="projects">
+			<div class="projects__arrow"></div>
 				<ProjectsIcons onChange={this.changeContent} />
 				<div className="projects__content">
 					<div className="col-4-l projects__content__content-left" style={styleLeft}>

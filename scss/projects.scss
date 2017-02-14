@@ -8,11 +8,24 @@
 		}
 	}
 
+	&___arrow {
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-color: rgba(136, 183, 213, 0);
+			border-top-color: #88b7d5;
+			border-width: 30px;
+			margin-left: -30px;
+	}
+
 	&__content{
 		&__content-left {
 			transition: 300ms all;
 			padding: 90px;
-			
+
 			h4 {
 				color: #fff;
 				margin: 0 0 60px 0;
