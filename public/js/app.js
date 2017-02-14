@@ -26985,7 +26985,7 @@
 			return _react2.default.createElement(
 				'div',
 				{ className: 'projects' },
-				_react2.default.createElement('div', { 'class': 'projects__arrow' }),
+				_react2.default.createElement('div', { className: 'projects__arrow' }),
 				_react2.default.createElement(_projects_icons2.default, { onChange: this.changeContent }),
 				_react2.default.createElement(
 					'div',
