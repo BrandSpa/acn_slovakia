@@ -26965,6 +26965,7 @@
 		},
 		componentDidMount: function componentDidMount() {
 			var left = document.querySelector('.projects__icons li:nth-child(1)').offsetLeft;
+			console.log(left);
 			$('.projects__arrow').css({ left: left });
 		},
 		changeContent: function changeContent(num) {
