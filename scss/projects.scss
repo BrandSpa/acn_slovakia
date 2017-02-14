@@ -11,6 +11,17 @@
 	&__content{
 		&__content-left {
 			transition: 300ms all;
+			text-align: center;
+			
+			h4 {
+				color: #fff;
+				margin: 100px 0 60px 0;
+			}
+
+			p {
+				color: #fff;
+				margin-bottom: 30px;
+			}
 		}
 	}
 }

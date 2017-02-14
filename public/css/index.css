@@ -629,4 +629,11 @@ p {
     margin-right: 50px; }
 
 .projects__content__content-left {
-  transition: 300ms all; }
+  transition: 300ms all;
+  text-align: center; }
+  .projects__content__content-left h4 {
+    color: #fff;
+    margin: 100px 0 60px 0; }
+  .projects__content__content-left p {
+    color: #fff;
+    margin-bottom: 30px; }
