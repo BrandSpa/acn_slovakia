@@ -5,6 +5,12 @@
  * Copyright 2016 BrandSpa
  */
  
+register_nav_menus(
+  array(
+    'header' => __('Header nav'),
+  )
+);
+
 function modify_jquery() {
 	if (!is_admin()) {
 		// comment out the next two lines to load the local copy of jQuery
@@ -15,7 +21,8 @@ function modify_jquery() {
 }
 
 add_action('init', 'modify_jquery');
-
+//libs
+require('lib/clean_menu.php');
 //apis
 require('apis/index.php');
 //shortcodes

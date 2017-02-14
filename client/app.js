@@ -7,3 +7,6 @@ import HeaderSlider from "./components/header_slider";
 
 multipleRender(".contact-form", ContactForm);
 multipleRender(".header-slider", HeaderSlider);
+multipleRender(".header-slider", HeaderSlider);
+multipleRender(".header-slider", HeaderSlider);
+
