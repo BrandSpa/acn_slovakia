@@ -28,8 +28,7 @@ const Projects = React.createClass({
 					<li><a onClick={this.changeContent.bind(null, 1)} href="#">
 
 						<svg width="68px" height="68px" viewBox="0 0 68 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-								<desc>Created with Sketch.</desc>
+						
 								<defs>
 										<polygon id="path-1" points="67.38913 0.803112967 0.518458196 0.803112967 0.518458196 66.1857235 67.38913 66.1857235 67.38913 0.803112967"></polygon>
 								</defs>

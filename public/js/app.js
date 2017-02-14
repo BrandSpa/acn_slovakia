@@ -64,12 +64,15 @@
 
 	var _header_slider2 = _interopRequireDefault(_header_slider);
 
+	var _projects = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/projects\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _projects2 = _interopRequireDefault(_projects);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
 	(0, _mutiple_render2.default)(".header-slider", _header_slider2.default);
-	(0, _mutiple_render2.default)(".header-slider", _header_slider2.default);
-	(0, _mutiple_render2.default)(".header-slider", _header_slider2.default);
+	(0, _mutiple_render2.default)(".projects-container", _projects2.default);
 
 /***/ },
 /* 1 */
