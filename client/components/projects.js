@@ -22,9 +22,8 @@ const Projects = React.createClass({
 
 	changeContent(num) {
 		this.setState({bg: backgroundColors[num]});
-		console.log(document.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft);
-		let offs = $(`.projects__icons li:nth-child(${num})`).offset();
-		$('.projects__arrow').css({left: `${offs.left}px`});
+		let left = document.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft;
+		$('.projects__arrow').css({ left });
 	},
 
 	render() {

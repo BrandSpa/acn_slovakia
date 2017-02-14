@@ -26965,9 +26965,8 @@
 		},
 		changeContent: function changeContent(num) {
 			this.setState({ bg: backgroundColors[num] });
-			console.log(document.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft);
-			var offs = $('.projects__icons li:nth-child(' + num + ')').offset();
-			$('.projects__arrow').css({ left: offs.left + 'px' });
+			var left = document.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
+			$('.projects__arrow').css({ left: left });
 		},
 		render: function render() {
 			var title = 'Mass stipends';
