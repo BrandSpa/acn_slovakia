@@ -22,6 +22,8 @@ const Projects = React.createClass({
 
 	changeContent(num) {
 		this.setState({bg: backgroundColors[num]});
+		let offs = $(`.projects__icons li:nth-child(${num})`).offset();
+		console.log(offs);
 	},
 
 	render() {
