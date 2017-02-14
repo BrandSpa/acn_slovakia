@@ -7,8 +7,9 @@
 			display: inline-block;
 			margin-right: 50px;
 			@media #{$s} {
+				width: (100 / 9) * 1%;
 				svg {
-					width: (100 / 9) * 1%;
+				width: 100%;
 				}
 			}
 		}

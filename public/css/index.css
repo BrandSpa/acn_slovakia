@@ -627,8 +627,10 @@ p {
     display: inline-block;
     margin-right: 50px; }
     @media (max-width: 767px) {
-      .projects__icons li svg {
-        width: 11.11111%; } }
+      .projects__icons li {
+        width: 11.11111%; }
+        .projects__icons li svg {
+          width: 100%; } }
 
 .projects__arrow {
   position: absolute;
