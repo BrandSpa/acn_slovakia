@@ -414,7 +414,8 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Source Sans Pro', sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px; }
 
 *,
 *:before,
@@ -629,7 +630,8 @@ p {
 
 .projects__icons {
   text-align: center;
-  padding: 0; }
+  padding: 0;
+  margin-bottom: 60px; }
   .projects__icons li {
     display: inline-block;
     margin-right: 50px; }
