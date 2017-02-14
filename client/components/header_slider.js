@@ -27,8 +27,15 @@ const headerSlider = React.createClass({
     this.setState({left: '-' + (left * 100) + '%', currentSlide: left});
  },
 
+ prevSlide() {
+  let total = this.props.slides.length - 1;
+  let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
+    this.setState({left: '-' + (left * 100) + '%', currentSlide: left});
+ },
+
   changeSlide(e) {
     e.preventDefault();
+
   },
 
   render() {
@@ -52,8 +59,16 @@ const headerSlider = React.createClass({
           })}
         </div>
         <div className="slider__btns">
-          <button className="slider__btns__prev" onClick={this.changeSlide}><i className="ion-chevron-left"></i></button>
-          <button className="slider__btns__next" onClick={this.changeSlide}><i className="ion-chevron-right"></i></button>
+          <button 
+            className="slider__btns__prev" 
+            onClick={this.prevSlide}>
+            <i className="ion-chevron-left"></i>
+          </button>
+          <button 
+            className="slider__btns__next" 
+            onClick={this.nextSlide}>
+            <i className="ion-chevron-right"></i>
+          </button>
         </div>
       </div>
     );

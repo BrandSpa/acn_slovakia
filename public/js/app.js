@@ -26739,6 +26739,11 @@
 	    var left = this.state.currentSlide < total ? this.state.currentSlide + 1 : 0;
 	    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
 	  },
+	  prevSlide: function prevSlide() {
+	    var total = this.props.slides.length - 1;
+	    var left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
+	    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
+	  },
 	  changeSlide: function changeSlide(e) {
 	    e.preventDefault();
 	  },
@@ -26771,12 +26776,16 @@
 	        { className: 'slider__btns' },
 	        _react2.default.createElement(
 	          'button',
-	          { className: 'slider__btns__prev', onClick: this.changeSlide },
+	          {
+	            className: 'slider__btns__prev',
+	            onClick: this.prevSlide },
 	          _react2.default.createElement('i', { className: 'ion-chevron-left' })
 	        ),
 	        _react2.default.createElement(
 	          'button',
-	          { className: 'slider__btns__next', onClick: this.changeSlide },
+	          {
+	            className: 'slider__btns__next',
+	            onClick: this.nextSlide },
 	          _react2.default.createElement('i', { className: 'ion-chevron-right' })
 	        )
 	      )
