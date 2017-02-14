@@ -26781,6 +26781,11 @@
 
 	var headerSlide = _react2.default.createClass({
 		displayName: 'headerSlide',
+		handleLink: function handleLink(e) {
+			e.preventDefault();
+			if (this.props.isVideo) console.log('video open modal');
+			console.log('redirect to url');
+		},
 		render: function render() {
 			var _props = this.props,
 			    imgUrl = _props.imgUrl,
@@ -26794,7 +26799,7 @@
 			var style = { 'backgroundImage': bg, backgroundSize: 'cover', width: width, height: height };
 			return _react2.default.createElement(
 				'a',
-				{ href: '#' },
+				{ href: '#', onclick: this.handleLink },
 				_react2.default.createElement(
 					'div',
 					{ className: 'slider__slide', style: style },
