@@ -444,11 +444,8 @@ body {
     transition: left 400ms ease;
     height: 520px; }
   .slider__slide {
-    float: left;
     width: 100%;
     background: #274F5E;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     display: -ms-flexbox;
     display: flex; }
     .slider__slide h2, .slider__slide h3 {

@@ -11,10 +11,8 @@
   	}
 		
 		&__slide {
-  	float: left;
     width: 100%;
     background: #274F5E;
-    flex-wrap: wrap;
     display: flex;
 
 		h2, h3 {
@@ -37,7 +35,7 @@
 		}
 
 		h3 {
-				font-size: 25px;
+			font-size: 25px;
 			font-weight: 600;
 			font-style: normal;
 			font-stretch: normal;
@@ -46,7 +44,7 @@
 			text-align: center;
 			color: #ffffff;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59);
-
+			
 		}
 
   }
