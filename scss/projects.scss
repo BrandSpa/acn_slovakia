@@ -6,6 +6,11 @@
 		li {
 			display: inline-block;
 			margin-right: 50px;
+			@media #{$s} {
+				svg {
+					width: (100 / 9) * 1%;
+				}
+			}
 		}
 	}
 

@@ -626,6 +626,9 @@ p {
   .projects__icons li {
     display: inline-block;
     margin-right: 50px; }
+    @media (max-width: 767px) {
+      .projects__icons li svg {
+        width: 11.11111%; } }
 
 .projects__arrow {
   position: absolute;
