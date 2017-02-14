@@ -628,11 +628,13 @@ p {
     margin-right: 50px; }
 
 .projects__arrow {
+  position: relative;
+  margin-top: -30px;
   width: 0;
   height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #f00; }
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 30px solid #f00; }
 
 .projects__content__content-left {
   transition: 300ms all;
