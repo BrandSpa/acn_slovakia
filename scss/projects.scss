@@ -9,6 +9,8 @@
 	}
 
 	&___arrow {
+		position: relative;
+		&:after {
 			border: solid transparent;
 			content: " ";
 			height: 0;
@@ -19,6 +21,7 @@
 			border-top-color: #88b7d5;
 			border-width: 30px;
 			margin-left: -30px;
+		}
 	}
 
 	&__content{
