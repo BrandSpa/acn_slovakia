@@ -453,7 +453,11 @@ body {
       display: block;
       width: 100%;
       text-align: center;
-      color: #fff; }
+      color: #fff;
+      -ms-flex-item-align: end;
+      align-self: flex-end;
+      -ms-flex: 1;
+      flex: 1; }
     .slider__slide h2 {
       font-size: 72px;
       font-weight: 900;
