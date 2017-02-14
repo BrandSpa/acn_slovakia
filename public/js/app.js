@@ -26765,20 +26765,20 @@
 	      ),
 	      _react2.default.createElement(
 	        'div',
-	        { 'class': 'slider__btns' },
+	        { className: 'slider__btns' },
 	        _react2.default.createElement(
 	          'div',
-	          { 'class': 'slider__btns__prev' },
+	          { className: 'slider__btns__prev' },
 	          _react2.default.createElement(
 	            'div',
-	            { 'class': 'ion-chevron-left' },
+	            { className: 'ion-chevron-left' },
 	            '\xD3'
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { 'class': 'slider__btns__next' },
-	          _react2.default.createElement('i', { 'class': 'ion-chevron-right' })
+	          { className: 'slider__btns__next' },
+	          _react2.default.createElement('i', { className: 'ion-chevron-right' })
 	        )
 	      )
 	    );

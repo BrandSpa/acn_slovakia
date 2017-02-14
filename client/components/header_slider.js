@@ -47,9 +47,9 @@ const headerSlider = React.createClass({
             return <Slide key={i} {...slide} />  
           })}
         </div>
-        <div class="slider__btns">
-          <div class="slider__btns__prev"><div class="ion-chevron-left">Ó</div></div>
-          <div class="slider__btns__next"><i class="ion-chevron-right"></i></div>
+        <div className="slider__btns">
+          <div className="slider__btns__prev"><div className="ion-chevron-left">Ó</div></div>
+          <div className="slider__btns__next"><i className="ion-chevron-right"></i></div>
         </div>
       </div>
     );
