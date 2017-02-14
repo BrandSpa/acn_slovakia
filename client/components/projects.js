@@ -21,7 +21,7 @@ const Projects = React.createClass({
 	},
 
 	componentDidMount() {
-		let left = document.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft;
+		let left = document.querySelector(`.projects__icons li:nth-child(1)`).offsetLeft;
 		$('.projects__arrow').css({ left });
 	},
 

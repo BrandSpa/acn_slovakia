@@ -26964,7 +26964,7 @@
 			};
 		},
 		componentDidMount: function componentDidMount() {
-			var left = document.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
+			var left = document.querySelector('.projects__icons li:nth-child(1)').offsetLeft;
 			$('.projects__arrow').css({ left: left });
 		},
 		changeContent: function changeContent(num) {
