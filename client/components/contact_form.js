@@ -69,12 +69,11 @@ const contactForm = React.createClass({
     e.preventDefault();
     let data = objToFormData(this.state.contact);
     this.isValid()
-    .then(is => console.log(is))
+    .then(this.storeContact)
     .catch(err => console.error(err));
-
   },
 
-  storeContact() {
+  storeContact(isValid) {
     let {email, name, lastname, country} = this.state.contact;
 
     let mc_data = {
@@ -85,11 +84,12 @@ const contactForm = React.createClass({
     };
 
     let data = { action: "mailchimp_subscribe", data: mc_data };
-
-  request
-    .post("/wp-admin/admin-ajax.php", data)
-      .then(res => console.log(res.data))
-      .catch(err => console.error(err))
+    if(isValid) {
+      request
+        .post("/wp-admin/admin-ajax.php", data)
+        .then(res => console.log(res.data))
+        .catch(err => console.error(err))
+    }
   },
 
   handleChange(field, e) {

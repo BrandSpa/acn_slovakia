@@ -21638,13 +21638,11 @@
 	  handleSubmit: function handleSubmit(e) {
 	    e.preventDefault();
 	    var data = (0, _obj_to_formdata2.default)(this.state.contact);
-	    this.isValid().then(function (is) {
-	      return console.log(is);
-	    }).catch(function (err) {
+	    this.isValid().then(this.storeContact).catch(function (err) {
 	      return console.error(err);
 	    });
 	  },
-	  storeContact: function storeContact() {
+	  storeContact: function storeContact(isValid) {
 	    var _state$contact = this.state.contact,
 	        email = _state$contact.email,
 	        name = _state$contact.name,
@@ -21660,12 +21658,13 @@
 	    };
 
 	    var data = { action: "mailchimp_subscribe", data: mc_data };
-
-	    _axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
-	      return console.log(res.data);
-	    }).catch(function (err) {
-	      return console.error(err);
-	    });
+	    if (isValid) {
+	      _axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
+	        return console.log(res.data);
+	      }).catch(function (err) {
+	        return console.error(err);
+	      });
+	    }
 	  },
 	  handleChange: function handleChange(field, e) {
 	    var contact = _extends({}, this.state.contact, _defineProperty({}, field, e.target.value));
