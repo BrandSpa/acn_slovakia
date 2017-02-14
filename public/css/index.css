@@ -622,5 +622,8 @@ p {
       .modal--show {
         top: 60px; } }
 
-.projects__icons li {
-  display: inline-block; }
+.projects__icons {
+  text-align: center; }
+  .projects__icons li {
+    display: inline-block;
+    margin-right: 50px; }
