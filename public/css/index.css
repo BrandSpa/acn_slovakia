@@ -447,7 +447,8 @@ body {
     width: 100%;
     background: #274F5E;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    float: left; }
     .slider__slide h2, .slider__slide h3 {
       display: block;
       width: 100%;
