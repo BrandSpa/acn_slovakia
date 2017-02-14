@@ -18,7 +18,7 @@ describe("lib object to formdata ", () => {
 
     let expected = new FormData();
     expected.append('name', 'ale');
-    expect([]).toEqual(data);
+    expect(expected).toEqual(data);
   });
 
 });

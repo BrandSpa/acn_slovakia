@@ -21682,7 +21682,7 @@
 
 	    return _react2.default.createElement(
 	      "form",
-	      { className: "form-inline", onSubmit: this.handleSubmit },
+	      { style: { 'textAlign': 'center' }, className: "form-inline", onSubmit: this.handleSubmit },
 	      _react2.default.createElement(
 	        "div",
 	        { className: "input-container" },

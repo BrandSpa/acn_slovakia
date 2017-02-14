@@ -102,7 +102,7 @@ const contactForm = React.createClass({
     let { placeholders, validationMessages } = this.props;
 
     return (
-      <form className="form-inline" onSubmit={this.handleSubmit}>
+      <form style={{'textAlign': 'center'}} className="form-inline" onSubmit={this.handleSubmit}>
         <div className="input-container">
           <input
             style={{'marginLeft': '-1px', 'borderRadius': '5px 0 0 5px'}}
