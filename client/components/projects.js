@@ -42,9 +42,9 @@ const Projects = React.createClass({
 
 		return (
 			<div className="projects">
-			<div className="projects__arrow"></div>
 				<ProjectsIcons onChange={this.changeContent} />
 				<div className="projects__content">
+					<div className="projects__arrow"></div>
 					<div className="col-4-l projects__content__content-left" style={styleLeft}>
 						<h4>{title}</h4>
 						<p>{text}</p>

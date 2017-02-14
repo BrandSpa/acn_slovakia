@@ -26985,11 +26985,11 @@
 			return _react2.default.createElement(
 				'div',
 				{ className: 'projects' },
-				_react2.default.createElement('div', { className: 'projects__arrow' }),
 				_react2.default.createElement(_projects_icons2.default, { onChange: this.changeContent }),
 				_react2.default.createElement(
 					'div',
 					{ className: 'projects__content' },
+					_react2.default.createElement('div', { className: 'projects__arrow' }),
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-4-l projects__content__content-left', style: styleLeft },
