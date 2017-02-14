@@ -450,6 +450,27 @@ body {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     display: -ms-flexbox;
-    display: flex;
-    text-align: center;
-    color: #fff; }
+    display: flex; }
+    .slider__slide h2, .slider__slide h3 {
+      text-align: center;
+      color: #fff; }
+    .slider__slide h2 {
+      font-size: 72px;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 0.93;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
+    .slider__slide h3 {
+      font-size: 25px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2.68;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
