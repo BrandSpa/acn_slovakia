@@ -26797,6 +26797,7 @@
 
 			var bg = 'url(' + imgUrl + ')';
 			var style = { 'backgroundImage': bg, backgroundSize: 'cover', width: width, height: height };
+
 			return _react2.default.createElement(
 				'a',
 				{ href: '#', onClick: this.handleLink },

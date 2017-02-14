@@ -17,8 +17,8 @@ function bs_header_slider_sc($atts, $content = null) {
 <div 
   class="header-slider" 
   data-props='{"slides": [
-      {"title": "this is a title", "subtitle": "nea", "imgUrl": "http://acninternational.org/wp-content/uploads/2016/11/pope.jpg"},
-      {"title": "this is a title", "subtitle": "nea", "imgUrl": "http://religious-freedom-report.org/wp-content/uploads/2016/10/home-isis.jpg"}
+      {"title": "The Pope and ACN", "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "imgUrl": "http://acninternational.org/wp-content/uploads/2016/11/pope.jpg"},
+      {"title": "The Pope and ACN", "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "imgUrl": "http://religious-freedom-report.org/wp-content/uploads/2016/10/home-isis.jpg"}
     ]
   }'
 ></div>

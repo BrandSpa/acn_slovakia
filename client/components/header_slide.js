@@ -10,7 +10,8 @@ const headerSlide = React.createClass({
 	render() {
 		const {imgUrl, title, subtitle, url, width, height} = this.props;
 		let bg = `url(${imgUrl})`;
-		let style = {'backgroundImage': bg, backgroundSize: 'cover', width, height}
+		let style = {'backgroundImage': bg, backgroundSize: 'cover', width, height};
+		
 		return (
 			<a href="#" onClick={this.handleLink}>
 			<div className="slider__slide" style={style}>
