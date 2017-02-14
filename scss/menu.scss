@@ -1,4 +1,8 @@
 .menu {
+	@media #{$s} {
+		display: none;	
+	}
+
 	li {
 		list-style: none;
 		display: inline-block;

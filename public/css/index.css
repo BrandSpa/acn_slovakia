@@ -484,6 +484,10 @@ p {
   letter-spacing: normal;
   color: #3c515f; }
 
+@media (max-width: 767px) {
+  .menu {
+    display: none; } }
+
 .menu li {
   list-style: none;
   display: inline-block;
