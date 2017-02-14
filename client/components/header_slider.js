@@ -48,7 +48,7 @@ const headerSlider = React.createClass({
           })}
         </div>
         <div className="slider__btns">
-          <div className="slider__btns__prev"><div className="ion-chevron-left">Ó</div></div>
+          <div className="slider__btns__prev"><i className="ion-chevron-left"></i></div>
           <div className="slider__btns__next"><i className="ion-chevron-right"></i></div>
         </div>
       </div>

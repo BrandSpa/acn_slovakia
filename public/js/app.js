@@ -26769,11 +26769,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'slider__btns__prev' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'ion-chevron-left' },
-	            '\xD3'
-	          )
+	          _react2.default.createElement('i', { className: 'ion-chevron-left' })
 	        ),
 	        _react2.default.createElement(
 	          'div',

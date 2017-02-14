@@ -548,6 +548,26 @@ p {
       color: #ffffff;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
 
+.slider__btns {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  height: 45px;
+  display: block; }
+
+.slider__btns button {
+  background: transparent;
+  border: none;
+  cursor: pointer; }
+
+.slider__btns__prev {
+  position: absolute;
+  left: 30px; }
+
+.slider__btns__next {
+  position: absolute;
+  right: 30px; }
+
 .vc_col-has-fill > .vc_column-inner, .vc_row-has-fill + .vc_row-full-width + .vc_row > .vc_column_container > .vc_column-inner, .vc_row-has-fill + .vc_row > .vc_column_container > .vc_column-inner, .vc_row-has-fill + .vc_vc_row > .vc_row > .vc_vc_column > .vc_column_container > .vc_column-inner, .vc_row-has-fill + .vc_vc_row_inner > .vc_row > .vc_vc_column_inner > .vc_column_container > .vc_column-inner, .vc_row-has-fill > .vc_column_container > .vc_column-inner, .vc_row-has-fill > .vc_row > .vc_vc_column > .vc_column_container > .vc_column-inner, .vc_row-has-fill > .vc_vc_column_inner > .vc_column_container > .vc_column-inner {
   padding-top: 0; }
 
