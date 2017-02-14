@@ -22,7 +22,10 @@ const Projects = React.createClass({
 
 	componentDidMount() {
 		let left = document.querySelector('.projects__icons li:nth-child(1)').offsetLeft;
-		console.log(left);
+		setTimeout(() => {
+
+		}, 1000);
+		
 		$('.projects__arrow').css({ left });
 	},
 
