@@ -14,16 +14,15 @@ const headerSlide = React.createClass({
 		let style = {'backgroundImage': bg, backgroundSize: 'cover', width, height};
 
 		return (
-			<a href="#" onClick={this.handleLink}>
-				<div>
-						{this.props.isVideo ? <VideoModal ref="modal" url={this.props.url} /> : ''}
-				</div>
-			
+			<div>
+				{this.props.isVideo ? <VideoModal ref="modal" url={this.props.url} /> : ''}
+				<a href="#" onClick={this.handleLink}>			
 				<div className="slider__slide" style={style}>
 					<h2>{title}</h2>
 					<h3>{subtitle}</h3>
 				</div>
 			</a>
+				</div>
 		)
 	}
 });
