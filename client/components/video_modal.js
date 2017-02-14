@@ -21,7 +21,7 @@ const Modal = React.createClass({
 
 		return (
 			<div className={this.state.show ? "modal modal--show" : "modal"}>
-				<a className="modal__close" onClick={this.close}>
+				<a className="modal__close" href="#" onClick={this.close}>
 					<i className="ion-close"></i>
 				</a>
 
@@ -29,7 +29,7 @@ const Modal = React.createClass({
 					{this.state.show ? 
 						<iframe
 							src={`${url}?autoplay=1`}
-							frameborder="0" 
+							frameBorder="0" 
 							height="315" 
 							width="100%" 
 							allowFullScreen

@@ -26875,7 +26875,7 @@
 				{ className: this.state.show ? "modal modal--show" : "modal" },
 				_react2.default.createElement(
 					"a",
-					{ className: "modal__close", onClick: this.close },
+					{ className: "modal__close", href: "#", onClick: this.close },
 					_react2.default.createElement("i", { className: "ion-close" })
 				),
 				_react2.default.createElement(
@@ -26883,7 +26883,7 @@
 					{ className: "iframe-container" },
 					this.state.show ? _react2.default.createElement("iframe", {
 						src: url + "?autoplay=1",
-						frameborder: "0",
+						frameBorder: "0",
 						height: "315",
 						width: "100%",
 						allowFullScreen: true
