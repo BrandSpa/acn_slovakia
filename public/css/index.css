@@ -521,7 +521,8 @@ p {
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: end;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    padding-bottom: 90px; }
     .slider__slide h2, .slider__slide h3 {
       display: block;
       width: 100%;
