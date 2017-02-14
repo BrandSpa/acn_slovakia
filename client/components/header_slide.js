@@ -12,7 +12,7 @@ const headerSlide = React.createClass({
 		let bg = `url(${imgUrl})`;
 		let style = {'backgroundImage': bg, backgroundSize: 'cover', width, height}
 		return (
-			<a href="#" onclick={this.handleLink}>
+			<a href="#" onClick={this.handleLink}>
 			<div className="slider__slide" style={style}>
 				<h2>{title}</h2>
 				<h3>{subtitle}</h3>

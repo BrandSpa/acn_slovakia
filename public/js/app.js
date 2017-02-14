@@ -26799,7 +26799,7 @@
 			var style = { 'backgroundImage': bg, backgroundSize: 'cover', width: width, height: height };
 			return _react2.default.createElement(
 				'a',
-				{ href: '#', onclick: this.handleLink },
+				{ href: '#', onClick: this.handleLink },
 				_react2.default.createElement(
 					'div',
 					{ className: 'slider__slide', style: style },
