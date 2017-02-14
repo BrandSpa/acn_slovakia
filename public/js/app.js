@@ -26783,7 +26783,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _video_modal = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./video_modal\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _video_modal = __webpack_require__(278);
 
 	var _video_modal2 = _interopRequireDefault(_video_modal);
 
@@ -26831,6 +26831,65 @@
 	});
 
 	exports.default = headerSlide;
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Modal = _react2.default.createClass({
+		displayName: "Modal",
+		getInitialState: function getInitialState() {
+			return {
+				show: false
+			};
+		},
+		close: function close(e) {
+			e.preventDefault();
+			this.setState({ show: false });
+		},
+		show: function show() {
+			this.setState({ show: true });
+		},
+		render: function render() {
+			var url = this.props.url;
+
+
+			return _react2.default.createElement(
+				"div",
+				{ className: this.state.show ? "modal modal--show" : "modal" },
+				_react2.default.createElement(
+					"a",
+					{ className: "modal__close", onClick: this.close },
+					_react2.default.createElement("i", { className: "ion-close" })
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "iframe-container" },
+					_react2.default.createElement("iframe", {
+						src: url + "?autoplay=1",
+						frameborder: "0",
+						height: "315",
+						width: "100%",
+						allowfullscreen: true
+					})
+				)
+			);
+		}
+	});
+
+	exports.default = Modal;
 
 /***/ }
 /******/ ]);

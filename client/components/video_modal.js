@@ -20,7 +20,7 @@ const Modal = React.createClass({
 		let {url} = this.props;
 
 		return (
-			<div className={"modal modal--show": "modal"}>
+			<div className={this.state.show ? "modal modal--show" : "modal"}>
 				<a className="modal__close" onClick={this.close}>
 					<i className="ion-close"></i>
 				</a>
