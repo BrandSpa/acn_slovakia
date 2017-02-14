@@ -26821,7 +26821,7 @@
 		displayName: 'headerSlide',
 		handleLink: function handleLink(e) {
 			e.preventDefault();
-			if (this.props.isVideo) this.refs.modal.show();
+			if (this.props.isVideo) return this.refs.modal.show();
 			console.log('redirect to url');
 		},
 		render: function render() {
