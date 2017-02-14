@@ -630,7 +630,7 @@ p {
 
 .projects__content__content-left {
   transition: 300ms all;
-  text-align: center; }
+  padding: 90px; }
   .projects__content__content-left h4 {
     color: #fff;
     margin: 100px 0 60px 0; }
