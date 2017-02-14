@@ -26877,13 +26877,13 @@
 				_react2.default.createElement(
 					"div",
 					{ className: "iframe-container" },
-					_react2.default.createElement("iframe", {
+					this.state.show ? _react2.default.createElement("iframe", {
 						src: url + "?autoplay=1",
 						frameborder: "0",
 						height: "315",
 						width: "100%",
 						allowfullscreen: true
-					})
+					}) : ''
 				)
 			);
 		}
