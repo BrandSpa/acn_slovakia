@@ -450,4 +450,6 @@ body {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    text-align: center;
+    color: #fff; }
