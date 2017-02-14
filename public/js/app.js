@@ -27042,7 +27042,7 @@
 					{ className: 'projects__content' },
 					_react2.default.createElement(
 						'div',
-						{ 'class': 'col-4 projects__content__content-left', style: styleLeft },
+						{ className: 'col-4 projects__content__content-left', style: styleLeft },
 						_react2.default.createElement(
 							'h4',
 							null,
@@ -27059,7 +27059,7 @@
 							'DONATE'
 						)
 					),
-					_react2.default.createElement('div', { 'class': 'col-8 projects__content__content-right', style: styleRight })
+					_react2.default.createElement('div', { className: 'col-8 projects__content__content-right', style: styleRight })
 				)
 			);
 		}

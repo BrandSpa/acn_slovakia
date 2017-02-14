@@ -67,12 +67,12 @@ const Projects = React.createClass({
 					</a></li>
 				</ul>
 				<div className="projects__content">
-					<div class="col-4 projects__content__content-left" style={styleLeft}>
+					<div className="col-4 projects__content__content-left" style={styleLeft}>
 						<h4>{title}</h4>
 						<p>{text}</p>
 						<button>DONATE</button>
 					</div>
-					<div class="col-8 projects__content__content-right" style={styleRight}></div>
+					<div className="col-8 projects__content__content-right" style={styleRight}></div>
 				</div>
 			</div>
 		)
