@@ -491,6 +491,10 @@ p {
   text-align: right;
   color: #3c515f; }
 
+.menu li {
+  list-style: none;
+  display: inline-block; }
+
 .nav {
   height: 140px;
   width: 100%;
