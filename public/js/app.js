@@ -26963,6 +26963,10 @@
 				bg: '#B91325'
 			};
 		},
+		componentDidMount: function componentDidMount() {
+			var left = document.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
+			$('.projects__arrow').css({ left: left });
+		},
 		changeContent: function changeContent(num) {
 			this.setState({ bg: backgroundColors[num] });
 			var left = document.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
