@@ -1,10 +1,16 @@
 .projects {
 	&__icons {
 		text-align: center;
-		
+
 		li {
 			display: inline-block;
 			margin-right: 50px;
+		}
+	}
+
+	&__content{
+		&__content-left {
+			transition: 300ms all;
 		}
 	}
 }

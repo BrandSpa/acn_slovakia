@@ -627,3 +627,6 @@ p {
   .projects__icons li {
     display: inline-block;
     margin-right: 50px; }
+
+.projects__content__content-left {
+  transition: 300ms all; }
