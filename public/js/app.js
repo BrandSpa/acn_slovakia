@@ -26730,16 +26730,18 @@
 	  componentDidMount: function componentDidMount() {
 	    var _this = this;
 
-	    setInterval(function () {
+	    this.interval = setInterval(function () {
 	      _this.nextSlide();
 	    }, 2000);
 	  },
 	  nextSlide: function nextSlide() {
+	    clearInterval(this.interval);
 	    var total = this.props.slides.length - 1;
 	    var left = this.state.currentSlide < total ? this.state.currentSlide + 1 : 0;
 	    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
 	  },
 	  prevSlide: function prevSlide() {
+	    clearInterval(this.interval);
 	    var total = this.props.slides.length - 1;
 	    var left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
 	    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });

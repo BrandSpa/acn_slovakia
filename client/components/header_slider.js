@@ -16,18 +16,20 @@ const headerSlider = React.createClass({
   },
 
   componentDidMount() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.nextSlide();
     }, 2000);
   },
 
   nextSlide() {
+    clearInterval(this.interval);
  	  let total = this.props.slides.length - 1;
     let left = this.state.currentSlide < total ? this.state.currentSlide + 1 : 0;
     this.setState({left: '-' + (left * 100) + '%', currentSlide: left});
  },
 
  prevSlide() {
+   clearInterval(this.interval);
   let total = this.props.slides.length - 1;
   let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
     this.setState({left: '-' + (left * 100) + '%', currentSlide: left});
@@ -64,6 +66,7 @@ const headerSlider = React.createClass({
             onClick={this.prevSlide}>
             <i className="ion-chevron-left"></i>
           </button>
+
           <button 
             className="slider__btns__next" 
             onClick={this.nextSlide}>
