@@ -627,19 +627,12 @@ p {
     display: inline-block;
     margin-right: 50px; }
 
-.projects___arrow {
-  position: relative; }
-  .projects___arrow:after {
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(136, 183, 213, 0);
-    border-top-color: #88b7d5;
-    border-width: 30px;
-    margin-left: -30px; }
+.projects__arrow {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #f00; }
 
 .projects__content__content-left {
   transition: 300ms all;
