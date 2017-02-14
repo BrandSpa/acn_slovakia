@@ -26806,7 +26806,7 @@
 			    height = _props.height;
 
 			var bg = 'url(' + imgUrl + ')';
-			var style = { 'backgroundImage': bg, backgroundSize: 'cover', width: width, height: height };
+			var style = { 'backgroundImage': bg, backgroundSize: 'cover', 'cursor': 'pointer', width: width, height: height };
 
 			return _react2.default.createElement(
 				'div',
