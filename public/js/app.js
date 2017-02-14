@@ -26793,7 +26793,7 @@
 		displayName: 'headerSlide',
 		handleLink: function handleLink(e) {
 			e.preventDefault();
-			if (this.props.isVideo) console.log('video open modal', this.refs);
+			if (this.props.isVideo) this.refs.modal.show();
 			console.log('redirect to url');
 		},
 		render: function render() {
