@@ -20,26 +20,17 @@ function bs_header_slider_sc($atts, $content = null) {
       'title' => $at['title_' .$i],
       'subtitle' => $at['subtitle_' .$i],
       'url' => $at['url_' .$i],
-      'imgUrl' => wp_get_attachment_url($images[$i])
+      'imgUrl' => wp_get_attachment_url($images[$i]),
+      'isVideo' => $at['isvideo_'. $i]
     ]);
   }
 
   ob_start();
 ?>
-<?php echo json_encode($slides) ?>
 
 <div
   class="header-slider" 
-  data-props='{"slides": [
-      {"title": "The Pope and ACN", 
-      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 
-      "imgUrl": "http://acninternational.org/wp-content/uploads/2016/11/pope.jpg", 
-      "url": "https://www.youtube-nocookie.com/embed/-dD_yeVMUzo",
-      "isVideo": true
-      },
-      {"title": "The Pope and ACN", "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "imgUrl": "http://religious-freedom-report.org/wp-content/uploads/2016/10/home-isis.jpg", "url": "https://middleeast.acninternational.org/"}
-    ]
-  }'
+  data-props='{"slides": <?php echo json_encode($slides) ?>}'
 ></div>
 
 <?php
