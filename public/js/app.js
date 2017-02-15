@@ -11391,11 +11391,10 @@ var Projects = _react2.default.createClass({
 		var _props$contents = this.props.contents,
 		    contents = _props$contents === undefined ? [] : _props$contents;
 
-		var title = 'Mass stipends';
-		var text = 'In many regions, the faithful are now so poor that they cannot support their priests. Mass stipends are often the only means of existential help in these regions.  Thanks to 1.2 million mass stipends, the livelihood of every ninth priest, on average, can be assured.';
-		var imgUrl = 'http://acninternational.org/wp-content/uploads/2017/02/img9.jpg';
-
-		console.log(contents[1]);
+		var content = contents[1] || {};
+		var title = content.title;
+		var text = content.content;
+		var imgUrl = content.imgUrl;
 
 		var styleRight = {
 			background: 'url(' + imgUrl + ')',
