@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ProjectsIcons from './projects_icons';
 const backgroundColors = {
 	1: '#b91325',
@@ -21,6 +22,7 @@ const Projects = React.createClass({
 	},
 
 	componentDidMount() {
+		this.el = null;
 		setTimeout(() => {
 			let left = document.querySelector('.projects__icons li:nth-child(1)').offsetLeft;
 			$('.projects__arrow').css({ left });
@@ -30,8 +32,8 @@ const Projects = React.createClass({
 
 	changeContent(num) {
 		this.setState({bg: backgroundColors[num]});
-		let left = document.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft;
-		$('.projects__arrow').css({ left });
+		let left = this.el.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft;
+		this.el.querySelector('.projects__arrow').style.left = left;
 	},
 
 	render() {
@@ -51,7 +53,7 @@ const Projects = React.createClass({
 		};
 
 		return (
-			<div className="projects">
+			<div className="projects" ref={el => this.el = el}>
 				<ProjectsIcons ref="projectIcons" onChange={this.changeContent} />
 				<div className="projects__content">
 					<div className="projects__arrow"></div>

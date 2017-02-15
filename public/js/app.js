@@ -26938,6 +26938,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactDom = __webpack_require__(32);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
 	var _projects_icons = __webpack_require__(280);
 
 	var _projects_icons2 = _interopRequireDefault(_projects_icons);
@@ -26964,6 +26968,7 @@
 			};
 		},
 		componentDidMount: function componentDidMount() {
+			this.el = null;
 			setTimeout(function () {
 				var left = document.querySelector('.projects__icons li:nth-child(1)').offsetLeft;
 				$('.projects__arrow').css({ left: left });
@@ -26971,10 +26976,12 @@
 		},
 		changeContent: function changeContent(num) {
 			this.setState({ bg: backgroundColors[num] });
-			var left = document.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
-			$('.projects__arrow').css({ left: left });
+			var left = this.el.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
+			this.el.querySelector('.projects__arrow').style.left = left;
 		},
 		render: function render() {
+			var _this = this;
+
 			var title = 'Mass stipends';
 			var text = 'In many regions, the faithful are now so poor that they cannot support their priests. Mass stipends are often the only means of existential help in these regions.  Thanks to 1.2 million mass stipends, the livelihood of every ninth priest, on average, can be assured.';
 			var imgUrl = 'http://acninternational.org/wp-content/uploads/2017/02/img9.jpg';
@@ -26992,7 +26999,9 @@
 
 			return _react2.default.createElement(
 				'div',
-				{ className: 'projects' },
+				{ className: 'projects', ref: function ref(el) {
+						return _this.el = el;
+					} },
 				_react2.default.createElement(_projects_icons2.default, { ref: 'projectIcons', onChange: this.changeContent }),
 				_react2.default.createElement(
 					'div',
