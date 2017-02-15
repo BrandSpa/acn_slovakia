@@ -7,7 +7,7 @@ function bs_header_slider_sc($atts, $content = null) {
     $attributes =  array_merge($attributes, ['title_' .$i => '' ]);
     $attributes =  array_merge($attributes, ['subtitle_' .$i => '' ]);
     $attributes =  array_merge($attributes, ['url_' .$i => '' ]);
-    $attributes =  array_merge($attributes, ['isvideo' .$i => '' ]);
+    $attributes =  array_merge($attributes, ['isvideo_' .$i => false ]);
   }
 
   $at = shortcode_atts( $attributes , $atts );
@@ -82,7 +82,7 @@ function bs_header_slider_sc($atts, $content = null) {
           'type' => 'checkbox',
           'param_name' => 'isvideo_' .$i,
           'heading' => 'Is video ' .$i,
-          'value' => ''
+          'value' => false
         ]
       );
     }
