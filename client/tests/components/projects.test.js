@@ -12,7 +12,7 @@ describe('component projects', () => {
 	})
 
 	it('should change background', () => {
-		document.body.innerHTML = `<ul class="projects__icons"><li></li></ul> <div class="projects__arrow"></div>`;
+		// document.body.innerHTML = `<ul class="projects__icons"><li></li></ul> <div class="projects__arrow"></div>`;
 		let wrapper = mount(<Projects />);
 		
 		wrapper.instance().changeContent(2);

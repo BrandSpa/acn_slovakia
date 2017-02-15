@@ -1,12 +1,10 @@
 <?php
 
 function bs_header_slider_sc($atts, $content = null) {
-	$attributes = [];
+	$attributes = ['images' => []];
 
-	foreach([1,2,3,4] as $i) {
-    $attributes =   array_merge($attributes, ['title-'.$i => 'this is a title']);
-    $attributes = array_merge($attributes, ['subtitle-'.$i => 'this is a subtitle']);
-    $attributes = array_merge($attributes, ['url-'.$i => '#']);
+  foreach([1,2,3,4] as $i) {
+    array_merge($attributes, ['title-' .$i => '' ]);
   }
 
   $at = shortcode_atts( $attributes , $atts );
@@ -34,3 +32,48 @@ function bs_header_slider_sc($atts, $content = null) {
 }
 
   add_shortcode( 'bs_header_slider', 'bs_header_slider_sc' );
+
+  function bs_header_slider_vc() {
+    $params = [
+                array(
+            "type" => "attach_images",
+            "param_name" => "images"
+          ),
+
+          array(
+            "type" => "textfield",
+            "heading" => "Slider height",
+            "param_name" => "height",
+            "value" => '100px'
+          ),
+
+           array(
+            "type" => "textfield",
+            "heading" => "Slider interval",
+            "param_name" => "interval",
+            "value" => "3000"
+          )
+    ];
+    
+    foreach([1,2,3,4] as $i) {
+      array_merge($params, 
+        [
+          'type' => 'textfield',
+          'param_name' => 'title-' .$i,
+          'heading' => 'title ' .$i,
+          'value' => ''
+        ]
+      );
+    }
+
+    vc_map(
+      array(
+        "name" =>  "BS Header Slider",
+        "base" => "bs_header_slider",
+        "category" =>  "BS",
+        "params" => $params
+      ) 
+    );
+  }
+
+  add_action( 'vc_before_init', 'bs_slider_bg_vc' );
