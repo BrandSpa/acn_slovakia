@@ -1,17 +1,24 @@
 # acn_int
 
-### frontend
+##todos
+- connect form to mailchimp 
+- fix responsive
+- add options pages
+- add polylang
+- look how to do tests to shortcodes
+
+## frontend
 - es6
 - react
 
-### tests
+## tests
 - jest
 - enzyme
 - moxios
 
-### backend
+## backend
 - php
 - wordpress
 
-### tests
+## tests
 - phpunit
