@@ -54,7 +54,7 @@ function bs_header_slider_sc($atts, $content = null) {
             "value" => "3000"
           )
     ];
-    
+
     foreach([1,2,3,4] as $i) {
       array_merge($params, 
         [
@@ -76,4 +76,4 @@ function bs_header_slider_sc($atts, $content = null) {
     );
   }
 
-  add_action( 'vc_before_init', 'bs_slider_bg_vc' );
+  add_action( 'vc_before_init', 'bs_header_slider_vc' );
