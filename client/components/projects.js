@@ -42,7 +42,7 @@ const Projects = React.createClass({
 
 	render() {
 		let { contents = [] } = this.props;
-		let content = contents[1] || {};
+		let content = contents[this.state.section] || {};
 		let title = content.title;
 		let text = content.content;
 		let imgUrl = content.imgUrl;
