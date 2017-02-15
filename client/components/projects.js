@@ -42,11 +42,10 @@ const Projects = React.createClass({
 
 	render() {
 		let { contents = [] } = this.props;
-		let content = contents[this.state.section] || {};
+		let content = contents[this.state.section - 1] || {};
 		let title = content.title;
 		let text = content.content;
 		let imgUrl = content.imgUrl;
-		
 
 		let styleRight = {
 			background: `url(${imgUrl})`,

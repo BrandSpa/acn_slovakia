@@ -11391,7 +11391,7 @@ var Projects = _react2.default.createClass({
 		var _props$contents = this.props.contents,
 		    contents = _props$contents === undefined ? [] : _props$contents;
 
-		var content = contents[this.state.section] || {};
+		var content = contents[this.state.section - 1] || {};
 		var title = content.title;
 		var text = content.content;
 		var imgUrl = content.imgUrl;
