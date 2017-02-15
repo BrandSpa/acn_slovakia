@@ -26962,9 +26962,6 @@
 
 	var Projects = _react2.default.createClass({
 		displayName: 'Projects',
-
-		el: null,
-
 		getInitialState: function getInitialState() {
 			return {
 				bg: '#B91325'

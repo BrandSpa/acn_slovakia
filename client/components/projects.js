@@ -14,7 +14,6 @@ const backgroundColors = {
 };
 
 const Projects = React.createClass({
-	el: null,
 
 	getInitialState() {
 		return {
