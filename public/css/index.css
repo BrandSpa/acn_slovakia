@@ -657,7 +657,9 @@ p {
   transition: 300ms all; }
 
 .projects__content {
-  position: relative; }
+  position: relative;
+  display: -ms-flexbox;
+  display: flex; }
   .projects__content__content-left {
     transition: 300ms all;
     padding: 90px; }
@@ -667,3 +669,5 @@ p {
     .projects__content__content-left p {
       color: #fff;
       margin-bottom: 30px; }
+  .projects__content__content-right {
+    transition: all 300ms; }
