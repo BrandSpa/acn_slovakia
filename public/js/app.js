@@ -11399,12 +11399,12 @@ var Projects = _react2.default.createClass({
 		var styleRight = {
 			background: 'url(' + imgUrl + ')',
 			'backgroundSize': 'cover',
-			height: '500px'
+			minHeight: '500px'
 		};
 
 		var styleLeft = {
 			'background': this.state.bg,
-			height: '500px'
+			minHeight: '500px'
 		};
 
 		return _react2.default.createElement(
