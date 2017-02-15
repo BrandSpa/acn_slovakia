@@ -65,7 +65,7 @@ const Projects = React.createClass({
 					<div className="projects__arrow"></div>
 					<div className="col-4-l projects__content__content-left" style={styleLeft}>
 						<h4>{title}</h4>
-						<div class="projects__content__content-left__text" dangerouslySetInnerHTML={{__html: text}} />
+						<div className="projects__content__content-left__text" dangerouslySetInnerHTML={{__html: text}} />
 						<button style={{background: '#fff', borderColor: '#fff', color: this.state.donateColor}}>DONATE</button>
 					</div>
 					<div className="col-8-l projects__content__content-right" style={styleRight}></div>
