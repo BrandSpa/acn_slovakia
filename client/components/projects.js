@@ -49,12 +49,13 @@ const Projects = React.createClass({
 
 		let styleRight = {
 			background: `url(${imgUrl})`,
-			'backgroundSize': 'cover',
-			minHeight: '500px'
+			backgroundSize: 'cover',
+			minHeight: '500px',
+			display: 'flex'
 		};
 		
 		let styleLeft = {
-			'background': this.state.bg,
+			background: this.state.bg,
 			minHeight: '500px'
 		};
 

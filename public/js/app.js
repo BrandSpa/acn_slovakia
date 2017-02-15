@@ -11398,12 +11398,13 @@ var Projects = _react2.default.createClass({
 
 		var styleRight = {
 			background: 'url(' + imgUrl + ')',
-			'backgroundSize': 'cover',
-			minHeight: '500px'
+			backgroundSize: 'cover',
+			minHeight: '500px',
+			display: 'flex'
 		};
 
 		var styleLeft = {
-			'background': this.state.bg,
+			background: this.state.bg,
 			minHeight: '500px'
 		};
 
