@@ -41,7 +41,7 @@ const Projects = React.createClass({
 	},
 
 	render() {
-		let { contents } = this.props;
+		let { contents = [] } = this.props;
 		let title = 'Mass stipends';
 		let text = 'In many regions, the faithful are now so poor that they cannot support their priests. Mass stipends are often the only means of existential help in these regions.  Thanks to 1.2 million mass stipends, the livelihood of every ninth priest, on average, can be assured.';
 		let imgUrl = 'http://acninternational.org/wp-content/uploads/2017/02/img9.jpg';

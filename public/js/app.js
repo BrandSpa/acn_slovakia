@@ -11388,7 +11388,8 @@ var Projects = _react2.default.createClass({
 	render: function render() {
 		var _this2 = this;
 
-		var contents = this.props.contents;
+		var _props$contents = this.props.contents,
+		    contents = _props$contents === undefined ? [] : _props$contents;
 
 		var title = 'Mass stipends';
 		var text = 'In many regions, the faithful are now so poor that they cannot support their priests. Mass stipends are often the only means of existential help in these regions.  Thanks to 1.2 million mass stipends, the livelihood of every ninth priest, on average, can be assured.';
