@@ -11425,11 +11425,7 @@ var Projects = _react2.default.createClass({
 						null,
 						title
 					),
-					_react2.default.createElement(
-						'p',
-						null,
-						_react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: text } })
-					),
+					_react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: text } }),
 					_react2.default.createElement(
 						'button',
 						{ style: { background: '#fff', borderColor: '#fff', color: this.state.donateColor } },
