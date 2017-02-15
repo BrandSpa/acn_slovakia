@@ -24,8 +24,8 @@ const Projects = React.createClass({
 	componentDidMount() {
 
 		setTimeout(() => {
-			let left = document.querySelector('.projects__icons li:nth-child(1)').offsetLeft;
-			$('.projects__arrow').css({ left });
+			let left = this.el.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft;
+			this.el.querySelector('.projects__arrow').style.left = `${left}px`;
 		}, 1000);
 	
 	},
@@ -34,7 +34,6 @@ const Projects = React.createClass({
 		this.setState({bg: backgroundColors[num]});
 
 		let left = this.el.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft;
-		console.log(left);
 		this.el.querySelector('.projects__arrow').style.left = `${left}px`;
 	},
 

@@ -26968,21 +26968,21 @@
 			};
 		},
 		componentDidMount: function componentDidMount() {
+			var _this = this;
 
 			setTimeout(function () {
-				var left = document.querySelector('.projects__icons li:nth-child(1)').offsetLeft;
-				$('.projects__arrow').css({ left: left });
+				var left = _this.el.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
+				_this.el.querySelector('.projects__arrow').style.left = left + 'px';
 			}, 1000);
 		},
 		changeContent: function changeContent(num) {
 			this.setState({ bg: backgroundColors[num] });
 
 			var left = this.el.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
-			console.log(left);
 			this.el.querySelector('.projects__arrow').style.left = left + 'px';
 		},
 		render: function render() {
-			var _this = this;
+			var _this2 = this;
 
 			var title = 'Mass stipends';
 			var text = 'In many regions, the faithful are now so poor that they cannot support their priests. Mass stipends are often the only means of existential help in these regions.  Thanks to 1.2 million mass stipends, the livelihood of every ninth priest, on average, can be assured.';
@@ -27002,7 +27002,7 @@
 			return _react2.default.createElement(
 				'div',
 				{ className: 'projects', ref: function ref(el) {
-						return _this.el = el;
+						return _this2.el = el;
 					} },
 				_react2.default.createElement(_projects_icons2.default, { ref: 'projectIcons', onChange: this.changeContent }),
 				_react2.default.createElement(
