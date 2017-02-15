@@ -10,7 +10,7 @@ const backgroundColors = {
 	6: '#689038',
 	7: '#7a2d04',
 	8: '#b27009',
-	9: '#e6bb2f',
+	9: '#E4A70F',
 };
 
 const Projects = React.createClass({
