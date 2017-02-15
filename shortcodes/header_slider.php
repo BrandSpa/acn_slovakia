@@ -1,7 +1,7 @@
 <?php
 
 function bs_header_slider_sc($atts, $content = null) {
-	$attributes = ['images' => []];
+	$attributes = ['images' => ''];
 
   foreach([1,2,3,4] as $i) {
     $attributes =  array_merge($attributes, ['title_' .$i => '' ]);
