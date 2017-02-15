@@ -17,7 +17,8 @@ const Projects = React.createClass({
 
 	getInitialState() {
 		return {
-			bg: '#B91325'
+			bg: '#B91325',
+			donateColor: '#B91325'
 		}
 	},
 
@@ -31,7 +32,8 @@ const Projects = React.createClass({
 	},
 
 	changeContent(num) {
-		this.setState({bg: backgroundColors[num]});
+		let color = backgroundColors[num];
+		this.setState({bg: color, donateColor: color});
 
 		let left = this.el.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft;
 		this.el.querySelector('.projects__arrow').style.left = `${left}px`;
@@ -54,14 +56,14 @@ const Projects = React.createClass({
 		};
 
 		return (
-				<div className="projects" ref={el => this.el = el}>
+			<div className="projects" ref={el => this.el = el}>
 				<ProjectsIcons ref="projectIcons" onChange={this.changeContent} />
 				<div className="projects__content">
 					<div className="projects__arrow"></div>
 					<div className="col-4-l projects__content__content-left" style={styleLeft}>
 						<h4>{title}</h4>
 						<p>{text}</p>
-						<button>DONATE</button>
+						<button style={{background: '#fff', color: this.state.donateColor}}>DONATE</button>
 					</div>
 					<div className="col-8-l projects__content__content-right" style={styleRight}></div>
 				</div>
