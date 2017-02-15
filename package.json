@@ -6,6 +6,10 @@
     "url": "https://github.com/developersoul/acn_int.git",
     "type": "git"
   },
+  "scripts": {
+    "test": "yarn jest -- --watch",
+    "production": "cd production && webpack --p"
+  },
   "author": "Alejandro Sanabria <alesanabriav@gmail.com>",
   "license": "MIT",
   "dependencies": {
