@@ -56,7 +56,7 @@ function bs_header_slider_sc($atts, $content = null) {
     ];
 
     foreach([1,2,3,4] as $i) {
-      $params = array_merge($params, 
+        array_push($params, 
         [
           'type' => 'textfield',
           'param_name' => 'title_' .$i,
