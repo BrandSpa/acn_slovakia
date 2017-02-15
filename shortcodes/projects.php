@@ -69,7 +69,7 @@ function bs_projects_sc($atts, $content = null) {
 
     vc_map(
       array(
-        "name" =>  "BS Header Slider",
+        "name" =>  "BS Projects",
         "base" => "bs_projects",
         "category" =>  "BS",
         "params" => $params
