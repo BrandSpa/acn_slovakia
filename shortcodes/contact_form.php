@@ -9,6 +9,7 @@ function bs_contact_form_sc($atts, $content = null) {
 		'name-validation' => 'Name required',
 		'lastname-validation' => 'lastname required',
 		'email-validation' => 'Email required',
+		'button-text' => 'PRAY'
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -20,6 +21,9 @@ function bs_contact_form_sc($atts, $content = null) {
 	class="contact-form" 
 	data-props='{
 		"country": "Germany",
+		"texts": {
+			"button": "<?php echo $at['button-text'] ?>"
+		},
 		"placeholders": {
 			"name": "<?php echo $at['name-placeholder'] ?>",
 			"lastname": "<?php echo $at['lastname-placeholder'] ?>",
@@ -81,8 +85,15 @@ add_shortcode( 'bs_contact_form', 'bs_contact_form_sc' );
         "param_name" => "email-validation",
         "value" => 'Email required'
 			],
+
+			[
+        "type" => "textfield",
+        "heading" => "button text",
+        "param_name" => "button-text",
+        "value" => 'PRAY'
+			],
 	];
-	
+
   	vc_map(
       array(
         "name" =>  "BS Contact Form",

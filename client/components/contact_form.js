@@ -24,7 +24,8 @@ const contactForm = React.createClass({
   getDefaultProps() {
     return {
       validationMessages: {},
-      placeholders: {}
+      placeholders: {},
+      texts: {}
     }
   },
 
@@ -99,7 +100,7 @@ const contactForm = React.createClass({
 
   render() {
     let { contact, errors } = this.state;
-    let { placeholders, validationMessages } = this.props;
+    let { placeholders, validationMessages, texts } = this.props;
 
     return (
       <form style={{'textAlign': 'center'}} className="form-inline" onSubmit={this.handleSubmit}>
@@ -147,7 +148,7 @@ const contactForm = React.createClass({
             ))}
           </select>
         </div>
-        <button style={{'marginLeft': '-2px'}} onClick={this.handleSubmit}>PRAY</button>
+        <button style={{'marginLeft': '-2px'}} onClick={this.handleSubmit}>{texts.button}</button>
       </form>
     );
   }
