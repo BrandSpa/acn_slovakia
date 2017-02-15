@@ -21,7 +21,7 @@ function bs_header_slider_sc($atts, $content = null) {
         'title' => $at['title_' .$i],
         'subtitle' => $at['subtitle_' .$i],
         'url' => $at['url_' .$i],
-        'imgUrl' => wp_get_attachment_image_src($images[$i], 'full'),
+        'imgUrl' => wp_get_attachment_image_src($images[$i], 'full')[0],
         'isVideo' => $at['isvideo_'. $i]
       ]);
     }
