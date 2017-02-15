@@ -26982,7 +26982,7 @@
 
 			var left = this.el.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
 			console.log(left);
-			this.el.querySelector('.projects__arrow').style.left = left;
+			this.el.querySelector('.projects__arrow').style.left = left + 'px';
 		},
 		render: function render() {
 			var _this = this;
