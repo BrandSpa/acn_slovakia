@@ -26981,6 +26981,7 @@
 			this.setState({ bg: backgroundColors[num] });
 
 			var left = this.el.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
+			console.log(left);
 			this.el.querySelector('.projects__arrow').style.left = left;
 		},
 		render: function render() {
