@@ -14,7 +14,8 @@ function bs_header_slider_sc($atts, $content = null) {
   $slides = [];
   
   foreach([1,2,3,4] as $i) {
-    $images = explode($i, $at['images']);
+    $images = explode(',', $at['images']);
+
     if(isset($images[$i])) {
       array_push($slides, [
         'title' => $at['title_' .$i],
