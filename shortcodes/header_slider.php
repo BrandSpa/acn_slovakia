@@ -15,14 +15,16 @@ function bs_header_slider_sc($atts, $content = null) {
   
   foreach([1,2,3,4] as $i) {
     $images = explode($i, $at['images']);
-
-    array_push($slides, [
-      'title' => $at['title_' .$i],
-      'subtitle' => $at['subtitle_' .$i],
-      'url' => $at['url_' .$i],
-      'imgUrl' => wp_get_attachment_url($images[$i]),
-      'isVideo' => $at['isvideo_'. $i]
-    ]);
+    if(isset($images[$i])) {
+      array_push($slides, [
+        'title' => $at['title_' .$i],
+        'subtitle' => $at['subtitle_' .$i],
+        'url' => $at['url_' .$i],
+        'imgUrl' => wp_get_attachment_url($images[$i]),
+        'isVideo' => $at['isvideo_'. $i]
+      ]);
+    }
+ 
   }
 
   ob_start();
