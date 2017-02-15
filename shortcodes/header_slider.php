@@ -15,13 +15,13 @@ function bs_header_slider_sc($atts, $content = null) {
   
   foreach([1,2,3,4] as $i) {
     $images = explode(',', $at['images']);
-
-    if(isset($images[$i])) {
+    $indexImg = $i - 1;
+    if(isset($images[$indexImg])) {
       array_push($slides, [
         'title' => $at['title_' .$i],
         'subtitle' => $at['subtitle_' .$i],
         'url' => $at['url_' .$i],
-        'imgUrl' => wp_get_attachment_image_src($images[$i], 'full')[0],
+        'imgUrl' => wp_get_attachment_image_src($images[$indexImg], 'full')[0],
         'isVideo' => $at['isvideo_'. $i]
       ]);
     }
