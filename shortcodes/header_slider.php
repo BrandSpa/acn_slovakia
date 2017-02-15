@@ -3,7 +3,7 @@
 function bs_header_slider_sc($atts, $content = null) {
 	$attributes = ['images' => ''];
   $arrAtts = [1,2,3,4];
-  
+
   foreach($arrAtts as $i) {
     $attributes =  array_merge($attributes, ['title_' .$i => '' ]);
     $attributes =  array_merge($attributes, ['subtitle_' .$i => '' ]);
@@ -45,6 +45,7 @@ function bs_header_slider_sc($atts, $content = null) {
   add_shortcode( 'bs_header_slider', 'bs_header_slider_sc' );
 
   function bs_header_slider_vc() {
+    $arrAtts = [1,2,3,4];
     $params = [
                 array(
             "type" => "attach_images",

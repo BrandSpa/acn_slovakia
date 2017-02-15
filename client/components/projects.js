@@ -54,18 +54,63 @@ const Projects = React.createClass({
 		};
 
 		return (
-			<div className="projects" ref={el => this.el = el}>
-				<ProjectsIcons ref="projectIcons" onChange={this.changeContent} />
-				<div className="projects__content">
-					<div className="projects__arrow"></div>
-					<div className="col-4-l projects__content__content-left" style={styleLeft}>
-						<h4>{title}</h4>
-						<p>{text}</p>
-						<button>DONATE</button>
-					</div>
-					<div className="col-8-l projects__content__content-right" style={styleRight}></div>
-				</div>
-			</div>
+			<div class="videos">
+  <div class="videos__main">
+    <a href="#" class="videos__open-modal" >
+  	<img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+     </a>
+  </div>
+  
+  <div class="videos__carousel">
+      <button class="videos__carousel__up"></button>
+    <div class="videos__carousel__container">
+  
+      <div class="videos__carousel__item">
+        <a href="#" class="videos__open-modal" >
+          <img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+         </a>
+        <a href="#" class="videos__open-modal" >
+          <img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+         </a>
+      </div>
+      <div class="videos__carousel__item">
+          <a href="#" class="videos__open-modal" >
+              <img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+          </a>
+          <a href="#" class="videos__open-modal" >
+              <img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+          </a>
+      </div>
+          <div class="videos__carousel__item">
+          <a href="#" class="videos__open-modal" >
+              <img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+          </a>
+          <a href="#" class="videos__open-modal" >
+              <img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+          </a>
+      </div>
+         <div class="videos__carousel__item">
+          <a href="#" class="videos__open-modal" >
+              <img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+          </a>
+          <a href="#" class="videos__open-modal" >
+              <img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+          </a>
+      </div>
+         <div class="videos__carousel__item">
+          <a href="#" class="videos__open-modal" >
+              <img src="https://app.unbouncepreview.com/publish/assets/1532cdcb-a832-465e-9352-749839d5ee18/cd3dab33-fotoslide-1.jpg" />
+          </a>
+        
+      </div>
+    </div>
+     <button class="videos__carousel__down"></button>
+    </div>
+   
+   
+  </div>
+
+
 		)
 	}
 });
