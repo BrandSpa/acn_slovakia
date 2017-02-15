@@ -11428,7 +11428,7 @@ var Projects = _react2.default.createClass({
 					_react2.default.createElement(
 						'p',
 						null,
-						_react2.default.createElement('div', { dangerouslySetInnerHTML: { html: text } })
+						_react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: text } })
 					),
 					_react2.default.createElement(
 						'button',
