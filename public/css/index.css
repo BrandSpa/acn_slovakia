@@ -666,7 +666,7 @@ p {
     .projects__content__content-left h4 {
       color: #fff;
       margin: 0 0 60px 0; }
-    .projects__content__content-left p {
+    .projects__content__content-left__text {
       color: #fff;
       margin-bottom: 30px; }
   .projects__content__content-right {
