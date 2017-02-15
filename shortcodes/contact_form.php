@@ -41,3 +41,56 @@ function bs_contact_form_sc($atts, $content = null) {
 }
 
 add_shortcode( 'bs_contact_form', 'bs_contact_form_sc' );
+
+  function bs_contact_form_vc() {
+		$params = [
+			[
+        "type" => "textfield",
+        "heading" => "name placeholder",
+        "param_name" => "name-placeholder",
+        "value" => 'Name'
+			],
+			[
+        "type" => "textfield",
+        "heading" => "lastname placeholder",
+        "param_name" => "lastname-placeholder",
+        "value" => 'Lastname'
+			],
+			[
+        "type" => "textfield",
+        "heading" => "email placeholder",
+        "param_name" => "email-placeholder",
+        "value" => 'Email'
+			],
+
+				[
+        "type" => "textfield",
+        "heading" => "name validation",
+        "param_name" => "name-validation",
+        "value" => 'Name required'
+			],
+			[
+        "type" => "textfield",
+        "heading" => "lastname validation",
+        "param_name" => "lastname-validation",
+        "value" => 'Lastname required'
+			],
+			[
+        "type" => "textfield",
+        "heading" => "email validation",
+        "param_name" => "email-validation",
+        "value" => 'Email required'
+			],
+	];
+	
+  	vc_map(
+      array(
+        "name" =>  "BS Contact Form",
+        "base" => "bs_contact_form",
+        "category" =>  "BS",
+        "params" => $params
+      ) 
+    );
+  }
+
+  add_action( 'vc_before_init', 'bs_contact_form_vc' );
