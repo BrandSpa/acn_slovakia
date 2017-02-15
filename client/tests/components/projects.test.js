@@ -16,7 +16,7 @@ describe('component projects', () => {
 		let wrapper = mount(<Projects />);
 		
 		wrapper.instance().changeContent(2);
-		expect(wrapper.state()).toBe('#00355f');
+		expect(wrapper.state().bg).toBe('#00355f');
 	})
 
 })

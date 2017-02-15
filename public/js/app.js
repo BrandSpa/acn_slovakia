@@ -26971,7 +26971,7 @@
 			var _this = this;
 
 			setTimeout(function () {
-				var left = _this.el.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
+				var left = _this.el.querySelector('.projects__icons li:nth-child(' + 1 + ')').offsetLeft;
 				_this.el.querySelector('.projects__arrow').style.left = left + 'px';
 			}, 1000);
 		},
