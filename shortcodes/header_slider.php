@@ -4,7 +4,7 @@ function bs_header_slider_sc($atts, $content = null) {
 	$attributes = ['images' => []];
 
   foreach([1,2,3,4] as $i) {
-   $attributes =  array_merge($attributes, ['title-' .$i => '' ]);
+   $attributes =  array_merge($attributes, ['title_' .$i => '' ]);
   }
 
   $at = shortcode_atts( $attributes , $atts );
@@ -59,7 +59,7 @@ function bs_header_slider_sc($atts, $content = null) {
       $params = array_merge($params, 
         [
           'type' => 'textfield',
-          'param_name' => 'title-' .$i,
+          'param_name' => 'title_' .$i,
           'heading' => 'title ' .$i,
           'value' => ''
         ]
