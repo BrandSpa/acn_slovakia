@@ -5,13 +5,16 @@ function bs_header_slider_sc($atts, $content = null) {
 
   foreach([1,2,3,4] as $i) {
     $attributes =  array_merge($attributes, ['title_' .$i => '' ]);
+    $attributes =  array_merge($attributes, ['subtitle_' .$i => '' ]);
+    $attributes =  array_merge($attributes, ['url_' .$i => '' ]);
+    $attributes =  array_merge($attributes, ['isvideo' .$i => '' ]);
   }
 
   $at = shortcode_atts( $attributes , $atts );
 
   ob_start();
 ?>
-
+<?php var_dump($at); ?>
 <div
   class="header-slider" 
   data-props='{"slides": [
@@ -73,6 +76,12 @@ function bs_header_slider_sc($atts, $content = null) {
           'type' => 'textfield',
           'param_name' => 'url_' .$i,
           'heading' => 'url ' .$i,
+          'value' => ''
+        ],
+        [
+          'type' => 'checkbox',
+          'param_name' => 'isvideo_' .$i,
+          'heading' => 'Is video ' .$i,
           'value' => ''
         ]
       );
