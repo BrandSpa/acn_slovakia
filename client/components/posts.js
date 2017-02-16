@@ -39,8 +39,7 @@ const Posts = React.createClass({
 			itemSelector: '.grid-item',
 			percentPosition: true,
 			masonry: {
-				columnWidth: '.grid-sizer',
-				gutter: '.gutter-sizer'
+				columnWidth: '.grid-sizer'
 			}
 		});
 	},
@@ -51,7 +50,6 @@ const Posts = React.createClass({
 		return (
 			<div ref={grid => this.grid = grid}>
 			<div className="grid-sizer"></div>
-			<div className="gutter-sizer"></div>
 				{posts.map((post, i) => {
 					return (
 						<div key={i} className="grid-item">

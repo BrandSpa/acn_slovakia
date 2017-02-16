@@ -13317,8 +13317,7 @@ var Posts = _react2.default.createClass({
 			itemSelector: '.grid-item',
 			percentPosition: true,
 			masonry: {
-				columnWidth: '.grid-sizer',
-				gutter: '.gutter-sizer'
+				columnWidth: '.grid-sizer'
 			}
 		});
 	},
@@ -13334,7 +13333,6 @@ var Posts = _react2.default.createClass({
 					return _this2.grid = grid;
 				} },
 			_react2.default.createElement('div', { className: 'grid-sizer' }),
-			_react2.default.createElement('div', { className: 'gutter-sizer' }),
 			posts.map(function (post, i) {
 				return _react2.default.createElement(
 					'div',

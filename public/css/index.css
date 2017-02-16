@@ -501,9 +501,6 @@ p {
   .grid-item__content {
     background: #f1f1f1; }
 
-.gutter-sizer {
-  width: 1%; }
-
 .grid-item, .grid-sizer {
   width: 25%; }
   @media (max-width: 767px) {
