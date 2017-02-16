@@ -27536,6 +27536,10 @@ var _accordion = __webpack_require__(282);
 
 var _accordion2 = _interopRequireDefault(_accordion);
 
+var _posts = __webpack_require__(283);
+
+var _posts2 = _interopRequireDefault(_posts);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
@@ -27543,6 +27547,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".section-video", _section_video2.default);
 (0, _mutiple_render2.default)(".projects-container", _projects2.default);
 (0, _mutiple_render2.default)(".bs-accordion", _accordion2.default);
+(0, _mutiple_render2.default)(".bs-posts", _posts2.default);
 
 /***/ }),
 /* 281 */
@@ -27674,6 +27679,93 @@ var Accordion = _react2.default.createClass({
 });
 
 exports.default = Accordion;
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(19);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _qs = __webpack_require__(147);
+
+var _qs2 = _interopRequireDefault(_qs);
+
+var _axios = __webpack_require__(111);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _isotipe = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"isotipe\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()));
+
+var _isotipe2 = _interopRequireDefault(_isotipe);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Posts = _react2.default.createClass({
+	displayName: 'Posts',
+	getInitialState: function getInitialState() {
+		return {
+			posts: []
+		};
+	},
+	componentWillMount: function componentWillMount() {
+		var _this = this;
+
+		var data = _qs2.default.stringify({ action: "get_posts" });
+
+		_axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
+			_this.setState({ posts: res.data });
+		}).catch(function (err) {
+			return console.error(err);
+		});
+	},
+	componentDidMount: function componentDidMount() {
+		var grid = this.grid;
+		var iso = new Isotope(grid, {
+			// options...
+			itemSelector: '.grid-item',
+			masonry: {
+				columnWidth: 200
+			}
+		});
+	},
+	render: function render() {
+		var _this2 = this;
+
+		return _react2.default.createElement(
+			'div',
+			{ ref: function ref(grid) {
+					return _this2.grid = grid;
+				} },
+			posts.map(function (post, i) {
+				_react2.default.createElement(
+					'div',
+					{ key: i, className: 'grid-item' },
+					_react2.default.createElement(
+						'h5',
+						null,
+						post.post_title
+					),
+					_react2.default.createElement(
+						'p',
+						null,
+						post.post_content
+					)
+				);
+			})
+		);
+	}
+});
+
+exports.default = Posts;
 
 /***/ })
 /******/ ]);

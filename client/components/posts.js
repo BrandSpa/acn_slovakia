@@ -4,8 +4,44 @@ import request from 'axios';
 import Isotipe from 'isotipe';
 
 const Posts = React.createClass({
-	render() {
+	getInitialState() {
+		return {
+			posts: []
+		}
+	},
 
+	componentWillMount() {
+		let data = qs.stringify({ action: "get_posts"});
+
+    request.post("/wp-admin/admin-ajax.php", data)
+    .then(res => {
+      this.setState({ posts: res.data });
+    })
+    .catch(err => console.error(err));
+	},
+
+	componentDidMount() {
+		const grid = this.grid;
+		const iso = new Isotope( grid, {
+			// options...
+			itemSelector: '.grid-item',
+			masonry: {
+				columnWidth: 200
+			}
+		});
+	},
+
+	render() {
+		return (
+			<div ref={grid => this.grid = grid}>
+				{posts.map((post, i) => {
+					<div key={i} className="grid-item">
+						<h5>{post.post_title}</h5>
+						<p>{post.post_content}</p>
+					</div>
+				})}
+			</div>
+		)
 	}
 });
 
