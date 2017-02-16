@@ -11,7 +11,7 @@ add_action( 'wp_ajax_nopriv_get_posts', 'wp_get_posts' );
 add_action( 'wp_ajax_get_posts', 'wp_get_posts' );
 
 function wp_get_posts() {
-  $res = get_posts();
+  $res = bs_get_posts();
   header('Content-type: application/json');
   echo json_encode($res);
   die();
