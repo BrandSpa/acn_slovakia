@@ -39,6 +39,7 @@ const Posts = React.createClass({
 		return (
 			<div ref={grid => this.grid = grid}>
 			<div className="grid-sizer"></div>
+			<div className="gutter-sizer"></div>
 				{posts.map((post, i) => {
 					return (
 						<div key={i} className="grid-item">
