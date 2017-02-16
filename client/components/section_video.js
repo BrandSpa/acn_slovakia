@@ -17,8 +17,9 @@ const SectionVideo = React.createClass({
 	render() {
 		let linkStyle = {
 			display: 'flex',
-			width: '100%',
-			height: '100%',
+			width: '100px',
+			height: '70px',
+			margin: '0 auto',
 			background: `url(${this.props.imgUrl})`,
 			backgroundSize: 'cover'
 		};
