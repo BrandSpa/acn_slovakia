@@ -17,7 +17,7 @@ const Modal = React.createClass({
 	},
 
 	componentDidMount() {
-		document.addEventListener("keyPress", this.handleEscKey, false);
+		document.addEventListener("keypress", this.handleEscKey, false);
 	},
 
 	handleEscKey(e) {
