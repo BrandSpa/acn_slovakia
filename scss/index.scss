@@ -165,12 +165,16 @@ p {
 
 .offices-list {
 	min-height: 140px;
-	
+
 	li {
 		display: inline-block;
-		padding: 0 70px;
-		border: 1px #fff solid;
+		border-right: 1px #fff solid;
+		a {
+			display: block;
+			padding: 0 70px;
+		}
 	}
+
 }
 @import 'menu';
 @import 'header';
