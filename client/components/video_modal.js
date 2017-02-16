@@ -20,6 +20,10 @@ const Modal = React.createClass({
 		document.addEventListener("keydown", this.handleEscKey, false);
 	},
 
+	componentWillUnmount() {
+		document.removeEventListener("keydown", this.handleEscKey, false);
+	},
+
 	handleEscKey(e) {
 		if(e.keyCode == 27) this.setState({show: false});
 	},

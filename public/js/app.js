@@ -12603,6 +12603,9 @@ var Modal = _react2.default.createClass({
 	componentDidMount: function componentDidMount() {
 		document.addEventListener("keydown", this.handleEscKey, false);
 	},
+	componentWillUnmount: function componentWillUnmount() {
+		document.removeEventListener("keydown", this.handleEscKey, false);
+	},
 	handleEscKey: function handleEscKey(e) {
 		if (e.keyCode == 27) this.setState({ show: false });
 	},
