@@ -28,7 +28,7 @@ const Posts = React.createClass({
 			percentPosition: true,
 			masonry: {
 				columnWidth: '.grid-sizer',
-				gutter: 30
+				gutter: '.gutter-sizer'
 			}
 		});
 	},

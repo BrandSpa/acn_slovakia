@@ -114,9 +114,9 @@ p {
   border: 2px solid #333;
   border-color: hsla(0, 0%, 0%, 0.7);
 }
-
+.gutter-sizer { width: 1%; }
 .grid-item, .grid-sizer {
-	width: 25%;
+	width: 24%;
 }
 
 @import 'menu';
