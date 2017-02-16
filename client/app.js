@@ -14,6 +14,6 @@ multipleRender(".projects-container", Projects);
 multipleRender(".bs-accordion", Accordion);
 multipleRender(".bs-posts", Posts);
 
-const currentLang = $('.current-lang');
+const currentLang = $('.current-lang > a');
 const newText = `${currentLang.text()} <i class="ion-ios-arrow-down"></i>`;
 currentLang.html(newText);
