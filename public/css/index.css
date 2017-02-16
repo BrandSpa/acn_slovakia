@@ -507,6 +507,9 @@ p {
         color: #324049;
         padding-bottom: 15px;
         border-bottom: 1px solid #E34E6B; }
+        .grid-item__content__texts h5 a {
+          color: #324049;
+          text-decoration: none; }
 
 .grid-item, .grid-sizer {
   width: 25%; }
