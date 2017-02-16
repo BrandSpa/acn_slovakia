@@ -46,7 +46,7 @@ const Posts = React.createClass({
 
 	render() {
 		const { posts } = this.state;
-
+		
 		return (
 			<div ref={grid => this.grid = grid}>
 			<div className="grid-sizer"></div>
