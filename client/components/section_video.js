@@ -2,6 +2,13 @@ import React from 'react';
 import VideoModal from './video_modal';
 
 const SectionVideo = React.createClass({
+	getDefaultProps() {
+		return {
+			'imgUrl': 'http://acninternational.org/wp-content/uploads/2017/02/boy.jpg',
+			'url': 'https://www.youtube.com/embed/_lQvw2vSDbs'
+		}
+	},
+
 	showVideo(e) {
 		e.preventDefault();
 		this.modal.show()

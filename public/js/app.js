@@ -27549,6 +27549,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var SectionVideo = _react2.default.createClass({
 	displayName: 'SectionVideo',
+	getDefaultProps: function getDefaultProps() {
+		return {
+			'imgUrl': 'http://acninternational.org/wp-content/uploads/2017/02/boy.jpg',
+			'url': 'https://www.youtube.com/embed/_lQvw2vSDbs'
+		};
+	},
 	showVideo: function showVideo(e) {
 		e.preventDefault();
 		this.modal.show();
