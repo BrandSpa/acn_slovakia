@@ -17,12 +17,12 @@ class MailchimpTest extends TestCase
   	}';
 
 		$listId = "somelistid";
-		$apiKey= "somerandomapikey-us13";
+		$apiKey= "somerandomapikeyπ-us13";
 		$subscription = mc_subscribe($data, $listId, $apiKey);
 		$response = json_decode($subscription);
 
 		$this->assertObjectHasAttribute('id', $response);
-		$this->assertObjectHasAttribute('email_address', $response);
+		$this->assertEquals('email_address', $response);
 	}
 }
 
