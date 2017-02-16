@@ -32,6 +32,8 @@ const Posts = React.createClass({
 	},
 
 	render() {
+		const { posts } = this.state;
+		
 		return (
 			<div ref={grid => this.grid = grid}>
 				{posts.map((post, i) => {

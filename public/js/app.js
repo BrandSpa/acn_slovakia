@@ -13310,6 +13310,9 @@ var Posts = _react2.default.createClass({
 	render: function render() {
 		var _this2 = this;
 
+		var posts = this.state.posts;
+
+
 		return _react2.default.createElement(
 			'div',
 			{ ref: function ref(grid) {
