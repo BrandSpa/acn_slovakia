@@ -13347,7 +13347,11 @@ var Posts = _react2.default.createClass({
 							_react2.default.createElement(
 								'h5',
 								null,
-								post.post_title
+								_react2.default.createElement(
+									'a',
+									{ href: post.guid },
+									post.post_title
+								)
 							),
 							_react2.default.createElement(
 								'p',
