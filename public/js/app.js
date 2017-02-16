@@ -12344,7 +12344,7 @@ var headerSlide = _react2.default.createClass({
 	handleLink: function handleLink(e) {
 		e.preventDefault();
 		if (this.props.isVideo) return this.refs.modal.show();
-		console.log('redirect to url');
+		window.url = this.props.url;
 	},
 	render: function render() {
 		var _props = this.props,
@@ -27515,6 +27515,10 @@ var _header_slider = __webpack_require__(108);
 
 var _header_slider2 = _interopRequireDefault(_header_slider);
 
+var _section_video = __webpack_require__(281);
+
+var _section_video2 = _interopRequireDefault(_section_video);
+
 var _projects = __webpack_require__(109);
 
 var _projects2 = _interopRequireDefault(_projects);
@@ -27523,7 +27527,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
 (0, _mutiple_render2.default)(".header-slider", _header_slider2.default);
+(0, _mutiple_render2.default)(".section-video", _section_video2.default);
 (0, _mutiple_render2.default)(".projects-container", _projects2.default);
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: Unterminated JSX contents (23:8)\n\n\u001b[0m \u001b[90m 21 | \u001b[39m\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mVideoModal\u001b[39m ref\u001b[33m=\u001b[39m{modal \u001b[33m=>\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmodal \u001b[33m=\u001b[39m modal} url\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39murl} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 22 | \u001b[39m\t\t\t\t\u001b[33m<\u001b[39m\u001b[33ma\u001b[39m href\u001b[33m=\u001b[39m\u001b[32m\"#\"\u001b[39m style\u001b[33m=\u001b[39m{linkStyle} onClick\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mshowVideo}\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33ma\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 | \u001b[39m\t\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    | \u001b[39m\t\t\t     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 | \u001b[39m\t\t)\n \u001b[90m 25 | \u001b[39m\t}\n \u001b[90m 26 | \u001b[39m})\u001b[33m;\u001b[39m\u001b[0m\n");
 
 /***/ })
 /******/ ]);
