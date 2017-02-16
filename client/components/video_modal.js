@@ -45,8 +45,9 @@ const Modal = React.createClass({
 							height="315" 
 							width="100%" 
 							allowFullScreen
-						></iframe>			
-						: ''}		
+						>
+						</iframe>			
+					: ''}		
 					</div>
 				
 			</div>

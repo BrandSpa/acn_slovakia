@@ -27550,6 +27550,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _react = __webpack_require__(19);
 
 var _react2 = _interopRequireDefault(_react);
@@ -27564,8 +27566,9 @@ var SectionVideo = _react2.default.createClass({
 	displayName: 'SectionVideo',
 	getDefaultProps: function getDefaultProps() {
 		return {
-			'imgUrl': 'http://acninternational.org/wp-content/uploads/2017/02/Play.png',
-			'url': 'https://www.youtube.com/embed/_lQvw2vSDbs'
+			imgUrl: 'http://acninternational.org/wp-content/uploads/2017/02/Play.png',
+			url: 'https://www.youtube.com/embed/_lQvw2vSDbs',
+			imageStyle: {}
 		};
 	},
 	showVideo: function showVideo(e) {
@@ -27576,10 +27579,15 @@ var SectionVideo = _react2.default.createClass({
 		var _this = this;
 
 		var linkStyle = {
-			display: 'flex',
+			display: 'flex'
+		};
+
+		var imageStyle = {
 			width: '100px',
 			margin: '0 auto'
 		};
+
+		imageStyle = _extends({}, imageStyle, this.props.imageStyle);
 
 		return _react2.default.createElement(
 			'div',
@@ -27590,7 +27598,7 @@ var SectionVideo = _react2.default.createClass({
 			_react2.default.createElement(
 				'a',
 				{ href: '#', style: linkStyle, onClick: this.showVideo },
-				_react2.default.createElement('img', { style: { width: '100%' }, src: this.props.imgUrl, alt: '' })
+				_react2.default.createElement('img', { style: imageStyle, src: this.props.imgUrl, alt: '' })
 			)
 		);
 	}

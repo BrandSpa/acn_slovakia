@@ -4,8 +4,9 @@ import VideoModal from './video_modal';
 const SectionVideo = React.createClass({
 	getDefaultProps() {
 		return {
-			'imgUrl': 'http://acninternational.org/wp-content/uploads/2017/02/Play.png',
-			'url': 'https://www.youtube.com/embed/_lQvw2vSDbs'
+			imgUrl: 'http://acninternational.org/wp-content/uploads/2017/02/Play.png',
+			url: 'https://www.youtube.com/embed/_lQvw2vSDbs',
+			imageStyle: {}
 		}
 	},
 
@@ -16,16 +17,21 @@ const SectionVideo = React.createClass({
 	
 	render() {
 		let linkStyle = {
-			display: 'flex',
+			display: 'flex'
+		};
+
+		let imageStyle = {
 			width: '100px',
 			margin: '0 auto'
 		};
 
+		imageStyle = {...imageStyle, ...this.props.imageStyle};
+		
 		return (
 			<div >
 				<VideoModal ref={modal => this.modal = modal} url={this.props.url} />
 				<a href="#" style={linkStyle} onClick={this.showVideo}>
-					<img style={{width: '100%'}} src={this.props.imgUrl} alt="" />
+					<img style={imageStyle} src={this.props.imgUrl} alt="" />
 				</a>
 			</div>
 		)
