@@ -20,9 +20,21 @@ const Posts = React.createClass({
     .catch(err => console.error(err));
 	},
 
+	componentDidUpdate: function(){
+    if(this.state.posts && this.state.posts.length > 0){
+        this.initIsotope();
+      }
+  },
+
 	componentDidMount() {
+		  if(this.state.posts && this.state.posts.length > 0){
+        this.initIsotope();
+      }
+	},
+
+	initIsotope() {
 		const grid = this.grid;
-		console.log(grid);
+
 		const iso = new Isotope( grid, {
 			itemSelector: '.grid-item',
 			percentPosition: true,

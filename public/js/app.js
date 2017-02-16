@@ -13297,9 +13297,22 @@ var Posts = _react2.default.createClass({
 			return console.error(err);
 		});
 	},
+
+
+	componentDidUpdate: function componentDidUpdate() {
+		if (this.state.posts && this.state.posts.length > 0) {
+			this.initIsotope();
+		}
+	},
+
 	componentDidMount: function componentDidMount() {
+		if (this.state.posts && this.state.posts.length > 0) {
+			this.initIsotope();
+		}
+	},
+	initIsotope: function initIsotope() {
 		var grid = this.grid;
-		console.log(grid);
+
 		var iso = new _isotopeLayout2.default(grid, {
 			itemSelector: '.grid-item',
 			percentPosition: true,
