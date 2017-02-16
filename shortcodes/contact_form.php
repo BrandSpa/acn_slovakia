@@ -45,6 +45,7 @@ function bs_contact_form_sc($atts, $content = null) {
 }
 
 add_shortcode( 'bs_contact_form', 'bs_contact_form_sc' );
+add_action( 'vc_before_init', 'bs_contact_form_vc' );
 
   function bs_contact_form_vc() {
 		$params = [
@@ -104,4 +105,3 @@ add_shortcode( 'bs_contact_form', 'bs_contact_form_sc' );
     );
   }
 
-  add_action( 'vc_before_init', 'bs_contact_form_vc' );

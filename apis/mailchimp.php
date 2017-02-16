@@ -25,11 +25,6 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
     return $lists[$key];
   }
   
-  function getMergeFields($post) {
-
-    return '';
-  }
-
   // $name = $_POST['name'] ? $_POST['name'] : '';
   // $email = $_POST['email'];
   // $country = $_POST['country'];
@@ -43,18 +38,17 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
   //       "update_existing": true
   // }';
 
-function mc_subscribe($data, $listId, $apiKey) {
-  $options = array(
-    'auth' => array('user', $apiKey)
-  );
+  function mc_subscribe($data, $listId, $apiKey) {
+    $options = array(
+      'auth' => array('user', $apiKey)
+    );
+    $datacenter =  explode("-", $apiKey)[1];
+    $headers = array('Accept' => 'application/json', 'content-type' => 'application/json');
+    $urlBase = 'http://'. $datacenter .'.api.mailchimp.com/3.0/';
+    $req = Requests::post($urlBase . 'lists/' . $listId . '/members', $headers, $data, $options);
+    return $req->body;
+  }
   
-  $datacenter =  explode("-", $apiKey);
-  $headers = array('Accept' => 'application/json', 'content-type' => 'application/json');
-  $urlBase = 'http://'. $datacenter[1] .'.api.mailchimp.com/3.0/';
-  $req = Requests::post($urlBase . 'lists/' . $listId . '/members', $headers, $data, $options);
-  return $req->body;
-}
- 
 }
 
 ?>

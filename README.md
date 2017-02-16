@@ -5,7 +5,7 @@
 - [ ] fix responsive
 - [ ] add options pages
 - [ ] add polylang
-- [ ] look how to do tests to shortcodes
+- [ ] test apis
 
 ## frontend
 - es6

@@ -4,5 +4,9 @@
         "stripe/stripe-php": "^4.1",
         "infusionsoft/php-sdk": "^1.2",
         "geoip2/geoip2": "~2.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.8",
+        "fzaninotto/faker": "^1.6"
     }
 }
