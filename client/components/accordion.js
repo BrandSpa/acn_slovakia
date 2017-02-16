@@ -27,7 +27,7 @@ const Accordion = React.createClass({
 					style={{ width: '100%', border: 'none', background: '#687f87' }} 
 					onClick={this.toggle}
 				>
-						{btnTitle} {this.state.show  ? <i class="ion-chevron-up"></i> : <i class="ion-chevron-down"></i>}
+						{btnTitle} {this.state.show  ? <i className="ion-chevron-up"></i> : <i className="ion-chevron-down"></i>}
 				</button>
 				<div style={this.state.show ? {display: 'block'} : {display: 'none'}}>
 					<div dangerouslySetInnerHTML={{__html: content}} />
