@@ -505,7 +505,10 @@ p {
   width: 1%; }
 
 .grid-item, .grid-sizer {
-  width: 24%; }
+  width: 25%; }
+  @media (max-width: 767px) {
+    .grid-item, .grid-sizer {
+      width: 50%; } }
 
 .nav {
   height: 140px;

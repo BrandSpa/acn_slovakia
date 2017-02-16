@@ -121,7 +121,10 @@ p {
 }
 
 .grid-item, .grid-sizer {
-	width: 24%;
+	width: 25%;
+	@media #{$s} {
+		width: 50%;
+	}
 }
 
 @import 'menu';
