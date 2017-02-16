@@ -25,6 +25,7 @@ const Posts = React.createClass({
 		const iso = new Isotope( grid, {
 			// options...
 			itemSelector: '.grid-item',
+			percentPosition: true,
 			masonry: {
 				columnWidth: '.grid-sizer',
 				gutter: 30
@@ -37,6 +38,7 @@ const Posts = React.createClass({
 
 		return (
 			<div ref={grid => this.grid = grid}>
+			<div className="grid-sizer"></div>
 				{posts.map((post, i) => {
 					return (
 						<div key={i} className="grid-item">

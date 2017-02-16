@@ -13302,6 +13302,7 @@ var Posts = _react2.default.createClass({
 		var iso = new _isotopeLayout2.default(grid, {
 			// options...
 			itemSelector: '.grid-item',
+			percentPosition: true,
 			masonry: {
 				columnWidth: '.grid-sizer',
 				gutter: 30
@@ -13319,6 +13320,7 @@ var Posts = _react2.default.createClass({
 			{ ref: function ref(grid) {
 					return _this2.grid = grid;
 				} },
+			_react2.default.createElement('div', { className: 'grid-sizer' }),
 			posts.map(function (post, i) {
 				return _react2.default.createElement(
 					'div',

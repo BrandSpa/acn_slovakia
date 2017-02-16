@@ -109,14 +109,13 @@ p {
 
 .grid-item {
   float: left;
-  
 	padding: 30px;
   background: #0D8;
   border: 2px solid #333;
   border-color: hsla(0, 0%, 0%, 0.7);
 }
 
-.grid-sizer {
+.grid-item, .grid-sizer {
 	width: 25%;
 }
 

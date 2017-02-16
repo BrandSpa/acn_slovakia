@@ -502,7 +502,7 @@ p {
   border: 2px solid #333;
   border-color: rgba(0, 0, 0, 0.7); }
 
-.grid-sizer {
+.grid-item, .grid-sizer {
   width: 25%; }
 
 .nav {
