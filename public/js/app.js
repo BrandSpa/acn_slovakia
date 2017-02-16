@@ -27657,7 +27657,7 @@ var Accordion = _react2.default.createClass({
 				'button',
 				{
 					className: 'accordion__btn',
-					style: { width: '100%', border: 'none', background: '#687f87', borderRadius: '0', fontSize: '18px' },
+					style: { width: '100%', height: '60px', border: 'none', background: '#687f87', borderRadius: '0', fontSize: '18px', fontWeight: 'normal' },
 					onClick: this.toggle
 				},
 				btnTitle,
