@@ -31295,10 +31295,11 @@ var langs = $('.lang-item').not($(".current-lang"));
 
 currentLang.on('click', function (e) {
 	e.preventDefault();
-	if ($('.dropdown-content').hasClas('dropdown-content--show')) {
+	if ($('.dropdown-content').hasClass('dropdown-content--show')) {
 		$('.dropdown-content').removeClass('dropdown-content--show');
 		return;
 	}
+
 	$('.dropdown-content').addClass('dropdown-content--show');
 });
 
