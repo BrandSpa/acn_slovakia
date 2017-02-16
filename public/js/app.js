@@ -27569,10 +27569,7 @@ var SectionVideo = _react2.default.createClass({
 		var linkStyle = {
 			display: 'flex',
 			width: '100px',
-			height: '70px',
-			margin: '0 auto',
-			background: 'url(' + this.props.imgUrl + ')',
-			backgroundSize: 'cover'
+			margin: '0 auto'
 		};
 
 		return _react2.default.createElement(
@@ -27581,7 +27578,11 @@ var SectionVideo = _react2.default.createClass({
 			_react2.default.createElement(_video_modal2.default, { ref: function ref(modal) {
 					return _this.modal = modal;
 				}, url: this.props.url }),
-			_react2.default.createElement('a', { href: '#', style: linkStyle, onClick: this.showVideo })
+			_react2.default.createElement(
+				'a',
+				{ href: '#', style: linkStyle, onClick: this.showVideo },
+				_react2.default.createElement('img', { style: { width: '100%' }, src: this.props.imgUrl, alt: '' })
+			)
 		);
 	}
 });

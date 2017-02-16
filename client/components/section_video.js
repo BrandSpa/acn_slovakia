@@ -18,16 +18,15 @@ const SectionVideo = React.createClass({
 		let linkStyle = {
 			display: 'flex',
 			width: '100px',
-			height: '70px',
-			margin: '0 auto',
-			background: `url(${this.props.imgUrl})`,
-			backgroundSize: 'cover'
+			margin: '0 auto'
 		};
 
 		return (
 			<div >
 				<VideoModal ref={modal => this.modal = modal} url={this.props.url} />
-				<a href="#" style={linkStyle} onClick={this.showVideo}></a>
+				<a href="#" style={linkStyle} onClick={this.showVideo}>
+					<img style={{width: '100%'}} src={this.props.imgUrl} alt="" />
+				</a>
 			</div>
 		)
 	}
