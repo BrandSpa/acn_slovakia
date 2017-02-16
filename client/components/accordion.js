@@ -6,7 +6,7 @@ const Accordion = React.createClass({
 			show: false
 		}
 	},
-
+
 	componentDidMount() {
 		return {
 			content: ''
