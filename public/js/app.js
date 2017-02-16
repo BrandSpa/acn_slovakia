@@ -31296,6 +31296,7 @@ var langs = $('.lang-item').not($(".current-lang"));
 console.log(langs.find('a'));
 
 langs.find('a').each(function () {
+	console.log($(this).html());
 	$('.dropdown-content').append($(this).html());
 	$(this).remove();
 });
