@@ -43,7 +43,7 @@ const Posts = React.createClass({
 					return (
 						<div key={i} className="grid-item">
 							<div className="grid-item__content">
-								<div style={{background: `url(${post.post_image})`, backgroundSize: 'cover', width: '100%', height: '250px'}}></div>
+								{posts.post_image ? <div style={{background: `url(${post.post_image})`, backgroundSize: 'cover', width: '100%', height: '250px'}}></div> : ''}
 								<h5>{post.post_title}</h5>
 								<p>{post.post_content}</p>
 							</div>
