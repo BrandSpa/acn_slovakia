@@ -27660,8 +27660,8 @@ var Accordion = _react2.default.createClass({
 					onClick: this.toggle
 				},
 				btnTitle,
-				' ',
-				this.state.show ? _react2.default.createElement('i', { className: 'ion-chevron-up' }) : _react2.default.createElement('i', { className: 'ion-chevron-down' })
+				'  ',
+				_react2.default.createElement('i', { className: this.state.show ? "ion-chevron-up" : "ion-chevron-down" })
 			),
 			_react2.default.createElement(
 				'div',
