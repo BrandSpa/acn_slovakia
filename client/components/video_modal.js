@@ -16,6 +16,14 @@ const Modal = React.createClass({
 		this.setState({show: true});
 	},
 
+	componentDidMount() {
+		document.addEventListener("keyPress", this.handleEscKey, false);
+	},
+
+	handleEscKey() {
+		if(event.keyCode == 27) this.setState({show: false});
+	},
+
 	render() {
 		let {url} = this.props;
 

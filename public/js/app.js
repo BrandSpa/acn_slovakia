@@ -12600,6 +12600,12 @@ var Modal = _react2.default.createClass({
 	show: function show() {
 		this.setState({ show: true });
 	},
+	componentDidMount: function componentDidMount() {
+		document.addEventListener("keyPress", this.handleEscKey, false);
+	},
+	handleEscKey: function handleEscKey() {
+		if (event.keyCode == 27) this.setState({ show: false });
+	},
 	render: function render() {
 		var url = this.props.url;
 
