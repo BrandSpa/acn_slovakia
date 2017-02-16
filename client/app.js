@@ -17,6 +17,6 @@ multipleRender(".bs-posts", Posts);
 const currentLang = $('.current-lang > a');
 currentLang.addClass('dropdown');
 let langs = $('.lang-item').not( $(".current-lang") );
-console.log(langs);
+console.log(langs.find('a'));
 const newText = `${currentLang.text()} <i class="ion-chevron-down"></i>`;
 currentLang.html(newText);
