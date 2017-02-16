@@ -27555,7 +27555,7 @@ var SectionVideo = _react2.default.createClass({
 	displayName: 'SectionVideo',
 	getDefaultProps: function getDefaultProps() {
 		return {
-			'imgUrl': 'http://acninternational.org/wp-content/uploads/2017/02/boy.jpg',
+			'imgUrl': 'http://acninternational.org/wp-content/uploads/2017/02/Play.png',
 			'url': 'https://www.youtube.com/embed/_lQvw2vSDbs'
 		};
 	},
