@@ -19,7 +19,7 @@ const SectionVideo = React.createClass({
 			display: 'flex',
 			width: '100%',
 			height: '100%',
-			background: this.props.imgUrl,
+			background: `url(${this.props.imgUrl})`,
 			backgroundSize: 'cover'
 		};
 
