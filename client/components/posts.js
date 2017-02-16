@@ -22,6 +22,7 @@ const Posts = React.createClass({
 
 	componentDidMount() {
 		const grid = this.grid;
+		console.log(grid);
 		const iso = new Isotope( grid, {
 			itemSelector: '.grid-item',
 			percentPosition: true,

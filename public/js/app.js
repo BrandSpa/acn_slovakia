@@ -13299,6 +13299,7 @@ var Posts = _react2.default.createClass({
 	},
 	componentDidMount: function componentDidMount() {
 		var grid = this.grid;
+		console.log(grid);
 		var iso = new _isotopeLayout2.default(grid, {
 			itemSelector: '.grid-item',
 			percentPosition: true,
