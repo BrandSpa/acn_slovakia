@@ -26,7 +26,7 @@ const Posts = React.createClass({
 			// options...
 			itemSelector: '.grid-item',
 			masonry: {
-				columnWidth: 200
+				gutter: 30
 			}
 		});
 	},

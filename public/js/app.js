@@ -13303,7 +13303,7 @@ var Posts = _react2.default.createClass({
 			// options...
 			itemSelector: '.grid-item',
 			masonry: {
-				columnWidth: 200
+				gutter: 30
 			}
 		});
 	},
