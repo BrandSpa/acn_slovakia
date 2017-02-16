@@ -31289,6 +31289,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".bs-posts", _posts2.default);
 
 var currentLang = $('.current-lang > a');
+currentLang.addClass('dropdown');
+var langs = $('.lang-item > a').not(".current-lang");
+console.log(langs);
 var newText = currentLang.text() + " <i class=\"ion-chevron-down\"></i>";
 currentLang.html(newText);
 
