@@ -1,5 +1,5 @@
 import React from 'react';
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas odit, qui dolorum molestiae, necessitatibus quam omnis reiciendis aspernatur repellat. Molestias iusto totam praesentium, culpa autem veritatis harum! Quo, enim, laudantium.
+
 const Accordion = React.createClass({
 	getInitialState() {
 		return {
