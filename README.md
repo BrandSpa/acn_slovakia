@@ -4,8 +4,8 @@
 - [ ] connect form to mailchimp 
 - [ ] fix responsive
 - [ ] add options pages
-- [ ] add polylang
-- [ ] test apis
+- [x] add polylang
+- [x] test apis
 
 ## frontend
 - es6
