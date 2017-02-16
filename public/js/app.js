@@ -31293,10 +31293,12 @@ $('.current-lang').addClass('dropdown');
 $('.current-lang').append('<div class="dropdown-content"></div>');
 var langs = $('.lang-item').not($(".current-lang"));
 
-console.log(langs.find('a'));
+$('.current-lang').on('click', function (e) {
+	e.preventDefault();
+	$('.dropdown-content').addClass('dropdown-content--show');
+});
 
 langs.each(function () {
-	console.log($(this).html());
 	$('.dropdown-content').append($(this).html());
 	$(this).remove();
 });
