@@ -165,7 +165,7 @@ p {
 
 .offices-list {
 	min-height: 140px;
-
+	text-align: center;
 	li {
 		display: inline-block;
 		border-right: 1px #fff solid;
@@ -173,6 +173,8 @@ p {
 			display: block;
 			padding: 0 7px;
 			color: #fff;
+			font-weight: 300;
+			font-size: 11px;
 		}
 	}
 

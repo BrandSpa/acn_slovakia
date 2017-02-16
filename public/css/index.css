@@ -536,14 +536,17 @@ p {
   text-align: left; }
 
 .offices-list {
-  min-height: 140px; }
+  min-height: 140px;
+  text-align: center; }
   .offices-list li {
     display: inline-block;
     border-right: 1px #fff solid; }
     .offices-list li a {
       display: block;
       padding: 0 7px;
-      color: #fff; }
+      color: #fff;
+      font-weight: 300;
+      font-size: 11px; }
 
 .nav {
   height: 140px;
