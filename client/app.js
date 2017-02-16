@@ -15,8 +15,13 @@ multipleRender(".bs-accordion", Accordion);
 multipleRender(".bs-posts", Posts);
 
 const currentLang = $('.current-lang > a');
-currentLang.addClass('dropdown');
+$('.current-lang').addClass('dropdown');
+$('.current-lang').append('<div class="dropdown-content"></div>');
 let langs = $('.lang-item').not( $(".current-lang") );
-console.log(langs.find('a'));
+langs.find('a').forEach(function() {
+	$('.dropdown-content').append($(this).html());
+	$(this).remove();
+});
+
 const newText = `${currentLang.text()} <i class="ion-chevron-down"></i>`;
 currentLang.html(newText);

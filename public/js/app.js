@@ -31289,9 +31289,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".bs-posts", _posts2.default);
 
 var currentLang = $('.current-lang > a');
-currentLang.addClass('dropdown');
+$('.current-lang').addClass('dropdown');
+$('.current-lang').append('<div class="dropdown-content"></div>');
 var langs = $('.lang-item').not($(".current-lang"));
-console.log(langs.find('a'));
+langs.find('a').forEach(function () {
+	$('.dropdown-content').append($(this).html());
+	$(this).remove();
+});
+
 var newText = currentLang.text() + " <i class=\"ion-chevron-down\"></i>";
 currentLang.html(newText);
 
