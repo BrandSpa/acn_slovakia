@@ -27637,14 +27637,17 @@ var Accordion = _react2.default.createClass({
 	},
 	componentDidMount: function componentDidMount() {
 		return {
-			content: ''
+			content: '',
+			btnTitle: 'Toggle'
 		};
 	},
 	toggle: function toggle() {
 		this.setState({ show: !this.state.show });
 	},
 	render: function render() {
-		var content = this.props.content;
+		var _props = this.props,
+		    content = _props.content,
+		    btnTitle = _props.btnTitle;
 
 
 		return _react2.default.createElement(
@@ -27652,8 +27655,13 @@ var Accordion = _react2.default.createClass({
 			null,
 			_react2.default.createElement(
 				'button',
-				{ style: { width: '100%', border: 'none', background: '#687f87' }, onClick: this.toggle },
-				'toggle'
+				{
+					style: { width: '100%', border: 'none', background: '#687f87' },
+					onClick: this.toggle
+				},
+				btnTitle,
+				' ',
+				this.state.show ? _react2.default.createElement('i', { 'class': 'ion-chevron-up' }) : _react2.default.createElement('i', { 'class': 'ion-chevron-down' })
 			),
 			_react2.default.createElement(
 				'div',

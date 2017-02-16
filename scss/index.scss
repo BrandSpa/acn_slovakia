@@ -101,6 +101,12 @@ p {
 	height: 100%;
 }
 
+.line {
+	width: 1px;
+	height: 13px;
+	border: solid 1px #ffffff;
+}
+
 @import 'menu';
 @import 'header';
 @import 'header_slider';

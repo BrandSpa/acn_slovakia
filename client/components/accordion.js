@@ -9,7 +9,8 @@ const Accordion = React.createClass({
 
 	componentDidMount() {
 		return {
-			content: ''
+			content: '',
+			btnTitle: 'Toggle'
 		}
 	},
 
@@ -18,11 +19,16 @@ const Accordion = React.createClass({
 	},
 
 	render() {
-		const { content } = this.props;
+		const { content, btnTitle } = this.props;
 
 		return (
 			<div>
-				<button style={{ width: '100%', border: 'none', background: '#687f87' }} onClick={this.toggle}>toggle</button>
+				<button 
+					style={{ width: '100%', border: 'none', background: '#687f87' }} 
+					onClick={this.toggle}
+				>
+						{btnTitle} {this.state.show  ? <i class="ion-chevron-up"></i> : <i class="ion-chevron-down"></i>}
+				</button>
 				<div style={this.state.show ? {display: 'block'} : {display: 'none'}}>
 					<div dangerouslySetInnerHTML={{__html: content}} />
 				</div>

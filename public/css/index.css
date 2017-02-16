@@ -489,6 +489,11 @@ p {
 .full-height {
   height: 100%; }
 
+.line {
+  width: 1px;
+  height: 13px;
+  border: solid 1px #ffffff; }
+
 .nav {
   height: 140px;
   width: 100%;
