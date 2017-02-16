@@ -27537,6 +27537,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _react = __webpack_require__(19);
 
 var _react2 = _interopRequireDefault(_react);
@@ -27580,6 +27584,8 @@ var SectionVideo = _react2.default.createClass({
 		);
 	}
 });
+
+exports.default = SectionVideo;
 
 /***/ })
 /******/ ]);

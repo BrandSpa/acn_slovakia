@@ -31,3 +31,5 @@ const SectionVideo = React.createClass({
 		)
 	}
 });
+
+export default SectionVideo;
