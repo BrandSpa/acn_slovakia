@@ -1,7 +1,7 @@
 import React from 'react';
 import qs from 'qs';
 import request from 'axios';
-import Isotipe from 'isotope-layout';
+import Isotope from 'isotope-layout';
 
 const Posts = React.createClass({
 	getInitialState() {
@@ -33,7 +33,7 @@ const Posts = React.createClass({
 
 	render() {
 		const { posts } = this.state;
-		
+
 		return (
 			<div ref={grid => this.grid = grid}>
 				{posts.map((post, i) => {

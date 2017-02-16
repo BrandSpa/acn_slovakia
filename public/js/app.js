@@ -13299,7 +13299,7 @@ var Posts = _react2.default.createClass({
 	},
 	componentDidMount: function componentDidMount() {
 		var grid = this.grid;
-		var iso = new Isotope(grid, {
+		var iso = new _isotopeLayout2.default(grid, {
 			// options...
 			itemSelector: '.grid-item',
 			masonry: {
