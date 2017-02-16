@@ -55,7 +55,7 @@ const Posts = React.createClass({
 						<div key={i} className="grid-item">
 							<div className="grid-item__content">
 								{post.post_image ? <div style={{background: `url(${post.post_image})`, backgroundSize: 'cover', width: '100%', height: '150px'}}></div> : ''}
-								<div class="grid-item__content__texts">
+								<div className="grid-item__content__texts">
 									<h5>{post.post_title}</h5>
 									<p>{post.post_content}</p>
 								</div>
