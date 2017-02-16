@@ -27532,12 +27532,17 @@ var _projects = __webpack_require__(109);
 
 var _projects2 = _interopRequireDefault(_projects);
 
+var _accordion = __webpack_require__(282);
+
+var _accordion2 = _interopRequireDefault(_accordion);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
 (0, _mutiple_render2.default)(".header-slider", _header_slider2.default);
 (0, _mutiple_render2.default)(".section-video", _section_video2.default);
 (0, _mutiple_render2.default)(".projects-container", _projects2.default);
+(0, _mutiple_render2.default)(".bs-accordion", _accordion2.default);
 
 /***/ }),
 /* 281 */
@@ -27605,6 +27610,55 @@ var SectionVideo = _react2.default.createClass({
 });
 
 exports.default = SectionVideo;
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(19);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Accordion = _react2.default.createClass({
+	displayName: 'Accordion',
+	getIntialState: function getIntialState() {
+		return {
+			show: false
+		};
+	},
+	componentDidMount: function componentDidMount() {
+		return {
+			content: ''
+		};
+	},
+	toggle: function toggle() {
+		this.setState({ show: !this.state.show });
+	},
+	render: function render() {
+		var content = this.props.content;
+
+
+		return _react2.default.createElement(
+			'div',
+			null,
+			_react2.default.createElement(
+				'button',
+				{ style: { width: '100%', border: 'none', background: '#687f87' }, onClick: this.toggle },
+				'toggle'
+			),
+			_react2.default.createElement(
+				'div',
+				{ style: this.state.show ? { display: 'block' } : { display: 'none' } },
+				_react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: content } })
+			)
+		);
+	}
+});
 
 /***/ })
 /******/ ]);
