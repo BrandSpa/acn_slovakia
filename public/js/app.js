@@ -31290,7 +31290,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var currentLang = $('.current-lang');
 var newText = currentLang.text() + " <i class=\"ion-ios-arrow-down\"></i>";
-currentLang.text(newText);
+currentLang.html(newText);
 
 /***/ })
 /******/ ]);

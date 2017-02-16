@@ -16,4 +16,4 @@ multipleRender(".bs-posts", Posts);
 
 const currentLang = $('.current-lang');
 const newText = `${currentLang.text()} <i class="ion-ios-arrow-down"></i>`;
-currentLang.text(newText);
+currentLang.html(newText);
