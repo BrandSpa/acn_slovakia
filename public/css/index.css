@@ -542,7 +542,8 @@ p {
     border-right: 1px #fff solid; }
     .offices-list li a {
       display: block;
-      padding: 0 7px; }
+      padding: 0 7px;
+      color: #fff; }
 
 .nav {
   height: 140px;
