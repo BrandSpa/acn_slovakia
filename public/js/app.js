@@ -13340,7 +13340,7 @@ var Posts = _react2.default.createClass({
 					_react2.default.createElement(
 						'div',
 						{ className: 'grid-item__content' },
-						post.post_image ? _react2.default.createElement('div', { style: { background: 'url(' + post.post_image + ')', backgroundSize: 'cover', width: '100%', height: '250px' } }) : '',
+						post.post_image ? _react2.default.createElement('div', { style: { background: 'url(' + post.post_image + ')', backgroundSize: 'cover', width: '100%', height: '150px' } }) : '',
 						_react2.default.createElement(
 							'h5',
 							null,

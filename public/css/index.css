@@ -499,7 +499,7 @@ p {
   float: left;
   padding: 15px 15px; }
   .grid-item__content {
-    background: #f1f1f1; }
+    background: #fff; }
 
 .grid-item, .grid-sizer {
   width: 25%; }
