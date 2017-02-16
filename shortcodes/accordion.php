@@ -6,15 +6,16 @@ function bs_accordion_sc($atts, $content = null) {
 	];
 
   $at = shortcode_atts( $attributes , $atts );
-
+	$props = [
+		'content' => $at['content_acc']
+	];
+	
   ob_start();
 ?>
 
 <div
 	class="bs-accordion" 
-	data-props='{
-		"content": "<?php echo $at['content_acc'] ?>"
-	}'
+	data-props='<?php echo json_encode($props) ?>'
 >
 </div>
 
