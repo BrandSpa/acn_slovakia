@@ -31288,5 +31288,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".bs-accordion", _accordion2.default);
 (0, _mutiple_render2.default)(".bs-posts", _posts2.default);
 
+var currentLang = $('.current-lang');
+var newText = currentLang.text() + " <i class=\"ion-ios-arrow-down\"></i>";
+currentLang.text(newText);
+
 /***/ })
 /******/ ]);
