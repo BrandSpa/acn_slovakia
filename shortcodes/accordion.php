@@ -2,7 +2,7 @@
 
 function bs_accordion_sc($atts, $content = null) {
 	$attributes = [
-		'content' => ''
+		'content_acc' => ''
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -13,7 +13,7 @@ function bs_accordion_sc($atts, $content = null) {
 <div
 	class="bs-accordion" 
 	data-props='{
-		"content": "<?php echo $at['content'] ?>"
+		"content": "<?php echo $at['content_acc'] ?>"
 	}'
 >
 </div>
@@ -31,7 +31,7 @@ add_action( 'vc_before_init', 'bs_accordion_vc' );
 			[
         "type" => "textarea_html",
         "heading" => "Content",
-        "param_name" => "content",
+        "param_name" => "content_acc",
         "value" => ''
 			]
 		];

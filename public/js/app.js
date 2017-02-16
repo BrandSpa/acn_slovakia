@@ -27613,58 +27613,10 @@ exports.default = SectionVideo;
 
 /***/ }),
 /* 282 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = __webpack_require__(19);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Accordion = _react2.default.createClass({
-	displayName: 'Accordion',
-	getInitialState: function getInitialState() {
-		return {
-			show: false
-		};
-	},
-	componentDidMount: function componentDidMount() {
-		return {
-			content: ''
-		};
-	},
-	toggle: function toggle() {
-		this.setState({ show: !this.state.show });
-	},
-	render: function render() {
-		var content = this.props.content;
-
-
-		return _react2.default.createElement(
-			'div',
-			null,
-			_react2.default.createElement(
-				'button',
-				{ style: { width: '100%', border: 'none', background: '#687f87' }, onClick: this.toggle },
-				'toggle'
-			),
-			_react2.default.createElement(
-				'div',
-				{ style: this.state.show ? { display: 'block' } : { display: 'none' } },
-				_react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: content } })
-			)
-		);
-	}
-});
-
-exports.default = Accordion;
+throw new Error("Module build failed: SyntaxError: Unexpected character '' (9:0)\n\n\u001b[0m \u001b[90m  7 | \u001b[39m\t\t}\n \u001b[90m  8 | \u001b[39m\t}\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 | \u001b[39m\n \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 | \u001b[39m\tcomponentDidMount() {\n \u001b[90m 11 | \u001b[39m\t\t\u001b[36mreturn\u001b[39m {\n \u001b[90m 12 | \u001b[39m\t\t\tcontent\u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\u001b[0m\n");
 
 /***/ })
 /******/ ]);
