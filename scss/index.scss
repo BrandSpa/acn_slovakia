@@ -109,10 +109,11 @@ p {
 
 .grid-item {
   float: left;
-	padding: 30px;
-  background: #0D8;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.7);
+	padding: 0 30px;
+
+	&__content {
+		background: #f1f1f1;
+	}
 }
 
 .gutter-sizer {
