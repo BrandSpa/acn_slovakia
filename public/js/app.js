@@ -27613,66 +27613,10 @@ exports.default = SectionVideo;
 
 /***/ }),
 /* 282 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = __webpack_require__(19);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Accordion = _react2.default.createClass({
-	displayName: 'Accordion',
-	getInitialState: function getInitialState() {
-		return {
-			show: false
-		};
-	},
-	componentDidMount: function componentDidMount() {
-		return {
-			content: '',
-			btnTitle: 'Toggle'
-		};
-	},
-	toggle: function toggle() {
-		this.setState({ show: !this.state.show });
-	},
-	render: function render() {
-		var _props = this.props,
-		    content = _props.content,
-		    btnTitle = _props.btnTitle;
-
-
-		return _react2.default.createElement(
-			'div',
-			null,
-			_react2.default.createElement(
-				'button',
-				{
-					style: { width: '100%', border: 'none', background: '#687f87' },
-					onClick: this.toggle
-				},
-				btnTitle,
-				' ',
-				this.state.show ? _react2.default.createElement('i', { className: 'ion-chevron-up' }) : _react2.default.createElement('i', { className: 'ion-chevron-down' })
-			),
-			_react2.default.createElement(
-				'div',
-				{ style: this.state.show ? { display: 'block' } : { display: 'none' } },
-				_react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: content } })
-			)
-		);
-	}
-});
-
-exports.default = Accordion;
+throw new Error("Module build failed: SyntaxError: Unexpected token, expected ; (2:6)\n\n\u001b[0m \u001b[90m 1 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mReact\u001b[39m from \u001b[32m'react'\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 2 | \u001b[39m\u001b[33mLorem\u001b[39m ipsum dolor sit amet\u001b[33m,\u001b[39m consectetur adipisicing elit\u001b[33m.\u001b[39m \u001b[33mQuas\u001b[39m odit\u001b[33m,\u001b[39m qui dolorum molestiae\u001b[33m,\u001b[39m necessitatibus quam omnis reiciendis aspernatur repellat\u001b[33m.\u001b[39m \u001b[33mMolestias\u001b[39m iusto totam praesentium\u001b[33m,\u001b[39m culpa autem veritatis harum\u001b[33m!\u001b[39m \u001b[33mQuo\u001b[39m\u001b[33m,\u001b[39m enim\u001b[33m,\u001b[39m laudantium\u001b[33m.\u001b[39m\n \u001b[90m   | \u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 3 | \u001b[39m\u001b[36mconst\u001b[39m \u001b[33mAccordion\u001b[39m \u001b[33m=\u001b[39m \u001b[33mReact\u001b[39m\u001b[33m.\u001b[39mcreateClass({\n \u001b[90m 4 | \u001b[39m\tgetInitialState() {\n \u001b[90m 5 | \u001b[39m\t\t\u001b[36mreturn\u001b[39m {\u001b[0m\n");
 
 /***/ })
 /******/ ]);
