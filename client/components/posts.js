@@ -42,7 +42,7 @@ const Posts = React.createClass({
 				{posts.map((post, i) => {
 					return (
 						<div key={i} className="grid-item">
-							<div class="grid-item__content">
+							<div className="grid-item__content">
 								<div style={{background: `url(${post.post_image})`, backgroundSize: 'cover', width: '100%', height: '250px'}}></div>
 								<h5>{post.post_title}</h5>
 								<p>{post.post_content}</p>

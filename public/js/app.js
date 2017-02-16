@@ -13327,7 +13327,7 @@ var Posts = _react2.default.createClass({
 					{ key: i, className: 'grid-item' },
 					_react2.default.createElement(
 						'div',
-						{ 'class': 'grid-item__content' },
+						{ className: 'grid-item__content' },
 						_react2.default.createElement('div', { style: { background: 'url(' + post.post_image + ')', backgroundSize: 'cover', width: '100%', height: '250px' } }),
 						_react2.default.createElement(
 							'h5',
