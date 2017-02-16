@@ -12904,7 +12904,7 @@ var Accordion = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				'div',
-				{ style: this.state.show ? { display: 'block' } : { display: 'none' } },
+				{ className: 'accordion__content', style: this.state.show ? { display: 'block' } : { display: 'none' } },
 				_react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: content } })
 			)
 		);

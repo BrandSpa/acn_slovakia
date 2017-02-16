@@ -30,7 +30,7 @@ const Accordion = React.createClass({
 				>
 					{btnTitle}  <i className={ this.state.show  ? "ion-chevron-up" : "ion-chevron-down" }></i>
 				</button>
-				<div style={this.state.show ? {display: 'block'} : {display: 'none'}}>
+				<div className="accordion__content" style={this.state.show ? {display: 'block'} : {display: 'none'}}>
 					<div dangerouslySetInnerHTML={{__html: content}} />
 				</div>
 			</div>

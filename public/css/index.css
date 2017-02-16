@@ -535,10 +535,13 @@ p {
   display: block;
   text-align: left; }
 
+.accordion__content {
+  background: rgba(180, 191, 194, 0.9); }
+
 .offices-list {
   min-height: 70px;
   text-align: center;
-  padding-top: 30px; }
+  padding-top: 25px; }
   .offices-list li {
     display: inline-block;
     border-right: 1px #fff solid; }
