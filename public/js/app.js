@@ -31292,8 +31292,10 @@ var currentLang = $('.current-lang > a');
 $('.current-lang').addClass('dropdown');
 $('.current-lang').append('<div class="dropdown-content"></div>');
 var langs = $('.lang-item').not($(".current-lang"));
+
 console.log(langs.find('a'));
-langs.find('a').forEach(function () {
+
+langs.find('a').each(function () {
 	$('.dropdown-content').append($(this).html());
 	$(this).remove();
 });
