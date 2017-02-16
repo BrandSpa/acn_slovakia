@@ -27532,9 +27532,48 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 /* 281 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unterminated JSX contents (23:8)\n\n\u001b[0m \u001b[90m 21 | \u001b[39m\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mVideoModal\u001b[39m ref\u001b[33m=\u001b[39m{modal \u001b[33m=>\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmodal \u001b[33m=\u001b[39m modal} url\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39murl} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 22 | \u001b[39m\t\t\t\t\u001b[33m<\u001b[39m\u001b[33ma\u001b[39m href\u001b[33m=\u001b[39m\u001b[32m\"#\"\u001b[39m style\u001b[33m=\u001b[39m{linkStyle} onClick\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mshowVideo}\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33ma\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 | \u001b[39m\t\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    | \u001b[39m\t\t\t     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 | \u001b[39m\t\t)\n \u001b[90m 25 | \u001b[39m\t}\n \u001b[90m 26 | \u001b[39m})\u001b[33m;\u001b[39m\u001b[0m\n");
+"use strict";
+
+
+var _react = __webpack_require__(19);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _video_modal = __webpack_require__(131);
+
+var _video_modal2 = _interopRequireDefault(_video_modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SectionVideo = _react2.default.createClass({
+	displayName: 'SectionVideo',
+	showVideo: function showVideo(e) {
+		e.preventDefault();
+		this.modal.show();
+	},
+	render: function render() {
+		var _this = this;
+
+		var linkStyle = {
+			display: 'flex',
+			width: '100%',
+			height: '100%',
+			background: this.props.imgUrl,
+			backgroundSize: 'cover'
+		};
+
+		return _react2.default.createElement(
+			'div',
+			null,
+			_react2.default.createElement(_video_modal2.default, { ref: function ref(modal) {
+					return _this.modal = modal;
+				}, url: this.props.url }),
+			_react2.default.createElement('a', { href: '#', style: linkStyle, onClick: this.showVideo })
+		);
+	}
+});
 
 /***/ })
 /******/ ]);
