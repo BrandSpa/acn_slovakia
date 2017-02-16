@@ -19,7 +19,7 @@ $('.current-lang').addClass('dropdown');
 $('.current-lang').append('<div class="dropdown-content"></div>');
 let langs = $('.lang-item').not( $(".current-lang") );
 
-$('.current-lang').on('click', (e) => {
+currentLang.on('click', (e) => {
 	e.preventDefault();
 	$('.dropdown-content').addClass('dropdown-content--show');
 });
