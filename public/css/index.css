@@ -536,8 +536,9 @@ p {
   text-align: left; }
 
 .offices-list {
-  min-height: 140px;
-  text-align: center; }
+  min-height: 70px;
+  text-align: center;
+  padding-top: 30px; }
   .offices-list li {
     display: inline-block;
     border-right: 1px #fff solid; }
