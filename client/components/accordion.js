@@ -29,4 +29,6 @@ const Accordion = React.createClass({
 			</div>
 		)
 	}
-})
+});
+
+export default Accordion;
