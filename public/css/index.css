@@ -535,8 +535,12 @@ p {
   display: block;
   text-align: left; }
 
-.offices-list li {
-  display: inline-block; }
+.offices-list {
+  min-height: 140px; }
+  .offices-list li {
+    display: inline-block;
+    padding: 0 70px;
+    border: 1px #fff solid; }
 
 .nav {
   height: 140px;

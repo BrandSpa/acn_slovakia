@@ -164,8 +164,12 @@ p {
 }
 
 .offices-list {
+	min-height: 140px;
+	
 	li {
 		display: inline-block;
+		padding: 0 70px;
+		border: 1px #fff solid;
 	}
 }
 @import 'menu';
