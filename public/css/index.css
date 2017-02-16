@@ -535,6 +535,9 @@ p {
   display: block;
   text-align: left; }
 
+.offices-list li {
+  display: inline-block; }
+
 .nav {
   height: 140px;
   width: 100%;
