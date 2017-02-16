@@ -27630,7 +27630,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Accordion = _react2.default.createClass({
 	displayName: 'Accordion',
-	getIntialState: function getIntialState() {
+	getInitialState: function getInitialState() {
 		return {
 			show: false
 		};

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Accordion = React.createClass({
-	getIntialState() {
+	getInitialState() {
 		return {
 			show: false
 		}
