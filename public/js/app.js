@@ -14449,7 +14449,7 @@ var headerSlide = _react2.default.createClass({
 	handleLink: function handleLink(e) {
 		e.preventDefault();
 		if (this.props.isVideo) return this.refs.modal.show();
-		window.url = this.props.url;
+		window.location.href = this.props.url;
 	},
 	render: function render() {
 		var _props = this.props,

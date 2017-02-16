@@ -5,7 +5,7 @@ const headerSlide = React.createClass({
 	handleLink(e) {
 		e.preventDefault();
 		if(this.props.isVideo) return this.refs.modal.show();
-		window.url = this.props.url;
+		window.location.href = this.props.url;
 	},
 
 	render() {
