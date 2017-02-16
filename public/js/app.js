@@ -13319,7 +13319,7 @@ var Posts = _react2.default.createClass({
 					return _this2.grid = grid;
 				} },
 			posts.map(function (post, i) {
-				_react2.default.createElement(
+				return _react2.default.createElement(
 					'div',
 					{ key: i, className: 'grid-item' },
 					_react2.default.createElement(

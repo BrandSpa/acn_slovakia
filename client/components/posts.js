@@ -37,10 +37,12 @@ const Posts = React.createClass({
 		return (
 			<div ref={grid => this.grid = grid}>
 				{posts.map((post, i) => {
-					<div key={i} className="grid-item">
-						<h5>{post.post_title}</h5>
-						<p>{post.post_content}</p>
-					</div>
+					return (
+						<div key={i} className="grid-item">
+							<h5>{post.post_title}</h5>
+							<p>{post.post_content}</p>
+						</div>
+					)
 				})}
 			</div>
 		)
