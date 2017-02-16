@@ -17,7 +17,7 @@ function bs_section_video_sc($atts, $content = null) {
 ?>
 
 <div 
-	class="contact-form" 
+	class="section-video" 
 	data-props='{
 		"url": "<?php echo $at['video_url'] ?>", 
 		"imgUrl": "<?php echo $imgUrl ?>",
