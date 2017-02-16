@@ -3,8 +3,19 @@ include_once 'mailchimp.php';
 include_once 'stripe.php';
 include_once 'infusion.php';
 include_once 'location.php';
+include_once 'posts.php';
 include_once str_replace('apis', '', __DIR__) . '/lib/countries.php';
 include_once str_replace('apis', '', __DIR__) . '/lib/get_geoip.php';
+
+add_action( 'wp_ajax_nopriv_get_posts', 'wp_get_posts' );
+add_action( 'wp_ajax_get_posts', 'wp_get_posts' );
+
+function wp_get_posts() {
+  $res = get_posts();
+  header('Content-type: application/json');
+  echo json_encode($res);
+  die();
+}
 
 add_action( 'wp_ajax_nopriv_donate_redirect', 'donate_redirect' );
 add_action( 'wp_ajax_donate_redirect', 'donate_redirect' );
