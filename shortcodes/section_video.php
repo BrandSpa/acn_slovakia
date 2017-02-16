@@ -24,7 +24,7 @@ function bs_section_video_sc($atts, $content = null) {
 		"imageStyle": {
 			"width": "<?php echo $at['image_width'] ?>",
 			"height": "<?php echo $at['image_height'] ?>",
-			"margin": "<?php echo $at['image_margin'] ?>",
+			"margin": "<?php echo $at['image_margin'] ?>"
 		}
 	}'
 >
