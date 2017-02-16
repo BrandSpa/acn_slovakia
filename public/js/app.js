@@ -13300,7 +13300,6 @@ var Posts = _react2.default.createClass({
 	componentDidMount: function componentDidMount() {
 		var grid = this.grid;
 		var iso = new _isotopeLayout2.default(grid, {
-			// options...
 			itemSelector: '.grid-item',
 			percentPosition: true,
 			masonry: {
@@ -13326,6 +13325,7 @@ var Posts = _react2.default.createClass({
 				return _react2.default.createElement(
 					'div',
 					{ key: i, className: 'grid-item' },
+					_react2.default.createElement('div', { style: { background: 'url(' + post.post_image + ')', width: '100%', height: '250px' } }),
 					_react2.default.createElement(
 						'h5',
 						null,
