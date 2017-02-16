@@ -500,6 +500,8 @@ p {
   padding: 15px 15px; }
   .grid-item__content {
     background: #fff; }
+    .grid-item__content__texts {
+      padding: 7px; }
 
 .grid-item, .grid-sizer {
   width: 25%; }

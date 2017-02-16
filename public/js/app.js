@@ -13342,14 +13342,18 @@ var Posts = _react2.default.createClass({
 						{ className: 'grid-item__content' },
 						post.post_image ? _react2.default.createElement('div', { style: { background: 'url(' + post.post_image + ')', backgroundSize: 'cover', width: '100%', height: '150px' } }) : '',
 						_react2.default.createElement(
-							'h5',
-							null,
-							post.post_title
-						),
-						_react2.default.createElement(
-							'p',
-							null,
-							post.post_content
+							'div',
+							{ 'class': 'grid-item__content__texts' },
+							_react2.default.createElement(
+								'h5',
+								null,
+								post.post_title
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								post.post_content
+							)
 						)
 					)
 				);
