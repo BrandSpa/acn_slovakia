@@ -74,7 +74,7 @@ add_action( 'vc_before_init', 'bs_section_video_vc' );
 
   	vc_map(
       array(
-        "name" =>  "BS Contact Form",
+        "name" =>  "BS Section video",
         "base" => "bs_section_video",
         "category" =>  "BS",
         "params" => $params
