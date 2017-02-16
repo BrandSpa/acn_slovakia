@@ -24,7 +24,7 @@ const SectionVideo = React.createClass({
 		};
 
 		return (
-			<div>
+			<div >
 				<VideoModal ref={modal => this.modal = modal} url={this.props.url} />
 				<a href="#" style={linkStyle} onClick={this.showVideo}></a>
 			</div>
