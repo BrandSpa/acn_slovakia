@@ -20,8 +20,8 @@ const Modal = React.createClass({
 		document.addEventListener("keyPress", this.handleEscKey, false);
 	},
 
-	handleEscKey() {
-		if(event.keyCode == 27) this.setState({show: false});
+	handleEscKey(e) {
+		if(e.keyCode == 27) this.setState({show: false});
 	},
 
 	render() {
