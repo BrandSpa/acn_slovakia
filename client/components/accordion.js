@@ -22,9 +22,10 @@ const Accordion = React.createClass({
 		const { content, btnTitle } = this.props;
 
 		return (
-			<div>
+			<div className="accordion">
 				<button 
-					style={{ width: '100%', border: 'none', background: '#687f87' }} 
+					className="accordion__btn"
+					style={{ width: '100%', border: 'none', background: '#687f87', borderRadius: '0', fontSize: '18px' }} 
 					onClick={this.toggle}
 				>
 					{btnTitle}  <i className={ this.state.show  ? "ion-chevron-up" : "ion-chevron-down" }></i>
