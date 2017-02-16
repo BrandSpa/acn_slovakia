@@ -11,7 +11,10 @@ function bs_get_posts($type = 'post', $paged = 1, $category = '') {
     'category' => $category
   ));
 	
-	$posts = array_map('addImageToPost', $query->get_posts());
+	$posts = array_map(function() {
+		$post['post_image'] = get_the_post_thumbnail_url($post->ID, 'full');
+		return $post;
+	}, $query->get_posts());
 	
 	return $posts;
 }
