@@ -41,7 +41,7 @@ const Contact = React.createClass({
 
 		return (
 			<div className="row" style={{width: '33.3%'}}>
-				<div className="form-group col-sm-12">
+				<div className="form-group col-12-l">
 					<input 
 						type="text" 
 						className={`form-control ${this.inputErrStyle('name')}`} 
@@ -54,7 +54,7 @@ const Contact = React.createClass({
         	</span>
 				</div>
 
-				<div className="form-group col-sm-12">
+				<div className="form-group col-12-">
 					<input 
 						type="text" 
 						className={`form-control ${this.inputErrStyle('email')}`} 
@@ -67,7 +67,7 @@ const Contact = React.createClass({
         	</span>
 				</div>
 
-				<div className="form-group col-sm-12">
+				<div className="form-group col-12-">
 					<select
 						type="text" 
 						className="form-control" 
