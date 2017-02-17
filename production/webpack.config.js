@@ -15,7 +15,12 @@ const webpack = require('webpack');
              test: /\.js$/,
              exclude: /node_modules/,
              loader: 'babel-loader'
-         }]
+         },
+           {
+        	test: /isotope\-|fizzy\-ui\-utils|desandro\-|masonry|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
+          loader: 'imports-loader?define=>false&this=>window'
+        } 
+        ]
      },
 
      plugins:[
