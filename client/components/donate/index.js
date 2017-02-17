@@ -38,10 +38,10 @@ const Donate = React.createClass({
 
 	fetchCountries() {
 		const data = qs.stringify({action: 'countries'});
-
+		
 		request
-		.post('/wp-admin/admin-ajax.php', res.data)
-		.then(res => this.setState({countries: res}));
+		.post('/wp-admin/admin-ajax.php', data)
+		.then(res => this.setState({countries: res.data}));
 	},
 
 	componentWillMount(){

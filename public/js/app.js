@@ -13223,8 +13223,8 @@ var Donate = _react2.default.createClass({
 
 		var data = _qs2.default.stringify({ action: 'countries' });
 
-		_axios2.default.post('/wp-admin/admin-ajax.php', res.data).then(function (res) {
-			return _this.setState({ countries: res });
+		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
+			return _this.setState({ countries: res.data });
 		});
 	},
 	componentWillMount: function componentWillMount() {
