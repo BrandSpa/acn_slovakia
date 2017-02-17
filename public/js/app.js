@@ -13496,13 +13496,11 @@ var Posts = _react2.default.createClass({
 	},
 
 
-	componentWillUpdate: function componentWillUpdate() {
-		this.removeIsotope();
-	},
-
 	componentDidUpdate: function componentDidUpdate() {
 		if (this.state.posts && this.state.posts.length > 0) {
 			this.initIsotope();
+		} else if (this.iso) {
+			this.iso.reloadItems();
 		}
 	},
 
@@ -13535,7 +13533,6 @@ var Posts = _react2.default.createClass({
 		});
 	},
 	removeIsotope: function removeIsotope() {
-		console.log(this.iso);
 		if (this.iso) {
 			this.iso.destroy();
 		}

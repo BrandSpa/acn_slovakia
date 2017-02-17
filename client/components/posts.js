@@ -22,14 +22,12 @@ const Posts = React.createClass({
     .catch(err => console.error(err));
 	},
 
-	componentWillUpdate: function(){
-    this.removeIsotope();
-  },
-
 	componentDidUpdate: function() {
     if(this.state.posts && this.state.posts.length > 0){
         this.initIsotope();
-      }
+      } else if(this.iso) {
+				this.iso.reloadItems();
+			}
   },
 
 	componentDidMount() {
@@ -64,7 +62,6 @@ const Posts = React.createClass({
 	},
 
 	removeIsotope() {
-		console.log(this.iso);
 		if(this.iso) {
 			this.iso.destroy();
 		}
