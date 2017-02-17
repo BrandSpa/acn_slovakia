@@ -43,7 +43,6 @@ const amount = React.createClass({
 							value={amount} 
 						/>
 					</div>
-
 					<div className="form-group col-5-l">
 						<a
 							href="#" 
