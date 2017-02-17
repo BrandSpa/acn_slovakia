@@ -13539,7 +13539,7 @@ var Posts = _react2.default.createClass({
 								null,
 								_react2.default.createElement(
 									'a',
-									{ href: post.guid },
+									{ href: post.post_permalink },
 									post.post_title
 								)
 							),
