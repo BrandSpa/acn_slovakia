@@ -34,19 +34,6 @@ const Donate = React.createClass({
 		}
 	},
 
-	getProps() {
-		let a = document.getElementById('bs-donate-react');
-		let props = a.getAttribute('data-props');
-		let texts = this.state.texts;
-
-		try {	
-
-			texts = {...texts,  ...props};
-			this.setState({texts});
-		} catch(err) {
-			console.log('err on parsing donate props', props);
-		}
-	},
 
 	fetchCountries() {
 		$.ajax({

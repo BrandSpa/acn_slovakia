@@ -13543,19 +13543,6 @@ var Donate = _react2.default.createClass({
 			}
 		};
 	},
-	getProps: function getProps() {
-		var a = document.getElementById('bs-donate-react');
-		var props = a.getAttribute('data-props');
-		var texts = this.state.texts;
-
-		try {
-
-			texts = _extends({}, texts, props);
-			this.setState({ texts: texts });
-		} catch (err) {
-			console.log('err on parsing donate props', props);
-		}
-	},
 	fetchCountries: function fetchCountries() {
 		var _this = this;
 
