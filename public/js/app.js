@@ -13536,7 +13536,9 @@ var Posts = _react2.default.createClass({
 	},
 	removeIsotope: function removeIsotope() {
 		console.log(this.iso);
-		this.iso.destroy();
+		if (this.iso) {
+			this.iso.destroy();
+		}
 	},
 	render: function render() {
 		var _this3 = this;

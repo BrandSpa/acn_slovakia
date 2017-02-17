@@ -65,7 +65,10 @@ const Posts = React.createClass({
 
 	removeIsotope() {
 		console.log(this.iso);
-		this.iso.destroy();
+		if(this.iso) {
+			this.iso.destroy();
+		}
+		
 	},
 
 	render() {
