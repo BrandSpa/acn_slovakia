@@ -3,6 +3,7 @@
 ##todos
 - [ ] finish donate and contact connections with apis
 - [ ] fix responsive
+- [ ] menu responsive
 - [ ] clean apis/index
 - [ ] ask Diego links to offices on accordion
 

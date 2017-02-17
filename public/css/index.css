@@ -420,6 +420,9 @@ body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px; }
+  @media (max-width: 767px) {
+    body {
+      font-size: 12px; } }
 
 *,
 *:before,
@@ -439,35 +442,35 @@ h6 {
   padding: 0; }
 
 h1 {
-  font-size: 72px;
+  font-size: 4.8em;
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal; }
 
 h2 {
-  font-size: 50px;
+  font-size: 3.33333em;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal; }
 
 h3 {
-  font-size: 28px;
+  font-size: 1.86667em;
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal; }
 
 h4 {
-  font-size: 28px;
+  font-size: 1.86667em;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal; }
 
 h5 {
-  font-size: 18px;
+  font-size: 1.2em;
   line-height: 20px;
   font-weight: 600;
   font-style: normal;
@@ -475,7 +478,7 @@ h5 {
   letter-spacing: normal; }
 
 h6 {
-  font-size: 12px;
+  font-size: 0.8em;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -483,7 +486,7 @@ h6 {
   letter-spacing: 1px; }
 
 p {
-  font-size: 15px;
+  font-size: 1em;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -493,11 +496,6 @@ p {
 
 .full-height {
   height: 100%; }
-
-.line {
-  width: 1px;
-  height: 13px;
-  border: solid 1px #ffffff; }
 
 .dropdown-content {
   display: none;
