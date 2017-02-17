@@ -13534,11 +13534,6 @@ var Posts = _react2.default.createClass({
 			}
 		});
 	},
-	removeIsotope: function removeIsotope() {
-		if (this.iso) {
-			this.iso.destroy();
-		}
-	},
 	render: function render() {
 		var _this3 = this;
 
@@ -13586,7 +13581,7 @@ var Posts = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				'button',
-				{ onClick: this.seeMore },
+				{ onClick: this.seeMore, style: { margin: '30px auto', background: '#fff', color: 'red' } },
 				'See more'
 			)
 		);

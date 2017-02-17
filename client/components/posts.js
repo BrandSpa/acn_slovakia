@@ -63,13 +63,6 @@ const Posts = React.createClass({
 	
 	},
 
-	removeIsotope() {
-		if(this.iso) {
-			this.iso.destroy();
-		}
-		
-	},
-
 	render() {
 		const { posts } = this.state;
 
@@ -94,7 +87,7 @@ const Posts = React.createClass({
 					})}
 				
 				</div>
-				<button onClick={this.seeMore}>See more</button>
+				<button onClick={this.seeMore} style={{margin: '30px auto', background: '#fff', color: 'red'}}>See more</button>
 			</div>
 		)
 	}
