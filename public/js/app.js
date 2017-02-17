@@ -13381,6 +13381,10 @@ var headerSlider = _react2.default.createClass({
     this.interval = setInterval(function () {
       _this.nextSlide(false);
     }, 2000);
+
+    document.addEventListener('load', function () {
+      console.log('load');
+    });
   },
   nextSlide: function nextSlide() {
     var clear = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;

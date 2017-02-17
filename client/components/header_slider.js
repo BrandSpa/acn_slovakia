@@ -20,7 +20,9 @@ const headerSlider = React.createClass({
       this.nextSlide(false);
     }, 2000);
 
-    
+    document.addEventListener('load', () => {
+      console.log('load');
+    })
   },
 
   nextSlide(clear = true) {
