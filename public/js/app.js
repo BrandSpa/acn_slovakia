@@ -13522,7 +13522,7 @@ var Posts = _react2.default.createClass({
 	initIsotope: function initIsotope() {
 		var grid = this.grid;
 
-		var iso = new _isotopeLayout2.default(grid, {
+		this.iso = new _isotopeLayout2.default(grid, {
 			itemSelector: '.grid-item',
 			percentPosition: true,
 			masonry: {
@@ -13535,7 +13535,7 @@ var Posts = _react2.default.createClass({
 
 		var posts = this.state.posts;
 
-
+		this.iso ? this.iso.layout() : '';
 		return _react2.default.createElement(
 			'div',
 			null,

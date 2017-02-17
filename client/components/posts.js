@@ -49,7 +49,7 @@ const Posts = React.createClass({
 	initIsotope() {
 		const grid = this.grid;
 
-		const iso = new Isotope( grid, {
+		this.iso = new Isotope( grid, {
 			itemSelector: '.grid-item',
 			percentPosition: true,
 			masonry: {
@@ -60,7 +60,7 @@ const Posts = React.createClass({
 
 	render() {
 		const { posts } = this.state;
-		
+		this.iso ? this.iso.layout() : '';
 		return (
 			<div>
 				<div ref={grid => this.grid = grid}>
