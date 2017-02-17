@@ -107,51 +107,6 @@ p {
 	border: solid 1px #ffffff;
 }
 
-.grid-item {
-  float: left;
-	padding: 15px 15px;
-
-	&__content {
-		background: #fff;
-
-		img {
-			width: 100%;
-			display: block;
-			min-height: 10px;
-		}
-
-		&__texts {
-			padding: 15px;
-			word-wrap: break-word;
-
-			h5 {
-				color: #324049;
-				padding-bottom: 15px;
-				border-bottom: 1px solid #E34E6B;
-				margin-top: 15px;
-
-				a {
-					color: #324049;
-					text-decoration: none;
-				}
-		
-			}
-		}
-		
-	}
-}
-
-.grid-item, .grid-sizer {
-	width: 25%;
-	@media #{$m} {
-		width: 50%;
-	}
-
-	@media #{$s} {
-		width: 100%;
-	}
-}
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -212,5 +167,6 @@ p {
 @import 'modal';
 @import 'projects';
 @import 'donate';
+@import 'posts';
 
 
