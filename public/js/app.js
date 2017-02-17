@@ -13469,6 +13469,8 @@ var _isotopeLayout2 = _interopRequireDefault(_isotopeLayout);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var Posts = _react2.default.createClass({
 	displayName: 'Posts',
 	getInitialState: function getInitialState() {
@@ -13508,7 +13510,7 @@ var Posts = _react2.default.createClass({
 		var data = _qs2.default.stringify({ action: "get_posts", paged: paged });
 
 		_axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
-			_this2.setState({ posts: res.data, paged: paged });
+			_this2.setState({ posts: [].concat(_toConsumableArray(_this2.posts), [res.data]), paged: paged });
 		}).catch(function (err) {
 			return console.error(err);
 		});
