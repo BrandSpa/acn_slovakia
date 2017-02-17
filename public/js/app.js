@@ -13529,13 +13529,15 @@ var Posts = _react2.default.createClass({
 				columnWidth: '.grid-sizer'
 			}
 		});
+
+		this.iso.layout();
 	},
 	render: function render() {
 		var _this3 = this;
 
 		var posts = this.state.posts;
 
-		this.iso ? this.iso.layout() : '';
+
 		return _react2.default.createElement(
 			'div',
 			null,

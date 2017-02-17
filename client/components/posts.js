@@ -56,11 +56,13 @@ const Posts = React.createClass({
 				columnWidth: '.grid-sizer'
 			}
 		});
+
+		this.iso.layout()
 	},
 
 	render() {
 		const { posts } = this.state;
-		this.iso ? this.iso.layout() : '';
+
 		return (
 			<div>
 				<div ref={grid => this.grid = grid}>
