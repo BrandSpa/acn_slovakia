@@ -13284,6 +13284,7 @@ var Donate = _react2.default.createClass({
 	},
 	prevSection: function prevSection() {
 		var section = this.state.section > 0 ? this.state.section - 1 : 0;
+		console.log(section);
 		var left = '-' + section * 100 + '%';
 		this.setState({ section: section, left: left });
 	},
