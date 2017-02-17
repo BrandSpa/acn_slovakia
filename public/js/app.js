@@ -31636,7 +31636,7 @@ var AmountBtns = _react2.default.createClass({
 			{ className: "change-amount", style: { padding: 0 } },
 			_react2.default.createElement(
 				"li",
-				{ className: "col-2-m" },
+				{ className: "col-1-4" },
 				_react2.default.createElement(
 					"a",
 					{ href: "#", onClick: changeAmount.bind(null, 10) },
@@ -31645,7 +31645,7 @@ var AmountBtns = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				"li",
-				{ className: "col-2-m" },
+				{ className: "col-1-4" },
 				_react2.default.createElement(
 					"a",
 					{ href: "#", onClick: changeAmount.bind(null, 30) },
@@ -31654,7 +31654,7 @@ var AmountBtns = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				"li",
-				{ className: "col-2-m" },
+				{ className: "col-1-4" },
 				_react2.default.createElement(
 					"a",
 					{ href: "#", onClick: changeAmount.bind(null, 50) },
@@ -31663,7 +31663,7 @@ var AmountBtns = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				"li",
-				{ className: "col-2-m" },
+				{ className: "col-1-4" },
 				_react2.default.createElement(
 					"a",
 					{ href: "#", onClick: changeAmount.bind(null, 100) },
@@ -31672,7 +31672,7 @@ var AmountBtns = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				"li",
-				{ className: "col-2-m" },
+				{ className: "col-1-4" },
 				_react2.default.createElement(
 					"a",
 					{ href: "#", onClick: changeAmount.bind(null, 5) },
