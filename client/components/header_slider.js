@@ -19,6 +19,8 @@ const headerSlider = React.createClass({
     this.interval = setInterval(() => {
       this.nextSlide(false);
     }, 2000);
+
+    
   },
 
   nextSlide(clear = true) {
@@ -28,12 +30,12 @@ const headerSlider = React.createClass({
     this.setState({left: '-' + (left * 100) + '%', currentSlide: left});
  },
 
- prevSlide() {
-   clearInterval(this.interval);
-  let total = this.props.slides.length - 1;
-  let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
+  prevSlide() {
+    clearInterval(this.interval);
+    let total = this.props.slides.length - 1;
+    let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
     this.setState({left: '-' + (left * 100) + '%', currentSlide: left});
- },
+  },
 
   render() {
     const { slides } = this.props;
