@@ -18,9 +18,12 @@
 			h5 {
 				color: #324049;
 				padding-bottom: 15px;
-				border-bottom: 1px solid #E34E6B;
 				margin-top: 15px;
-
+				display: block;
+				.line {
+					width: 70%;
+					border-bottom: 1px solid #E34E6B;	
+				}
 				a {
 					color: #324049;
 					text-decoration: none;
