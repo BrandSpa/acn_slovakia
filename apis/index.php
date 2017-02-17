@@ -196,12 +196,11 @@ function user_location() {
   die();
 }
 
-add_action( 'wp_ajax_nopriv_user_geoip_update', 'geoip_update' );
+add_action( 'wp_ajax_nopriv_user_c', 'geoip_update' );
 add_action( 'wp_ajax_geoip_update', 'geoip_update' );
 
 function geoip_update() {
-  $res = geoip_db();
-  header('Content-type: application/json');  
+  $res = geoip_db();  
   echo $res;
   die();
 }

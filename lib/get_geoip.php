@@ -41,7 +41,7 @@ function geoip_db() {
 			$file_name = $path;
 			unzip_db($file_name);
 			
-		return true;
+		return ['message'=> 'geolite updated'];
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
