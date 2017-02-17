@@ -9,6 +9,10 @@
 .row {
 	margin-left: -#{$grid-gutter};
 	margin-right: -#{$grid-gutter};
+	&:before {
+		display: table;
+  	content: " ";
+	}
 }
 
 $columns: 12;

@@ -14,6 +14,9 @@
 .row {
   margin-left: -15px;
   margin-right: -15px; }
+  .row:before {
+    display: table;
+    content: " "; }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-1 {
