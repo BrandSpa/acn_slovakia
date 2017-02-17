@@ -134,6 +134,7 @@ const Donate = React.createClass({
 					 <button 
 					 	className="donate_landing__submit pull-left" 
 						 onClick={this.handleSubmit}
+						 style={{float: 'right'}}
 						>
 						Donate
 					</button>

@@ -13314,7 +13314,8 @@ var Donate = _react2.default.createClass({
 					'button',
 					{
 						className: 'donate_landing__submit pull-left',
-						onClick: this.handleSubmit
+						onClick: this.handleSubmit,
+						style: { float: 'right' }
 					},
 					'Donate'
 				),
