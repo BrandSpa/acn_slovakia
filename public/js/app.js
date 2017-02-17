@@ -13609,7 +13609,6 @@ var Donate = _react2.default.createClass({
 		this.setState({ section: section, left: left });
 	},
 	render: function render() {
-
 		return _react2.default.createElement(
 			'div',
 			{ style: { overflow: 'hidden' } },
@@ -13640,6 +13639,11 @@ var Donate = _react2.default.createClass({
 						onClick: this.handleSubmit
 					},
 					'Donate'
+				),
+				_react2.default.createElement(
+					'button',
+					null,
+					'Back'
 				)
 			)
 		);
