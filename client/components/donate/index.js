@@ -137,7 +137,7 @@ const Donate = React.createClass({
 						>
 						Donate
 					</button>
-					{this.state.section > 1 ? <button onClick={this.prevSection}>Back</button> : ''}
+					{this.state.section > 0 ? <button onClick={this.prevSection}>Back</button> : ''}
 				 </div>
 				 
 			</div>

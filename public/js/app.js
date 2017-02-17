@@ -13318,7 +13318,7 @@ var Donate = _react2.default.createClass({
 					},
 					'Donate'
 				),
-				this.state.section > 1 ? _react2.default.createElement(
+				this.state.section > 0 ? _react2.default.createElement(
 					'button',
 					{ onClick: this.prevSection },
 					'Back'
