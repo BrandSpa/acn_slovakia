@@ -47,7 +47,7 @@ const headerSlider = React.createClass({
     let sliderHeight = this.height && this.headerHeight ? (this.height - this.headerHeight) : 'auto'; 
     
     return (
-      <div className="slider" style={{height: this.height}}>
+      <div className="slider" style={{ height: sliderHeight }}>
         <div 
           className="slider__viewport" 
           style={{

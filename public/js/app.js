@@ -13410,7 +13410,7 @@ var headerSlider = _react2.default.createClass({
 
     return _react2.default.createElement(
       'div',
-      { className: 'slider', style: { height: this.height } },
+      { className: 'slider', style: { height: sliderHeight } },
       _react2.default.createElement(
         'div',
         {
