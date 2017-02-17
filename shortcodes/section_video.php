@@ -39,6 +39,8 @@ add_shortcode( 'bs_section_video', 'bs_section_video_sc' );
 add_action( 'vc_before_init', 'bs_section_video_vc' );
 
   function bs_section_video_vc() {
+
+    
 		$params = [
 			[
         "type" => "attach_image",
