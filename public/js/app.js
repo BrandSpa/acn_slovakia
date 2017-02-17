@@ -13240,7 +13240,8 @@ var Donate = _react2.default.createClass({
 	handleChange: function handleChange(field) {
 		this.setState(_extends({}, this.state, field));
 	},
-	handleSubmit: function handleSubmit() {
+	handleSubmit: function handleSubmit(e) {
+		e.preventDefault();
 		this.nextSection();
 		// let data = {
 		// 	action: 'stripe_token',

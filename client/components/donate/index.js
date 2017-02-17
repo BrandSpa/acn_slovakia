@@ -60,7 +60,8 @@ const Donate = React.createClass({
 		this.setState({...this.state, ...field});
 	},
 
-	handleSubmit() {
+	handleSubmit(e) {
+		e.preventDefault();
 		this.nextSection();
 			// let data = {
 			// 	action: 'stripe_token',
@@ -144,6 +145,7 @@ const Donate = React.createClass({
 						>
 						Donate
 					</button>
+
 					{this.state.section > 0 ? <button style={{float: 'right'}} onClick={this.prevSection}>Back</button> : ''}
 				 </div>
 				 
