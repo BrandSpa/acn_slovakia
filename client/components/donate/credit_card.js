@@ -104,7 +104,7 @@ const CedritCard = React.createClass({
 		const {texts, stripe, errors} = this.props;
 
 		return (
-			<div style={{width: '33.3%', float: 'left'}}>
+			<div style={{width: `${100 / 3}%`, float: 'left'}}>
 				<Cards {...this.props} />
 
 			<div className="form-group">
