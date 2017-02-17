@@ -13473,7 +13473,8 @@ var Posts = _react2.default.createClass({
 	displayName: 'Posts',
 	getInitialState: function getInitialState() {
 		return {
-			posts: []
+			posts: [],
+			paged: 1
 		};
 	},
 	componentWillMount: function componentWillMount() {
@@ -13503,10 +13504,11 @@ var Posts = _react2.default.createClass({
 	seeMore: function seeMore() {
 		var _this2 = this;
 
-		var data = _qs2.default.stringify({ action: "get_posts", paged: 2 });
+		var paged = this.state.paged + 1;
+		var data = _qs2.default.stringify({ action: "get_posts", paged: paged });
 
 		_axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
-			_this2.setState({ posts: res.data });
+			_this2.setState({ posts: res.data, paged: paged });
 		}).catch(function (err) {
 			return console.error(err);
 		});

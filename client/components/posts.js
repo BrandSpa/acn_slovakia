@@ -6,7 +6,8 @@ import Isotope from 'isotope-layout';
 const Posts = React.createClass({
 	getInitialState() {
 		return {
-			posts: []
+			posts: [],
+			paged: 1
 		}
 	},
 
@@ -34,12 +35,13 @@ const Posts = React.createClass({
 	},
 
 	seeMore() {
-			let data = qs.stringify({ action: "get_posts", paged: 2});
+		let paged = this.state.paged + 1;
+		let data = qs.stringify({ action: "get_posts", paged});
 
     request
 		.post("/wp-admin/admin-ajax.php", data)
     .then(res => {
-      this.setState({ posts: res.data });
+      this.setState({ posts: res.data, paged });
     })
     .catch(err => console.error(err));
 	},
