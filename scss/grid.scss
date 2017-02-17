@@ -24,6 +24,7 @@ $columns: 12;
 			width: ($i / $columns) * 100%;
 		}
 	}
+	
 	//media query medium
 	@media #{$m} {
 		.col-#{$i}-m {
