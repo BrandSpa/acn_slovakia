@@ -3,7 +3,8 @@
 ##todos
 - [ ] connect form to mailchimp 
 - [ ] fix responsive
-- [ ] add options pages
+- [ ] clean apis/index.php
+- [x] add options pages
 - [x] add polylang
 - [x] test apis
 

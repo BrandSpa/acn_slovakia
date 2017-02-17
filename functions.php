@@ -21,13 +21,15 @@ function modify_jquery() {
 }
 
 add_action('init', 'modify_jquery');
+
 //libs
 require('lib/clean_menu.php');
 
 //apis
 require('apis/index.php');
 
-
+//options
+require('options/index.php');
 
 //shortcodes
 require('shortcodes/contact_form.php');
