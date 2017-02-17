@@ -38,4 +38,5 @@ require('shortcodes/projects.php');
 require('shortcodes/section_video.php');
 require('shortcodes/accordion.php');
 require('shortcodes/donate.php');
+require('shortcodes/posts.php');
 
