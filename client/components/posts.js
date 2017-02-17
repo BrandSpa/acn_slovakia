@@ -13,7 +13,8 @@ const Posts = React.createClass({
 	componentWillMount() {
 		let data = qs.stringify({ action: "get_posts"});
 
-    request.post("/wp-admin/admin-ajax.php", data)
+    request
+		.post("/wp-admin/admin-ajax.php", data)
     .then(res => {
       this.setState({ posts: res.data });
     })
@@ -30,6 +31,17 @@ const Posts = React.createClass({
 		  if(this.state.posts && this.state.posts.length > 0){
         this.initIsotope();
       }
+	},
+
+	seeMore() {
+			let data = qs.stringify({ action: "get_posts", paged: 2});
+
+    request
+		.post("/wp-admin/admin-ajax.php", data)
+    .then(res => {
+      this.setState({ posts: res.data });
+    })
+    .catch(err => console.error(err));
 	},
 
 	initIsotope() {
@@ -64,7 +76,7 @@ const Posts = React.createClass({
 						</div>
 					)
 				})}
-
+				<button onClick={this.seeMore}>See more</button>
 			</div>
 		)
 	}

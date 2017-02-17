@@ -13500,6 +13500,17 @@ var Posts = _react2.default.createClass({
 			this.initIsotope();
 		}
 	},
+	seeMore: function seeMore() {
+		var _this2 = this;
+
+		var data = _qs2.default.stringify({ action: "get_posts", paged: 2 });
+
+		_axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
+			_this2.setState({ posts: res.data });
+		}).catch(function (err) {
+			return console.error(err);
+		});
+	},
 	initIsotope: function initIsotope() {
 		var grid = this.grid;
 
@@ -13512,7 +13523,7 @@ var Posts = _react2.default.createClass({
 		});
 	},
 	render: function render() {
-		var _this2 = this;
+		var _this3 = this;
 
 		var posts = this.state.posts;
 
@@ -13520,7 +13531,7 @@ var Posts = _react2.default.createClass({
 		return _react2.default.createElement(
 			'div',
 			{ ref: function ref(grid) {
-					return _this2.grid = grid;
+					return _this3.grid = grid;
 				} },
 			_react2.default.createElement('div', { className: 'grid-sizer' }),
 			posts.map(function (post, i) {
@@ -13551,7 +13562,12 @@ var Posts = _react2.default.createClass({
 						)
 					)
 				);
-			})
+			}),
+			_react2.default.createElement(
+				'button',
+				{ onClick: this.seeMore },
+				'See more'
+			)
 		);
 	}
 });
