@@ -20,7 +20,6 @@
      </a>
 
 	<ul class="menu">
-		<li><?php var_dump(get_user_location()) ?></li>
 	  <?php
 			$args = array(
             'theme_location' => 'header',
