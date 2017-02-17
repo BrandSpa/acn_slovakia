@@ -178,15 +178,16 @@ p {
 	li {
 		display: inline-block;
 		border-right: 1px #fff solid;
+		&:last-child {
+			border: none;
+		}
 		a {
 			display: block;
 			padding: 0 7px;
 			color: #fff;
 			font-weight: 300;
 			font-size: 11px;
-			&:last-child {
-				border: none;
-			}
+		
 		}
 	}
 

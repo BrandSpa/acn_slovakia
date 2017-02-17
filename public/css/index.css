@@ -548,14 +548,14 @@ p {
   .offices-list li {
     display: inline-block;
     border-right: 1px #fff solid; }
+    .offices-list li:last-child {
+      border: none; }
     .offices-list li a {
       display: block;
       padding: 0 7px;
       color: #fff;
       font-weight: 300;
       font-size: 11px; }
-      .offices-list li a:last-child {
-        border: none; }
 
 .nav {
   height: 140px;
