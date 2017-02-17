@@ -19,3 +19,13 @@ function get_location($ip) {
 function get_user_location() {
 	return get_location( get_client_ip_server() );
 }
+
+function getCountry() {
+
+	if(function_exists('get_user_location')) {
+    $geo = get_user_location();
+    return $geo->names['en'];
+  }
+
+  return '';
+}

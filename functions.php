@@ -27,15 +27,7 @@ require('lib/clean_menu.php');
 //apis
 require('apis/index.php');
 
-function getCountry() {
 
-	if(function_exists('get_user_location')) {
-    $geo = get_user_location();
-    return $geo->names['en'];
-  }
-
-  return '';
-}
 
 //shortcodes
 require('shortcodes/contact_form.php');
