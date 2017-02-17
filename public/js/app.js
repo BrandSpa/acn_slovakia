@@ -13497,10 +13497,9 @@ var Posts = _react2.default.createClass({
 
 
 	componentDidUpdate: function componentDidUpdate() {
-		if (this.state.posts && this.state.posts.length > 0 && this.iso) {
+		if (this.iso) {
 			console.log(this.iso, 'reload');
 			this.iso.reloadItems();
-			this.iso.layout();
 		} else if (this.state.posts && this.state.posts.length > 0) {
 			this.initIsotope();
 		}
