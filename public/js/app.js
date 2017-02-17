@@ -13384,6 +13384,7 @@ var headerSlider = _react2.default.createClass({
 
     window.addEventListener('load', function () {
       _this.height = window.innerHeight;
+      _this.headerHeight = document.querySelector('.nav').offsetHeight;
     });
   },
   nextSlide: function nextSlide() {
@@ -13405,7 +13406,7 @@ var headerSlider = _react2.default.createClass({
 
     var viewportWidth = 100 * slides.length + '%';
     var slideWidth = 100 / slides.length + '%';
-    var sliderHeight = this.height - 140;
+    var sliderHeight = this.height && this.headerHeight ? this.height - this.headerHeight : 'auto';
 
     return _react2.default.createElement(
       'div',

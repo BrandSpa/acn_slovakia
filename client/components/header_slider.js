@@ -22,6 +22,7 @@ const headerSlider = React.createClass({
 
     window.addEventListener('load', () => {
       this.height = window.innerHeight;
+      this.headerHeight = document.querySelector('.nav').offsetHeight;
     })
   },
 
@@ -43,7 +44,7 @@ const headerSlider = React.createClass({
     const { slides } = this.props;
     let viewportWidth = `${100 * slides.length}%`;
     let slideWidth = `${(100 / slides.length)}%`;
-    let sliderHeight = this.height - 140; 
+    let sliderHeight = this.height && this.headerHeight ? (this.height - this.headerHeight) : 'auto'; 
     
     return (
       <div className="slider" style={{height: this.height}}>
