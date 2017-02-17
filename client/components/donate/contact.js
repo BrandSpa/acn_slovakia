@@ -40,45 +40,47 @@ const Contact = React.createClass({
 		const {texts, contact} = this.props;
 
 		return (
-			<div className="row" style={{width: '33.3%'}}>
-				<div className="form-group col-12-l">
-					<input 
-						type="text" 
-						className={`form-control ${this.inputErrStyle('name')}`} 
-						placeholder={texts.placeholder_name}
-						onChange={this.handleChange.bind(null, 'name')}
-						value={contact.name}
-					/>
-					<span className={this.showErr('name')}>
-						{texts.validation_card}
-        	</span>
-				</div>
+			<div style={{width: '33.3%'}}>
+				<div className="row">
+					<div className="form-group col-12-l">
+						<input 
+							type="text" 
+							className={`form-control ${this.inputErrStyle('name')}`} 
+							placeholder={texts.placeholder_name}
+							onChange={this.handleChange.bind(null, 'name')}
+							value={contact.name}
+						/>
+						<span className={this.showErr('name')}>
+							{texts.validation_card}
+						</span>
+					</div>
 
-				<div className="form-group col-12-l">
-					<input 
-						type="text" 
-						className={`form-control ${this.inputErrStyle('email')}`} 
-						placeholder={texts.placeholder_email}
-						onChange={this.handleChange.bind(null, 'email')} 
-						value={contact.email}
-					/>
-					<span className={this.showErr('email')}>
-						{texts.validation_card}
-        	</span>
-				</div>
+					<div className="form-group col-12-l">
+						<input 
+							type="text" 
+							className={`form-control ${this.inputErrStyle('email')}`} 
+							placeholder={texts.placeholder_email}
+							onChange={this.handleChange.bind(null, 'email')} 
+							value={contact.email}
+						/>
+						<span className={this.showErr('email')}>
+							{texts.validation_card}
+						</span>
+					</div>
 
-				<div className="form-group col-12-l">
-					<select
-						type="text" 
-						className="form-control" 
-						placeholder={texts.placeholder_country}
-						onChange={this.handleChange.bind(null, 'country')} 
-						value={contact.country || texts.country}
-					>
-					{this.props.countries.map((country, i) => {
-						return <option key={i} value={country}>{country}</option>
-					})}
-					</select>
+					<div className="form-group col-12-l">
+						<select
+							type="text" 
+							className="form-control" 
+							placeholder={texts.placeholder_country}
+							onChange={this.handleChange.bind(null, 'country')} 
+							value={contact.country || texts.country}
+						>
+						{this.props.countries.map((country, i) => {
+							return <option key={i} value={country}>{country}</option>
+						})}
+						</select>
+					</div>
 				</div>
 			</div>
 		)

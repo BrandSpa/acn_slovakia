@@ -31807,58 +31807,62 @@ var Contact = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'div',
-			{ className: 'row', style: { width: '33.3%' } },
+			{ style: { width: '33.3%' } },
 			_react2.default.createElement(
 				'div',
-				{ className: 'form-group col-12-l' },
-				_react2.default.createElement('input', {
-					type: 'text',
-					className: 'form-control ' + this.inputErrStyle('name'),
-					placeholder: texts.placeholder_name,
-					onChange: this.handleChange.bind(null, 'name'),
-					value: contact.name
-				}),
+				{ className: 'row' },
 				_react2.default.createElement(
-					'span',
-					{ className: this.showErr('name') },
-					texts.validation_card
-				)
-			),
-			_react2.default.createElement(
-				'div',
-				{ className: 'form-group col-12-l' },
-				_react2.default.createElement('input', {
-					type: 'text',
-					className: 'form-control ' + this.inputErrStyle('email'),
-					placeholder: texts.placeholder_email,
-					onChange: this.handleChange.bind(null, 'email'),
-					value: contact.email
-				}),
-				_react2.default.createElement(
-					'span',
-					{ className: this.showErr('email') },
-					texts.validation_card
-				)
-			),
-			_react2.default.createElement(
-				'div',
-				{ className: 'form-group col-12-l' },
-				_react2.default.createElement(
-					'select',
-					{
+					'div',
+					{ className: 'form-group col-12-l' },
+					_react2.default.createElement('input', {
 						type: 'text',
-						className: 'form-control',
-						placeholder: texts.placeholder_country,
-						onChange: this.handleChange.bind(null, 'country'),
-						value: contact.country || texts.country
-					},
-					this.props.countries.map(function (country, i) {
-						return _react2.default.createElement(
-							'option',
-							{ key: i, value: country },
-							country
-						);
-					})
+						className: 'form-control ' + this.inputErrStyle('name'),
+						placeholder: texts.placeholder_name,
+						onChange: this.handleChange.bind(null, 'name'),
+						value: contact.name
+					}),
+					_react2.default.createElement(
+						'span',
+						{ className: this.showErr('name') },
+						texts.validation_card
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'form-group col-12-l' },
+					_react2.default.createElement('input', {
+						type: 'text',
+						className: 'form-control ' + this.inputErrStyle('email'),
+						placeholder: texts.placeholder_email,
+						onChange: this.handleChange.bind(null, 'email'),
+						value: contact.email
+					}),
+					_react2.default.createElement(
+						'span',
+						{ className: this.showErr('email') },
+						texts.validation_card
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'form-group col-12-l' },
+					_react2.default.createElement(
+						'select',
+						{
+							type: 'text',
+							className: 'form-control',
+							placeholder: texts.placeholder_country,
+							onChange: this.handleChange.bind(null, 'country'),
+							value: contact.country || texts.country
+						},
+						this.props.countries.map(function (country, i) {
+							return _react2.default.createElement(
+								'option',
+								{ key: i, value: country },
+								country
+							);
+						})
+					)
 				)
 			)
 		);
