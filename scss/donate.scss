@@ -120,6 +120,14 @@
 
   }
 
+   .card-type {
+    opacity: .7;
+    margin-right: 5px;
+    &--active {
+      opacity: 1;
+    }
+  }
+
 }
 
 
@@ -219,11 +227,5 @@ a {
     transition: all 300ms ease-in-out;
   }
 
-  .card-type {
-    opacity: .7;
-    margin-right: 5px;
-    &--active {
-      opacity: 1;
-    }
-  }
+ 
 }

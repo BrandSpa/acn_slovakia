@@ -833,6 +833,11 @@ p {
       text-transform: uppercase;
       font-size: 14px;
       letter-spacing: 3.11px; }
+  .donate_react .card-type {
+    opacity: .7;
+    margin-right: 5px; }
+    .donate_react .card-type--active {
+      opacity: 1; }
 
 a:hover {
   text-decoration: none; }
@@ -912,8 +917,3 @@ a:hover {
     height: 100%;
     background: #fff;
     transition: all 300ms ease-in-out; }
-  .pro-bar .card-type {
-    opacity: .7;
-    margin-right: 5px; }
-    .pro-bar .card-type--active {
-      opacity: 1; }
