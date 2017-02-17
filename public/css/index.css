@@ -744,24 +744,18 @@ p {
   .projects__content__content-right {
     transition: all 300ms; }
 
-.donate_landing {
+.donate_react {
   position: relative;
   overflow: hidden;
   margin: 20px 0; }
-  .donate_landing input {
+  .donate_react input {
     border-color: #fff; }
-  .donate_landing__section {
-    width: 33.33333%; }
-    .donate_landing__section__title {
-      padding-bottom: 30px; }
-      .donate_landing__section__title p {
-        color: #fff; }
-  .donate_landing h6 {
+  .donate_react h6 {
     color: #fff;
     font-size: 16px;
     letter-spacing: 2.78px;
     padding-bottom: 6px; }
-  .donate_landing__viewport {
+  .donate_react__viewport {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -771,19 +765,19 @@ p {
     left: 0;
     margin: 20px 0 20px 0;
     width: 300%; }
-  .donate_landing__cards {
+  .donate_react__cards {
     text-align: left;
     margin-left: 15px;
     margin-bottom: 0; }
-    .donate_landing__cards .card-type {
+    .donate_react__cards .card-type {
       width: 40px; }
-  .donate_landing__info {
+  .donate_react__info {
     margin-left: 25px;
     font-size: 1.07143em;
     font-weight: 300;
     color: #fff;
     padding-top: 15px; }
-  .donate_landing__back {
+  .donate_react__back {
     background: transparent;
     border: none;
     float: left;
@@ -791,7 +785,7 @@ p {
     text-transform: uppercase;
     font-size: 16px;
     padding-top: 7px; }
-  .donate_landing__type {
+  .donate_react__type {
     font-size: 1.28571em;
     opacity: .4;
     font-weight: 500;
@@ -799,21 +793,21 @@ p {
     float: left;
     transition: all 300ms ease;
     margin-right: 5px; }
-    .donate_landing__type:first-child {
+    .donate_react__type:first-child {
       margin-right: 22px; }
-    .donate_landing__type:hover, .donate_landing__type:focus {
+    .donate_react__type:hover, .donate_react__type:focus {
       color: #fff;
       opacity: 1; }
-    .donate_landing__type--active {
+    .donate_react__type--active {
       opacity: 1;
       padding-bottom: 5px; }
-      .donate_landing__type--active::after {
+      .donate_react__type--active::after {
         display: block;
         content: '';
         width: 60%;
         height: 3px;
         background: #fff; }
-  .donate_landing__submit {
+  .donate_react__submit {
     background: transparent;
     font-size: 1.78571em;
     color: #fff;
@@ -824,17 +818,17 @@ p {
     background: #f1364e;
     transition: all 300ms ease;
     font-weight: bold; }
-    .donate_landing__submit:hover {
+    .donate_react__submit:hover {
       background: transparent;
       color: #fff; }
-  .donate_landing .radio {
+  .donate_react .radio {
     color: #fff;
     float: left; }
     @media (max-width: 767px) {
-      .donate_landing .radio {
+      .donate_react .radio {
         text-align: left;
         width: 100%; } }
-    .donate_landing .radio label {
+    .donate_react .radio label {
       text-transform: uppercase;
       font-size: 14px;
       letter-spacing: 3.11px; }

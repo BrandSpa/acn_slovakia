@@ -1,20 +1,12 @@
-.donate_landing {
+.donate_react {
   position: relative;
   overflow: hidden;
   margin: 20px 0;
+
   input {
     border-color: #fff;
   }
-  &__section {
-    width: (100 / 3) * 1%;
-    
-    &__title {
-      padding-bottom: 30px;
-      p {
-        color: #fff;
-      }
-    }
-  }
+
 
   h6 {
     color: #fff;

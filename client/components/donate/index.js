@@ -106,7 +106,7 @@ const Donate = React.createClass({
 
 	render() {
 		return (
-			<div style={{overflow: 'hidden'}}>
+			<div className="donate_react" style={{overflow: 'hidden'}}>
 			<div className="donate_landing__viewport" style={{width: '300%', left: this.state.left}}>
 				<Amount
 					{...this.state}

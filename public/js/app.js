@@ -13289,7 +13289,7 @@ var Donate = _react2.default.createClass({
 	render: function render() {
 		return _react2.default.createElement(
 			'div',
-			{ style: { overflow: 'hidden' } },
+			{ className: 'donate_react', style: { overflow: 'hidden' } },
 			_react2.default.createElement(
 				'div',
 				{ className: 'donate_landing__viewport', style: { width: '300%', left: this.state.left } },
