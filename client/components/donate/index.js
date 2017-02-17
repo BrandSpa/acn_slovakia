@@ -97,7 +97,8 @@ const Donate = React.createClass({
 					{...this.state}
 					{...this.props}
 					onlyNum={this.onlyNum} 
-					onChange={this.handleChange} 
+					onChange={this.handleChange}
+					style={{background: '#fff'}}
 				/>
 
 				<CreditCard 
