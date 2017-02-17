@@ -13532,43 +13532,47 @@ var Posts = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'div',
-			{ ref: function ref(grid) {
-					return _this3.grid = grid;
-				} },
-			_react2.default.createElement('div', { className: 'grid-sizer' }),
-			posts.map(function (post, i) {
-				return _react2.default.createElement(
-					'div',
-					{ key: i, className: 'grid-item' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'grid-item__content' },
-						post.post_image ? _react2.default.createElement('div', { style: { background: 'url(' + post.post_image + ')', backgroundSize: 'cover', width: '100%', height: '150px' } }) : '',
-						_react2.default.createElement(
-							'div',
-							{ className: 'grid-item__content__texts' },
-							_react2.default.createElement(
-								'h5',
-								null,
-								_react2.default.createElement(
-									'a',
-									{ href: post.post_permalink },
-									post.post_title
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								null,
-								post.post_short + '...'
-							)
-						)
-					)
-				);
-			}),
+			null,
 			_react2.default.createElement(
 				'button',
 				{ onClick: this.seeMore },
 				'See more'
+			),
+			_react2.default.createElement(
+				'div',
+				{ ref: function ref(grid) {
+						return _this3.grid = grid;
+					} },
+				_react2.default.createElement('div', { className: 'grid-sizer' }),
+				posts.map(function (post, i) {
+					return _react2.default.createElement(
+						'div',
+						{ key: i, className: 'grid-item' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid-item__content' },
+							post.post_image ? _react2.default.createElement('div', { style: { background: 'url(' + post.post_image + ')', backgroundSize: 'cover', width: '100%', height: '150px' } }) : '',
+							_react2.default.createElement(
+								'div',
+								{ className: 'grid-item__content__texts' },
+								_react2.default.createElement(
+									'h5',
+									null,
+									_react2.default.createElement(
+										'a',
+										{ href: post.post_permalink },
+										post.post_title
+									)
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									post.post_short + '...'
+								)
+							)
+						)
+					);
+				})
 			)
 		);
 	}

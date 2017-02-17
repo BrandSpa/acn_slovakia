@@ -62,23 +62,27 @@ const Posts = React.createClass({
 		const { posts } = this.state;
 		
 		return (
-			<div ref={grid => this.grid = grid}>
-				<div className="grid-sizer"></div>
+			<div>
+					<button onClick={this.seeMore}>See more</button>
+		
+				<div ref={grid => this.grid = grid}>
+					<div className="grid-sizer"></div>
 
-				{posts.map((post, i) => {
-					return (
-						<div key={i} className="grid-item">
-							<div className="grid-item__content">
-								{post.post_image ? <div style={{background: `url(${post.post_image})`, backgroundSize: 'cover', width: '100%', height: '150px'}}></div> : ''}
-								<div className="grid-item__content__texts">
-									<h5><a href={post.post_permalink}>{post.post_title}</a></h5>
-									<p>{ `${post.post_short}...` }</p>
+					{posts.map((post, i) => {
+						return (
+							<div key={i} className="grid-item">
+								<div className="grid-item__content">
+									{post.post_image ? <div style={{background: `url(${post.post_image})`, backgroundSize: 'cover', width: '100%', height: '150px'}}></div> : ''}
+									<div className="grid-item__content__texts">
+										<h5><a href={post.post_permalink}>{post.post_title}</a></h5>
+										<p>{ `${post.post_short}...` }</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					)
-				})}
-				<button onClick={this.seeMore}>See more</button>
+						)
+					})}
+				
+				</div>
 			</div>
 		)
 	}
