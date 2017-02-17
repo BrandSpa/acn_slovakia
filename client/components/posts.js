@@ -24,7 +24,7 @@ const Posts = React.createClass({
 
 	componentDidUpdate: function() {
     if(this.state.posts && this.state.posts.length > 0 && this.iso){
-				console.log('reload');
+				console.log(this.iso, 'reload');
 				this.iso.reloadItems();
 				this.iso.layout();
       } else if(this.state.posts && this.state.posts.length > 0) {
