@@ -13480,7 +13480,8 @@ var Posts = _react2.default.createClass({
 	getInitialState: function getInitialState() {
 		return {
 			posts: [],
-			paged: 1
+			paged: 1,
+			seeMore: true
 		};
 	},
 	componentWillMount: function componentWillMount() {
@@ -13517,7 +13518,11 @@ var Posts = _react2.default.createClass({
 		var data = _qs2.default.stringify({ action: "get_posts", paged: paged });
 
 		_axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
-			_this2.setState({ posts: [].concat(_toConsumableArray(_this2.state.posts), _toConsumableArray(res.data)), paged: paged });
+			if (res.data.length > 0) {
+				_this2.setState({ posts: [].concat(_toConsumableArray(_this2.state.posts), _toConsumableArray(res.data)), paged: paged });
+			} else {
+				_this2.setState({ seeMore: false });
+			}
 		}).catch(function (err) {
 			return console.error(err);
 		});
@@ -13585,7 +13590,10 @@ var Posts = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				'button',
-				{ onClick: this.seeMore, style: { margin: '30px auto', background: '#fff', color: 'red' } },
+				{
+					onClick: this.seeMore,
+					style: this.state.seeMore ? { margin: '30px auto', background: '#fff', color: 'red' } : { display: 'none' }
+				},
 				'See more'
 			)
 		);

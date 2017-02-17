@@ -7,7 +7,8 @@ const Posts = React.createClass({
 	getInitialState() {
 		return {
 			posts: [],
-			paged: 1
+			paged: 1,
+			seeMore: true
 		}
 	},
 
@@ -44,7 +45,12 @@ const Posts = React.createClass({
     request
 		.post("/wp-admin/admin-ajax.php", data)
     .then(res => {
-      this.setState({ posts: [...this.state.posts, ...res.data], paged });
+			if(res.data.length > 0) {
+				this.setState({ posts: [...this.state.posts, ...res.data], paged });
+			} else {
+				this.setState({seeMore: false});
+			}
+      
     })
     .catch(err => console.error(err));
 	},
@@ -92,7 +98,12 @@ const Posts = React.createClass({
 					})}
 				
 				</div>
-				<button onClick={this.seeMore} style={{margin: '30px auto', background: '#fff', color: 'red'}}>See more</button>
+				<button 
+					onClick={this.seeMore} 
+					style={this.state.seeMore ? {margin: '30px auto', background: '#fff', color: 'red'} : {display: 'none'}}
+				>
+					See more
+				</button>
 			</div>
 		)
 	}
