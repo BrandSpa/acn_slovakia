@@ -93,12 +93,12 @@ const Donate = React.createClass({
 	render() {
 		return (
 			<div>
+			<div className="donate_landing__viewport" style={{width: '300%'}}>
 				<Amount
 					{...this.state}
 					{...this.props}
 					onlyNum={this.onlyNum} 
 					onChange={this.handleChange}
-					style={{background: '#fff'}}
 				/>
 
 				<CreditCard 
@@ -115,7 +115,7 @@ const Donate = React.createClass({
 					{...this.props}
 					onChange={this.handleChange} 
 				 />
-
+				</div> 
 				 <div className="form-group">
 					 <button 
 					 	className="donate_landing__submit pull-left" 
