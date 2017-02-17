@@ -13382,7 +13382,7 @@ var headerSlider = _react2.default.createClass({
       _this.nextSlide(false);
     }, 2000);
 
-    document.addEventListener('load', function () {
+    window.addEventListener('load', function () {
       console.log('load');
     });
   },
