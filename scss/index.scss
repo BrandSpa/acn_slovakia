@@ -178,10 +178,13 @@ p {
 	li {
 		display: inline-block;
 		border-right: 1px #fff solid;
+		
 		&:last-child {
-			border: none;
+				border: none;
 		}
+
 		a {
+			text-decoration: none;
 			display: block;
 			padding: 0 7px;
 			color: #fff;
