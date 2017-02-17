@@ -537,6 +537,8 @@ p {
 
 .accordion__content {
   background: rgba(180, 191, 194, 0.9); }
+  .accordion__content p {
+    margin: 0; }
 
 .offices-list {
   min-height: 70px;
