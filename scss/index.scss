@@ -11,6 +11,9 @@ body {
 	margin: 0;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: $font-size-base;
+	@media #{$s} {
+		font-size: 12px;
+	}
 }
 
 *,
