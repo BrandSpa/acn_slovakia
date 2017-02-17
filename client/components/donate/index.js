@@ -9,6 +9,8 @@ import Contact from './contact';
 const Donate = React.createClass({
 	getInitialState() {
 		return {
+			section: 0,
+			left: 0,
 			donation_type: 'monthly',
 			amount: 30,
 			currency: 'usd',
@@ -59,20 +61,20 @@ const Donate = React.createClass({
 	},
 
 	handleSubmit() {
+		this.nextSection();
+			// let data = {
+			// 	action: 'stripe_token',
+			// 	data: this.state.stripe
+			// };
 
-			let data = {
-				action: 'stripe_token',
-				data: this.state.stripe
-			};
-
-			$.ajax({
-				type: 'post',
-				url: '/wp-admin/admin-ajax.php',
-				data: data
-			})
-			.then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}))
-			.then(res => this.stripeCharge())
-			.then(res => console.log(res));
+			// $.ajax({
+			// 	type: 'post',
+			// 	url: '/wp-admin/admin-ajax.php',
+			// 	data: data
+			// })
+			// .then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}))
+			// .then(res => this.stripeCharge())
+			// .then(res => console.log(res));
 	},
 
 	stripeCharge() {
@@ -90,10 +92,19 @@ const Donate = React.createClass({
 		return request;
 	},
 
+	nextSection() {
+		let section = this.state.section + 1;
+		let left = `-${section * 100}%`;
+		this.setState({section, left});
+	},
+
 	render() {
+		
+		
+
 		return (
 			<div style={{overflow: 'hidden'}}>
-			<div className="donate_landing__viewport" style={{width: '300%'}}>
+			<div className="donate_landing__viewport" style={{width: '300%', left: this.state.left}}>
 				<Amount
 					{...this.state}
 					{...this.props}

@@ -13519,6 +13519,8 @@ var Donate = _react2.default.createClass({
 	displayName: 'Donate',
 	getInitialState: function getInitialState() {
 		return {
+			section: 0,
+			left: 0,
 			donation_type: 'monthly',
 			amount: 30,
 			currency: 'usd',
@@ -13566,24 +13568,20 @@ var Donate = _react2.default.createClass({
 		this.setState(_extends({}, this.state, field));
 	},
 	handleSubmit: function handleSubmit() {
-		var _this2 = this;
+		this.nextSection();
+		// let data = {
+		// 	action: 'stripe_token',
+		// 	data: this.state.stripe
+		// };
 
-		var data = {
-			action: 'stripe_token',
-			data: this.state.stripe
-		};
-
-		$.ajax({
-			type: 'post',
-			url: '/wp-admin/admin-ajax.php',
-			data: data
-		}).then(function (res) {
-			return _this2.setState({ stripe: _extends({}, _this2.state.stripe, { token: res.id }) });
-		}).then(function (res) {
-			return _this2.stripeCharge();
-		}).then(function (res) {
-			return console.log(res);
-		});
+		// $.ajax({
+		// 	type: 'post',
+		// 	url: '/wp-admin/admin-ajax.php',
+		// 	data: data
+		// })
+		// .then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}))
+		// .then(res => this.stripeCharge())
+		// .then(res => console.log(res));
 	},
 	stripeCharge: function stripeCharge() {
 		var _state = this.state,
@@ -13605,13 +13603,19 @@ var Donate = _react2.default.createClass({
 
 		return request;
 	},
+	nextSection: function nextSection() {
+		var section = this.state.section + 1;
+		var left = '-' + section * 100 + '%';
+		this.setState({ section: section, left: left });
+	},
 	render: function render() {
+
 		return _react2.default.createElement(
 			'div',
 			{ style: { overflow: 'hidden' } },
 			_react2.default.createElement(
 				'div',
-				{ className: 'donate_landing__viewport', style: { width: '300%' } },
+				{ className: 'donate_landing__viewport', style: { width: '300%', left: this.state.left } },
 				_react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
 					onlyNum: this.onlyNum,
 					onChange: this.handleChange
