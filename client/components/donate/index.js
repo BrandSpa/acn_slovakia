@@ -41,7 +41,7 @@ const Donate = React.createClass({
 		let texts = this.state.texts;
 
 		try {	
-			props = JSON.parse(props);
+
 			texts = {...texts,  ...props};
 			this.setState({texts});
 		} catch(err) {

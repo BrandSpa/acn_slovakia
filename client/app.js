@@ -14,7 +14,7 @@ multipleRender(".section-video", sectionVideo);
 multipleRender(".projects-container", Projects);
 multipleRender(".bs-accordion", Accordion);
 multipleRender(".bs-posts", Posts);
-multipleRender(".bs-posts", Donate);
+multipleRender(".bs-donate", Donate);
 
 function setMenu() {
 	const currentLang = $('.current-lang > a');

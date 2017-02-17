@@ -2,10 +2,16 @@ import React from 'react';
 import AmountBtns from './amount_btns';
 
 const amount = React.createClass({
+	getDefaultProps() {
+		return {
+			texts: {},
+			amount: 30
+		}
+	},
 
 	changeAmount(amount,e) {
 		if(e) e.preventDefault();
-		let el = this.refs.amountInput;
+		let el = this.amountInput;
 		if(amount == 5) el.focus();
 		this.props.onChange({amount});
 	},
@@ -30,7 +36,7 @@ const amount = React.createClass({
 				<div className="row">
 					<div className="form-group col-xs-7">
 						<input 
-							ref="amountInput" 
+							ref={amountInput => this.amountInput = amountInput} 
 							className="form-control" 
 							type="text"
 							onChange={this.handleAmount} 

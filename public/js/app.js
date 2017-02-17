@@ -31291,7 +31291,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".projects-container", _projects2.default);
 (0, _mutiple_render2.default)(".bs-accordion", _accordion2.default);
 (0, _mutiple_render2.default)(".bs-posts", _posts2.default);
-(0, _mutiple_render2.default)(".bs-posts", _donate2.default);
+(0, _mutiple_render2.default)(".bs-donate", _donate2.default);
 
 function setMenu() {
 	var currentLang = $('.current-lang > a');
@@ -31397,7 +31397,7 @@ var Donate = _react2.default.createClass({
 		var texts = this.state.texts;
 
 		try {
-			props = JSON.parse(props);
+
 			texts = _extends({}, texts, props);
 			this.setState({ texts: texts });
 		} catch (err) {
@@ -31525,9 +31525,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var amount = _react2.default.createClass({
 	displayName: 'amount',
+	getDefaultProps: function getDefaultProps() {
+		return {
+			texts: {},
+			amount: 30
+		};
+	},
 	changeAmount: function changeAmount(amount, e) {
 		if (e) e.preventDefault();
-		var el = this.refs.amountInput;
+		var el = this.amountInput;
 		if (amount == 5) el.focus();
 		this.props.onChange({ amount: amount });
 	},
@@ -31541,6 +31547,8 @@ var amount = _react2.default.createClass({
 		this.props.onChange({ donation_type: donation_type });
 	},
 	render: function render() {
+		var _this = this;
+
 		var _props = this.props,
 		    texts = _props.texts,
 		    donation_type = _props.donation_type,
@@ -31558,7 +31566,9 @@ var amount = _react2.default.createClass({
 					'div',
 					{ className: 'form-group col-xs-7' },
 					_react2.default.createElement('input', {
-						ref: 'amountInput',
+						ref: function ref(amountInput) {
+							return _this.amountInput = amountInput;
+						},
 						className: 'form-control',
 						type: 'text',
 						onChange: this.handleAmount,
