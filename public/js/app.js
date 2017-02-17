@@ -32007,7 +32007,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".projects-container", _projects2.default);
 (0, _mutiple_render2.default)(".bs-accordion", _accordion2.default);
 (0, _mutiple_render2.default)(".bs-posts", _posts2.default);
-(0, _mutiple_render2.default)(".bs-donate", _donate2.default);
+(0, _mutiple_render2.default)(".bs-donate-react", _donate2.default);
 
 function setMenu() {
 	var currentLang = $('.current-lang > a');
