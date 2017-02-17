@@ -93,7 +93,7 @@ const Donate = React.createClass({
 	render() {
 		return (
 			<div>
-				<Amount 
+				<Amount
 					{...this.state}
 					{...this.props}
 					onlyNum={this.onlyNum} 
