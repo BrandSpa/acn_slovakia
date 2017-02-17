@@ -57,7 +57,7 @@ const Posts = React.createClass({
 								{post.post_image ? <div style={{background: `url(${post.post_image})`, backgroundSize: 'cover', width: '100%', height: '150px'}}></div> : ''}
 								<div className="grid-item__content__texts">
 									<h5><a href={post.guid}>{post.post_title}</a></h5>
-									<p>{ `${post.post_content.substring(0, 100)}...` }</p>
+									<p>{ `${post.post_short}...` }</p>
 								</div>
 							</div>
 						</div>

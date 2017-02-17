@@ -13546,7 +13546,7 @@ var Posts = _react2.default.createClass({
 							_react2.default.createElement(
 								'p',
 								null,
-								post.post_content.substring(0, 100) + '...'
+								post.post_short + '...'
 							)
 						)
 					)
