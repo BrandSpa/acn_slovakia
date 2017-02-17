@@ -920,7 +920,8 @@ a:hover {
           display: block;
           content: ' ';
           width: 70%;
-          border-bottom: 1px solid #E34E6B; }
+          border-bottom: 1px solid #E34E6B;
+          padding-top: 15px; }
         .grid-item__content__texts h5 a {
           color: #324049;
           text-decoration: none; }
