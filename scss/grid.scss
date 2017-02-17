@@ -13,9 +13,9 @@
 
 $columns: 12;
 @for $i from 1 through $columns {
+	
 	//global and mobile
-	@media #{$s},
-	#{$xs} {
+	@media #{$s}, #{$xs} {
 		.col-#{$i} {
 			padding-left: $grid-gutter;
 			padding-right: $grid-gutter;
