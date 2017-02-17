@@ -4,7 +4,7 @@ add_action('admin_menu', 'bs_admin_accounts_options_menu');
 function bs_admin_accounts_options_menu() {
 		add_menu_page(
     'Brandspa theme options',
-    'Accounts info', //menu name
+    'Accounts Info', //menu name
     'manage_options', //allow it options
     'bs-accounts', //slug
     'bs_accounts_options',

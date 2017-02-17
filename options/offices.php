@@ -8,9 +8,9 @@ add_action('admin_menu', 'bs_admin_options_menu');
 function bs_admin_options_menu() {
 		add_menu_page(
     'Brandspa theme options',
-    'BS Options', //menu name
+    'Offices Info', //menu name
     'manage_options', //allow it options
-    'bs-logos', //slug
+    'bs-offices', //slug
     'logos_settings_page',
     get_template_directory_uri() . '/public/img/bs_options.png', //icon on menu
     110 //position on menu
