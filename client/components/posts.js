@@ -69,8 +69,9 @@ const Posts = React.createClass({
 					{posts.map((post, i) => {
 						return (
 							<div key={i} className="grid-item">
-								<div className="grid-item__content">P
+								<div className="grid-item__content">
 									{post.post_image ? <img src={post.post_image} style={{width: '100%'}} /> : ''}
+
 									<div className="grid-item__content__texts">
 										<h5><a href={post.post_permalink}>{post.post_title}</a></h5>
 										<p>{ `${post.post_short}...` }</p>
