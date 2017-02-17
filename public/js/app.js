@@ -13383,7 +13383,7 @@ var headerSlider = _react2.default.createClass({
     }, 2000);
 
     window.addEventListener('load', function () {
-      console.log('load');
+      _this.height = window.innerHeight;
     });
   },
   nextSlide: function nextSlide() {
@@ -13409,7 +13409,7 @@ var headerSlider = _react2.default.createClass({
 
     return _react2.default.createElement(
       'div',
-      { className: 'slider' },
+      { className: 'slider', style: { height: this.height } },
       _react2.default.createElement(
         'div',
         {

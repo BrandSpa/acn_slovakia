@@ -21,7 +21,7 @@ const headerSlider = React.createClass({
     }, 2000);
 
     window.addEventListener('load', () => {
-      console.log('load');
+      this.height = window.innerHeight;
     })
   },
 
@@ -46,7 +46,7 @@ const headerSlider = React.createClass({
     let sliderHeight = '820px'; 
     
     return (
-      <div className="slider">
+      <div className="slider" style={{height: this.height}}>
         <div 
           className="slider__viewport" 
           style={{
