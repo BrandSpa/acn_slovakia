@@ -13530,7 +13530,7 @@ var Posts = _react2.default.createClass({
 			}
 		});
 
-		this.iso.layout();
+		this.iso.reloadItems();
 	},
 	render: function render() {
 		var _this3 = this;

@@ -22,7 +22,7 @@ const Posts = React.createClass({
     .catch(err => console.error(err));
 	},
 
-	componentDidUpdate: function(){
+	componentDidUpdate: function() {
     if(this.state.posts && this.state.posts.length > 0){
         this.initIsotope();
       }
@@ -57,7 +57,7 @@ const Posts = React.createClass({
 			}
 		});
 
-		this.iso.layout()
+		this.iso.reloadItems();
 	},
 
 	render() {
