@@ -33,6 +33,7 @@ const CedritCard = React.createClass({
 		if (typeof Stripe !== 'undefined') {
 			return Stripe.card.cardType(number).replace(' ', '');
 		}
+
 		return '';
 	},
 
@@ -105,6 +106,7 @@ const CedritCard = React.createClass({
 		return (
 			<div>
 			<Cards {...this.props} />
+
 			<div className="form-group">
 				<input
 					type="text"
@@ -117,10 +119,9 @@ const CedritCard = React.createClass({
 				<span className={this.showErr('number')}>
 					{texts.validation_card}
         </span>
-
 			</div>
 		<div className="row">
-			<div className="form-group col-md-4">
+			<div className="form-group col-4-l">
 				<input 
 					type="text" 
 					placeholder={texts.placeholder_month} 
@@ -133,7 +134,7 @@ const CedritCard = React.createClass({
         </span>
 			</div>
 			
-				<div className="form-group col-md-4">
+				<div className="form-group col-4-l">
 					<input 
 						type="text" 
 						placeholder={texts.placeholder_year} 
@@ -145,7 +146,7 @@ const CedritCard = React.createClass({
 						{texts.validation_year}
 					</span>
 				</div>
-				<div className="form-group col-md-4">
+				<div className="form-group col-4-l">
 					<input
 						type="text" 
 						placeholder={texts.placeholder_cvc} 
