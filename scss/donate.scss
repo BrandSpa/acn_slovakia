@@ -3,62 +3,6 @@
   overflow: hidden;
   margin: 20px 0;
 
-  &--blue {
-    color: #3C515F;
-
-    input, select, .input-group-addon {
-      border-color: #3C515F;
-      color: #3C515F;
-      
-      &:hover, &:focus {
-        border-color: #3C515F;
-      }
-
-      /* Webkit */
-      &::-webkit-input-placeholder { color: #3C515F; }
-
-      /* Firefox 4-18 */
-      &:-moz-placeholder { color: #3C515F; }
-
-      /* Firefox 19+ */
-      &::-moz-placeholder { color: #3C515F; }
-
-      /* IE10+ */
-      &:-ms-input-placeholder { color: #3C515F; }
-    }
-
-     .donate_landing__submit {
-        &:hover {
-          color: #f1364e;
-        }
-      }
-
-      .donate_landing__info, .donate_landing__section__title p{
-        color: #3C515F;
-      }
-
-      .donate_landing__back  {
-        color: #3C515F;
-      }
-      
-    .change-amount li a {
-      border-color: #3C515F;
-      color: #3C515F;
-      &:hover, &.active {
-        text-decoration: none;
-        background: #3C515F;
-        color: #fff;
-      }
-    }
-
-    .donate_landing__type {
-      color: #3C515F;
-      &:hover, &:active, &:focus {
-        color: #3C515F;
-      }
-    }
-  }
-
   &__section {
     width: (100 / 3) * 1%;
     
@@ -240,7 +184,7 @@ a {
     
     a {
       float: left;
-      border: 3px solid #fff;
+      border: 1px solid #fff;
       border-radius: 8px;
       height: 50px;
       color: #fff;
@@ -260,7 +204,7 @@ a {
 
       &:hover, &.active {
         text-decoration: none;
-        background: #fff;
+        background: rgba(255,255, 255, .5);
         color: #3C515F;
       }
     }
