@@ -7,6 +7,17 @@ include_once 'posts.php';
 include_once str_replace('apis', '', __DIR__) . '/lib/countries.php';
 include_once str_replace('apis', '', __DIR__) . '/lib/get_geoip.php';
 
+
+add_action( 'wp_ajax_nopriv_update_geo', 'update_geo' );
+add_action( 'wp_ajax_update_geo', 'update_geo' );
+
+function update_geo() {
+  $res = geoip_db(); 
+  echo json_encode($res);
+  die();
+}
+
+
 add_action( 'wp_ajax_nopriv_get_posts', 'wp_get_posts' );
 add_action( 'wp_ajax_get_posts', 'wp_get_posts' );
 
@@ -193,14 +204,5 @@ function user_location() {
   $res = get_user_location();
   header('Content-type: application/json');  
   echo json_encode($res);
-  die();
-}
-
-add_action( 'wp_ajax_nopriv_user_c', 'geoip_update' );
-add_action( 'wp_ajax_geoip_update', 'geoip_update' );
-
-function geoip_update() {
-  $res = geoip_db();  
-  echo $res;
   die();
 }
