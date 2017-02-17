@@ -3,21 +3,21 @@ import Cards from './cards';
 
 const CedritCard = React.createClass({
 	validateCard(card) {
-		if(Stripe) {
+		if (typeof Stripe == 'undefined') {
 			let number = Stripe.card.validateCardNumber(card);
 			return this.updateErrors({number});
 		}
 	},
 
 	validateExpiry(month, year) {
-		if(Stripe) {
+		if (typeof Stripe == 'undefined') {
 			let valid = Stripe.card.validateExpiry(month, year);
 			return this.updateErrors({exp_month: valid, exp_year: valid});
 		}
 	},
 
 	validateCvc(cvc) {
-		if(Stripe) {
+		if (typeof Stripe == 'undefined') {
 			cvc = Stripe.card.validateCVC(cvc);
 			return this.updateErrors({cvc});
 		}
