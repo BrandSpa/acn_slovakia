@@ -3,18 +3,24 @@ import Cards from './cards';
 
 const CedritCard = React.createClass({
 	validateCard(card) {
-		let number = Stripe.card.validateCardNumber(card);
-		return this.updateErrors({number});
+		if(Stripe) {
+			let number = Stripe.card.validateCardNumber(card);
+			return this.updateErrors({number});
+		}
 	},
 
 	validateExpiry(month, year) {
-		let valid = Stripe.card.validateExpiry(month, year);
-		return this.updateErrors({exp_month: valid, exp_year: valid});
+		if(Stripe) {
+			let valid = Stripe.card.validateExpiry(month, year);
+			return this.updateErrors({exp_month: valid, exp_year: valid});
+		}
 	},
 
 	validateCvc(cvc) {
-		cvc = Stripe.card.validateCVC(cvc);
-		return this.updateErrors({cvc});
+		if(Stripe) {
+			cvc = Stripe.card.validateCVC(cvc);
+			return this.updateErrors({cvc});
+		}
 	},
 
 	updateErrors(field) {
