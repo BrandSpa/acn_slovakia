@@ -54,7 +54,7 @@ const Contact = React.createClass({
         	</span>
 				</div>
 
-				<div className="form-group col-12-">
+				<div className="form-group col-12-l">
 					<input 
 						type="text" 
 						className={`form-control ${this.inputErrStyle('email')}`} 
@@ -67,7 +67,7 @@ const Contact = React.createClass({
         	</span>
 				</div>
 
-				<div className="form-group col-12-">
+				<div className="form-group col-12-l">
 					<select
 						type="text" 
 						className="form-control" 

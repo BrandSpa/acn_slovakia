@@ -31826,7 +31826,7 @@ var Contact = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				'div',
-				{ className: 'form-group col-12-' },
+				{ className: 'form-group col-12-l' },
 				_react2.default.createElement('input', {
 					type: 'text',
 					className: 'form-control ' + this.inputErrStyle('email'),
@@ -31842,7 +31842,7 @@ var Contact = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				'div',
-				{ className: 'form-group col-12-' },
+				{ className: 'form-group col-12-l' },
 				_react2.default.createElement(
 					'select',
 					{
