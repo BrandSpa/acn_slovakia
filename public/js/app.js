@@ -13246,16 +13246,12 @@ var Donate = _react2.default.createClass({
 	stripeToken: function stripeToken() {
 		var _this2 = this;
 
-		var data = {
+		var data = (0, _qs2.default)({
 			action: 'stripe_token',
 			data: this.state.stripe
-		};
+		});
 
-		$.ajax({
-			type: 'post',
-			url: '/wp-admin/admin-ajax.php',
-			data: data
-		}).then(function (res) {
+		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
 			return _this2.setState({ stripe: _extends({}, _this2.state.stripe, { token: res.id }) });
 		}).then(function (res) {
 			return _this2.stripeCharge();
@@ -13273,15 +13269,7 @@ var Donate = _react2.default.createClass({
 
 		var data = _extends({}, contact, { currency: currency, amount: amount, donation_type: donation_type, stripe_token: token });
 
-		var request = $.ajax({
-			url: '/wp-admin/admin-ajax.php',
-			type: 'post',
-			data: {
-				action: 'stripe_charge',
-				data: data
-			} });
-
-		return request;
+		return (0, _axios2.default)('/wp-admin/admin-ajax.php', data);
 	},
 	nextSection: function nextSection() {
 		var section = this.state.section < 2 ? this.state.section + 1 : 2;
@@ -31602,7 +31590,7 @@ var amount = _react2.default.createClass({
 						{
 							href: '#',
 							onClick: this.changeType.bind(null, 'monthly'),
-							className: donation_type == 'monthly' ? 'donate_landing__type donate_landing__type--active' : 'donate_landing__type '
+							className: donation_type == 'monthly' ? 'donate_react__type donate_react__type--active' : 'donate_react__type '
 						},
 						texts.monthly
 					),
@@ -31610,7 +31598,7 @@ var amount = _react2.default.createClass({
 						'a',
 						{ href: '#',
 							onClick: this.changeType.bind(null, 'once'),
-							className: donation_type == 'once' ? 'donate_landing__type donate_landing__type--active' : 'donate_landing__type '
+							className: donation_type == 'once' ? 'donate_react__type donate_react__type--active' : 'donate_react__type '
 						},
 						texts.once
 					)

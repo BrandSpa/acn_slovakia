@@ -43,17 +43,18 @@ const amount = React.createClass({
 							value={amount} 
 						/>
 					</div>
+
 					<div className="form-group col-5-l">
 						<a
 							href="#" 
 							onClick={this.changeType.bind(null, 'monthly')}
-							className={donation_type == 'monthly' ? 'donate_landing__type donate_landing__type--active' : 'donate_landing__type '}
+							className={donation_type == 'monthly' ? 'donate_react__type donate_react__type--active' : 'donate_react__type '}
 						>
 						{texts.monthly}
 					</a>
 					<a href="#" 
 							onClick={this.changeType.bind(null, 'once')} 
-							className={donation_type == 'once' ? 'donate_landing__type donate_landing__type--active' : 'donate_landing__type '}
+							className={donation_type == 'once' ? 'donate_react__type donate_react__type--active' : 'donate_react__type '}
 						>
 						{texts.once}
 					</a>

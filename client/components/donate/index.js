@@ -36,7 +36,6 @@ const Donate = React.createClass({
 		}
 	},
 
-
 	fetchCountries() {
 		const data = qs({action: 'countries'});
 		request
@@ -67,34 +66,23 @@ const Donate = React.createClass({
 	},
 
 	stripeToken() {
-		let data = {
-				action: 'stripe_token',
-				data: this.state.stripe
-		};
+		let data = qs({ 
+			action: 'stripe_token', 
+			data: this.state.stripe 
+		});
 
-		$.ajax({
-			type: 'post',
-			url: '/wp-admin/admin-ajax.php',
-			data: data
-		})
-		.then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}))
-		.then(res => this.stripeCharge())
-		.then(res => console.log(res));
+		request
+			.post('/wp-admin/admin-ajax.php', data)
+			.then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}))
+			.then(res => this.stripeCharge())
+			.then(res => console.log(res));
 	},
 
 	stripeCharge() {
 		const { contact, currency, amount, donation_type, stripe: {token} } = this.state;
 		let data = { ...contact, currency, amount, donation_type, stripe_token: token};
 
-		let request = $.ajax({
-			url: '/wp-admin/admin-ajax.php',
-			type: 'post',
-			data: {
-				action: 'stripe_charge',
-				data: data
-		}});
-
-		return request;
+		return request('/wp-admin/admin-ajax.php', data);
 	},
 
 	nextSection() {
