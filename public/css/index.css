@@ -919,6 +919,8 @@ a:hover {
         .grid-item__content__texts h5 a {
           color: #324049;
           text-decoration: none; }
+      .grid-item__content__texts p {
+        color: #9B9B9B !important; }
 
 .grid-item, .grid-sizer {
   width: 33.33333%; }

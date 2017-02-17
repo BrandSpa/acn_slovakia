@@ -92,6 +92,7 @@ const Posts = React.createClass({
 										<h5><a href={post.post_permalink}>{post.post_title}</a></h5>
 										<p>{ `${post.post_short}...` }</p>
 									</div>
+									
 								</div>
 							</div>
 						)
