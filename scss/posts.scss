@@ -20,7 +20,9 @@
 				padding-bottom: 15px;
 				margin-top: 15px;
 				display: block;
-				.line {
+				&:before {
+					display: block;
+					content: ' ';
 					width: 70%;
 					border-bottom: 1px solid #E34E6B;	
 				}
