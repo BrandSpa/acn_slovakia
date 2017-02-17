@@ -26,6 +26,7 @@ const Posts = React.createClass({
     if(this.state.posts && this.state.posts.length > 0){
         this.initIsotope();
       } else if(this.iso) {
+				console.log('reload');
 				this.iso.reloadItems();
 			}
   },
