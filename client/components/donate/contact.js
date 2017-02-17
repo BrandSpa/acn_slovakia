@@ -41,7 +41,7 @@ const Contact = React.createClass({
 
 		return (
 			<div style={{width: '33.3%', float: 'left'}}>
-				<div className="row">
+
 					<div className="form-group col-12-l">
 						<input 
 							type="text" 
@@ -81,7 +81,7 @@ const Contact = React.createClass({
 						})}
 						</select>
 					</div>
-				</div>
+
 			</div>
 		)
 	}

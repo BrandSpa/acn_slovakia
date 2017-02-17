@@ -31564,40 +31564,36 @@ var amount = _react2.default.createClass({
 			_react2.default.createElement(_amount_btns2.default, { texts: texts, changeAmount: this.changeAmount }),
 			_react2.default.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'form-group col-7-l' },
+				_react2.default.createElement('input', {
+					ref: function ref(amountInput) {
+						return _this.amountInput = amountInput;
+					},
+					className: 'form-control',
+					type: 'text',
+					onChange: this.handleAmount,
+					value: amount
+				})
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'form-group col-5-l' },
 				_react2.default.createElement(
-					'div',
-					{ className: 'form-group col-7-l' },
-					_react2.default.createElement('input', {
-						ref: function ref(amountInput) {
-							return _this.amountInput = amountInput;
-						},
-						className: 'form-control',
-						type: 'text',
-						onChange: this.handleAmount,
-						value: amount
-					})
+					'a',
+					{
+						href: '#',
+						onClick: this.changeType.bind(null, 'monthly'),
+						className: donation_type == 'monthly' ? 'donate_landing__type donate_landing__type--active' : 'donate_landing__type '
+					},
+					texts.monthly
 				),
 				_react2.default.createElement(
-					'div',
-					{ className: 'form-group col-5-l' },
-					_react2.default.createElement(
-						'a',
-						{
-							href: '#',
-							onClick: this.changeType.bind(null, 'monthly'),
-							className: donation_type == 'monthly' ? 'donate_landing__type donate_landing__type--active' : 'donate_landing__type '
-						},
-						texts.monthly
-					),
-					_react2.default.createElement(
-						'a',
-						{ href: '#',
-							onClick: this.changeType.bind(null, 'once'),
-							className: donation_type == 'once' ? 'donate_landing__type donate_landing__type--active' : 'donate_landing__type '
-						},
-						texts.once
-					)
+					'a',
+					{ href: '#',
+						onClick: this.changeType.bind(null, 'once'),
+						className: donation_type == 'once' ? 'donate_landing__type donate_landing__type--active' : 'donate_landing__type '
+					},
+					texts.once
 				)
 			)
 		);
@@ -31810,59 +31806,55 @@ var Contact = _react2.default.createClass({
 			{ style: { width: '33.3%', float: 'left' } },
 			_react2.default.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'form-group col-12-l' },
+				_react2.default.createElement('input', {
+					type: 'text',
+					className: 'form-control ' + this.inputErrStyle('name'),
+					placeholder: texts.placeholder_name,
+					onChange: this.handleChange.bind(null, 'name'),
+					value: contact.name
+				}),
 				_react2.default.createElement(
-					'div',
-					{ className: 'form-group col-12-l' },
-					_react2.default.createElement('input', {
+					'span',
+					{ className: this.showErr('name') },
+					texts.validation_card
+				)
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'form-group col-12-l' },
+				_react2.default.createElement('input', {
+					type: 'text',
+					className: 'form-control ' + this.inputErrStyle('email'),
+					placeholder: texts.placeholder_email,
+					onChange: this.handleChange.bind(null, 'email'),
+					value: contact.email
+				}),
+				_react2.default.createElement(
+					'span',
+					{ className: this.showErr('email') },
+					texts.validation_card
+				)
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'form-group col-12-l' },
+				_react2.default.createElement(
+					'select',
+					{
 						type: 'text',
-						className: 'form-control ' + this.inputErrStyle('name'),
-						placeholder: texts.placeholder_name,
-						onChange: this.handleChange.bind(null, 'name'),
-						value: contact.name
-					}),
-					_react2.default.createElement(
-						'span',
-						{ className: this.showErr('name') },
-						texts.validation_card
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'form-group col-12-l' },
-					_react2.default.createElement('input', {
-						type: 'text',
-						className: 'form-control ' + this.inputErrStyle('email'),
-						placeholder: texts.placeholder_email,
-						onChange: this.handleChange.bind(null, 'email'),
-						value: contact.email
-					}),
-					_react2.default.createElement(
-						'span',
-						{ className: this.showErr('email') },
-						texts.validation_card
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'form-group col-12-l' },
-					_react2.default.createElement(
-						'select',
-						{
-							type: 'text',
-							className: 'form-control',
-							placeholder: texts.placeholder_country,
-							onChange: this.handleChange.bind(null, 'country'),
-							value: contact.country || texts.country
-						},
-						this.props.countries.map(function (country, i) {
-							return _react2.default.createElement(
-								'option',
-								{ key: i, value: country },
-								country
-							);
-						})
-					)
+						className: 'form-control',
+						placeholder: texts.placeholder_country,
+						onChange: this.handleChange.bind(null, 'country'),
+						value: contact.country || texts.country
+					},
+					this.props.countries.map(function (country, i) {
+						return _react2.default.createElement(
+							'option',
+							{ key: i, value: country },
+							country
+						);
+					})
 				)
 			)
 		);
@@ -32023,54 +32015,50 @@ var CedritCard = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'form-group col-4-l' },
+				_react2.default.createElement('input', {
+					type: 'text',
+					placeholder: texts.placeholder_month,
+					className: 'form-control',
+					onChange: this.handleExpiry.bind(null, 'exp_month'),
+					value: stripe.exp_month
+				}),
 				_react2.default.createElement(
-					'div',
-					{ className: 'form-group col-4-l' },
-					_react2.default.createElement('input', {
-						type: 'text',
-						placeholder: texts.placeholder_month,
-						className: 'form-control',
-						onChange: this.handleExpiry.bind(null, 'exp_month'),
-						value: stripe.exp_month
-					}),
-					_react2.default.createElement(
-						'span',
-						{ className: this.showErr('exp_month') },
-						texts.validation_month
-					)
-				),
+					'span',
+					{ className: this.showErr('exp_month') },
+					texts.validation_month
+				)
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'form-group col-4-l' },
+				_react2.default.createElement('input', {
+					type: 'text',
+					placeholder: texts.placeholder_year,
+					className: 'form-control',
+					onChange: this.handleExpiry.bind(null, 'exp_year'),
+					value: stripe.exp_year
+				}),
 				_react2.default.createElement(
-					'div',
-					{ className: 'form-group col-4-l' },
-					_react2.default.createElement('input', {
-						type: 'text',
-						placeholder: texts.placeholder_year,
-						className: 'form-control',
-						onChange: this.handleExpiry.bind(null, 'exp_year'),
-						value: stripe.exp_year
-					}),
-					_react2.default.createElement(
-						'span',
-						{ className: this.showErr('exp_year') },
-						texts.validation_year
-					)
-				),
+					'span',
+					{ className: this.showErr('exp_year') },
+					texts.validation_year
+				)
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'form-group col-4-l' },
+				_react2.default.createElement('input', {
+					type: 'text',
+					placeholder: texts.placeholder_cvc,
+					className: 'form-control',
+					onChange: this.handleCvc,
+					value: stripe.cvc
+				}),
 				_react2.default.createElement(
-					'div',
-					{ className: 'form-group col-4-l' },
-					_react2.default.createElement('input', {
-						type: 'text',
-						placeholder: texts.placeholder_cvc,
-						className: 'form-control',
-						onChange: this.handleCvc,
-						value: stripe.cvc
-					}),
-					_react2.default.createElement(
-						'span',
-						{ className: this.showErr('cvc') },
-						texts.validation_cvc
-					)
+					'span',
+					{ className: this.showErr('cvc') },
+					texts.validation_cvc
 				)
 			)
 		);

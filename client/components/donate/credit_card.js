@@ -120,7 +120,7 @@ const CedritCard = React.createClass({
 					{texts.validation_card}
         </span>
 			</div>
-		<div className="row">
+
 			<div className="form-group col-4-l">
 				<input 
 					type="text" 
@@ -159,7 +159,7 @@ const CedritCard = React.createClass({
 						{texts.validation_cvc}
 					</span>
 				</div>
-			</div>
+
 		</div>
 		)
 	}
