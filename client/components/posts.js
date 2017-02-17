@@ -22,6 +22,10 @@ const Posts = React.createClass({
     .catch(err => console.error(err));
 	},
 
+	 componentWillUpdate: function(){
+    this.removeIsotope();
+  },
+
 	componentDidUpdate: function() {
     if(this.state.posts && this.state.posts.length > 0){
         this.initIsotope();
@@ -56,8 +60,13 @@ const Posts = React.createClass({
 				columnWidth: '.grid-sizer'
 			}
 		});
+		
 
 		this.iso.reloadItems();
+	},
+
+	removeIsotope() {
+		this.iso.destroy();
 	},
 
 	render() {
