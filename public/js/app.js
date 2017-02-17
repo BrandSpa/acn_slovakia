@@ -13497,11 +13497,12 @@ var Posts = _react2.default.createClass({
 
 
 	componentDidUpdate: function componentDidUpdate() {
-		if (this.state.posts && this.state.posts.length > 0) {
-			this.initIsotope();
-		} else if (this.iso) {
+		if (this.state.posts && this.state.posts.length > 0 && this.iso) {
+
 			console.log('reload');
 			this.iso.reloadItems();
+		} else if (this.state.posts && this.state.posts.length > 0) {
+			this.initIsotope();
 		}
 	},
 
