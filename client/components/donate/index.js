@@ -38,10 +38,10 @@ const Donate = React.createClass({
 
 
 	fetchCountries() {
-		$.ajax({
-			url: '/wp-admin/admin-ajax.php',
-			data: {action: 'countries'}
-		}).then(res => this.setState({countries: res}));
+		const data = qs({action: 'countries'});
+		request
+		.post('/wp-admin/admin-ajax.php', data)
+		.then(res => this.setState({countries: res}));
 	},
 
 	componentWillMount(){
@@ -63,19 +63,23 @@ const Donate = React.createClass({
 	handleSubmit(e) {
 		e.preventDefault();
 		this.nextSection();
-			// let data = {
-			// 	action: 'stripe_token',
-			// 	data: this.state.stripe
-			// };
+		this.stripeToken();
+	},
 
-			// $.ajax({
-			// 	type: 'post',
-			// 	url: '/wp-admin/admin-ajax.php',
-			// 	data: data
-			// })
-			// .then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}))
-			// .then(res => this.stripeCharge())
-			// .then(res => console.log(res));
+	stripeToken() {
+		let data = {
+				action: 'stripe_token',
+				data: this.state.stripe
+		};
+
+		$.ajax({
+			type: 'post',
+			url: '/wp-admin/admin-ajax.php',
+			data: data
+		})
+		.then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}))
+		.then(res => this.stripeCharge())
+		.then(res => console.log(res));
 	},
 
 	stripeCharge() {
@@ -102,13 +106,13 @@ const Donate = React.createClass({
 	prevSection(e) {
 		e.preventDefault();
 		let section = this.state.section >= 0 ? this.state.section - 1 : 0; 
-		console.log(section);
 		let left = `-${section * 100}%`;
 		this.setState({section, left});
 	},
 
 	render() {
 		let sectionWidth = `${100 / 3}%`;
+
 		return (
 			<form onSubmit={this.handleSubmit} className="donate_react" style={{overflow: 'hidden'}}>
 				<div className="donate_react__viewport" style={{width: '300%', left: this.state.left}} >

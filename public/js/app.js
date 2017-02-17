@@ -13221,10 +13221,8 @@ var Donate = _react2.default.createClass({
 	fetchCountries: function fetchCountries() {
 		var _this = this;
 
-		$.ajax({
-			url: '/wp-admin/admin-ajax.php',
-			data: { action: 'countries' }
-		}).then(function (res) {
+		var data = (0, _qs2.default)({ action: 'countries' });
+		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
 			return _this.setState({ countries: res });
 		});
 	},
@@ -13243,19 +13241,27 @@ var Donate = _react2.default.createClass({
 	handleSubmit: function handleSubmit(e) {
 		e.preventDefault();
 		this.nextSection();
-		// let data = {
-		// 	action: 'stripe_token',
-		// 	data: this.state.stripe
-		// };
+		this.stripeToken();
+	},
+	stripeToken: function stripeToken() {
+		var _this2 = this;
 
-		// $.ajax({
-		// 	type: 'post',
-		// 	url: '/wp-admin/admin-ajax.php',
-		// 	data: data
-		// })
-		// .then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}))
-		// .then(res => this.stripeCharge())
-		// .then(res => console.log(res));
+		var data = {
+			action: 'stripe_token',
+			data: this.state.stripe
+		};
+
+		$.ajax({
+			type: 'post',
+			url: '/wp-admin/admin-ajax.php',
+			data: data
+		}).then(function (res) {
+			return _this2.setState({ stripe: _extends({}, _this2.state.stripe, { token: res.id }) });
+		}).then(function (res) {
+			return _this2.stripeCharge();
+		}).then(function (res) {
+			return console.log(res);
+		});
 	},
 	stripeCharge: function stripeCharge() {
 		var _state = this.state,
@@ -13285,12 +13291,12 @@ var Donate = _react2.default.createClass({
 	prevSection: function prevSection(e) {
 		e.preventDefault();
 		var section = this.state.section >= 0 ? this.state.section - 1 : 0;
-		console.log(section);
 		var left = '-' + section * 100 + '%';
 		this.setState({ section: section, left: left });
 	},
 	render: function render() {
 		var sectionWidth = 100 / 3 + '%';
+
 		return _react2.default.createElement(
 			'form',
 			{ onSubmit: this.handleSubmit, className: 'donate_react', style: { overflow: 'hidden' } },
