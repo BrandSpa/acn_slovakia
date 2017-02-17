@@ -13289,8 +13289,8 @@ var Donate = _react2.default.createClass({
 	render: function render() {
 		var sectionWidth = 100 / 3 + '%';
 		return _react2.default.createElement(
-			'div',
-			{ className: 'donate_react', style: { overflow: 'hidden' } },
+			'form',
+			{ onSubmit: this.handleSubmit, className: 'donate_react', style: { overflow: 'hidden' } },
 			_react2.default.createElement(
 				'div',
 				{ className: 'donate_react__viewport', style: { width: '300%', left: this.state.left } },

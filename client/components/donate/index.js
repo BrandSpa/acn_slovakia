@@ -107,8 +107,9 @@ const Donate = React.createClass({
 	render() {
 		let sectionWidth = `${100 / 3}%`;
 		return (
-			<div className="donate_react" style={{overflow: 'hidden'}}>
-			<div className="donate_react__viewport" style={{width: '300%', left: this.state.left}}>
+			<form onSubmit={this.handleSubmit} className="donate_react" style={{overflow: 'hidden'}}>
+				<div className="donate_react__viewport" style={{width: '300%', left: this.state.left}} >
+
 				<Amount
 					width={sectionWidth}
 					{...this.state}
@@ -133,7 +134,9 @@ const Donate = React.createClass({
 					{...this.props}
 					onChange={this.handleChange} 
 				 />
-				</div> 
+
+				</div>
+
 				 <div className="form-group">
 					 <button 
 					 	className="donate_react__submit pull-left" 
@@ -144,7 +147,7 @@ const Donate = React.createClass({
 					{this.state.section > 0 ? <button style={{float: 'right'}} onClick={this.prevSection}>Back</button> : ''}
 				 </div>
 				 
-			</div>
+			</form>
 		)
 	}
 
