@@ -13405,7 +13405,7 @@ var headerSlider = _react2.default.createClass({
 
     var viewportWidth = 100 * slides.length + '%';
     var slideWidth = 100 / slides.length + '%';
-    var sliderHeight = this.height;
+    var sliderHeight = this.height - 140;
 
     return _react2.default.createElement(
       'div',
