@@ -35,6 +35,12 @@ const Donate = React.createClass({
 		}
 	},
 
+	getDefaultProps() {
+		return {
+			texts: {}
+		}
+	},
+
 	fetchCountries() {
 		const data = qs.stringify({action: 'countries'});
 		

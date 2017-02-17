@@ -5,12 +5,10 @@ import ContactForm from "../../components/contact_form";
 
 describe("component ContactForm", () => {
   beforeEach(() => {
-      // import and pass your custom axios instance to this method
     moxios.install()
   })
 
   afterEach(() => {
-      // import and pass your custom axios instance to this method
     moxios.uninstall()
   })
 

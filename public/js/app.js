@@ -13217,6 +13217,11 @@ var Donate = _react2.default.createClass({
 			}
 		};
 	},
+	getDefaultProps: function getDefaultProps() {
+		return {
+			texts: {}
+		};
+	},
 	fetchCountries: function fetchCountries() {
 		var _this = this;
 
@@ -13736,9 +13741,7 @@ var SectionVideo = _react2.default.createClass({
 	render: function render() {
 		var _this = this;
 
-		var linkStyle = {
-			display: 'flex'
-		};
+		var linkStyle = {};
 
 		var imageStyle = {
 			width: '100px',
