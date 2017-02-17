@@ -17,7 +17,8 @@ const SectionVideo = React.createClass({
 	
 	render() {
 		let linkStyle = {
-			float: 'left'
+			float: 'left',
+			lineHeight: '0'
 		};
 
 		let imageStyle = {

@@ -13742,7 +13742,8 @@ var SectionVideo = _react2.default.createClass({
 		var _this = this;
 
 		var linkStyle = {
-			float: 'left'
+			float: 'left',
+			lineHeight: '0'
 		};
 
 		var imageStyle = {
