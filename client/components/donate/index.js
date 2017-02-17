@@ -105,17 +105,20 @@ const Donate = React.createClass({
 	},
 
 	render() {
+		let sectionWidth = `${100 / 3}%`;
 		return (
 			<div className="donate_react" style={{overflow: 'hidden'}}>
 			<div className="donate_react__viewport" style={{width: '300%', left: this.state.left}}>
 				<Amount
+					width={sectionWidth}
 					{...this.state}
 					{...this.props}
 					onlyNum={this.onlyNum} 
 					onChange={this.handleChange}
 				/>
 
-				<CreditCard 
+				<CreditCard
+					width={sectionWidth} 
 					{...this.state}
 					{...this.props}
 					onlyNum={this.onlyNum} 
@@ -125,6 +128,7 @@ const Donate = React.createClass({
 				/>
 
 				<Contact
+					width={sectionWidth}
 					{...this.state}
 					{...this.props}
 					onChange={this.handleChange} 

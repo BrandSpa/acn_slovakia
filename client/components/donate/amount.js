@@ -31,9 +31,9 @@ const amount = React.createClass({
 		const {texts, donation_type, amount} = this.props;
 
 		return (
-			<div style={{width: `${100 / 3}%`, float: 'left'}}>
+			<div style={{width:this.props.width, float: 'left'}}>
 				<AmountBtns texts={texts} changeAmount={this.changeAmount} />
-
+				<div className="row">
 					<div className="form-group col-7-l">
 						<input 
 							ref={amountInput => this.amountInput = amountInput} 
@@ -58,7 +58,7 @@ const amount = React.createClass({
 						{texts.once}
 					</a>
 					</div>
-
+				</div>
 			</div>
 		)
 	}
