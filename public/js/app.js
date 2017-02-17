@@ -13555,7 +13555,7 @@ var Posts = _react2.default.createClass({
 						_react2.default.createElement(
 							'div',
 							{ className: 'grid-item__content' },
-							post.post_image ? _react2.default.createElement('img', { src: post.post_image }) : '',
+							_react2.default.createElement('img', { src: post.post_image }),
 							_react2.default.createElement(
 								'div',
 								{ className: 'grid-item__content__texts' },
