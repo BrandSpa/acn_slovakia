@@ -41,7 +41,7 @@ const Posts = React.createClass({
     request
 		.post("/wp-admin/admin-ajax.php", data)
     .then(res => {
-      this.setState({ posts: [...this.posts, res.data], paged });
+      this.setState({ posts: [...this.state.posts, res.data], paged });
     })
     .catch(err => console.error(err));
 	},

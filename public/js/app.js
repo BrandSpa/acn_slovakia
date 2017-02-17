@@ -13510,7 +13510,7 @@ var Posts = _react2.default.createClass({
 		var data = _qs2.default.stringify({ action: "get_posts", paged: paged });
 
 		_axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
-			_this2.setState({ posts: [].concat(_toConsumableArray(_this2.posts), [res.data]), paged: paged });
+			_this2.setState({ posts: [].concat(_toConsumableArray(_this2.state.posts), [res.data]), paged: paged });
 		}).catch(function (err) {
 			return console.error(err);
 		});
