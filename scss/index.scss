@@ -184,6 +184,9 @@ p {
 			color: #fff;
 			font-weight: 300;
 			font-size: 11px;
+			&:last-child {
+				border: none;
+			}
 		}
 	}
 

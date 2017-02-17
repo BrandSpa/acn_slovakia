@@ -554,6 +554,8 @@ p {
       color: #fff;
       font-weight: 300;
       font-size: 11px; }
+      .offices-list li a:last-child {
+        border: none; }
 
 .nav {
   height: 140px;
