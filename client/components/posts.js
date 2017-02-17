@@ -63,8 +63,6 @@ const Posts = React.createClass({
 		
 		return (
 			<div>
-					<button onClick={this.seeMore}>See more</button>
-		
 				<div ref={grid => this.grid = grid}>
 					<div className="grid-sizer"></div>
 
@@ -83,6 +81,7 @@ const Posts = React.createClass({
 					})}
 				
 				</div>
+				<button onClick={this.seeMore}>See more</button>
 			</div>
 		)
 	}

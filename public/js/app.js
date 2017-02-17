@@ -13536,11 +13536,6 @@ var Posts = _react2.default.createClass({
 			'div',
 			null,
 			_react2.default.createElement(
-				'button',
-				{ onClick: this.seeMore },
-				'See more'
-			),
-			_react2.default.createElement(
 				'div',
 				{ ref: function ref(grid) {
 						return _this3.grid = grid;
@@ -13575,6 +13570,11 @@ var Posts = _react2.default.createClass({
 						)
 					);
 				})
+			),
+			_react2.default.createElement(
+				'button',
+				{ onClick: this.seeMore },
+				'See more'
 			)
 		);
 	}
