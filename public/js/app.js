@@ -14977,7 +14977,7 @@ var amount = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'div',
-			null,
+			{ style: { width: '33.3%' } },
 			_react2.default.createElement(_amount_btns2.default, { texts: texts, changeAmount: this.changeAmount }),
 			_react2.default.createElement(
 				'div',
@@ -15224,7 +15224,7 @@ var Contact = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'div',
-			{ className: 'row' },
+			{ className: 'row', style: { width: '33.3%' } },
 			_react2.default.createElement(
 				'div',
 				{ className: 'form-group col-sm-12' },
@@ -15416,7 +15416,7 @@ var CedritCard = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'div',
-			null,
+			{ style: { width: '33.3%' } },
 			_react2.default.createElement(_cards2.default, this.props),
 			_react2.default.createElement(
 				'div',
