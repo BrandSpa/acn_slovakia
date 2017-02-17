@@ -137,8 +137,12 @@ p {
 
 .grid-item, .grid-sizer {
 	width: 25%;
-	@media #{$s} {
+	@media #{$m} {
 		width: 50%;
+	}
+
+	@media #{$s} {
+		width: 100%;
 	}
 }
 

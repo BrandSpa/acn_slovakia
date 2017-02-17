@@ -514,9 +514,12 @@ p {
 
 .grid-item, .grid-sizer {
   width: 25%; }
-  @media (max-width: 767px) {
+  @media (min-width: 768px) and (max-width: 991px) {
     .grid-item, .grid-sizer {
       width: 50%; } }
+  @media (max-width: 767px) {
+    .grid-item, .grid-sizer {
+      width: 100%; } }
 
 .dropdown-content {
   display: none;
