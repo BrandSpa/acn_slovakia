@@ -8,6 +8,7 @@ function bs_donate_react_sc($atts, $content = null) {
 		 "once" => "Once",
 		 "donate" => "Donate",
 		 "next" => "Next",
+		 "back" => "Back",
 		 "placeholder_amount" => "Amount",
     "placeholder_credit_card" => "Credit Card Number",
     "placeholder_month" => "MM",
