@@ -22,7 +22,7 @@ const Posts = React.createClass({
     .catch(err => console.error(err));
 	},
 
-	 componentWillUpdate: function(){
+	componentWillUpdate: function(){
     this.removeIsotope();
   },
 
@@ -60,12 +60,11 @@ const Posts = React.createClass({
 				columnWidth: '.grid-sizer'
 			}
 		});
-		
-
-		this.iso.reloadItems();
+	
 	},
 
 	removeIsotope() {
+		console.log(this.iso);
 		this.iso.destroy();
 	},
 

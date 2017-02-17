@@ -13533,10 +13533,9 @@ var Posts = _react2.default.createClass({
 				columnWidth: '.grid-sizer'
 			}
 		});
-
-		this.iso.reloadItems();
 	},
 	removeIsotope: function removeIsotope() {
+		console.log(this.iso);
 		this.iso.destroy();
 	},
 	render: function render() {
