@@ -37,7 +37,7 @@ const Donate = React.createClass({
 	},
 
 	fetchCountries() {
-		const data = qs({action: 'countries'});
+		const data = qs.stringify({action: 'countries'});
 		request
 		.post('/wp-admin/admin-ajax.php', data)
 		.then(res => this.setState({countries: res}));
@@ -66,7 +66,7 @@ const Donate = React.createClass({
 	},
 
 	stripeToken() {
-		let data = qs({ 
+		let data = qs.stringify({ 
 			action: 'stripe_token', 
 			data: this.state.stripe 
 		});

@@ -13221,7 +13221,7 @@ var Donate = _react2.default.createClass({
 	fetchCountries: function fetchCountries() {
 		var _this = this;
 
-		var data = (0, _qs2.default)({ action: 'countries' });
+		var data = _qs2.default.stringify({ action: 'countries' });
 		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
 			return _this.setState({ countries: res });
 		});
@@ -13246,7 +13246,7 @@ var Donate = _react2.default.createClass({
 	stripeToken: function stripeToken() {
 		var _this2 = this;
 
-		var data = (0, _qs2.default)({
+		var data = _qs2.default.stringify({
 			action: 'stripe_token',
 			data: this.state.stripe
 		});
