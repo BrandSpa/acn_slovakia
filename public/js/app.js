@@ -13292,7 +13292,7 @@ var Donate = _react2.default.createClass({
 			{ className: 'donate_react', style: { overflow: 'hidden' } },
 			_react2.default.createElement(
 				'div',
-				{ className: 'donate_landing__viewport', style: { width: '300%', left: this.state.left } },
+				{ className: 'donate_react__viewport', style: { width: '300%', left: this.state.left } },
 				_react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
 					onlyNum: this.onlyNum,
 					onChange: this.handleChange
@@ -13313,7 +13313,7 @@ var Donate = _react2.default.createClass({
 				_react2.default.createElement(
 					'button',
 					{
-						className: 'donate_landing__submit pull-left',
+						className: 'donate_react__submit pull-left',
 						onClick: this.handleSubmit
 					},
 					'Donate'

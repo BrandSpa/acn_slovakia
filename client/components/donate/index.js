@@ -107,7 +107,7 @@ const Donate = React.createClass({
 	render() {
 		return (
 			<div className="donate_react" style={{overflow: 'hidden'}}>
-			<div className="donate_landing__viewport" style={{width: '300%', left: this.state.left}}>
+			<div className="donate_react__viewport" style={{width: '300%', left: this.state.left}}>
 				<Amount
 					{...this.state}
 					{...this.props}
@@ -132,7 +132,7 @@ const Donate = React.createClass({
 				</div> 
 				 <div className="form-group">
 					 <button 
-					 	className="donate_landing__submit pull-left" 
+					 	className="donate_react__submit pull-left" 
 						 onClick={this.handleSubmit}
 						>
 						Donate
