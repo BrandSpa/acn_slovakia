@@ -94,13 +94,15 @@ const Donate = React.createClass({
 		return (
 			<div>
 				<Amount 
-					{...this.state} 
+					{...this.state}
+					{...this.props}
 					onlyNum={this.onlyNum} 
 					onChange={this.handleChange} 
 				/>
 
 				<CreditCard 
 					{...this.state}
+					{...this.props}
 					onlyNum={this.onlyNum} 
 					maxLength={this.maxLength}
 					onChange={this.handleChange} 
@@ -109,6 +111,7 @@ const Donate = React.createClass({
 
 				<Contact
 					{...this.state}
+					{...this.props}
 					onChange={this.handleChange} 
 				 />
 
