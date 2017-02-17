@@ -40,7 +40,7 @@ const Contact = React.createClass({
 		const {texts, contact} = this.props;
 
 		return (
-			<div style={{width: '33.3%'}}>
+			<div style={{width: '33.3%', float: 'left'}}>
 				<div className="row">
 					<div className="form-group col-12-l">
 						<input 

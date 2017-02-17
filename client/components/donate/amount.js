@@ -31,7 +31,7 @@ const amount = React.createClass({
 		const {texts, donation_type, amount} = this.props;
 
 		return (
-			<div style={{width: '33.3%'}}>
+			<div style={{width: '33.3%', float: 'left'}}>
 				<AmountBtns texts={texts} changeAmount={this.changeAmount} />
 				<div className="row">
 					<div className="form-group col-7-l">
