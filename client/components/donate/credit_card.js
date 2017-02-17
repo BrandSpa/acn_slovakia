@@ -2,33 +2,42 @@ import React from 'react';
 import Cards from './cards';
 
 const CedritCard = React.createClass({
-	validateCard(card) {
-		if (typeof Stripe == 'undefined') {
-			let number = Stripe.card.validateCardNumber(card);
-			return this.updateErrors({number});
+	getDefaultProps() {
+		return {
+			texts: {}, 
+			stripe: {}, 
+			errors: {}
 		}
 	},
 
+	validateCard(card) {
+			let number = typeof Stripe !== 'undefined' ? Stripe.card.validateCardNumber(card) : false;
+			return this.updateErrors({number});
+	},
+
 	validateExpiry(month, year) {
-		if (typeof Stripe == 'undefined') {
+		if (typeof Stripe !== 'undefined') {
 			let valid = Stripe.card.validateExpiry(month, year);
 			return this.updateErrors({exp_month: valid, exp_year: valid});
 		}
 	},
 
 	validateCvc(cvc) {
-		if (typeof Stripe == 'undefined') {
+		if (typeof Stripe !== 'undefined') {
 			cvc = Stripe.card.validateCVC(cvc);
 			return this.updateErrors({cvc});
 		}
 	},
 
-	updateErrors(field) {
-		return {...this.props.errors, stripe: field};
+	getCardType(number) {
+		if (typeof Stripe !== 'undefined') {
+			return Stripe.card.cardType(number).replace(' ', '');
+		}
+		return '';
 	},
 
-	getCardType(number) {
-		return Stripe.card.cardType(number).replace(' ', '');
+	updateErrors(field) {
+		return {...this.props.errors, stripe: field};
 	},
 
 	handleCard(e) {
@@ -66,11 +75,18 @@ const CedritCard = React.createClass({
 	},
 
 	showErr(field) {
-		return this.props.errors.stripe[field] == false ? 'form-group__error' : 'hidden';
+		if(this.props.errors.stripe) {
+			return this.props.errors.stripe[field] == false ? 'form-group__error' : 'hidden';
+		}
+
+		return '';
 	},
 
 	inputErrStyle(field) {
-		return this.props.errors.stripe[field] == false ? 'form-group--error' : '';
+		if(this.props.errors.stripe) {
+			return this.props.errors.stripe[field] == false ? 'form-group--error' : '';
+		}
+		return '';
 	},
 
 	allValidations(e) {
