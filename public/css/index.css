@@ -500,6 +500,10 @@ p {
   padding: 15px 15px; }
   .grid-item__content {
     background: #fff; }
+    .grid-item__content img {
+      width: 100%;
+      display: block;
+      min-height: 10px; }
     .grid-item__content__texts {
       padding: 15px;
       word-wrap: break-word; }

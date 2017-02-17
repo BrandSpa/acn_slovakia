@@ -114,6 +114,12 @@ p {
 	&__content {
 		background: #fff;
 
+		img {
+			width: 100%;
+			display: block;
+			min-height: 10px;
+		}
+
 		&__texts {
 			padding: 15px;
 			word-wrap: break-word;
