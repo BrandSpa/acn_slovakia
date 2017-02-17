@@ -13326,7 +13326,7 @@ var Donate = _react2.default.createClass({
 						className: 'donate_react__submit pull-left',
 						onClick: this.handleSubmit
 					},
-					'Donate'
+					this.state.section == 1 ? "Next" : "Donate"
 				),
 				this.state.section > 0 ? _react2.default.createElement(
 					'button',

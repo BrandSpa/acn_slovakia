@@ -145,10 +145,10 @@ const Donate = React.createClass({
 					 	className="donate_react__submit pull-left" 
 						 onClick={this.handleSubmit}
 						>
-						Donate
+						{ this.state.section == 1 ? "Next" : "Donate" }
 					</button>
 
-					{this.state.section > 0 ? <button style={{float: 'right'}} onClick={this.prevSection}>Back</button> : ''}
+					{ this.state.section > 0 ? <button style={{ float: 'right' }} onClick={this.prevSection}>Back</button> : '' }
 				 </div>
 				 
 			</form>
