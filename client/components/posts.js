@@ -62,6 +62,12 @@ const Posts = React.createClass({
 	
 	},
 
+	handleImageLoaded() {
+		if(this.iso) {
+			this.iso.layout();
+		}
+	},
+
 	render() {
 		const { posts } = this.state;
 
@@ -74,7 +80,7 @@ const Posts = React.createClass({
 						return (
 							<div key={i} className="grid-item">
 								<div className="grid-item__content">
-									<img src={post.post_image} />
+									{post.post_image ? <img src={post.post_image} onLoad={this.handleImageLoaded.bind(this)} /> : ''}
 
 									<div className="grid-item__content__texts">
 										<h5><a href={post.post_permalink}>{post.post_title}</a></h5>

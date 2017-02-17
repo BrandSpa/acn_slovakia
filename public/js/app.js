@@ -13533,6 +13533,11 @@ var Posts = _react2.default.createClass({
 			}
 		});
 	},
+	handleImageLoaded: function handleImageLoaded() {
+		if (this.iso) {
+			this.iso.layout();
+		}
+	},
 	render: function render() {
 		var _this3 = this;
 
@@ -13555,7 +13560,7 @@ var Posts = _react2.default.createClass({
 						_react2.default.createElement(
 							'div',
 							{ className: 'grid-item__content' },
-							_react2.default.createElement('img', { src: post.post_image }),
+							post.post_image ? _react2.default.createElement('img', { src: post.post_image, onLoad: _this3.handleImageLoaded.bind(_this3) }) : '',
 							_react2.default.createElement(
 								'div',
 								{ className: 'grid-item__content__texts' },
