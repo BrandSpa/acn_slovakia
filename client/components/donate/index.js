@@ -98,6 +98,12 @@ const Donate = React.createClass({
 		this.setState({section, left});
 	},
 
+	prevSection() {
+		let section = this.state.section > 0 ? this.state.section - 1 : 0; 
+		let left = `-${section * 100}%`;
+		this.setState({section, left}
+	}
+
 	render() {
 		return (
 			<div style={{overflow: 'hidden'}}>
@@ -131,7 +137,7 @@ const Donate = React.createClass({
 						>
 						Donate
 					</button>
-					<button>Back</button>
+					{this.state.section > 1 ? <button onClick={this.prevSection}>Back</button> : ''}
 				 </div>
 				 
 			</div>
