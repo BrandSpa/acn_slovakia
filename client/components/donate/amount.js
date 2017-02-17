@@ -34,7 +34,7 @@ const amount = React.createClass({
 			<div>
 				<AmountBtns texts={texts} changeAmount={this.changeAmount} />
 				<div className="row">
-					<div className="form-group col-xs-7">
+					<div className="form-group col-7-l">
 						<input 
 							ref={amountInput => this.amountInput = amountInput} 
 							className="form-control" 
@@ -43,7 +43,7 @@ const amount = React.createClass({
 							value={amount} 
 						/>
 					</div>
-					<div className="form-group col-xs-5">
+					<div className="form-group col-5-l">
 						<a
 							href="#" 
 							onClick={this.changeType.bind(null, 'monthly')}
