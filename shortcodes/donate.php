@@ -30,7 +30,7 @@ function bs_donate_react_sc($atts, $content = null) {
 
 <div 
 	class="bs-donate-react" 
-	data-props='<?php echo json_encode($at) ?>'
+	data-props='{"texts": <?php echo json_encode($at) ?>}'
 >
 </div>
 
