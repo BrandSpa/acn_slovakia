@@ -28,7 +28,6 @@ const Donate = React.createClass({
 				cvc: '',
 				token: ''
 			},
-			texts: {},
 			errors: {
 				stripe: {},
 				contact: {}

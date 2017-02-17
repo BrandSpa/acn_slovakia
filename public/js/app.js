@@ -13211,7 +13211,6 @@ var Donate = _react2.default.createClass({
 				cvc: '',
 				token: ''
 			},
-			texts: {},
 			errors: {
 				stripe: {},
 				contact: {}
