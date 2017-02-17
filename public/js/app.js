@@ -13554,7 +13554,6 @@ var Donate = _react2.default.createClass({
 		});
 	},
 	componentWillMount: function componentWillMount() {
-		this.getProps();
 		this.fetchCountries();
 	},
 	onlyNum: function onlyNum(val) {

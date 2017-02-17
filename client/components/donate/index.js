@@ -43,7 +43,6 @@ const Donate = React.createClass({
 	},
 
 	componentWillMount(){
-		this.getProps();
 		this.fetchCountries();
 	},
 
