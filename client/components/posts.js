@@ -96,11 +96,11 @@ const Posts = React.createClass({
 							</div>
 						)
 					})}
-				
 				</div>
+				
 				<button 
 					onClick={this.seeMore} 
-					style={this.state.seeMore ? {margin: '30px auto', background: '#fff', color: 'red'} : {display: 'none'}}
+					style={this.state.seeMore ? {margin: '30px auto', background: '#fff', color: '#F4334A'} : {display: 'none'}}
 				>
 					See more
 				</button>
