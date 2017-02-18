@@ -13279,7 +13279,7 @@ var Donate = _react2.default.createClass({
 	},
 	nextSection: function nextSection() {
 		var section = this.state.section < 2 ? this.state.section + 1 : 2;
-		if (section == 1) this.creditCard.allValidations();
+		if (section == 2) this.creditCard.allValidations();
 		var left = '-' + section * 100 + '%';
 		this.setState({ section: section, left: left });
 	},
@@ -31951,6 +31951,8 @@ var _cards = __webpack_require__(300);
 
 var _cards2 = _interopRequireDefault(_cards);
 
+var _clean_inputs = __webpack_require__(303);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CedritCard = _react2.default.createClass({
@@ -31985,26 +31987,19 @@ var CedritCard = _react2.default.createClass({
 		return _extends({}, this.props.errors, { stripe: field });
 	},
 	handleCard: function handleCard(e) {
-		var _props = this.props,
-		    onlyNum = _props.onlyNum,
-		    maxLength = _props.maxLength;
-
 		var val = e.currentTarget.value;
-		var number = onlyNum(val);
-		number = maxLength(number, 16);
+		var number = (0, _clean_inputs.onlyNum)(val);
+		number = (0, _clean_inputs.maxLength)(number, 16);
 		var errors = this.validateCard(number);
 		var card_type = this.getCardType(number);
 		var stripe = _extends({}, this.props.stripe, { number: number, card_type: card_type });
 		this.props.onChange({ stripe: stripe, errors: errors });
 	},
 	handleExpiry: function handleExpiry(type, e) {
-		var _props2 = this.props,
-		    stripe = _props2.stripe,
-		    onlyNum = _props2.onlyNum,
-		    maxLength = _props2.maxLength;
+		var stripe = this.props.stripe;
 
-		var val = onlyNum(e.currentTarget.value);
-		val = maxLength(val, 2);
+		var val = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
+		val = (0, _clean_inputs.maxLength)(val, 2);
 		var exp_month = stripe.exp_month;
 		var exp_year = stripe.exp_year;
 		if (type == 'exp_month') exp_month = val;
@@ -32015,13 +32010,10 @@ var CedritCard = _react2.default.createClass({
 		this.props.onChange({ stripe: stripe, errors: errors });
 	},
 	handleCvc: function handleCvc(e) {
-		var _props3 = this.props,
-		    stripe = _props3.stripe,
-		    onlyNum = _props3.onlyNum,
-		    maxLength = _props3.maxLength;
+		var stripe = this.props.stripe;
 
-		var cvc = onlyNum(e.currentTarget.value);
-		cvc = maxLength(cvc, 4);
+		var cvc = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
+		cvc = (0, _clean_inputs.maxLength)(cvc, 4);
 		stripe = _extends({}, stripe, { cvc: cvc });
 		var errors = this.validateCvc(cvc);
 		this.props.onChange({ stripe: stripe, errors: errors });
@@ -32037,6 +32029,7 @@ var CedritCard = _react2.default.createClass({
 		if (this.props.errors.stripe) {
 			return this.props.errors.stripe[field] == false ? 'form-group--error' : '';
 		}
+
 		return '';
 	},
 	allValidations: function allValidations(e) {
@@ -32046,14 +32039,18 @@ var CedritCard = _react2.default.createClass({
 		var number = this.validateCard(stripe.number);
 		var exp_month = this.validateExpiry(stripe.exp_month, stripe.exp_year);
 		var cvc = this.validateCvc(stripe.cvc);
-		var errors = _extends({}, this.props.errors, { stripe: _extends({}, number.stripe, exp_month.stripe, cvc.stripe) });
+
+		var errors = _extends({}, this.props.errors, {
+			stripe: _extends({}, number.stripe, exp_month.stripe, cvc.stripe)
+		});
+
 		this.props.onChange({ errors: errors });
 	},
 	render: function render() {
-		var _props4 = this.props,
-		    texts = _props4.texts,
-		    stripe = _props4.stripe,
-		    errors = _props4.errors;
+		var _props = this.props,
+		    texts = _props.texts,
+		    stripe = _props.stripe,
+		    errors = _props.errors;
 
 
 		return _react2.default.createElement(
@@ -32133,6 +32130,26 @@ var CedritCard = _react2.default.createClass({
 });
 
 exports.default = CedritCard;
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.maxLength = maxLength;
+exports.onlyNum = onlyNum;
+function maxLength(val, length) {
+	return val.substring(0, length);
+}
+
+function onlyNum(val) {
+	return val.replace(/[^0-9]+/, '');
+}
 
 /***/ })
 /******/ ]);

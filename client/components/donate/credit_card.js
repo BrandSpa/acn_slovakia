@@ -1,5 +1,6 @@
 import React from 'react';
 import Cards from './cards';
+import {onlyNum, maxLength} from '../../lib/clean_inputs';
 
 const CedritCard = React.createClass({
 	getDefaultProps() {
@@ -38,7 +39,6 @@ const CedritCard = React.createClass({
 	},
 
 	handleCard(e) {
-		const {onlyNum, maxLength} = this.props;
 		let val =  e.currentTarget.value;
 		let number = onlyNum(val);
 		number = maxLength(number, 16);
@@ -49,7 +49,7 @@ const CedritCard = React.createClass({
 	},
 	
 	handleExpiry(type, e) {
-		let {stripe, onlyNum, maxLength} = this.props;
+		let { stripe } = this.props;
 		let val = onlyNum(e.currentTarget.value);
 		val =  maxLength(val, 2);
 		let exp_month = stripe.exp_month;
@@ -63,7 +63,7 @@ const CedritCard = React.createClass({
 	},
 
 	handleCvc(e) {
-		let {stripe, onlyNum, maxLength} = this.props;
+		let { stripe } = this.props;
 		let cvc = onlyNum(e.currentTarget.value);
 		cvc = maxLength(cvc, 4);
 		stripe = {...stripe, cvc};
@@ -83,16 +83,22 @@ const CedritCard = React.createClass({
 		if(this.props.errors.stripe) {
 			return this.props.errors.stripe[field] == false ? 'form-group--error' : '';
 		}
+
 		return '';
 	},
 
 	allValidations(e) {
 		if(e) e.preventDefault();
 		const { stripe } = this.props;
-		let number = this.validateCard(stripe.number);
-		let exp_month = this.validateExpiry(stripe.exp_month, stripe.exp_year);
-		let cvc = this.validateCvc(stripe.cvc);
-		let errors = {...this.props.errors, stripe: { ...number.stripe, ...exp_month.stripe, ...cvc.stripe}};
+		const number = this.validateCard(stripe.number);
+		const exp_month = this.validateExpiry(stripe.exp_month, stripe.exp_year);
+		const cvc = this.validateCvc(stripe.cvc);
+
+		const errors = { 
+			...this.props.errors, 
+			stripe: { ...number.stripe, ...exp_month.stripe, ...cvc.stripe}
+		};
+
 		this.props.onChange({errors});
 	},
 

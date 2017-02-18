@@ -32,6 +32,7 @@ describe('donate component', () => {
 	it('should validate credit card', () => {
 		let wrapper = mount(<Donate />);
 		wrapper.instance().nextSection();
+		wrapper.instance().nextSection();
 		let expected = {
 			contact: {},
 			stripe: {
