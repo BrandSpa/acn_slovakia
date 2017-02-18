@@ -13279,7 +13279,10 @@ var Donate = _react2.default.createClass({
 	},
 	nextSection: function nextSection() {
 		var section = this.state.section < 2 ? this.state.section + 1 : 2;
-		if (section == 2) this.creditCard.allValidations();
+		if (section == 2) {
+			this.creditCard.allValidations();
+			return;
+		}
 		var left = '-' + section * 100 + '%';
 		this.setState({ section: section, left: left });
 	},

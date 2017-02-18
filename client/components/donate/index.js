@@ -96,7 +96,10 @@ const Donate = React.createClass({
 
 	nextSection() {
 		let section = this.state.section < 2 ? this.state.section + 1 : 2;
-		if(section == 2) this.creditCard.allValidations();
+		if(section == 2){
+			this.creditCard.allValidations();
+			return;
+		} 
 		let left = `-${section * 100}%`;
 		this.setState({section, left});
 	},
