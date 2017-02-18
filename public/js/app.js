@@ -13290,6 +13290,7 @@ var Donate = _react2.default.createClass({
 				var isValid = Object.keys(errs).every(function (key) {
 					return errs[key] !== false;
 				});
+				console.log(isValid);
 				if (!isValid) return {
 						v: void 0
 					};
