@@ -13277,6 +13277,7 @@ var Donate = _react2.default.createClass({
 		return (0, _axios2.default)('/wp-admin/admin-ajax.php', data);
 	},
 	nextSection: function nextSection() {
+		if (section == 1) this.stripe.allValidations();
 		var section = this.state.section < 2 ? this.state.section + 1 : 2;
 		var left = '-' + section * 100 + '%';
 		this.setState({ section: section, left: left });
@@ -13288,6 +13289,8 @@ var Donate = _react2.default.createClass({
 		this.setState({ section: section, left: left });
 	},
 	render: function render() {
+		var _this3 = this;
+
 		var sectionWidth = 100 / 3 + '%';
 
 		return _react2.default.createElement(
@@ -13296,23 +13299,24 @@ var Donate = _react2.default.createClass({
 			_react2.default.createElement(
 				'div',
 				{ className: 'donate_react__viewport', style: { width: '300%', left: this.state.left } },
-				_react2.default.createElement(_amount2.default, _extends({
-					width: sectionWidth
-				}, this.state, this.props, {
+				_react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
+					width: sectionWidth,
 					onlyNum: this.onlyNum,
 					onChange: this.handleChange
 				})),
 				_react2.default.createElement(_credit_card2.default, _extends({
-					width: sectionWidth
+					ref: function ref(stripe) {
+						return _this3.stripe = stripe;
+					}
 				}, this.state, this.props, {
+					width: sectionWidth,
 					onlyNum: this.onlyNum,
 					maxLength: this.maxLength,
 					onChange: this.handleChange,
 					validateStripe: this.validateStripe
 				})),
-				_react2.default.createElement(_contact2.default, _extends({
-					width: sectionWidth
-				}, this.state, this.props, {
+				_react2.default.createElement(_contact2.default, _extends({}, this.state, this.props, {
+					width: sectionWidth,
 					onChange: this.handleChange
 				}))
 			),
@@ -32040,7 +32044,7 @@ var CedritCard = _react2.default.createClass({
 		return '';
 	},
 	allValidations: function allValidations(e) {
-		e.preventDefault();
+		if (e) e.preventDefault();
 		var stripe = this.props.stripe;
 
 		var number = this.validateCard(stripe.number);

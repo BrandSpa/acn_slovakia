@@ -92,6 +92,7 @@ const Donate = React.createClass({
 	},
 
 	nextSection() {
+		if(section == 1) this.stripe.allValidations();
 		let section = this.state.section < 2 ? this.state.section + 1 : 2; 
 		let left = `-${section * 100}%`;
 		this.setState({section, left});
@@ -112,17 +113,18 @@ const Donate = React.createClass({
 				<div className="donate_react__viewport" style={{width: '300%', left: this.state.left}} >
 
 				<Amount
-					width={sectionWidth}
 					{...this.state}
 					{...this.props}
+					width={sectionWidth}
 					onlyNum={this.onlyNum} 
 					onChange={this.handleChange}
 				/>
 
 				<CreditCard
-					width={sectionWidth} 
+					ref={stripe => this.stripe = stripe}
 					{...this.state}
 					{...this.props}
+					width={sectionWidth} 
 					onlyNum={this.onlyNum} 
 					maxLength={this.maxLength}
 					onChange={this.handleChange} 
@@ -130,9 +132,9 @@ const Donate = React.createClass({
 				/>
 
 				<Contact
-					width={sectionWidth}
 					{...this.state}
 					{...this.props}
+					width={sectionWidth}
 					onChange={this.handleChange} 
 				 />
 
