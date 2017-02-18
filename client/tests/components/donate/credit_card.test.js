@@ -21,4 +21,23 @@ describe('donate amount component', () => {
 		expect(onChange.mock.calls[0][0]).toEqual(expected);
 	})
 	
+	it('should validate all fields', () => {
+		let onlyNum = val => val.replace(/[^0-9]+/, '');
+		let maxLength = val => val;
+		let onChange = jest.fn();
+		let wrapper = shallow(<CreditCard onlyNum={onlyNum} maxLength={maxLength} onChange={onChange} />);
+		
+		wrapper.instance().allValidations();
+		
+		let expected = { errors: {
+			stripe: {
+				number: false,
+				cvc: false,
+				exp_month: false,
+				exp_year: false,
+			}
+		}};
+
+		expect(onChange.mock.calls[0][0]).toEqual(expected);
+	})
 });

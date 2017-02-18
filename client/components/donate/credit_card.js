@@ -16,17 +16,13 @@ const CedritCard = React.createClass({
 	},
 
 	validateExpiry(month, year) {
-		if (typeof Stripe !== 'undefined') {
-			let valid = Stripe.card.validateExpiry(month, year);
-			return this.updateErrors({exp_month: valid, exp_year: valid});
-		}
+		let valid = typeof Stripe !== 'undefined' ? Stripe.card.validateExpiry(month, year) : false;
+		return this.updateErrors({exp_month: valid, exp_year: valid});
 	},
 
 	validateCvc(cvc) {
-		if (typeof Stripe !== 'undefined') {
-			cvc = Stripe.card.validateCVC(cvc);
-			return this.updateErrors({cvc});
-		}
+		cvc = typeof Stripe !== 'undefined' ? Stripe.card.validateCVC(cvc) : false;
+		return this.updateErrors({cvc});
 	},
 
 	getCardType(number) {
@@ -92,14 +88,13 @@ const CedritCard = React.createClass({
 
 	allValidations(e) {
 		if(e) e.preventDefault();
-		const {stripe} = this.props;
+		const { stripe } = this.props;
 		let number = this.validateCard(stripe.number);
 		let exp_month = this.validateExpiry(stripe.exp_month, stripe.exp_year);
 		let cvc = this.validateCvc(stripe.cvc);
-		let errors = {...this.props.errors, stripe:{ ...number.stripe, ...exp_month.stripe, ...cvc.stripe}};
+		let errors = {...this.props.errors, stripe: { ...number.stripe, ...exp_month.stripe, ...cvc.stripe}};
 		this.props.onChange({errors});
 	},
-
 
 	render() {
 		const {texts, stripe, errors} = this.props;

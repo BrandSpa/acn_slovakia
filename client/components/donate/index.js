@@ -43,10 +43,13 @@ const Donate = React.createClass({
 
 	fetchCountries() {
 		const data = qs.stringify({action: 'countries'});
-		
-		request
-		.post('/wp-admin/admin-ajax.php', data)
-		.then(res => this.setState({countries: res.data}));
+
+		return request
+			.post('/wp-admin/admin-ajax.php', data)
+			.then(res => { 
+				this.setState({countries: res.data });
+				return res.data;
+			});
 	},
 
 	componentWillMount(){
@@ -92,8 +95,8 @@ const Donate = React.createClass({
 	},
 
 	nextSection() {
-		if(section == 1) this.stripe.allValidations();
-		let section = this.state.section < 2 ? this.state.section + 1 : 2; 
+		let section = this.state.section < 2 ? this.state.section + 1 : 2;
+		if(section == 1) this.creditCard.allValidations();
 		let left = `-${section * 100}%`;
 		this.setState({section, left});
 	},
@@ -121,14 +124,13 @@ const Donate = React.createClass({
 				/>
 
 				<CreditCard
-					ref={stripe => this.stripe = stripe}
+					ref={creditCard => this.creditCard = creditCard}
 					{...this.state}
 					{...this.props}
 					width={sectionWidth} 
 					onlyNum={this.onlyNum} 
 					maxLength={this.maxLength}
 					onChange={this.handleChange} 
-					validateStripe={this.validateStripe}
 				/>
 
 				<Contact

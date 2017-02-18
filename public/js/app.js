@@ -13227,8 +13227,9 @@ var Donate = _react2.default.createClass({
 
 		var data = _qs2.default.stringify({ action: 'countries' });
 
-		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
-			return _this.setState({ countries: res.data });
+		return _axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
+			_this.setState({ countries: res.data });
+			return res.data;
 		});
 	},
 	componentWillMount: function componentWillMount() {
@@ -13277,8 +13278,8 @@ var Donate = _react2.default.createClass({
 		return (0, _axios2.default)('/wp-admin/admin-ajax.php', data);
 	},
 	nextSection: function nextSection() {
-		if (section == 1) this.stripe.allValidations();
 		var section = this.state.section < 2 ? this.state.section + 1 : 2;
+		if (section == 1) this.creditCard.allValidations();
 		var left = '-' + section * 100 + '%';
 		this.setState({ section: section, left: left });
 	},
@@ -13305,15 +13306,14 @@ var Donate = _react2.default.createClass({
 					onChange: this.handleChange
 				})),
 				_react2.default.createElement(_credit_card2.default, _extends({
-					ref: function ref(stripe) {
-						return _this3.stripe = stripe;
+					ref: function ref(creditCard) {
+						return _this3.creditCard = creditCard;
 					}
 				}, this.state, this.props, {
 					width: sectionWidth,
 					onlyNum: this.onlyNum,
 					maxLength: this.maxLength,
-					onChange: this.handleChange,
-					validateStripe: this.validateStripe
+					onChange: this.handleChange
 				})),
 				_react2.default.createElement(_contact2.default, _extends({}, this.state, this.props, {
 					width: sectionWidth,
@@ -31967,16 +31967,12 @@ var CedritCard = _react2.default.createClass({
 		return this.updateErrors({ number: number });
 	},
 	validateExpiry: function validateExpiry(month, year) {
-		if (typeof Stripe !== 'undefined') {
-			var valid = Stripe.card.validateExpiry(month, year);
-			return this.updateErrors({ exp_month: valid, exp_year: valid });
-		}
+		var valid = typeof Stripe !== 'undefined' ? Stripe.card.validateExpiry(month, year) : false;
+		return this.updateErrors({ exp_month: valid, exp_year: valid });
 	},
 	validateCvc: function validateCvc(cvc) {
-		if (typeof Stripe !== 'undefined') {
-			cvc = Stripe.card.validateCVC(cvc);
-			return this.updateErrors({ cvc: cvc });
-		}
+		cvc = typeof Stripe !== 'undefined' ? Stripe.card.validateCVC(cvc) : false;
+		return this.updateErrors({ cvc: cvc });
 	},
 	getCardType: function getCardType(number) {
 		if (typeof Stripe !== 'undefined') {
