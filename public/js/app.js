@@ -13156,6 +13156,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = __webpack_require__(14);
@@ -13278,11 +13280,24 @@ var Donate = _react2.default.createClass({
 		return (0, _axios2.default)('/wp-admin/admin-ajax.php', data);
 	},
 	nextSection: function nextSection() {
+		var _this3 = this;
+
 		var section = this.state.section < 2 ? this.state.section + 1 : 2;
 		if (section == 2) {
-			this.creditCard.allValidations();
-			return;
+			var _ret = function () {
+				_this3.creditCard.allValidations();
+				var errs = _this3.state.errors.stripe;
+				var isValid = Object.keys(errs).every(function (key) {
+					return errs[key] !== false;
+				});
+				if (!isValid) return {
+						v: void 0
+					};
+			}();
+
+			if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
 		}
+
 		var left = '-' + section * 100 + '%';
 		this.setState({ section: section, left: left });
 	},
@@ -13293,7 +13308,7 @@ var Donate = _react2.default.createClass({
 		this.setState({ section: section, left: left });
 	},
 	render: function render() {
-		var _this3 = this;
+		var _this4 = this;
 
 		var sectionWidth = 100 / 3 + '%';
 
@@ -13310,7 +13325,7 @@ var Donate = _react2.default.createClass({
 				})),
 				_react2.default.createElement(_credit_card2.default, _extends({
 					ref: function ref(creditCard) {
-						return _this3.creditCard = creditCard;
+						return _this4.creditCard = creditCard;
 					}
 				}, this.state, this.props, {
 					width: sectionWidth,
