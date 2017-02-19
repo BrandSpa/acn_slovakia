@@ -13607,7 +13607,7 @@ var Donate = _react2.default.createClass({
 			var _ret = function () {
 				var errs = _this3.creditCard.allValidations();
 				var isValid = Object.keys(errs.stripe).every(function (key) {
-					return errs[key] == true;
+					return errs.stripe[key] !== true;
 				});
 				console.log(Object.keys(errs.stripe), errs.stripe, isValid);
 				if (!isValid) return {
