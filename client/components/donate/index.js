@@ -56,14 +56,6 @@ const Donate = React.createClass({
 		this.fetchCountries();
 	},
 
-	onlyNum(val) {
-		return val.replace(/[^0-9]+/, '');
-	},
-
-	maxLength(val, length) {
-		return val.substring(0, length);
-	},
-
 	handleChange(field) {
 		this.setState({...this.state, ...field});
 	},
@@ -96,10 +88,9 @@ const Donate = React.createClass({
 	nextSection() {
 		let section = this.state.section < 2 ? this.state.section + 1 : 2;
 		if(section == 2){
-			this.creditCard.allValidations();
-			let errs = this.state.errors.stripe;
+			let errs = this.creditCard.allValidations();
 			let isValid = Object.keys(errs).every(key => errs[key] !== false);
-			console.log(this.state.errors, isValid);
+			console.log(this.state.errors, errs , isValid);
 			if(!isValid) return;
 		} 
 
@@ -125,7 +116,6 @@ const Donate = React.createClass({
 					{...this.state}
 					{...this.props}
 					width={sectionWidth}
-					onlyNum={this.onlyNum} 
 					onChange={this.handleChange}
 				/>
 
@@ -133,9 +123,7 @@ const Donate = React.createClass({
 					ref={creditCard => this.creditCard = creditCard}
 					{...this.state}
 					{...this.props}
-					width={sectionWidth} 
-					onlyNum={this.onlyNum} 
-					maxLength={this.maxLength}
+					width={sectionWidth}
 					onChange={this.handleChange} 
 				/>
 

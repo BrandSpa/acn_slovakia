@@ -13564,12 +13564,6 @@ var Donate = _react2.default.createClass({
 	componentWillMount: function componentWillMount() {
 		this.fetchCountries();
 	},
-	onlyNum: function onlyNum(val) {
-		return val.replace(/[^0-9]+/, '');
-	},
-	maxLength: function maxLength(val, length) {
-		return val.substring(0, length);
-	},
 	handleChange: function handleChange(field) {
 		this.setState(_extends({}, this.state, field));
 	},
@@ -13611,12 +13605,11 @@ var Donate = _react2.default.createClass({
 		var section = this.state.section < 2 ? this.state.section + 1 : 2;
 		if (section == 2) {
 			var _ret = function () {
-				_this3.creditCard.allValidations();
-				var errs = _this3.state.errors.stripe;
+				var errs = _this3.creditCard.allValidations();
 				var isValid = Object.keys(errs).every(function (key) {
 					return errs[key] !== false;
 				});
-				console.log(_this3.state.errors, isValid);
+				console.log(_this3.state.errors, errs, isValid);
 				if (!isValid) return {
 						v: void 0
 					};
@@ -13647,7 +13640,6 @@ var Donate = _react2.default.createClass({
 				{ className: 'donate_react__viewport', style: { width: '300%', left: this.state.left } },
 				_react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
 					width: sectionWidth,
-					onlyNum: this.onlyNum,
 					onChange: this.handleChange
 				})),
 				_react2.default.createElement(_credit_card2.default, _extends({
@@ -13656,8 +13648,6 @@ var Donate = _react2.default.createClass({
 					}
 				}, this.state, this.props, {
 					width: sectionWidth,
-					onlyNum: this.onlyNum,
-					maxLength: this.maxLength,
 					onChange: this.handleChange
 				})),
 				_react2.default.createElement(_contact2.default, _extends({}, this.state, this.props, {
@@ -15031,6 +15021,8 @@ var _amount_btns = __webpack_require__(143);
 
 var _amount_btns2 = _interopRequireDefault(_amount_btns);
 
+var _clean_inputs = __webpack_require__(149);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var amount = _react2.default.createClass({
@@ -15049,7 +15041,7 @@ var amount = _react2.default.createClass({
 	},
 	handleAmount: function handleAmount(e) {
 		var el = e.currentTarget;
-		var amount = this.props.onlyNum(el.value);
+		var amount = (0, _clean_inputs.onlyNum)(el.value);
 		this.props.onChange({ amount: amount });
 	},
 	changeType: function changeType(donation_type, e) {
@@ -15493,6 +15485,7 @@ var CedritCard = _react2.default.createClass({
 		});
 
 		this.props.onChange({ errors: errors });
+		return errors;
 	},
 	render: function render() {
 		var _props = this.props,

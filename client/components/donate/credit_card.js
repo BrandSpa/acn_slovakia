@@ -100,6 +100,7 @@ const CedritCard = React.createClass({
 		};
 
 		this.props.onChange({errors});
+		return errors;
 	},
 
 	render() {

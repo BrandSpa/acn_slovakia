@@ -1,5 +1,6 @@
 import React from 'react';
 import AmountBtns from './amount_btns';
+import { onlyNum } from '../../lib/clean_inputs';
 
 const amount = React.createClass({
 	getDefaultProps() {
@@ -18,7 +19,7 @@ const amount = React.createClass({
 
 	handleAmount(e) {
 		let el = e.currentTarget;
-		let amount = this.props.onlyNum(el.value);
+		let amount = onlyNum(el.value);
 		this.props.onChange({amount});
 	},
 
