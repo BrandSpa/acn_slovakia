@@ -13609,7 +13609,7 @@ var Donate = _react2.default.createClass({
 				var isValid = Object.keys(errs.stripe).every(function (key) {
 					return errs[key] !== false;
 				});
-				console.log(_this3.state.errors, errs, isValid);
+				console.log(Object.keys(errs.stripe), errs.stripe, isValid);
 				if (!isValid) return {
 						v: void 0
 					};

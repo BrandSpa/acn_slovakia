@@ -90,7 +90,7 @@ const Donate = React.createClass({
 		if(section == 2){
 			let errs = this.creditCard.allValidations();
 			let isValid = Object.keys(errs.stripe).every(key => errs[key] !== false);
-			console.log(this.state.errors, errs , isValid);
+			console.log(Object.keys(errs.stripe), errs.stripe, isValid);
 			if(!isValid) return;
 		} 
 
