@@ -14169,17 +14169,23 @@ var Projects = _react2.default.createClass({
 	componentDidMount: function componentDidMount() {
 		var _this = this;
 
+		window.addEventListener("resize", function (event) {
+			console.log(event);
+			_this.moveArrow(_this.state.section);
+		});
+
 		setTimeout(function () {
-			var left = _this.el.querySelector('.projects__icons li:nth-child(' + 1 + ')').offsetLeft;
-			_this.el.querySelector('.projects__arrow').style.left = left + 'px';
+			_this.moveArrow(1);
 		}, 1000);
+	},
+	moveArrow: function moveArrow(num) {
+		var left = this.el.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
+		this.el.querySelector('.projects__arrow').style.left = left + 'px';
 	},
 	changeContent: function changeContent(num) {
 		var color = backgroundColors[num];
 		this.setState({ bg: color, donateColor: color, section: num });
-
-		var left = this.el.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
-		this.el.querySelector('.projects__arrow').style.left = left + 'px';
+		this.moveArrow(num);
 	},
 	render: function render() {
 		var _this2 = this;

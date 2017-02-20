@@ -24,8 +24,7 @@ const Projects = React.createClass({
 	},
 
 	componentDidMount() {
-
-		window.addEventListener('resize', function(event){
+		 window.addEventListener("resize", (event) => {
 			console.log(event);
 			this.moveArrow(this.state.section);
 		});
