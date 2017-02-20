@@ -131,7 +131,7 @@ const Donate = React.createClass({
 		if(this.state.section == 2) {
 			if(!this.contactIsValid()) return false;
 			this.stripeCharge()
-				.then(res => completeTransaction(res.data));
+				.then(res => this.completeTransaction(res.data));
 		}
 
 		let left = `-${section * 100}%`;

@@ -13763,6 +13763,8 @@ var Donate = _react2.default.createClass({
 		});
 	},
 	nextSection: function nextSection() {
+		var _this3 = this;
+
 		var section = this.state.section < 2 ? this.state.section + 1 : 2;
 
 		if (this.state.section == 1) {
@@ -13773,7 +13775,7 @@ var Donate = _react2.default.createClass({
 		if (this.state.section == 2) {
 			if (!this.contactIsValid()) return false;
 			this.stripeCharge().then(function (res) {
-				return completeTransaction(res.data);
+				return _this3.completeTransaction(res.data);
 			});
 		}
 
@@ -13787,7 +13789,7 @@ var Donate = _react2.default.createClass({
 		this.setState({ section: section, left: left });
 	},
 	render: function render() {
-		var _this3 = this;
+		var _this4 = this;
 
 		var sectionWidth = 100 / 3 + '%';
 
@@ -13803,7 +13805,7 @@ var Donate = _react2.default.createClass({
 				})),
 				_react2.default.createElement(_credit_card2.default, _extends({
 					ref: function ref(creditCard) {
-						return _this3.creditCard = creditCard;
+						return _this4.creditCard = creditCard;
 					}
 				}, this.state, this.props, {
 					width: sectionWidth,
@@ -13811,7 +13813,7 @@ var Donate = _react2.default.createClass({
 				})),
 				_react2.default.createElement(_contact2.default, _extends({
 					ref: function ref(contact) {
-						return _this3.contact = contact;
+						return _this4.contact = contact;
 					}
 				}, this.state, this.props, {
 					width: sectionWidth,
