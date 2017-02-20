@@ -109,10 +109,9 @@ const contactForm = React.createClass({
     let { placeholders, validationMessages, texts } = this.props;
 
     return (
-      <form style={{'textAlign': 'center'}} className="form-inline" onSubmit={this.handleSubmit}>
+      <form style={{'textAlign': 'center'}} className="form-inline contact-form" onSubmit={this.handleSubmit}>
         <div className="input-container">
           <input
-            style={{'marginLeft': '-1px', 'borderRadius': '5px 0 0 5px'}}
             type="text"
             placeholder={placeholders.name}
             onChange={this.handleChange.bind(null, "name")}
@@ -123,7 +122,6 @@ const contactForm = React.createClass({
         
         <div className="input-container">
           <input
-            style={{'marginLeft': '-1px'}}
             type="text"
             placeholder={placeholders.lastname}
             onChange={this.handleChange.bind(null, "lastname")}
@@ -134,7 +132,6 @@ const contactForm = React.createClass({
 
         <div className="input-container">
           <input
-            style={{'marginLeft': '-1px'}}
             type="text"
             placeholder={placeholders.email}
             onChange={this.handleChange.bind(null, "email")}
@@ -145,7 +142,6 @@ const contactForm = React.createClass({
 
         <div className="input-container">
           <select
-            style={{'marginLeft': '-1px'}}
             onChange={this.handleChange.bind(null, "country")}
             value={contact.country}
           >

@@ -13525,12 +13525,11 @@ var contactForm = _react2.default.createClass({
 
     return _react2.default.createElement(
       "form",
-      { style: { 'textAlign': 'center' }, className: "form-inline", onSubmit: this.handleSubmit },
+      { style: { 'textAlign': 'center' }, className: "form-inline contact-form", onSubmit: this.handleSubmit },
       _react2.default.createElement(
         "div",
         { className: "input-container" },
         _react2.default.createElement("input", {
-          style: { 'marginLeft': '-1px', 'borderRadius': '5px 0 0 5px' },
           type: "text",
           placeholder: placeholders.name,
           onChange: this.handleChange.bind(null, "name"),
@@ -13549,7 +13548,6 @@ var contactForm = _react2.default.createClass({
         "div",
         { className: "input-container" },
         _react2.default.createElement("input", {
-          style: { 'marginLeft': '-1px' },
           type: "text",
           placeholder: placeholders.lastname,
           onChange: this.handleChange.bind(null, "lastname"),
@@ -13565,7 +13563,6 @@ var contactForm = _react2.default.createClass({
         "div",
         { className: "input-container" },
         _react2.default.createElement("input", {
-          style: { 'marginLeft': '-1px' },
           type: "text",
           placeholder: placeholders.email,
           onChange: this.handleChange.bind(null, "email"),
@@ -13583,7 +13580,6 @@ var contactForm = _react2.default.createClass({
         _react2.default.createElement(
           "select",
           {
-            style: { 'marginLeft': '-1px' },
             onChange: this.handleChange.bind(null, "country"),
             value: contact.country
           },

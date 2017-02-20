@@ -728,6 +728,14 @@ p {
       .modal--show {
         top: 60px; } }
 
+.contact-form input {
+  margin-left: -1px; }
+  .contact-form input:first-child {
+    border-radius: 5px 0 0 5px; }
+    @media (max-width: 767px) {
+      .contact-form input:first-child {
+        border-radius: 0; } }
+
 .projects__icons {
   text-align: center;
   padding: 0;
@@ -972,6 +980,44 @@ a:hover {
   @media (max-width: 767px) {
     .donate-react__container {
       padding: 20px; } }
+
+.grid-item {
+  float: left;
+  padding: 15px 15px; }
+  .grid-item__content {
+    background: #fff; }
+    .grid-item__content img {
+      width: 100%;
+      display: block;
+      min-height: 10px; }
+    .grid-item__content__texts {
+      padding: 15px;
+      word-wrap: break-word; }
+      .grid-item__content__texts h5 {
+        color: #3C515F;
+        padding-bottom: 15px;
+        margin-top: 15px;
+        display: block; }
+        .grid-item__content__texts h5:after {
+          display: block;
+          content: ' ';
+          width: 70%;
+          border-bottom: 1px solid #E34E6B;
+          padding-top: 15px; }
+        .grid-item__content__texts h5 a {
+          color: #324049;
+          text-decoration: none; }
+      .grid-item__content__texts p {
+        color: #9B9B9B !important; }
+
+.grid-item, .grid-sizer {
+  width: 33.33333%; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .grid-item, .grid-sizer {
+      width: 50%; } }
+  @media (max-width: 767px) {
+    .grid-item, .grid-sizer {
+      width: 100%; } }
 
 .grid-item {
   float: left;
