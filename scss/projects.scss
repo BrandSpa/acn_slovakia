@@ -33,6 +33,11 @@
   	border-right: 30px solid transparent;
   	border-top: 30px solid #fff;
 		transition: 300ms all;
+		@media #{$s} {
+			border-left: 10px solid transparent;
+  		border-right: 10px solid transparent;
+  		border-top: 10px solid #fff;
+		}
 	}
 
 	&__content{

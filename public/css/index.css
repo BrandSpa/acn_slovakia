@@ -772,6 +772,11 @@ p {
   border-right: 30px solid transparent;
   border-top: 30px solid #fff;
   transition: 300ms all; }
+  @media (max-width: 767px) {
+    .projects__arrow {
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #fff; } }
 
 .projects__content {
   position: relative;
