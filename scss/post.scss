@@ -6,7 +6,7 @@
 
 	&__header {
 		position: relative;
-		height: 400px;
+		min-height: 300px;
 		width: 100%;
 	}
 	
@@ -17,6 +17,7 @@
 		right: 0;
 		margin: auto;
 		width: 50%;
+		min-height: 240px;
 		background: #3C515F;
 		text-align: center;
 		color: #fff;
