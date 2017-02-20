@@ -52,3 +52,9 @@ function show_posts() {
 
 	return false;
 }
+
+function show_donate() {
+	$country = getCountry();
+	if(!in_array(getOfficesCountries(), $country)) return true;
+	return false;
+}

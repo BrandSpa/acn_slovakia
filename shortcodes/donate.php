@@ -31,6 +31,7 @@ function bs_donate_react_sc($atts, $content = null) {
 	ob_start();
 ?>
 
+<?php if(show_donate()): ?>
 <div 
 	class="bs-donate-react" 
 	data-props='{
@@ -42,7 +43,7 @@ function bs_donate_react_sc($atts, $content = null) {
   }'
 >
 </div>
-
+<?php endif; ?>
 <?php
 return ob_get_clean();
 }
