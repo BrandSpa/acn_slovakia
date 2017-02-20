@@ -654,7 +654,7 @@ p {
     .slider__slide h4 {
       display: block;
       width: 50%;
-      margin: 0 auto;
+      margin: 20px auto;
       font-size: 1.33333em;
       font-weight: 600;
       font-style: normal;
@@ -666,6 +666,7 @@ p {
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
       @media (max-width: 767px) {
         .slider__slide h4 {
+          width: 90%;
           font-size: 1.5em;
           line-height: 1.5; } }
 
