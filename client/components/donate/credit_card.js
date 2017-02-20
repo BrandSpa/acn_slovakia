@@ -1,4 +1,5 @@
 import React from 'react';
+import validCard from 'card-validator';
 import Cards from './cards';
 import {onlyNum, maxLength} from '../../lib/clean_inputs';
 
@@ -12,17 +13,19 @@ const CedritCard = React.createClass({
 	},
 
 	validateCard(card) {
-			let number = typeof Stripe !== 'undefined' ? Stripe.card.validateCardNumber(card) : false;
+			let number = validCard.number(card).isValid;
 			return this.updateErrors({number});
 	},
 
 	validateExpiry(month, year) {
-		let valid = typeof Stripe !== 'undefined' ? Stripe.card.validateExpiry(month, year) : false;
-		return this.updateErrors({exp_month: valid, exp_year: valid});
+		let valid = validCard.expirationDate({month, year});
+		let exp_month = valid.isValid;
+		let exp_year = valid.isValid;
+		return this.updateErrors({exp_month, exp_year});
 	},
 
 	validateCvc(cvc) {
-		cvc = typeof Stripe !== 'undefined' ? Stripe.card.validateCVC(cvc) : false;
+		cvc = validCard.cvv(cvc).isValid;
 		return this.updateErrors({cvc});
 	},
 

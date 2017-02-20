@@ -910,6 +910,12 @@ caniuse-db@^1.0.30000617, caniuse-db@^1.0.30000618:
   version "1.0.30000622"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000622.tgz#9d9690b577384990a58e33ebb903a14da735e5fd"
 
+card-validator:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/card-validator/-/card-validator-4.0.0.tgz#f054ab0f407693fc0ced073f4092e35f53c339c8"
+  dependencies:
+    credit-card-type "^5.0.0"
+
 cardinal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cardinal/-/cardinal-1.0.0.tgz#50e21c1b0aa37729f9377def196b5a9cec932ee9"
@@ -1135,6 +1141,10 @@ create-hmac@^1.1.0, create-hmac@^1.1.2:
   dependencies:
     create-hash "^1.1.0"
     inherits "^2.0.1"
+
+credit-card-type@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/credit-card-type/-/credit-card-type-5.0.1.tgz#0e35efa17c7d36ea44c659de992b1d13072a587b"
 
 cross-spawn@^3.0.0:
   version "3.0.1"

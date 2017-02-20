@@ -12,7 +12,6 @@
   });
 </script>
 
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/public/js/app.js"></script>
 </body>
 </html>

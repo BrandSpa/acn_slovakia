@@ -21,7 +21,7 @@ const Donate = React.createClass({
 				country: ''
 			},
 			stripe: {
-				card_type: 'visa',
+				card_type: '',
 				number: '',
 				exp_month: '',
 				exp_year: '',
@@ -87,9 +87,8 @@ const Donate = React.createClass({
 
 	creditCardIsValid() {
 		let errs = this.creditCard.allValidations();
-		let isValid = Object.keys(errs.stripe).every(key => errs.stripe[key] == true);
-		if(!isValid) return;
-		return true;
+		return Object.keys(errs.stripe)
+			.every(key => errs.stripe[key] == true);
 	},
 
 	nextSection() {
