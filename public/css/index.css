@@ -777,6 +777,9 @@ p {
   .projects__content__content-left {
     transition: 300ms all;
     padding: 90px; }
+    @media (max-width: 767px) {
+      .projects__content__content-left {
+        padding: 20px; } }
     .projects__content__content-left h4 {
       color: #fff;
       margin: 0 0 60px 0; }

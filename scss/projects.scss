@@ -40,6 +40,10 @@
 		&__content-left {
 			transition: 300ms all;
 			padding: 90px;
+			
+			@media #{$s} {
+				padding: 20px;
+			}
 
 			h4 {
 				color: #fff;
