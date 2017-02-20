@@ -48,8 +48,9 @@ const Projects = React.createClass({
 		let imgUrl = content.imgUrl;
 
 		let styleRight = {
-			background: `url(${imgUrl})`,
+			backgroundImage: `url(${imgUrl})`,
 			backgroundSize: 'cover',
+			backgroundPosition: 'center',
 			minHeight: '500px'
 		};
 		

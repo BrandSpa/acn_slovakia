@@ -14193,8 +14193,9 @@ var Projects = _react2.default.createClass({
 		var imgUrl = content.imgUrl;
 
 		var styleRight = {
-			background: 'url(' + imgUrl + ')',
+			backgroundImage: 'url(' + imgUrl + ')',
 			backgroundSize: 'cover',
+			backgroundPosition: 'center',
 			minHeight: '500px'
 		};
 

@@ -912,7 +912,7 @@ a:hover {
     align-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    font-size: 1.35714em;
+    font-size: 1em;
     font-weight: 300;
     transition: all 300ms ease;
     text-decoration: none; }
