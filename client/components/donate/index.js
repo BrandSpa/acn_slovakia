@@ -87,6 +87,27 @@ const Donate = React.createClass({
 		return request.post('/wp-admin/admin-ajax.php', dataAjax);
 	},
 
+	completeTransaction(stripeResponse = {}) {
+		const type = this.state.donation_type;
+		const base = this.props.redirect[type];
+		const { customer, id } = stripeResponse;
+		const { amount } = this.state;
+
+		if(typeof ga !== 'undefined') {
+			ga('ecommerce:addTransaction', {
+				'id': `${this.contact.email}-${id}`,                 
+				'affiliation': 'ACN International',
+				'revenue': amount,
+				'currency': 'USD'
+			});
+
+			ga('ecommerce:send');
+		}
+
+		let url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
+		window.location = url;
+	},
+
 	creditCardIsValid() {
 		let errs = this.creditCard.allValidations();
 		return Object.keys(errs.stripe)

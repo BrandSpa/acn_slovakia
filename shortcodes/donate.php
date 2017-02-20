@@ -33,7 +33,13 @@ function bs_donate_react_sc($atts, $content = null) {
 
 <div 
 	class="bs-donate-react" 
-	data-props='{"texts": <?php echo json_encode($at) ?>}'
+	data-props='{
+    "texts": <?php echo json_encode($at) ?>, 
+    "redirect" {
+      "monthly": "<?php echo get_option('donate_monthly_redirect') ?>",
+      "once": "<?php echo get_option('donate_once_redirect') ?>"
+    }
+  }'
 >
 </div>
 

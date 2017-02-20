@@ -13724,6 +13724,30 @@ var Donate = _react2.default.createClass({
 		console.log(dataAjax);
 		return _axios2.default.post('/wp-admin/admin-ajax.php', dataAjax);
 	},
+	completeTransaction: function completeTransaction() {
+		var stripeResponse = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+		var type = this.state.donation_type;
+		var base = this.props.redirect[type];
+		var customer = stripeResponse.customer,
+		    id = stripeResponse.id;
+		var amount = this.state.amount;
+
+
+		if (typeof ga !== 'undefined') {
+			ga('ecommerce:addTransaction', {
+				'id': this.contact.email + '-' + id,
+				'affiliation': 'ACN International',
+				'revenue': amount,
+				'currency': 'USD'
+			});
+
+			ga('ecommerce:send');
+		}
+
+		var url = base + '?customer_id=' + customer + '-' + id + '&order_revenue=' + amount + '&order_id=' + id;
+		window.location = url;
+	},
 	creditCardIsValid: function creditCardIsValid() {
 		var errs = this.creditCard.allValidations();
 		return Object.keys(errs.stripe).every(function (key) {
