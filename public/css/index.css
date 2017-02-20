@@ -730,6 +730,9 @@ p {
 
 .contact-form .input-container {
   width: 20%; }
+  @media (max-width: 767px) {
+    .contact-form .input-container {
+      width: 100%; } }
   .contact-form .input-container:nth-child(1) input {
     border-radius: 5px 0 0 5px; }
     @media (max-width: 767px) {

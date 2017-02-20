@@ -1,6 +1,11 @@
 .contact-form {
 	.input-container {
 		width: 20%;
+		
+		@media #{$s} {
+			width: 100%;
+		}
+
 		&:nth-child(1) {
 			input {
 				border-radius: 5px 0 0 5px;
