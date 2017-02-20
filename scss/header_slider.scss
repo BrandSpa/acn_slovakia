@@ -38,7 +38,7 @@
 			color: #ffffff;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59);
 			@media #{$s} {
-				font-size: 1.6em;
+				font-size: 2em;
 			}
 		}
 
@@ -52,7 +52,9 @@
 			text-align: center;
 			color: #ffffff;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59);
-			
+			@media #{$s} {
+				font-size: 1.5em;
+			}
 		}
 
   }
@@ -74,9 +76,15 @@
   .slider__btns__prev {
   	position: absolute;
     left: 30px;
+		@media #{$s} {
+			left: 5px;
+		}
   }
   
   .slider__btns__next {
   	position: absolute;
     right: 30px; 
+		@media #{$s} {
+			right: 5px;
+		}
   }
