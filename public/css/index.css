@@ -728,13 +728,14 @@ p {
       .modal--show {
         top: 60px; } }
 
+.contact-form.input-container:nth-child(1) input {
+  border-radius: 5px 0 0 5px; }
+  @media (max-width: 767px) {
+    .contact-form.input-container:nth-child(1) input {
+      border-radius: 0; } }
+
 .contact-form input {
   margin-left: -1px; }
-  .contact-form input:nth-child(1) {
-    border-radius: 5px 0 0 5px; }
-    @media (max-width: 767px) {
-      .contact-form input:nth-child(1) {
-        border-radius: 0; } }
 
 .projects__icons {
   text-align: center;
