@@ -115,9 +115,6 @@ const CedritCard = React.createClass({
 				<Cards {...this.props} />
 
 			<div className="form-group">
-				<span className="form-group__addon">
-					<span>USD</span>					
-				
 					<input
 						type="text"
 						placeholder={texts.placeholder_credit_card} 
@@ -125,7 +122,6 @@ const CedritCard = React.createClass({
 						onChange={this.handleCard}
 						value={stripe.number}
 					/>
-				</span>
 				<span className={this.showErr('number')}>
 					{texts.validation_card}
         </span>

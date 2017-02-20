@@ -47,9 +47,11 @@ select {
 }
 
 .form-group {
+	position: relative;
 	&__addon {
-		display: table-cell;
-		// height: $bs-input-height;
+		left: 0;
+		position: absolute;
+		height: $bs-input-height;
 		// border: 1px solid $bs-input-border-color;
 		// border-right: none;
 	}

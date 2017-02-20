@@ -390,8 +390,12 @@ select {
 .input-container, .form-group {
   margin-bottom: 10px; }
 
-.form-group__addon {
-  display: table-cell; }
+.form-group {
+  position: relative; }
+  .form-group__addon {
+    left: 0;
+    position: absolute;
+    height: 45px; }
 
 .input-error {
   background: #F4334A;

@@ -36,6 +36,9 @@ const amount = React.createClass({
 				<AmountBtns texts={texts} changeAmount={this.changeAmount} />
 				<div className="row">
 					<div className="form-group col-7-l">
+						<span className="form-group__addon">
+							USD
+						</span>
 						<input 
 							ref={amountInput => this.amountInput = amountInput} 
 							className="form-control" 
