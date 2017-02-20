@@ -1,8 +1,16 @@
 <?php get_header() ?>
 
-<div id="acn_int" class="l-wrap bs-post" >
+<div id="acn_int" class="bs-post" >
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<div class="bs-post__header" style="backgroun-image: url(<?php the_post_thumbnail_url() ?>)">
+	<?php
+	if(!empty(the_post_thumbnail_url())) {
+		$style = "background-image: url(<?php the_post_thumbnail_url() ?>); backgroun-size: cover"; 
+	} else {
+		$style = "background: #F4F4F4";
+	}
+
+	?>
+	<div class="bs-post__header" style="<?php echo $style ?>">
 		<div class="bs-post__title">
 			<h1><?php the_title() ?></h1>
 		</div>
