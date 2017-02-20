@@ -562,7 +562,8 @@ p {
   padding: 20px;
   margin: 0 auto;
   border: 1px solid #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  color: #fff; }
 
 .nav {
   height: 140px;
