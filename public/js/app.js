@@ -15462,7 +15462,7 @@ var Contact = _react2.default.createClass({
 					_react2.default.createElement(
 						'span',
 						{ className: this.showErr('name') },
-						texts.validation_card
+						texts.validation_name
 					)
 				),
 				_react2.default.createElement(
@@ -15478,7 +15478,7 @@ var Contact = _react2.default.createClass({
 					_react2.default.createElement(
 						'span',
 						{ className: this.showErr('email') },
-						texts.validation_card
+						texts.validation_email
 					)
 				),
 				_react2.default.createElement(

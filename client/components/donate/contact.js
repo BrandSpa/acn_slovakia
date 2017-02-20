@@ -51,7 +51,7 @@ const Contact = React.createClass({
 							value={contact.name}
 						/>
 						<span className={this.showErr('name')}>
-							{texts.validation_card}
+							{texts.validation_name}
 						</span>
 					</div>
 
@@ -64,7 +64,7 @@ const Contact = React.createClass({
 							value={contact.email}
 						/>
 						<span className={this.showErr('email')}>
-							{texts.validation_card}
+							{texts.validation_email}
 						</span>
 					</div>
 
