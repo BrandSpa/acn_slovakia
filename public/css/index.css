@@ -734,7 +734,7 @@ p {
     .contact-form .input-container:nth-child(1) input {
       border-radius: 0; } }
 
-.contact-form input {
+.contact-form input, .contact-form select {
   margin-left: -1px; }
 
 .projects__icons {
