@@ -627,7 +627,7 @@ p {
       text-align: center;
       color: #fff; }
     .slider__slide h2 {
-      font-size: 72px;
+      font-size: 4.66667em;
       font-weight: 900;
       font-style: normal;
       font-stretch: normal;
@@ -637,7 +637,7 @@ p {
       color: #ffffff;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
     .slider__slide h3 {
-      font-size: 25px;
+      font-size: 1.66667em;
       font-weight: 600;
       font-style: normal;
       font-stretch: normal;
