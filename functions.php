@@ -2,12 +2,13 @@
 /*
  * BrandSpa (http://brandspa.com)
  * Alejandro Sanabria <alejandro@brandspa.com>
- * Copyright 2016 BrandSpa
+ * Copyright 2017 BrandSpa
  */
  
 register_nav_menus(
   array(
     'header' => __('Header nav'),
+    'footer' => __('Footer nav')
   )
 );
 
