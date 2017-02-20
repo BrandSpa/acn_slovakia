@@ -13679,7 +13679,7 @@ var Donate = _react2.default.createClass({
 					},
 					this.state.section == 1 ? this.props.texts.next : this.props.texts.donate
 				),
-				'USD ' + this.state.amount + ' ' + this.state.type,
+				'USD ' + this.state.amount + ' ' + this.props.texts[this.state.donation_type],
 				this.state.section > 0 ? _react2.default.createElement(
 					'button',
 					{ style: { float: 'right' }, onClick: this.prevSection },
