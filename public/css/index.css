@@ -825,7 +825,7 @@ p {
       font-size: 14px;
       letter-spacing: 3.11px; }
   .donate_react .card-type {
-    opacity: .7;
+    opacity: .5;
     margin-right: 5px; }
     .donate_react .card-type--active {
       opacity: 1; }
