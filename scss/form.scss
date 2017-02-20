@@ -48,12 +48,17 @@ select {
 
 .form-group {
 	position: relative;
+	&--addon {
+		input {
+			padding: 50px;
+		}
+	}
 	&__addon {
-		left: 0;
+		left: 25px;
+		top: 30%;
 		position: absolute;
 		height: $bs-input-height;
-		// border: 1px solid $bs-input-border-color;
-		// border-right: none;
+		color: #fff;
 	}
 }
 

@@ -35,7 +35,7 @@ const amount = React.createClass({
 			<div style={{width:this.props.width, float: 'left'}}>
 				<AmountBtns texts={texts} changeAmount={this.changeAmount} />
 				<div className="row">
-					<div className="form-group col-7-l">
+					<div className="form-group form-group--addon col-7-l">
 						<span className="form-group__addon">
 							USD
 						</span>

@@ -392,10 +392,14 @@ select {
 
 .form-group {
   position: relative; }
+  .form-group--addon input {
+    padding: 50px; }
   .form-group__addon {
-    left: 0;
+    left: 25px;
+    top: 30%;
     position: absolute;
-    height: 45px; }
+    height: 45px;
+    color: #fff; }
 
 .input-error {
   background: #F4334A;
