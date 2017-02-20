@@ -2,7 +2,7 @@
 
 function bs_contact_info_sc($atts, $content = null) {
 	 $at = shortcode_atts([], $atts);
-
+	 $country = getCountry();
 	ob_start();
 ?>
 
