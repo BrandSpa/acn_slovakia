@@ -43,6 +43,12 @@ function bs_donate_react_sc($atts, $content = null) {
   }'
 >
 </div>
+<?php else: ?>
+<script>
+  if(jQuery) {
+    jQuery('.donate-react__container').remove();
+  }
+</script>
 <?php endif; ?>
 <?php
 return ob_get_clean();
