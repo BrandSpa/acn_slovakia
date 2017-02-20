@@ -393,7 +393,7 @@ select {
 .form-group {
   position: relative; }
   .form-group--addon input {
-    padding: 50px; }
+    padding-left: 50px; }
   .form-group__addon {
     left: 25px;
     top: 30%;
