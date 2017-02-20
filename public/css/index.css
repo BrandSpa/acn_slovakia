@@ -1055,18 +1055,20 @@ a:hover {
     .grid-item, .grid-sizer {
       width: 100%; } }
 
-.bs-post__header {
-  position: relative;
-  height: 400px;
+.bs-post {
+  float: left;
   width: 100%; }
-
-.bs-post__title {
-  position: absolute;
-  bottom: -30%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 50%;
-  background: #3C515F;
-  text-align: center;
-  color: #fff; }
+  .bs-post__header {
+    position: relative;
+    height: 400px;
+    width: 100%; }
+  .bs-post__title {
+    position: absolute;
+    bottom: -30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    background: #3C515F;
+    text-align: center;
+    color: #fff; }
