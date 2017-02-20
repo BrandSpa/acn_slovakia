@@ -1,7 +1,7 @@
 .donate_react {
   position: relative;
   overflow: hidden;
-  margin: 40% 0;
+  margin: 0;
 
   input {
     border-color: #fff;
@@ -269,7 +269,7 @@ a {
 .donate-react__container {
     padding: 30px 120px 40px 40px;
     background: rgba(237,52,78,0.7);
-
+    margin: 30% 0;
     @media #{$s} {
       padding: 20px;
     }
