@@ -2,7 +2,7 @@
 
 <div id="acn_int" class="l-wrap bs-post" >
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<div class="bs-post__header" style="backgroun-image: url(<? the_post_thumbnail_url() ?>)">
+	<div class="bs-post__header" style="backgroun-image: url(<?php the_post_thumbnail_url() ?>)">
 		<div class="bs-post__title">
 			<h1><?php the_title() ?></h1>
 		</div>
