@@ -3,10 +3,10 @@
 <div id="acn_int" class="bs-post" >
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php
-	var_dump(get_the_post_thumbnail_url($post->ID, 'full'));
+	var_dump();
 
-	if(get_the_post_thumbnail_url('full')) {
-		$style = "background-image: url(<?php the_post_thumbnail_url() ?>); backgroun-size: cover"; 
+	if(get_the_post_thumbnail_url($post->ID, 'full')) {
+		$style = "background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>); backgroun-size: cover"; 
 	} else {
 		$style = "background: #F4F4F4";
 	}
