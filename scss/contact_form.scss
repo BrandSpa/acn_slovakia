@@ -1,5 +1,6 @@
 .contact-form {
-	.input-container {	
+	.input-container {
+		width: 20%;
 		&:nth-child(1) {
 			input {
 				border-radius: 5px 0 0 5px;
@@ -11,6 +12,7 @@
 	}
 	}
 	input, select {
+		width: 100%;
 		margin-left: -1px;
 	}
 }

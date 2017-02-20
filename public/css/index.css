@@ -728,13 +728,16 @@ p {
       .modal--show {
         top: 60px; } }
 
-.contact-form .input-container:nth-child(1) input {
-  border-radius: 5px 0 0 5px; }
-  @media (max-width: 767px) {
-    .contact-form .input-container:nth-child(1) input {
-      border-radius: 0; } }
+.contact-form .input-container {
+  width: 20%; }
+  .contact-form .input-container:nth-child(1) input {
+    border-radius: 5px 0 0 5px; }
+    @media (max-width: 767px) {
+      .contact-form .input-container:nth-child(1) input {
+        border-radius: 0; } }
 
 .contact-form input, .contact-form select {
+  width: 100%;
   margin-left: -1px; }
 
 .projects__icons {
