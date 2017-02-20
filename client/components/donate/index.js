@@ -147,7 +147,7 @@ const Donate = React.createClass({
 						>
 						{ this.state.section == 1 ? this.props.texts.next : this.props.texts.donate }
 					</button>
-					{ `USD ${this.state.amount} ${this.props.texts[this.state.donation_type]}` }
+					{ `${this.state.amount} USD ${this.props.texts[this.state.donation_type]}` }
 					{ this.state.section > 0 ? <button style={{ float: 'right' }} onClick={this.prevSection}>{this.props.texts.back}</button> : '' }
 				 </div>
 				 

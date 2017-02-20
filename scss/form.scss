@@ -46,6 +46,15 @@ select {
 	margin-bottom: 10px;
 }
 
+.form-group {
+	&__addon {
+		display: inline-block;
+		height: $bs-input-height;
+		border: 1px solid $bs-input-border-color;
+		border-right: none;
+	}
+}
+
 .input-error {
 	background: #F4334A;
 	color: #fff;

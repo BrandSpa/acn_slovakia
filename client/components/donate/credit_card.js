@@ -115,6 +115,9 @@ const CedritCard = React.createClass({
 				<Cards {...this.props} />
 
 			<div className="form-group">
+				<span className="form-group__addon">
+					USD					
+				</span>
 				<input
 					type="text"
 					placeholder={texts.placeholder_credit_card} 

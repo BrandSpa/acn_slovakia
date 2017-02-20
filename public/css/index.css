@@ -390,6 +390,12 @@ select {
 .input-container, .form-group {
   margin-bottom: 10px; }
 
+.form-group__addon {
+  display: inline-block;
+  height: 45px;
+  border: 1px solid #6A7C82;
+  border-right: none; }
+
 .input-error {
   background: #F4334A;
   color: #fff;

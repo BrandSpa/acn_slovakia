@@ -13679,7 +13679,7 @@ var Donate = _react2.default.createClass({
 					},
 					this.state.section == 1 ? this.props.texts.next : this.props.texts.donate
 				),
-				'USD ' + this.state.amount + ' ' + this.props.texts[this.state.donation_type],
+				this.state.amount + ' USD ' + this.props.texts[this.state.donation_type],
 				this.state.section > 0 ? _react2.default.createElement(
 					'button',
 					{ style: { float: 'right' }, onClick: this.prevSection },
@@ -15515,6 +15515,11 @@ var CedritCard = _react2.default.createClass({
 			_react2.default.createElement(
 				'div',
 				{ className: 'form-group' },
+				_react2.default.createElement(
+					'span',
+					{ className: 'form-group__addon' },
+					'USD'
+				),
 				_react2.default.createElement('input', {
 					type: 'text',
 					placeholder: texts.placeholder_credit_card,
