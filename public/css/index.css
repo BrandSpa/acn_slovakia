@@ -752,8 +752,8 @@ p {
     margin-right: 50px; }
     @media (max-width: 767px) {
       .projects__icons li {
-        margin-right: 2%;
-        width: 9.11111%; }
+        padding: 0 4%;
+        width: 7.11111%; }
         .projects__icons li svg {
           width: 100%; } }
 
