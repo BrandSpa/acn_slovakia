@@ -83,7 +83,8 @@ const Donate = React.createClass({
 		const { contact, currency, amount, donation_type, stripe: {token} } = this.state;
 		let data = { ...contact, currency, amount, donation_type, stripe_token: token};
 		let dataAjax = qs.stringify({ action: 'stripe_charge', data });
-		return request('/wp-admin/admin-ajax.php', dataAjax);
+		console.log(dataAjax);
+		return request.post('/wp-admin/admin-ajax.php', dataAjax);
 	},
 
 	creditCardIsValid() {
