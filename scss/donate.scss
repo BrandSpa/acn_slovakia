@@ -29,6 +29,10 @@
     border-color: #fff;
   }
 
+  .row {
+    margin: 0
+  }
+
   .form-group {
     &__error {
       background: RGBA(226, 35, 26, 1.00);
