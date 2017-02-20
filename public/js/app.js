@@ -13675,7 +13675,8 @@ var Donate = _react2.default.createClass({
 	},
 	getDefaultProps: function getDefaultProps() {
 		return {
-			texts: {}
+			texts: {},
+			redirect: {}
 		};
 	},
 	fetchCountries: function fetchCountries() {
@@ -13721,17 +13722,18 @@ var Donate = _react2.default.createClass({
 
 		var data = _extends({}, contact, { currency: currency, amount: amount, donation_type: donation_type, stripe_token: token });
 		var dataAjax = _qs2.default.stringify({ action: 'stripe_charge', data: data });
-		console.log(dataAjax);
+
 		return _axios2.default.post('/wp-admin/admin-ajax.php', dataAjax);
 	},
 	completeTransaction: function completeTransaction() {
 		var stripeResponse = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+		var _state2 = this.state,
+		    amount = _state2.amount,
+		    donation_type = _state2.donation_type;
 
-		var type = this.state.donation_type;
-		var base = this.props.redirect[type];
+		var base = this.props.redirect[donation_type];
 		var customer = stripeResponse.customer,
 		    id = stripeResponse.id;
-		var amount = this.state.amount;
 
 
 		if (typeof ga !== 'undefined') {
@@ -13771,7 +13773,7 @@ var Donate = _react2.default.createClass({
 		if (this.state.section == 2) {
 			if (!this.contactIsValid()) return false;
 			this.stripeCharge().then(function (res) {
-				return console.log('charge', res.data);
+				return completeTransaction(res.data);
 			});
 		}
 

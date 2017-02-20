@@ -37,7 +37,8 @@ const Donate = React.createClass({
 
 	getDefaultProps() {
 		return {
-			texts: {}
+			texts: {},
+			redirect: {}
 		}
 	},
 
@@ -81,18 +82,17 @@ const Donate = React.createClass({
 
 	stripeCharge() {
 		const { contact, currency, amount, donation_type, stripe: {token} } = this.state;
-		let data = { ...contact, currency, amount, donation_type, stripe_token: token};
-		let dataAjax = qs.stringify({ action: 'stripe_charge', data });
-		console.log(dataAjax);
+		const data = { ...contact, currency, amount, donation_type, stripe_token: token};
+		const dataAjax = qs.stringify({ action: 'stripe_charge', data });
+
 		return request.post('/wp-admin/admin-ajax.php', dataAjax);
 	},
 
 	completeTransaction(stripeResponse = {}) {
-		const type = this.state.donation_type;
-		const base = this.props.redirect[type];
+		const { amount, donation_type } = this.state;
+		const base = this.props.redirect[donation_type];
 		const { customer, id } = stripeResponse;
-		const { amount } = this.state;
-
+		
 		if(typeof ga !== 'undefined') {
 			ga('ecommerce:addTransaction', {
 				'id': `${this.contact.email}-${id}`,                 
@@ -130,7 +130,8 @@ const Donate = React.createClass({
 
 		if(this.state.section == 2) {
 			if(!this.contactIsValid()) return false;
-			this.stripeCharge().then(res => console.log('charge', res.data));
+			this.stripeCharge()
+				.then(res => completeTransaction(res.data));
 		}
 
 		let left = `-${section * 100}%`;
