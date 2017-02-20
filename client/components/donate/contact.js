@@ -13,7 +13,7 @@ const Contact = React.createClass({
 		}
 	},
 
-	validate(field, val) {
+	validate(field, val = '') {
 		let valid = !validator.isEmpty(val);
 		if(field == 'email') valid = validator.isEmail(val);
 		let contact = {...this.props.errors.contact, [field]: valid};

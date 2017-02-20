@@ -13706,12 +13706,8 @@ var Donate = _react2.default.createClass({
 			data: this.state.stripe
 		});
 
-		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
+		return _axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
 			return _this2.setState({ stripe: _extends({}, _this2.state.stripe, { token: res.id }) });
-		}).then(function (res) {
-			return _this2.stripeCharge();
-		}).then(function (res) {
-			return console.log(res.data);
 		});
 	},
 	stripeCharge: function stripeCharge() {
@@ -13743,6 +13739,7 @@ var Donate = _react2.default.createClass({
 
 		if (this.state.section == 1) {
 			if (!this.creditCardIsValid()) return false;
+			this.stripeToken();
 		}
 
 		if (this.state.section == 2) {
@@ -15417,7 +15414,9 @@ var Contact = _react2.default.createClass({
 			texts: {}
 		};
 	},
-	validate: function validate(field, val) {
+	validate: function validate(field) {
+		var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
 		var valid = !_validator2.default.isEmpty(val);
 		if (field == 'email') valid = _validator2.default.isEmail(val);
 		var contact = _extends({}, this.props.errors.contact, _defineProperty({}, field, valid));

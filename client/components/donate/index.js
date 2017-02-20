@@ -71,11 +71,9 @@ const Donate = React.createClass({
 			data: this.state.stripe 
 		});
 
-		request
+		return request
 			.post('/wp-admin/admin-ajax.php', data)
-			.then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}))
-			.then(res => this.stripeCharge())
-			.then(res => console.log(res.data));
+			.then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}));
 	},
 
 	stripeCharge() {
@@ -102,6 +100,7 @@ const Donate = React.createClass({
 
 		if(this.state.section == 1){
 			if(!this.creditCardIsValid()) return false;
+			this.stripeToken();
 		} 
 
 		if(this.state.section == 2) {
