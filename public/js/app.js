@@ -13434,7 +13434,7 @@ var contactForm = _react2.default.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
-    var data = _qs2.default.stringify({ action: "countries", nea: 'nea', sub: { 'yeah': 'yeah', deep: { city: 'hope', state: { maybe: 'ok' } } } });
+    var data = _qs2.default.stringify({ action: "countries" });
 
     _axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
       _this.setState({ countries: res.data });

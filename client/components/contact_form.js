@@ -30,13 +30,13 @@ const contactForm = React.createClass({
   },
 
   componentDidMount() {
-    let data = qs.stringify({ action: "countries", nea: 'nea', sub: {'yeah': 'yeah', deep: {city: 'hope', state: {maybe: 'ok'}}}});
+    let data = qs.stringify({ action: "countries" });
 
     request.post("/wp-admin/admin-ajax.php", data)
-    .then(res => {
-      this.setState({ countries: res.data });
-    })
-    .catch(err => console.error(err));
+      .then(res => {
+        this.setState({ countries: res.data });
+      })
+      .catch(err => console.error(err));
 
     this.setState({
       contact: { ...this.state.contact, country: this.props.country }
