@@ -799,6 +799,9 @@ p {
       margin-bottom: 30px; }
   .projects__content__content-right {
     transition: all 300ms; }
+    @media (max-width: 767px) {
+      .projects__content__content-right {
+        min-height: 200px !important; } }
 
 .donate_react {
   position: relative;
