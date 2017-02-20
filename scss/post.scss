@@ -1,6 +1,8 @@
 .bs-post {
 	float: left;
 	width: 100%;
+	display: block;
+	position: relative;
 	
 	&__header {
 		position: relative;

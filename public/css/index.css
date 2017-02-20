@@ -1057,7 +1057,9 @@ a:hover {
 
 .bs-post {
   float: left;
-  width: 100%; }
+  width: 100%;
+  display: block;
+  position: relative; }
   .bs-post__header {
     position: relative;
     height: 400px;
