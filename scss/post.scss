@@ -1,10 +1,13 @@
 .bs-post {
 	&__header {
 		position: relative;
+		height: 400px;
+		width: 100%;
 	}
+	
 	&__title {
 		position: absolute;
-		bottom: -10%;
+		bottom: -30%;
 		left: 0;
 		right: 0;
 		margin: auto;
