@@ -1066,7 +1066,7 @@ a:hover {
     width: 100%; }
   .bs-post__title {
     position: absolute;
-    bottom: -30%;
+    bottom: -120px;
     left: 0;
     right: 0;
     margin: auto;
@@ -1075,3 +1075,5 @@ a:hover {
     text-align: center;
     color: #fff;
     padding: 30px; }
+  .bs-post__content {
+    padding-top: 150px; }

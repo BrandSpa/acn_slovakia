@@ -12,7 +12,7 @@
 	
 	&__title {
 		position: absolute;
-		bottom: -30%;
+		bottom: -120px;
 		left: 0;
 		right: 0;
 		margin: auto;
@@ -21,6 +21,10 @@
 		text-align: center;
 		color: #fff;
 		padding: 30px;
+	}
+
+	&__content {
+		padding-top: 150px;
 	}
 	
 }
