@@ -15451,6 +15451,7 @@ var Contact = _react2.default.createClass({
 		});
 
 		this.props.onChange({ errors: errors });
+		return errors;
 	},
 	render: function render() {
 		var _props = this.props,

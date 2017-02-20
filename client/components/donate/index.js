@@ -90,7 +90,7 @@ const Donate = React.createClass({
 	},
 
 	contactIsValid() {
-		let errs = this.contact.validateAll()
+		let errs = this.contact.validateAll();
 		return Object.keys(errs.contact)
 			.every(key => errs.contact[key] == true);
 	},

@@ -53,6 +53,7 @@ const Contact = React.createClass({
 		};
 
 		this.props.onChange({errors});
+		return errors;
 	},
 
 	render() {
