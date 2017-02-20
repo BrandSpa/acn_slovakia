@@ -24,6 +24,7 @@ add_action('init', 'modify_jquery');
 
 //libs
 require('lib/clean_menu.php');
+require('lib/space_to_lodash.php');
 
 //apis
 require('apis/index.php');
@@ -39,4 +40,5 @@ require('shortcodes/section_video.php');
 require('shortcodes/accordion.php');
 require('shortcodes/donate.php');
 require('shortcodes/posts.php');
+require('shortcodes/contact_info.php');
 
