@@ -3,9 +3,7 @@
   overflow: hidden;
   margin: 20px 0;
 
-  &__container {
-    padding: 30px 120px 40px 40px; 
-  }
+ 
 
   input {
     border-color: #fff;
@@ -260,4 +258,10 @@ a {
   }
 
  
+}
+
+
+.donate_react__container {
+    padding: 30px 120px 40px 40px; 
+    background: rgba(237,52,78,0.7);
 }
