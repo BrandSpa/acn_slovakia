@@ -3,7 +3,7 @@
 <div id="acn_int" class="bs-post" >
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php
-	if(the_post_thumbnail_url()) {
+	if(get_the_post_thumbnail_url('full')) {
 		$style = "background-image: url(<?php the_post_thumbnail_url() ?>); backgroun-size: cover"; 
 	} else {
 		$style = "background: #F4F4F4";
