@@ -25,6 +25,10 @@ const Projects = React.createClass({
 
 	componentDidMount() {
 
+		window.addEventListener('resize', function(event){
+			console.log(event);
+		});
+
 		setTimeout(() => {
 			let left = this.el.querySelector(`.projects__icons li:nth-child(${1})`).offsetLeft;
 			this.el.querySelector('.projects__arrow').style.left = `${left}px`;
