@@ -91,12 +91,22 @@ const Donate = React.createClass({
 			.every(key => errs.stripe[key] == true);
 	},
 
+	contactIsValid() {
+		let errs = this.contact.validateAll()
+		return Object.keys(errs.contact)
+			.every(key => errs.contact[key] == true);
+	},
+
 	nextSection() {
 		let section = this.state.section < 2 ? this.state.section + 1 : 2;
 
-		if(section == 2){
+		if(this.state.section == 1){
 			if(!this.creditCardIsValid()) return false;
 		} 
+
+		if(this.state.section == 2) {
+			if(!this.contactIsValid()) return false;
+		}
 
 		let left = `-${section * 100}%`;
 		this.setState({section, left});
@@ -132,6 +142,7 @@ const Donate = React.createClass({
 				/>
 
 				<Contact
+					ref={contact => this.contact = contact}
 					{...this.state}
 					{...this.props}
 					width={sectionWidth}
