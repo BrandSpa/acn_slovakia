@@ -45,6 +45,9 @@
 	&__content{
 		position: relative;
 		display: flex;
+		@media #{$s} {
+			display: block;
+		}
 
 		&__content-left {
 			transition: 300ms all;

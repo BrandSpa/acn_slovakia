@@ -782,6 +782,9 @@ p {
   position: relative;
   display: -ms-flexbox;
   display: flex; }
+  @media (max-width: 767px) {
+    .projects__content {
+      display: block; } }
   .projects__content__content-left {
     transition: 300ms all;
     padding: 90px; }
