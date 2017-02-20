@@ -783,7 +783,8 @@ p {
     color: #fff;
     float: left;
     transition: all 300ms ease;
-    margin-right: 5px; }
+    margin-right: 5px;
+    text-decoration: none; }
     .donate_react__type:first-child {
       margin-right: 22px; }
     .donate_react__type:hover, .donate_react__type:focus {
