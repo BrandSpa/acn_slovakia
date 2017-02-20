@@ -651,7 +651,8 @@ p {
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
       @media (max-width: 767px) {
         .slider__slide h3 {
-          font-size: 1.5em; } }
+          font-size: 1.5em;
+          line-height: 1.5; } }
 
 .slider__btns button {
   position: absolute;
