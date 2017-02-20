@@ -21,12 +21,18 @@
 		text-align: center;
 		color: #fff;
 		padding: 30px;
+		@media #{$m} {
+			width: 80%;
+		}
 	}
 
 	&__content {
 		padding-top: 150px;
 		width: 50%;
 		margin: 0 auto;
+		@media #{$m} {
+			width: 80%;
+		}
 	}
 	
 }

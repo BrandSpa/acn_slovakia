@@ -1075,7 +1075,13 @@ a:hover {
     text-align: center;
     color: #fff;
     padding: 30px; }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .bs-post__title {
+        width: 80%; } }
   .bs-post__content {
     padding-top: 150px;
     width: 50%;
     margin: 0 auto; }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .bs-post__content {
+        width: 80%; } }
