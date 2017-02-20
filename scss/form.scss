@@ -44,11 +44,11 @@ select {
 
 .input-container, .form-group {
 	margin-bottom: 10px;
-	float: left;
 }
 
 .form-group {
 	position: relative;
+	
 	&--addon {
 		input {
 			padding-left: 50px;

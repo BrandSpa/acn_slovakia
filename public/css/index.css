@@ -388,8 +388,7 @@ select {
   width: auto; }
 
 .input-container, .form-group {
-  margin-bottom: 10px;
-  float: left; }
+  margin-bottom: 10px; }
 
 .form-group {
   position: relative; }
@@ -750,7 +749,7 @@ p {
 .donate_react {
   position: relative;
   overflow: hidden;
-  margin: 20px 0; }
+  margin: 0; }
   .donate_react input {
     border-color: #fff;
     color: #fff; }
