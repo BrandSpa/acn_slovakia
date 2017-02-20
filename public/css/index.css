@@ -576,6 +576,11 @@ p {
       font-stretch: normal;
       line-height: 1.5; }
 
+.header-banner {
+  background: #F1364E;
+  font-size: 2em;
+  text-align: center; }
+
 .slider {
   width: 100%;
   position: relative;
