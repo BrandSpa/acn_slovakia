@@ -15518,15 +15518,19 @@ var CedritCard = _react2.default.createClass({
 				_react2.default.createElement(
 					'span',
 					{ className: 'form-group__addon' },
-					'USD'
+					_react2.default.createElement(
+						'span',
+						null,
+						'USD'
+					),
+					_react2.default.createElement('input', {
+						type: 'text',
+						placeholder: texts.placeholder_credit_card,
+						className: 'form-control ' + this.inputErrStyle('number'),
+						onChange: this.handleCard,
+						value: stripe.number
+					})
 				),
-				_react2.default.createElement('input', {
-					type: 'text',
-					placeholder: texts.placeholder_credit_card,
-					className: 'form-control ' + this.inputErrStyle('number'),
-					onChange: this.handleCard,
-					value: stripe.number
-				}),
 				_react2.default.createElement(
 					'span',
 					{ className: this.showErr('number') },

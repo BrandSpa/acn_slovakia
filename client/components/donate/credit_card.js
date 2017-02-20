@@ -116,16 +116,16 @@ const CedritCard = React.createClass({
 
 			<div className="form-group">
 				<span className="form-group__addon">
-					USD					
+					<span>USD</span>					
+				
+					<input
+						type="text"
+						placeholder={texts.placeholder_credit_card} 
+						className={`form-control ${this.inputErrStyle('number')}`}
+						onChange={this.handleCard}
+						value={stripe.number}
+					/>
 				</span>
-				<input
-					type="text"
-					placeholder={texts.placeholder_credit_card} 
-					className={`form-control ${this.inputErrStyle('number')}`}
-					onChange={this.handleCard}
-					value={stripe.number}
-				/>
-
 				<span className={this.showErr('number')}>
 					{texts.validation_card}
         </span>

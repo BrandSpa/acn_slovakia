@@ -48,10 +48,10 @@ select {
 
 .form-group {
 	&__addon {
-		display: inline-block;
-		height: $bs-input-height;
-		border: 1px solid $bs-input-border-color;
-		border-right: none;
+		display: table-cell;
+		// height: $bs-input-height;
+		// border: 1px solid $bs-input-border-color;
+		// border-right: none;
 	}
 }
 
