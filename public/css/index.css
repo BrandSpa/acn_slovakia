@@ -741,6 +741,16 @@ p {
   .donate_react input {
     border-color: #fff;
     color: #fff; }
+    .donate_react input::-webkit-input-placeholder {
+      color: red; }
+    .donate_react input:-moz-placeholder {
+      /* Firefox 18- */
+      color: red; }
+    .donate_react input::-moz-placeholder {
+      /* Firefox 19+ */
+      color: red; }
+    .donate_react input:-ms-input-placeholder {
+      color: red; }
   .donate_react select {
     border-color: #fff; }
   .donate_react h6 {

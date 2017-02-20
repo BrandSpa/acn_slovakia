@@ -15407,6 +15407,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var Contact = _react2.default.createClass({
 	displayName: 'Contact',
+	getDefaultProps: function getDefaultProps() {
+		return {
+			contact: {},
+			countries: [],
+			errors: {
+				contact: {}
+			},
+			texts: {}
+		};
+	},
 	validate: function validate(field, val) {
 		var valid = !_validator2.default.isEmpty(val);
 		if (field == 'email') valid = _validator2.default.isEmail(val);
@@ -15434,7 +15444,10 @@ var Contact = _react2.default.createClass({
 		var name = this.validate('name', contact.name);
 		var email = this.validate('email', contact.email);
 		var country = this.validate('country', contact.country);
-		var errors = _extends({}, this.props.errors, { contact: _extends({}, name.contact, email.contact, country.contact) });
+		var errors = _extends({}, this.props.errors, {
+			contact: _extends({}, name.contact, email.contact, country.contact)
+		});
+
 		this.props.onChange({ errors: errors });
 	},
 	render: function render() {

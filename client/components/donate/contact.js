@@ -2,6 +2,17 @@ import React from 'react';
 import validator from 'validator';
 
 const Contact = React.createClass({
+	getDefaultProps() {
+		return {
+			contact: {},
+			countries: [],
+			errors: {
+				contact: {}
+			},
+			texts: {}
+		}
+	},
+
 	validate(field, val) {
 		let valid = !validator.isEmpty(val);
 		if(field == 'email') valid = validator.isEmail(val);
@@ -28,11 +39,19 @@ const Contact = React.createClass({
 	},
 
 	validateAll() {
-		let {contact} = this.props;
+		let { contact } = this.props;
 		let name = this.validate('name', contact.name);
 		let email = this.validate('email', contact.email);
 		let country = this.validate('country', contact.country);
-		let errors = {...this.props.errors, contact: {...name.contact, ...email.contact, ...country.contact}};
+		let errors = { 
+			...this.props.errors, 
+			contact: {
+				...name.contact, 
+				...email.contact, 
+				...country.contact
+			}
+		};
+
 		this.props.onChange({errors});
 	},
 
