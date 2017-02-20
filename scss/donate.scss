@@ -3,6 +3,10 @@
   overflow: hidden;
   margin: 20px 0;
 
+  &__container {
+    padding: 30px 120px 40px 40px; 
+  }
+
   input {
     border-color: #fff;
     color: #fff;
