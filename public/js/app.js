@@ -13623,6 +13623,7 @@ var Donate = _react2.default.createClass({
 			return errs.stripe[key] == true;
 		});
 		if (!isValid) return;
+		return true;
 	},
 	nextSection: function nextSection() {
 		var section = this.state.section < 2 ? this.state.section + 1 : 2;
