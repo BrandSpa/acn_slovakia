@@ -13428,7 +13428,8 @@ var contactForm = _react2.default.createClass({
     return {
       validationMessages: {},
       placeholders: {},
-      texts: {}
+      texts: {},
+      redirect: ''
     };
   },
   componentDidMount: function componentDidMount() {
@@ -13480,6 +13481,8 @@ var contactForm = _react2.default.createClass({
     });
   },
   storeContact: function storeContact(isValid) {
+    var _this3 = this;
+
     var _state$contact = this.state.contact,
         email = _state$contact.email,
         name = _state$contact.name,
@@ -13498,7 +13501,9 @@ var contactForm = _react2.default.createClass({
 
     if (isValid) {
       _axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
-        return console.log(res.data);
+        if (res.data.id) {
+          window.location = _this3.props.redirect;
+        }
       }).catch(function (err) {
         return console.error(err);
       });

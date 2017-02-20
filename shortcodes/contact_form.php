@@ -20,7 +20,7 @@ function bs_contact_form_sc($atts, $content = null) {
 <div 
 	class="contact-form" 
 	data-props='{
-		"country": "Germany",
+		"country": "<?php echo getCountry() ?>",
 		"texts": {
 			"button": "<?php echo $at['button-text'] ?>"
 		},
@@ -34,7 +34,8 @@ function bs_contact_form_sc($atts, $content = null) {
 			"name": "<?php echo $at['name-validation'] ?>",
 			"lastname": "<?php echo $at['lastname-validation'] ?>",
 			"email": "<?php echo $at['email-validation'] ?>"
-		}
+		},
+		"redirect": "<?php echo get_option('subscribe_redirect') ?>"
 	}'
 >
 </div>

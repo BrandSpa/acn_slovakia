@@ -25,7 +25,8 @@ const contactForm = React.createClass({
     return {
       validationMessages: {},
       placeholders: {},
-      texts: {}
+      texts: {},
+      redirect: ''
     }
   },
 
@@ -89,7 +90,11 @@ const contactForm = React.createClass({
     if(isValid) {
       request
         .post("/wp-admin/admin-ajax.php", data)
-        .then(res => console.log(res.data))
+        .then(res => {
+          if(res.data.id) {
+            window.location = this.props.redirect
+          }
+        })
         .catch(err => console.error(err))
     }
   },
