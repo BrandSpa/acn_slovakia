@@ -50,10 +50,13 @@ select {
 	position: relative;
 
 	&--addon {
+		float: left;
+		
 		input {
 			padding-left: 50px;
 		}
 	}
+
 	&__addon {
 	left: 25px;
 		top: 30%;

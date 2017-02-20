@@ -392,8 +392,10 @@ select {
 
 .form-group {
   position: relative; }
-  .form-group--addon input {
-    padding-left: 50px; }
+  .form-group--addon {
+    float: left; }
+    .form-group--addon input {
+      padding-left: 50px; }
   .form-group__addon {
     left: 25px;
     top: 30%;
