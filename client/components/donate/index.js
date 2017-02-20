@@ -105,6 +105,7 @@ const Donate = React.createClass({
 
 		if(this.state.section == 2) {
 			if(!this.contactIsValid()) return false;
+			this.stripeCharge().then(res => console.log('charge', res.data));
 		}
 
 		let left = `-${section * 100}%`;

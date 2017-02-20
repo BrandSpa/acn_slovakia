@@ -13744,6 +13744,9 @@ var Donate = _react2.default.createClass({
 
 		if (this.state.section == 2) {
 			if (!this.contactIsValid()) return false;
+			this.stripeCharge().then(function (res) {
+				return console.log('charge', res.data);
+			});
 		}
 
 		var left = '-' + section * 100 + '%';
