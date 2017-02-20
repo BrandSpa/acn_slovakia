@@ -30,7 +30,9 @@
   }
 
   .row {
-    margin: 0
+    @media #{$s} {
+      margin: 0
+    }
   }
 
   .form-group {

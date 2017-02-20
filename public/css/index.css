@@ -765,8 +765,9 @@ p {
       color: #fff; }
   .donate_react select {
     border-color: #fff; }
-  .donate_react .row {
-    margin: 0; }
+  @media (max-width: 767px) {
+    .donate_react .row {
+      margin: 0; } }
   .donate_react .form-group__error {
     background: RGBA(226, 35, 26, 1);
     color: #fff;
