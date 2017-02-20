@@ -13494,7 +13494,8 @@ var contactForm = _react2.default.createClass({
       update_existing: true
     };
 
-    var data = { action: "mailchimp_subscribe", data: mc_data };
+    var data = _qs2.default.stringify({ action: "mailchimp_subscribe", data: mc_data });
+
     if (isValid) {
       _axios2.default.post("/wp-admin/admin-ajax.php", data).then(function (res) {
         return console.log(res.data);

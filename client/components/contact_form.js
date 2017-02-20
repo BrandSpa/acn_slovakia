@@ -84,7 +84,8 @@ const contactForm = React.createClass({
       update_existing: true
     };
 
-    let data = { action: "mailchimp_subscribe", data: mc_data };
+    let data = qs.stringify({ action: "mailchimp_subscribe", data: mc_data });
+
     if(isValid) {
       request
         .post("/wp-admin/admin-ajax.php", data)
