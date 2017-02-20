@@ -741,6 +741,8 @@ p {
   .donate_react input {
     border-color: #fff;
     color: #fff; }
+  .donate_react select {
+    border-color: #fff; }
   .donate_react h6 {
     color: #fff;
     font-size: 16px;
