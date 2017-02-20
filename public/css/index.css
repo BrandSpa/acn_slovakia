@@ -598,7 +598,7 @@ p {
   font-size: 2em;
   text-align: center;
   color: #fff;
-  padding: 40px 0;
+  padding: 20px 0;
   float: none;
   margin: 0 auto;
   margin-bottom: -40px !important;
@@ -652,6 +652,9 @@ p {
         .slider__slide h2 {
           font-size: 2em; } }
     .slider__slide h4 {
+      display: block;
+      width: 50%;
+      margin: 0 auto;
       font-size: 1.33333em;
       font-weight: 600;
       font-style: normal;
