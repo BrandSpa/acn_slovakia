@@ -747,6 +747,9 @@ p {
   text-align: center;
   padding: 0;
   margin-bottom: 60px; }
+  @media (max-width: 767px) {
+    .projects__icons {
+      margin-bottom: 10px; } }
   .projects__icons li {
     display: inline-block;
     margin-right: 50px; }
