@@ -18,7 +18,7 @@ const headerSlide = React.createClass({
 				{this.props.isVideo ? <VideoModal ref="modal" url={this.props.url} /> : ''}			
 			<div className="slider__slide" style={style} onClick={this.handleLink}>
 					<h2>{title}</h2>
-					<h3>{subtitle}</h3>
+					<h4>{subtitle}</h4>
 			</div>
 		</div>
 		)

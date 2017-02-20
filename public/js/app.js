@@ -15832,7 +15832,7 @@ var headerSlide = _react2.default.createClass({
 					title
 				),
 				_react2.default.createElement(
-					'h3',
+					'h4',
 					null,
 					subtitle
 				)
