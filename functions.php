@@ -55,6 +55,6 @@ function show_posts() {
 
 function show_donate() {
 	$country = getCountry();
-	if(!in_array(getOfficesCountries(), $country)) return true;
+	if( !in_array($country, getOfficesCountries()) ) return true;
 	return false;
 }
