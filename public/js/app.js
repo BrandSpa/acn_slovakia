@@ -14170,7 +14170,6 @@ var Projects = _react2.default.createClass({
 		var _this = this;
 
 		window.addEventListener("resize", function (event) {
-			console.log(event);
 			_this.moveArrow(_this.state.section);
 		});
 
