@@ -1,0 +1,17 @@
+.bs-post {
+	&__header {
+		position: relative;
+	}
+	&__title {
+		position: absolute;
+		bottom: -10%;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 50%;
+		background: #3C515F;
+		text-align: center;
+		color: #fff;
+	}
+	
+}
