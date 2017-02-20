@@ -6,28 +6,28 @@ const Cards = React.createClass({
 	},
 
 	render() {
-		const {card_type, texts} = this.props;
+		const { texts } = this.props;
 
 		return (
 			 <div className="form-group donate_landing__cards">
         	<img 
-            className={this.cardType('Visa')}  
+            className={this.cardType('visa')}  
 						src={`${texts.template_uri}/public/img/cards/Visa.png`}
           />
 					<img 
-            className={this.cardType('MasterCard')}  
+            className={this.cardType('master-card')}  
 						src={`${texts.template_uri}/public/img/cards/MasterCard.png`}
           />
 					<img 
-            className={this.cardType('DinersClub')}  
+            className={this.cardType('diners-club')}  
 						src={`${texts.template_uri}/public/img/cards/DinersClub.png`}
           />
 					<img 
-            className={this.cardType('AmericanExpress')}  
+            className={this.cardType('american-express')}  
 						src={`${texts.template_uri}/public/img/cards/AmericanExpress.png`}
           />
 					<img 
-            className={this.cardType('Discover')}  
+            className={this.cardType('discover')}  
 						src={`${texts.template_uri}/public/img/cards/Discover.png`}
           />
 					

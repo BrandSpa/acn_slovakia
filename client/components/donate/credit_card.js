@@ -29,12 +29,8 @@ const CedritCard = React.createClass({
 		return this.updateErrors({cvc});
 	},
 
-	getCardType(number) {
-		if (typeof Stripe !== 'undefined') {
-			return Stripe.card.cardType(number).replace(' ', '');
-		}
-
-		return '';
+	getCardType(cardNum) {
+		return validCard.number(cardNum).card ? validCard.number(cardNum).card.type : null;
 	},
 
 	updateErrors(field) {

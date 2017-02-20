@@ -15225,32 +15225,30 @@ var Cards = _react2.default.createClass({
 		return this.props.stripe.card_type == type ? 'card-type card-type--active' : 'card-type';
 	},
 	render: function render() {
-		var _props = this.props,
-		    card_type = _props.card_type,
-		    texts = _props.texts;
+		var texts = this.props.texts;
 
 
 		return _react2.default.createElement(
 			'div',
 			{ className: 'form-group donate_landing__cards' },
 			_react2.default.createElement('img', {
-				className: this.cardType('Visa'),
+				className: this.cardType('visa'),
 				src: texts.template_uri + '/public/img/cards/Visa.png'
 			}),
 			_react2.default.createElement('img', {
-				className: this.cardType('MasterCard'),
+				className: this.cardType('master-card'),
 				src: texts.template_uri + '/public/img/cards/MasterCard.png'
 			}),
 			_react2.default.createElement('img', {
-				className: this.cardType('DinersClub'),
+				className: this.cardType('diners-club'),
 				src: texts.template_uri + '/public/img/cards/DinersClub.png'
 			}),
 			_react2.default.createElement('img', {
-				className: this.cardType('AmericanExpress'),
+				className: this.cardType('american-express'),
 				src: texts.template_uri + '/public/img/cards/AmericanExpress.png'
 			}),
 			_react2.default.createElement('img', {
-				className: this.cardType('Discover'),
+				className: this.cardType('discover'),
 				src: texts.template_uri + '/public/img/cards/Discover.png'
 			})
 		);
@@ -15440,12 +15438,8 @@ var CedritCard = _react2.default.createClass({
 		cvc = _cardValidator2.default.cvv(cvc).isValid;
 		return this.updateErrors({ cvc: cvc });
 	},
-	getCardType: function getCardType(number) {
-		if (typeof Stripe !== 'undefined') {
-			return Stripe.card.cardType(number).replace(' ', '');
-		}
-
-		return '';
+	getCardType: function getCardType(cardNum) {
+		return _cardValidator2.default.number(cardNum).card ? _cardValidator2.default.number(cardNum).card.type : null;
 	},
 	updateErrors: function updateErrors(field) {
 		return _extends({}, this.props.errors, { stripe: field });
