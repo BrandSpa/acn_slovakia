@@ -550,6 +550,9 @@ p {
       font-weight: 300;
       font-size: 11px; }
 
+.bs-contact-info {
+  color: #fff; }
+
 .nav {
   height: 140px;
   width: 100%;
