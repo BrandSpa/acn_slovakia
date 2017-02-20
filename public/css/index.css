@@ -779,7 +779,7 @@ p {
     padding: 90px; }
     @media (max-width: 767px) {
       .projects__content__content-left {
-        padding: 20px; } }
+        padding: 60px 30px; } }
     .projects__content__content-left h4 {
       color: #fff;
       margin: 0 0 60px 0; }
