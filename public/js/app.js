@@ -13650,6 +13650,7 @@ var Donate = _react2.default.createClass({
 		return {
 			section: 0,
 			left: 0,
+			loading: false,
 			donation_type: 'monthly',
 			amount: 30,
 			currency: 'usd',
@@ -13827,13 +13828,16 @@ var Donate = _react2.default.createClass({
 					'button',
 					{
 						className: 'donate_react__submit pull-left',
-						onClick: this.handleSubmit
+						onClick: this.handleSubmit,
+						disabled: this.state.loading
 					},
 					this.state.section == 1 ? this.props.texts.next : this.props.texts.donate
 				),
 				_react2.default.createElement(
 					'span',
-					{ style: { 'display': 'inline', 'marginLeft': '15px' } },
+					{
+						style: { 'display': 'inline', 'marginLeft': '15px', color: '#fff' }
+					},
 					this.state.amount + ' USD ' + this.props.texts[this.state.donation_type]
 				),
 				this.state.section > 0 ? _react2.default.createElement(
