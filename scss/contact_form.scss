@@ -1,13 +1,17 @@
 .contact-form {
-	input {
-		margin-left: -1px;
-
+	&.input-container {
+		
 		&:nth-child(1) {
-			border-radius: 5px 0 0 5px;
+			input {
+				border-radius: 5px 0 0 5px;
 			
 			@media #{$s} {
 				border-radius: 0;
 			}
-		}
+		}	
+	}
+	}
+	input {
+		margin-left: -1px;
 	}
 }
