@@ -27,6 +27,14 @@
     border-color: #fff;
   }
 
+  .form-group {
+    &__error {
+      background: RGBA(226, 35, 26, 1.00);
+      color: #fff;
+      padding: 4px 7px;
+    }
+  }
+
   h6 {
     color: #fff;
     font-size: 16px;

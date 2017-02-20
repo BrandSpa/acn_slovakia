@@ -753,6 +753,10 @@ p {
       color: #fff; }
   .donate_react select {
     border-color: #fff; }
+  .donate_react .form-group__error {
+    background: RGBA(226, 35, 26, 1);
+    color: #fff;
+    padding: 4px 7px; }
   .donate_react h6 {
     color: #fff;
     font-size: 16px;
