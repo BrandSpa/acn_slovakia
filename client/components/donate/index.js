@@ -73,7 +73,11 @@ const Donate = React.createClass({
 
 		return request
 			.post('/wp-admin/admin-ajax.php', data)
-			.then(res => this.setState({stripe: {...this.state.stripe, token: res.id}}));
+			.then(res => { 
+				let stripe = { ...this.state.stripe, token: res.id };
+				console.log(stripe);
+				this.setState({ stripe });
+			});
 	},
 
 	stripeCharge() {

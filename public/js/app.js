@@ -13707,7 +13707,9 @@ var Donate = _react2.default.createClass({
 		});
 
 		return _axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
-			return _this2.setState({ stripe: _extends({}, _this2.state.stripe, { token: res.id }) });
+			var stripe = _extends({}, _this2.state.stripe, { token: res.id });
+			console.log(stripe);
+			_this2.setState({ stripe: stripe });
 		});
 	},
 	stripeCharge: function stripeCharge() {
