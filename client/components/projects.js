@@ -27,21 +27,24 @@ const Projects = React.createClass({
 
 		window.addEventListener('resize', function(event){
 			console.log(event);
+			this.moveArrow(this.state.section);
 		});
 
 		setTimeout(() => {
-			let left = this.el.querySelector(`.projects__icons li:nth-child(${1})`).offsetLeft;
-			this.el.querySelector('.projects__arrow').style.left = `${left}px`;
+			this.moveArrow(1);
 		}, 1000);
 	
+	},
+	
+	moveArrow(num) {
+		let left = this.el.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft;
+		this.el.querySelector('.projects__arrow').style.left = `${left}px`;
 	},
 
 	changeContent(num) {
 		let color = backgroundColors[num];
 		this.setState({bg: color, donateColor: color, section: num});
-
-		let left = this.el.querySelector(`.projects__icons li:nth-child(${num})`).offsetLeft;
-		this.el.querySelector('.projects__arrow').style.left = `${left}px`;
+		this.moveArrow(num);
 	},
 
 	render() {
