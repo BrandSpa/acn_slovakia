@@ -585,7 +585,8 @@ p {
   float: none;
   margin: 0 auto;
   margin-bottom: -40px !important;
-  z-index: 1010; }
+  z-index: 1010;
+  text-transform: uppercase; }
 
 .slider {
   width: 100%;
