@@ -579,7 +579,9 @@ p {
 .header-banner {
   background: #F1364E;
   font-size: 2em;
-  text-align: center; }
+  text-align: center;
+  color: #fff;
+  padding: 40px 0; }
 
 .slider {
   width: 100%;
