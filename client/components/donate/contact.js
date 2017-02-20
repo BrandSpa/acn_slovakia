@@ -39,16 +39,18 @@ const Contact = React.createClass({
 	},
 
 	validateAll() {
-		let { contact } = this.props;
+		let { contact, texts } = this.props;
 		let name = this.validate('name', contact.name);
 		let email = this.validate('email', contact.email);
-		let country = this.validate('country', contact.country);
+		let country = contact.country || texts.country;
+		let countryValidation = this.validate('country', country);
+		
 		let errors = { 
 			...this.props.errors, 
 			contact: {
 				...name.contact, 
 				...email.contact, 
-				...country.contact
+				...countryValidation.contact
 			}
 		};
 

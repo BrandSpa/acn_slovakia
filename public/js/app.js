@@ -15443,22 +15443,26 @@ var Contact = _react2.default.createClass({
 		return this.props.errors.contact[field] == false ? 'form-group--error' : '';
 	},
 	validateAll: function validateAll() {
-		var contact = this.props.contact;
+		var _props = this.props,
+		    contact = _props.contact,
+		    texts = _props.texts;
 
 		var name = this.validate('name', contact.name);
 		var email = this.validate('email', contact.email);
-		var country = this.validate('country', contact.country);
+		var country = contact.country || texts.country;
+		var countryValidation = this.validate('country', country);
+
 		var errors = _extends({}, this.props.errors, {
-			contact: _extends({}, name.contact, email.contact, country.contact)
+			contact: _extends({}, name.contact, email.contact, countryValidation.contact)
 		});
 
 		this.props.onChange({ errors: errors });
 		return errors;
 	},
 	render: function render() {
-		var _props = this.props,
-		    texts = _props.texts,
-		    contact = _props.contact;
+		var _props2 = this.props,
+		    texts = _props2.texts,
+		    contact = _props2.contact;
 
 
 		return _react2.default.createElement(
