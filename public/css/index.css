@@ -594,6 +594,7 @@ p {
   text-transform: uppercase; }
   @media (max-width: 767px) {
     .header-banner {
+      font-size: 1.5em;
       padding: 20px 0;
       margin-bottom: 0 !important; } }
 
