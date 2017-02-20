@@ -15241,7 +15241,7 @@ var amount = _react2.default.createClass({
 				{ className: 'row' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'form-group form-group--addon col-7-l' },
+					{ className: 'form-group form-group--addon col-7-l', style: { float: 'left' } },
 					_react2.default.createElement(
 						'span',
 						{ className: 'form-group__addon' },
