@@ -37,6 +37,9 @@
 			text-align: center;
 			color: #ffffff;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59);
+			@media #{$s} {
+				font-size: 1.6em;
+			}
 		}
 
 		h3 {

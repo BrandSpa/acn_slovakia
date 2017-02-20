@@ -636,6 +636,9 @@ p {
       text-align: center;
       color: #ffffff;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
+      @media (max-width: 767px) {
+        .slider__slide h2 {
+          font-size: 1.6em; } }
     .slider__slide h3 {
       font-size: 1.66667em;
       font-weight: 600;
