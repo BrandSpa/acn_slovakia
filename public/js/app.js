@@ -13721,8 +13721,8 @@ var Donate = _react2.default.createClass({
 		    token = _state.stripe.token;
 
 		var data = _extends({}, contact, { currency: currency, amount: amount, donation_type: donation_type, stripe_token: token });
-
-		return (0, _axios2.default)('/wp-admin/admin-ajax.php', data);
+		var dataAjax = _qs2.default.stringify({ action: 'stripe_charge', data: data });
+		return (0, _axios2.default)('/wp-admin/admin-ajax.php', dataAjax);
 	},
 	creditCardIsValid: function creditCardIsValid() {
 		var errs = this.creditCard.allValidations();
