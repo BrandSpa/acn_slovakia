@@ -184,8 +184,10 @@ const Donate = React.createClass({
 						>
 						{ this.state.section == 1 ? this.props.texts.next : this.props.texts.donate }
 					</button>
-					{ `${this.state.amount} USD ${this.props.texts[this.state.donation_type]}` }
-					{ this.state.section > 0 ? <button style={{ float: 'right' }} onClick={this.prevSection}>{this.props.texts.back}</button> : '' }
+
+					<span style={{'display': 'inline', 'marginLeft': '15px'}}>{ `${this.state.amount} USD ${this.props.texts[this.state.donation_type]}` }</span>
+
+					{ this.state.section > 0 ? <button style={{ float: 'right', background: 'transparent', border: 'none' }} onClick={this.prevSection}>{this.props.texts.back}</button> : '' }
 				 </div>
 				 
 			</form>
