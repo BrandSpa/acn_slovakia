@@ -13,7 +13,7 @@
 	?>
 	<div class="bs-post__header" style="<?php echo $style ?>">
 		<div class="bs-post__title">
-			<h1><?php the_title() ?></h1>
+			<h2><?php the_title() ?></h2>
 		</div>
 	</div>
 		
