@@ -669,14 +669,16 @@ p {
   left: 30px; }
   @media (max-width: 767px) {
     .slider__btns__prev {
-      left: 5px; } }
+      left: 5px;
+      padding: 0; } }
 
 .slider__btns__next {
   position: absolute;
   right: 30px; }
   @media (max-width: 767px) {
     .slider__btns__next {
-      right: 5px; } }
+      right: 5px;
+      padding: 0; } }
 
 .vc_col-has-fill > .vc_column-inner, .vc_row-has-fill + .vc_row-full-width + .vc_row > .vc_column_container > .vc_column-inner, .vc_row-has-fill + .vc_row > .vc_column_container > .vc_column-inner, .vc_row-has-fill + .vc_vc_row > .vc_row > .vc_vc_column > .vc_column_container > .vc_column-inner, .vc_row-has-fill + .vc_vc_row_inner > .vc_row > .vc_vc_column_inner > .vc_column_container > .vc_column-inner, .vc_row-has-fill > .vc_column_container > .vc_column-inner, .vc_row-has-fill > .vc_row > .vc_vc_column > .vc_column_container > .vc_column-inner, .vc_row-has-fill > .vc_vc_column_inner > .vc_column_container > .vc_column-inner {
   padding-top: 0; }
