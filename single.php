@@ -5,7 +5,7 @@
 	<?php
 
 	if(get_the_post_thumbnail_url($post->ID, 'full')) {
-		$style = "background-image: url(" . get_the_post_thumbnail_url($post->ID, 'full') . "); backgroun-size: cover"; 
+		$style = "background-image: url(" . get_the_post_thumbnail_url($post->ID, 'full') . "); background-size: cover"; 
 	} else {
 		$style = "background: #F4F4F4";
 	}
