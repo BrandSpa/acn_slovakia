@@ -85,13 +85,17 @@ const Donate = React.createClass({
 		return request('/wp-admin/admin-ajax.php', data);
 	},
 
+	creditCardIsValid() {
+		let errs = this.creditCard.allValidations();
+		let isValid = Object.keys(errs.stripe).every(key => errs.stripe[key] == true);
+		if(!isValid) return;
+	},
+
 	nextSection() {
 		let section = this.state.section < 2 ? this.state.section + 1 : 2;
+
 		if(section == 2){
-			let errs = this.creditCard.allValidations();
-			let isValid = Object.keys(errs.stripe).every(key => errs.stripe[key] == true);
-			console.log(Object.keys(errs.stripe), errs.stripe, isValid);
-			if(!isValid) return;
+			return this.creditCardIsValid();
 		} 
 
 		let left = `-${section * 100}%`;
@@ -143,7 +147,7 @@ const Donate = React.createClass({
 						>
 						{ this.state.section == 1 ? this.props.texts.next : this.props.texts.donate }
 					</button>
-
+					{ `USD ${this.state.amount} ${this.state.type}` }
 					{ this.state.section > 0 ? <button style={{ float: 'right' }} onClick={this.prevSection}>{this.props.texts.back}</button> : '' }
 				 </div>
 				 

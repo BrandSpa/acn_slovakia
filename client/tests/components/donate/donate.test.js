@@ -29,10 +29,11 @@ describe('donate component', () => {
 			.then(res => expect(res).toEqual(['Argentina', 'Colombia']));
 	}) 
 
-	it('should validate credit card', () => {
+	it('should validate credit card and stop next section', () => {
 		let wrapper = mount(<Donate />);
 		wrapper.instance().nextSection();
 		wrapper.instance().nextSection();
+
 		let expected = {
 			contact: {},
 			stripe: {
@@ -44,6 +45,7 @@ describe('donate component', () => {
 		};
 
 		expect(wrapper.state().errors).toEqual(expected);
+		expect(wrapper.state().section).toEqual(1);
 	})
 })
 
