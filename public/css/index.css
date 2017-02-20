@@ -651,18 +651,18 @@ p {
       @media (max-width: 767px) {
         .slider__slide h2 {
           font-size: 2em; } }
-    .slider__slide h3 {
-      font-size: 1.66667em;
+    .slider__slide h4 {
+      font-size: 1.33333em;
       font-weight: 600;
       font-style: normal;
       font-stretch: normal;
-      line-height: 2.68;
+      line-height: 2;
       letter-spacing: normal;
       text-align: center;
       color: #ffffff;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
       @media (max-width: 767px) {
-        .slider__slide h3 {
+        .slider__slide h4 {
           font-size: 1.5em;
           line-height: 1.5; } }
 
