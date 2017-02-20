@@ -595,7 +595,7 @@ p {
   @media (max-width: 767px) {
     .header-banner {
       padding: 20px 0;
-      margin-bottom: 0; } }
+      margin-bottom: 0 !important; } }
 
 .slider {
   width: 100%;
