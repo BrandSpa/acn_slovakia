@@ -556,6 +556,14 @@ p {
 .bs-contact-info {
   color: #fff; }
 
+.learn-more-link {
+  display: block;
+  width: 70%;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  text-decoration: none; }
+
 .nav {
   height: 140px;
   width: 100%;
