@@ -653,6 +653,10 @@ p {
   .bs-footer__bottom--top h6 {
     color: #808080; }
 
+.bs-footer__bottom--bottom {
+  padding: 30px;
+  text-align: right; }
+
 .bs-footer__menu {
   margin: 0;
   padding: 0; }
