@@ -585,6 +585,14 @@ p {
   text-decoration: none;
   color: #fff; }
 
+.btn--outline {
+  font-size: 1.33333em;
+  border-radius: 5px;
+  border: 2px solid #F1364E;
+  padding: 20px 40px 0 40px;
+  text-align: center;
+  display: block; }
+
 .nav {
   height: 140px;
   width: 100%;
