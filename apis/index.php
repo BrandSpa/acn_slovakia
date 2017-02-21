@@ -33,7 +33,7 @@ add_action( 'wp_ajax_get_menu', 'wp_get_menu' );
 
 function wp_get_menu() {
   $name = $_POST['name'];
-  $res = wp_get_nav_menu_items($name);
+  $res = wp_get_nav_menu_items('acn_init');
   header('Content-type: application/json');
   echo json_encode([$name, $res]);
   die();
