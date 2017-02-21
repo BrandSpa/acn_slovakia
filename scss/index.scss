@@ -33,7 +33,8 @@ a {
 }
 
 .menu-open {
-	margin-left: 200px;
+	position: absolute;
+	left: 200px;
 	transition: all 300ms;
 }
 
