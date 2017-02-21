@@ -630,6 +630,8 @@ p {
       height: 200px;
       background: RGBA(43, 58, 68, 1);
       color: #fff; }
+      .bs-footer__right--bottom a {
+        color: #fff; }
   .bs-footer__menu {
     margin: 0; }
 
