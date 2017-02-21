@@ -19,19 +19,23 @@
 			</ul>
 		</div>
 		<div class="bs-footer__right--bottom">
-
-		<h5>Contact</h5>
-		<h6>ACN International</h6>
-		<h6>Aid to the Church in Need gGmbH</h6>
-		<h6>Westerbachstraße 23</h6>
-		<h6>61476 Kronberg</h6>
-		<h6>Ph.: +49-6174-291-0</h6>
-
+		<div>
+			<h5>Contact</h5>
+			<h6>ACN International</h6>
+			<h6>Aid to the Church in Need gGmbH</h6>
+			<h6>Westerbachstraße 23</h6>
+			<h6>61476 Kronberg</h6>
+			<h6>Ph.: +49-6174-291-0</h6>
+		</div>
+		<div>
 			<?php echo do_shortcode('[bs_contact_info]') ?>
-
+		</div>
+		<div>
 			<h6><a href="#">PRIVACY POLICY</a></h6>
 			<h6><a href="#">TERMS & CONDITIONS</a></h6>
 			<h6><a href="#">KPMG</a></h6>
+		</div>
+
 		</div>
 	</div>
 	<div class="bs-footer__bottom--top">
