@@ -32883,7 +32883,7 @@ function setMenu() {
 	$('.menu .current-lang').append('<div class="dropdown-content"></div>');
 	var langs = $('.menu .lang-item').not($(".current-lang"));
 
-	$('.menu').addClass('.menu--show');
+	$('.menu').addClass('menu--show');
 
 	currentLang.on('click', function (e) {
 		e.preventDefault();
@@ -32922,6 +32922,11 @@ function setMenuMobile() {
 }
 
 setMenuMobile();
+
+$('.bs-donate').on('click', function (e) {
+	e.preventDefault();
+	console.log('donate');
+});
 
 /***/ })
 /******/ ]);
