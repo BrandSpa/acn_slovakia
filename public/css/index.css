@@ -589,6 +589,11 @@ p {
 
 .menu {
   float: right; }
+  .menu--mobile {
+    display: none; }
+    @media (max-width: 767px) {
+      .menu--mobile {
+        display: block; } }
   @media (max-width: 767px) {
     .menu {
       display: none; } }

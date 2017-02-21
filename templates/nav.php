@@ -18,4 +18,17 @@
     ?>
 	</ul>
 
+		<ul class="menu--mobile">
+	  <?php
+			$args = array(
+        'theme_location' => 'header',
+        'container' => false,
+        'echo' => false
+		);
+
+			$menu = wp_nav_menu( $args);
+    	echo clean_menu($menu);
+    ?>
+	</ul>
+
 </div>
