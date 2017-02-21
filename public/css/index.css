@@ -619,6 +619,12 @@ p {
       padding: 20px;
       margin-bottom: 0 !important; } }
 
+.bs-about__right {
+  text-align: right; }
+
+.bs-about__left {
+  padding: 40px; }
+
 .bs-footer__left {
   height: 400px;
   background: RGBA(60, 81, 95, 1);

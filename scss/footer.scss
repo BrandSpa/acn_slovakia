@@ -1,3 +1,13 @@
+.bs-about {
+	&__right {
+		text-align: right;
+	}
+
+	&__left {
+		padding: 40px;
+	}
+}
+
 .bs-footer {
 
 	&__left {
