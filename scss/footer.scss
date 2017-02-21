@@ -14,9 +14,8 @@
 
 			h3 {
 				color: RGBA(241, 54, 78, 1.00);
-				display: block;
+				display: inline-block;
 				padding-bottom: 10px;
-				float: left;
 
 				&:after {
 					display: block;
@@ -28,13 +27,8 @@
 
 			p {
 				display: block;
-				float: left;
-				width: 100%;
+				width: 80%;
 				line-height: 2;
-
-				@media #{$l}, #{$xl} {
-					padding-right: 300px; 
-				}
 			}
 		}
 

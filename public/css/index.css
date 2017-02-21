@@ -633,9 +633,8 @@ p {
   padding: 40px; }
   .bs-about__right h3 {
     color: RGBA(241, 54, 78, 1);
-    display: block;
-    padding-bottom: 10px;
-    float: left; }
+    display: inline-block;
+    padding-bottom: 10px; }
     .bs-about__right h3:after {
       display: block;
       content: ' ';
@@ -643,12 +642,8 @@ p {
       border-bottom: 2px solid RGBA(241, 54, 78, 1); }
   .bs-about__right p {
     display: block;
-    float: left;
-    width: 100%;
+    width: 80%;
     line-height: 2; }
-    @media (min-width: 992px) and (max-width: 1199px), (min-width: 1200px) {
-      .bs-about__right p {
-        padding-right: 300px; } }
 
 .bs-footer__left {
   height: 400px;
