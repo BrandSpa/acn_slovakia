@@ -140,6 +140,9 @@ p {
 	text-align: center;
 	padding-top: 25px;
 	margin: 0;
+	@media #{$s} {
+		padding: 20px 5px;
+	}
 	li {
 		display: inline-block;
 		border-right: 1px #fff solid;

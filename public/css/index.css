@@ -540,6 +540,9 @@ p {
   text-align: center;
   padding-top: 25px;
   margin: 0; }
+  @media (max-width: 767px) {
+    .offices-list {
+      padding: 20px 5px; } }
   .offices-list li {
     display: inline-block;
     border-right: 1px #fff solid; }
