@@ -5,7 +5,7 @@
         <?php endif; ?>
      </a>
 
-	<div class="bs-menu-container" data-props='{"name": "acn_int"}'></div>
+	<div class="bs-menu-container" data-props='{"name": "acn_int_<?php echo get_lang(); ?>"}'></div>
 	<!--<ul class="menu">
 	  <?php
 			$args = array(

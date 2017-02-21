@@ -44,6 +44,14 @@ require('shortcodes/donate.php');
 require('shortcodes/posts.php');
 require('shortcodes/contact_info.php');
 
+function get_lang() {
+	if(function_exists('pll_current_language')) {
+		return pll_current_language();
+	}
+	
+	return '';
+}
+
 function show_posts() {
 	if(function_exists('pll_current_language')) {
 		$lang = pll_current_language();
@@ -53,6 +61,7 @@ function show_posts() {
 
 	return false;
 }
+
 
 function show_donate() {
 	$country = getCountry();
