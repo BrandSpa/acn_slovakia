@@ -630,9 +630,17 @@ p {
       text-align: center; } }
 
 .bs-about__right {
-  padding: 40px; }
+  padding: 40px;
+  height: 3px; }
   .bs-about__right h3 {
-    color: RGBA(241, 0, 34, 1); }
+    color: RGBA(241, 54, 78, 1);
+    display: block;
+    padding-bottom: 10px; }
+    .bs-about__right h3:after {
+      display: block;
+      content: ' ';
+      width: 60%;
+      border-bottom: 2px solid RGBA(241, 54, 78, 1); }
 
 .bs-footer__left {
   height: 400px;
