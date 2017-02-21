@@ -30,6 +30,8 @@
 				display: block;
 				float: left;
 				width: 80%;
+				line-height: 2;
+				@include clearfix();
 			}
 		}
 

@@ -644,7 +644,12 @@ p {
   .bs-about__right p {
     display: block;
     float: left;
-    width: 80%; }
+    width: 80%;
+    line-height: 2; }
+    .bs-about__right p:after {
+      display: table;
+      clear: both;
+      content: ''; }
 
 .bs-footer__left {
   height: 400px;
