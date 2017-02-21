@@ -618,12 +618,12 @@ p {
     background: RGBA(60, 81, 95, 1); }
   .bs-footer__right {
     height: 400px;
-    padding: 0;
-    display: -ms-flexbox;
-    display: flex; }
+    padding: 0; }
     .bs-footer__right--top {
       height: 200px;
-      background: RGBA(247, 247, 247, 1); }
+      background: RGBA(247, 247, 247, 1);
+      -ms-flex-flow: space-between;
+      flex-flow: space-between; }
     .bs-footer__right--bottom {
       height: 200px;
       background: RGBA(43, 58, 68, 1); }

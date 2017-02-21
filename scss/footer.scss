@@ -5,14 +5,16 @@
 		height: 400px;
 		background: RGBA(60, 81, 95, 1.00);
 	}
+	
 	&__right {
 		height: 400px;
 		padding: 0;
-		display: flex;
+
 		
 		&--top {
 			height: 200px;
 			background: RGBA(247, 247, 247, 1.00);
+			flex-flow: space-between;
 		}
 
 		&--bottom {
