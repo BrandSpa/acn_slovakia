@@ -38,7 +38,7 @@ function wp_get_menu() {
   echo json_encode($res);
   die();
 }
-˛
+
 add_action( 'wp_ajax_nopriv_donate_redirect', 'donate_redirect' );
 add_action( 'wp_ajax_donate_redirect', 'donate_redirect' );
 
