@@ -769,8 +769,8 @@ p {
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
       @media (max-width: 767px) {
         .slider__slide h4 {
-          width: 70%;
-          font-size: 1em;
+          width: 60%;
+          font-size: .9em;
           line-height: 1.5; } }
 
 .slider__btns button {
