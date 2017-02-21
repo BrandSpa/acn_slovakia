@@ -19,8 +19,7 @@
 			</ul>
 		</div>
 		<div class="bs-footer__right--bottom">
-
-
+			<?php do_shortcode('[bs_contact_info]') ?>
 		</div>
 	</div>
 	<div class="bs-footer__bottom--top">
