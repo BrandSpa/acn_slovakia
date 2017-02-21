@@ -5,8 +5,8 @@
         <?php endif; ?>
      </a>
 
-	<div class="bs-menu-container"></div>
-	<ul class="menu">
+	<div class="bs-menu-container" data-props='{"name": "acn_init"}'></div>
+	<!--<ul class="menu">
 	  <?php
 			$args = array(
             'theme_location' => 'header',
@@ -17,6 +17,6 @@
 			$menu = wp_nav_menu( $args);
     	echo clean_menu($menu);
     ?>
-	</ul>
+	</ul>-->
 
 </div>

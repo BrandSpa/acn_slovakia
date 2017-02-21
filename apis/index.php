@@ -32,8 +32,8 @@ add_action( 'wp_ajax_nopriv_get_menu', 'wp_get_menu' );
 add_action( 'wp_ajax_get_menu', 'wp_get_menu' );
 
 function wp_get_menu() {
-  $paged = $_POST['name'];
-  $res = wp_get_nav_menu_items('acn_int');
+  $name = $_POST['name'];
+  $res = wp_get_nav_menu_items($name);
   header('Content-type: application/json');
   echo json_encode($res);
   die();

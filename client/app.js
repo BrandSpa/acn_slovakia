@@ -7,6 +7,7 @@ import Projects from './components/projects';
 import Accordion from './components/accordion';
 import Posts from './components/posts';
 import Donate from './components/donate';
+import Menu from './components/menu';
 
 multipleRender(".contact-form", ContactForm);
 multipleRender(".header-slider", HeaderSlider);
@@ -15,6 +16,7 @@ multipleRender(".projects-container", Projects);
 multipleRender(".bs-accordion", Accordion);
 multipleRender(".bs-posts", Posts);
 multipleRender(".bs-donate-react", Donate);
+multipleRender(".bs-menu-container", Menu);
 
 function setMenu() {
 	const $menu = $('.menu');
@@ -44,4 +46,4 @@ function setMenu() {
 	currentLang.html(newText);
 }
 
-setMenu();
+// setMenu();
