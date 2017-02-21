@@ -602,10 +602,13 @@ p {
     left: -200px;
     top: 0;
     background: #fff;
-    width: 200px; }
+    width: 200px;
+    transition: all 300ms; }
     @media (max-width: 767px) {
       .menu--mobile {
         display: block; } }
+    .menu--mobile--open {
+      left: 0; }
   @media (max-width: 767px) {
     .menu {
       display: none; } }
