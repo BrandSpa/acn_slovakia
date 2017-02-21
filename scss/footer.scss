@@ -1,11 +1,14 @@
 .bs-about {
-	&__right {
-		text-align: right;
-	}
 
 	&__left {
-		padding: 40px;
+		text-align: right;
+	
 	}
+
+	&__right {
+			padding: 40px;
+	}
+
 }
 
 .bs-footer {

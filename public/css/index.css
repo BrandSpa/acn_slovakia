@@ -619,10 +619,10 @@ p {
       padding: 20px;
       margin-bottom: 0 !important; } }
 
-.bs-about__right {
+.bs-about__left {
   text-align: right; }
 
-.bs-about__left {
+.bs-about__right {
   padding: 40px; }
 
 .bs-footer__left {
