@@ -7,7 +7,6 @@ include_once 'posts.php';
 include_once str_replace('apis', '', __DIR__) . '/lib/countries.php';
 include_once str_replace('apis', '', __DIR__) . '/lib/get_geoip.php';
 
-
 add_action( 'wp_ajax_nopriv_update_geo', 'update_geo' );
 add_action( 'wp_ajax_update_geo', 'update_geo' );
 

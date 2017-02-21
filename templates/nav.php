@@ -4,7 +4,8 @@
           <img src='<?php echo str_replace('http:', '', get_option("logo")) ?>'  alt="acn logo" class="img-responsive" width="150"  />
         <?php endif; ?>
      </a>
-		 <button class="">menu</button>
+
+	<div class="bs-menu-container"></div>
 	<ul class="menu">
 	  <?php
 			$args = array(
