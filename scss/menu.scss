@@ -41,8 +41,13 @@
 
 		li {
 			list-style: none;
-			color: #fff;
-			margin-bottom: 20px;
+			width: 100%;
+			display: block;
+			a {
+				display: block;
+				padding: 10px 0;
+				color: #fff;
+			}
 		}
 	}
 	

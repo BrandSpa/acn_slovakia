@@ -619,8 +619,12 @@ p {
       left: 0; }
     .menu--mobile li {
       list-style: none;
-      color: #fff;
-      margin-bottom: 20px; }
+      width: 100%;
+      display: block; }
+      .menu--mobile li a {
+        display: block;
+        padding: 10px 0;
+        color: #fff; }
   @media (max-width: 767px) {
     .menu {
       display: none; } }
