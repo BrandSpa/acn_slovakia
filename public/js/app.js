@@ -32848,9 +32848,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".bs-donate-react", _donate2.default);
 
 function setMenu() {
-	var currentLang = $('.current-lang > a');
-	$('.current-lang').addClass('dropdown');
-	$('.current-lang').append('<div class="dropdown-content"></div>');
+	var currentLang = $('.menu .current-lang > a');
+	$('.menu .current-lang').addClass('dropdown');
+	$('.menu .current-lang').append('<div class="dropdown-content"></div>');
 	var langs = $('.lang-item').not($(".current-lang"));
 
 	currentLang.on('click', function (e) {
