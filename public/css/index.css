@@ -590,7 +590,7 @@ p {
   float: left; }
   @media (max-width: 767px) {
     .nav {
-      text-align: center; } }
+      padding: 0; } }
 
 .open-menu {
   display: none; }
