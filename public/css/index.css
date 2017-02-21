@@ -665,6 +665,9 @@ p {
 .bs-footer__right {
   height: 400px;
   padding: 0; }
+  @media (max-width: 767px) {
+    .bs-footer__right {
+      height: auto; } }
   .bs-footer__right--top {
     width: 100%;
     height: 200px;

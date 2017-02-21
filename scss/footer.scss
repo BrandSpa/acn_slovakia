@@ -62,7 +62,9 @@
 	&__right {
 		height: 400px;
 		padding: 0;
-
+		@media #{$s} {
+			height: auto;
+		}
 		
 		&--top {
 			width: 100%;
