@@ -640,6 +640,10 @@ p {
       content: ' ';
       width: 60%;
       border-bottom: 2px solid RGBA(241, 54, 78, 1); }
+  .bs-about__right p {
+    display: block;
+    float: left;
+    width: 80%; }
 
 .bs-footer__left {
   height: 400px;
