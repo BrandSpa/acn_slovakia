@@ -52,10 +52,10 @@ function setMenuMobile() {
 	$('.open-menu').on('click', () => {
 		
 		if($('.menu--mobile').hasClass('menu--mobile--open')) {
-			$(document.body).css({'margin-left': '0'});
+			$(document.body).removeClass('menu-open')
 			$('.menu--mobile').removeClass('menu--mobile--open');
 		} else {
-			$(document.body).css({'margin-left': '200px'});
+			$(document.body).addClass('menu-open');
 			$('.menu--mobile').addClass('menu--mobile--open');
 		}
 
