@@ -29,6 +29,7 @@ function bs_add_country_info_settings() {
 		$value = str_replace(' ', '_', $value);
     register_setting( 'bs_country_info_group', 'logo_' . $value );
     register_setting( 'bs_country_info_group', 'donate_url_' . $value );
+    register_setting( 'bs_country_info_group', 'url_' . $value );
     register_setting( 'bs_country_info_group', 'contact_info_address_' . $value );
     register_setting( 'bs_country_info_group', 'contact_info_phone_' . $value );
     register_setting( 'bs_country_info_group', 'contact_info_email_' . $value );
@@ -80,6 +81,16 @@ function logos_settings_page() {
 							value="<?php echo esc_attr( get_option('donate_url_' . $value ) ); ?>"
 						/>
 
+						<h4>Url</h4>
+
+						<input
+							style="background: rgba(255,255,255,.4); width: 60%; height: 35px"
+							type="text"
+							placeholder="url"
+							name="donate_url_<?php echo $value ?>"
+							value="<?php echo esc_attr( get_option('url_' . $value ) ); ?>"
+						/>
+						
 						<h4>Contact</h4>
 
 						<input
