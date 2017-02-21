@@ -18,5 +18,4 @@
     ?>
 	</ul>
 
-	<?php var_dump(wp_get_nav_menu_items('acn_int')) ?>
 </div>

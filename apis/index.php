@@ -29,6 +29,17 @@ function wp_get_posts() {
   die();
 }
 
+add_action( 'wp_ajax_nopriv_get_menu', 'wp_get_menu' );
+add_action( 'wp_ajax_get_menu', 'wp_get_menu' );
+
+function wp_get_menu() {
+  $paged = $_POST['name'];
+  $res = wp_get_nav_menu_items('acn_int');
+  header('Content-type: application/json');
+  echo json_encode($res);
+  die();
+}
+
 add_action( 'wp_ajax_nopriv_donate_redirect', 'donate_redirect' );
 add_action( 'wp_ajax_donate_redirect', 'donate_redirect' );
 
