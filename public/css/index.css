@@ -556,6 +556,12 @@ p {
 .bs-contact-info {
   color: #fff; }
 
+.learn-more {
+  background: RGBA(241, 54, 78, 1);
+  padding: 30px;
+  float: left;
+  width: 100%; }
+
 .learn-more-link {
   display: block;
   width: 70%;

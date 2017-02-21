@@ -1,3 +1,6 @@
+<div class="learn-more">
+<a class="learn-more-link" href="#learnmore">LEARN MORE ABOUT AID TO THE CHURCH IN NEED</a>
+</div>
 <div class="bs-about">
 	<img width="76" height="103" src="//acninternational.org/wp-content/uploads/2016/11/logoACNwhy2.png" class="vc_single_image-img attachment-full" alt="logoacnwhy2">
 	<h3><?php echo gett('ABOUT US') ?></h3>
