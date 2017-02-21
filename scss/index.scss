@@ -14,7 +14,7 @@ body {
 	transition: margin 300ms;
 	position: relative;
 	left: 0;
-	
+	transition: left 300ms;
 	@media #{$s} {
 		font-size: 12px;
 	}
@@ -38,7 +38,7 @@ a {
 .menu-open {
 	position: relative;
 	left: 200px;
-	transition: all 300ms;
+
 }
 
 h1,
