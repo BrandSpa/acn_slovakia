@@ -40,7 +40,7 @@
 		</div>
 	</div>
 	<div class="bs-footer__bottom--top">
-	
+		<?php echo gett('ACN – Aid to the Church in Need gGmbH, HRB 8446 is non-profit organization officially registered in Germany and audited internationally by KPMG.') ?>
 	</div>
 	<div class="bs-footer__bottom--bottom">
 
