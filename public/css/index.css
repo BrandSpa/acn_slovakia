@@ -625,7 +625,8 @@ p {
       .menu--mobile li a {
         display: block;
         padding: 10px 0;
-        color: #fff; }
+        color: #fff;
+        font-size: 1.5em; }
   @media (max-width: 767px) {
     .menu {
       display: none; } }
