@@ -28,6 +28,10 @@
 		<h6>Ph.: +49-6174-291-0</h6>
 
 			<?php echo do_shortcode('[bs_contact_info]') ?>
+
+			<h6><a href="#">PRIVACY POLICY</a></h6>
+			<h6><a href="#">TERMS & CONDITIONS</a></h6>
+			<h6><a href="#">KPMG</a></h6>
 		</div>
 	</div>
 	<div class="bs-footer__bottom--top">
