@@ -622,6 +622,9 @@ p {
 .bs-about__left {
   text-align: right;
   padding: 40px 0 0 0; }
+  @media (max-width: 767px) {
+    .bs-about__left {
+      text-align: center; } }
 
 .bs-about__right {
   padding: 40px; }

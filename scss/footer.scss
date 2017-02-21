@@ -3,6 +3,10 @@
 	&__left {
 		text-align: right;
 		padding: 40px 0 0 0;
+
+		@media #{$s} {
+			text-align: center;
+		}
 	}
 
 	&__right {
