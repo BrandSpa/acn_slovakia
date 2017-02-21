@@ -18,8 +18,8 @@ multipleRender(".bs-donate-react", Donate);
 
 function setMenu() {
 	const currentLang = $('.menu .current-lang > a');
-	$('.current-lang').addClass('dropdown');
-	$('.current-lang').append('<div class="dropdown-content"></div>');
+	$('.menu .current-lang').addClass('dropdown');
+	$('.menu .current-lang').append('<div class="dropdown-content"></div>');
 	let langs = $('.lang-item').not( $(".current-lang") );
 
 	currentLang.on('click', (e) => {
@@ -39,7 +39,6 @@ function setMenu() {
 
 	const newText = `${currentLang.text()} <i class="ion-chevron-down"></i>`;
 	currentLang.html(newText);
-
 }
 
 setMenu();
