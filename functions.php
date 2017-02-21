@@ -26,6 +26,7 @@ add_action('init', 'modify_jquery');
 //libs
 require('lib/clean_menu.php');
 require('lib/space_to_lodash.php');
+require('lib/translation.php');
 
 //apis
 require('apis/index.php');
