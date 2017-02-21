@@ -4,11 +4,18 @@
 	padding: 45px 60px 0  60px;
 	background: #fff;
 	float: left;
-	
+
 	@media #{$s} {
 		padding: 0;
 		text-align: center;
 		position: relative;
+	}
+}
+
+.logo {
+	@media #{$s} {
+		margin: 10% auto;
+		display: block;
 	}
 }
 

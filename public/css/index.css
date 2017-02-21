@@ -597,6 +597,11 @@ p {
       text-align: center;
       position: relative; } }
 
+@media (max-width: 767px) {
+  .logo {
+    margin: 10% auto;
+    display: block; } }
+
 .open-menu {
   display: none; }
   @media (max-width: 767px) {
