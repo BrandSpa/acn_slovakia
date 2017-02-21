@@ -35,10 +35,10 @@ function wp_get_menu() {
   $name = $_POST['name'];
   $res = wp_get_nav_menu_items($name);
   header('Content-type: application/json');
-  echo json_encode([$name, $res]);
+  echo json_encode($res);
   die();
 }
-
+˛
 add_action( 'wp_ajax_nopriv_donate_redirect', 'donate_redirect' );
 add_action( 'wp_ajax_donate_redirect', 'donate_redirect' );
 
