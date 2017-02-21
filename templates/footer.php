@@ -3,9 +3,12 @@
 </div>
 
 <?php 
-echo do_shortcode('[bs_accordion btn_title="ACN International"]
-<ul class="offices-list"><li><a href="#">Colombia</a></li></ul>
-[/bs_accordion]') ?>
+$offices = '';
+foreach(getOfficeCountry() as $office) { 
+	$offices .= '<li><a href="#">'.$office.'</a></li>,';
+};
+
+echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="offices-list">'. explode(",", $offices) .'</ul>[/bs_accordion]') ?>
 
 <div class="bs-about">
 	<div class="col-3-l bs-about__left">
