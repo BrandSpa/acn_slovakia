@@ -49,7 +49,7 @@ echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="office
 			</ul>
 		</div>
 		<div class="bs-footer__right--bottom">
-			<div>
+			<div class="col-3-l">
 				<h5><?php echo gett('Contact') ?></h5>
 				<h6>ACN International</h6>
 				<h6>Aid to the Church in Need gGmbH</h6>
@@ -57,17 +57,17 @@ echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="office
 				<h6>61476 Kronberg</h6>
 				<h6>Ph.: +49-6174-291-0</h6>
 			</div>
-			<div>
+			<div class="col-3-l">
 				<?php echo do_shortcode('[bs_contact_info]') ?>
 			</div>
-			<div>
+			<div class="col-6-l">
 				<h6><a href="#"><?php echo gett('PRIVACY POLICY') ?></a></h6>
 				<h6><a href="#"><?php echo gett('TERMS & CONDITIONS') ?></a></h6>
 				<h6><a href="#">KPMG</a></h6>
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="bs-footer__bottom--top">
 		<h6><?php echo gett('ACN – Aid to the Church in Need gGmbH, HRB 8446 is non-profit organization officially registered in Germany and audited internationally by KPMG.') ?></h6>
 	</div>
