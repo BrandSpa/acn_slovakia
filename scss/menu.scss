@@ -11,6 +11,7 @@
 
 .open-menu {
 	display: none;
+	
 	@media #{$s} {
 		display: block;	
 	}
