@@ -35,7 +35,7 @@ function wp_get_menu() {
   $name = $_POST['name'];
   $res = wp_get_nav_menu_items($name);
   header('Content-type: application/json');
-  echo json_encode($name);
+  echo json_encode($res);
   die();
 }
 
