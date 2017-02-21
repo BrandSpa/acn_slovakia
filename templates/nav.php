@@ -4,7 +4,7 @@
           <img src='<?php echo str_replace('http:', '', get_option("logo")) ?>'  alt="acn logo" class="img-responsive" width="150"  />
         <?php endif; ?>
      </a>
-
+		 <button class="">menu</button>
 	<ul class="menu">
 	  <?php
 			$args = array(
@@ -17,4 +17,6 @@
     	echo clean_menu($menu);
     ?>
 	</ul>
+
+	<?php var_dump(wp_get_nav_menu_items('header')) ?>
 </div>
