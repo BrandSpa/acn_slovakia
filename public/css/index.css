@@ -646,7 +646,7 @@ p {
     float: left;
     width: 80%;
     line-height: 2; }
-    .bs-about__right p:after {
+    .bs-about__right p:before {
       display: table;
       clear: both;
       content: ''; }
