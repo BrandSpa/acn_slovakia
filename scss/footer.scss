@@ -1,11 +1,12 @@
 .bs-footer {
 	display: flex;
-	flex-wrap: wrap;
 
 	&__left {
+		height: 400px;
 		background: RGBA(60, 81, 95, 1.00);
 	}
 	&__right {
+		height: 400px;
 		&--top {
 			background: RGBA(247, 247, 247, 1.00);
 		}

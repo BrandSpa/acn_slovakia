@@ -612,15 +612,16 @@ p {
 
 .bs-footer {
   display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  display: flex; }
   .bs-footer__left {
+    height: 400px;
     background: RGBA(60, 81, 95, 1); }
-  .bs-footer__right--top {
-    background: RGBA(247, 247, 247, 1); }
-  .bs-footer__right--bottom {
-    background: RGBA(43, 58, 68, 1); }
+  .bs-footer__right {
+    height: 400px; }
+    .bs-footer__right--top {
+      background: RGBA(247, 247, 247, 1); }
+    .bs-footer__right--bottom {
+      background: RGBA(43, 58, 68, 1); }
 
 .slider {
   width: 100%;
