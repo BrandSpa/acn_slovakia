@@ -644,12 +644,11 @@ p {
   .bs-about__right p {
     display: block;
     float: left;
-    width: 80%;
+    width: 100%;
     line-height: 2; }
-    .bs-about__right p:before {
-      display: table;
-      clear: both;
-      content: ''; }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .bs-about__right p {
+        padding-right: 300px; } }
 
 .bs-footer__left {
   height: 400px;

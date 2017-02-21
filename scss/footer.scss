@@ -29,12 +29,10 @@
 			p {
 				display: block;
 				float: left;
-				width: 80%;
+				width: 100%;
 				line-height: 2;
-				&:before {
-					display: table;
-					clear: both;
-					content: '';
+				@media #{$l} {
+					padding-right: 300px; 
 				}
 			}
 		}
