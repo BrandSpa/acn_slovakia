@@ -17,11 +17,14 @@ const Menu = React.createClass({
 	},
 
  	render() {
+		let dropdown = 0;
 		return (
 			<ul className="menu">
 				{this.state.items.map((item, i) => {
 					if(item.post_name == 'language-switcher') {
-						return <li key={i}><a className="switcher" href={item.url}>{item.title}</a></li>
+						{dropdown = dropdown + 1}
+
+						return <li key={i}><a className={"switcher-"+ dropdown} href={item.url}>{item.title}</a></li>
 					}
 					return <li key={i}><a href={item.url}>{item.title}</a></li>
 				})}
