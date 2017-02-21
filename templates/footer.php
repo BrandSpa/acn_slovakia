@@ -2,6 +2,8 @@
 	<a class="learn-more-link" href="#learnmore">LEARN MORE ABOUT AID TO THE CHURCH IN NEED</a>
 </div>
 
+<?php echo do_shortcode('[bs_accordion btn_title="ACN International"] [/bs_accordion]') ?>
+
 <div class="bs-about">
 	<div class="col-3-l bs-about__left">
 		<img width="76" height="103" src="//acninternational.org/wp-content/uploads/2016/11/logoACNwhy2.png" class="vc_single_image-img attachment-full" alt="logoacnwhy2">
