@@ -32956,6 +32956,17 @@ var Menu = _react2.default.createClass({
 			'ul',
 			{ className: 'menu' },
 			this.state.items.map(function (item, i) {
+				if (item.post_name == 'language-switcher') {
+					return _react2.default.createElement(
+						'li',
+						{ key: i },
+						_react2.default.createElement(
+							'a',
+							{ className: 'switcher', href: item.url },
+							item.title
+						)
+					);
+				}
 				return _react2.default.createElement(
 					'li',
 					{ key: i },

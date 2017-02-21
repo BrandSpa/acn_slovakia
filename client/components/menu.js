@@ -20,6 +20,9 @@ const Menu = React.createClass({
 		return (
 			<ul className="menu">
 				{this.state.items.map((item, i) => {
+					if(item.post_name == 'language-switcher') {
+						return <li key={i}><a className="switcher" href={item.url}>{item.title}</a></li>
+					}
 					return <li key={i}><a href={item.url}>{item.title}</a></li>
 				})}
 			</ul>
