@@ -127,7 +127,7 @@ const Donate = React.createClass({
 		if(this.state.section == 1){
 			if(!this.creditCardIsValid()) return false;
 			this.stripeToken();
-		} 
+		}
 
 		if(this.state.section == 2) {
 			if(!this.contactIsValid()) return false;
@@ -147,11 +147,22 @@ const Donate = React.createClass({
 	},
 
 	render() {
-		let sectionWidth = `${100 / 3}%`;
+		let sectionWidth = `${ 100 / 3 }%`;
+		let viewPortStyle = { width: '300%', left: this.state.left };
+		let donationTypeStyle = {
+			display: 'inline', 
+			marginLeft: '15px', 
+			color: '#fff'
+		};
+		let backBtnStyle = { 
+			float: 'right', 
+			background: 'transparent', 
+			border: 'none' 
+		};
 
 		return (
-			<form onSubmit={this.handleSubmit} className="donate_react" style={{overflow: 'hidden'}}>
-				<div className="donate_react__viewport" style={{width: '300%', left: this.state.left}} >
+			<form onSubmit={this.handleSubmit} className="donate_react">
+				<div className="donate_react__viewport" style={viewPortStyle} >
 
 				<Amount
 					{...this.state}
@@ -187,13 +198,13 @@ const Donate = React.createClass({
 						{ this.state.section == 1 ? this.props.texts.next : this.props.texts.donate }
 					</button>
 
-					<span 
-						style={{'display': 'inline', 'marginLeft': '15px', color: '#fff'}}
-					>
-						{ `${this.state.amount} USD ${this.props.texts[this.state.donation_type]}` }
+					<span style={donationTypeStyle} >
+						{ `${ this.state.amount } USD ${ this.props.texts[this.state.donation_type] }` }
 					</span>
 
-					{ this.state.section > 0 ? <button style={{ float: 'right', background: 'transparent', border: 'none' }} onClick={this.prevSection}>{this.props.texts.back}</button> : '' }
+					{ this.state.section > 0 ? 
+						<button style={backBtnStyle} onClick={this.prevSection} >{this.props.texts.back}</button> 
+						: '' }
 				 </div>
 				 
 			</form>
