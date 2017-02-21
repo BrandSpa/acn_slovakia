@@ -633,7 +633,9 @@ p {
       height: 200px;
       background: RGBA(43, 58, 68, 1);
       color: #fff;
-      padding: 40px; }
+      padding: 40px;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
       .bs-footer__right--bottom a {
         color: #fff; }
   .bs-footer__menu {
