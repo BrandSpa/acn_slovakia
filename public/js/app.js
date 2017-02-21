@@ -32866,10 +32866,6 @@ var _donate = __webpack_require__(122);
 
 var _donate2 = _interopRequireDefault(_donate);
 
-var _menu = __webpack_require__(315);
-
-var _menu2 = _interopRequireDefault(_menu);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
@@ -32879,7 +32875,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".bs-accordion", _accordion2.default);
 (0, _mutiple_render2.default)(".bs-posts", _posts2.default);
 (0, _mutiple_render2.default)(".bs-donate-react", _donate2.default);
-(0, _mutiple_render2.default)(".bs-menu-container", _menu2.default);
 
 function setMenu() {
 	var $menu = $('.menu');
@@ -32927,78 +32922,6 @@ function setMenuMobile() {
 }
 
 setMenuMobile();
-
-/***/ }),
-/* 315 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(8);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _axios = __webpack_require__(38);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _qs = __webpack_require__(42);
-
-var _qs2 = _interopRequireDefault(_qs);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var Menu = _react2.default.createClass({
-	displayName: 'Menu',
-	getInitialState: function getInitialState() {
-		return {
-			items: []
-		};
-	},
-	componentDidMount: function componentDidMount() {
-		var data = _qs2.default.stringify({ action: 'get_menu', 'name': this.props.name });
-		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
-			var langs = res.data.reduce(function (arr, obj) {
-				var items = arr.filter(function (item) {
-					return item.post_name == 'language-switcher';
-				});
-				obj = _extends({}, obj, { items: items });
-				arr = [].concat(_toConsumableArray(arr), [obj]);
-				return arr;
-			}, []);
-			console.log(langs);
-		});
-	},
-	render: function render() {
-		var dropdown = 0;
-		return _react2.default.createElement(
-			'ul',
-			{ className: 'menu' },
-			this.state.items.map(function (item, i) {
-				return _react2.default.createElement(
-					'li',
-					{ key: i },
-					_react2.default.createElement(
-						'a',
-						{ href: item.url },
-						item.title
-					)
-				);
-			})
-		);
-	}
-});
-
-exports.default = Menu;
 
 /***/ })
 /******/ ]);

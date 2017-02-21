@@ -7,7 +7,6 @@ import Projects from './components/projects';
 import Accordion from './components/accordion';
 import Posts from './components/posts';
 import Donate from './components/donate';
-import Menu from './components/menu';
 
 multipleRender(".contact-form", ContactForm);
 multipleRender(".header-slider", HeaderSlider);
@@ -16,7 +15,6 @@ multipleRender(".projects-container", Projects);
 multipleRender(".bs-accordion", Accordion);
 multipleRender(".bs-posts", Posts);
 multipleRender(".bs-donate-react", Donate);
-multipleRender(".bs-menu-container", Menu);
 
 function setMenu() {
 	const $menu = $('.menu');
@@ -24,7 +22,7 @@ function setMenu() {
 	$('.menu .current-lang').addClass('dropdown');
 	$('.menu .current-lang').append('<div class="dropdown-content"></div>');
 	let langs = $('.menu .lang-item').not( $(".current-lang") );
-	
+
 	$('.menu').css({display: 'block'});
 
 	currentLang.on('click', (e) => {
