@@ -58,3 +58,7 @@ function show_donate() {
 	if( !in_array($country, getOfficesCountries()) ) return true;
 	return false;
 }
+
+
+
+
