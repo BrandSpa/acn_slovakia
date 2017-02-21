@@ -1,4 +1,7 @@
-<?php include_once str_replace('templates', '', __DIR__) . '/lib/offices_countries.php'; ?>
+<?php 
+include_once str_replace('templates', '', __DIR__) . '/lib/offices_countries.php'; 
+?>
+
 <div class="learn-more">
 	<a class="learn-more-link" href="#learnmore">LEARN MORE ABOUT AID TO THE CHURCH IN NEED</a>
 </div>
