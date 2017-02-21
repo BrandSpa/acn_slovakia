@@ -32922,6 +32922,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
@@ -32936,6 +32938,8 @@ var _qs2 = _interopRequireDefault(_qs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var Menu = _react2.default.createClass({
 	displayName: 'Menu',
 	getInitialState: function getInitialState() {
@@ -32944,11 +32948,14 @@ var Menu = _react2.default.createClass({
 		};
 	},
 	componentDidMount: function componentDidMount() {
-		var _this = this;
-
 		var data = _qs2.default.stringify({ action: 'get_menu', 'name': this.props.name });
 		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
-			return _this.setState({ items: res.data });
+			var langs = res.data.reduce(function (arr, obj) {
+				obj = _extends({}, obj, { items: [] });
+				arr = [].concat(_toConsumableArray(arr), [obj]);
+				return arr;
+			}, []);
+			console.log(lags);
 		});
 	},
 	render: function render() {
@@ -32957,21 +32964,6 @@ var Menu = _react2.default.createClass({
 			'ul',
 			{ className: 'menu' },
 			this.state.items.map(function (item, i) {
-				if (item.post_name == 'language-switcher') {
-					{
-						dropdown = dropdown + 1;
-					}
-
-					return _react2.default.createElement(
-						'li',
-						{ key: i },
-						_react2.default.createElement(
-							'a',
-							{ className: "switcher-" + dropdown, href: item.url },
-							item.title
-						)
-					);
-				}
 				return _react2.default.createElement(
 					'li',
 					{ key: i },

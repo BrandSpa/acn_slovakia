@@ -13,7 +13,14 @@ const Menu = React.createClass({
 		let data = qs.stringify({action: 'get_menu', 'name': this.props.name});
 		request
 			.post('/wp-admin/admin-ajax.php', data)
-			.then(res => this.setState({items: res.data}));
+			.then(res =>  {
+				let langs =  res.data.reduce((arr, obj) => {
+					obj = {...obj, items: []};
+					arr = [...arr, obj];
+					return arr;
+				}, []);
+				console.log(lags);
+			});
 	},
 
  	render() {
@@ -21,11 +28,6 @@ const Menu = React.createClass({
 		return (
 			<ul className="menu">
 				{this.state.items.map((item, i) => {
-					if(item.post_name == 'language-switcher') {
-						{dropdown = dropdown + 1}
-
-						return <li key={i}><a className={"switcher-"+ dropdown} href={item.url}>{item.title}</a></li>
-					}
 					return <li key={i}><a href={item.url}>{item.title}</a></li>
 				})}
 			</ul>
