@@ -612,7 +612,9 @@ p {
 
 .bs-footer {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   .bs-footer__left {
     background: RGBA(60, 81, 95, 1); }
   .bs-footer__right--top {

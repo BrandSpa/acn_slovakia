@@ -1,5 +1,6 @@
 .bs-footer {
 	display: flex;
+	flex-wrap: wrap;
 
 	&__left {
 		background: RGBA(60, 81, 95, 1.00);
