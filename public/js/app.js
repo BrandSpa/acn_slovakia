@@ -32866,6 +32866,14 @@ var _donate = __webpack_require__(122);
 
 var _donate2 = _interopRequireDefault(_donate);
 
+var _set_menu = __webpack_require__(316);
+
+var _set_menu2 = _interopRequireDefault(_set_menu);
+
+var _set_menu_mobile = __webpack_require__(317);
+
+var _set_menu_mobile2 = _interopRequireDefault(_set_menu_mobile);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
@@ -32876,7 +32884,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".bs-posts", _posts2.default);
 (0, _mutiple_render2.default)(".bs-donate-react", _donate2.default);
 
-function setMenu() {
+(0, _set_menu2.default)();
+(0, _set_menu_mobile2.default)();
+
+$('.bs-donate').on('click', function (e) {
+	e.preventDefault();
+	console.log('donate');
+});
+
+/***/ }),
+/* 315 */,
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var setMenu = function setMenu() {
 	var $menu = $('.menu');
 	var currentLang = $('.menu .current-lang > a');
 	$('.menu .current-lang').addClass('dropdown');
@@ -32902,13 +32930,24 @@ function setMenu() {
 		$(this).remove();
 	});
 
-	var newText = currentLang.text() + " <i class=\"ion-chevron-down\"></i>";
+	var newText = currentLang.text() + ' <i class="ion-chevron-down"></i>';
 	currentLang.html(newText);
-}
+};
 
-setMenu();
+exports.default = setMenu;
 
-function setMenuMobile() {
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var setMenuMobile = function setMenuMobile() {
 	$('.open-menu').on('click', function () {
 
 		if ($('.menu--mobile').hasClass('menu--mobile--open')) {
@@ -32919,14 +32958,9 @@ function setMenuMobile() {
 			$('.menu--mobile').addClass('menu--mobile--open');
 		}
 	});
-}
+};
 
-setMenuMobile();
-
-$('.bs-donate').on('click', function (e) {
-	e.preventDefault();
-	console.log('donate');
-});
+exports.default = setMenuMobile;
 
 /***/ })
 /******/ ]);
