@@ -645,6 +645,7 @@ p {
       color: #fff; }
 
 .bs-footer__bottom--top {
+  width: 100%;
   background: RGBA(46, 67, 81, 1);
   padding: 7px 0;
   text-align: center;
