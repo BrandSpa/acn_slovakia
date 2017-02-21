@@ -9,10 +9,10 @@ include_once str_replace('templates', '', __DIR__) . '/lib/offices_countries.php
 <?php 
 $offices = '';
 foreach(getOfficesCountries() as $office) { 
-	$offices .= '<li><a href="#">'.$office.'</a></li>,';
+	$offices .= '<li><a href="#">'.$office.'</a></li>';
 };
 
-echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="offices-list">'. explode(",", $offices) .'</ul>[/bs_accordion]') ?>
+echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="offices-list">'. $offices .'</ul>[/bs_accordion]') ?>
 
 <div class="bs-about">
 	<div class="col-3-l bs-about__left">
