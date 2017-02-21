@@ -19,5 +19,5 @@ $translations = [
 ];
 
 foreach($translations as $key => $trans) {
-	register_translation($key, $trans);
+	register_translation('bs-' . $key, $trans);
 }
