@@ -682,6 +682,8 @@ p {
     @media (max-width: 767px) {
       .bs-footer__right--bottom {
         height: auto; } }
+    .bs-footer__right--bottom div {
+      margin-bottom: 15px; }
     .bs-footer__right--bottom a {
       color: #fff; }
 
