@@ -610,6 +610,16 @@ p {
       padding: 20px;
       margin-bottom: 0 !important; } }
 
+.bs-footer {
+  display: -ms-flexbox;
+  display: flex; }
+  .bs-footer__left {
+    background: RGBA(60, 81, 95, 1); }
+  .bs-footer__right--top {
+    background: RGBA(247, 247, 247, 1); }
+  .bs-footer__right--bottom {
+    background: RGBA(43, 58, 68, 1); }
+
 .slider {
   width: 100%;
   position: relative;
