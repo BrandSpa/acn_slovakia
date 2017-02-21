@@ -9,7 +9,9 @@ include_once str_replace('templates', '', __DIR__) . '/lib/offices_countries.php
 <?php 
 $offices = '';
 foreach(getOfficesCountries() as $office) { 
-	$offices .= '<li><a href="#">'.$office.'</a></li>';
+	if($office !== 'default') {
+		$offices .= '<li><a href="#">'.$office.'</a></li>';
+	}
 };
 
 echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="offices-list">'. $offices .'</ul>[/bs_accordion]') ?>
