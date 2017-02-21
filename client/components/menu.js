@@ -10,7 +10,7 @@ const Menu = React.createClass({
 	},
 
 	componentDidMount() {
-		let data = {action: 'get_menu', 'name': this.props.name};
+		let data = qs.stringify({action: 'get_menu', 'name': this.props.name});
 		request
 			.post('/wp-admin/admin-ajax.php', data)
 			.then(res => this.setState({items: res.data}));

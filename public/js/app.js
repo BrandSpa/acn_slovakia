@@ -32946,7 +32946,7 @@ var Menu = _react2.default.createClass({
 	componentDidMount: function componentDidMount() {
 		var _this = this;
 
-		var data = { action: 'get_menu', 'name': this.props.name };
+		var data = _qs2.default.stringify({ action: 'get_menu', 'name': this.props.name });
 		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
 			return _this.setState({ items: res.data });
 		});
