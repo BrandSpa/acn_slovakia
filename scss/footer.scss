@@ -29,6 +29,10 @@
 		p {
 			color: #fff;
 		}
+
+		@media #{$s} {
+			text-align: center;
+		}
 	}
 	
 	&__right {
