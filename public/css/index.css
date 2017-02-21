@@ -631,6 +631,8 @@ p {
 
 .bs-about__right {
   padding: 40px; }
+  .bs-about__right h5 {
+    color: RGBA(241, 0, 34, 1); }
 
 .bs-footer__left {
   height: 400px;
