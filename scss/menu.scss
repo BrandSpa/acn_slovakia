@@ -6,6 +6,8 @@
 	float: left;
 	@media #{$s} {
 		padding: 0;
+		text-align: center;
+		position: relative;
 	}
 }
 
@@ -13,7 +15,10 @@
 	display: none;
 	
 	@media #{$s} {
-		display: block;	
+		display: block;
+		position: absolute;
+		top: 40%;
+		left: 20px;
 	}
 }
 

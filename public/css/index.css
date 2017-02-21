@@ -590,13 +590,18 @@ p {
   float: left; }
   @media (max-width: 767px) {
     .nav {
-      padding: 0; } }
+      padding: 0;
+      text-align: center;
+      position: relative; } }
 
 .open-menu {
   display: none; }
   @media (max-width: 767px) {
     .open-menu {
-      display: block; } }
+      display: block;
+      position: absolute;
+      top: 40%;
+      left: 20px; } }
 
 .menu {
   float: right;
