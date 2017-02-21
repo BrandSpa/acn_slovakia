@@ -32951,7 +32951,10 @@ var Menu = _react2.default.createClass({
 		var data = _qs2.default.stringify({ action: 'get_menu', 'name': this.props.name });
 		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
 			var langs = res.data.reduce(function (arr, obj) {
-				obj = _extends({}, obj, { items: [] });
+				var items = arr.filter(function (item) {
+					return item.post_name == 'language-switcher';
+				});
+				obj = _extends({}, obj, { items: items });
 				arr = [].concat(_toConsumableArray(arr), [obj]);
 				return arr;
 			}, []);

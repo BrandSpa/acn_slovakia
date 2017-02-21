@@ -15,7 +15,8 @@ const Menu = React.createClass({
 			.post('/wp-admin/admin-ajax.php', data)
 			.then(res =>  {
 				let langs =  res.data.reduce((arr, obj) => {
-					obj = {...obj, items: []};
+					let items = arr.filter(item => item.post_name == 'language-switcher');
+					obj = {...obj, items: items};
 					arr = [...arr, obj];
 					return arr;
 				}, []);
