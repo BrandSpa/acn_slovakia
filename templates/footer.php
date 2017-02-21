@@ -40,9 +40,9 @@
 		</div>
 	</div>
 	<div class="bs-footer__bottom--top">
-		<?php echo gett('ACN – Aid to the Church in Need gGmbH, HRB 8446 is non-profit organization officially registered in Germany and audited internationally by KPMG.') ?>
+		<h6><?php echo gett('ACN – Aid to the Church in Need gGmbH, HRB 8446 is non-profit organization officially registered in Germany and audited internationally by KPMG.') ?></h6>
 	</div>
 	<div class="bs-footer__bottom--bottom">
-
+			<img width="173" height="84" src="//acninternational.org/wp-content/uploads/2016/11/llaves-4.png" class="vc_single_image-img attachment-full" alt="llaves">
 	</div>
 </div>

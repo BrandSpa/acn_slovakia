@@ -46,8 +46,12 @@
 	&__bottom {
 		&--top {
 			background: RGBA(46, 67, 81, 1.00);
-			padding: 0.8em 0;
-			color: #808080;
+			padding: 7px 0;
+			text-align: center;
+
+			h6 {
+				color: #808080;
+			}
 		}
 	}
 

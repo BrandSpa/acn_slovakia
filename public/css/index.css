@@ -646,8 +646,10 @@ p {
 
 .bs-footer__bottom--top {
   background: RGBA(46, 67, 81, 1);
-  padding: 0.8em 0;
-  color: #808080; }
+  padding: 7px 0;
+  text-align: center; }
+  .bs-footer__bottom--top h6 {
+    color: #808080; }
 
 .bs-footer__menu {
   margin: 0;
