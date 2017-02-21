@@ -634,7 +634,8 @@ p {
   .bs-about__right h3 {
     color: RGBA(241, 54, 78, 1);
     display: block;
-    padding-bottom: 10px; }
+    padding-bottom: 10px;
+    float: left; }
     .bs-about__right h3:after {
       display: block;
       content: ' ';
