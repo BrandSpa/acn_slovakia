@@ -27,17 +27,17 @@ describe('donate amount component', () => {
 		const onlyNum = val => val;
 		const wrapper = shallow(<Amount onlyNum={onlyNum} onChange={onChange} />);
 		wrapper.find('input').at(0).simulate('change', {currentTarget: {value: 65}});
-		expect(onChange.mock.calls[0][0]).toEqual({amount: 65});
+		expect(onChange.mock.calls[0][0]).toEqual({amount: "65"});
 	})
 
 	it('should have active monthly btn', () => {
 		const wrapper = shallow(<Amount donation_type="monthly" />);
-		expect(wrapper.find('.donate_landing__type--active').length).toBe(1);
+		expect(wrapper.find('.donate_react__type--active').length).toBe(1);
 	})
 
 	it('should have active once btn', () => {
 		const wrapper = shallow(<Amount donation_type="once" />);
-		expect(wrapper.find('.donate_landing__type--active').length).toBe(1);
+		expect(wrapper.find('.donate_react__type--active').length).toBe(1);
 	})
 	
 });

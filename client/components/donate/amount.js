@@ -18,8 +18,8 @@ const amount = React.createClass({
 	},
 
 	handleAmount(e) {
-		let el = e.currentTarget;
-		let amount = onlyNum(el.value);
+		let val = e.currentTarget.value;
+		let amount = onlyNum(val);
 		this.props.onChange({amount});
 	},
 
