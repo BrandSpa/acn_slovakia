@@ -1,0 +1,15 @@
+.bs-footer {
+	display: flex;
+
+	&__left {
+		background: RGBA(60, 81, 95, 1.00);
+	}
+	&__right {
+		&--top {
+			background: RGBA(247, 247, 247, 1.00);
+		}
+		&--bottom {
+			background: RGBA(43, 58, 68, 1.00);
+		}
+	}
+}
