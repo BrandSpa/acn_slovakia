@@ -3,7 +3,7 @@ include_once str_replace('templates', '', __DIR__) . '/lib/offices_countries.php
 ?>
 
 <div class="learn-more">
-	<a class="learn-more-link" href="#learnmore">LEARN MORE ABOUT AID TO THE CHURCH IN NEED</a>
+	<a class="learn-more-link" href="#learnmore"><?php echo gett('LEARN MORE ABOUT AID TO THE CHURCH IN NEED') ?></a>
 </div>
 
 <?php 
@@ -50,7 +50,7 @@ echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="office
 		</div>
 		<div class="bs-footer__right--bottom">
 		<div>
-			<h5>Contact</h5>
+			<h5><?php echo gett('Contact') ?></h5>
 			<h6>ACN International</h6>
 			<h6>Aid to the Church in Need gGmbH</h6>
 			<h6>Westerbachstraße 23</h6>
@@ -61,8 +61,8 @@ echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="office
 			<?php echo do_shortcode('[bs_contact_info]') ?>
 		</div>
 		<div>
-			<h6><a href="#">PRIVACY POLICY</a></h6>
-			<h6><a href="#">TERMS & CONDITIONS</a></h6>
+			<h6><a href="#"><?php echo gett('PRIVACY POLICY') ?></a></h6>
+			<h6><a href="#"><?php echo gett('TERMS & CONDITIONS') ?></a></h6>
 			<h6><a href="#">KPMG</a></h6>
 		</div>
 
