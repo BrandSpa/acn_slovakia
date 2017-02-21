@@ -20,7 +20,10 @@
 .menu {
 	float: right;
 	display: none;
-
+	&--show {
+		display: block;
+	}
+	
 	&--mobile {
 		display: none;
 		height: 100%;

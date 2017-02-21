@@ -32883,7 +32883,7 @@ function setMenu() {
 	$('.menu .current-lang').append('<div class="dropdown-content"></div>');
 	var langs = $('.menu .lang-item').not($(".current-lang"));
 
-	$('.menu').css({ display: 'block' });
+	$('.menu').addClass('.menu--show');
 
 	currentLang.on('click', function (e) {
 		e.preventDefault();

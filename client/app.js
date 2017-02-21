@@ -23,7 +23,7 @@ function setMenu() {
 	$('.menu .current-lang').append('<div class="dropdown-content"></div>');
 	let langs = $('.menu .lang-item').not( $(".current-lang") );
 
-	$('.menu').css({display: 'block'});
+	$('.menu').addClass('.menu--show');
 
 	currentLang.on('click', (e) => {
 		e.preventDefault();
