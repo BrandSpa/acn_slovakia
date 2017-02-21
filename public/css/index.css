@@ -433,7 +433,9 @@ body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px;
-  transition: margin 300ms; }
+  transition: margin 300ms;
+  position: relative;
+  left: 0; }
   @media (max-width: 767px) {
     body {
       font-size: 12px; } }
