@@ -20,7 +20,7 @@ const Menu = React.createClass({
 		return (
 			<ul className="menu">
 				{this.state.items.map((item, i) => {
-					return <li><a href={item.url}>{item.title}</a></li>
+					return <li key={i}><a href={item.url}>{item.title}</a></li>
 				})}
 			</ul>
 		)

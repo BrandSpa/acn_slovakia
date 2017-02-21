@@ -32958,7 +32958,7 @@ var Menu = _react2.default.createClass({
 			this.state.items.map(function (item, i) {
 				return _react2.default.createElement(
 					'li',
-					null,
+					{ key: i },
 					_react2.default.createElement(
 						'a',
 						{ href: item.url },
