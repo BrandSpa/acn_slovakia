@@ -5,18 +5,17 @@
         <?php endif; ?>
      </a>
 
-	<div class="bs-menu-container" data-props='{"name": "acn_int_<?php echo get_lang(); ?>"}'></div>
-	<!--<ul class="menu">
+	<ul class="menu">
 	  <?php
 			$args = array(
-            'theme_location' => 'header',
-            'container' => false,
-            'echo' => false
-			);
+        'theme_location' => 'header',
+        'container' => false,
+        'echo' => false
+		);
 
 			$menu = wp_nav_menu( $args);
     	echo clean_menu($menu);
     ?>
-	</ul>-->
+	</ul>
 
 </div>
