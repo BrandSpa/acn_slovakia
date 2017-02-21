@@ -604,6 +604,14 @@ p {
       padding: 0;
       text-align: center;
       position: relative; } }
+  .nav__donate a {
+    font-size: 1.33333em !important;
+    border-radius: 5px;
+    border: 2px solid #F1364E;
+    padding: 15px 40px;
+    text-align: center;
+    display: block;
+    color: #F1364E !important; }
 
 @media (max-width: 767px) {
   .logo {
