@@ -14,7 +14,13 @@
 
 	&--mobile {
 		display: none;
-			
+		height: 100%;
+		position: fixed;
+		left: -200px;
+		top: 0;
+		background: #fff;
+		width: 200px;
+
 		@media #{$s} {
 			display: block;	
 		}
