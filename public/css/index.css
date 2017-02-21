@@ -614,6 +614,8 @@ p {
         display: block; } }
     .menu--mobile--open {
       left: 0; }
+    .menu--mobile li {
+      list-style: none; }
   @media (max-width: 767px) {
     .menu {
       display: none; } }
