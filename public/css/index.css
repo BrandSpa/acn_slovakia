@@ -587,6 +587,12 @@ p {
     .nav {
       text-align: center; } }
 
+.open-menu {
+  display: none; }
+  @media (max-width: 767px) {
+    .open-menu {
+      display: block; } }
+
 .menu {
   float: right; }
   .menu--mobile {

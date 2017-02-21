@@ -32912,11 +32912,12 @@ function setMenu() {
 setMenu();
 
 function setMenuMobile() {
-	$('open-menu').on('click', function () {
-		if ($('.menu--mobile').hasClass('.menu--mobile--open')) {
-			$('.menu--mobile').removeClass('.menu--mobile--open');
+	$('.open-menu').on('click', function () {
+
+		if ($('.menu--mobile').hasClass('menu--mobile--open')) {
+			$('.menu--mobile').removeClass('menu--mobile--open');
 		} else {
-			$('.menu--mobile').addClass('.menu--mobile--open');
+			$('.menu--mobile').addClass('menu--mobile--open');
 		}
 	});
 }

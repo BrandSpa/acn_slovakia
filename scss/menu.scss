@@ -9,6 +9,13 @@
 	}
 }
 
+.open-menu {
+	display: none;
+	@media #{$s} {
+		display: block;	
+	}
+}
+
 .menu {
 	float: right;
 
