@@ -617,7 +617,8 @@ p {
     height: 400px;
     background: RGBA(60, 81, 95, 1); }
   .bs-footer__right {
-    height: 400px; }
+    height: 400px;
+    padding-left: 0; }
     .bs-footer__right--top {
       height: 200px;
       background: RGBA(247, 247, 247, 1); }
