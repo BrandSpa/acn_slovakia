@@ -7,9 +7,9 @@ function gett($text) {
 	return $text;
 }
 
-function register_translation($text, $group = 'BS', $multiline = true) {
+function register_translation($name ='', $text, $group = 'BS', $multiline = true) {
 	if(function_exists('pll_register_string')) {
-		pll_register_string( $text, $text, $group, $multiline );
+		pll_register_string( $name, $text, $group, $multiline );
 	}
 }
 
@@ -18,6 +18,6 @@ $translations = [
 	'Founded in 1947 as a Catholic aid organization for war refugees and recognized as a papal foundation since 2011, ACN is dedicated to the service of Christians around the world, through information, prayer and action, wherever they are persecuted or oppressed or suffering material need. ACN supports every year an average of 6000 projects in close to 150 countries, thanks to private donations, as the foundation receives no public funding.'
 ];
 
-foreach($translations as $trans) {
-	register_translation($trans);
+foreach($translations as $key => $trans) {
+	register_translation($key, $trans);
 }
