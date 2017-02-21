@@ -619,8 +619,10 @@ p {
   .bs-footer__right {
     height: 400px; }
     .bs-footer__right--top {
+      height: 200px;
       background: RGBA(247, 247, 247, 1); }
     .bs-footer__right--bottom {
+      height: 200px;
       background: RGBA(43, 58, 68, 1); }
 
 .slider {
