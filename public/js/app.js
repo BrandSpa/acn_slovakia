@@ -32955,7 +32955,7 @@ var Menu = _react2.default.createClass({
 				arr = [].concat(_toConsumableArray(arr), [obj]);
 				return arr;
 			}, []);
-			console.log(lags);
+			console.log(langs);
 		});
 	},
 	render: function render() {

@@ -19,7 +19,7 @@ const Menu = React.createClass({
 					arr = [...arr, obj];
 					return arr;
 				}, []);
-				console.log(lags);
+				console.log(langs);
 			});
 	},
 
