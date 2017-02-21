@@ -646,7 +646,7 @@ p {
     float: left;
     width: 100%;
     line-height: 2; }
-    @media (min-width: 992px) and (max-width: 1199px) {
+    @media (min-width: 992px) and (max-width: 1199px), (min-width: 1200px) {
       .bs-about__right p {
         padding-right: 300px; } }
 

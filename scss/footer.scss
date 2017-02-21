@@ -31,7 +31,8 @@
 				float: left;
 				width: 100%;
 				line-height: 2;
-				@media #{$l} {
+
+				@media #{$l}, #{$xl} {
 					padding-right: 300px; 
 				}
 			}
