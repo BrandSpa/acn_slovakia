@@ -32918,6 +32918,10 @@ function setMenu() {
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
@@ -32965,6 +32969,8 @@ var Menu = _react2.default.createClass({
 		);
 	}
 });
+
+exports.default = Menu;
 
 /***/ })
 /******/ ]);
