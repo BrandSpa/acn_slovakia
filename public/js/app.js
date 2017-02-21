@@ -32887,11 +32887,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _set_menu2.default)();
 (0, _set_menu_mobile2.default)();
 
-$('.bs-donate').on('click', function (e) {
-	e.preventDefault();
-	console.log('donate');
-});
-
 /***/ }),
 /* 315 */,
 /* 316 */

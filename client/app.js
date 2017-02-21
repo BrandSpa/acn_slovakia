@@ -20,8 +20,3 @@ multipleRender(".bs-donate-react", Donate);
 
 setMenu();
 setMenuMobile();
-
-$('.bs-donate').on('click', (e) => {
-	e.preventDefault();
-	console.log('donate');
-});
