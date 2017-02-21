@@ -620,7 +620,8 @@ p {
       margin-bottom: 0 !important; } }
 
 .bs-about__left {
-  text-align: right; }
+  text-align: right;
+  padding: 40px 0 0 0; }
 
 .bs-about__right {
   padding: 40px; }
