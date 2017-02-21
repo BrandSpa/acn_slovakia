@@ -24,6 +24,8 @@ function setMenu() {
 	$('.menu .current-lang').addClass('dropdown');
 	$('.menu .current-lang').append('<div class="dropdown-content"></div>');
 	let langs = $('.menu .lang-item').not( $(".current-lang") );
+	
+	$('.menu').css({display: 'block'});
 
 	currentLang.on('click', (e) => {
 		e.preventDefault();
@@ -52,7 +54,7 @@ function setMenuMobile() {
 	$('.open-menu').on('click', () => {
 		
 		if($('.menu--mobile').hasClass('menu--mobile--open')) {
-			$(document.body).removeClass('menu-open')
+			$(document.body).removeClass('menu-open');
 			$('.menu--mobile').removeClass('menu--mobile--open');
 		} else {
 			$(document.body).addClass('menu-open');

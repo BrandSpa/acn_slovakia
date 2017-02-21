@@ -19,7 +19,8 @@
 
 .menu {
 	float: right;
-
+	display: none;
+	
 	&--mobile {
 		display: none;
 		height: 100%;

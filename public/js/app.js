@@ -32888,6 +32888,8 @@ function setMenu() {
 	$('.menu .current-lang').append('<div class="dropdown-content"></div>');
 	var langs = $('.menu .lang-item').not($(".current-lang"));
 
+	$('.menu').css({ display: 'block' });
+
 	currentLang.on('click', function (e) {
 		e.preventDefault();
 		var $dropdown = $menu.find('.dropdown-content');

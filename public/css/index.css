@@ -600,7 +600,8 @@ p {
       display: block; } }
 
 .menu {
-  float: right; }
+  float: right;
+  display: none; }
   .menu--mobile {
     display: none;
     height: 100%;
