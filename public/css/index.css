@@ -643,6 +643,8 @@ p {
     padding: 0; }
     .bs-footer__menu li {
       list-style: none; }
+      .bs-footer__menu li a {
+        color: #3c515f; }
 
 .slider {
   width: 100%;
