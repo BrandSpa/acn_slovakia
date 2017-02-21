@@ -48,6 +48,7 @@ echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="office
 				?>
 			</ul>
 		</div>
+		
 		<div class="bs-footer__right--bottom">
 			<div class="col-3-l">
 				<h5><?php echo gett('Contact') ?></h5>
@@ -57,9 +58,11 @@ echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="office
 				<h6>61476 Kronberg</h6>
 				<h6>Ph.: +49-6174-291-0</h6>
 			</div>
+
 			<div class="col-3-l">
 				<?php echo do_shortcode('[bs_contact_info]') ?>
 			</div>
+
 			<div class="col-6-l">
 				<h6><a href="#"><?php echo gett('PRIVACY POLICY') ?></a></h6>
 				<h6><a href="#"><?php echo gett('TERMS & CONDITIONS') ?></a></h6>

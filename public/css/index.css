@@ -669,15 +669,19 @@ p {
     width: 100%;
     height: 200px;
     background: RGBA(247, 247, 247, 1);
-    padding: 40px;
-    display: -ms-flexbox;
-    display: flex; }
+    padding: 40px; }
+    @media (max-width: 767px) {
+      .bs-footer__right--top {
+        height: auto; } }
   .bs-footer__right--bottom {
     width: 100%;
     height: 200px;
     background: RGBA(43, 58, 68, 1);
     color: #fff;
     padding: 40px; }
+    @media (max-width: 767px) {
+      .bs-footer__right--bottom {
+        height: auto; } }
     .bs-footer__right--bottom a {
       color: #fff; }
 

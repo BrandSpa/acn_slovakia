@@ -69,7 +69,10 @@
 			height: 200px;
 			background: RGBA(247, 247, 247, 1.00);
 			padding: 40px;
-			display: flex;
+			
+			@media #{$s} {
+				height: auto;
+			}
 
 		}
 
@@ -79,6 +82,10 @@
 			background: RGBA(43, 58, 68, 1.00);
 			color: #fff;
 			padding: 40px;
+
+			@media #{$s} {
+				height: auto;
+			}
 
 			a {
 				color: #fff;
