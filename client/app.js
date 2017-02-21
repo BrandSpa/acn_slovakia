@@ -17,23 +17,26 @@ multipleRender(".bs-posts", Posts);
 multipleRender(".bs-donate-react", Donate);
 
 function setMenu() {
+	const $menu = $('.menu');
 	const currentLang = $('.menu .current-lang > a');
 	$('.menu .current-lang').addClass('dropdown');
 	$('.menu .current-lang').append('<div class="dropdown-content"></div>');
-	let langs = $('.lang-item').not( $(".current-lang") );
+	let langs = $('.menu .lang-item').not( $(".current-lang") );
 
 	currentLang.on('click', (e) => {
 		e.preventDefault();
-		if($('.dropdown-content').hasClass('dropdown-content--show')) {
-			$('.dropdown-content').removeClass('dropdown-content--show');
+		const $dropdown = $menu.find('.dropdown-content');
+		
+		if($dropdown.hasClass('dropdown-content--show')) {
+			$dropdown.removeClass('dropdown-content--show');
 			return;
 		}
 		
-		$('.dropdown-content').addClass('dropdown-content--show');
+		$dropdown.addClass('dropdown-content--show');
 	});
 
 	langs.each(function() {
-		$('.dropdown-content').append($(this).html());
+		$menu.find('.dropdown-content').append($(this).html());
 		$(this).remove();
 	});
 
