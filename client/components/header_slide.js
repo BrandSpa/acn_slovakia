@@ -11,7 +11,14 @@ const headerSlide = React.createClass({
 	render() {
 		const {imgUrl, title, subtitle, url, width, height} = this.props;
 		let bg = `url(${imgUrl})`;
-		let style = {'backgroundImage': bg, backgroundSize: 'cover','cursor': 'pointer', width, height};
+		let style = {
+			backgroundImage: bg, 
+			backgroundSize: 'cover',
+			backgroundPosition: 'center',
+			cursor: 'pointer', 
+			width,
+			height
+		};
 
 		return (
 			<div>

@@ -3,6 +3,7 @@
     position: relative;
     transition: left 400ms ease;
 		overflow: hidden;
+
 		&__viewport {
     	width: 100%;
     	position: relative;
@@ -11,7 +12,7 @@
   	}
 		
 		&__slide {
-   	 width: 100%;
+   	 	width: 100%;
 			background: #274F5E;
 			display: flex;
 			float: left;
@@ -37,8 +38,9 @@
 			text-align: center;
 			color: #ffffff;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59);
+
 			@media #{$s} {
-				font-size: 2em;
+				font-size: 3em;
 			}
 		}
 
@@ -55,9 +57,10 @@
 			text-align: center;
 			color: #ffffff;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59);
+
 			@media #{$s} {
 				width: 70%;
-				font-size: 1.5em;
+				font-size: 1em;
 				line-height: 1.5;
 			}
 		}
