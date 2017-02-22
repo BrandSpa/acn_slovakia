@@ -46,7 +46,7 @@ function donate_redirect() {
   $country = getCountry();
   
   if(in_array($country, getOfficesCountries)) {
-    $res = get_option('donate_link');
+    $res = get_option('donate_url_'. str_replace(' ', '_', $country));
   } else {
     $res = '#donate';
   }
