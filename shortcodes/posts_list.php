@@ -31,7 +31,7 @@ function bs_posts_list_sc($atts, $content = null) {
 				</div>
 			</div>
 
-		<? else: ?>
+		<?php else: ?>
 
 			<div class="bs-post-list__item">
 				<div class="bs-post-list__item__img" style="background: #E5A612 cover; height: 400px">
@@ -42,7 +42,7 @@ function bs_posts_list_sc($atts, $content = null) {
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
 		</div>
-		
+
 	<?php endif; ?>
 
 	
