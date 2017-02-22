@@ -1,11 +1,27 @@
-.bs-post-list__main {
-	&__img {
-		float: left;
-		width: 30%;
+.bs-post-list {
+	&__main {
+		&__img {
+			float: left;
+			width: 30%;
+		}
+
+		&__content {
+			float: left;
+			width: 70%;
+		}
 	}
 
-	&__content {
-		float: left;
-		width: 70%;
+	&__item {
+			&__img {
+				float: left;
+				width: 30%;
+			}
+
+			&__content {
+				float: left;
+				width: 70%;
+			}
 	}
+
+
 }
