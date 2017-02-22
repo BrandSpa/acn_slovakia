@@ -32995,7 +32995,7 @@ exports.default = function () {
 
 		var data = _qs2.default.stringify({ action: 'donate_redirect' });
 
-		_axios2.default.post('/wp-admin/admin-ajax.php', data).done(function (res) {
+		_axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
 			return window.location = res.data;
 		});
 	});

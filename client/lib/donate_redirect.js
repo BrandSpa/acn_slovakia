@@ -10,6 +10,6 @@ export default () => {
 
 		request
 		.post('/wp-admin/admin-ajax.php', data)
-		.done(res => window.location = res.data);
+		.then(res => window.location = res.data);
 	});
 };
