@@ -30,8 +30,10 @@ function bs_posts_list_sc($atts, $content = null) {
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
 			</div>
-	<?php endif; ?>
-		<div class="bs-post-list__item">
+
+		<? else: ?>
+
+			<div class="bs-post-list__item">
 				<div class="bs-post-list__item__img" style="background: #E5A612 cover; height: 400px">
 					<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 				</div>
@@ -40,6 +42,10 @@ function bs_posts_list_sc($atts, $content = null) {
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
 		</div>
+		
+	<?php endif; ?>
+
+	
 
 <?php endforeach; ?>
 </div>
