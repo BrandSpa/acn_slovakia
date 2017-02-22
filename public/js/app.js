@@ -32949,6 +32949,10 @@ var _set_menu_mobile = __webpack_require__(129);
 
 var _set_menu_mobile2 = _interopRequireDefault(_set_menu_mobile);
 
+var _donate_redirect = __webpack_require__(317);
+
+var _donate_redirect2 = _interopRequireDefault(_donate_redirect);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
@@ -32961,6 +32965,41 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _set_menu2.default)();
 (0, _set_menu_mobile2.default)();
+(0, _donate_redirect2.default)();
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _axios = __webpack_require__(38);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _qs = __webpack_require__(42);
+
+var _qs2 = _interopRequireDefault(_qs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+	$('.bs-donate').on('click', function (e) {
+		e.preventDefault();
+		if (ga) ga('send', 'event', 'DONATION', 'DONATION_CLICK', 'DONATION_CLICK', 0);
+
+		var data = _qs2.default.stringify({ action: 'donate_redirect' });
+
+		_axios2.default.post('/wp-admin/admin-ajax.php', data).done(function (res) {
+			return window.location = res.data;
+		});
+	});
+};
 
 /***/ })
 /******/ ]);

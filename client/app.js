@@ -9,6 +9,7 @@ import Posts from './components/posts';
 import Donate from './components/donate';
 import setMenu from './lib/set_menu';
 import setMenuMobile from './lib/set_menu_mobile';
+import donateRedirect from './lib/donate_redirect';
 
 multipleRender(".contact-form", ContactForm);
 multipleRender(".header-slider", HeaderSlider);
@@ -20,3 +21,4 @@ multipleRender(".bs-donate-react", Donate);
 
 setMenu();
 setMenuMobile();
+donateRedirect();

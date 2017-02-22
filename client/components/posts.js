@@ -107,7 +107,8 @@ const Posts = React.createClass({
 						background: 'transparent', 
 						color: '#3C515F',
 						borderColor: '#3C515F'
-					} : {display: 'none'}}
+					} : {display: 'none'}
+					}
 				>
 					See more
 				</button>
