@@ -45,7 +45,7 @@ add_action( 'wp_ajax_donate_redirect', 'donate_redirect' );
 function donate_redirect() {
   $country = getCountry();
   
-  if(in_array($country, getOfficesCountries)) {
+  if(in_array($country, getOfficesCountries())) {
     $res = get_option('donate_url_'. str_replace(' ', '_', $country));
   } else {
     $res = '#donate';
