@@ -22,7 +22,7 @@ function bs_posts_list_sc($atts, $content = null) {
 
 		<?php if($counter == 1): ?>
 			<div class="bs-post-list__main">
-				<div class="bs-post-list__main__img" style="background: #E5A612 cover; height: 400px">
+				<div class="bs-post-list__main__img" style="background: #E5A612; height: 400px">
 					<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 				</div>
 				<div class="bs-post-list__main__content" style="height: 400px">
