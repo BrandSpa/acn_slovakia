@@ -2,9 +2,9 @@
 
 function bs_posts_list_sc($atts, $content = null) {
 	$attributes = [
-    'see_more' => '',
-		'read_more' => '',
-		'latest_new' => ''
+		'read_more' => 'Read more',
+		'latest_new' => '',
+		'all_the_latest' => ''
   ];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -13,18 +13,21 @@ function bs_posts_list_sc($atts, $content = null) {
   $recent_posts = get_posts( $args );
   ob_start();
 ?>
+
 <?php $counter = 0; ?>
+
 <div class="bs-posts-list">
 <?php  foreach($recent_posts as $post): ?>
-	<?php echo $counter++; ?>
+	<?php $counter++; ?>
 
 		<?php if($counter == 1): ?>
 			<div class="bs-post-list__main">
-				<div class="bs-post-list__main__img" style="background: url() ##E5A612 cover; height: 400px">
-				
+				<div class="bs-post-list__main__img" style="background: #E5A612 cover; height: 400px">
+					<?php echo get_post_thumbnail_id($post->ID) ?>
 				</div>
 				<div class="bs-post-list__main__content" style="height: 400px">
 					<h3><?php echo $post->post_title ?></h3>
+					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['see_more'] ?></a>
 				</div>
 			</div>
 	<?php endif; ?>
