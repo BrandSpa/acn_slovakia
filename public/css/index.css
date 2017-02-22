@@ -1264,3 +1264,11 @@ a:hover {
     @media (min-width: 768px) and (max-width: 991px) {
       .bs-post__content {
         width: 80%; } }
+
+.bs-post-list__main__img {
+  float: left;
+  width: 30%; }
+
+.bs-post-list__main__content {
+  float: left;
+  width: 70%; }
