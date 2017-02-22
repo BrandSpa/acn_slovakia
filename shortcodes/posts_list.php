@@ -13,11 +13,12 @@ function bs_posts_list_sc($atts, $content = null) {
   $recent_posts = get_posts( $args );
   ob_start();
 ?>
-<?php $first = 0; ?>
+<?php $counter = 0; ?>
 <div class="bs-posts-list">
 <?php  foreach($recent_posts as $post): ?>
-	<?php $first = $first + 1;  ?>
-		<?php if($first == 1): ?>
+	<?php $counter++; ?>
+
+		<?php if($counter == 1): ?>
 			<div class="bs-post-list__main">
 				<div class="bs-post-list__main__img" style="background: url() ##E5A612 cover; height: 400px">
 				
@@ -27,6 +28,7 @@ function bs_posts_list_sc($atts, $content = null) {
 				</div>
 			</div>
 	<?php endif; ?>
+
 <?php endforeach; ?>
 </div>
 
