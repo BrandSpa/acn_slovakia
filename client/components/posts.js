@@ -101,7 +101,13 @@ const Posts = React.createClass({
 				
 				<button 
 					onClick={this.seeMore} 
-					style={this.state.seeMore ? {display: 'block', margin: '30px auto', background: '#fff', color: '#F4334A'} : {display: 'none'}}
+					style={this.state.seeMore ? {
+						display: 'block', 
+						margin: '30px auto', 
+						background: 'transparent', 
+						color: '#3C515F',
+						borderColor: '#3C515F'
+					} : {display: 'none'}}
 				>
 					See more
 				</button>
