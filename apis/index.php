@@ -43,7 +43,16 @@ add_action( 'wp_ajax_nopriv_donate_redirect', 'donate_redirect' );
 add_action( 'wp_ajax_donate_redirect', 'donate_redirect' );
 
 function donate_redirect() {
-  echo get_option('donate_link');
+  $country = getCountry();
+  
+  if(in_array($country, getOfficesCountries)) {
+    $res = get_option('donate_link');
+  } else {
+    $res = '#donate';
+  }
+
+  header('Content-type: application/json');
+  echo json_encode($res);
   die();
 }
 
