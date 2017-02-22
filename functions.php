@@ -43,6 +43,7 @@ require('shortcodes/accordion.php');
 require('shortcodes/donate.php');
 require('shortcodes/posts.php');
 require('shortcodes/contact_info.php');
+require('shortcodes/posts_list.php');
 
 function get_lang() {
 	if(function_exists('pll_current_language')) {

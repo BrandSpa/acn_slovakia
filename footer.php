@@ -23,8 +23,7 @@
 
   ga('create', '<?php echo get_option('analytics_id') ?>', 'auto');
   ga('send', 'pageview');
-  ga('require', 'ecommerce');
-
+   ga('require', 'ecommerce');
   </script>
 <!-- End Google Analytics -->
 </body>

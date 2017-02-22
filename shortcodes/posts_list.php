@@ -1,0 +1,72 @@
+<?php
+
+function bs_posts_list_sc($atts, $content = null) {
+	$attributes = [
+    'see_more' => '',
+		'read_more' => '',
+		'latest_new' => ''
+  ];
+
+  $at = shortcode_atts( $attributes , $atts );
+	$args = array( 'posts_per_page' => 7);
+
+  $recent_posts = get_posts( $args );
+  ob_start();
+?>
+<?php $first = 0; ?>
+<div class="bs-posts-list">
+<?php  foreach($recent_posts as $post): ?>
+	<?php $first = $first + 1;  ?>
+		<?php if($first == 1): ?>
+			<div class="bs-post-list__main">
+				<div class="bs-post-list__main__img" style="background: url() ##E5A612 cover; height: 400px">
+				
+				</div>
+				<div class="bs-post-list__main__content" style="height: 400px">
+					<h3><?php echo $post->post_title ?></h3>
+				</div>
+			</div>
+	<?php endif; ?>
+<?php endforeach; ?>
+</div>
+
+<?php
+
+  return ob_get_clean();
+}
+
+add_shortcode( 'bs_posts_list', 'bs_posts_list_sc' );
+add_action( 'vc_before_init', 'bs_posts_list_vc' );
+
+  function bs_posts_list_vc() {
+		$params = [
+      [
+        "type" => "textfield",
+        "heading" => "Read More",
+        "param_name" => "read_more",
+        "value" => ''
+			],
+			[
+				"type" => "textfield",
+        "heading" => "Latest New",
+        "param_name" => "latest_new",
+        "value" => ''
+			],
+			[
+				"type" => "textfield",
+        "heading" => "All the Latest",
+        "param_name" => "all_the_latest",
+        "value" => ''
+			]
+		];
+
+  	vc_map(
+      array(
+        "name" =>  "BS posts list",
+        "base" => "bs_posts_list_list",
+        "category" =>  "BS",
+        "params" => $params
+      ) 
+    );
+  }
+
