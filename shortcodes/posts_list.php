@@ -65,7 +65,7 @@ add_action( 'vc_before_init', 'bs_posts_list_vc' );
   	vc_map(
       array(
         "name" =>  "BS posts list",
-        "base" => "bs_posts_list_list",
+        "base" => "bs_posts_list_sc",
         "category" =>  "BS",
         "params" => $params
       ) 
