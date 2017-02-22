@@ -23,11 +23,11 @@ function bs_posts_list_sc($atts, $content = null) {
 		<?php if($counter == 1): ?>
 			<div class="bs-post-list__main">
 				<div class="bs-post-list__main__img" style="background: #E5A612 cover; height: 400px">
-					<?php echo get_post_thumbnail_id($post->ID) ?>
+					<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
 				</div>
 				<div class="bs-post-list__main__content" style="height: 400px">
 					<h3><?php echo $post->post_title ?></h3>
-					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['see_more'] ?></a>
+					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
 			</div>
 	<?php endif; ?>
