@@ -2,7 +2,7 @@
 
 function bs_posts_list_sc($atts, $content = null) {
 	$attributes = [
-		'read_more' => 'Read more',
+		'read_more' => 'Read More',
 		'latest_news' => 'Latest news',
 		'all_the_latest' => 'All the latest',
 		'next' => 'next',
