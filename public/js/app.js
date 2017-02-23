@@ -14202,6 +14202,9 @@ var Projects = _react2.default.createClass({
 	componentDidMount: function componentDidMount() {
 		var _this = this;
 
+		var patt = new RegExp(/#projects-[1-9]/);
+		console.log(patt.test(window.location.hash));
+
 		window.addEventListener("resize", function (event) {
 			_this.moveArrow(_this.state.section);
 		});

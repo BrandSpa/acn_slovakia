@@ -24,6 +24,9 @@ const Projects = React.createClass({
 	},
 
 	componentDidMount() {
+		let patt = new RegExp(/#projects-[1-9]/);
+		console.log(patt.test(window.location.hash));
+
 		 window.addEventListener("resize", (event) => {
 			this.moveArrow(this.state.section);
 		});
