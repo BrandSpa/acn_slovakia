@@ -1275,6 +1275,8 @@ a:hover {
         padding-bottom: 20px; }
       .bs-post__recent__content p {
         color: #9B9B9B; }
+      .bs-post__recent__content a {
+        color: #D0011B; }
   .bs-post__donate {
     background: #3C515F;
     padding: 40px 0; }
