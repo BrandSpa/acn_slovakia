@@ -10,7 +10,8 @@ $general = [
 	'PRIVACY POLICY',
 	'TERMS & CONDITIONS',
 	'Read more',
-	'Latest news'
+	'Latest news',
+	'ACN International in the world'
 ];
 
 foreach($general as $key => $trans) {

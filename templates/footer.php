@@ -15,7 +15,7 @@ foreach(getOfficesCountries() as $office) {
 	}
 };
 
-echo do_shortcode('[bs_accordion btn_title="ACN International"]<ul class="offices-list">'. $offices .'</ul>[/bs_accordion]') ?>
+echo do_shortcode('[bs_accordion btn_title="'.gett('ACN International in the world').'"]<ul class="offices-list">'. $offices .'</ul>[/bs_accordion]') ?>
 
 <div class="bs-about">
 	<div class="col-3-l bs-about__left">
