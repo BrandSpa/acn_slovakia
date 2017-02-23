@@ -1305,7 +1305,14 @@ a:hover {
       padding: 80px 160px 80px 80px; }
       .bs-posts-list__main__content h2 {
         font-size: 2.33333em;
-        color: #fff; }
+        color: #fff;
+        display: inline-block; }
+        .bs-posts-list__main__content h2:after {
+          display: block;
+          content: '';
+          padding-bottom: 20px;
+          width: 40%;
+          border-bottom: solid 1px #d0011b; }
       .bs-posts-list__main__content p {
         color: #f8f8f8; }
   .bs-posts-list__item {
@@ -1336,10 +1343,10 @@ a:hover {
         color: #2e404c;
         display: inline-block; }
         .bs-posts-list__item__content h2:after {
-          display: inline-block;
+          display: block;
           content: '';
           padding-bottom: 20px;
           width: 40%;
-          border: solid 1px #d0011b; }
+          border-bottom: solid 1px #d0011b; }
       .bs-posts-list__item__content p {
         color: #9b9b9b; }

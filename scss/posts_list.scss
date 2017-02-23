@@ -49,6 +49,15 @@
 			h2 {
 				font-size: (35 / 15) * 1em;
 				color: #fff;
+				display: inline-block;
+				
+				&:after {
+						display: block;
+						content: '';
+						padding-bottom: 20px;
+						width: 40%;
+						border-bottom: solid 1px #d0011b;
+					}
 			}
 
 			p {
@@ -91,11 +100,11 @@
 					display: inline-block;
 
 					&:after {
-						display: inline-block;
+						display: block;
 						content: '';
 						padding-bottom: 20px;
 						width: 40%;
-						border: solid 1px #d0011b;
+						border-bottom: solid 1px #d0011b;
 					}
 				}
 				p {
