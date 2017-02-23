@@ -1266,10 +1266,12 @@ a:hover {
         width: 80%; } }
 
 .bs-post-list {
-  float: left; }
+  float: left;
+  width: 100%; }
   .bs-post-list__main {
     float: left;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    width: 100%; }
     .bs-post-list__main__img {
       float: left;
       width: 30%;
@@ -1286,7 +1288,8 @@ a:hover {
         color: #f8f8f8; }
   .bs-post-list__item {
     float: left;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    width: 100%; }
     .bs-post-list__item__img {
       float: left;
       width: 30%;

@@ -1,9 +1,11 @@
 .bs-post-list {
 	float: left;
-	
+	width: 100%;
+
 	&__main {
 		float: left;
 		margin-bottom: 40px;
+		width: 100%;
 		&__img {
 			float: left;
 			width: 30%;
@@ -30,7 +32,8 @@
 	&__item {
 		float: left;
 		margin-bottom: 40px;
-
+		width: 100%;
+		
 			&__img {
 				float: left;
 				width: 30%;
