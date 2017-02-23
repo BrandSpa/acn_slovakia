@@ -74,6 +74,10 @@ const Posts = React.createClass({
 		}
 	},
 
+	goToPosts() {
+		window.location = '#posts';
+	},
+
 	render() {
 		const { posts } = this.state;
 
@@ -100,7 +104,7 @@ const Posts = React.createClass({
 				</div>
 				
 				<button 
-					onClick={this.seeMore} 
+					onClick={this.goToPosts} 
 					style={this.state.seeMore ? {
 						display: 'block', 
 						margin: '30px auto', 
