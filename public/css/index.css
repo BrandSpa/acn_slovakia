@@ -1245,6 +1245,8 @@ a:hover {
   .bs-post__header__title {
     padding-bottom: 70px;
     border-bottom: 1px solid #D0011B; }
+    .bs-post__header__title h2 {
+      color: #3C515F; }
   .bs-post__header--image {
     position: relative;
     min-height: 400px;

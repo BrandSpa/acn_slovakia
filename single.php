@@ -4,7 +4,7 @@
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php if(get_the_post_thumbnail_url($post->ID, 'full')): ?>
 <?php else: ?>
-	<div class="bs-post__header ">
+	<div class="bs-post__header col-12-l">
 		<div class="bs-post__header__title">
 			<h2><?php the_title() ?></h2>
 		</div>
