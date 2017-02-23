@@ -1301,11 +1301,11 @@ a:hover {
     .bs-post-list__item__img {
       float: left;
       width: 35%;
-      height: 400px; }
+      height: 240px; }
     .bs-post-list__item__content {
       float: left;
       width: 65%;
-      height: 400px;
+      height: 240px;
       padding: 80px 160px 80px 80px;
       background: #fff; }
       .bs-post-list__item__content h2 {
