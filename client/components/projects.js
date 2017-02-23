@@ -72,6 +72,12 @@ const Projects = React.createClass({
 			minHeight: '500px'
 		};
 
+		let donateStyle = {
+			background: '#fff', 
+			borderColor: '#fff', 
+			color: this.state.donateColor
+		};
+
 		return (
 			<div className="projects" ref={el => this.el = el}>
 				<ProjectsIcons ref="projectIcons" onChange={this.changeContent} />
@@ -80,7 +86,7 @@ const Projects = React.createClass({
 					<div className="col-4-l projects__content__content-left" style={styleLeft}>
 						<h4>{title}</h4>
 						<div className="projects__content__content-left__text" dangerouslySetInnerHTML={{__html: text}} />
-						<button style={{background: '#fff', borderColor: '#fff', color: this.state.donateColor}}>DONATE</button>
+						<button className="bs-donate" style={donateStyle}>DONATE</button>
 					</div>
 					<div className="col-8-l projects__content__content-right" style={styleRight}></div>
 				</div>

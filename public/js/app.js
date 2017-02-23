@@ -14250,6 +14250,12 @@ var Projects = _react2.default.createClass({
 			minHeight: '500px'
 		};
 
+		var donateStyle = {
+			background: '#fff',
+			borderColor: '#fff',
+			color: this.state.donateColor
+		};
+
 		return _react2.default.createElement(
 			'div',
 			{ className: 'projects', ref: function ref(el) {
@@ -14271,7 +14277,7 @@ var Projects = _react2.default.createClass({
 					_react2.default.createElement('div', { className: 'projects__content__content-left__text', dangerouslySetInnerHTML: { __html: text } }),
 					_react2.default.createElement(
 						'button',
-						{ style: { background: '#fff', borderColor: '#fff', color: this.state.donateColor } },
+						{ className: 'bs-donate', style: donateStyle },
 						'DONATE'
 					)
 				),
