@@ -9,7 +9,8 @@ $general = [
 	'Contact',
 	'PRIVACY POLICY',
 	'TERMS & CONDITIONS',
-	'Read more'
+	'Read more',
+	'Latest news'
 ];
 
 foreach($general as $key => $trans) {
