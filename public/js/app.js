@@ -16020,7 +16020,7 @@ var ProjectsIcons = _react2.default.createClass({
 						{ className: "projects__icons" },
 						_react2.default.createElement(
 								"li",
-								null,
+								{ id: "projects-1" },
 								_react2.default.createElement(
 										"a",
 										{ onClick: this.changeContent.bind(null, 1), href: "#" },
@@ -16048,7 +16048,7 @@ var ProjectsIcons = _react2.default.createClass({
 						),
 						_react2.default.createElement(
 								"li",
-								null,
+								{ id: "projects-2" },
 								_react2.default.createElement(
 										"a",
 										{ onClick: this.changeContent.bind(null, 2), href: "#" },
@@ -16062,7 +16062,7 @@ var ProjectsIcons = _react2.default.createClass({
 						),
 						_react2.default.createElement(
 								"li",
-								null,
+								{ id: "projects-3" },
 								_react2.default.createElement(
 										"a",
 										{ onClick: this.changeContent.bind(null, 3), href: "#" },
@@ -16076,7 +16076,7 @@ var ProjectsIcons = _react2.default.createClass({
 						),
 						_react2.default.createElement(
 								"li",
-								null,
+								{ id: "projects-4" },
 								_react2.default.createElement(
 										"a",
 										{ onClick: this.changeContent.bind(null, 4), href: "#" },
@@ -16090,7 +16090,7 @@ var ProjectsIcons = _react2.default.createClass({
 						),
 						_react2.default.createElement(
 								"li",
-								null,
+								{ id: "projects-5" },
 								_react2.default.createElement(
 										"a",
 										{ onClick: this.changeContent.bind(null, 5), href: "#" },
@@ -16104,7 +16104,7 @@ var ProjectsIcons = _react2.default.createClass({
 						),
 						_react2.default.createElement(
 								"li",
-								null,
+								{ id: "projects-6" },
 								_react2.default.createElement(
 										"a",
 										{ onClick: this.changeContent.bind(null, 6), href: "#" },
@@ -16118,7 +16118,7 @@ var ProjectsIcons = _react2.default.createClass({
 						),
 						_react2.default.createElement(
 								"li",
-								null,
+								{ id: "projects-7" },
 								_react2.default.createElement(
 										"a",
 										{ onClick: this.changeContent.bind(null, 7), href: "#" },
@@ -16132,7 +16132,7 @@ var ProjectsIcons = _react2.default.createClass({
 						),
 						_react2.default.createElement(
 								"li",
-								null,
+								{ id: "projects-8" },
 								_react2.default.createElement(
 										"a",
 										{ onClick: this.changeContent.bind(null, 8), href: "#" },
@@ -16146,7 +16146,7 @@ var ProjectsIcons = _react2.default.createClass({
 						),
 						_react2.default.createElement(
 								"li",
-								null,
+								{ id: "projects-9" },
 								_react2.default.createElement(
 										"a",
 										{ onClick: this.changeContent.bind(null, 9), href: "#" },

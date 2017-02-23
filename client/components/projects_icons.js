@@ -9,7 +9,7 @@ const ProjectsIcons = React.createClass({
 	render() {
 		return (
 			<ul className="projects__icons">
-					<li>
+					<li id="projects-1">
 						<a onClick={this.changeContent.bind(null, 1)} href="#">
 
 						<svg width="68px" height="68px" viewBox="0 0 68 68" version="1.1">
@@ -27,7 +27,7 @@ const ProjectsIcons = React.createClass({
 						</svg>
 					</a>
 					</li>
-					<li>	
+					<li id="projects-2">	
 						<a onClick={this.changeContent.bind(null, 2)} href="#">
 							<svg width="59px" height="58px" viewBox="115 0 59 58" version="1.1" >
 									<defs></defs>
@@ -35,7 +35,7 @@ const ProjectsIcons = React.createClass({
 							</svg>
 						</a>
 					</li>
-					<li>
+					<li id="projects-3">
 						<a onClick={this.changeContent.bind(null, 3)} href="#">
 								
 							<svg width="59px" height="58px" viewBox="226 0 59 58" version="1.1">
@@ -44,7 +44,7 @@ const ProjectsIcons = React.createClass({
 							</svg>
 						</a>
 					</li>
-					<li>
+					<li id="projects-4">
 						<a onClick={this.changeContent.bind(null, 4)} href="#">
 								
 							<svg width="59px" height="58px" viewBox="337 0 59 58" version="1.1" >
@@ -54,7 +54,7 @@ const ProjectsIcons = React.createClass({
 							</svg>
 						</a>
 					</li>
-					<li>
+					<li id="projects-5">
 					<a onClick={this.changeContent.bind(null, 5)} href="#">
 
 						<svg width="59px" height="58px" viewBox="448 0 59 58" version="1.1" >
@@ -64,7 +64,7 @@ const ProjectsIcons = React.createClass({
 						</svg>
 					</a>
 					</li>
-					<li>
+					<li id="projects-6">
 					<a onClick={this.changeContent.bind(null, 6)} href="#">
 
 						<svg width="59px" height="58px" viewBox="558 0 59 58" version="1.1">
@@ -73,7 +73,7 @@ const ProjectsIcons = React.createClass({
 						</svg>
 					</a>
 					</li>
-					<li>
+					<li id="projects-7">
 					<a onClick={this.changeContent.bind(null, 7)} href="#">
 
 						<svg width="59px" height="58px" viewBox="671 0 59 58" version="1.1" >
@@ -83,7 +83,7 @@ const ProjectsIcons = React.createClass({
 						</svg>
 					</a>
 					</li>
-					<li>
+					<li id="projects-8">
 					<a onClick={this.changeContent.bind(null, 8)} href="#">
 						<svg width="59px" height="58px" viewBox="784 0 59 58" version="1.1" >
 								<defs></defs>
@@ -91,7 +91,7 @@ const ProjectsIcons = React.createClass({
 						</svg>
 					</a>
 					</li>
-					<li>
+					<li id="projects-9">
 					<a onClick={this.changeContent.bind(null, 9)} href="#">
 
 						<svg width="60px" height="59px" viewBox="896 0 60 59" version="1.1">
