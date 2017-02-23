@@ -1270,11 +1270,8 @@ a:hover {
             width: 80%; } }
   .bs-post__content {
     padding-top: 150px;
-    width: 50%;
+    float: none;
     margin: 0 auto; }
-    @media (min-width: 768px) and (max-width: 991px) {
-      .bs-post__content {
-        width: 80%; } }
 
 .bs-posts-list {
   float: left;

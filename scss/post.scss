@@ -6,7 +6,7 @@
 
 	&__header {
 		border-bottom: 1px solid #D0011B;
-		
+
 		&__title {
 			padding-bottom: 70px;
 			
@@ -44,11 +44,8 @@
 	
 	&__content {
 		padding-top: 150px;
-		width: 50%;
+		float: none;
 		margin: 0 auto;
-		@media #{$m} {
-			width: 80%;
-		}
 	}
 	
 }

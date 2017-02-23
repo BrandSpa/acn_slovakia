@@ -11,7 +11,7 @@
 	</div>
 <?php endif; ?>
 
-	<div class="bs-post__content">
+	<div class="bs-post__content col-8-l col-12-s">
 	 	<?php the_content() ?>
 	</div>
    
