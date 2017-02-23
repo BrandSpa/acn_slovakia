@@ -10,7 +10,7 @@
 	<?php endif; ?>
 
 	<div class="bs-post__recent__content">
-		<h4><?php echo substr($recent->post_title, 0, 50) ?>...</h4>
+		<h4><?php echo substr($recent->post_title, 0, 40) ?>...</h4>
 		<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, 80) ?>...</p>
 		<a href="">see more...</a>
 	</div>
