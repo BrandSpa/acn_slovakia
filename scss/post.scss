@@ -24,19 +24,17 @@
 
 			&__title {
 				position: absolute;
-				bottom: -120px;
+				bottom: 90%;
 				left: 0;
 				right: 0;
 				margin: auto;
-				width: 50%;
 				min-height: 240px;
-				background: #3C515F;
+				background: #F4F4F4;
 				text-align: center;
 				color: #fff;
 				padding: 30px;
-				@media #{$m} {
-					width: 80%;
-				}
+
+
 			}
 		}
 	
