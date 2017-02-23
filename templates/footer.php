@@ -1,10 +1,10 @@
 <?php 
 include_once str_replace('templates', '', __DIR__) . '/lib/offices_countries.php'; 
-include_once str_replace('templates', '', __DIR__) . '/apis/location.php'; 
+
 ?>
 
 <div class="learn-more">
-	<a class="learn-more-link" href="<?php echo get_option('url_' . space_to_lodash( get_country() ) ) ?>"><?php echo gett('LEARN MORE ABOUT AID TO THE CHURCH IN NEED') ?></a>
+	<a class="learn-more-link" href="<?php echo get_option('url_' . space_to_lodash( getCountry() ) ) ?>"><?php echo gett('LEARN MORE ABOUT AID TO THE CHURCH IN NEED') ?></a>
 </div>
 
 <?php 
