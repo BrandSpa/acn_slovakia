@@ -47,7 +47,13 @@ function bs_donate_react_sc($atts, $content = null) {
 <script>
   onLoad(function() {
     if(jQuery) {
-      jQuery('.donate-react__container').remove();
+      if(jQuery('.donate-react__container')) {
+        jQuery('.donate-react__container').remove();
+      }
+
+      if(jQuery('.bs-post__donate')) {
+        jQuery('.bs-post__donate').remove();
+      }
     }
   });
 </script>
