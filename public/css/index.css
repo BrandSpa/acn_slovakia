@@ -1242,8 +1242,7 @@ a:hover {
   display: block;
   position: relative; }
   .bs-post__header {
-    border-bottom: 1px solid #D0011B;
-    margin-bottom: 100px; }
+    border-bottom: 1px solid #D0011B; }
     .bs-post__header__title {
       padding-bottom: 70px; }
       .bs-post__header__title h2 {
@@ -1271,7 +1270,7 @@ a:hover {
   .bs-post__content {
     padding-top: 150px;
     float: none;
-    margin: 0 auto; }
+    margin: 100px auto; }
 
 .bs-posts-list {
   float: left;
