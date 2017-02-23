@@ -1251,7 +1251,10 @@ a:hover {
       position: relative;
       min-height: 400px;
       width: 100%;
-      border-bottom: none; }
+      border-bottom: none;
+      background-size: cover;
+      background-position: top center;
+      margin-bottom: 50%; }
       .bs-post__header--image .l-wrap {
         position: relative;
         min-height: 400px; }
@@ -1265,7 +1268,7 @@ a:hover {
         background: #F4F4F4;
         text-align: center;
         color: #3C515F;
-        padding: 30px; }
+        padding: 5% 8%; }
   .bs-post__content {
     padding-top: 150px;
     float: none;
