@@ -1262,7 +1262,8 @@ a:hover {
     margin: 0 auto 100px auto; }
   .bs-post__recent {
     width: 25%;
-    padding: 15px; }
+    padding: 15px;
+    float: left; }
     .bs-post__recent__content {
       background: #F7F7F7;
       padding: 20px; }
