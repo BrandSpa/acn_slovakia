@@ -1265,6 +1265,10 @@ a:hover {
       .bs-post__content {
         width: 80%; } }
 
+.bs-post-list__main h3 {
+  font-size: 2.33333em;
+  color: #fff; }
+
 .bs-post-list__main__img {
   float: left;
   width: 30%;

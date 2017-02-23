@@ -3,7 +3,7 @@
 function bs_posts_list_sc($atts, $content = null) {
 	$attributes = [
 		'read_more' => 'Read more',
-		'latest_new' => '',
+		'latest_news' => '',
 		'all_the_latest' => ''
   ];
 	$paged = $_GET['posts'] || 1;
@@ -17,9 +17,10 @@ function bs_posts_list_sc($atts, $content = null) {
 <?php $counter = 0; ?>
 
 <div class="bs-posts-list">
+		<?php echo  $at['latest_news']; ?>
 <?php  foreach($recent_posts as $post): ?>
 	<?php $counter++; ?>
-
+	
 		<?php if($counter == 1): ?>
 			<div class="bs-post-list__main">
 				<div class="bs-post-list__main__img" style="background-image: <?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>;background-color: #E5A612;">
@@ -27,19 +28,20 @@ function bs_posts_list_sc($atts, $content = null) {
 				</div>
 
 				<div class="bs-post-list__main__content" style="background-color: #3C515F;">
-					<h3><?php echo $post->post_title ?></h3>
+					<h2><?php echo $post->post_title ?></h2>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
 			</div>
 
 		<?php else: ?>
-
+		
+		<?php echo  $at['all_the_latest']; ?>
 			<div class="bs-post-list__item">
 				<div class="bs-post-list__item__img" style="background: #E5A612;">
 					<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 				</div>
 				<div class="bs-post-list__item__content" style="background: #fff">
-					<h3><?php echo $post->post_title ?></h3>
+					<h2><?php echo $post->post_title ?></h2>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
 		</div>
@@ -69,8 +71,8 @@ add_action( 'vc_before_init', 'bs_posts_list_vc' );
 			],
 			[
 				"type" => "textfield",
-        "heading" => "Latest New",
-        "param_name" => "latest_new",
+        "heading" => "Latest News",
+        "param_name" => "latest_news",
         "value" => ''
 			],
 			[

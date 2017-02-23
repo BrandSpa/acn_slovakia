@@ -1,5 +1,11 @@
 .bs-post-list {
 	&__main {
+
+		h3 {
+			font-size: (35 / 15) * 1em;
+			color: #fff;
+		}
+
 		&__img {
 			float: left;
 			width: 30%;
