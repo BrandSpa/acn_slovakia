@@ -88,6 +88,12 @@
 				h2 {
 					font-size: (25 / 15) * 1em;
 					color: #2e404c;
+					&:after {
+						content: ' ';
+						padding-bottom: 20px;
+						width: 40%;
+						border: solid 1px #d0011b;
+					}
 				}
 				p {
 					color: #9b9b9b;

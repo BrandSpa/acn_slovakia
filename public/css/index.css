@@ -1334,5 +1334,10 @@ a:hover {
       .bs-posts-list__item__content h2 {
         font-size: 1.66667em;
         color: #2e404c; }
+        .bs-posts-list__item__content h2:after {
+          content: ' ';
+          padding-bottom: 20px;
+          width: 40%;
+          border: solid 1px #d0011b; }
       .bs-posts-list__item__content p {
         color: #9b9b9b; }
