@@ -71,7 +71,7 @@ function show_donate() {
 }
 
 
-function get_home_url() {
+function home_url() {
 	$home = '/';
 	if(function_exists('pll_home_url')) {
 		$home = pll_home_url();
