@@ -42,7 +42,7 @@ function bs_posts_list_sc($atts, $content = null) {
 					<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 				</div>
 				<div class="bs-post-list__item__content" style="background: #fff">
-					<h2><?php echo $post->post_title ?></h2>
+					<h2><?php echo substr($post->post_title, 0, 100) ?></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 150) ?>...</p>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
