@@ -37,6 +37,7 @@ const Projects = React.createClass({
 
 		setTimeout(() => {
 			this.moveArrow(num);
+			this.changeContent(num);
 		}, 1000);
 	
 	},

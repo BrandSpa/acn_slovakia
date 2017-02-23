@@ -14215,6 +14215,7 @@ var Projects = _react2.default.createClass({
 
 		setTimeout(function () {
 			_this.moveArrow(num);
+			_this.changeContent(num);
 		}, 1000);
 	},
 	moveArrow: function moveArrow(num) {
