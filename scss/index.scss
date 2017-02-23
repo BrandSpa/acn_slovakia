@@ -152,6 +152,7 @@ p {
 	@media #{$s} {
 		padding: 20px 5px;
 	}
+
 	li {
 		display: inline-block;
 		border-right: 1px #fff solid;
@@ -191,7 +192,6 @@ p {
 	width: 70%;
 	padding: 20px;
 	margin: 0 auto;
-	border: 1px solid #fff;
 	text-decoration: none;
 	color: #fff;
 }
