@@ -49,7 +49,7 @@ function bs_posts_list_sc($atts, $content = null) {
 				</div>
 				<div class="bs-posts-list__item__content" style="background: #fff">
 					<h2><?php echo $post->post_title ?></h2>
-					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 150) ?>...</p>
+					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 120) ?>...</p>
 					<a class="bs-posts-list__item__readmore" href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?>...</a>
 				</div>
 		</div>

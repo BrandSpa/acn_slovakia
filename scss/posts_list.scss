@@ -7,7 +7,7 @@
 		float: left;
 		width: 100%;
 		margin: 40px 0;
-		font-size: (15 / 25) * 1em;
+		font-size: (25 / 15) * 1em;
 		color: #3c515f; 
 	}
 
@@ -75,6 +75,7 @@
 		&__readmore {
 			color: #d0021b;
 			text-align: right;
+			float: right;
 		}
 
 			&__img {
@@ -88,7 +89,7 @@
 			&__content {
 				float: left;
 				width: 65%;
-				padding: 40px 20% 40px 40px;
+				padding: 40px 40px 40px 40px;
 				background: #fff;
 				@media #{$s} {
 					width: 100%;
@@ -98,7 +99,7 @@
 					font-size: (25 / 15) * 1em;
 					color: #2e404c;
 					display: inline-block;
-
+					padding-right: 20%;
 					&:after {
 						display: block;
 						content: '';
@@ -109,6 +110,8 @@
 				}
 				p {
 					color: #9b9b9b;
+					display: block;
+					padding-right: 20%;
 				}
 		}
 	}
