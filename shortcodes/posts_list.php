@@ -62,7 +62,7 @@ function bs_posts_list_sc($atts, $content = null) {
 </div>
 <script>
 function redirectPage(type) {
-	var page = '<?php echo $page ?>';
+	var page = parseInt('<?php echo $page ?>');
 	if(type == 'next') page + 1;
 	if(type == 'prev') page > 0 ? page - 1 : 0;
 	window.location = window.location.origin + '' + window.location.pathname + '?posts=' + page; 
