@@ -43,7 +43,7 @@ function bs_posts_list_sc($atts, $content = null) {
 	
 			<div class="bs-post-list__item">
 				<div class="bs-post-list__item__img" 
-					style="backgroun-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>);background-size: cover; background-color: #E5A612;">
+					style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>);background-size: cover; background-color: #E5A612;">
 					
 				</div>
 				<div class="bs-post-list__item__content" style="background: #fff">
