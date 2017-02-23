@@ -1278,6 +1278,10 @@ a:hover {
   .bs-post__donate {
     background: #3C515F;
     padding: 40px 0; }
+    .bs-post__donate h3 {
+      font-size: 1.46667em;
+      color: #fff;
+      margin: 30px auto; }
 
 .bs-posts-list {
   float: left;
