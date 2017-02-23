@@ -4,8 +4,7 @@
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php if(get_the_post_thumbnail_url($post->ID, 'full')): ?>
 <?php else: ?>
-		$style = "background: #F4F4F4";
-	<div class="bs-post__header" style="<?php echo $style ?>">
+	<div class="bs-post__header ">
 		<div class="bs-post__header__title">
 			<h2><?php the_title() ?></h2>
 		</div>
