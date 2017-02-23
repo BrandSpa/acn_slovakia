@@ -1275,7 +1275,9 @@ a:hover {
     display: block;
     float: left;
     width: 100%;
-    margin: 40px 0; }
+    margin: 40px 0;
+    font-size: 0.6em;
+    color: #3c515f; }
   .bs-posts-list__pagination {
     width: 30%;
     margin: 40px auto; }

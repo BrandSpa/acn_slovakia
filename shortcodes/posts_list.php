@@ -39,7 +39,6 @@ function bs_posts_list_sc($atts, $content = null) {
 
 				<h3>	<?php echo  $at['all_the_latest']; ?> </h3>
 		<?php else: ?>
-
 	
 			<div class="bs-posts-list__item">
 				<div class="bs-posts-list__item__img" 
