@@ -30,6 +30,9 @@
 			float: left;
 			width: 35%;
 			height: 400px;
+			background-position: center;
+			background-size: cover;
+			background-color: #3c515f;
 		}
 
 		&__content {
@@ -58,6 +61,9 @@
 			&__img {
 				float: left;
 				width: 35%;
+				background-position: center;
+			background-size: cover;
+			background-color: #3c515f;
 			}
 
 			&__content {
