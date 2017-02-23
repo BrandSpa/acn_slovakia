@@ -14086,7 +14086,7 @@ var Posts = _react2.default.createClass({
 		}
 	},
 	goToPosts: function goToPosts() {
-		window.location = '#posts';
+		window.location = this.props.url;
 	},
 	render: function render() {
 		var _this3 = this;
