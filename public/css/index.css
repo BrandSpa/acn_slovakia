@@ -1282,11 +1282,11 @@ a:hover {
     width: 100%; }
     .bs-post-list__main__img {
       float: left;
-      width: 30%;
+      width: 35%;
       height: 400px; }
     .bs-post-list__main__content {
       float: left;
-      width: 70%;
+      width: 65%;
       height: 400px;
       padding: 80px 160px 80px 80px; }
       .bs-post-list__main__content h2 {
@@ -1300,11 +1300,11 @@ a:hover {
     width: 100%; }
     .bs-post-list__item__img {
       float: left;
-      width: 30%;
+      width: 35%;
       height: 400px; }
     .bs-post-list__item__content {
       float: left;
-      width: 70%;
+      width: 65%;
       height: 400px;
       padding: 80px 160px 80px 80px;
       background: #fff; }

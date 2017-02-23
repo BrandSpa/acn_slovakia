@@ -18,7 +18,7 @@ function bs_posts_list_sc($atts, $content = null) {
 <?php $counter = 0; ?>
 
 <div class="bs-posts-list">
-		<h3><?php echo  $at['latest_news']; ?></h3>
+	<h3><?php echo $at['latest_news']; ?></h3>
 <?php  foreach($recent_posts as $post): ?>
 	<?php $counter++; ?>
 	
