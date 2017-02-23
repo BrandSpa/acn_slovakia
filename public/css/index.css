@@ -593,6 +593,9 @@ p {
   text-align: center;
   display: block; }
 
+.float-left {
+  float: left; }
+
 .nav {
   height: 140px;
   width: 100%;
