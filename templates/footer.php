@@ -1,5 +1,6 @@
 <?php 
 include_once str_replace('templates', '', __DIR__) . '/lib/offices_countries.php'; 
+include_once str_replace('templates', '', __DIR__) . '/apis/location.php'; 
 ?>
 
 <div class="learn-more">
