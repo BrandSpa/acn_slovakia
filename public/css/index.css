@@ -1242,7 +1242,8 @@ a:hover {
   display: block;
   position: relative; }
   .bs-post__header {
-    border-bottom: 1px solid #D0011B; }
+    border-bottom: 1px solid #D0011B;
+    margin-bottom: 100px; }
     .bs-post__header__title {
       padding-bottom: 70px; }
       .bs-post__header__title h2 {
