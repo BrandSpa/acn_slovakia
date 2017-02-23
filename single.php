@@ -14,10 +14,14 @@
 			<?php the_content() ?>
 		</div>
 	</div>
+
+	<?php require('templates/post_donate.php') ?>
+
 	<div class="l-wrap">
 		<h3><?php echo gett('Latest news'); ?></h3>
 		<?php require('templates/post_latest.php') ?>
 	</div>
+
   <?php endwhile; else : ?>
     <h2> <?php echo gett('404') ?> </h2>
   <?php endif; ?>
