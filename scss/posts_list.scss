@@ -2,10 +2,17 @@
 	float: left;
 	width: 100%;
 
+	h3 {
+		display: block;
+		float: left;
+		width: 100%;
+		margin: 40px 0;
+	}
+
 	&__pagination {
 		width: 30%;
 		margin: 40px auto;
-		
+
 		button {
 			background: transparent;
 			border-radius: 2px;
@@ -15,12 +22,7 @@
 		}
 	}
 	
-	h3 {
-		display: block;
-		float: left;
-		width: 100%;
-		margin-bottom: 40px;
-	}
+
 
 	&__main {
 		float: left;
