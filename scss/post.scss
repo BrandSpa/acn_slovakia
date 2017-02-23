@@ -24,11 +24,12 @@
 			
 			.l-wrap {
 				position: relative;
+				min-height: 400px;
 			}
 
 			&__title {
 				position: absolute;
-				bottom: -30%;
+				bottom: -50%;
 				left: 0;
 				right: 0;
 				margin: auto;

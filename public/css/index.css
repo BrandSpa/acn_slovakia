@@ -1253,10 +1253,11 @@ a:hover {
       width: 100%;
       border-bottom: none; }
       .bs-post__header--image .l-wrap {
-        position: relative; }
+        position: relative;
+        min-height: 400px; }
       .bs-post__header--image__title {
         position: absolute;
-        bottom: -30%;
+        bottom: -50%;
         left: 0;
         right: 0;
         margin: auto;
