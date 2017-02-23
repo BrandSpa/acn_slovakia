@@ -1032,7 +1032,7 @@ p {
     transition: all 300ms;
     position: relative;
     left: 0;
-    margin: 20px 0 20px 0;
+    margin: 0;
     width: 300%; }
   .donate_react__cards {
     text-align: left;
