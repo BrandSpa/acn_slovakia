@@ -79,8 +79,18 @@ function bs_home_url() {
 	return $home;
 }
 
+function bs_in_office($country) {
+	return in_array($country, getOfficesCountries());
+}
+
 function bs_logo_url() {
-	$url = get_option("logo_". getCountry());
+	$country = getCountry();
+
+	if(!bs_in_office($country)) {
+		$country = 'default';
+	}
+
+	$url = get_option("logo_". $country);
 	$url = str_replace('http:', '',   $url);
 	return $url;
 }
