@@ -1306,7 +1306,7 @@ a:hover {
       float: left;
       width: 65%;
       height: 240px;
-      padding: 80px 160px 80px 80px;
+      padding: 40px 20% 40px 40px;
       background: #fff; }
       .bs-post-list__item__content h2 {
         font-size: 1.66667em;
