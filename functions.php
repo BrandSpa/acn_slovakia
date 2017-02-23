@@ -78,3 +78,9 @@ function bs_home_url() {
 	}
 	return $home;
 }
+
+function bs_logo_url() {
+	$url = get_option("logo_". getCountry());
+	$url = str_replace('http:', '',   $url);
+	return $url;
+}
