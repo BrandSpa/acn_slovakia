@@ -13,8 +13,9 @@
 		<div class="bs-post__content col-8-l col-12-s">
 			<?php the_content() ?>
 		</div>
-	</div>”
+	</div>
 	<div class="l-wrap">
+		<h3><?php echo gett('Latest news'); ?></h3>
 		<?php require('templates/post_latest.php') ?>
 	</div>
   <?php endwhile; else : ?>
