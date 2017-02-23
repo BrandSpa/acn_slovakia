@@ -1,6 +1,18 @@
 .bs-post-list {
 	float: left;
 	width: 100%;
+
+	&__pagination {
+		width: 30%;
+		margin: 0 auto;
+		button {
+			background: transparent;
+			border-radius: 2px;
+			border: solid 2px #bbc5c8;
+			color: #3c515f;
+			font-size: 20px;
+		}
+	}
 	
 	h3 {
 		display: block;

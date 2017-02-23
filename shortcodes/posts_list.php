@@ -7,6 +7,7 @@ function bs_posts_list_sc($atts, $content = null) {
 		'all_the_latest' => 'All the latest'
   ];
 
+	$page = $_GET['posts'] || 0;
 	$offset = $_GET['posts'] ? intval($_GET['posts']) * 7 : 0;
 
   $at = shortcode_atts( $attributes , $atts );
@@ -56,6 +57,10 @@ function bs_posts_list_sc($atts, $content = null) {
 	
 
 <?php endforeach; ?>
+<div class="bs-post-list__pagination">
+	<button>prev <i class="ion-chevron-right"></i></button>
+	<button>next <i class="ion-chevron-right"></i></button>
+</div>
 </div>
 
 <?php

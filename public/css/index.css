@@ -1271,6 +1271,15 @@ a:hover {
 .bs-post-list {
   float: left;
   width: 100%; }
+  .bs-post-list__pagination {
+    width: 30%;
+    margin: 0 auto; }
+    .bs-post-list__pagination button {
+      background: transparent;
+      border-radius: 2px;
+      border: solid 2px #bbc5c8;
+      color: #3c515f;
+      font-size: 20px; }
   .bs-post-list h3 {
     display: block;
     float: left;
