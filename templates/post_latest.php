@@ -10,8 +10,8 @@
 	<?php endif; ?>
 
 	<div class="bs-post__recent__content">
-		<h4><?php echo $recent->post_title ?></h4>
-		<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, 100) ?>...</p>
+		<h4><?php echo substr($recent->post_title, 0, 100) ?></h4>
+		<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, 80) ?>...</p>
 	</div>
 </div>
 <?php endforeach; ?>
