@@ -1254,8 +1254,7 @@ a:hover {
       background-size: cover;
       background-position: top center; }
       .bs-post__header--image__title {
-        margin-top: -10%;
-        margin: auto;
+        margin: -5% auto 100px auto;
         min-height: 240px;
         background: #F4F4F4;
         text-align: center;
