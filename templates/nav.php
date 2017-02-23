@@ -1,9 +1,11 @@
 <div class="nav">
 	  <a href="<?php echo bs_home_url(); ?>" class="logo">
         <?php if( !empty( get_option("logo") ) ): ?>
-          <img src='<?php echo str_replace('http:', '', get_option("logo")) ?>'  alt="acn logo" class="img-responsive" width="150"  />
+					
+          <img src='<?php echo str_replace('http:', '',  get_option("logo_". getCountry()) ) ?>'  alt="acn logo" class="img-responsive" width="150"  />
         <?php endif; ?>
      </a>
+
 		<a href="#" class="open-menu">
 			<svg width="33px" height="18px" viewBox="40 55 33 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
