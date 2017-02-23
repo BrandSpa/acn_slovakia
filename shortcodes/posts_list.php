@@ -56,13 +56,24 @@ function bs_posts_list_sc($atts, $content = null) {
 
 <?php endforeach; ?>
 <div class="bs-post-list__pagination">
-	<button><i class="ion-chevron-left"></i> prev</button>
-	<button>next <i class="ion-chevron-right"></i></button>
+	<button class="bs-post-list__pagination__prev"><i class="ion-chevron-left"></i> prev</button>
+	<button class="bs-post-list__pagination__next">next <i class="ion-chevron-right"></i></button>
 </div>
 </div>
 <script>
+function redirectPage() {
 	var page = '<?php echo $page ?>';
 	window.location = window.location.origin + '' + window.location.pathname + '?posts=' + page; 
+};
+
+	document.querySelector('.bs-post-list__pagination__prev').addEventListener('click', function() {
+		redirectPage();
+	});
+
+	document.querySelector('.bs-post-list__pagination__next').addEventListener('click', function() {
+		redirectPage();
+	});
+	
 </script>
 <?php
 
