@@ -3,14 +3,14 @@ include_once str_replace('templates', '', __DIR__) . '/lib/offices_countries.php
 ?>
 
 <div class="learn-more">
-	<a class="learn-more-link" href="#learnmore"><?php echo gett('LEARN MORE ABOUT AID TO THE CHURCH IN NEED') ?></a>
+	<a class="learn-more-link" href="<?php echo get_option('url_' . space_to_lodash( get_country() ) ) ?>"><?php echo gett('LEARN MORE ABOUT AID TO THE CHURCH IN NEED') ?></a>
 </div>
 
 <?php 
 $offices = '';
 foreach(getOfficesCountries() as $office) { 
 	if($office !== 'default') {
-		$offices .= '<li><a href="#">'.$office.'</a></li>';
+		$offices .= '<li><a href="'. get_option('url_' . space_to_lodash($office)) .'">'.$office.'</a></li>';
 	}
 };
 
