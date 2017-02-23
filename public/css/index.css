@@ -1273,7 +1273,7 @@ a:hover {
   width: 100%; }
   .bs-post-list__pagination {
     width: 30%;
-    margin: 0 auto; }
+    margin: 40px auto; }
     .bs-post-list__pagination button {
       background: transparent;
       border-radius: 2px;
