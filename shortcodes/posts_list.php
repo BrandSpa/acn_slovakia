@@ -57,8 +57,8 @@ function bs_posts_list_sc($atts, $content = null) {
 
 <?php endforeach; ?>
 <div class="bs-posts-list__pagination">
-	<button class="bs-posts-list__pagination__prev"><i class="ion-chevron-left"></i> prev</button>
-	<button class="bs-posts-list__pagination__next">next <i class="ion-chevron-right"></i></button>
+	<button class="bs-posts-list__pagination__prev"><i class="ion-chevron-left"></i> <?php echo $at['prev']?></button>
+	<button class="bs-posts-list__pagination__next"><?php echo $at['next']?> <i class="ion-chevron-right"></i></button>
 </div>
 </div>
 <script>
