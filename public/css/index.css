@@ -1262,9 +1262,18 @@ a:hover {
     margin: 0 auto 100px auto; }
   .bs-post__recent {
     width: 25%;
-    background: #F7F7F7; }
+    padding: 15px; }
     .bs-post__recent__content {
+      background: #F7F7F7;
       padding: 20px; }
+      .bs-post__recent__content h4 {
+        font-size: 1.2em;
+        color: #3C515F;
+        display: block;
+        border-bottom: 1px solid #D0011B;
+        padding-bottom: 20px; }
+      .bs-post__recent__content p {
+        color: #9B9B9B; }
 
 .bs-posts-list {
   float: left;

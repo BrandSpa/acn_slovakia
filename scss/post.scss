@@ -40,10 +40,23 @@
 
 	&__recent {
 		width: 25%;
-		background: #F7F7F7;
+		padding: 15px;
 
 		&__content {
+			background: #F7F7F7;
 			padding: 20px;
+
+			h4 {
+				font-size: (18 / 15) * 1em;
+				color: #3C515F;
+				display: block;
+				border-bottom: 1px solid #D0011B;
+				padding-bottom: 20px;
+			}
+
+			p {
+				color: #9B9B9B;
+			}
 		}
 	}
 	
