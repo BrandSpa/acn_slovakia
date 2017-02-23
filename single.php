@@ -17,7 +17,7 @@
 
 	<?php require('templates/post_donate.php') ?>
 
-	<div class="l-wrap">
+	<div class="l-wrap" style="margin: 40px 0">
 		<h3 style="font-size: 28px; display: block; margin: 40px 0"><?php echo gett('Latest news'); ?></h3>
 		<?php require('templates/post_latest.php') ?>
 	</div>
