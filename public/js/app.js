@@ -14203,14 +14203,18 @@ var Projects = _react2.default.createClass({
 		var _this = this;
 
 		var patt = new RegExp(/#projects-[1-9]/);
-		console.log(patt.test(window.location.hash));
+		var hash = window.location.hash;
+		var num = 1;
+		if (patt.test(hash)) {
+			num = hash.split('-')[1];
+		}
 
 		window.addEventListener("resize", function (event) {
 			_this.moveArrow(_this.state.section);
 		});
 
 		setTimeout(function () {
-			_this.moveArrow(1);
+			_this.moveArrow(num);
 		}, 1000);
 	},
 	moveArrow: function moveArrow(num) {

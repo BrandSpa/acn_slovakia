@@ -25,14 +25,18 @@ const Projects = React.createClass({
 
 	componentDidMount() {
 		let patt = new RegExp(/#projects-[1-9]/);
-		console.log(patt.test(window.location.hash));
+		let hash = window.location.hash;
+		let num = 1;
+		if( patt.test(hash) ) {
+			num = hash.split('-')[1];
+		}
 
 		 window.addEventListener("resize", (event) => {
 			this.moveArrow(this.state.section);
 		});
 
 		setTimeout(() => {
-			this.moveArrow(1);
+			this.moveArrow(num);
 		}, 1000);
 	
 	},
