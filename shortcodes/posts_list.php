@@ -26,7 +26,7 @@ function bs_posts_list_sc($atts, $content = null) {
 					
 				</div>
 
-				<div class="bs-post-list__main__content" style="background-color: #E5A612;">
+				<div class="bs-post-list__main__content" style="background-color: #3C515F;">
 					<h3><?php echo $post->post_title ?></h3>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
@@ -38,7 +38,7 @@ function bs_posts_list_sc($atts, $content = null) {
 				<div class="bs-post-list__item__img" style="background: #E5A612;">
 					<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 				</div>
-				<div class="bs-post-list__item__content" style=>
+				<div class="bs-post-list__item__content" style="background: #fff">
 					<h3><?php echo $post->post_title ?></h3>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
