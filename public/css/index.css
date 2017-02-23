@@ -1333,9 +1333,11 @@ a:hover {
           width: 100%; } }
       .bs-posts-list__item__content h2 {
         font-size: 1.66667em;
-        color: #2e404c; }
+        color: #2e404c;
+        display: inline-block; }
         .bs-posts-list__item__content h2:after {
-          content: ' ';
+          display: inline-block;
+          content: '';
           padding-bottom: 20px;
           width: 40%;
           border: solid 1px #d0011b; }
