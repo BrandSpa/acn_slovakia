@@ -5,6 +5,7 @@
 
 	&__header {
 		border-bottom: 1px solid #D0011B;
+		margin-bottom: 100px;
 
 		&__title {
 			padding-bottom: 70px;
@@ -44,7 +45,7 @@
 	&__content {
 		padding-top: 150px;
 		float: none;
-		margin: 100px auto;
+		margin: 0 auto 100px auto;
 	}
 	
 }
