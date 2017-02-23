@@ -1260,6 +1260,11 @@ a:hover {
   .bs-post__content {
     float: none;
     margin: 0 auto 100px auto; }
+  .bs-post__recent {
+    width: 25%;
+    background: #F7F7F7; }
+    .bs-post__recent__content {
+      padding: 20px; }
 
 .bs-posts-list {
   float: left;

@@ -5,8 +5,14 @@
 
 <?php foreach($recent_posts as $recent): ?>
 <div class="bs-post__recent">
-	<h4><?php echo $recent->post_title ?></h4>
-	<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, 150) ?>...</p>
+	<?php if(get_the_post_thumbnail_url($recent->ID, 'full')): ?>
+		<img src="<?php get_the_post_thumbnail_url($recent->ID, 'full') ?>" />
+	<?php endif; ?>
+
+	<div class="bs-post__recent__content">
+		<h4><?php echo $recent->post_title ?></h4>
+		<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, 150) ?>...</p>
+	</div>
 </div>
 <?php endforeach; ?>
 

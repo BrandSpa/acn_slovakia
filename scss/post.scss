@@ -37,5 +37,14 @@
 		float: none;
 		margin: 0 auto 100px auto;
 	}
+
+	&__recent {
+		width: 25%;
+		background: #F7F7F7;
+
+		&__content {
+			padding: 20px;
+		}
+	}
 	
 }
