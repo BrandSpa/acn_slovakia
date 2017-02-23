@@ -25,12 +25,12 @@ function bs_posts_list_sc($atts, $content = null) {
 	<?php $counter++; ?>
 	
 		<?php if($counter == 1): ?>
-			<div class="bs-post-list__main">
-				<div class="bs-post-list__main__img" style="background-image: <?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>;background-color: #E5A612;">
+			<div class="bs-posts-list__main">
+				<div class="bs-posts-list__main__img" style="background-image: <?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>;background-color: #E5A612;">
 					
 				</div>
 
-				<div class="bs-post-list__main__content" style="background-color: #3C515F;">
+				<div class="bs-posts-list__main__content" style="background-color: #3C515F;">
 					<h2><?php echo $post->post_title ?></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 150) ?>...</p>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
@@ -41,12 +41,12 @@ function bs_posts_list_sc($atts, $content = null) {
 		<?php else: ?>
 
 	
-			<div class="bs-post-list__item">
-				<div class="bs-post-list__item__img" 
+			<div class="bs-posts-list__item">
+				<div class="bs-posts-list__item__img" 
 					style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>);">
 					
 				</div>
-				<div class="bs-post-list__item__content" style="background: #fff">
+				<div class="bs-posts-list__item__content" style="background: #fff">
 					<h2><?php echo $post->post_title ?></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 150) ?>...</p>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
@@ -56,9 +56,9 @@ function bs_posts_list_sc($atts, $content = null) {
 	<?php endif; ?>
 
 <?php endforeach; ?>
-<div class="bs-post-list__pagination">
-	<button class="bs-post-list__pagination__prev"><i class="ion-chevron-left"></i> prev</button>
-	<button class="bs-post-list__pagination__next">next <i class="ion-chevron-right"></i></button>
+<div class="bs-posts-list__pagination">
+	<button class="bs-posts-list__pagination__prev"><i class="ion-chevron-left"></i> prev</button>
+	<button class="bs-posts-list__pagination__next">next <i class="ion-chevron-right"></i></button>
 </div>
 </div>
 <script>
@@ -69,11 +69,11 @@ function redirectPage(type) {
 	window.location = window.location.origin + '' + window.location.pathname + '?posts=' + page; 
 };
 
-	document.querySelector('.bs-post-list__pagination__prev').addEventListener('click', function() {
+	document.querySelector('.bs-posts-list__pagination__prev').addEventListener('click', function() {
 		redirectPage('prev');
 	});
 
-	document.querySelector('.bs-post-list__pagination__next').addEventListener('click', function() {
+	document.querySelector('.bs-posts-list__pagination__next').addEventListener('click', function() {
 		redirectPage('next');
 	});
 	
