@@ -54,15 +54,16 @@ function bs_posts_list_sc($atts, $content = null) {
 
 	<?php endif; ?>
 
-	
-
 <?php endforeach; ?>
 <div class="bs-post-list__pagination">
-	<button>prev <i class="ion-chevron-right"></i></button>
+	<button><i class="ion-chevron-left"></i> prev</button>
 	<button>next <i class="ion-chevron-right"></i></button>
 </div>
 </div>
-
+<script>
+	var page = '<?php echo $page ?>';
+	window.location = window.location.origin + '' + window.location.pathname + '?posts=' + page; 
+</script>
 <?php
 
   return ob_get_clean();
