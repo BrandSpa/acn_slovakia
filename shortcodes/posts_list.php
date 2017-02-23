@@ -69,11 +69,11 @@ function redirectPage(type) {
 };
 
 	document.querySelector('.bs-post-list__pagination__prev').addEventListener('click', function() {
-		redirectPage('next');
+		redirectPage('prev');
 	});
 
 	document.querySelector('.bs-post-list__pagination__next').addEventListener('click', function() {
-		redirectPage('prev');
+		redirectPage('next');
 	});
 	
 </script>
