@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<div id="acn_int" class="bs-post" >
+<div id="acn_int" class="bs-post l-wrap" >
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php if(get_the_post_thumbnail_url($post->ID, 'full')): ?>
 <?php else: ?>
