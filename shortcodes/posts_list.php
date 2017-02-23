@@ -61,17 +61,19 @@ function bs_posts_list_sc($atts, $content = null) {
 </div>
 </div>
 <script>
-function redirectPage() {
+function redirectPage(type) {
 	var page = '<?php echo $page ?>';
+	if(type == 'next') page + 1;
+	if(type == 'prev') page > 0 ? page - 1 : 0;
 	window.location = window.location.origin + '' + window.location.pathname + '?posts=' + page; 
 };
 
 	document.querySelector('.bs-post-list__pagination__prev').addEventListener('click', function() {
-		redirectPage();
+		redirectPage('next');
 	});
 
 	document.querySelector('.bs-post-list__pagination__next').addEventListener('click', function() {
-		redirectPage();
+		redirectPage('prev');
 	});
 	
 </script>
