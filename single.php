@@ -6,19 +6,17 @@
 <?php if(get_the_post_thumbnail_url($post->ID, 'full')): ?>
 	<?php require('templates/post_header_image.php') ?>
 <?php else: ?>
-<div class="l-wrap">
-	<div class="bs-post__header col-12-l">
-		<div class="bs-post__header__title col-10-l col-12-s">
-			<h2><?php the_title() ?></h2>
+	<?php require('templates/post_header.php') ?>
+<?php endif; ?>
+
+	<div class="l-wrap">
+		<div class="bs-post__content col-8-l col-12-s">
+			<?php the_content() ?>
 		</div>
 	</div>
-</div>
-<?php endif; ?>
-<div class="l-wrap">
-	<div class="bs-post__content col-8-l col-12-s">
-	 	<?php the_content() ?>
+	<div class="l-wrap">
+		<?php require('templates/post_latest.php') ?>
 	</div>
-  </div>
   <?php endwhile; else : ?>
     <h2> <?php echo gett('404') ?> </h2>
   <?php endif; ?>
