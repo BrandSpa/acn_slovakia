@@ -1266,6 +1266,7 @@ a:hover {
         width: 80%; } }
 
 .bs-post-list__main {
+  float: left;
   margin-bottom: 40px; }
   .bs-post-list__main__img {
     float: left;
@@ -1283,6 +1284,7 @@ a:hover {
       color: #f8f8f8; }
 
 .bs-post-list__item {
+  float: left;
   margin-bottom: 40px; }
   .bs-post-list__item__img {
     float: left;

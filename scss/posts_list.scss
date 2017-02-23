@@ -1,5 +1,6 @@
 .bs-post-list {
 	&__main {
+		float: left;
 		margin-bottom: 40px;
 		&__img {
 			float: left;
@@ -25,8 +26,9 @@
 	}
 
 	&__item {
+		float: left;
 		margin-bottom: 40px;
-		
+
 			&__img {
 				float: left;
 				width: 30%;
