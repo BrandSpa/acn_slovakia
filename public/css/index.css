@@ -1242,30 +1242,32 @@ a:hover {
   width: 100%;
   display: block;
   position: relative; }
-  .bs-post__header__title {
-    padding-bottom: 70px;
+  .bs-post__header {
     border-bottom: 1px solid #D0011B; }
-    .bs-post__header__title h2 {
-      color: #3C515F; }
-  .bs-post__header--image {
-    position: relative;
-    min-height: 400px;
-    width: 100%; }
-    .bs-post__header--image__title {
-      position: absolute;
-      bottom: -120px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 50%;
-      min-height: 240px;
-      background: #3C515F;
-      text-align: center;
-      color: #fff;
-      padding: 30px; }
-      @media (min-width: 768px) and (max-width: 991px) {
-        .bs-post__header--image__title {
-          width: 80%; } }
+    .bs-post__header__title {
+      padding-bottom: 70px; }
+      .bs-post__header__title h2 {
+        color: #3C515F; }
+    .bs-post__header--image {
+      position: relative;
+      min-height: 400px;
+      width: 100%;
+      border-bottom: none; }
+      .bs-post__header--image__title {
+        position: absolute;
+        bottom: -120px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 50%;
+        min-height: 240px;
+        background: #3C515F;
+        text-align: center;
+        color: #fff;
+        padding: 30px; }
+        @media (min-width: 768px) and (max-width: 991px) {
+          .bs-post__header--image__title {
+            width: 80%; } }
   .bs-post__content {
     padding-top: 150px;
     width: 50%;

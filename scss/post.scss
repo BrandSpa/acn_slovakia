@@ -5,10 +5,11 @@
 	position: relative;
 
 	&__header {
+		border-bottom: 1px solid #D0011B;
 		
 		&__title {
 			padding-bottom: 70px;
-			border-bottom: 1px solid #D0011B;
+			
 
 			h2 {
 				color: #3C515F;
@@ -19,6 +20,7 @@
 			position: relative;
 			min-height: 400px;
 			width: 100%;
+			border-bottom: none;
 
 			&__title {
 				position: absolute;
