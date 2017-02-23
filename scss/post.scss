@@ -5,8 +5,11 @@
 	position: relative;
 
 	&__header {
-		padding-bottom: 70px;
-		border-bottom: 1px solid #D0011B;
+		
+		&__title {
+			padding-bottom: 70px;
+			border-bottom: 1px solid #D0011B;
+		}
 
 		&--image {
 			position: relative;
