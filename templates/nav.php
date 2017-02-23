@@ -1,5 +1,5 @@
 <div class="nav">
-	  <a href="#" class="logo">
+	  <a href="<?php echo get_home_url(); ?>" class="logo">
         <?php if( !empty( get_option("logo") ) ): ?>
           <img src='<?php echo str_replace('http:', '', get_option("logo")) ?>'  alt="acn logo" class="img-responsive" width="150"  />
         <?php endif; ?>
