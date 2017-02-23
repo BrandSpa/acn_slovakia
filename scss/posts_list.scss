@@ -41,27 +41,29 @@
 		float: left;
 		margin-bottom: 40px;
 		width: 100%;
+		display: flex;
 
 			&__img {
 				float: left;
 				width: 35%;
-				height: 240px;
 			}
 
 			&__content {
 				float: left;
-			width: 65%;
-			height: 240px;
-			padding: 40px 20% 40px 40px;
-			background: #fff;
-
-			h2 {
-				font-size: (25 / 15) * 1em;
-				color: #2e404c;
-			}
-			p {
-				color: #9b9b9b;
-			}
+				width: 65%;
+				padding: 40px 20% 40px 40px;
+				background: #fff;
+				@media #{$s} {
+					width: 100%;
+				}
+				
+				h2 {
+					font-size: (25 / 15) * 1em;
+					color: #2e404c;
+				}
+				p {
+					color: #9b9b9b;
+				}
 		}
 	}
 
