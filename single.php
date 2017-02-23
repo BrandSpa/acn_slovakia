@@ -2,8 +2,9 @@
 
 <div id="acn_int" class="bs-post" >
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<?php require('templates/post_header_image.php') ?>
+		
 	<?php if(get_the_post_thumbnail_url($post->ID, 'full')): ?>
+	<?php require('templates/post_header_image.php') ?>
 <?php else: ?>
 <div class="l-wrap">
 	<div class="bs-post__header col-12-l">
