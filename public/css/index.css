@@ -1248,13 +1248,11 @@ a:hover {
       .bs-post__header__title h2 {
         color: #3C515F; }
     .bs-post__header--image {
-      position: relative;
       min-height: 400px;
       width: 100%;
       border-bottom: none;
       background-size: cover;
-      background-position: top center;
-      margin-bottom: 50%; }
+      background-position: top center; }
       .bs-post__header--image__title {
         margin-top: -10%;
         margin: auto;

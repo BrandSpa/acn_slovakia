@@ -17,16 +17,12 @@
 		}
 
 		&--image {
-			position: relative;
 			min-height: 400px;
 			width: 100%;
 			border-bottom: none;
 			background-size: cover; 
 			background-position: top center;
-			margin-bottom: 50%;
-
-
-
+			
 			&__title {
 				margin-top: -10%;
 				margin: auto;
