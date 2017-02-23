@@ -29,12 +29,13 @@ function bs_posts_list_sc($atts, $content = null) {
 
 				<div class="bs-post-list__main__content" style="background-color: #3C515F;">
 					<h2><?php echo $post->post_title ?></h2>
+					<p><?php echo substr($post->post_content, 50) ?></p>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
 				</div>
 			</div>
 
 		<?php else: ?>
-		
+
 		<?php echo  $at['all_the_latest']; ?>
 			<div class="bs-post-list__item">
 				<div class="bs-post-list__item__img" style="background: #E5A612;">
