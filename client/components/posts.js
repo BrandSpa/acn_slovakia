@@ -75,7 +75,7 @@ const Posts = React.createClass({
 	},
 
 	goToPosts() {
-		window.location = '#posts';
+		window.location = this.props.url;
 	},
 
 	render() {

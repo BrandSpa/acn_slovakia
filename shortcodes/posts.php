@@ -2,12 +2,14 @@
 
 function bs_posts_sc($atts, $content = null) {
 	$attributes = [
-    'see_more' => ''
+    'see_more' => '',
+    'url' => ''
   ];
 
   $at = shortcode_atts( $attributes , $atts );
 	$props = [
-    'see_more' => $at['see_more']
+    'see_more' => $at['see_more'],
+    'url' => $at['url']
 	];
 	
   ob_start();
@@ -33,6 +35,12 @@ add_action( 'vc_before_init', 'bs_posts_vc' );
         "type" => "textfield",
         "heading" => "See More",
         "param_name" => "see_more",
+        "value" => ''
+			],
+      [
+        "type" => "textfield",
+        "heading" => "See More url",
+        "param_name" => "url",
         "value" => ''
 			]
 		];
