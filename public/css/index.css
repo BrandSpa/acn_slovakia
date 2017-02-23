@@ -1315,6 +1315,10 @@ a:hover {
           border-bottom: solid 1px #d0011b; }
       .bs-posts-list__main__content p {
         color: #f8f8f8; }
+      .bs-posts-list__main__content a {
+        margin-top: 40px;
+        display: block;
+        color: #f8f8f8; }
   .bs-posts-list__item {
     float: left;
     margin-bottom: 40px;
