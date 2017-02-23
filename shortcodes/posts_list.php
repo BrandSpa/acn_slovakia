@@ -7,9 +7,10 @@ function bs_posts_list_sc($atts, $content = null) {
 		'all_the_latest' => 'All the latest'
   ];
 
-	$paged = $_GET['posts'] || 1;
+	$offset = $_GET['posts'] ? intval($_GET['posts']) * 7 : 0;
+
   $at = shortcode_atts( $attributes , $atts );
-	$args = array( 'posts_per_page' => 7, 'paged' => $paged );
+	$args = array( 'posts_per_page' => 7, 'offset' => $offset );
 
   $recent_posts = get_posts( $args );
   ob_start();
