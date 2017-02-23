@@ -5,28 +5,32 @@
 	position: relative;
 
 	&__header {
-		position: relative;
-		min-height: 300px;
-		width: 100%;
+
+		&--image {
+			position: relative;
+			min-height: 400px;
+			width: 100%;
+
+			&__title {
+				position: absolute;
+				bottom: -120px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 50%;
+				min-height: 240px;
+				background: #3C515F;
+				text-align: center;
+				color: #fff;
+				padding: 30px;
+				@media #{$m} {
+					width: 80%;
+				}
+			}
+		}
+	
 	}
 	
-	&__title {
-		position: absolute;
-		bottom: -120px;
-		left: 0;
-		right: 0;
-		margin: auto;
-		width: 50%;
-		min-height: 240px;
-		background: #3C515F;
-		text-align: center;
-		color: #fff;
-		padding: 30px;
-		@media #{$m} {
-			width: 80%;
-		}
-	}
-
 	&__content {
 		padding-top: 150px;
 		width: 50%;
