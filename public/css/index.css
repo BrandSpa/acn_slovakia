@@ -1265,10 +1265,6 @@ a:hover {
       .bs-post__content {
         width: 80%; } }
 
-.bs-post-list__main h2 {
-  font-size: 2.33333em;
-  color: #fff; }
-
 .bs-post-list__main__img {
   float: left;
   width: 30%;
@@ -1279,6 +1275,11 @@ a:hover {
   width: 70%;
   height: 400px;
   padding: 80px 160px 80px 80px; }
+  .bs-post-list__main__content h2 {
+    font-size: 2.33333em;
+    color: #fff; }
+  .bs-post-list__main__content p {
+    color: #f8f8f8; }
 
 .bs-post-list__item__img {
   float: left;
@@ -1288,4 +1289,11 @@ a:hover {
 .bs-post-list__item__content {
   float: left;
   width: 70%;
-  height: 400px; }
+  height: 400px;
+  padding: 80px 160px 80px 80px;
+  background: #fff; }
+  .bs-post-list__item__content h2 {
+    font-size: 3.46667em;
+    color: #2e404c; }
+  .bs-post-list__item__content p {
+    color: #9b9b9b; }
