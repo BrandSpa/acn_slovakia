@@ -3,9 +3,10 @@
 function bs_posts_list_sc($atts, $content = null) {
 	$attributes = [
 		'read_more' => 'Read more',
-		'latest_news' => '',
-		'all_the_latest' => ''
+		'latest_news' => 'Latest news',
+		'all_the_latest' => 'All the latest'
   ];
+
 	$paged = $_GET['posts'] || 1;
   $at = shortcode_atts( $attributes , $atts );
 	$args = array( 'posts_per_page' => 7, 'paged' => $paged );
@@ -17,7 +18,7 @@ function bs_posts_list_sc($atts, $content = null) {
 <?php $counter = 0; ?>
 
 <div class="bs-posts-list">
-		<?php echo  $at['latest_news']; ?>
+		<h3><?php echo  $at['latest_news']; ?></h3>
 <?php  foreach($recent_posts as $post): ?>
 	<?php $counter++; ?>
 	

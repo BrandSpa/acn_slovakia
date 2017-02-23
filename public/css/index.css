@@ -1271,6 +1271,11 @@ a:hover {
 .bs-post-list {
   float: left;
   width: 100%; }
+  .bs-post-list h3 {
+    display: block;
+    float: left;
+    width: 100%;
+    margin-bottom: 40px; }
   .bs-post-list__main {
     float: left;
     margin-bottom: 40px;
