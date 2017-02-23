@@ -1314,6 +1314,9 @@ a:hover {
     width: 100%;
     display: -ms-flexbox;
     display: flex; }
+    .bs-posts-list__item__readmore {
+      color: #d0021b;
+      text-align: right; }
     .bs-posts-list__item__img {
       float: left;
       width: 35%;

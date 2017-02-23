@@ -4,7 +4,9 @@ function bs_posts_list_sc($atts, $content = null) {
 	$attributes = [
 		'read_more' => 'Read more',
 		'latest_news' => 'Latest news',
-		'all_the_latest' => 'All the latest'
+		'all_the_latest' => 'All the latest',
+		'next' => 'next',
+		'prev' => 'prev'
   ];
 
 	$page = isset($_GET['posts']) ?  $_GET['posts'] : 0;
@@ -48,7 +50,7 @@ function bs_posts_list_sc($atts, $content = null) {
 				<div class="bs-posts-list__item__content" style="background: #fff">
 					<h2><?php echo $post->post_title ?></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 150) ?>...</p>
-					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?></a>
+					<a class="bs-posts-list__item__readmore" href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?>...</a>
 				</div>
 		</div>
 
@@ -91,20 +93,34 @@ add_action( 'vc_before_init', 'bs_posts_list_vc' );
         "type" => "textfield",
         "heading" => "Read More",
         "param_name" => "read_more",
-        "value" => ''
+        "value" => 'Read more'
 			],
 			[
 				"type" => "textfield",
         "heading" => "Latest News",
         "param_name" => "latest_news",
-        "value" => ''
+        "value" => 'Latest news'
 			],
 			[
 				"type" => "textfield",
         "heading" => "All the Latest",
         "param_name" => "all_the_latest",
-        "value" => ''
-			]
+        "value" => 'All the latest'
+			],
+				[
+				"type" => "textfield",
+        "heading" => "Prev",
+        "param_name" => "prev",
+        "value" => 'prev'
+			],
+
+				[
+				"type" => "textfield",
+        "heading" => "Prev",
+        "param_name" => "next",
+        "value" => 'next'
+			],
+
 		];
 
   	vc_map(
