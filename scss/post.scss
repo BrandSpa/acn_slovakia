@@ -21,10 +21,14 @@
 			min-height: 400px;
 			width: 100%;
 			border-bottom: none;
+			
+			.l-wrap {
+				position: relative;
+			}
 
 			&__title {
 				position: absolute;
-				bottom: 90%;
+				bottom: -30%;
 				left: 0;
 				right: 0;
 				margin: auto;
@@ -33,8 +37,6 @@
 				text-align: center;
 				color: #3C515F;
 				padding: 30px;
-
-
 			}
 		}
 	
