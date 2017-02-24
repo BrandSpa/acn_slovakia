@@ -1,4 +1,5 @@
 import React from 'react';
+import sectionVideo from 'section_video';
 
 const CampaignsSlider = React.createClass({
 	getInitialState() {
@@ -35,7 +36,7 @@ const CampaignsSlider = React.createClass({
       width: viewportWidth, 
       left: this.state.left, 
 		};
-		
+
 		return (
 			<div className="campaigns-slider">
 			 	<div

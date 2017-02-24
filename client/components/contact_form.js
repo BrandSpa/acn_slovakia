@@ -3,6 +3,7 @@ import request from "axios";
 import validator from "validator";
 import objToFormData from "../lib/obj_to_formdata";
 import qs from 'qs';
+
 const contactForm = React.createClass({
   getInitialState() {
     return {

@@ -4,7 +4,7 @@ import VideoModal from './video_modal';
 const SectionVideo = React.createClass({
 	getDefaultProps() {
 		return {
-			imgUrl: 'http://acninternational.org/wp-content/uploads/2017/02/Play.png',
+			imgUrl: '',
 			url: 'https://www.youtube.com/embed/_lQvw2vSDbs',
 			imageStyle: {}
 		}

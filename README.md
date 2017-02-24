@@ -6,6 +6,7 @@
 ## frontend
 - es6
 - react
+- axios
 
 #### tests
 - jest
