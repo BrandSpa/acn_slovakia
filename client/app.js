@@ -12,13 +12,13 @@ import setMenuMobile from './lib/set_menu_mobile';
 import donateRedirect from './lib/donate_redirect';
 import CampaignsSlider from './components/campaigns_slider';
 
-multipleRender(".contact-form", ContactForm);
 multipleRender(".header-slider", HeaderSlider);
-multipleRender(".section-video", sectionVideo);
-multipleRender(".projects-container", Projects);
-multipleRender(".bs-accordion", Accordion);
+multipleRender(".contact-form", ContactForm);
 multipleRender(".bs-posts", Posts);
 multipleRender(".bs-donate-react", Donate);
+multipleRender(".projects-container", Projects);
+multipleRender(".bs-accordion", Accordion);
+multipleRender(".section-video", sectionVideo);
 multipleRender(".bs-campaings-slider", CampaignsSlider);
 
 setMenu();

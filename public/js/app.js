@@ -33114,13 +33114,13 @@ var _campaigns_slider2 = _interopRequireDefault(_campaigns_slider);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
 (0, _mutiple_render2.default)(".header-slider", _header_slider2.default);
-(0, _mutiple_render2.default)(".section-video", _section_video2.default);
-(0, _mutiple_render2.default)(".projects-container", _projects2.default);
-(0, _mutiple_render2.default)(".bs-accordion", _accordion2.default);
+(0, _mutiple_render2.default)(".contact-form", _contact_form2.default);
 (0, _mutiple_render2.default)(".bs-posts", _posts2.default);
 (0, _mutiple_render2.default)(".bs-donate-react", _donate2.default);
+(0, _mutiple_render2.default)(".projects-container", _projects2.default);
+(0, _mutiple_render2.default)(".bs-accordion", _accordion2.default);
+(0, _mutiple_render2.default)(".section-video", _section_video2.default);
 (0, _mutiple_render2.default)(".bs-campaings-slider", _campaigns_slider2.default);
 
 (0, _set_menu2.default)();
