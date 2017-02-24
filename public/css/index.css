@@ -1375,3 +1375,8 @@ a:hover {
         color: #9b9b9b;
         display: block;
         padding-right: 20%; }
+
+.campaigns-slider {
+  overflow: hidden; }
+  .campaigns-slider__slide {
+    float: left; }

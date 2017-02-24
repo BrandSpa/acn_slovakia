@@ -1,5 +1,8 @@
 .campaigns-slider {
 	overflow: hidden;
+	&__slide {
+		float: left;
+	}
 	
 	&__viewport {
 		
