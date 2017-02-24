@@ -16061,14 +16061,14 @@ var headerSlide = _react2.default.createClass({
 	},
 	render: function render() {
 		var _props = this.props,
-		    imgUrl = _props.imgUrl,
+		    image = _props.image,
 		    title = _props.title,
 		    subtitle = _props.subtitle,
 		    url = _props.url,
 		    width = _props.width,
 		    height = _props.height;
 
-		var bg = 'url(' + imgUrl + ')';
+		var bg = 'url(' + image + ')';
 		var style = {
 			backgroundImage: bg,
 			backgroundSize: 'cover',
