@@ -6,8 +6,6 @@ function bs_campaigns_slider_sc($atts, $content = null) {
   ob_start();
 ?>
 
-
-
 <div 
 	class="bs-campaings-slider" 
 	data-props='{<?php echo json_encode( vc_param_group_parse_atts( $at['slides'] ) ); ?>}'
@@ -36,6 +34,11 @@ function bs_campaigns_slider_vc() {
                 'param_name' => 'slides',
 
                 'params' => array(
+										array(
+											'type' => 'attach_image',
+											'heading' => 'Enter image',
+                      'param_name' => 'image',
+										),
                     array(
                         'type' => 'textfield',
                         'value' => '',
@@ -47,7 +50,17 @@ function bs_campaigns_slider_vc() {
                         'value' => '',
                         'heading' => 'Enter your content',
                         'param_name' => 'content',
-                    )
+                    ),
+										array(
+											'type' => 'textfield',
+											'heading' => 'url embed video',
+											'param_name' => 'url'
+										),
+										array(
+											'type' => 'colorpicker',
+											'heading' => 'color',
+											'param_name' => 'bg'
+										),
                 )
             )
         )
