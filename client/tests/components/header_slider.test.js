@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
+import sinon from 'sinon';
 import HeaderSlider from "../../components/header_slider";
 
 describe("header slider component", () => {
@@ -18,10 +19,10 @@ describe("header slider component", () => {
 		expect(wrapper.state()).toEqual({currentSlide: 1, left: '-100%'});
 	})
 
-	it('should open video modal', () => {
+	it('should show video modal', () => {
 			let wrapper = mount(<HeaderSlider slides={[{title: 'acn pope', 'isvideo': true}]} />);
 			wrapper.find('.slider__slide').simulate('click');
-			expect(wrapper.ref('modal').state()).toBe(2);
+			expect( wrapper.find('.modal--show').length).toEqual(1);
 	})
 
 });

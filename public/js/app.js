@@ -9403,13 +9403,6 @@ var Modal = _react2.default.createClass({
 			show: false
 		};
 	},
-	close: function close(e) {
-		e.preventDefault();
-		this.setState({ show: false });
-	},
-	show: function show() {
-		this.setState({ show: true });
-	},
 	componentDidMount: function componentDidMount() {
 		document.addEventListener("keydown", this.handleEscKey, false);
 	},
@@ -9418,6 +9411,13 @@ var Modal = _react2.default.createClass({
 	},
 	handleEscKey: function handleEscKey(e) {
 		if (e.keyCode == 27) this.setState({ show: false });
+	},
+	close: function close(e) {
+		e.preventDefault();
+		this.setState({ show: false });
+	},
+	show: function show() {
+		this.setState({ show: true });
 	},
 	render: function render() {
 		var url = this.props.url;

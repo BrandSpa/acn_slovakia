@@ -7,15 +7,6 @@ const Modal = React.createClass({
 		}
 	},
 
-	close(e) {
-		e.preventDefault();
-		this.setState({show: false});
-	},
-
-	show() {
-		this.setState({show: true});
-	},
-
 	componentDidMount() {
 		document.addEventListener("keydown", this.handleEscKey, false);
 	},
@@ -26,6 +17,15 @@ const Modal = React.createClass({
 
 	handleEscKey(e) {
 		if(e.keyCode == 27) this.setState({show: false});
+	},
+
+	close(e) {
+		e.preventDefault();
+		this.setState({show: false});
+	},
+
+	show() {
+		this.setState({show: true});
 	},
 
 	render() {
