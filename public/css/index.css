@@ -1380,6 +1380,8 @@ a:hover {
   overflow: hidden; }
   .campaigns-slider__slide {
     float: left; }
+    .campaigns-slider__slide__content {
+      padding: 60px 30px; }
   .campaigns-slider__viewport {
     position: relative;
     transition: all 300ms; }

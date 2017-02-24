@@ -2,6 +2,9 @@
 	overflow: hidden;
 	&__slide {
 		float: left;
+		&__content {
+			padding: 60px 30px;
+		}
 	}
 
 	&__viewport {
