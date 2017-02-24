@@ -11,7 +11,8 @@ const CampaignsSlider = React.createClass({
 
 	getDefaultProps() {
 		return {
-			slides: []
+			slides: [],
+			interval: 0
 		}
 	},
 

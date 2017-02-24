@@ -13481,7 +13481,8 @@ var CampaignsSlider = _react2.default.createClass({
 	},
 	getDefaultProps: function getDefaultProps() {
 		return {
-			slides: []
+			slides: [],
+			interval: 0
 		};
 	},
 	componentDidMount: function componentDidMount() {

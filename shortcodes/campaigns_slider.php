@@ -31,6 +31,7 @@ function bs_campaigns_slider_vc() {
 	$params = array(
 		[
 			'type' => 'textfield',
+			'heading' => 'Enter interval',
 			'value' => '3000',
 			'param_name' => 'interval'
 		],
