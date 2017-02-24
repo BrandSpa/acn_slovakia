@@ -11,14 +11,15 @@ const headerSlider = React.createClass({
 
   getDefaultProps() {
     return {
-      slides: []
+      slides: [],
+      interval: 5000
     }
   },
 
   componentDidMount() {
     this.interval = setInterval(() => {
       this.nextSlide(false);
-    }, 2000);
+    }, this.props.interval);
 
     window.addEventListener('load', () => {
       this.height = window.innerHeight;

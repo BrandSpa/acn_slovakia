@@ -14080,7 +14080,8 @@ var headerSlider = _react2.default.createClass({
   },
   getDefaultProps: function getDefaultProps() {
     return {
-      slides: []
+      slides: [],
+      interval: 5000
     };
   },
   componentDidMount: function componentDidMount() {
@@ -14088,7 +14089,7 @@ var headerSlider = _react2.default.createClass({
 
     this.interval = setInterval(function () {
       _this.nextSlide(false);
-    }, 2000);
+    }, this.props.interval);
 
     window.addEventListener('load', function () {
       _this.height = window.innerHeight;

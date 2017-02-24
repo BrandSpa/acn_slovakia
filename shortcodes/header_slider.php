@@ -3,7 +3,7 @@
 function bs_header_slider_sc($atts, $content = null) {
 	$attributes = [ 
     'slides' => '',
-		'interval' => '3000'
+		'interval' => '5000'
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -63,7 +63,8 @@ function bs_header_slider_sc($atts, $content = null) {
       [
         "type" => "interval",
         "heading" => "enter interval",
-        "param_name" => "interval"
+        "param_name" => "interval",
+        "value" => "5000"
       ],
       [
         'type' => 'param_group',
