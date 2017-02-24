@@ -14,7 +14,7 @@ const Posts = React.createClass({
 
 	componentWillMount() {
 		let data = qs.stringify({ action: "get_posts"});
-
+		
     request
 		.post("/wp-admin/admin-ajax.php", data)
     .then(res => {
@@ -80,6 +80,13 @@ const Posts = React.createClass({
 
 	render() {
 		const { posts } = this.state;
+		let seeMoreStyle = {
+			display: 'block', 
+			margin: '30px auto', 
+			background: 'transparent', 
+			color: '#3C515F',
+			borderColor: '#3C515F'
+		};
 
 		return (
 			<div>
@@ -105,14 +112,7 @@ const Posts = React.createClass({
 				
 				<button 
 					onClick={this.goToPosts} 
-					style={this.state.seeMore ? {
-						display: 'block', 
-						margin: '30px auto', 
-						background: 'transparent', 
-						color: '#3C515F',
-						borderColor: '#3C515F'
-					} : {display: 'none'}
-					}
+					style={this.state.seeMore ? seeMoreStyle : {display: 'none'} }
 				>
 					See more
 				</button>
