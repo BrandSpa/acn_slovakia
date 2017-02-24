@@ -51,7 +51,15 @@ const CampaignsSlider = React.createClass({
           style={viewportStyle}
 				>
 				{slides.map((slide, i) => {
-					return <SectionVideo imgUrl={slide.image} url={slide.url}  />
+					return (
+						<div class="campaigns-slider__slide">
+							<SectionVideo key={i} imgUrl={slide.image} url={slide.url}  />
+							<div class="campaigns-slider__slide__content">
+								<h4>{slide.title}</h4>
+								<p>{slide.content}</p>
+							</div>
+						</div>
+					)
 				})}
 				</div>
 			</div>

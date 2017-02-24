@@ -13458,7 +13458,7 @@ exports.default = Accordion;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = __webpack_require__(8);
@@ -13472,64 +13472,82 @@ var _section_video2 = _interopRequireDefault(_section_video);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CampaignsSlider = _react2.default.createClass({
-  displayName: 'CampaignsSlider',
-  getInitialState: function getInitialState() {
-    return {
-      currentSlide: 0,
-      left: '0'
-    };
-  },
-  getDefaultProps: function getDefaultProps() {
-    return {
-      slides: []
-    };
-  },
-  componentDidMount: function componentDidMount() {
-    var _this = this;
+	displayName: 'CampaignsSlider',
+	getInitialState: function getInitialState() {
+		return {
+			currentSlide: 0,
+			left: '0'
+		};
+	},
+	getDefaultProps: function getDefaultProps() {
+		return {
+			slides: []
+		};
+	},
+	componentDidMount: function componentDidMount() {
+		var _this = this;
 
-    this.interval = setInterval(function () {
-      _this.nextSlide(false);
-    }, 2000);
-  },
-  nextSlide: function nextSlide() {
-    var clear = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+		this.interval = setInterval(function () {
+			_this.nextSlide(false);
+		}, 2000);
+	},
+	nextSlide: function nextSlide() {
+		var clear = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
-    if (clear) clearInterval(this.interval);
-    var total = this.props.slides.length - 1;
-    var left = this.state.currentSlide < total ? this.state.currentSlide + 1 : 0;
-    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
-  },
-  prevSlide: function prevSlide() {
-    clearInterval(this.interval);
-    var total = this.props.slides.length - 1;
-    var left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
-    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
-  },
-  render: function render() {
-    var slides = this.props.slides;
+		if (clear) clearInterval(this.interval);
+		var total = this.props.slides.length - 1;
+		var left = this.state.currentSlide < total ? this.state.currentSlide + 1 : 0;
+		this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
+	},
+	prevSlide: function prevSlide() {
+		clearInterval(this.interval);
+		var total = this.props.slides.length - 1;
+		var left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
+		this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
+	},
+	render: function render() {
+		var slides = this.props.slides;
 
-    var viewportWidth = 100 * slides.length + '%';
-    var slideWidth = 100 / slides.length + '%';
-    var viewportStyle = {
-      width: viewportWidth,
-      left: this.state.left
-    };
+		var viewportWidth = 100 * slides.length + '%';
+		var slideWidth = 100 / slides.length + '%';
+		var viewportStyle = {
+			width: viewportWidth,
+			left: this.state.left
+		};
 
-    return _react2.default.createElement(
-      'div',
-      { className: 'campaigns-slider' },
-      _react2.default.createElement(
-        'div',
-        {
-          className: 'campaigns-slider__viewport',
-          style: viewportStyle
-        },
-        slides.map(function (slide, i) {
-          return _react2.default.createElement(_section_video2.default, { imgUrl: slide.image, url: slide.url });
-        })
-      )
-    );
-  }
+		return _react2.default.createElement(
+			'div',
+			{ className: 'campaigns-slider' },
+			_react2.default.createElement(
+				'div',
+				{
+					className: 'campaigns-slider__viewport',
+					style: viewportStyle
+				},
+				slides.map(function (slide, i) {
+					return _react2.default.createElement(
+						'div',
+						{ 'class': 'campaigns-slider__slide' },
+						_react2.default.createElement(_section_video2.default, { key: i, imgUrl: slide.image, url: slide.url }),
+						_react2.default.createElement(
+							'div',
+							{ 'class': 'campaigns-slider__slide__content' },
+							_react2.default.createElement(
+								'h4',
+								null,
+								slide.title
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								slide.content
+							)
+						)
+					);
+				})
+			)
+		);
+	}
 });
 
 exports.default = CampaignsSlider;
