@@ -1,5 +1,5 @@
 import React from 'react';
-import sectionVideo from 'section_video';
+import SectionVideo from 'section_video';
 
 const CampaignsSlider = React.createClass({
 	getInitialState() {
@@ -8,6 +8,12 @@ const CampaignsSlider = React.createClass({
       left: '0'
     }
   },
+
+	getDefaultProps() {
+		return {
+			slides: []
+		}
+	},
 
 	componentDidMount() {
     this.interval = setInterval(() => {
@@ -30,6 +36,7 @@ const CampaignsSlider = React.createClass({
   },
 
 	render() {
+		const { slides } = this.props;
 		let viewportWidth = `${100 * slides.length}%`;
     let slideWidth = `${(100 / slides.length)}%`;
 		let viewportStyle = {
@@ -43,7 +50,9 @@ const CampaignsSlider = React.createClass({
           className="campaigns-slider__viewport" 
           style={viewportStyle}
 				>
-
+				{slides.map((slide, i) => {
+					return <SectionVideo imgUrl={slide.image} url={slide.url}  />
+				})}
 				</div>
 			</div>
 		)
