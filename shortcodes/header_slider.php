@@ -1,33 +1,17 @@
 <?php
 
 function bs_header_slider_sc($atts, $content = null) {
-	$attributes = ['images' => ''];
-  $arrAtts = [1,2,3,4];
-
-  foreach($arrAtts as $i) {
-    $attributes =  array_merge($attributes, ['title_' .$i => '' ]);
-    $attributes =  array_merge($attributes, ['subtitle_' .$i => '' ]);
-    $attributes =  array_merge($attributes, ['url_' .$i => '' ]);
-    $attributes =  array_merge($attributes, ['isvideo_' .$i => false ]);
-  }
+	$attributes = [ 
+    'slides' => '',
+		'interval' => '3000'
+	];
 
   $at = shortcode_atts( $attributes , $atts );
-  $slides = [];
-  
-  foreach($arrAtts as $i) {
-    $images = explode(',', $at['images']);
-    $indexImg = $i - 1;
-    if(isset($images[$indexImg])) {
-      array_push($slides, [
-        'title' => $at['title_' .$i],
-        'subtitle' => $at['subtitle_' .$i],
-        'url' => $at['url_' .$i],
-        'imgUrl' => wp_get_attachment_image_src($images[$indexImg], 'full')[0],
-        'isVideo' => $at['isvideo_'. $i]
-      ]);
-    }
- 
-  }
+	
+	$slides = array_map(function($slide) {
+		$slide['image'] = wp_get_attachment_url($slide['image']);
+		return $slide;
+	}, vc_param_group_parse_atts( $at['slides'] ));
 
   ob_start();
 ?>
@@ -45,56 +29,49 @@ function bs_header_slider_sc($atts, $content = null) {
   add_shortcode( 'bs_header_slider', 'bs_header_slider_sc' );
 
   function bs_header_slider_vc() {
-    $arrAtts = [1,2,3,4];
-    $params = [
-                array(
-            "type" => "attach_images",
-            "param_name" => "images"
-          ),
+    $subparams = [
 
-          array(
-            "type" => "textfield",
-            "heading" => "Slider height",
-            "param_name" => "height",
-            "value" => '100px'
-          ),
-
-           array(
-            "type" => "textfield",
-            "heading" => "Slider interval",
-            "param_name" => "interval",
-            "value" => "3000"
-          )
+      [
+        "type" => "attach_image",
+        "heading" => "enter image",
+        "param_name" => "image"
+      ],
+      [
+        "type" => "textfield",
+        "heading" => "enter title",
+        "param_name" => "title"
+      ],
+      [
+        "type" => "textarea",
+        "heading" => "enter subtitle",
+        "param_name" => "subtitle"
+      ],
+      [
+        "type" => "textfield",
+        "heading" => "enter url",
+        "param_name" => "url"
+      ],
+      [
+        "type" => "checkbox",
+        "heading" => "is a video?",
+        "param_name" => "isvideo",
+        "value" => false
+      ]
     ];
 
-    foreach($arrAtts as $i) {
-      array_push($params, 
-        [
-          'type' => 'textfield',
-          'param_name' => 'title_' .$i,
-          'heading' => 'title ' .$i,
-          'value' => ''
-        ],
-         [
-          'type' => 'textfield',
-          'param_name' => 'subtitle_' .$i,
-          'heading' => 'subtitle ' .$i,
-          'value' => ''
-        ],
-        [
-          'type' => 'textfield',
-          'param_name' => 'url_' .$i,
-          'heading' => 'url ' .$i,
-          'value' => ''
-        ],
-        [
-          'type' => 'checkbox',
-          'param_name' => 'isvideo_' .$i,
-          'heading' => 'Is video ' .$i,
-          'value' => false
-        ]
-      );
-    }
+    $params = [
+      [
+        "type" => "interval",
+        "heading" => "enter interval",
+        "param_name" => "interval"
+      ],
+      [
+        'type' => 'param_group',
+        'value' => '',
+        'param_name' => 'slides',
+        'params' => $subparams
+      ]
+    ];
 
     vc_map(
       array(
