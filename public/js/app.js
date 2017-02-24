@@ -16056,7 +16056,7 @@ var headerSlide = _react2.default.createClass({
 	displayName: 'headerSlide',
 	handleLink: function handleLink(e) {
 		e.preventDefault();
-		if (this.props.isVideo) return this.refs.modal.show();
+		if (this.props.isvideo) return this.refs.modal.show();
 		window.location.href = this.props.url;
 	},
 	render: function render() {
