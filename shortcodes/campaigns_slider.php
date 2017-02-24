@@ -4,7 +4,8 @@ function bs_campaigns_slider_sc($atts, $content = null) {
 	$attributes = [ 'slides' => '' ];
   $at = shortcode_atts( $attributes , $atts );
 	$slides = array_map(function($slide) {
-		$slide['image'] = wp_get_attachment_url(slide['image']);
+		$slide['image'] = wp_get_attachment_url($slide['image']);
+		return $slide;
 	}, vc_param_group_parse_atts( $at['slides'] ));
   ob_start();
 ?>
