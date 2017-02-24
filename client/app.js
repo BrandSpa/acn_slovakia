@@ -10,6 +10,7 @@ import Donate from './components/donate';
 import setMenu from './lib/set_menu';
 import setMenuMobile from './lib/set_menu_mobile';
 import donateRedirect from './lib/donate_redirect';
+import CampaignsSlider from './components/campaigns_slider';
 
 multipleRender(".contact-form", ContactForm);
 multipleRender(".header-slider", HeaderSlider);
@@ -18,6 +19,7 @@ multipleRender(".projects-container", Projects);
 multipleRender(".bs-accordion", Accordion);
 multipleRender(".bs-posts", Posts);
 multipleRender(".bs-donate-react", Donate);
+multipleRender(".bs-campaings-slider", Donate);
 
 setMenu();
 setMenuMobile();
