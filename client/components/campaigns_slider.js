@@ -58,3 +58,5 @@ const CampaignsSlider = React.createClass({
 		)
 	}
 });
+
+export default CampaignsSlider;
