@@ -15,7 +15,7 @@ function bs_campaigns_slider_sc($atts, $content = null) {
 
 <div 
 	class="bs-campaings-slider" 
-	data-props='{"slides": <?php echo json_encode( $slides ); ?>}'
+	data-props='{"slides": <?php echo json_encode( $slides ); ?>, "interval": <?php echo $at["interval"] ?>}'
 >
 </div>
 
