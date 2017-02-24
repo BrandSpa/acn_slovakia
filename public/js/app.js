@@ -13489,7 +13489,7 @@ var CampaignsSlider = _react2.default.createClass({
 
 		this.interval = setInterval(function () {
 			_this.nextSlide(false);
-		}, 2000);
+		}, this.props.interval);
 	},
 	nextSlide: function nextSlide() {
 		var clear = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;

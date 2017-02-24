@@ -18,7 +18,7 @@ const CampaignsSlider = React.createClass({
 	componentDidMount() {
     this.interval = setInterval(() => {
       this.nextSlide(false);
-    }, 2000);
+    }, this.props.interval);
   },
 
 	nextSlide(clear = true) {
