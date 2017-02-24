@@ -7,15 +7,17 @@
 - es6
 - react
 
-### tests
+#### tests
 - jest
 - enzyme
 - moxios
 - sinon
 
+---
+
 ## backend
 - php
 - wordpress
 
-### tests
+#### tests
 - phpunit
