@@ -1,6 +1,6 @@
 import React from "react";
 import request from "axios";
-import validator from "validator";
+import isEmpty from 'validator/lib/isEmpty';
 import objToFormData from "../lib/obj_to_formdata";
 import qs from 'qs';
 
@@ -46,7 +46,7 @@ const contactForm = React.createClass({
   },
 
   checkEmpty(field) {
-		return validator.isEmpty(this.state.contact[field]);
+		return isEmpty(this.state.contact[field]);
 	},
 	
 	validate() {

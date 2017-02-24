@@ -1,5 +1,4 @@
 import React from 'react';
-import validator from 'validator';
 import qs from 'qs';
 import request from 'axios';
 import Amount from './amount';

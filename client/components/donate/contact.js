@@ -1,5 +1,6 @@
 import React from 'react';
-import validator from 'validator';
+import isEmail from 'validator/lib/isEmail';
+import isEmpty from 'validator/lib/isEmpty';
 
 const Contact = React.createClass({
 	getDefaultProps() {
@@ -14,8 +15,8 @@ const Contact = React.createClass({
 	},
 
 	validate(field, val = '') {
-		let valid = !validator.isEmpty(val);
-		if(field == 'email') valid = validator.isEmail(val);
+		let valid = !isEmpty(val);
+		if(field == 'email') valid = isEmail(val);
 		let contact = {...this.props.errors.contact, [field]: valid};
 		return {...this.props.errors, contact};
 	},
