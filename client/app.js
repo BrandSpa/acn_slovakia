@@ -19,7 +19,7 @@ multipleRender(".projects-container", Projects);
 multipleRender(".bs-accordion", Accordion);
 multipleRender(".bs-posts", Posts);
 multipleRender(".bs-donate-react", Donate);
-multipleRender(".bs-campaings-slider", Donate);
+multipleRender(".bs-campaings-slider", CampaignsSlider);
 
 setMenu();
 setMenuMobile();

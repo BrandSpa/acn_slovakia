@@ -33102,7 +33102,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _mutiple_render2.default)(".bs-accordion", _accordion2.default);
 (0, _mutiple_render2.default)(".bs-posts", _posts2.default);
 (0, _mutiple_render2.default)(".bs-donate-react", _donate2.default);
-(0, _mutiple_render2.default)(".bs-campaings-slider", _donate2.default);
+(0, _mutiple_render2.default)(".bs-campaings-slider", _campaigns_slider2.default);
 
 (0, _set_menu2.default)();
 (0, _set_menu_mobile2.default)();
