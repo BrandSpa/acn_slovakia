@@ -54,7 +54,7 @@ function bs_header_slider_sc($atts, $content = null) {
       [
         "type" => "checkbox",
         "heading" => "is a video?",
-        "param_name" => "isvideo",
+        "param_name" => "isVideo",
         "value" => false
       ]
     ];
