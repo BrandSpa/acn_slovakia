@@ -13531,7 +13531,7 @@ var CampaignsSlider = _react2.default.createClass({
 						_react2.default.createElement(_section_video2.default, { imgUrl: slide.image, url: slide.url }),
 						_react2.default.createElement(
 							'div',
-							{ 'class': 'campaigns-slider__slide__content' },
+							{ 'class': 'campaigns-slider__slide__content', style: { background: slide.bg } },
 							_react2.default.createElement(
 								'h4',
 								null,
