@@ -13527,8 +13527,8 @@ var CampaignsSlider = _react2.default.createClass({
 				slides.map(function (slide, i) {
 					return _react2.default.createElement(
 						'div',
-						{ 'class': 'campaigns-slider__slide' },
-						_react2.default.createElement(_section_video2.default, { key: i, imgUrl: slide.image, url: slide.url }),
+						{ key: i, 'class': 'campaigns-slider__slide' },
+						_react2.default.createElement(_section_video2.default, { imgUrl: slide.image, url: slide.url }),
 						_react2.default.createElement(
 							'div',
 							{ 'class': 'campaigns-slider__slide__content' },

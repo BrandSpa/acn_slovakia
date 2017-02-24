@@ -52,8 +52,8 @@ const CampaignsSlider = React.createClass({
 				>
 				{slides.map((slide, i) => {
 					return (
-						<div class="campaigns-slider__slide">
-							<SectionVideo key={i} imgUrl={slide.image} url={slide.url}  />
+						<div key={i} class="campaigns-slider__slide">
+							<SectionVideo  imgUrl={slide.image} url={slide.url}  />
 							<div class="campaigns-slider__slide__content">
 								<h4>{slide.title}</h4>
 								<p>{slide.content}</p>
