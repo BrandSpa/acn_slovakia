@@ -6,11 +6,11 @@ function bs_campaigns_slider_sc($atts, $content = null) {
   ob_start();
 ?>
 
-<?php echo json_encode( vc_param_group_parse_atts( $at['slides'] ) ); ?>
+
 
 <div 
 	class="bs-campaings-slider" 
-	data-props='{}'
+	data-props='{<?php echo json_encode( vc_param_group_parse_atts( $at['slides'] ) ); ?>}'
 >
 </div>
 
