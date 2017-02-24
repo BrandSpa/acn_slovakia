@@ -1,18 +1,12 @@
 <?php
 
 function bs_campaigns_slider_sc($atts, $content = null) {
-	$attributes = [
-		'slides' => ''
-	];
-
+	$attributes = [ 'slides' => '' ];
   $at = shortcode_atts( $attributes , $atts );
-	$imgUrl = wp_get_attachment_image_src($at['image'], 'full')[0];
-
-
   ob_start();
 ?>
 
-<?php var_dump(vc_param_group_parse_atts( $at['slides'] )); ?>
+<?php echo json_encode( vc_param_group_parse_atts( $at['slides'] ) ); ?>
 
 <div 
 	class="bs-campaings-slider" 
