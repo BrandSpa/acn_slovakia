@@ -7,7 +7,7 @@
 - es6
 - react
 
-## tests
+### tests
 - jest
 - enzyme
 - moxios
@@ -17,5 +17,5 @@
 - php
 - wordpress
 
-## tests
+### tests
 - phpunit
