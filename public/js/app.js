@@ -16082,7 +16082,7 @@ var headerSlide = _react2.default.createClass({
 		return _react2.default.createElement(
 			'div',
 			null,
-			this.props.isVideo ? _react2.default.createElement(_video_modal2.default, { ref: 'modal', url: this.props.url }) : '',
+			this.props.isvideo ? _react2.default.createElement(_video_modal2.default, { ref: 'modal', url: this.props.url }) : '',
 			_react2.default.createElement(
 				'div',
 				{ className: 'slider__slide', style: style, onClick: this.handleLink },
