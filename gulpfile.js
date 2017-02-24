@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
+var uglifycss = require('gulp-uglifycss');
 
 gulp.task('sass', function () {
   return gulp.src('./scss/index.scss')
@@ -10,6 +11,10 @@ gulp.task('sass', function () {
 			browsers: ['last 2 versions'],
 			cascade: false
 		}))
+     .pipe(uglifycss({
+      "maxLineLen": 80,
+      "uglyComments": true
+    }))
     .pipe(gulp.dest('./public/css/'));
 });
 

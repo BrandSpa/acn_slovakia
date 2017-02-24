@@ -2216,7 +2216,15 @@ gulp-sass:
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-util@^3.0, gulp-util@^3.0.0:
+gulp-uglifycss:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/gulp-uglifycss/-/gulp-uglifycss-1.0.6.tgz#e5145352fe0a1bc946188ad1f055dd9acfa09960"
+  dependencies:
+    gulp-util "~3.0.7"
+    through2 "~2.0.1"
+    uglifycss "~0.0.20"
+
+gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@~3.0.7:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -4450,7 +4458,7 @@ through2@^0.6.1:
     readable-stream ">=1.0.33-1 <1.1.0-0"
     xtend ">=4.0.0 <4.1.0-0"
 
-through2@^2.0.0, through2@^2.0.1:
+through2@^2.0.0, through2@^2.0.1, through2@~2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.3.tgz#0004569b37c7c74ba39c43f3ced78d1ad94140be"
   dependencies:
@@ -4533,6 +4541,10 @@ uglify-js@^2.6, uglify-js@^2.7.5:
 uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
+
+uglifycss, uglifycss@~0.0.20:
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/uglifycss/-/uglifycss-0.0.25.tgz#bea72bf4979eacef13a302cf47b2d1af3f344197"
 
 uid-number@~0.0.6:
   version "0.0.6"
