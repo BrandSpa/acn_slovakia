@@ -2,7 +2,7 @@
 
 function bs_campaigns_slider_sc($atts, $content = null) {
 	$attributes = [
-		'titles' => ''
+		'slides' => ''
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -11,6 +11,8 @@ function bs_campaigns_slider_sc($atts, $content = null) {
 
   ob_start();
 ?>
+
+<?php var_dump(vc_param_group_parse_atts( $at['slides'] )); ?>
 
 <div 
 	class="bs-campaings-slider" 
@@ -33,29 +35,23 @@ function bs_campaigns_slider_vc() {
         "base" => "bs_campaigns_slider",
         "category" =>  "BS",
         'params' => array(
-            array(
-                'type' => 'textfield',
-                'value' => '',
-                'heading' => 'Title',
-                'param_name' => 'simple_textfield',
-            ),
             // params group
             array(
                 'type' => 'param_group',
                 'value' => '',
-                'param_name' => 'titles',
+                'param_name' => 'slides',
 
                 'params' => array(
                     array(
                         'type' => 'textfield',
                         'value' => '',
-                        'heading' => 'Enter your title(multiple field)',
+                        'heading' => 'Enter your title',
                         'param_name' => 'title',
                     ),
 										array(
                         'type' => 'textarea',
                         'value' => '',
-                        'heading' => 'Enter your content(multiple field)',
+                        'heading' => 'Enter your content',
                         'param_name' => 'content',
                     )
                 )
