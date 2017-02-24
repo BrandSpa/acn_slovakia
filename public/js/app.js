@@ -16057,10 +16057,12 @@ var headerSlide = _react2.default.createClass({
 	displayName: 'headerSlide',
 	handleLink: function handleLink(e) {
 		e.preventDefault();
-		if (this.props.isvideo) return this.refs.modal.show();
+		if (this.props.isvideo) return this.modal.show();
 		window.location.href = this.props.url;
 	},
 	render: function render() {
+		var _this = this;
+
 		var _props = this.props,
 		    image = _props.image,
 		    title = _props.title,
@@ -16069,7 +16071,9 @@ var headerSlide = _react2.default.createClass({
 		    width = _props.width,
 		    height = _props.height;
 
+
 		var bg = 'url(' + image + ')';
+
 		var style = {
 			backgroundImage: bg,
 			backgroundSize: 'cover',
@@ -16082,7 +16086,9 @@ var headerSlide = _react2.default.createClass({
 		return _react2.default.createElement(
 			'div',
 			null,
-			this.props.isvideo ? _react2.default.createElement(_video_modal2.default, { ref: 'modal', url: this.props.url }) : '',
+			this.props.isvideo ? _react2.default.createElement(_video_modal2.default, { ref: function ref(modal) {
+					return _this.modal = modal;
+				}, url: this.props.url }) : '',
 			_react2.default.createElement(
 				'div',
 				{ className: 'slider__slide', style: style, onClick: this.handleLink },

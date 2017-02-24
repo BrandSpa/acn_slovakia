@@ -18,4 +18,10 @@ describe("header slider component", () => {
 		expect(wrapper.state()).toEqual({currentSlide: 1, left: '-100%'});
 	})
 
+	it('should open video modal', () => {
+			let wrapper = mount(<HeaderSlider slides={[{title: 'acn pope', 'isvideo': true}]} />);
+			wrapper.find('.slider__slide').simulate('click');
+			expect(wrapper.ref('modal').state()).toBe(2);
+	})
+
 });
