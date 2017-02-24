@@ -2,8 +2,14 @@
 	overflow: hidden;
 	&__slide {
 		float: left;
+
 		&__content {
+			float: left;
 			padding: 60px 30px;
+			text-align: center;
+			h4, p {
+				color: #fff;
+			}
 		}
 	}
 

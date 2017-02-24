@@ -1381,7 +1381,11 @@ a:hover {
   .campaigns-slider__slide {
     float: left; }
     .campaigns-slider__slide__content {
-      padding: 60px 30px; }
+      float: left;
+      padding: 60px 30px;
+      text-align: center; }
+      .campaigns-slider__slide__content h4, .campaigns-slider__slide__content p {
+        color: #fff; }
   .campaigns-slider__viewport {
     position: relative;
     transition: all 300ms; }
