@@ -12,7 +12,7 @@ function bs_campaigns_slider_sc($atts, $content = null) {
 
 <div 
 	class="bs-campaings-slider" 
-	data-props='{<?php echo json_encode( $slides ); ?>}'
+	data-props='{<?php echo json_encode( url_decode($slides) ); ?>}'
 >
 </div>
 
