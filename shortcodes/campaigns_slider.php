@@ -51,6 +51,12 @@ function bs_campaigns_slider_vc() {
                         'value' => '',
                         'heading' => 'Enter your title(multiple field)',
                         'param_name' => 'title',
+                    ),
+										array(
+                        'type' => 'textarea',
+                        'value' => '',
+                        'heading' => 'Enter your content(multiple field)',
+                        'param_name' => 'content',
                     )
                 )
             )
