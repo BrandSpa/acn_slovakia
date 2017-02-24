@@ -52,7 +52,7 @@ const CampaignsSlider = React.createClass({
 				>
 				{slides.map((slide, i) => {
 					return (
-						<div key={i} class="campaigns-slider__slide">
+						<div key={i} className="campaigns-slider__slide">
 							<SectionVideo  imgUrl={slide.image} url={slide.url}  />
 							<div class="campaigns-slider__slide__content" style={{background: slide.bg}}>
 								<h4>{slide.title}</h4>
