@@ -1,5 +1,11 @@
 	<?php require('templates/footer.php') ?>
+<?php
 
+global $wp_scripts, $wp_styles;
+  var_dump( $wp_scripts );
+  var_dump( $wp_styles );
+
+?>
 	<!--wordpress files-->
 	  <?php wp_footer() ?>
 	<!-- /wordpress files-->

@@ -24,6 +24,20 @@ function modify_jquery() {
 
 add_action('init', 'modify_jquery');
 
+
+function modify_sitewide_plugins($value) {
+    global $current_blog;
+
+    if( $current_blog->blog_id == 1 ) {
+        unset($value['akismet/akismet.php']);
+    }
+
+    return $value;
+}
+
+add_action('init', 'modify_jquery');
+
+
 //libs
 require('lib/clean_menu.php');
 require('lib/space_to_lodash.php');
