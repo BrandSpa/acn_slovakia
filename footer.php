@@ -11,7 +11,8 @@
 
 	<!--async load app-->
 <script type="text/javascript">
-  function downloadJSAtOnload() {
+  function downloadJSAndRemoveHttp() {
+    jQuery(document).find('style').text().replace(/http:/, '');
     [
       '<?php echo get_template_directory_uri() ?>/public/js/app.js'
     ].forEach(function(src) {
