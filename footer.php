@@ -12,7 +12,9 @@
 	<!--async load app-->
 <script type="text/javascript">
   function downloadJSAndRemoveHttp() {
-    jQuery(document).find('style').text().replace(/http:/, '');
+    var style = jQuery(document).find('style').text().replace(/http:/, '');
+    jQuery(document).find('style').html(style);
+    
     [
       '<?php echo get_template_directory_uri() ?>/public/js/app.js'
     ].forEach(function(src) {
