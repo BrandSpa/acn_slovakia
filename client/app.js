@@ -19,21 +19,14 @@ WebFont.load({
   },
 	custom: {
 		families: ['Ionicons'],
-		 testStrings: {
-                Ionicons : '\uf10c\uf109'
-            }
+		testStrings: {
+    	Ionicons : '\uf10c\uf109'
+    }
 	},
-	 fontloading: function(familyName, fvd) {
-            console.log( "loading " + familyName );
-        },
-        fontactive: function(familyName, fvd) {
-            console.log( familyName + " loaded" );
-        },
-        fontinactive: function(familyName, fvd) {
-            console.log( familyName + " failed to load" );
-        }
+	fontinactive: (familyName, fvd) => {
+		console.error( familyName + " failed to load" );
+	}
 });
-
 
 multipleRender(".header-slider", HeaderSlider);
 multipleRender(".contact-form", ContactForm);
