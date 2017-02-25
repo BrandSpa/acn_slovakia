@@ -1,5 +1,5 @@
 	<?php require('templates/footer.php') ?>
-<?php print_r($GLOBALS['wp_scripts']->registered) ?>
+<?php print_r($GLOBALS['wp_scripts']->registered['wpb_composer_front_js'] ) ?>
 	<!--wordpress files-->
 	  <?php wp_footer() ?>
 	<!-- /wordpress files-->

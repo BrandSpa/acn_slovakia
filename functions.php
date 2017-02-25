@@ -15,17 +15,21 @@ register_nav_menus(
 function modify_jquery() {
 	if (!is_admin()) {
 		// comment out the next two lines to load the local copy of jQuery
-			wp_deregister_script('wpb_composer_front_js');
 		wp_deregister_script( 'wp-embed' );
 		wp_deregister_script('jquery');
-	
+		// wp_register_script('vc_nea', $GLOBALS['wp_scripts']->registered['wpb_composer_front_js']);
 		wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js', false, '3.1.1', true); 
 		wp_enqueue_script('jquery');
 	}
 }
 
 add_action('init', 'modify_jquery');
-add_action('vc_base_register_front_js', 'modify_jquery');
+
+function unload_visual_composer() {
+	wp_deregister_script('wpb_composer_front_js');
+}
+
+// add_action('vc_base_register_front_js', 'unload_visual_composer');
 
 
 function deactivate_plugin_conditional() {
