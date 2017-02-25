@@ -3,12 +3,22 @@
 	<!--wordpress files-->
 	  <?php wp_footer() ?>
 	<!-- /wordpress files-->
+
+	<!--async load app-->
 <script type="text/javascript">
-function downloadJSAtOnload() {
-  var element = document.createElement("script");
-  element.src = '<?php echo get_template_directory_uri() ?>/public/js/app.js';
-  document.body.appendChild(element);
-}
+  function downloadJSAtOnload() {
+    [
+      '<?php echo get_template_directory_uri() ?>/public/js/app.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+    ].forEach(function(src) {
+      var element = document.createElement("script");
+      element.src = src;
+      document.body.appendChild(element);
+    });
+    
+  }
+
+  
 
   if (window.addEventListener) {
     window.addEventListener("load", downloadJSAtOnload, false);
@@ -18,7 +28,7 @@ function downloadJSAtOnload() {
     window.onload = downloadJSAtOnload;
   }
 </script>
-<!--app theme-->
+	<!--/async load app-->
 
 <!--/app theme-->
  <!-- Google Analytics -->
