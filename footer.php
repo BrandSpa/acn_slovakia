@@ -1,5 +1,6 @@
 	<?php require('templates/footer.php') ?>
 
+<?php var_dump(dirname(__FILE__)) ?>
 	<!--wordpress files-->
 	  <?php wp_footer() ?>
 	<!-- /wordpress files-->
