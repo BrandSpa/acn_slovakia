@@ -3,13 +3,12 @@
 	<!--wordpress files-->
 	  <?php wp_footer() ?>
 	<!-- /wordpress files-->
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!--async load app-->
 <script type="text/javascript">
   function downloadJSAtOnload() {
     [
-      '<?php echo get_template_directory_uri() ?>/public/js/app.js',
-      'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+      '<?php echo get_template_directory_uri() ?>/public/js/app.js'
     ].forEach(function(src) {
       var element = document.createElement("script");
       element.src = src;
@@ -17,8 +16,6 @@
     });
     
   }
-
-  
 
   if (window.addEventListener) {
     window.addEventListener("load", downloadJSAtOnload, false);
