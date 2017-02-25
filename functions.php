@@ -29,7 +29,7 @@ function modify_sitewide_plugins($value) {
     global $current_blog;
 
     if( $current_blog->blog_id == 1 ) {
-        unset($value['akismet/akismet.php']);
+        unset($value['mpc-massive/mpc-massive.php']);
     }
 
     return $value;
