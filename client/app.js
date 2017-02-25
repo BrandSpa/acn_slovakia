@@ -1,4 +1,5 @@
 "use strict";
+import 'babel-polyfill';
 import WebFont from 'webfontloader';
 import multipleRender from "./lib/mutiple_render";
 import ContactForm from "./components/contact_form";
