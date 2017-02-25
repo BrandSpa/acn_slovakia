@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "af157552ac8d8b9d57c24f3792cccf62",
-    "content-hash": "b738ec98782a40497a1df43a63fdee53",
+    "hash": "580eef3316442ceb85ef64ce0e53afac",
+    "content-hash": "6b91238b770c5bfdd69880dffcadc955",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -310,16 +310,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b"
+                "reference": "04a6d1a00ea5da0727ee94309a9f0d3dbaecb569"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
-                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/04a6d1a00ea5da0727ee94309a9f0d3dbaecb569",
+                "reference": "04a6d1a00ea5da0727ee94309a9f0d3dbaecb569",
                 "shasum": ""
             },
             "require": {
@@ -355,16 +355,23 @@
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
-            "description": "PSR-7 message implementation",
+            "description": "PSR-7 message implementation that also provides common utility methods",
             "keywords": [
                 "http",
                 "message",
+                "request",
+                "response",
                 "stream",
-                "uri"
+                "uri",
+                "url"
             ],
-            "time": "2016-06-24 23:00:38"
+            "time": "2017-02-21 01:20:32"
         },
         {
             "name": "infusionsoft/php-sdk",
@@ -587,6 +594,51 @@
             "time": "2016-08-18 16:36:52"
         },
         {
+            "name": "nielse63/phpimagecache",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nielse63/php-image-cache.git",
+                "reference": "c0d8195016f5c17e536f1292c59832d74f505bdb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nielse63/php-image-cache/zipball/c0d8195016f5c17e536f1292c59832d74f505bdb",
+                "reference": "c0d8195016f5c17e536f1292c59832d74f505bdb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ImageCache": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Creative Commons Attribution"
+            ],
+            "authors": [
+                {
+                    "name": "Erik Nielsen",
+                    "email": "erik@312development.com",
+                    "homepage": "http://312development.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Image Cache is a very simple PHP module that accepts an image source and will compress and cache the file, move it to a new directory, and return the cache source for the image.",
+            "homepage": "http://nielse63.github.io/php-image-cache",
+            "keywords": [
+                "cache",
+                "caching",
+                "image cache",
+                "php cache"
+            ],
+            "time": "2014-09-29 23:13:13"
+        },
+        {
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -734,16 +786,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v4.4.0",
+            "version": "v4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "9ec772fe502995850954dbc15b1f38e6f9159a4d"
+                "reference": "d9ca4ef579e0829379aa5a1ccb9911b3a46a565b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/9ec772fe502995850954dbc15b1f38e6f9159a4d",
-                "reference": "9ec772fe502995850954dbc15b1f38e6f9159a4d",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/d9ca4ef579e0829379aa5a1ccb9911b3a46a565b",
+                "reference": "d9ca4ef579e0829379aa5a1ccb9911b3a46a565b",
                 "shasum": ""
             },
             "require": {
@@ -785,7 +837,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2017-01-18 18:55:45"
+            "time": "2017-02-24 23:52:02"
         },
         {
             "name": "zendframework/zend-diactoros",

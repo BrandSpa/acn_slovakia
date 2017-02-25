@@ -1,8 +1,7 @@
 	<?php require('templates/footer.php') ?>
 <?php
 
- global $current_blog;
-  var_dump( is_plugin_active('mpc-massive/mpc-massive.php') );
+  var_dump( getCacheImg($filename) );
 
 ?>
 	<!--wordpress files-->
