@@ -27,10 +27,7 @@ add_action('init', 'modify_jquery');
 
 function deactivate_plugin_conditional() {
 		   global $current_blog;
-
-    if( $current_blog->blog_id == 1 ) {
     	deactivate_plugins('mpc-massive/mpc-massive.php', false, false); 
-		}
 }
 
 add_action( 'init', 'deactivate_plugin_conditional' );
