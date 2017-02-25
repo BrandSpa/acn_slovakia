@@ -10,8 +10,6 @@
 		<!--wordpress files-->
 	  <?php wp_head(); ?>
 		<!-- /wordpress files-->
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/css/index.css">
-		<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		  <script> 
 
     function onLoad(cb) {

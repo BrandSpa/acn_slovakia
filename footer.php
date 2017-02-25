@@ -5,13 +5,30 @@
 
 	<!--async load app-->
 <script type="text/javascript">
+  function appendScript(src) {
+    var element = document.createElement("script");
+    element.src = src;
+    document.body.appendChild(element);
+  }
+
+  function appendLink(href) {
+    var element = document.createElement("link");
+    element.href = href;
+    document.head.appendChild(element);
+  }
+
   function downloadJS (){
     [
       '<?php echo get_template_directory_uri() ?>/public/js/app.js'
     ].forEach(function(src) {
-      var element = document.createElement("script");
-      element.src = src;
-      document.body.appendChild(element);
+      appendScript(src);
+    });
+
+    [
+      '<?php echo get_template_directory_uri() ?>/public/css/index.css',
+      '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'
+    ].forEach(function(href) {
+      appendLink(href);
     });
     
   }
