@@ -13,8 +13,8 @@
 
   function appendLink(href) {
     var element = document.createElement("link");
-    element.href = href;
     element.rel = 'stylesheet';
+    element.href = href;
     document.head.appendChild(element);
   }
 
