@@ -15,6 +15,8 @@
     var element = document.createElement("link");
     element.rel = 'stylesheet';
     element.href = href;
+    element.type = 'text/css';
+    element.media = 'all';
     document.head.appendChild(element);
   }
 
