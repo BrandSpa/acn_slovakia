@@ -26,12 +26,12 @@ add_action('init', 'modify_jquery');
 
 
 function deactivate_plugin_conditional() {
-		   global $current_blog;
-    	deactivate_plugins('mpc-massive/mpc-massive.php', false, false); 
+	if(is_plugin_active('mpc-massive/mpc-massive.php')) {
+		deactivate_plugins('mpc-massive/mpc-massive.php'); 
+	}   	
 }
 
 add_action( 'init', 'deactivate_plugin_conditional' );
-
 
 //libs
 require('lib/clean_menu.php');
