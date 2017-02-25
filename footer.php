@@ -2,7 +2,7 @@
 <?php
 
  global $current_blog;
-  var_dump( $current_blog );
+  var_dump( is_plugin_active('mpc-massive/mpc-massive.php') );
 
 ?>
 	<!--wordpress files-->
