@@ -11,7 +11,7 @@
 
 	<!--async load app-->
 <script type="text/javascript">
-  function downloadJS   [
+  function downloadJS (){
       '<?php echo get_template_directory_uri() ?>/public/js/app.js'
     ].forEach(function(src) {
       var element = document.createElement("script");
