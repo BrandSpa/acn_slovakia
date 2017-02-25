@@ -11,11 +11,7 @@
 
 	<!--async load app-->
 <script type="text/javascript">
-  function downloadJSAndRemoveHttp() {
-    var style = jQuery(document).find('style').text().replace(/http:/, '');
-    jQuery(document).find('style').html(style);
-    
-    [
+  function downloadJS   [
       '<?php echo get_template_directory_uri() ?>/public/js/app.js'
     ].forEach(function(src) {
       var element = document.createElement("script");
@@ -26,11 +22,11 @@
   }
 
   if (window.addEventListener) {
-    window.addEventListener("load", downloadJSAtOnload, false);
+    window.addEventListener("load", downloadJS, false);
   } else if (window.attachEvent) {
-    window.attachEvent("onload", downloadJSAtOnload);
+    window.attachEvent("onload", downloadJS);
   } else {
-    window.onload = downloadJSAtOnload;
+    window.onload = downloadJS;
   }
 </script>
 	<!--/async load app-->
