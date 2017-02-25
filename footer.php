@@ -27,12 +27,12 @@
       appendScript(src);
     });
 
-    [
-      '<?php echo get_template_directory_uri() ?>/public/css/index.css',
-      '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'
-    ].forEach(function(href) {
-      appendLink(href);
-    });
+    // [
+    //   '<?php echo get_template_directory_uri() ?>/public/css/index.css',
+    //   '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'
+    // ].forEach(function(href) {
+    //   appendLink(href);
+    // });
     
   }
 
