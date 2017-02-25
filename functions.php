@@ -25,17 +25,15 @@ function modify_jquery() {
 add_action('init', 'modify_jquery');
 
 
-function modify_sitewide_plugins($value) {
-    global $current_blog;
+function deactivate_plugin_conditional() {
+		   global $current_blog;
 
     if( $current_blog->blog_id == 1 ) {
-        unset($value['mpc-massive/mpc-massive.php']);
-    }
-
-    return $value;
+    	deactivate_plugins('mpc-massive/mpc-massive.php', false, false); 
+		}
 }
 
-add_action('init', 'modify_jquery');
+add_action( 'init', 'deactivate_plugin_conditional' );
 
 
 //libs
