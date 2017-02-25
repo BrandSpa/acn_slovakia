@@ -1,6 +1,6 @@
 <?php
 $dir_base =  str_replace('lib', '', __DIR__);
-require $dir_base . 'vendor/autoload.php';
+require $dir_base . '/vendor/autoload.php';
 
 function getCacheImg($filename) {
 	$imagecache = new ImageCache();
