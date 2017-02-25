@@ -16,7 +16,19 @@ import CampaignsSlider from './components/campaigns_slider';
 WebFont.load({
 	google: {
     families: ['Source Sans Pro:400,600,700']
-  }
+  },
+	custom: {
+		families: ['ionicons']
+	},
+	 fontloading: function(familyName, fvd) {
+            console.log( "loading " + familyName );
+        },
+        fontactive: function(familyName, fvd) {
+            console.log( familyName + " loaded" );
+        },
+        fontinactive: function(familyName, fvd) {
+            console.log( familyName + " failed to load" );
+        }
 });
 
 
