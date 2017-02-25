@@ -3,7 +3,6 @@
 
 global $wp_scripts, $wp_styles;
   var_dump( $wp_scripts );
-  var_dump( $wp_styles );
 
 ?>
 	<!--wordpress files-->
