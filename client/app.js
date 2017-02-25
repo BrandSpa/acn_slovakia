@@ -18,7 +18,10 @@ WebFont.load({
     families: ['Source Sans Pro:400,600,700']
   },
 	custom: {
-		families: ['Ionicons']
+		families: ['Ionicons'],
+		 testStrings: {
+                Ionicons : '\uf10c\uf109'
+            }
 	},
 	 fontloading: function(familyName, fvd) {
             console.log( "loading " + familyName );
