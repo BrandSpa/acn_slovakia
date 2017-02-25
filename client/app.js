@@ -18,7 +18,7 @@ WebFont.load({
     families: ['Source Sans Pro:400,600,700']
   },
 	custom: {
-		families: ['ionicons']
+		families: ['Ionicons']
 	},
 	 fontloading: function(familyName, fvd) {
             console.log( "loading " + familyName );
