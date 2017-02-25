@@ -17,19 +17,21 @@ function modify_jquery() {
 		// comment out the next two lines to load the local copy of jQuery
 		wp_deregister_script( 'wp-embed' );
 		wp_deregister_script('jquery');
-		$vc = $GLOBALS['wp_scripts']->registered['wpb_composer_front_js']->src;
 		wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js', false, '3.1.1', true); 
 		wp_enqueue_script('jquery');
 	}
 }
 
 add_action('init', 'modify_jquery');
-var_dump($vc);
+
 function unload_visual_composer() {
+	$vc = $GLOBALS['wp_scripts']->registered['wpb_composer_front_js']->src;
+	wp_register_script('nea', $vc);
 	wp_deregister_script('wpb_composer_front_js');
+	wp_enqueue_script('nea');
 }
 
-// add_action('vc_base_register_front_js', 'unload_visual_composer');
+add_action('vc_base_register_front_js', 'unload_visual_composer');
 
 
 function deactivate_plugin_conditional() {
