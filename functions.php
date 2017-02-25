@@ -118,3 +118,5 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 add_filter('jpeg_quality', function($arg) {
 	return 80;
 });
+
+var_dump( getCacheImg() );

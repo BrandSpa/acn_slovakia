@@ -1,9 +1,5 @@
 	<?php require('templates/footer.php') ?>
-<?php
 
-  var_dump( getCacheImg() );
-
-?>
 	<!--wordpress files-->
 	  <?php wp_footer() ?>
 	<!-- /wordpress files-->
