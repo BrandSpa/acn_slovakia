@@ -1,12 +1,12 @@
 	<?php require('templates/footer.php') ?>
 
-<?php var_dump(dirname(__FILE__)) ?>
 	<!--wordpress files-->
 	  <?php wp_footer() ?>
 	<!-- /wordpress files-->
 
+<!--app theme-->
 <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/public/js/app.js"></script>
-
+<!--/app theme-->
  <!-- Google Analytics -->
   <script src='https://www.google-analytics.com/analytics.js'></script>
 
