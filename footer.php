@@ -14,6 +14,7 @@
   function appendLink(href) {
     var element = document.createElement("link");
     element.href = href;
+    element.rel = 'stylesheet';
     document.head.appendChild(element);
   }
 
