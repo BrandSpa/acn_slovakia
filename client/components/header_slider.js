@@ -20,11 +20,6 @@ const headerSlider = React.createClass({
     this.interval = setInterval(() => {
       this.nextSlide(false);
     }, this.props.interval);
-
-    window.addEventListener('load', () => {
-      this.height = window.innerHeight;
-      this.headerHeight = document.querySelector('.nav').offsetHeight;
-    })
   },
 
   nextSlide(clear = true) {
@@ -45,8 +40,10 @@ const headerSlider = React.createClass({
     const { slides } = this.props;
     let viewportWidth = `${100 * slides.length}%`;
     let slideWidth = `${(100 / slides.length)}%`;
-    let sliderHeight = this.height && this.headerHeight ? (this.height - this.headerHeight) : 'auto'; 
-    console.log(sliderHeight, window.innerHeight);
+    let windowHeight = window.innerHeight;
+    let navHeight = document.querySelector('.nav').offsetHeight;
+    let sliderHeight = windowHeight && navHeight ? (windowHeight - navHeight) : 'auto'; 
+    console.log(sliderHeight,  windowHeight, navHeight );
     return (
       <div className="slider" style={{ height: sliderHeight }}>
         <div 
