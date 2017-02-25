@@ -25,6 +25,7 @@ function modify_jquery() {
 }
 
 add_action('init', 'modify_jquery');
+add_action('vc_base_register_front_js', 'modify_jquery');
 
 
 function deactivate_plugin_conditional() {
