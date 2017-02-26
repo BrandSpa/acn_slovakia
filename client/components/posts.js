@@ -1,7 +1,7 @@
 import React from 'react';
 import qs from 'qs';
 import request from 'axios';
-import Isotope from 'isotope-layout';
+import Minigrid from 'minigrid';
 
 const Posts = React.createClass({
 	getInitialState() {
@@ -24,17 +24,12 @@ const Posts = React.createClass({
 	},
 
 	componentDidUpdate: function() {
-    if(this.iso) {
-				this.initIsotope();
-				this.iso.reloadItems();
-      } else if(this.state.posts && this.state.posts.length > 0) {
-				 this.initIsotope();
-			}
+    
   },
 
 	componentDidMount() {
 		  if(this.state.posts && this.state.posts.length > 0){
-        this.initIsotope();
+        this.initGrid();
       }
 	},
 
@@ -55,24 +50,21 @@ const Posts = React.createClass({
     .catch(err => console.error(err));
 	},
 
-	initIsotope() {
-		const grid = this.grid;
-
-		this.iso = new Isotope( grid, {
-			itemSelector: '.grid-item',
-			percentPosition: true,
-			masonry: {
-				columnWidth: '.grid-sizer'
-			}
+	initGrid() {
+		let container = this.grid;
+		var grid = new Minigrid({
+			container,
+			item: '.grid-item'
 		});
-	
+
+		grid.mount();
 	},
 
-	handleImageLoaded() {
-		if(this.iso) {
-			this.iso.layout();
-		}
-	},
+	// handleImageLoaded() {
+	// 	if(this.iso) {
+	// 		this.iso.layout();
+	// 	}
+	// },
 
 	goToPosts() {
 		window.location = this.props.url;
@@ -91,7 +83,6 @@ const Posts = React.createClass({
 		return (
 			<div>
 				<div ref={grid => this.grid = grid}>
-					<div className="grid-sizer"></div>
 
 					{posts.map((post, i) => {
 						return (

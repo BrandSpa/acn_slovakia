@@ -3345,6 +3345,10 @@ mime-types@^2.1.12, mime-types@~2.1.7:
   dependencies:
     mime-db "~1.26.0"
 
+minigrid:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/minigrid/-/minigrid-3.1.1.tgz#8d7876c01aa300f4feff17837d546cd9e8b1f422"
+
 minimalistic-assert@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.0.tgz#702be2dda6b37f4836bcb3f5db56641b64a1d3d3"
