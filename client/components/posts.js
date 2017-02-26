@@ -35,23 +35,6 @@ const Posts = React.createClass({
       }
 	},
 
-	seeMore() {
-		let paged = this.state.paged + 1;
-		let data = qs.stringify({ action: "get_posts", paged});
-
-    request
-		.post("/wp-admin/admin-ajax.php", data)
-    .then(res => {
-			if(res.data.length > 0) {
-				this.setState({ posts: [...this.state.posts, ...res.data], paged });
-			} else {
-				this.setState({seeMore: false});
-			}
-      
-    })
-    .catch(err => console.error(err));
-	},
-
 	initGrid() {
 		let container = this.grid;
 		var grid = new Minigrid({
