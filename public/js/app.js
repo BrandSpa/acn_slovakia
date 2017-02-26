@@ -14760,7 +14760,11 @@ var Posts = _react2.default.createClass({
 	},
 
 
-	componentDidUpdate: function componentDidUpdate() {},
+	componentDidUpdate: function componentDidUpdate() {
+		if (this.state.posts && this.state.posts.length > 0) {
+			this.initGrid();
+		}
+	},
 
 	componentDidMount: function componentDidMount() {
 		if (this.state.posts && this.state.posts.length > 0) {

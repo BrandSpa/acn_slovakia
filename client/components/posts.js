@@ -24,7 +24,9 @@ const Posts = React.createClass({
 	},
 
 	componentDidUpdate: function() {
-    
+		 if(this.state.posts && this.state.posts.length > 0){
+        this.initGrid();
+      }
   },
 
 	componentDidMount() {
