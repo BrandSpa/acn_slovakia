@@ -4,6 +4,11 @@ import sinon from 'sinon';
 import HeaderSlider from "../../components/header_slider";
 
 describe("header slider component", () => {
+	it('should render as expected', () => {
+		let wrapper = shallow(<HeaderSlider />);
+		expect(wrapper.getNodes()).toMatchSnapshot();
+	})
+
 	it('should change slide to next', () => {
 		let wrapper = shallow(<HeaderSlider slides={[{title: 'acn pope'}, {title: 'acn pope'}, {title: 'acn pope'}]} />);
 		wrapper.instance().nextSlide();

@@ -5,9 +5,11 @@ const headerSlider = React.createClass({
   getInitialState() {
     return {currentSlide: 0, left: '0'};
   },
+  
   getDefaultProps() {
     return {slides: [], interval: 5000};
   },
+
   componentDidMount() {
     this.interval = setInterval(
       () => {
@@ -16,6 +18,7 @@ const headerSlider = React.createClass({
       this.props.interval
     );
   },
+
   nextSlide(clear = true) {
     if (clear) clearInterval(this.interval);
     let total = this.props.slides.length - 1;
@@ -24,12 +27,14 @@ const headerSlider = React.createClass({
       : 0;
     this.setState({left: '-' + left * 100 + '%', currentSlide: left});
   },
+
   prevSlide() {
     clearInterval(this.interval);
     let total = this.props.slides.length - 1;
     let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
     this.setState({left: '-' + left * 100 + '%', currentSlide: left});
   },
+
   render() {
     const {slides} = this.props;
     let viewportWidth = `${100 * slides.length}%`;
@@ -57,6 +62,7 @@ const headerSlider = React.createClass({
             return <Slide key={i} {...slide} />;
           })}
         </div>
+        {slides.length > 1 ? 
         <div className="slider__btns">
           <button className="slider__btns__prev" onClick={this.prevSlide}>
             <i className="ion-chevron-left" />
@@ -65,6 +71,7 @@ const headerSlider = React.createClass({
             <i className="ion-chevron-right" />
           </button>
         </div>
+        : ''}
       </div>
     );
   }

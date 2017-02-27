@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header slider component should render as expected 1`] = `
+Array [
+  <div
+    className="slider"
+    style={
+        Object {
+            "height": "auto",
+          }
+    }
+>
+    <div
+        className="slider__viewport"
+        style={
+            Object {
+                "height": "auto",
+                "left": "0",
+                "width": "0%",
+              }
+        }
+    >
+        
+    </div>
+    
+</div>,
+]
+`;
