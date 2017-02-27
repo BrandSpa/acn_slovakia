@@ -27,9 +27,9 @@ function bs_posts_list_sc($atts, $content = null) {
 	<?php $counter++; ?>
 	
 		<?php if($counter == 1): ?>
-			<div class="bs-posts-list__main">
-				<div class="bs-posts-list__main__img" style="background-image:url( <?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>);background-color: #E5A612;">					
-				</div>
+			<a class="bs-posts-list__main">
+				<a href="<?php echo get_permalink($post->ID) ?>" class="bs-posts-list__main__img" style="background-image:url( <?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>);background-color: #E5A612;">					
+				</a>
 
 				<div class="bs-posts-list__main__content" style="background-color: #3C515F;">
 					<h2><?php echo $post->post_title ?></h2>
