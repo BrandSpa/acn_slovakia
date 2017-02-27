@@ -71,7 +71,7 @@ const Posts = React.createClass({
 
 					{posts.map((post, i) => {
 						return (
-							<div key={i} className="grid-item">
+							<div key={i} className={i == 0 ? "grid-item grid-item--main" : "grid-item" }>
 								<div className="grid-item__content">
 									{post.post_image ? <img src={post.post_image} onLoad={this.handleImageLoaded} /> : ''}
 

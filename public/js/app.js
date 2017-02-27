@@ -14825,7 +14825,7 @@ var Posts = _react2.default.createClass({
 				posts.map(function (post, i) {
 					return _react2.default.createElement(
 						'div',
-						{ key: i, className: 'grid-item' },
+						{ key: i, className: i == 0 ? "grid-item grid-item--main" : "grid-item" },
 						_react2.default.createElement(
 							'div',
 							{ className: 'grid-item__content' },
