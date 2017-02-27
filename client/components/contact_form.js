@@ -71,9 +71,7 @@ const contactForm = React.createClass({
       request
         .post('/wp-admin/admin-ajax.php', data)
         .then(res => {
-          if (res.data.id) {
-            window.location = this.props.redirect;
-          }
+          if (res.data.id) window.location = this.props.redirect;
         })
         .catch(err => console.error(err));
     }

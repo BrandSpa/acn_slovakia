@@ -23,7 +23,8 @@ module.exports = {
   plugins: [
 		new PrettierPlugin({
 			singleQuote: true,
-			bracketSpacing: false
+			bracketSpacing: false,
+			jsxBracketSameLine: true
 		})
 	]
 };
