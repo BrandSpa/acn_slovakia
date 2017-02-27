@@ -91,6 +91,17 @@ function logos_settings_page() {
 							name="url_<?php echo $value ?>"
 							value="<?php echo esc_attr( get_option('url_' . $value ) ); ?>"
 						/>
+
+						<h4>Name</h4>
+
+						<input
+							style="background: rgba(255,255,255,.4); width: 60%; height: 35px"
+							type="text"
+							placeholder="Office name"
+							name="name_<?php echo $value ?>"
+							value="<?php echo esc_attr( get_option('name_' . $value ) ); ?>"
+						/>
+						
 						
 						<h4>Contact</h4>
 
