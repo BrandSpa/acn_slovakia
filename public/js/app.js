@@ -14832,7 +14832,7 @@ var Posts = _react2.default.createClass({
 							post.post_image ? _react2.default.createElement('img', { src: post.post_image, onLoad: _this2.handleImageLoaded }) : '',
 							_react2.default.createElement(
 								'div',
-								{ className: i == 0 ? "grid-item__texts grid-item--main__texts" : "grid-item__texts" },
+								{ className: i == 0 ? "grid-item__content__texts grid-item--main__content__texts" : "grid-item__content__texts" },
 								_react2.default.createElement(
 									'h5',
 									null,
