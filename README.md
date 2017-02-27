@@ -11,6 +11,7 @@
 - [ ] fix video modal
 - [ ] news change post with image, font size and image height
 - [ ] add see more on post
+
 ## frontend
 - es6
 - react
