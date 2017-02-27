@@ -41,10 +41,12 @@
     "imports-loader": "^0.7.0",
     "jest": "^19.0.2",
     "moxios": "^0.3.0",
+    "prettier-webpack-plugin": "^0.0.2",
     "react-addons-test-utils": "^15.4.2",
     "sinon": "^1.17.7",
     "uglifycss": "^0.0.25",
     "webpack": "^2.2.1",
+    "webpack-dashboard": "^0.3.0",
     "webpack-shell-plugin": "^0.5.0"
   }
 }

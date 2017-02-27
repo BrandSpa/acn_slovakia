@@ -2,36 +2,42 @@ import React from 'react';
 import VideoModal from './video_modal';
 
 const headerSlide = React.createClass({
-	handleLink(e) {
-		e.preventDefault();
-		if(this.props.isvideo) return this.modal.show();
-		window.location.href = this.props.url;
-	},
+  handleLink(e) {
+    e.preventDefault();
+    if (this.props.isvideo) return this.modal.show();
+    window.location.href = this.props.url;
+  },
+  render() {
+    const {image, title, subtitle, url, width, height} = this.props;
 
-	render() {
-		const { image, title, subtitle, url, width, height } = this.props;
+    let bg = `url(${image})`;
 
-		let bg = `url(${image})`;
+    let style = {
+      backgroundImage: bg,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      cursor: 'pointer',
+      width,
+      height
+    };
 
-		let style = {
-			backgroundImage: bg, 
-			backgroundSize: 'cover',
-			backgroundPosition: 'center',
-			cursor: 'pointer', 
-			width,
-			height
-		};
-
-		return (
-			<div>
-				{this.props.isvideo ? <VideoModal ref={modal => this.modal = modal} url={this.props.url} /> : ''}			
-				<div className="slider__slide" style={style} onClick={this.handleLink}>
-					<h2>{title}</h2>
-					<h4>{subtitle}</h4>
-				</div>
-			</div>
-		)
-	}
+    return (
+      <div>
+        {
+          this.props.isvideo
+            ? <VideoModal
+              ref={modal => this.modal = modal}
+              url={this.props.url}
+            />
+            : ''
+        }
+        <div className="slider__slide" style={style} onClick={this.handleLink}>
+          <h2>{title}</h2>
+          <h4>{subtitle}</h4>
+        </div>
+      </div>
+    );
+  }
 });
 
 export default headerSlide;

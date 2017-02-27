@@ -1,10 +1,11 @@
 .bs-posts-list {
 	float: left;
 	width: 100%;
+	
 	@media #{$s} {
 		padding: 0 20px;
 	}
-	
+
 	& > h3 {
 		display: block;
 		float: left;

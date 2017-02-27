@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 import 'babel-polyfill';
 import WebFont from 'webfontloader';
-import multipleRender from "./lib/mutiple_render";
-import ContactForm from "./components/contact_form";
-import HeaderSlider from "./components/header_slider";
+import multipleRender from './lib/mutiple_render';
+import ContactForm from './components/contact_form';
+import HeaderSlider from './components/header_slider';
 import sectionVideo from './components/section_video';
 import Projects from './components/projects';
 import Accordion from './components/accordion';
@@ -15,30 +15,22 @@ import donateRedirect from './lib/donate_redirect';
 import CampaignsSlider from './components/campaigns_slider';
 
 WebFont.load({
-	google: {
-    families: ['Source Sans Pro:400,600,700']
-  },
-	custom: {
-		families: ['Ionicons'],
-		testStrings: {
-    	Ionicons : '\uf10c\uf109'
-    }
-	},
-	fontinactive: (familyName, fvd) => {
-		console.error( familyName + " failed to load" );
-	}
+  google: {families: ['Source Sans Pro:400,600,700']},
+  custom: {families: ['Ionicons'], testStrings: {Ionicons: '\uf10c\uf109'}},
+  fontinactive: (familyName, fvd) => {
+    console.error(familyName + ' failed to load');
+  }
 });
 
-multipleRender(".header-slider", HeaderSlider);
-multipleRender(".contact-form", ContactForm);
-multipleRender(".bs-posts", Posts);
-multipleRender(".bs-donate-react", Donate);
-multipleRender(".projects-container", Projects);
-multipleRender(".bs-accordion", Accordion);
-multipleRender(".section-video", sectionVideo);
-multipleRender(".bs-campaings-slider", CampaignsSlider);
+multipleRender('.header-slider', HeaderSlider);
+multipleRender('.contact-form', ContactForm);
+multipleRender('.bs-posts', Posts);
+multipleRender('.bs-donate-react', Donate);
+multipleRender('.projects-container', Projects);
+multipleRender('.bs-accordion', Accordion);
+multipleRender('.section-video', sectionVideo);
+multipleRender('.bs-campaings-slider', CampaignsSlider);
 
 setMenu();
 setMenuMobile();
 donateRedirect();
-
