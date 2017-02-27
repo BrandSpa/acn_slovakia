@@ -31,12 +31,13 @@
 			min-height: 400px;
 			width: 100%;
 			border-bottom: none;
-			background-size: cover; 
-			background-position: top center;
+			display: flex;
 
 			&__bg {
 				width: 50%;
 				min-height: 240px;
+				background-size: cover; 
+				background-position: top center;
 			}
 
 			&__title {
