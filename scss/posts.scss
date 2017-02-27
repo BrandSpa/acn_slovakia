@@ -5,9 +5,7 @@
 		&__content {
 			&__texts {
 				p {
-					@media #{$s} {
-						display: block;
-					}
+					display: block !important;
 				}
 			}
 		
