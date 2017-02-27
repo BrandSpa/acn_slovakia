@@ -31,22 +31,24 @@
 			min-height: 400px;
 			width: 100%;
 			border-bottom: none;
+			position: relative;
 
 			&__bg {
 				width: 100%;
-				min-height: 240px;
+				min-height: 400px;
 				background-size: cover; 
 				background-position: top center;
 			}
 
 			&__title {
 				// margin: -5% auto 100px auto;
-				min-height: 240px;
+				min-height: 200px;
 				background: #F4F4F4;
 				text-align: center;
 				color: #3C515F;
 				padding: 5% 8%;
 				width: 100%;
+				bottom: 0;
 				h2 {
 					font-size: (40 / $font-size-base) * 1em;
 				}
