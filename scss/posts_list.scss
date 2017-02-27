@@ -38,6 +38,9 @@
 			background-position: center;
 			background-size: cover;
 			background-color: #3c515f;
+			@media #{$s} {
+				width: 100%;
+			}
 		}
 
 		&__content {
@@ -45,6 +48,10 @@
 			width: 65%;
 			height: 400px;
 			padding: 80px 160px 80px 80px;
+
+			@media #{$s} {
+				width: 100%;
+			}
 				
 			h2 {
 				font-size: (35 / 15) * 1em;
@@ -90,6 +97,9 @@
 				background-position: center;
 			background-size: cover;
 			background-color: #3c515f;
+				@media #{$s} {
+				width: 40%:
+				}
 			}
 
 			&__content {
@@ -97,8 +107,9 @@
 				width: 65%;
 				padding: 40px 40px 40px 40px;
 				background: #fff;
+
 				@media #{$s} {
-					width: 100%;
+					width: 60%;
 				}
 				
 				h2 {
