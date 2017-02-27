@@ -29,6 +29,7 @@ function bs_add_country_info_settings() {
 		$value = str_replace(' ', '_', $value);
     register_setting( 'bs_country_info_group', 'logo_' . $value );
     register_setting( 'bs_country_info_group', 'donate_url_' . $value );
+    register_setting( 'bs_country_info_group', 'name_' . $value );
     register_setting( 'bs_country_info_group', 'url_' . $value );
     register_setting( 'bs_country_info_group', 'contact_info_address_' . $value );
     register_setting( 'bs_country_info_group', 'contact_info_phone_' . $value );
