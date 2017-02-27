@@ -65,8 +65,9 @@ p{font-size:1em;font-weight:normal;font-style:normal;font-stretch:normal;line-he
 .offices-list li a{text-decoration:none;display:block;padding:0 7px;color:#fff;font-weight:300;font-size:11px}
 .bs-contact-info{color:#fff}.btn--outline{font-size:1.33333em;border-radius:5px;border:2px solid #f1364e;padding:15px 40px;text-align:center;display:block}
 .float-left{float:left}.nav{height:140px;width:100%;padding:30px 60px 0 60px;background:#fff}
-@media(max-width:767px){.nav{padding:0;text-align:center;position:relative}}.nav__donate a{font-size:1.33333em !important;border-radius:5px;border:2px solid #f1364e;padding:15px 40px;text-align:center;display:block;color:#f1364e !important}
-@media(max-width:767px){.nav__donate a{background:#f1364e;color:#3c515f;padding:0 20px}
+@media(max-width:767px){.nav{padding:0;text-align:center;position:relative}}@media(max-width:767px){.nav__donate{padding:0 20px}
+}.nav__donate a{font-size:1.33333em !important;border-radius:5px;border:2px solid #f1364e;padding:15px 40px;text-align:center;display:block;color:#f1364e !important}
+@media(max-width:767px){.nav__donate a{background:#f1364e;color:#3c515f !important}
 }@media(max-width:767px){.logo{margin:10% auto;display:block}}.open-menu{display:none}
 @media(max-width:767px){.open-menu{display:block;position:absolute;top:40%;left:20px}
 }.menu{float:right;display:none}.menu--show{display:block}.menu--mobile{display:none;height:100%;position:fixed;left:-200px;top:0;background:#fff;width:200px;transition:all 300ms;background:#3c515f;padding:40px 0;margin:0;z-index:1020}
