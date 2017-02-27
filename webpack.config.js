@@ -1,6 +1,4 @@
 'use strict';
-const DashboardPlugin = require('webpack-dashboard/plugin');
-const PrettierPlugin = require('prettier-webpack-plugin');
 
 module.exports = {
   watch: true,
@@ -19,13 +17,6 @@ module.exports = {
 				loader: 'babel-loader' 
 			} 
 		]
-  },
-  plugins: [
-		new PrettierPlugin({
-			singleQuote: true,
-			bracketSpacing: false,
-			jsxBracketSameLine: true
-		})
-	]
+  }
 };
 

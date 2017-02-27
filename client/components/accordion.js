@@ -4,9 +4,11 @@ const Accordion = React.createClass({
   getInitialState() {
     return {show: false};
   },
+  
   componentDidMount() {
     return {content: '', btnTitle: 'Toggle'};
   },
+
   toggle() {
     this.setState({show: !this.state.show});
   },
