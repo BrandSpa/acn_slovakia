@@ -2,17 +2,7 @@ import React from 'react';
 import qs from 'qs';
 import request from 'axios';
 import Minigrid from 'minigrid';
-
-function debounce(fn, delay) {
-	let delayed;
-
-  return e => {
-    clearTimeout(delayed);
-    delayed = setTimeout(function() {
-    	fn(e);
-    }, delay);
-  };
-}
+import debounce from '../lib/debounce';
 
 const Posts = React.createClass({
 	getInitialState() {

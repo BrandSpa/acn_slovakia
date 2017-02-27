@@ -14743,18 +14743,11 @@ var _minigrid = __webpack_require__(456);
 
 var _minigrid2 = _interopRequireDefault(_minigrid);
 
+var _debounce = __webpack_require__(546);
+
+var _debounce2 = _interopRequireDefault(_debounce);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function debounce(fn, delay) {
-	var delayed = void 0;
-
-	return function (e) {
-		clearTimeout(delayed);
-		delayed = setTimeout(function () {
-			fn(e);
-		}, delay);
-	};
-}
 
 var Posts = _react2.default.createClass({
 	displayName: 'Posts',
@@ -14783,7 +14776,7 @@ var Posts = _react2.default.createClass({
 	},
 
 	componentDidMount: function componentDidMount() {
-		window.addEventListener('resize', debounce(this.initGrid, 300));
+		window.addEventListener('resize', (0, _debounce2.default)(this.initGrid, 300));
 		this.initGrid();
 	},
 	initGrid: function initGrid() {
@@ -35284,6 +35277,28 @@ _webfontloader2.default.load({
 (0, _set_menu2.default)();
 (0, _set_menu_mobile2.default)();
 (0, _donate_redirect2.default)();
+
+/***/ }),
+/* 546 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = debounce;
+function debounce(fn, delay) {
+  var delayed = void 0;
+
+  return function (e) {
+    clearTimeout(delayed);
+    delayed = setTimeout(function () {
+      fn(e);
+    }, delay);
+  };
+}
 
 /***/ })
 /******/ ]);
