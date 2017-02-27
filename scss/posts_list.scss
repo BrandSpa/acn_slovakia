@@ -132,6 +132,10 @@
 					color: #9b9b9b;
 					display: block;
 					padding-right: 20%;
+					
+					@media #{$s} {
+						display: none;
+					}
 				}
 		}
 	}
