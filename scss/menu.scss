@@ -19,6 +19,12 @@
 			text-align: center;
 			display: block;
 			color: #F1364E !important;
+			
+			@media #{$s} { 
+				background: #F1364E;
+				color: #3c515f;
+				padding: 0 20px;
+			}
 		}
 		
 	}
