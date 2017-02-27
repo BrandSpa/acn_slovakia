@@ -9,7 +9,6 @@
 	<?php require('templates/post_header.php') ?>
 <?php endif; ?>
 
-<img src="get_the_post_thumbnail_url($post->ID, 'full')" alt="">
 
 	<div class="l-wrap">
 		<div class="bs-post__content col-8-l col-12-s">

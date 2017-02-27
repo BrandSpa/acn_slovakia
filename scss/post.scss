@@ -34,13 +34,19 @@
 			background-size: cover; 
 			background-position: top center;
 
+			&__bg {
+				width: 50%;
+				min-height: 240px;
+			}
+
 			&__title {
-				margin: -5% auto 100px auto;
+				// margin: -5% auto 100px auto;
 				min-height: 240px;
 				background: #F4F4F4;
 				text-align: center;
 				color: #3C515F;
 				padding: 5% 8%;
+				width: 50%;
 			}
 		}
 	
