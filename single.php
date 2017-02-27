@@ -8,7 +8,7 @@
 	<?php if(!empty(get_the_post_thumbnail_url($post->ID, 'full'))): ?>
 
 	<div class="l-wrap">
-		<img src="<?php get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="" style="width: 100%">
+		<img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="" style="width: 100%">
 	</div>
 
 <?php endif; ?>
