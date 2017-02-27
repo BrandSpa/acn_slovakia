@@ -9,8 +9,8 @@
 - [ ] links to privacy & terms
 - [x] remove pope firm on mobile
 - [ ] fix video modal
-- [ ] noticia change post with image, font size and image height
-
+- [ ] news change post with image, font size and image height
+- [ ] add see more on post
 ## frontend
 - es6
 - react
