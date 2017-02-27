@@ -14828,11 +14828,11 @@ var Posts = _react2.default.createClass({
 						{ key: i, className: i == 0 ? "grid-item grid-item--main" : "grid-item" },
 						_react2.default.createElement(
 							'div',
-							{ className: 'grid-item__content' },
+							{ className: i == 0 ? "grid-item__content grid-item--main__content" : "grid-item__content" },
 							post.post_image ? _react2.default.createElement('img', { src: post.post_image, onLoad: _this2.handleImageLoaded }) : '',
 							_react2.default.createElement(
 								'div',
-								{ className: 'grid-item__content__texts' },
+								{ className: i == 0 ? "grid-item__texts grid-item--main__texts" : "grid-item__texts" },
 								_react2.default.createElement(
 									'h5',
 									null,
