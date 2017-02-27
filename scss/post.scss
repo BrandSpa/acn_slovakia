@@ -47,6 +47,10 @@
 		padding: 15px;
 		float: left;
 		
+		@media #{$s} {
+			width: 100%;
+		}
+
 		&__content {
 			background: #F7F7F7;
 			padding: 20px;

@@ -155,7 +155,8 @@ a:hover{text-decoration:none}.change-amount__copywrite{background:#3c515f;width:
 .bs-post__header--image{min-height:400px;width:100%;border-bottom:0;background-size:cover;background-position:top center}
 .bs-post__header--image__title{margin:-5% auto 100px auto;min-height:240px;background:#f4f4f4;text-align:center;color:#3c515f;padding:5% 8%}
 .bs-post__content{float:none;margin:0 auto 100px auto}.bs-post__recent{width:25%;padding:15px;float:left}
-.bs-post__recent__content{background:#f7f7f7;padding:20px}.bs-post__recent__content h4{font-size:1.2em;color:#3c515f;display:block;border-bottom:1px solid #d0011b;padding-bottom:20px}
+@media(max-width:767px){.bs-post__recent{width:100%}}.bs-post__recent__content{background:#f7f7f7;padding:20px}
+.bs-post__recent__content h4{font-size:1.2em;color:#3c515f;display:block;border-bottom:1px solid #d0011b;padding-bottom:20px}
 .bs-post__recent__content p{color:#9b9b9b}.bs-post__recent__content a{color:#d0011b}
 .bs-post__donate{background:#3c515f;padding:40px 0}.bs-post__donate h3{font-size:1.46667em;color:#fff;margin:30px auto}
 .bs-posts-list{float:left;width:100%}.bs-posts-list>h3{display:block;float:left;width:100%;margin:40px 0;font-size:1.66667em;color:#3c515f}
