@@ -30,7 +30,7 @@ const Posts = React.createClass({
   },
 
 	componentDidMount() {
-		document.addEventListener('resize', (e) => {
+		document.window.addEventListener('resize', (e) => {
 			console.log('resize');
 		});
 

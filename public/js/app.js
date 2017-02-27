@@ -14774,7 +14774,7 @@ var Posts = _react2.default.createClass({
 	},
 
 	componentDidMount: function componentDidMount() {
-		document.addEventListener('resize', function (e) {
+		document.window.addEventListener('resize', function (e) {
 			console.log('resize');
 		});
 
