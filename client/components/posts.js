@@ -24,15 +24,19 @@ const Posts = React.createClass({
 	},
 
 	componentDidUpdate: function() {
-		 if(this.state.posts && this.state.posts.length > 0){
-        this.initGrid();
-      }
+		if(this.state.posts && this.state.posts.length > 0){
+    	this.initGrid();
+    }
   },
 
 	componentDidMount() {
-		  if(this.state.posts && this.state.posts.length > 0){
-        this.initGrid();
-      }
+		document.addEventListener('resize', (e) => {
+			console.log('resize');
+		});
+
+		if(this.state.posts && this.state.posts.length > 0){
+    	this.initGrid();
+    }
 	},
 
 	initGrid() {
