@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component ContactForm should render as expected 1`] = `
+Array [
+  <form
+    className="form-inline contact-form"
+    onSubmit={[Function]}
+    style={
+        Object {
+            "textAlign": "center",
+          }
+    }
+>
+    <div
+        className="input-container"
+    >
+        <input
+            onChange={[Function]}
+            placeholder={undefined}
+            type="text"
+            value=""
+        />
+        <div
+            className="hidden"
+        >
+             
+             
+        </div>
+    </div>
+    <div
+        className="input-container"
+    >
+        <input
+            onChange={[Function]}
+            placeholder={undefined}
+            type="text"
+            value=""
+        />
+        <div
+            className="hidden"
+        />
+    </div>
+    <div
+        className="input-container"
+    >
+        <input
+            onChange={[Function]}
+            placeholder={undefined}
+            type="text"
+            value=""
+        />
+        <div
+            className="hidden"
+        />
+    </div>
+    <div
+        className="input-container"
+    >
+        <select
+            onChange={[Function]}
+            value=""
+        >
+            
+        </select>
+    </div>
+    <button
+        onClick={[Function]}
+        style={
+            Object {
+                "marginLeft": "-2px",
+              }
+        }
+    />
+</form>,
+]
+`;

@@ -12,6 +12,11 @@ describe("component ContactForm", () => {
     moxios.uninstall()
   })
 
+  it('should render as expected', () => {
+		let wrapper = shallow(<ContactForm />);
+		expect(wrapper.getNodes()).toMatchSnapshot();
+	})
+
   it("should have 3 inputs and 1 select", () => {
     let wrapper = shallow(<ContactForm  />);
     expect(wrapper.find("input").length).toBe(3);
@@ -28,13 +33,33 @@ describe("component ContactForm", () => {
     expect(wrapper.state().contact.country).toBe("Germany");
   });
 
-  it("should change contact name", () => {
+  it("should change contact state", () => {
+    let name = 'ale';
+    let lastname = 'san';
+    let email = 'alesan@gmail.com';
+    let e = {};
     let wrapper = shallow(<ContactForm />);
     wrapper
       .find("input")
       .at(0)
-      .simulate("change", { e: {}, target: { value: "test" } });
-    expect(wrapper.state().contact.name).toEqual("test");
+      .simulate("change", { e, target: { value: name } });
+
+    wrapper
+      .find("input")
+      .at(1)
+      .simulate("change", { e, target: { value: lastname } });
+
+      wrapper
+      .find("input")
+      .at(2)
+      .simulate("change", { e, target: { value: email } });
+
+    expect(wrapper.state().contact).toEqual({
+      name,
+      lastname,
+      email,
+      country: ''
+    });
   });
 
   it('should show validations', () => {

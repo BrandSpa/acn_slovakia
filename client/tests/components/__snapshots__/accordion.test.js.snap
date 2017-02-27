@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`accordion component should render as expected 1`] = `
+Array [
+  <div
+    className="accordion"
+>
+    <button
+        className="accordion__btn"
+        onClick={[Function]}
+        style={
+            Object {
+                "background": "#687f87",
+                "border": "none",
+                "borderRadius": "0",
+                "fontSize": "18px",
+                "fontWeight": "normal",
+                "height": "60px",
+                "width": "100%",
+              }
+        }
+    >
+        acn int
+          
+        <i
+            className="ion-chevron-down"
+        />
+    </button>
+    <div
+        className="accordion__content"
+        style={
+            Object {
+                "display": "none",
+              }
+        }
+    >
+        <div
+            dangerouslySetInnerHTML={
+                Object {
+                    "__html": "this is his content",
+                  }
+            }
+        />
+    </div>
+</div>,
+]
+`;
