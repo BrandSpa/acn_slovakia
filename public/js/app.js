@@ -16476,6 +16476,12 @@ var headerSlider = _react2.default.createClass({
     var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
     var sliderHeight = windowHeight && navHeight ? windowHeight - navHeight : 'auto';
 
+    var viewportStyle = {
+      width: viewportWidth,
+      left: this.state.left,
+      height: sliderHeight
+    };
+
     return _react2.default.createElement(
       'div',
       { className: 'slider', style: { height: sliderHeight } },
@@ -16483,11 +16489,7 @@ var headerSlider = _react2.default.createClass({
         'div',
         {
           className: 'slider__viewport',
-          style: {
-            width: viewportWidth,
-            left: this.state.left,
-            height: sliderHeight
-          }
+          style: viewportStyle
         },
         slides.map(function (slide, i) {
           slide = _extends({}, slide, { width: slideWidth, height: sliderHeight });

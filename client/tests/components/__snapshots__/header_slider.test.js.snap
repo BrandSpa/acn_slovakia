@@ -16,11 +16,15 @@ Array [
             Object {
                 "height": "auto",
                 "left": "0",
-                "width": "0%",
+                "width": "100%",
               }
         }
     >
-        
+        <headerSlide
+            height="auto"
+            id={1}
+            width="100%"
+        />
     </div>
     
 </div>,

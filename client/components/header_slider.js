@@ -47,15 +47,17 @@ const headerSlider = React.createClass({
       ? windowHeight - navHeight
       : 'auto';
 
+    let viewportStyle = {
+      width: viewportWidth,
+      left: this.state.left,
+      height: sliderHeight
+    };
+
     return (
       <div className="slider" style={{height: sliderHeight}}>
         <div
           className="slider__viewport"
-          style={{
-            width: viewportWidth,
-            left: this.state.left,
-            height: sliderHeight
-          }}
+          style={viewportStyle}
         >
           {slides.map((slide, i) => {
             slide = {...slide, width: slideWidth, height: sliderHeight};

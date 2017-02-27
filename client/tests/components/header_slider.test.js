@@ -5,7 +5,7 @@ import HeaderSlider from "../../components/header_slider";
 
 describe("header slider component", () => {
 	it('should render as expected', () => {
-		let wrapper = shallow(<HeaderSlider />);
+		let wrapper = shallow(<HeaderSlider slides={[{id: 1}]} />);
 		expect(wrapper.getNodes()).toMatchSnapshot();
 	})
 
