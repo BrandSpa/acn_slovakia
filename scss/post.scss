@@ -11,8 +11,13 @@
 		border-bottom: 1px solid #D0011B;
 		margin-bottom: 100px;
 
+		@media #{$s} {
+			margin-bottom: 20px;
+		}
+
 		&__title {
 			padding-bottom: 70px;
+			
 			h2 {
 				color: #3C515F;
 			}
