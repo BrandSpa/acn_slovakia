@@ -16560,7 +16560,7 @@ var CedritCard = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'div',
-			{ style: { width: this.props.width, float: 'left' } },
+			{ className: 'donate_react__creditcard', style: { width: this.props.width, float: 'left' } },
 			_react2.default.createElement(_cards2.default, this.props),
 			_react2.default.createElement(
 				'div',
@@ -16580,10 +16580,10 @@ var CedritCard = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				'div',
-				{ className: 'row' },
+				{ className: 'row donate_react__creditcard__row' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'form-group col-4-l' },
+					{ className: 'form-group col-4-l col-4' },
 					_react2.default.createElement('input', {
 						type: 'text',
 						placeholder: texts.placeholder_month,
@@ -16599,7 +16599,7 @@ var CedritCard = _react2.default.createClass({
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'form-group col-4-l' },
+					{ className: 'form-group col-4-l col-4' },
 					_react2.default.createElement('input', {
 						type: 'text',
 						placeholder: texts.placeholder_year,
@@ -16615,7 +16615,7 @@ var CedritCard = _react2.default.createClass({
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'form-group col-4-l' },
+					{ className: 'form-group col-4-l col-4' },
 					_react2.default.createElement('input', {
 						type: 'text',
 						placeholder: texts.placeholder_cvc,

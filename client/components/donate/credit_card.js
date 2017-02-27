@@ -110,7 +110,7 @@ const CedritCard = React.createClass({
 		const {texts, stripe, errors} = this.props;
 
 		return (
-			<div style={{width: this.props.width, float: 'left'}}>
+		<div className="donate_react__creditcard" style={{width: this.props.width, float: 'left'}}>
 				<Cards {...this.props} />
 
 			<div className="form-group">
@@ -125,8 +125,8 @@ const CedritCard = React.createClass({
 					{texts.validation_card}
         </span>
 			</div>
-		<div className="row">
-			<div className="form-group col-4-l">
+		<div className="row donate_react__creditcard__row">
+			<div className="form-group col-4-l col-4">
 				<input 
 					type="text" 
 					placeholder={texts.placeholder_month} 
@@ -139,7 +139,7 @@ const CedritCard = React.createClass({
         </span>
 			</div>
 			
-				<div className="form-group col-4-l">
+				<div className="form-group col-4-l col-4">
 					<input 
 						type="text" 
 						placeholder={texts.placeholder_year} 
@@ -151,7 +151,7 @@ const CedritCard = React.createClass({
 						{texts.validation_year}
 					</span>
 				</div>
-				<div className="form-group col-4-l">
+				<div className="form-group col-4-l col-4">
 					<input
 						type="text" 
 						placeholder={texts.placeholder_cvc} 

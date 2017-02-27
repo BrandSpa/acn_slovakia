@@ -99,7 +99,7 @@
     @media #{$s} {
       margin: 10px 0 0 10px;
     }
-    
+
     &:first-child {
       margin-right: 22px;
     }
@@ -164,6 +164,14 @@
     margin-right: 5px;
     &--active {
       opacity: 1;
+    }
+  }
+
+  &__creditcard {
+    &__row {
+      @media #{$s} {
+        margin: 0 -15px;
+      }
     }
   }
 
