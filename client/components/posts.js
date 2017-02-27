@@ -3,6 +3,17 @@ import qs from 'qs';
 import request from 'axios';
 import Minigrid from 'minigrid';
 
+function debounce(fn, delay) {
+	let delayed;
+
+  return e => {
+    clearTimeout(delayed);
+    delayed = setTimeout(function() {
+    	fn(e);
+    }, delay);
+  };
+}
+
 const Posts = React.createClass({
 	getInitialState() {
 		return {
@@ -24,32 +35,24 @@ const Posts = React.createClass({
 	},
 
 	componentDidUpdate: function() {
-		if(this.state.posts && this.state.posts.length > 0){
-    	this.initGrid();
-    }
+		this.initGrid();
   },
 
 	componentDidMount() {
-		window.addEventListener('resize', (e) => {
-			if(this.state.posts && this.state.posts.length > 0){
-				console.count('resize');
-    		this.initGrid();
-    	}
-		});
-
-		if(this.state.posts && this.state.posts.length > 0){
-    	this.initGrid();
-    }
+		window.addEventListener('resize', debounce(this.initGrid, 300));
+    this.initGrid();
 	},
 
 	initGrid() {
-		let container = this.grid;
-		var grid = new Minigrid({
-			container,
-			item: '.grid-item'
-		});
+		if(this.state.posts && this.state.posts.length > 0){
+			let container = this.grid;
+			var grid = new Minigrid({
+				container,
+				item: '.grid-item'
+			});
 
-		grid.mount();
+			grid.mount();
+		}
 	},
 
 	// handleImageLoaded() {

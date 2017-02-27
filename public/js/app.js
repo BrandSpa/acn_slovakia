@@ -14745,6 +14745,17 @@ var _minigrid2 = _interopRequireDefault(_minigrid);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function debounce(fn, delay) {
+	var delayed = void 0;
+
+	return function (e) {
+		clearTimeout(delayed);
+		delayed = setTimeout(function () {
+			fn(e);
+		}, delay);
+	};
+}
+
 var Posts = _react2.default.createClass({
 	displayName: 'Posts',
 	getInitialState: function getInitialState() {
@@ -14768,33 +14779,23 @@ var Posts = _react2.default.createClass({
 
 
 	componentDidUpdate: function componentDidUpdate() {
-		if (this.state.posts && this.state.posts.length > 0) {
-			this.initGrid();
-		}
+		this.initGrid();
 	},
 
 	componentDidMount: function componentDidMount() {
-		var _this2 = this;
-
-		window.addEventListener('resize', function (e) {
-			if (_this2.state.posts && _this2.state.posts.length > 0) {
-				console.count('resize');
-				_this2.initGrid();
-			}
-		});
-
-		if (this.state.posts && this.state.posts.length > 0) {
-			this.initGrid();
-		}
+		window.addEventListener('resize', debounce(this.initGrid, 300));
+		this.initGrid();
 	},
 	initGrid: function initGrid() {
-		var container = this.grid;
-		var grid = new _minigrid2.default({
-			container: container,
-			item: '.grid-item'
-		});
+		if (this.state.posts && this.state.posts.length > 0) {
+			var container = this.grid;
+			var grid = new _minigrid2.default({
+				container: container,
+				item: '.grid-item'
+			});
 
-		grid.mount();
+			grid.mount();
+		}
 	},
 
 
@@ -14808,7 +14809,7 @@ var Posts = _react2.default.createClass({
 		window.location = this.props.url;
 	},
 	render: function render() {
-		var _this3 = this;
+		var _this2 = this;
 
 		var posts = this.state.posts;
 
@@ -14826,7 +14827,7 @@ var Posts = _react2.default.createClass({
 			_react2.default.createElement(
 				'div',
 				{ ref: function ref(grid) {
-						return _this3.grid = grid;
+						return _this2.grid = grid;
 					} },
 				posts.map(function (post, i) {
 					return _react2.default.createElement(
@@ -14835,7 +14836,7 @@ var Posts = _react2.default.createClass({
 						_react2.default.createElement(
 							'div',
 							{ className: 'grid-item__content' },
-							post.post_image ? _react2.default.createElement('img', { src: post.post_image, onLoad: _this3.handleImageLoaded }) : '',
+							post.post_image ? _react2.default.createElement('img', { src: post.post_image, onLoad: _this2.handleImageLoaded }) : '',
 							_react2.default.createElement(
 								'div',
 								{ className: 'grid-item__content__texts' },
