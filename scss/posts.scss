@@ -1,7 +1,16 @@
 .grid-item {
   float: left;
 	padding: 15px 15px;
-
+	&--main {
+		&__content {
+			p {
+				@media #{$s} {
+					display: block;
+				}
+			}
+		}
+	}
+	
 	&__content {
 		background: #fff;
 
