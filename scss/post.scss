@@ -31,10 +31,9 @@
 			min-height: 400px;
 			width: 100%;
 			border-bottom: none;
-			display: flex;
 
 			&__bg {
-				width: 50%;
+				width: 100%;
 				min-height: 240px;
 				background-size: cover; 
 				background-position: top center;
@@ -47,7 +46,7 @@
 				text-align: center;
 				color: #3C515F;
 				padding: 5% 8%;
-				width: 50%;
+				width: 100%;
 				h2 {
 					font-size: (40 / $font-size-base) * 1em;
 				}
