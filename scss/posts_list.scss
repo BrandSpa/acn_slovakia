@@ -40,6 +40,8 @@
 			background-color: #3c515f;
 			@media #{$s} {
 				width: 100%;
+				min-height: 200px;
+				height: auto;
 			}
 		}
 
@@ -51,6 +53,7 @@
 
 			@media #{$s} {
 				width: 100%;
+				height: auto;
 			}
 				
 			h2 {
@@ -98,7 +101,7 @@
 			background-size: cover;
 			background-color: #3c515f;
 				@media #{$s} {
-				width: 40%:
+				width: 40%;
 				}
 			}
 
