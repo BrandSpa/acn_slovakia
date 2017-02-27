@@ -150,12 +150,12 @@ a:hover{text-decoration:none}.change-amount__copywrite{background:#3c515f;width:
 .grid-item__content__texts{padding:15px;word-wrap:break-word}.grid-item__content__texts h5{color:#3c515f;padding-bottom:15px;margin-top:15px;display:block}
 .grid-item__content__texts h5:after{display:block;content:' ';width:70%;border-bottom:1px solid #e34e6b;padding-top:15px}
 .grid-item__content__texts h5 a{color:#324049;text-decoration:none}.grid-item__content__texts p{color:#9b9b9b !important}
-.grid-item,.grid-sizer{width:33.33333%}@media(min-width:768px) and (max-width:991px){.grid-item,.grid-sizer{width:50%}
-}@media(max-width:767px){.grid-item,.grid-sizer{width:100%}}.bs-post{width:100%;display:block;position:relative}
-@media(max-width:767px){.bs-post{padding:0 20px}}.bs-post__header{border-bottom:1px solid #d0011b;margin-bottom:100px}
-@media(max-width:767px){.bs-post__header{margin-bottom:20px}}.bs-post__header__title{padding-bottom:70px}
-@media(max-width:767px){.bs-post__header__title{padding-bottom:20px}}.bs-post__header__title h2{color:#3c515f}
-.bs-post__header--image{min-height:400px;width:100%;border-bottom:0;background-size:cover;background-position:top center}
+@media(max-width:767px){.grid-item__content__texts p{display:none}}.grid-item,.grid-sizer{width:33.33333%}
+@media(min-width:768px) and (max-width:991px){.grid-item,.grid-sizer{width:50%}}@media(max-width:767px){.grid-item,.grid-sizer{width:100%}
+}.bs-post{width:100%;display:block;position:relative}@media(max-width:767px){.bs-post{padding:0 20px}
+}.bs-post__header{border-bottom:1px solid #d0011b;margin-bottom:100px}@media(max-width:767px){.bs-post__header{margin-bottom:20px}
+}.bs-post__header__title{padding-bottom:70px}@media(max-width:767px){.bs-post__header__title{padding-bottom:20px}
+}.bs-post__header__title h2{color:#3c515f}.bs-post__header--image{min-height:400px;width:100%;border-bottom:0;background-size:cover;background-position:top center}
 .bs-post__header--image__title{margin:-5% auto 100px auto;min-height:240px;background:#f4f4f4;text-align:center;color:#3c515f;padding:5% 8%}
 .bs-post__content{float:none;margin:0 auto 100px auto}@media(max-width:767px){.bs-post__content{margin-bottom:20px}
 }.bs-post__recent{width:25%;padding:15px;float:left}@media(max-width:767px){.bs-post__recent{width:100%}
