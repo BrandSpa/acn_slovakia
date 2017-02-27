@@ -8,6 +8,7 @@
 - [ ] learn more change local name and url
 - [ ] links to privacy & terms
 - [ ] remove pope firm on mobile
+- [ ] fix video modal
 
 ## frontend
 - es6
