@@ -165,7 +165,8 @@ p{font-size:1em;font-weight:normal;font-style:normal;font-stretch:normal;line-he
 }.bs-post__recent__content{background:#f7f7f7;padding:20px}.bs-post__recent__content h4{font-size:1.2em;color:#3c515f;display:block;border-bottom:1px solid #d0011b;padding-bottom:20px}
 .bs-post__recent__content p{color:#9b9b9b}.bs-post__recent__content a{color:#d0011b}
 .bs-post__donate{background:#3c515f;padding:40px 0}.bs-post__donate h3{font-size:1.46667em;color:#fff;margin:30px auto}
-.bs-posts-list{float:left;width:100%}.bs-posts-list>h3{display:block;float:left;width:100%;margin:40px 0;font-size:1.66667em;color:#3c515f}
+.bs-posts-list{float:left;width:100%}@media(max-width:767px){.bs-posts-list{padding:0 20px}
+}.bs-posts-list>h3{display:block;float:left;width:100%;margin:40px 0;font-size:1.66667em;color:#3c515f}
 .bs-posts-list__pagination{width:30%;margin:40px auto}.bs-posts-list__pagination button{background:transparent;border-radius:2px;border:solid 2px #bbc5c8;color:#3c515f;font-size:20px}
 .bs-posts-list__main{float:left;margin-bottom:40px;width:100%}.bs-posts-list__main__img{float:left;width:35%;height:400px;background-position:center;background-size:cover;background-color:#3c515f}
 @media(max-width:767px){.bs-posts-list__main__img{width:100%;min-height:200px;height:auto}
