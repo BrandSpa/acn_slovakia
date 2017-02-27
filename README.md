@@ -4,10 +4,10 @@
 ##todos
 - [x] arrows slider home
 - [x] posts 6 
-- [ ] link to title campaigns
+- [x] link to title campaigns on mobile slider
 - [ ] learn more change local name and url
 - [ ] links to privacy & terms
-- [ ] remove pope firm on mobile
+- [x] remove pope firm on mobile
 - [ ] fix video modal
 
 ## frontend
