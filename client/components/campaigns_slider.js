@@ -5,9 +5,11 @@ const CampaignsSlider = React.createClass({
   getInitialState() {
     return {currentSlide: 0, left: '0'};
   },
+  
   getDefaultProps() {
     return {slides: [], interval: 0};
   },
+
   componentDidMount() {
     this.interval = setInterval(
       () => {
@@ -24,12 +26,14 @@ const CampaignsSlider = React.createClass({
       : 0;
     this.setState({left: '-' + left * 100 + '%', currentSlide: left});
   },
+
   prevSlide() {
     clearInterval(this.interval);
     let total = this.props.slides.length - 1;
     let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
     this.setState({left: '-' + left * 100 + '%', currentSlide: left});
   },
+
   render() {
     const {slides} = this.props;
     let viewportWidth = `${100 * slides.length}%`;
@@ -55,7 +59,7 @@ const CampaignsSlider = React.createClass({
                   className="campaigns-slider__slide__content"
                   style={{background: slide.bg}}
                 >
-                  <h4>{slide.title}</h4>
+                  <h4><a href={slide.url ? slide.url : '#'}>{slide.title}</a></h4>
                   <p>{slide.content}</p>
                 </div>
               </div>

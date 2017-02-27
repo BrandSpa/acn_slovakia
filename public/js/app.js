@@ -15929,7 +15929,11 @@ var CampaignsSlider = _react2.default.createClass({
               _react2.default.createElement(
                 'h4',
                 null,
-                slide.title
+                _react2.default.createElement(
+                  'a',
+                  { href: slide.url ? slide.url : '#' },
+                  slide.title
+                )
               ),
               _react2.default.createElement(
                 'p',

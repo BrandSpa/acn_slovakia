@@ -48,16 +48,22 @@ function bs_campaigns_slider_vc() {
 						'heading' => 'Enter image',
             'param_name' => 'image',
 					),
+					array(
+            'type' => 'textfield',
+            'value' => '',
+            'heading' => 'Enter url',
+            'param_name' => 'url',
+          ),
         	array(
             'type' => 'textfield',
             'value' => '',
-            'heading' => 'Enter your title',
+            'heading' => 'Enter title',
             'param_name' => 'title',
           ),
 					array(
           	'type' => 'textarea',
             'value' => '',
-            'heading' => 'Enter your content',
+            'heading' => 'Enter content',
             'param_name' => 'content',
           ),
 					array(
