@@ -25,8 +25,8 @@ describe("component ContactForm", () => {
 
   it("should change country on componentDidMount", () => {
     moxios.stubRequest('/wp-admin/admin-ajax.php', {
-        status: 200,
-        responseText: 'hello'
+      status: 200,
+      responseText: 'hello'
     });
 
     let wrapper = mount(<ContactForm country="Germany"  />);

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name="theme-color" content="#f1364e">
   <meta property="title" content="<?php echo get_the_title(); ?>" />
   <meta property="og:title" content="<?php echo get_the_title(); ?>" />
   <meta property="og:url" content="<?php echo the_permalink() ?>" />
