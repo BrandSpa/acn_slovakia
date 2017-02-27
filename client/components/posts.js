@@ -30,8 +30,11 @@ const Posts = React.createClass({
   },
 
 	componentDidMount() {
-		document.window.addEventListener('resize', (e) => {
-			console.log('resize');
+		window.addEventListener('resize', (e) => {
+			if(this.state.posts && this.state.posts.length > 0){
+				console.count('resize');
+    		this.initGrid();
+    	}
 		});
 
 		if(this.state.posts && this.state.posts.length > 0){

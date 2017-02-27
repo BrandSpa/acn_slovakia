@@ -14774,8 +14774,13 @@ var Posts = _react2.default.createClass({
 	},
 
 	componentDidMount: function componentDidMount() {
-		document.window.addEventListener('resize', function (e) {
-			console.log('resize');
+		var _this2 = this;
+
+		window.addEventListener('resize', function (e) {
+			if (_this2.state.posts && _this2.state.posts.length > 0) {
+				console.count('resize');
+				_this2.initGrid();
+			}
 		});
 
 		if (this.state.posts && this.state.posts.length > 0) {
@@ -14803,7 +14808,7 @@ var Posts = _react2.default.createClass({
 		window.location = this.props.url;
 	},
 	render: function render() {
-		var _this2 = this;
+		var _this3 = this;
 
 		var posts = this.state.posts;
 
@@ -14821,7 +14826,7 @@ var Posts = _react2.default.createClass({
 			_react2.default.createElement(
 				'div',
 				{ ref: function ref(grid) {
-						return _this2.grid = grid;
+						return _this3.grid = grid;
 					} },
 				posts.map(function (post, i) {
 					return _react2.default.createElement(
@@ -14830,7 +14835,7 @@ var Posts = _react2.default.createClass({
 						_react2.default.createElement(
 							'div',
 							{ className: 'grid-item__content' },
-							post.post_image ? _react2.default.createElement('img', { src: post.post_image, onLoad: _this2.handleImageLoaded }) : '',
+							post.post_image ? _react2.default.createElement('img', { src: post.post_image, onLoad: _this3.handleImageLoaded }) : '',
 							_react2.default.createElement(
 								'div',
 								{ className: 'grid-item__content__texts' },
