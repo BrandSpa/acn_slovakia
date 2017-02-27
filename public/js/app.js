@@ -18608,7 +18608,7 @@ var amount = _react2.default.createClass({
 
     return _react2.default.createElement(
       'div',
-      { style: { width: this.props.width, float: 'left' } },
+      { style: { width: this.props.width, float: 'left', padding: '1px' } },
       _react2.default.createElement(_amount_btns2.default, { texts: texts, changeAmount: this.changeAmount }),
       _react2.default.createElement(
         'div',
@@ -18876,7 +18876,7 @@ var Contact = _react2.default.createClass({
 
     return _react2.default.createElement(
       'div',
-      { style: { width: this.props.width, float: 'left' } },
+      { style: { width: this.props.width, float: 'left', padding: '1px' } },
       _react2.default.createElement(
         'div',
         { className: 'row' },
@@ -19066,7 +19066,7 @@ var CedritCard = _react2.default.createClass({
       'div',
       {
         className: 'donate_react__creditcard',
-        style: { width: this.props.width, float: 'left' }
+        style: { width: this.props.width, float: 'left', padding: '1px' }
       },
       _react2.default.createElement(_cards2.default, this.props),
       _react2.default.createElement(

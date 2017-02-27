@@ -25,7 +25,7 @@ const amount = React.createClass({
     const {texts, donation_type, amount} = this.props;
 
     return (
-      <div style={{width: this.props.width, float: 'left'}}>
+      <div style={{width: this.props.width, float: 'left', padding: '1px'}}>
         <AmountBtns texts={texts} changeAmount={this.changeAmount} />
         <div className="row">
           <div className="form-group form-group--addon col-7-l">

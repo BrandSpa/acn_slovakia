@@ -98,7 +98,7 @@ const CedritCard = React.createClass({
     return (
       <div
         className="donate_react__creditcard"
-        style={{width: this.props.width, float: 'left'}}
+        style={{width: this.props.width, float: 'left', padding: '1px'}}
       >
         <Cards {...this.props} />
         <div className="form-group">
