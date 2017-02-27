@@ -15,6 +15,7 @@ body {
 	position: relative;
 	left: 0;
 	transition: left 300ms;
+
 	@media #{$s} {
 		font-size: 12px;
 	}
@@ -103,7 +104,7 @@ h6 {
 }
 
 p {
-	font-size: (15 / $font-size-base) * 1em;
+	font-size: (16 / $font-size-base) * 1em;
 	font-weight: normal;
 	font-style: normal;
 	font-stretch: normal;
