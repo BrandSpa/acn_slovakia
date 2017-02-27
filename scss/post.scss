@@ -43,7 +43,9 @@
 				color: #3C515F;
 				padding: 5% 8%;
 				width: 100%;
-		
+				position: relative;
+				z-index: 1030;
+				
 				h2 {
 					font-size: (40 / $font-size-base) * 1em;
 				}
