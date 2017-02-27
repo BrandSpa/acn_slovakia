@@ -18,7 +18,10 @@ function bs_header_slider_sc($atts, $content = null) {
 
 <div
   class="header-slider" 
-  data-props='{"slides": <?php echo json_encode($slides) ?>, "interval": "<?php echo $at["interval"] ?>"}'
+  data-props='{
+    "slides": <?php echo json_encode($slides) ?>, 
+    "interval": "<?php echo $at["interval"] ?>"
+  }'
 ></div>
 
 <?php
@@ -61,7 +64,7 @@ function bs_header_slider_sc($atts, $content = null) {
 
     $params = [
       [
-        "type" => "interval",
+        "type" => "textfield",
         "heading" => "enter interval",
         "param_name" => "interval",
         "value" => "5000"

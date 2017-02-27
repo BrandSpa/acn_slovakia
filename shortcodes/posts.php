@@ -3,13 +3,15 @@
 function bs_posts_sc($atts, $content = null) {
 	$attributes = [
     'see_more' => '',
-    'url' => ''
+    'url' => '',
+
   ];
 
   $at = shortcode_atts( $attributes , $atts );
 	$props = [
     'see_more' => $at['see_more'],
-    'url' => $at['url']
+    'url' => $at['url'],
+
 	];
 	
   ob_start();
@@ -42,7 +44,8 @@ add_action( 'vc_before_init', 'bs_posts_vc' );
         "heading" => "See More url",
         "param_name" => "url",
         "value" => ''
-			]
+			],
+
 		];
 
   	vc_map(
