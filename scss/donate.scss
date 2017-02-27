@@ -170,7 +170,7 @@
   &__creditcard {
     &__row {
       @media #{$s} {
-        margin: 0 -15px;
+        margin: 0 -15px !important;
       }
     }
   }

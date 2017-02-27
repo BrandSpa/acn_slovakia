@@ -137,8 +137,8 @@ p{font-size:1em;font-weight:normal;font-style:normal;font-stretch:normal;line-he
 .donate_react__submit:hover{background:transparent;color:#fff}.donate_react .radio{color:#fff;float:left}
 @media(max-width:767px){.donate_react .radio{text-align:left;width:100%}}.donate_react .radio label{text-transform:uppercase;font-size:14px;letter-spacing:3.11px}
 .donate_react .card-type{opacity:.5;margin-right:5px}.donate_react .card-type--active{opacity:1}
-@media(max-width:767px){.donate_react__creditcard__row{margin:0 -15px}}a:hover{text-decoration:none}
-.change-amount__copywrite{background:#3c515f;width:100%;min-height:80px;border-radius:8px;position:relative;padding:15px 1em;text-align:center;color:#fff;line-height:1.28;font-size:18px;float:left;margin-bottom:37px;font-weight:200}
+@media(max-width:767px){.donate_react__creditcard__row{margin:0 -15px !important}
+}a:hover{text-decoration:none}.change-amount__copywrite{background:#3c515f;width:100%;min-height:80px;border-radius:8px;position:relative;padding:15px 1em;text-align:center;color:#fff;line-height:1.28;font-size:18px;float:left;margin-bottom:37px;font-weight:200}
 .change-amount__copywrite__arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid;bottom:-27px;left:0;margin-left:12px;border-width:27px 27px 0;border-top-color:#3c515f;transition:400ms all ease-in-out}
 .change-amount li{float:left;width:20%;padding:0 5px;margin-bottom:10px;list-style:none}
 .change-amount li:first-child{padding-left:0}.change-amount li:last-child{padding-right:0}
