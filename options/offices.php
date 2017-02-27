@@ -87,7 +87,7 @@ function logos_settings_page() {
 						<input
 							style="background: rgba(255,255,255,.4); width: 60%; height: 35px"
 							type="text"
-							placeholder="url"
+							placeholder="office url"
 							name="url_<?php echo $value ?>"
 							value="<?php echo esc_attr( get_option('url_' . $value ) ); ?>"
 						/>
