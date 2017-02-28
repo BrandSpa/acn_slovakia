@@ -5,8 +5,8 @@
 
 <?php foreach($recent_posts as $recent): ?>
 <div class="bs-post__recent">
-	<?php if(get_the_post_thumbnail_url($recent->ID, 'full')): ?>
-		<img src="<?php echo get_the_post_thumbnail_url($recent->ID, 'full') ?>" style="width: 100%" />
+	<?php if(get_post_meta($post->ID, 'image_square_key', true)): ?>
+		<img src="<?php echo get_post_meta($post->ID, 'image_square_key', true) ?>" style="width: 100%" />
 	<?php endif; ?>
 
 	<div class="bs-post__recent__content">
