@@ -31,12 +31,12 @@ const headerSlide = React.createClass({
             />
             : ''
         }
-        <div className="slider__slide" style={style} onClick={this.handleLink}>
+        <div className="slider__slide" style={style} onClick={this.handleLink}></div>
           <div className="slider__slide__content">
             <h2>{title}</h2>
             <h4>{subtitle}</h4>
+            <div class="arrow-down"><i class="ion-chevron-down"></i></div>
           </div>
-        </div>
       </div>
     );
   }

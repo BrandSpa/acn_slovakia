@@ -47,6 +47,7 @@
 	<!--/async load app-->
 
 <!--/app theme-->
+
  <!-- Google Analytics -->
   <script src='https://www.google-analytics.com/analytics.js'></script>
 
@@ -58,5 +59,6 @@
    ga('require', 'ecommerce');
   </script>
 <!-- End Google Analytics -->
+
 </body>
 </html>
