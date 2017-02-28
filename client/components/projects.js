@@ -67,6 +67,7 @@ const Projects = React.createClass({
     let donateStyle = {
       background: '#fff',
       borderColor: '#fff',
+      textTransform: 'uppercase',
       color: this.state.donateColor
     };
 
