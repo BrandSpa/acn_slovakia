@@ -54,7 +54,8 @@
 			padding: 90px;
 			
 			@media #{$s} {
-				padding: 60px 30px;
+				padding: 20px 20px;
+				min-height: 200px;
 			}
 
 			h4 {
