@@ -17,7 +17,7 @@
 
 <div>
 	<p>
-		<input 
+		<input
 			type="text" 
 			class="uploader" 
 			name="image_square_name"
@@ -26,15 +26,12 @@
 			style="height: 35px; width: 100%;"
 		/>
 	</p>
-<button class="button">Save</button>
+
 </div>
+
 <script>
 const open_media_uploader_image = () => {
-	let media_uploader = wp.media({
-		frame: 'post',
-		state:    'insert',
-		multiple: false
-	});
+	let media_uploader = wp.media({ frame: 'post', state:    'insert', multiple: false });
 
 	let promise = new Promise((resolve) => {
 		media_uploader.on('insert', () => {
@@ -51,11 +48,7 @@ const open_media_uploader_image = () => {
 const section = () => {
 
 	jQuery('.uploader').on('click', (e) => {
-
-		open_media_uploader_image()
-		.then(res => {
-			jQuery(e.currentTarget).attr('value', res.url);
-		});
+		open_media_uploader_image() .then(res => { jQuery(e.currentTarget).attr('value', res.url); });
 	});
 };
 
