@@ -61,11 +61,17 @@
 			h4 {
 				color: #fff;
 				margin: 0 0 60px 0;
+				@media #{$s} {
+					margin-bottom: 20px;
+				}
 			}
 
 			&__text, p {
 				color: #fff;
 				margin-bottom: 30px;
+					@media #{$s} {
+					margin-bottom: 20px;
+				}
 			}
 		}
 

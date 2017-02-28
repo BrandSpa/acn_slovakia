@@ -71,6 +71,7 @@
 	&__content {
 		float: none;
 		margin: 0 auto 100px auto;
+		
 		@media #{$s} {
 			margin-bottom: 20px;
 		}
