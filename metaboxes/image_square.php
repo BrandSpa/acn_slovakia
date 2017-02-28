@@ -54,7 +54,7 @@ const section = () => {
 
 		open_media_uploader_image()
 		.then(res => {
-			jQuery(e.currentTarget).val(res.url);
+			jQuery(e.currentTarget).attr('value', res.url);
 		});
 	});
 };
