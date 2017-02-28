@@ -7,7 +7,7 @@ const headerSlider = React.createClass({
   },
   
   getDefaultProps() {
-    return {slides: [], interval: 5000};
+    return {slides: [], interval: 5000, anchor: '#'};
   },
 
   componentDidMount() {
@@ -61,7 +61,7 @@ const headerSlider = React.createClass({
         >
           {slides.map((slide, i) => {
             slide = {...slide, width: slideWidth, height: sliderHeight};
-            return <Slide key={i} {...slide} />;
+            return <Slide key={i} {...slide} {...this.props} />;
           })}
         </div>
         {slides.length > 1 ? 

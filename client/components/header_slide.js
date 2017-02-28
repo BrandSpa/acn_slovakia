@@ -7,6 +7,7 @@ const headerSlide = React.createClass({
     if (this.props.is_video) return this.modal.show();
     window.location.href = this.props.url;
   },
+  
   render() {
     const {image, title, subtitle, url, width, height} = this.props;
 
@@ -35,7 +36,7 @@ const headerSlide = React.createClass({
           <div className="slider__slide__content">
             <h2>{title}</h2>
             <h4>{subtitle}</h4>
-            <a href="#" className="arrow-down"><i className="ion-chevron-down"></i></a>
+            <a href={this.props.anchor} className="arrow-down"><i className="ion-chevron-down"></i></a>
           </div>
       </div>
     );
