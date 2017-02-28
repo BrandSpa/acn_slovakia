@@ -5,12 +5,13 @@
 - [x] arrows slider home
 - [x] posts 6 
 - [x] link to title campaigns on mobile slider
+- [x] remove pope firm on mobile
 - [ ] learn more change local name and url
 - [ ] links to privacy & terms
-- [x] remove pope firm on mobile
 - [ ] fix video modal
 - [ ] news change post with image, font size and image height
 - [ ] add see more on post
+- [ ] post image height equal to window height
 
 ## frontend
 - es6
