@@ -16,10 +16,12 @@
 			background: #274F5E;
 			float: left;
 			position: relative;
+
 			&__content {
 				position: absolute;
 				bottom: 0;
 				background: RGBA(244, 244, 244, 1);
+				padding: 40px 0;
 			}
 
 		h2, h3 {
