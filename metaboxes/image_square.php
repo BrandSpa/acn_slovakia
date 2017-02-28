@@ -43,7 +43,7 @@ const open_media_uploader_image = () => {
 
 const section = () => {
 
-	$('.uploader').on('click', (e) => {
+	jQuery('.uploader').on('click', (e) => {
 
 		open_media_uploader_image()
 		.then(res => {
