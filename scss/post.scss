@@ -40,6 +40,10 @@
 			background-position: center;
 			position: relative;
 
+			@media #{$s} {
+				min-height: 300px;
+			}
+
 			&__title {
 				margin: auto;
 				max-width: 1140px;
