@@ -33,7 +33,7 @@ const headerSlide = React.createClass({
             : ''
         }
         <div className="slider__slide" style={style} onClick={this.handleLink}></div>
-          <div className="slider__slide__content">
+          <div className="slider__slide__content col-6-l col-12-m">
             <h2>{title}</h2>
             <h4>{subtitle}</h4>
             <a href={this.props.anchor} className="arrow-down"><i className="ion-chevron-down"></i></a>
