@@ -21,7 +21,7 @@
 	&__btns {
 		button {
 			position: absolute;
-			top: 45%;
+			top: 30%;
 			height: 45px;
 			display: block;
 			background: transparent;
@@ -33,20 +33,14 @@
 
 		&__prev {
 			position: absolute;
-			left: 30px;
-			@media #{$s} {
-				left: 5px;
-				padding: 0;
-			}
+			left: 15px;
+			box-shadow: 5px 5px 5px rgba(0,0,0, .5); 
   	}
 
 		&__next {
 			position: absolute;
-			right: 30px; 
-			@media #{$s} {
-				right: 5px;
-				padding: 0;
-			}
+			right: 15px; 
+			box-shadow: 5px 5px 5px rgba(0,0,0, .5); 
   	}
 	}
 	 
