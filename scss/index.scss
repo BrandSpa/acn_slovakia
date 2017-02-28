@@ -236,8 +236,12 @@ button, .btn {
 	cursor: pointer;
 }
 
+#donate {
+	background-position: top center !important;
+}
+
 .bs-section-donate {
-	height: 500px;
+	height: 700px;
 	@media #{$s} {
 		height: auto;
 	}
