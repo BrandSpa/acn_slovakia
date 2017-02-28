@@ -65,12 +65,12 @@ p{font-size:1.06667em;font-weight:normal;font-style:normal;font-stretch:normal;l
 .bs-contact-info{color:#fff}button,.btn{height:45px;background:#f4334a;border:2px solid #f4334a;padding:1px 40px;font-size:20px;text-align:center;color:#fff;cursor:pointer;font-weight:bold;border-radius:5px}
 button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:transparent;color:#3c515f;border-color:#3c515f;padding:8px 40px}
 .hidden{display:none !important}.btn--outline{font-size:1.33333em;border-radius:5px;border:2px solid #f1364e;padding:15px 40px;text-align:center;display:block}
-.float-left{float:left}.nav{height:120px;width:100%;padding:30px 60px 0 60px;background:#fff;z-index:9999;position:fixed;top:0}
+.float-left{float:left}.nav{height:120px;width:100%;padding:15px 60px 0 60px;background:#fff;z-index:9999;position:fixed;top:0}
 @media(max-width:767px){.nav{padding:0;text-align:center;height:100px}}@media(max-width:767px){.nav__donate{padding:0 20px}
 }.nav__donate a{font-size:1.33333em !important;border-radius:5px;border:2px solid #f1364e;padding:15px 40px;text-align:center;display:block;color:#f1364e !important}
 @media(max-width:767px){.nav__donate a{background:#f1364e;color:#3c515f !important}
-}@media(max-width:767px){.logo{margin:5% auto;display:block}}.open-menu{display:none}
-@media(max-width:767px){.open-menu{display:block;position:absolute;top:40%;left:20px}
+}.logo{display:block;margin-top:10px}@media(max-width:767px){.logo{margin:5% auto}
+}.open-menu{display:none}@media(max-width:767px){.open-menu{display:block;position:absolute;top:40%;left:20px}
 }.menu{float:right;display:none}.menu--show{display:block}.menu--mobile{display:none;height:100%;position:fixed;left:-200px;top:0;background:#fff;width:200px;transition:all 300ms;background:#3c515f;padding:40px 0;margin:0;z-index:1020}
 @media(max-width:767px){.menu--mobile{display:block}}.menu--mobile--open{left:0}.menu--mobile li{list-style:none;width:100%;display:block}
 .menu--mobile li a{display:block;padding:10px 0;color:#fff;font-size:1.5em}@media(max-width:767px){.menu{display:none}
