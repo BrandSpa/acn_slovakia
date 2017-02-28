@@ -44,13 +44,7 @@ const Posts = React.createClass({
   },
   render() {
     const {posts} = this.state;
-    let seeMoreStyle = {
-      display: 'block',
-      margin: '30px auto',
-      background: 'transparent',
-      color: '#3C515F',
-      borderColor: '#3C515F'
-    };
+
 
     return (
       <div>
@@ -93,7 +87,7 @@ const Posts = React.createClass({
         </div>
         <button
           onClick={this.goToPosts}
-          style={this.state.seeMore ? seeMoreStyle : {display: 'none'}}
+          className={this.state.seeMore ? 'bs-see-more' : 'hidden'}
         >
           See more
         </button>

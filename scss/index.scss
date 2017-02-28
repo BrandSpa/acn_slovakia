@@ -178,6 +178,17 @@ p {
 	color: #fff;
 }
 
+.bs-see-more {
+	display: block;
+  margin: 30px auto;
+  background: transparent;
+  color: #3C515F;
+	border-color: #3C515F
+}
+
+.hidden {
+	display: none !important;
+}
 
 .btn {
 	&--outline {
