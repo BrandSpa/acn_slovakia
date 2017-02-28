@@ -17,4 +17,4 @@
 </div>
 <?php endforeach; ?>
 
- <button class='bs-see-more' > See more </button>
+ <a href="<?php echo gett('https://acninternational.org/news/') ?>" class='bs-see-more' > <?php echo gett('See more') ?> </a>
