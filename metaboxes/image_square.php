@@ -11,7 +11,7 @@
   add_action('add_meta_boxes', 'bs_page_image_square_metabox');
 
   function bs_page_image_square_cb($post) {
-    wp_nonce_field('bs_page_mr_meta', 'bs_multiregional_nonce'); 
+    wp_nonce_field('bs_page_image_square_meta', 'bs_image_square_nonce'); 
     $value = get_post_meta($post->ID, 'image_square_key', true);
 ?>
 
@@ -26,7 +26,7 @@
 			style="height: 35px; width: 100%;"
 		/>
 	</p>
-
+<button class="button">Save</button>
 </div>
 <script>
 const open_media_uploader_image = () => {
