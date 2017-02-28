@@ -17,4 +17,40 @@
 		position: relative;
 		transition: all 300ms;
 	}
+
+	&__btns {
+		button {
+			position: absolute;
+			top: 45%;
+			height: 45px;
+			display: block;
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			font-size: 42px;
+			color: #fff;
+  	}
+
+		&__prev {
+			position: absolute;
+			left: 30px;
+			@media #{$s} {
+				left: 5px;
+				padding: 0;
+			}
+  	}
+
+		&__next {
+			position: absolute;
+			right: 30px; 
+			@media #{$s} {
+				right: 5px;
+				padding: 0;
+			}
+  	}
+	}
+	 
+	
+  
+  
 }
