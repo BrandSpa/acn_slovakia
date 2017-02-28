@@ -6,12 +6,13 @@
 - [x] posts 6 
 - [x] link to title campaigns on mobile slider
 - [x] remove pope firm on mobile
+- [x] news change post with image, font size and image height
 - [ ] learn more change local name and url
 - [ ] links to privacy & terms
 - [ ] fix video modal
-- [ ] news change post with image, font size and image height
 - [ ] add see more on post
 - [ ] post image height equal to window height
+- [ ] add pagination numeric http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
 
 ## frontend
 - es6
