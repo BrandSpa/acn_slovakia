@@ -16,5 +16,6 @@
 	</div>
 </div>
 <?php endforeach; ?>
-<div class="l-wrap"></div>
+<div class="l-wrap" style="text-align:center">
  <a href="<?php echo gett('https://acninternational.org/news/') ?>" class='btn bs-see-more' > <?php echo gett('See more') ?> </a>
+ </div>
