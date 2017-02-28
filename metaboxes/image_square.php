@@ -31,7 +31,7 @@
 
 <script>
 const open_media_uploader_image = () => {
-	let media_uploader = wp.media({ frame: 'post', state:    'insert', multiple: false });
+	let media_uploader = wp.media({ frame: 'post', state: 'insert', multiple: false });
 
 	let promise = new Promise((resolve) => {
 		media_uploader.on('insert', () => {
@@ -59,11 +59,11 @@ section();
 
 
 function bs_save_image_square_meta($post_id) {
-    update_field(array(
-      'field_key' => 'image_square_key',
-      'field_name' => 'image_square_name',
-      'post_id' => $post_id
-    ));
+  update_field(array(
+    'field_key' => 'image_square_key',
+    'field_name' => 'image_square_name',
+    'post_id' => $post_id
+  ));
 }
 
-  add_action( 'save_post', 'bs_save_image_square_meta(');
+add_action( 'save_post', 'bs_save_image_square_meta');
