@@ -188,3 +188,4 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .campaigns-slider__btns__prev{position:absolute;left:15px;box-shadow:5px 5px 5px rgba(0,0,0,0.5)}
 .campaigns-slider__btns__next{position:absolute;right:15px;box-shadow:5px 5px 5px rgba(0,0,0,0.5)}
 .campaign__item{padding:60px 30px;float:left;min-height:500px}.campaign__item a{color:#fff}
+.campaign__item p{color:#fff}
