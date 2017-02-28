@@ -33,14 +33,20 @@
 
 		&__prev {
 			position: absolute;
-			left: 20px;
-			box-shadow: 5px 5px 5px rgba(0,0,0, .5); 
+			left: 15px;
+			i {
+				box-shadow: 5px 5px 5px rgba(0,0,0, .5);
+			}
+			 
   	}
 
 		&__next {
 			position: absolute;
-			right: 20px; 
-			box-shadow: 5px 5px 5px rgba(0,0,0, .5); 
+			right: 15px; 
+			i {
+				box-shadow: 5px 5px 5px rgba(0,0,0, .5); 
+			}
+			
   	}
 	}
 	
