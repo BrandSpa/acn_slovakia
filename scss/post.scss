@@ -17,6 +17,10 @@
 
 		&__title {
 			padding-bottom: 70px;
+			
+			h3 {
+				margin-bottom: 20px;
+			}
 
 			@media #{$s} {
 				padding-bottom: 20px;
