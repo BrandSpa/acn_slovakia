@@ -103,8 +103,8 @@
 				float: left;
 				width: 35%;
 				background-position: center;
-			background-size: cover;
-			background-color: #3c515f;
+				background-size: cover;
+				background-color: #3c515f;
 				@media #{$s} {
 				width: 40%;
 				}
@@ -126,6 +126,10 @@
 					color: #2e404c;
 					display: inline-block;
 					padding-right: 20%;
+					@media #{$s} {
+						padding: 0;
+						font-size: 1em;
+					}
 					&:after {
 						display: block;
 						content: '';
