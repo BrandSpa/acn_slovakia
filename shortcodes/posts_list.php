@@ -29,7 +29,9 @@ function bs_posts_list_sc($atts, $content = null) {
 		<?php if($counter == 1): ?>
 			<div class="bs-posts-list__main">
 				<a href="<?php echo get_permalink($post->ID) ?>">
-					<div class="bs-posts-list__main__img" style="background-image:url( <?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>);background-color: #E5A612;">					
+					<div 
+						class="bs-posts-list__main__img" 
+						style="background-image:url( <?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>);background-color: #E5A612;">					
 					</div>
 				</a>
 
@@ -44,11 +46,11 @@ function bs_posts_list_sc($atts, $content = null) {
 		<?php else: ?>
 	
 			<div class="bs-posts-list__item">
-				<a href="<?php echo get_permalink($post->ID) ?>">
-					<div class="bs-posts-list__item__img" 
+					<div
+						class="bs-posts-list__item__img" 
 						style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>);">
 					</div>
-				</a>
+
 				<div class="bs-posts-list__item__content" style="background: #fff">
 					<h2><?php echo $post->post_title ?></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 120) ?>...</p>
