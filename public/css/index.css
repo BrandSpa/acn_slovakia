@@ -65,7 +65,7 @@ p{font-size:1.06667em;font-weight:normal;font-style:normal;font-stretch:normal;l
 .bs-contact-info{color:#fff}button,.btn{height:45px;background:#f4334a;border:2px solid #f4334a;padding:1px 40px;font-size:20px;text-align:center;color:#fff;cursor:pointer;font-weight:bold;border-radius:5px}
 button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:transparent;color:#3c515f;border-color:#3c515f;padding:8px 40px}
 .hidden{display:none !important}.btn--outline{font-size:1.33333em;border-radius:5px;border:2px solid #f1364e;padding:15px 40px;text-align:center;display:block}
-.float-left{float:left}.nav{height:140px;width:100%;padding:30px 60px 0 60px;background:#fff;z-index:9999;position:fixed}
+.float-left{float:left}.nav{height:140px;width:100%;padding:30px 60px 0 60px;background:#fff;z-index:9999;position:fixed;top:0}
 @media(max-width:767px){.nav{padding:0;text-align:center;position:relative}}@media(max-width:767px){.nav__donate{padding:0 20px}
 }.nav__donate a{font-size:1.33333em !important;border-radius:5px;border:2px solid #f1364e;padding:15px 40px;text-align:center;display:block;color:#f1364e !important}
 @media(max-width:767px){.nav__donate a{background:#f1364e;color:#3c515f !important}

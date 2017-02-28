@@ -5,7 +5,8 @@
 	background: #fff;
 	z-index: 9999;
 	position: fixed;
-	
+	top: 0;
+
 	@media #{$s} {
 		padding: 0;
 		text-align: center;
