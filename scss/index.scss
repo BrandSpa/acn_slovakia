@@ -15,6 +15,7 @@ body {
 	position: relative;
 	left: 0;
 	transition: left 300ms;
+	padding-top: 140px;
 
 	@media #{$s} {
 		font-size: 12px;
