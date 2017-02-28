@@ -10,7 +10,7 @@
 - [x] learn more change local name and url
 - [x] links to privacy & terms
 - [x] fix video modal
-- [ ] add see more on post
+- [x] add see more on post
 - [ ] post image height equal to window height
 - [ ] add pagination numeric http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
 
