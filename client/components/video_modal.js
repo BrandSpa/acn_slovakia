@@ -22,13 +22,17 @@ const Modal = React.createClass({
   },
   render() {
     let {url} = this.props;
+    
+    let iframeStyle = {
+      height: window.innerHeight ? window.innerHeight : '100hv'
+    };
 
     return (
       <div className={this.state.show ? 'modal modal--show' : 'modal'}>
         <a className="modal__close" href="#" onClick={this.close}>
           <i className="ion-close" />
         </a>
-        <div className="iframe-container">
+        <div className="iframe-container" style={iframeStyle}>
           {
             this.state.show
               ? <iframe

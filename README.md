@@ -7,8 +7,8 @@
 - [x] link to title campaigns on mobile slider
 - [x] remove pope firm on mobile
 - [x] news change post with image, font size and image height
-- [ x ] learn more change local name and url
-- [ ] links to privacy & terms
+- [x] learn more change local name and url
+- [x] links to privacy & terms
 - [ ] fix video modal
 - [ ] add see more on post
 - [ ] post image height equal to window height
