@@ -30,7 +30,7 @@
 		}
 
 		h2 {
-			font-size: (70 / 15) * 1em;
+			font-size: (40 / 15) * 1em;
 			font-weight: 900;
 			font-style: normal;
 			font-stretch: normal;
@@ -48,15 +48,14 @@
 			display: block;
 			width: 50%;
 			margin: 20px auto;
-			font-size: (20 / 15) * 1em;
+			font-size: (17 / 15) * 1em;
 			font-weight: 600;
 			font-style: normal;
 			font-stretch: normal;
 			line-height: 1.7;
 			letter-spacing: normal;
 			text-align: center;
-			color: #ffffff;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59);
+			color: #3c515f;
 
 			@media #{$s} {
 				width: 65%;
