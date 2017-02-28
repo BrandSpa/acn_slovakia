@@ -19,9 +19,10 @@
 
 			&__content {
 				position: absolute;
-				bottom: 0;
+				bottom: -10%;
 				background: RGBA(244, 244, 244, 1);
 				padding: 40px 0;
+				max-width: 1140px;
 			}
 
 		h2, h3 {
