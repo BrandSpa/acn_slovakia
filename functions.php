@@ -71,7 +71,7 @@ require('shortcodes/posts_list.php');
 require('shortcodes/campaigns_slider.php');
 
 //metaboxes
-require('metboxes/image_square.php');
+require('metaboxes/image_square.php');
 
 function get_lang() {
 	if(function_exists('pll_current_language')) {
