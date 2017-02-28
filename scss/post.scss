@@ -34,21 +34,24 @@
 			position: relative;
 			background-size: cover; 
 			background-position: center;
+			position: relative;
 
 			&__title {
 				margin: -8% auto 100px auto;
 				min-height: 50px;
-				background: #F4F4F4;
+				background: #fff;
 				text-align: center;
 				color: #3C515F;
 				padding: 2% 8%;
 				width: 100%;
-				position: relative;
+				position: absolute;
+				bottom: 0;
 				z-index: 1020;
 				
 				h2 {
 					font-size: (45 / $font-size-base) * 1em;
 				}
+
 			}
 		}
 	
