@@ -29,6 +29,9 @@
 				margin: auto;
 				left: 0;
 				right: 0;
+				@media #{$s} {
+					padding: 20px 0;
+				}
 				h2 {
 					font-size: (60 / 15) * 1em;
 					font-weight: 900;
@@ -58,12 +61,12 @@
 				color: #3c515f;
 
 				@media #{$s} {
-					width: 65%;
+					width: 90%;
 					font-size: 1em;
 					line-height: 1.5;
 				}
-				}
 			}
+		}
 
 		h2, h3 {
 			display: block;
