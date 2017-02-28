@@ -32,8 +32,10 @@ const headerSlide = React.createClass({
             : ''
         }
         <div className="slider__slide" style={style} onClick={this.handleLink}>
-          <h2>{title}</h2>
-          <h4>{subtitle}</h4>
+          <div class="slider__slide__content">
+            <h2>{title}</h2>
+            <h4>{subtitle}</h4>
+          </div>
         </div>
       </div>
     );

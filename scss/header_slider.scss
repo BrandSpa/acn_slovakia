@@ -14,13 +14,12 @@
 		&__slide {
    	 	width: 100%;
 			background: #274F5E;
-			display: flex;
 			float: left;
-			align-content: flex-end;
-			flex-direction: column;
-			justify-content: flex-end;
-			padding-bottom: 90px;
-		
+			position: relative;
+			&__content {
+				position: absolute;
+				bottom: 0;
+			}
 		h2, h3 {
 			display: block;
 			width: 100%;
