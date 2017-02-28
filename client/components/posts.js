@@ -25,6 +25,7 @@ const Posts = React.createClass({
     window.addEventListener('resize', debounce(this.initGrid, 300));
     this.initGrid();
   },
+
   initGrid() {
     if (this.state.posts && this.state.posts.length > 0) {
       let container = this.grid;
@@ -33,11 +34,11 @@ const Posts = React.createClass({
       grid.mount();
     }
   },
-  // handleImageLoaded() {
-  // 	if(this.iso) {
-  // 		this.iso.layout();
-  // 	}
-  // },
+
+  handleImageLoaded() {
+  	this.initGrid();
+  },
+
   goToPosts() {
     window.location = this.props.url;
   },
