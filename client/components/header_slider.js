@@ -44,7 +44,7 @@ const headerSlider = React.createClass({
       ? document.querySelector('.nav').offsetHeight
       : 0;
     let sliderHeight = windowHeight && navHeight
-      ? windowHeight - navHeight
+      ? windowHeight - navHeight - 20
       : 'auto';
 
     let viewportStyle = {
