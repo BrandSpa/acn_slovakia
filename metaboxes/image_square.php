@@ -66,7 +66,6 @@ section();
 
 
 function bs_save_image_square_meta($post_id) {
-
     update_field(array(
       'field_key' => 'image_square_key',
       'field_name' => 'image_square_name',
