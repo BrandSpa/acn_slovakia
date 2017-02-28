@@ -11,6 +11,9 @@
 
 	&__right {
 			padding: 40px;
+			@media #{$s} {
+				text-align: center;
+			}
 
 			h3 {
 				color: RGBA(241, 54, 78, 1.00);
@@ -29,6 +32,9 @@
 				display: block;
 				width: 80%;
 				line-height: 2;
+				@media #{$s} {
+					width: 100%;
+				}
 			}
 		}
 
