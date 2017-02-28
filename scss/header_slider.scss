@@ -2,7 +2,8 @@
   	 width: 100%;
     position: relative;
     transition: left 400ms ease;
-		overflow: hidden;
+		overflow-x: auto;
+ 		overflow-y: hidden;
 
 		&__viewport {
     	width: 100%;
