@@ -8,8 +8,7 @@ include_once str_replace('templates', '', __DIR__) . '/lib/offices_countries.php
 		class="learn-more-link" 
 		href="<?php echo get_option('url_' . space_to_lodash( getCountry() ) ) ?>"
 	>
-
-		<?php echo str_replace('[office_url]', get_option('url_' . space_to_lodash( getCountry() ) ), gett('TO LEARN MORE ABOUT [office_name] VISIT [office_url]')) ?>
+		<?php echo replace_office_texts() ?>
 	</a>
 </div>
 
