@@ -11,16 +11,14 @@ function update_field($args) {
     return;
   }
 
-  if( isset( $_POST[$args['field_name']] ) ) {
-    $field_content = $_POST[ $args['field_name'] ];
-    if(is_array($field_content)) {
-      $field_content = array_filter($field_content, 'clean_empty');
-    }
-
-    
+  if( isset( $_REQUEST[ $args['field_name'] ] ) ) {
+    $field_content = $_REQUEST[ $args['field_name'] ]; 
   }
 
-  var_dump($args);
+   if(is_array($field_content)) {
+      $field_content = array_filter($field_content, 'clean_empty');
+  }
+
   update_post_meta($args['post_id'], $args['field_key'] , $field_content);
 }
 
