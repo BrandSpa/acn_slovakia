@@ -18,7 +18,9 @@
 	&__pagination {
 		width: 30%;
 		margin: 40px auto;
-
+		@media #{$s} {
+			width: 80%;
+		}
 		button {
 			background: transparent;
 			border-radius: 2px;
