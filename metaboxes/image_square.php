@@ -17,7 +17,14 @@
 
 <div>
 	<p>
-		<input type="text" class="uploader" name="image_square" placeholder="Image Square" value="<?php echo $value ?>" />
+		<input 
+			type="text" 
+			class="uploader" 
+			name="image_square"
+			placeholder="Image Square" 
+			value="<?php echo $value ?>" 
+			style="height: 35px; width: 100%;"
+		/>
 	</p>
 
 </div>
