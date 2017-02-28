@@ -186,6 +186,6 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 }.campaigns-slider{overflow:hidden}.campaigns-slider__slide{float:left}.campaigns-slider__slide__content{float:left;padding:60px 30px;text-align:center}
 .campaigns-slider__slide__content h4,.campaigns-slider__slide__content p,.campaigns-slider__slide__content a{color:#fff}
 .campaigns-slider__viewport{position:relative;transition:all 300ms}.campaigns-slider__btns button{position:absolute;top:30%;height:45px;display:block;background:transparent;border:0;cursor:pointer;font-size:42px;color:#fff}
-.campaigns-slider__btns__prev{position:absolute;left:15px}.campaigns-slider__btns__prev i{box-shadow:5px 5px 5px rgba(0,0,0,0.5)}
-.campaigns-slider__btns__next{position:absolute;right:15px}.campaigns-slider__btns__next i{box-shadow:5px 5px 5px rgba(0,0,0,0.5)}
+.campaigns-slider__btns__prev{position:absolute;left:15px}.campaigns-slider__btns__prev i{text-shadow:5px 5px 5px rgba(0,0,0,0.3)}
+.campaigns-slider__btns__next{position:absolute;right:15px}.campaigns-slider__btns__next i{text-shadow:5px 5px 5px rgba(0,0,0,0.3)}
 .campaign__item{padding:60px 30px;float:left;min-height:480px}.campaign__item a,.campaign__item p,.campaign__item span{color:#fff}
