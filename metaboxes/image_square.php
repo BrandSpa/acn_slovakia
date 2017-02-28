@@ -20,7 +20,7 @@
 		<input 
 			type="text" 
 			class="uploader" 
-			name="image_square"
+			name="image_square_name"
 			placeholder="Image Square" 
 			value="<?php echo $value ?>" 
 			style="height: 35px; width: 100%;"
@@ -69,7 +69,7 @@ function bs_save_image_square_meta($post_id) {
 
     update_field(array(
       'field_key' => 'image_square_key',
-      'field_name' => 'image_square',
+      'field_name' => 'image_square_name',
       'post_id' => $post_id
     ));
 }
