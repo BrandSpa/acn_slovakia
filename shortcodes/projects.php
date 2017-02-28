@@ -31,7 +31,10 @@ function bs_projects_sc($atts, $content = null) {
 
 <div
   class="projects-container" 
-  data-props='{"contents": <?php echo json_encode($slides) ?>}'
+  data-props='{
+  "contents": <?php echo json_encode($slides) ?>,
+  "donate" => <?php echo gett('donate') ?>
+  }'
 ></div>
 
 <?php
@@ -66,7 +69,7 @@ function bs_projects_sc($atts, $content = null) {
         ]
       );
     }
-
+    
     vc_map(
       array(
         "name" =>  "BS Projects",

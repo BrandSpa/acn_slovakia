@@ -84,7 +84,7 @@ const Projects = React.createClass({
               className="projects__content__content-left__text"
               dangerouslySetInnerHTML={{__html: text}}
             />
-            <button className="bs-donate" style={donateStyle}>DONATE</button>
+            <button className="bs-donate" style={donateStyle}>{this.props.donate}</button>
           </div>
           <div
             className="col-8-l projects__content__content-right"
