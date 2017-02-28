@@ -12,7 +12,7 @@
 	<div class="bs-post__recent__content">
 		<h4><?php echo substr($recent->post_title, 0, 40) ?>...</h4>
 		<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, 80) ?>...</p>
-		<a href=""><?php echo gett('Read more')?>...</a>
+		<a href="<?php echo get_permalink($recent->ID) ?>"><?php echo gett('Read more')?>...</a>
 	</div>
 </div>
 <?php endforeach; ?>
