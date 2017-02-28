@@ -70,9 +70,8 @@ echo do_shortcode('[bs_accordion btn_title="'.gett('ACN International in the wor
 			</div>
 
 			<div class="col-6-l">
-				<h6><a href="#"><?php echo gett('PRIVACY POLICY') ?></a></h6>
-				<h6><a href="#"><?php echo gett('TERMS & CONDITIONS') ?></a></h6>
-				<h6><a href="#">KPMG</a></h6>
+				<h6><a href="<?php echo gett('https://acninternational.org/privacy-policy/') ?>"><?php echo gett('PRIVACY POLICY') ?></a></h6>
+				<h6><a href="<?php echo gett('https://acninternational.org/terms-and-conditions/') ?>"><?php echo gett('TERMS & CONDITIONS') ?></a></h6>
 			</div>
 		</div>
 	</div>
