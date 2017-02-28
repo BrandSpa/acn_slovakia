@@ -70,6 +70,9 @@ require('shortcodes/contact_info.php');
 require('shortcodes/posts_list.php');
 require('shortcodes/campaigns_slider.php');
 
+//metaboxes
+require('metboxes/image_square.php');
+
 function get_lang() {
 	if(function_exists('pll_current_language')) {
 		return pll_current_language();
@@ -136,3 +139,4 @@ function replace_office_texts() {
 	$text = str_replace('[office_name]', get_option('name_' . space_to_lodash( getCountry() ) ), $text);
 	return $text;
 }
+

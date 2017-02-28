@@ -17,13 +17,12 @@
 
 <div>
 	<p>
-		<input type="text" name="image_square" placeholder="Image Square" value="<?php echo $value ?>" />
+		<input type="text" class="upload-img" name="image_square" placeholder="Image Square" value="<?php echo $value ?>" />
 	</p>
 
 </div>
 <?php 
 	} //end bs_page_image_square_cb
-
 
 
 function bs_save_image_square_meta($post_id) {
