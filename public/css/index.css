@@ -90,7 +90,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 @media(max-width:767px){.bs-footer__right--bottom{height:auto}}.bs-footer__right--bottom div{margin-bottom:15px}
 .bs-footer__right--bottom a{color:#fff}.bs-footer__bottom--top{width:100%;background:rgba(46,67,81,1);padding:7px 0;text-align:center;float:left}
 .bs-footer__bottom--top h6{color:gray}.bs-footer__bottom--bottom{width:100%;float:left;padding:30px;text-align:right}
-.bs-footer__menu{margin:0;padding:0}.bs-footer__menu li{list-style:none;display:inline-block}
+.bs-footer__menu{margin:0;padding:0}.bs-footer__menu li{list-style:none;display:inline-block;margin:0 20px}
 .bs-footer__menu li a{color:#3c515f}.learn-more{background:rgba(241,54,78,1);padding:30px;float:left;width:100%;text-align:center}
 .learn-more-link{font-size:1.86667em;text-align:center;display:block;width:70%;margin:0 auto;text-decoration:none;color:#fff;text-transform:uppercase}
 .slider{width:100%;position:relative;transition:left 400ms ease;overflow:hidden}.slider__viewport{width:100%;position:relative;transition:left 400ms ease;height:520px}
