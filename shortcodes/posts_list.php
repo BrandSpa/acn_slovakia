@@ -10,10 +10,10 @@ function bs_posts_list_sc($atts, $content = null) {
   ];
 
 	$page = isset($_GET['posts']) ?  $_GET['posts'] : 0;
-	$offset = isset($_GET['posts']) ? intval($_GET['posts']) * 7 : 0;
+	$offset = isset($_GET['posts']) ? intval($_GET['posts']) * 10 : 0;
 
   $at = shortcode_atts( $attributes , $atts );
-	$args = array( 'posts_per_page' => 7, 'offset' => $offset );
+	$args = array( 'posts_per_page' => 10, 'offset' => $offset );
 
   $recent_posts = get_posts( $args );
   ob_start();
