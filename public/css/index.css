@@ -187,3 +187,4 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .campaigns-slider__viewport{position:relative;transition:all 300ms}.campaigns-slider__btns button{position:absolute;top:30%;height:45px;display:block;background:transparent;border:0;cursor:pointer;font-size:42px;color:#fff}
 .campaigns-slider__btns__prev{position:absolute;left:15px;box-shadow:5px 5px 5px rgba(0,0,0,0.5)}
 .campaigns-slider__btns__next{position:absolute;right:15px;box-shadow:5px 5px 5px rgba(0,0,0,0.5)}
+.campaign__item{padding:60px 30px;float:left;min-height:500px}
