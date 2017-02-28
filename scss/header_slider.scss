@@ -19,8 +19,9 @@
 			&__content {
 				position: absolute;
 				bottom: 0;
-				background: RGBA(244, 244, 244, .5);
+				background: RGBA(244, 244, 244, 1);
 			}
+
 		h2, h3 {
 			display: block;
 			width: 100%;
@@ -36,8 +37,7 @@
 			line-height: 0.93;
 			letter-spacing: normal;
 			text-align: center;
-			color: #ffffff;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59);
+			color: #3c515f;
 
 			@media #{$s} {
 				font-size: 3em;
