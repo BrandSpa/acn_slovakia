@@ -17,6 +17,7 @@ const Projects = React.createClass({
   getInitialState() {
     return {section: 1, bg: '#B91325', donateColor: '#B91325'};
   },
+
   componentDidMount() {
     let patt = new RegExp(/#projects-[1-9]/);
     let hash = window.location.hash;
@@ -37,17 +38,20 @@ const Projects = React.createClass({
       1000
     );
   },
+
   moveArrow(num) {
     let left = this.el.querySelector(
       `.projects__icons li:nth-child(${num})`
     ).offsetLeft;
     this.el.querySelector('.projects__arrow').style.left = `${left}px`;
   },
+
   changeContent(num) {
     let color = backgroundColors[num];
     this.setState({bg: color, donateColor: color, section: num});
     this.moveArrow(num);
   },
+  
   render() {
     let {contents = []} = this.props;
     let content = contents[this.state.section - 1] || {};

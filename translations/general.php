@@ -16,8 +16,7 @@ $general = [
 	'ACN International in the world',
 	'TO LEARN MORE ABOUT [office_name] VISIT [office_url]',
 	'See more',
-	'https://acninternational.org/news/',
-	'donate'
+	'https://acninternational.org/news/'
 ];
 
 foreach($general as $key => $trans) {
