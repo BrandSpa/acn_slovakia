@@ -68,10 +68,10 @@ const CampaignsSlider = React.createClass({
         </div>
         
         <div className="campaigns-slider__btns">
-          <button className="slider__btns__prev" onClick={this.prevSlide}>
+          <button className="campaigns-slider__btns__prev" onClick={this.prevSlide}>
             <i className="ion-chevron-left" />
           </button>
-          <button className="slider__btns__next" onClick={this.nextSlide}>
+          <button className="campaigns-slider__btns__next" onClick={this.nextSlide}>
             <i className="ion-chevron-right" />
           </button>
         </div>
