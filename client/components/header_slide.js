@@ -4,7 +4,7 @@ import VideoModal from './video_modal';
 const headerSlide = React.createClass({
   handleLink(e) {
     e.preventDefault();
-    if (this.props.isvideo) return this.modal.show();
+    if (this.props.is_video) return this.modal.show();
     window.location.href = this.props.url;
   },
   render() {
@@ -24,7 +24,7 @@ const headerSlide = React.createClass({
     return (
       <div>
         {
-          this.props.isvideo
+          this.props.is_video
             ? <VideoModal
               ref={modal => this.modal = modal}
               url={this.props.url}
