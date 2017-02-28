@@ -31,7 +31,7 @@ function bs_posts_list_sc($atts, $content = null) {
 				<a href="<?php echo get_permalink($post->ID) ?>">
 					<div 
 						class="bs-posts-list__main__img" 
-						style="background-image:url(<?php echo get_post_meta($post->ID, 'image_square_key') ?>);background-color: #E5A612;">					
+						style="background-image:url(<?php echo get_post_meta($post->ID, 'image_square_key', true, true) ?>);background-color: #E5A612;">					
 					</div>
 				</a>
 
@@ -48,7 +48,7 @@ function bs_posts_list_sc($atts, $content = null) {
 			<div class="bs-posts-list__item">
 					<div
 						class="bs-posts-list__item__img" 
-						style="background-image: url(<?php echo get_post_meta($post->ID, 'image_square_key') ?>);">
+						style="background-image: url(<?php echo get_post_meta($post->ID, 'image_square_key', true) ?>);">
 					</div>
 
 				<div class="bs-posts-list__item__content" style="background: #fff">
