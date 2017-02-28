@@ -3,7 +3,8 @@
 function bs_header_slider_sc($atts, $content = null) {
 	$attributes = [ 
     'slides' => '',
-		'interval' => 5000
+		'interval' => 5000,
+    'anchor' => '#'
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -20,7 +21,8 @@ function bs_header_slider_sc($atts, $content = null) {
   class="header-slider" 
   data-props='{
     "slides": <?php echo json_encode($slides) ?>, 
-    "interval": "<?php echo $at["interval"] ?>"
+    "interval": "<?php echo $at["interval"] ?>",
+    "anchor": "<?php echo $at["anchor"] ?>"
   }'
 ></div>
 
@@ -68,6 +70,12 @@ function bs_header_slider_sc($atts, $content = null) {
         "heading" => "enter interval",
         "param_name" => "interval",
         "value" => 5000
+      ],
+      [
+        "type" => "textfield",
+        "heading" => "enter anchor",
+        "param_name" => "anchor",
+        "value" => "#"
       ],
       [
         'type' => 'param_group',

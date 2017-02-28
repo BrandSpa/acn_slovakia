@@ -35,7 +35,7 @@ const headerSlide = React.createClass({
           <div className="slider__slide__content">
             <h2>{title}</h2>
             <h4>{subtitle}</h4>
-            <div className="arrow-down"><i className="ion-chevron-down"></i></div>
+            <a href="#" className="arrow-down"><i className="ion-chevron-down"></i></a>
           </div>
       </div>
     );
