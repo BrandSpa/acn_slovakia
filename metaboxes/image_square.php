@@ -17,10 +17,43 @@
 
 <div>
 	<p>
-		<input type="text" class="upload-img" name="image_square" placeholder="Image Square" value="<?php echo $value ?>" />
+		<input type="text" class="uploader" name="image_square" placeholder="Image Square" value="<?php echo $value ?>" />
 	</p>
 
 </div>
+<script>
+const open_media_uploader_image = () => {
+	let media_uploader = wp.media({
+		frame: 'post',
+		state:    'insert',
+		multiple: false
+	});
+
+	let promise = new Promise((resolve) => {
+		media_uploader.on('insert', () => {
+			let json = media_uploader.state().get('selection').first().toJSON();
+			return resolve(json);
+		});
+	});
+
+	media_uploader.open();
+
+	return promise;
+};
+
+const section = () => {
+
+	$('.uploader').on('click', (e) => {
+
+		open_media_uploader_image()
+		.then(res => {
+			$(e.currentTarget).val(res.url);
+		});
+	});
+};
+
+section();
+</script>
 <?php 
 	} //end bs_page_image_square_cb
 
