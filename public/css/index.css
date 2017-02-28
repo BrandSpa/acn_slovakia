@@ -46,7 +46,7 @@ input:focus,select:focus{border-color:#f7c723;box-shadow:none;outline:0}select{-
 }.input-inline{display:inline-block;vertical-align:middle;width:auto}.input-container,.form-group{margin-bottom:10px}
 .form-group{position:relative}.form-group--addon{float:left}.form-group--addon input{padding-left:50px}
 .form-group__addon{left:25px;top:30%;position:absolute;height:45px;color:#fff}.input-error{background:#f4334a;color:#fff;text-align:left;width:95%;font-size:.9em;padding:3px 0 3px 12px;border-radius:3px}
-html{box-sizing:border-box}body{margin:0;font-family:'Source Sans Pro',sans-serif;font-size:15px;transition:margin 300ms;position:relative;left:0;transition:left 300ms;padding-top:140px}
+html{box-sizing:border-box}body{margin:0;font-family:'Source Sans Pro',sans-serif;font-size:15px;transition:margin 300ms;position:relative;left:0;transition:left 300ms;padding-top:120px}
 @media(max-width:767px){body{font-size:12px}}*,*:before,*:after{box-sizing:inherit}
 .hidden{display:none}a{text-decoration:none}.menu-open{position:relative;left:200px}
 h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1{font-size:4.8em;font-weight:900;font-style:normal;font-stretch:normal;letter-spacing:normal}
