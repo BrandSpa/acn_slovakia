@@ -1,6 +1,7 @@
 <?php
 $dir_base = str_replace('lib', '', __DIR__);
 require $dir_base . '/vendor/autoload.php';
+
 use GeoIp2\Database\Reader;
 
 function get_client_ip_server() {
@@ -25,7 +26,7 @@ function get_client_ip_server() {
 }
 
 function get_location($ip) {
-	$dir_base = str_replace('apis', '', __DIR__);	
+	$dir_base = str_replace('lib', '', __DIR__);	
 	
 	try {
 		$reader = new Reader($dir_base .'GeoLite2-Country.mmdb');
