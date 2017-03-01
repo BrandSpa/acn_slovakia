@@ -3,6 +3,7 @@ import qs from 'qs';
 import request from 'axios';
 import Minigrid from 'minigrid';
 import debounce from '../lib/debounce';
+import Post from './post';
 
 const Posts = React.createClass({
   getInitialState() {
@@ -21,6 +22,7 @@ const Posts = React.createClass({
   componentDidUpdate: function() {
     this.initGrid();
   },
+
   componentDidMount() {
     window.addEventListener('resize', debounce(this.initGrid, 300));
     this.initGrid();
@@ -42,48 +44,29 @@ const Posts = React.createClass({
   goToPosts() {
     window.location = this.props.url;
   },
+
   render() {
     const {posts} = this.state;
 
+    const postMain = posts.map((post, i) => {
+      if(i == 0) {
+        return <Post key={i} type='main' post={post} />
+      } 
+    });
+
+    const postsNodes = posts.map((post, i) => {
+      if(i !== 0) {
+        return <Post key={i} type='main' post={post} />
+      } 
+    });
 
     return (
       <div>
         <div ref={grid => this.grid = grid}>
-          {posts.map((post, i) => {
-            return (
-              <div
-                key={i}
-                className={i == 0 ? 'grid-item grid-item--main' : 'grid-item'}
-              >
-                <div
-                  className={
-                    i == 0
-                      ? 'grid-item__content grid-item--main__content'
-                      : 'grid-item__content'
-                  }
-                >
-                  {
-                    post.post_image
-                      ? <img
-                        src={post.post_image}
-                        onLoad={this.handleImageLoaded}
-                      />
-                      : ''
-                  }
-                  <div
-                    className={
-                      i == 0
-                        ? 'grid-item__content__texts grid-item--main__content__texts'
-                        : 'grid-item__content__texts'
-                    }
-                  >
-                    <h5><a href={post.post_permalink}>{post.post_title}</a></h5>
-                    <p>{`${post.post_short}...`}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+         {postMain}
+         <div className="grid-items">
+          {postsNodes}
+         </div>
         </div>
         <button
           style={{display: 'block'}}
