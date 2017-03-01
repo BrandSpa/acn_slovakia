@@ -105,6 +105,9 @@
 
 			p {
 				color: #9B9B9B;
+				@media #{$s} {
+					font-size: 1.5em;
+				}
 			}
 
 			a {
