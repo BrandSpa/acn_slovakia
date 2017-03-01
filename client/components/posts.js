@@ -37,20 +37,22 @@ const Posts = React.createClass({
     }
   },
 
-
+  goToPosts() {
+    window.location = this.props.url;
+  },
 
   render() {
     const {posts} = this.state;
 
     const postMain = posts.map((post, i) => {
       if(i == 0) {
-        return <Post key={i} type='main' post={post} />
+        return <Post key={i} onImageLoaded={this.initGrid}  type='main' post={post} />
       } 
     });
 
     const postsNodes = posts.map((post, i) => {
       if(i !== 0) {
-        return <Post key={i} type='main' post={post} />
+        return <Post key={i} onImageLoaded={this.initGrid} type='main' post={post} />
       } 
     });
 
