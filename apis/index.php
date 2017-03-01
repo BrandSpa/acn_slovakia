@@ -210,7 +210,7 @@ add_action( 'wp_ajax_location', 'location' );
 
 function location() {
   $data = $_POST['data'];
-  $res = get_location($data['ip']);
+  $res = get_user_location();
   header('Content-type: application/json');  
   echo json_encode($res);
   die();

@@ -140,8 +140,9 @@ function replace_office_texts() {
 }
 
 // fallback language is English whatever the default language
-add_filter( 'pll_preferred_language', 'my_language_fallback' );
+// add_filter( 'pll_preferred_language', 'my_language_fallback' );
  
-function my_language_fallback( $slug ) {
-    return $slug === false ? 'es' : $slug;
-}
+// function my_language_fallback( $slug ) {
+//     return $slug === false ? 'es' : $slug;
+// }
+
