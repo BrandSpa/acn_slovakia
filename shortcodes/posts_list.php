@@ -51,7 +51,9 @@ function bs_posts_list_sc($atts, $content = null) {
 						class="bs-posts-list__item__img" 
 						style="background-image: url(<?php echo get_post_meta($post->ID, 'image_square_key', true) ?>);">
 					</div>
-					<?php $itemStyle = 'width: 100%;'; ?>
+						<?php $itemStyle = 'width: 100%'; ?>
+					<?php else: ?>
+					<?php $itemStyle = ''; ?>
 				<?php endif; ?>
 
 				<div class="bs-posts-list__item__content" style="<?php echo $itemStyle; ?>">
