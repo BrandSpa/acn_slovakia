@@ -6,7 +6,10 @@
 		&__content {
 			
 			img {
-				width: 100%;
+				
+				@media #{$s} {
+					width: 100% !important;
+				}
 			}
 
 			&__texts {
