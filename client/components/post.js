@@ -12,7 +12,9 @@ const Post = React.createClass({
 		return (
 			<div className={type == 'main' ? 'grid-item grid-item--main' : 'grid-item'}>
 					<div className={type == 'main' ? 'grid-item__content grid-item--main__content' : 'grid-item__content'}>
+						<a href={post.post_permalink}>
 							{img}
+						</a>
 							<div
 									className={
 											type == 'main' ? 'grid-item__content__texts grid-item--main__content__texts' : 'grid-item__content__texts'
