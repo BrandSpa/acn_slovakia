@@ -41,7 +41,8 @@
 			position: relative;
 
 			@media #{$s} {
-				min-height: 300px;
+				min-height: auto;
+				padding-bottom: 25%;
 			}
 
 			&__title {
