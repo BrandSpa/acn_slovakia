@@ -102,11 +102,7 @@
 			margin-bottom: 20px;
 		}
 
-		&--without {
-			.bs-posts-list__item__content { 
-				width: 100%;
-			}
-		}
+	
 		
 		&__readmore {
 			color: #d0021b;
@@ -137,7 +133,9 @@
 					padding: 0 0 0 20px;
 				}
 				
-				h2 {
+				&--without {
+					width: 100%;		
+				}
 					font-size: (25 / 15) * 1em;
 					color: #2e404c;
 					display: inline-block;
