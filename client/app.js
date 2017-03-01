@@ -13,7 +13,6 @@ import setMenu from './lib/set_menu';
 import setMenuMobile from './lib/set_menu_mobile';
 import donateRedirect from './lib/donate_redirect';
 import CampaignsSlider from './components/campaigns_slider';
-import smoothScroll from 'smooth-scroll';
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
@@ -36,6 +35,27 @@ setMenu();
 setMenuMobile();
 donateRedirect();
 
-smoothScroll.init({
-  selectorHeader: '.nav'
-});
+function smoothScroll() {
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+      var less = $('.nav').height();
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({ scrollTop: ($(hash).offset().top - less) }, 800, () => {
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }
+  })
+
+}
+
+smoothScroll();
