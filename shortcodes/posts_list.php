@@ -28,13 +28,14 @@ function bs_posts_list_sc($atts, $content = null) {
 	
 		<?php if($counter == 1): ?>
 			<div class="bs-posts-list__main">
+			<?php if(!empty(get_post_meta($post->ID, 'image_square_key', true))): ?>
 				<a href="<?php echo get_permalink($post->ID) ?>">
 					<div 
 						class="bs-posts-list__main__img" 
 						style="background-image:url(<?php echo get_post_meta($post->ID, 'image_square_key', true, true) ?>);background-color: #E5A612;">					
 					</div>
 				</a>
-
+				<?php endif; ?>
 				<div class="bs-posts-list__main__content" style="background-color: #3C515F;">
 					<h2><a href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 150) ?>...</p>
