@@ -40,7 +40,7 @@
 			@media #{$s} {
 				width: 70%;
 				float: left;
-				padding: 0;
+				padding: 0 0 0 20px;
 			}
 
 			h5 {
@@ -48,13 +48,17 @@
 				padding-bottom: 15px;
 				margin-top: 15px;
 				display: block;
-				
+				@media #{$s} {
+					margin-top: 0;
+				}
+
 				&:after {
 					display: block;
 					content: ' ';
 					width: 70%;
 					border-bottom: 1px solid #E34E6B;	
 					padding-top: 15px;
+					
 					@media #{$s} {
 						width: 100%;
 					}
