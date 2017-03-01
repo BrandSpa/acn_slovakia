@@ -19,7 +19,7 @@ function bs_projects_sc($atts, $content = null) {
     if(isset($images[$indexImg])) {
       array_push($slides, [
         'title' => $at['title_' .$i],
-        'content' => $at['content_' .$i],
+        'content' => str_replace("'", "\'", $at['content_' .$i]),
         'imgUrl' => wp_get_attachment_image_src($images[$indexImg], 'full')[0],
       ]);
     }
