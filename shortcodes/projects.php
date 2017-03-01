@@ -31,10 +31,10 @@ function bs_projects_sc($atts, $content = null) {
 
 <div
   class="projects-container" 
-  data-props='{
-  "contents": <?php echo json_encode($slides) ?>,
-  "donate": "<?php echo gett('Donate') ?>"
-  }'
+  data-props="{
+  'contents': <?php echo json_encode($slides) ?>,
+  'donate': '<?php echo gett('Donate') ?>'
+  }"
 ></div>
 
 <?php

@@ -9,7 +9,7 @@ function bs_contact_form_sc($atts, $content = null) {
 		'name-validation' => 'Name required',
 		'lastname-validation' => 'lastname required',
 		'email-validation' => 'Email required',
-		'button-text' => 'PRAY'
+		'button-text' => gett('Pray')
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -86,14 +86,7 @@ add_action( 'vc_before_init', 'bs_contact_form_vc' );
         "heading" => "email validation",
         "param_name" => "email-validation",
         "value" => 'Email required'
-			],
-
-			[
-        "type" => "textfield",
-        "heading" => "button text",
-        "param_name" => "button-text",
-        "value" => 'PRAY'
-			],
+			]
 	];
 
   	vc_map(
