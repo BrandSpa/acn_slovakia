@@ -62,5 +62,6 @@
   </script>
 <!-- End Google Analytics -->
 <div class="hidden"><?php var_dump(get_user_location()) ?></div>
+<div class="hidden"><?php var_dump(getCountryLang(getCountry())) ?></div>
 </body>
 </html>
