@@ -36,7 +36,7 @@ function bs_posts_list_sc($atts, $content = null) {
 				</a>
 
 				<div class="bs-posts-list__main__content" style="background-color: #3C515F;">
-					<h2><?php echo $post->post_title ?></h2>
+					<h2><a href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 150) ?>...</p>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?> <i class="ion-chevron-down"></i> </a>
 				</div>
