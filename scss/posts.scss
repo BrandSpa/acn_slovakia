@@ -67,6 +67,16 @@
 					display: none;
 				}
 			}
+
+			&__readmore {
+				color: #d0021b;
+				text-align: right;
+				float: right;
+				@media #{$s} {
+					display: block;
+					width: 100%;
+				}
+			}
 		}
 		
 	}

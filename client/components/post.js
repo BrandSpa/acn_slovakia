@@ -21,7 +21,7 @@ const Post = React.createClass({
 							>
 									<h5><a href={post.post_permalink}>{post.post_title}</a></h5>
 									<p>{`${post.post_short}...`}</p>
-									<span>{read_more}...</span>
+									<span className="grid-item__content__texts__readmore">{read_more}...</span>
 							</div>
 					</div>
 			</div>
