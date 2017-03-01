@@ -20,6 +20,12 @@
 				height: 200px !important;
 			}
 
+			&__anchor {
+				display: block;
+				margin: 0 auto;
+				width: 20px;
+			}
+
 			&__content {
 				position: absolute;
 				bottom: 0;
@@ -60,6 +66,7 @@
 				letter-spacing: normal;
 				text-align: center;
 				color: #3c515f;
+				border-bottom: 1px solid #D3D3D3;
 
 				@media #{$s} {
 					width: 90%;

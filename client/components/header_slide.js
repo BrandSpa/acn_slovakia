@@ -36,7 +36,7 @@ const headerSlide = React.createClass({
           <div className="slider__slide__content col-6-l col-12-m">
             <h2>{title}</h2>
             <h4>{subtitle}</h4>
-            <a href={this.props.anchor}>
+            <a href={this.props.anchor} className="slider__slide__anchor">
 
               <svg width="20px" height="27px" viewBox="178 602 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg">
                   <defs>
