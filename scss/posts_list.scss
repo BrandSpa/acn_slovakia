@@ -93,7 +93,10 @@
 		float: left;
 		margin-bottom: 40px;
 		width: 100%;
-
+		@media #{$s} {
+			padding: 20px;
+		}
+		
 		&__readmore {
 			color: #d0021b;
 			text-align: right;
@@ -110,6 +113,7 @@
 				background-position: center;
 				background-size: cover;
 				background-color: #3c515f;
+				
 				@media #{$s} {
 					width: 30%;
 					height: 95px;
@@ -124,7 +128,7 @@
 
 				@media #{$s} {
 					width: 70%;
-					padding: 20px;
+					padding: 0;
 				}
 				
 				h2 {
@@ -142,6 +146,9 @@
 						padding-bottom: 20px;
 						width: 40%;
 						border-bottom: solid 1px #d0011b;
+						@media #{$s} {
+							width: 100%;
+						}
 					}
 				}
 				p {
