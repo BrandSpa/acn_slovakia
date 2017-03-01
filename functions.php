@@ -98,7 +98,6 @@ function show_donate() {
 	return false;
 }
 
-
 function bs_home_url() {
 	$home = '/';
 	if(function_exists('pll_home_url')) {
