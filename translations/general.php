@@ -15,6 +15,7 @@ $general = [
 	'Latest news',
 	'ACN International in the world',
 	'TO LEARN MORE ABOUT [office_name], VISIT [office_url]',
+	'ACN, during 70 years helping Christians in need',
 	'See more',
 	'https://acninternational.org/news/',
 	'Pray'

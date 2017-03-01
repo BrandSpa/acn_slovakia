@@ -133,9 +133,14 @@ add_filter('jpeg_quality', function($arg) {
 });
 
 function replace_office_texts() {
-	$text = gett('TO LEARN MORE ABOUT [office_name], VISIT [office_url]');
-	$text = str_replace('[office_url]', get_option('url_' . space_to_lodash( getCountry() ) ), $text);
-	$text = str_replace('[office_name]', get_option('name_' . space_to_lodash( getCountry() ) ), $text);
+	$text = gett('ACN, during 70 years helping Christians in need');
+	
+	if(bs_in_office()) {
+		$text = gett('TO LEARN MORE ABOUT [office_name], VISIT [office_url]');
+		$text = str_replace('[office_url]', get_option('url_' . space_to_lodash( getCountry() ) ), $text);
+		$text = str_replace('[office_name]', get_option('name_' . space_to_lodash( getCountry() ) ), $text);
+	}
+
 	return $text;
 }
 
