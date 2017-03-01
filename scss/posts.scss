@@ -4,6 +4,11 @@
 	
 	&--main {
 		&__content {
+			
+			img {
+				width: 100%;
+			}
+
 			&__texts {
 				p {
 					display: block !important;
