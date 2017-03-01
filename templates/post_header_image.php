@@ -1,6 +1,6 @@
 <div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
 	<div class="bs-post__header--image__title">
-		<h3 style="border-bottom: 1px solid #D3D3D3"><?php the_title() ?></h3>
+		<h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title() ?></h3>
 				<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
 			<svg width="20px" height="27px" viewBox="178 602 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs>
