@@ -11,7 +11,7 @@ function bs_posts_sc($atts, $content = null) {
 	$props = [
     'see_more' => $at['see_more'],
     'url' => $at['url'],
-
+    'read_more' => gett('Read more')
 	];
 	
   ob_start();

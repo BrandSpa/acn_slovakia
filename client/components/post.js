@@ -6,7 +6,7 @@ const Post = React.createClass({
   },
 
 	render() {
-		const { post, type } = this.props;
+		const { post, type, read_more } = this.props;
 		const img = post.post_image ? <img src={post.post_image} onLoad={this.handleImageLoaded} /> : '';
 
 		return (
@@ -21,6 +21,7 @@ const Post = React.createClass({
 							>
 									<h5><a href={post.post_permalink}>{post.post_title}</a></h5>
 									<p>{`${post.post_short}...`}</p>
+									<span>{read_more}...</span>
 							</div>
 					</div>
 			</div>
