@@ -39,16 +39,17 @@
 				@media #{$s} {
 					padding: 20px 0;
 				}
+				
 				h2 {
 					font-size: 3em;
-					font-weight: 900;
+					font-weight: 600;
 					font-style: normal;
 					font-stretch: normal;
 					line-height: 0.93;
 					letter-spacing: normal;
 					text-align: center;
 					color: #3c515f;
-
+					text-transform: uppercase;
 					@media #{$s} {
 						font-size: 3em;
 					}
