@@ -138,10 +138,13 @@
 					color: #2e404c;
 					display: inline-block;
 					padding-right: 20%;
+					
 					@media #{$s} {
-						padding: 0;
+						padding: 0 0 20px 0;
 						font-size: 1em;
+						width: 100%;
 					}
+					
 					&:after {
 						display: block;
 						content: '';
