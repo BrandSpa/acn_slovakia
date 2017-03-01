@@ -27,7 +27,7 @@
 
 		<ul class="menu--mobile">
 		<li>
-			<a href="#close"><i class="ion-close"></i></a>
+			<a href="#close" class="close-menu" style="color: #F1364E"><i class="ion-close"></i></a>
 		</li>
 	  <?php
 			$args = array(
