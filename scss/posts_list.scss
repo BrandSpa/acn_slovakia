@@ -118,10 +118,6 @@
 				background-position: center;
 				background-size: cover;
 				background-color: #3c515f;
-				
-				@media #{$s} {
-					height: 95px;
-				}
 			}
 
 			&__content {
