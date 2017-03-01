@@ -94,9 +94,10 @@
 		float: left;
 		margin-bottom: 40px;
 		width: 100%;
+		background: #fff;
+		
 		@media #{$s} {
 			padding: 20px;
-			background: #fff;
 			margin-bottom: 20px;
 		}
 		
