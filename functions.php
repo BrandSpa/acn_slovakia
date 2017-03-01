@@ -132,9 +132,8 @@ add_filter('jpeg_quality', function($arg) {
 	return 80;
 });
 
-
 function replace_office_texts() {
-	$text = gett('TO LEARN MORE ABOUT [office_name] VISIT [office_url]');
+	$text = gett('TO LEARN MORE ABOUT [office_name], VISIT [office_url]');
 	$text = str_replace('[office_url]', get_option('url_' . space_to_lodash( getCountry() ) ), $text);
 	$text = str_replace('[office_name]', get_option('name_' . space_to_lodash( getCountry() ) ), $text);
 	return $text;

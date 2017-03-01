@@ -7,7 +7,7 @@
   <meta property="title" content="<?php echo get_the_title(); ?>" />
   <meta property="og:title" content="<?php echo get_the_title(); ?>" />
   <meta property="og:url" content="<?php echo the_permalink() ?>" />
-	<title>ACN <?php echo wp_title(); ?></title>
+	<title>ACN - Aid to the Church in Need <?php echo wp_title(); ?></title>
 		<!--wordpress files-->
 	  <?php wp_head(); ?>
 		<!-- /wordpress files-->
