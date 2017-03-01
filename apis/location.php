@@ -37,7 +37,7 @@ function get_location($ip) {
 }
 
 function get_user_location() {
-	return get_location( get_client_ip_server() );
+    return get_location( get_client_ip_server() );
 }
 
 function getCountry() {

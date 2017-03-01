@@ -57,8 +57,10 @@
   ga('create', '<?php echo get_option('analytics_id') ?>', 'auto');
   ga('send', 'pageview');
    ga('require', 'ecommerce');
+
+  
   </script>
 <!-- End Google Analytics -->
-
+<div class="hidden"><?php var_dump(get_user_location()) ?></div>
 </body>
 </html>
