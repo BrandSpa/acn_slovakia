@@ -4,15 +4,21 @@
 	
 	&--main {
 		&__content {
-			
-			img {
-				
+			@media #{$s} {
+				width: 100% !important;
+				padding: 0 !important;
+			}
+			img {	
 				@media #{$s} {
 					width: 100% !important;
 				}
 			}
 
 			&__texts {
+				@media #{$s} {
+					width: 100% !important;
+				}
+				
 				p {
 					display: block !important;
 				}
