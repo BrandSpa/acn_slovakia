@@ -134,6 +134,9 @@
 				}
 				&--without {
 					width: 100%;	
+					@media #{$s} {
+						padding-left: 0;
+					}
 				}
 				h2 {
 					font-size: (25 / 15) * 1em;
