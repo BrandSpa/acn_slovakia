@@ -153,3 +153,6 @@ function redirectToLang() {
 	header('Location:'. $url);
 	exit;
 }
+
+
+redirectToLang();
