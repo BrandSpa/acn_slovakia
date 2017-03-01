@@ -148,8 +148,16 @@ function replace_office_texts() {
 
 
 function redirectToLang() {
-	$lang = getCountryLang(getCountry());
-	$url = pll_the_languages( array( 'raw' => 1 ) )[$lang]['url'];
-	header('Location:'. $url);
-	exit;
+		$lang = getCountryLang(getCountry());
+	if(!isset($_COOKIE['bs-lang']) && empty($_COOKIE['bs-lang'])) {
+		
+		$url = pll_the_languages( array( 'raw' => 1 ) )[$lang]['url'];
+		header('Location:'. $url);
+		exit;
+	} else {
+		setcookie('bs-lang', $lang);
+	}
+
 }
+
+redirectToLang();
