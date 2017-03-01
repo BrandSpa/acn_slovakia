@@ -15,11 +15,15 @@
 
 	&__content {
 		background: #fff;
-
+		@media #{$s} {
+			float: left;
+		}
+		
 		img {
 			width: 100%;
 			display: block;
 			min-height: 10px;
+			
 			@media #{$s} {
 				width: 30%;
 				float: left;
