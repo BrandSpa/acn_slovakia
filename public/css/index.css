@@ -188,7 +188,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .bs-post__donate{background:#3c515f;padding:40px 0}.bs-post__donate h3{font-size:1.46667em;color:#fff;margin:30px auto}
 .bs-posts-list{float:left;width:100%}@media(max-width:767px){.bs-posts-list{padding:0 20px}
 }.bs-posts-list>h3{display:block;float:left;width:100%;margin:40px 0;font-size:1.66667em;color:#3c515f}
-.bs-posts-list__pagination{width:30%;margin:40px auto}@media(max-width:767px){.bs-posts-list__pagination{width:80%}
+.bs-posts-list__pagination{width:30%;margin:40px auto}@media(max-width:767px){.bs-posts-list__pagination{width:100%}
 }.bs-posts-list__pagination button{background:transparent;border-radius:2px;border:solid 2px #bbc5c8;color:#3c515f;font-size:20px}
 .bs-posts-list__main{float:left;margin-bottom:40px;width:100%}.bs-posts-list__main__img{float:left;width:35%;height:400px;background-position:center;background-size:cover;background-color:#3c515f}
 @media(max-width:767px){.bs-posts-list__main__img{width:100%;min-height:200px;height:auto}
@@ -199,7 +199,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .bs-posts-list__main__content p{color:#f8f8f8}.bs-posts-list__main__content a{margin-top:40px;display:block;color:#f8f8f8}
 .bs-posts-list__item{float:left;margin-bottom:40px;width:100%}@media(max-width:767px){.bs-posts-list__item{padding:20px;background:#fff;margin-bottom:20px}
 }.bs-posts-list__item__readmore{color:#d0021b;text-align:right;float:right}@media(max-width:767px){.bs-posts-list__item__readmore{display:block;width:100%}
-}.bs-posts-list__item__img{float:left;width:35%;background-position:center;background-size:cover;background-color:#3c515f}
+}.bs-posts-list__item__img{float:left;width:30%;background-position:center;background-size:cover;background-color:#3c515f;height:300px}
 @media(max-width:767px){.bs-posts-list__item__img{width:30%;height:95px}}.bs-posts-list__item__content{float:left;width:70%;padding:40px 40px 40px 40px;background:#fff}
 @media(max-width:767px){.bs-posts-list__item__content{width:70%;padding:0 0 0 20px}
 }.bs-posts-list__item__content h2{font-size:1.66667em;color:#2e404c;display:inline-block;padding-right:20%}
