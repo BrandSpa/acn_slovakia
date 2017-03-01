@@ -46,13 +46,14 @@ function bs_posts_list_sc($atts, $content = null) {
 		<?php else: ?>
 	
 			<div class="bs-posts-list__item">
+				<?php if(!empty(get_post_meta($post->ID, 'image_square_key', true))): ?>
 					<div
 						class="bs-posts-list__item__img" 
 						style="background-image: url(<?php echo get_post_meta($post->ID, 'image_square_key', true) ?>);">
 					</div>
-
+				<?php endif; ?>
 				<div class="bs-posts-list__item__content" style="background: #fff">
-					<h2><?php echo $post->post_title ?></h2>
+					<h2><?php echo substr($post->post_title, 0, 120) ?></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 120) ?>...</p>
 					<a class="bs-posts-list__item__readmore" href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?>...</a>
 				</div>
