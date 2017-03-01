@@ -202,12 +202,12 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 }.bs-posts-list__item__img{float:left;width:30%;padding-bottom:30%;background-position:center;background-size:cover;background-color:#3c515f}
 .bs-posts-list__item__content{float:left;width:65%;padding:40px 40px 40px 40px;background:#fff}
 @media(max-width:767px){.bs-posts-list__item__content{padding:0 0 0 20px}}.bs-posts-list__item__content--without{width:100%}
-.bs-posts-list__item__content h2,.bs-posts-list__item__content a{font-size:1.66667em;color:#2e404c;display:inline-block;padding-right:20%}
-@media(max-width:767px){.bs-posts-list__item__content h2,.bs-posts-list__item__content a{padding:0 0 20px 0;font-size:1em;width:100%}
-}.bs-posts-list__item__content h2:after,.bs-posts-list__item__content a:after{display:block;content:'';padding-bottom:20px;width:40%;border-bottom:solid 1px #d0011b}
-@media(max-width:767px){.bs-posts-list__item__content h2:after,.bs-posts-list__item__content a:after{width:100%}
-}.bs-posts-list__item__content p{color:#9b9b9b;display:block;padding-right:20%}@media(max-width:767px){.bs-posts-list__item__content p{display:none}
-}.campaigns-slider{overflow:hidden}.campaigns-slider__slide{float:left}.campaigns-slider__slide__content{float:left;padding:60px 30px;text-align:center}
+.bs-posts-list__item__content a{font-size:1.66667em;color:#2e404c;display:inline-block;padding-right:20%}
+@media(max-width:767px){.bs-posts-list__item__content a{padding:0 0 20px 0;font-size:1em;width:100%}
+}.bs-posts-list__item__content a:after{display:block;content:'';padding-bottom:20px;width:40%;border-bottom:solid 1px #d0011b}
+@media(max-width:767px){.bs-posts-list__item__content a:after{width:100%}}.bs-posts-list__item__content p{color:#9b9b9b;display:block;padding-right:20%}
+@media(max-width:767px){.bs-posts-list__item__content p{display:none}}.campaigns-slider{overflow:hidden}
+.campaigns-slider__slide{float:left}.campaigns-slider__slide__content{float:left;padding:60px 30px;text-align:center}
 .campaigns-slider__slide__content h4,.campaigns-slider__slide__content p,.campaigns-slider__slide__content a{color:#fff}
 .campaigns-slider__viewport{position:relative;transition:all 300ms}.campaigns-slider__btns button{position:absolute;top:30%;height:45px;display:block;background:transparent;border:0;cursor:pointer;font-size:42px;color:#fff;padding:0 20px}
 .campaigns-slider__btns__prev{position:absolute;left:10px}.campaigns-slider__btns__prev i{text-shadow:5px 5px 5px rgba(0,0,0,0.3)}
