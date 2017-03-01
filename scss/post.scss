@@ -2,6 +2,12 @@
 	width: 100%;
 	display: block;
 	position: relative;
+
+	p {
+		@media #{$s} {
+			font-size: 1.5em;
+		}
+	}
 	
 	@media #{$s} {
 		padding: 0 20px;
@@ -105,9 +111,7 @@
 
 			p {
 				color: #9B9B9B;
-				@media #{$s} {
-					font-size: 1.5em;
-				}
+		
 			}
 
 			a {
