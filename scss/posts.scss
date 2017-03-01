@@ -20,11 +20,20 @@
 			width: 100%;
 			display: block;
 			min-height: 10px;
+			@media #{$s} {
+				width: 30%;
+				float: left;
+			}
 		}
 
 		&__texts {
 			padding: 15px;
 			word-wrap: break-word;
+
+			@media #{$s} {
+				width: 70%;
+				float: left;
+			}
 
 			h5 {
 				color: #3C515F;
