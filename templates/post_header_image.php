@@ -10,8 +10,6 @@
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
 			
 <svg width="20px" height="27px" viewBox="178 602 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <desc>Created with Sketch.</desc>
     <defs>
         <polyline id="path-1" points="16.9743561 9.37612525 16.9743561 23.0775777 2.91233907 23.0775777"></polyline>
         <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="14.062017" height="13.7014524" fill="white">
