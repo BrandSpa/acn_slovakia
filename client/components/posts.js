@@ -52,7 +52,7 @@ const Posts = React.createClass({
 
     const postsNodes = posts.map((post, i) => {
       if(i !== 0) {
-        return <Post key={i} onImageLoaded={this.initGrid} type='main' post={post} />
+        return <Post key={i} onImageLoaded={this.initGrid} type='item' post={post} />
       } 
     });
 
