@@ -247,7 +247,11 @@ button, .btn {
 .bs-section-donate {
 	height: 700px;
 	padding: 100px 0 0 100px;
-	
+	h2 {
+		@media #{$s} {
+			font-size: 2.2em;
+		}
+	}
 	@media #{$s} {
 		height: auto;
 		padding: 20px;
