@@ -58,6 +58,10 @@ function getCountryLang($name) {
     $country = array_filter($countries, function($arr) use($name) {
       return $arr->name == $name;
     });
-
-		return $country[array_keys($country)[0]] ? $country[array_keys($country)[0]]->languages[0] : 'en';
+		if(array_keys($country)) {
+			return $country[array_keys($country)[0]] ? $country[array_keys($country)[0]]->languages[0] : 'en';
+		} else {
+			return 'en';
+		}
+	
 }
