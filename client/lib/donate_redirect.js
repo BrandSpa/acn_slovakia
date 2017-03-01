@@ -2,7 +2,7 @@ import request from 'axios';
 import qs from 'qs';
 
 export default () => {
-  $('.bs-donate').text(bs.donate);
+  $('.bs-donate a').text(bs.donate);
   $('.bs-donate').on('click', e => {
     e.preventDefault();
     if (ga)
