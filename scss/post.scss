@@ -72,10 +72,10 @@
 				&--mobile {
 					display: none;
 					background: #f4f4f4;
-				text-align: center;
-				color: #3C515F;
-				padding: 2% 8%;
-				width: 100%;
+					text-align: center;
+					color: #3C515F;
+					padding: 2% 8%;
+					width: 100%;
 					@media #{$s} {
 						display: block;
 					}
