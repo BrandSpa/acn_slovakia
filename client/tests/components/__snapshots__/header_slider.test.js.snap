@@ -21,8 +21,17 @@ Array [
         }
     >
         <headerSlide
+            anchor="#"
             height="auto"
             id={1}
+            interval={5000}
+            slides={
+                Array [
+                    Object {
+                      "id": 1,
+                    },
+                  ]
+            }
             width="100%"
         />
     </div>
