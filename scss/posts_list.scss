@@ -135,13 +135,14 @@
 				&--without {
 					width: 100%;	
 				}
-				
-				a{
+				h2 {
 					font-size: (25 / 15) * 1em;
 					color: #2e404c;
 					display: inline-block;
 					padding-right: 20%;
-					
+					a {
+							color: #2e404c;
+					}
 					@media #{$s} {
 						padding: 0 0 20px 0;
 						font-size: 1em;
