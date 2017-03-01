@@ -59,5 +59,5 @@ function getCountryLang($name) {
       return $arr->name == $name;
     });
 
-    return $country[array_keys($country)[0]];
+    return $country->languages;
 }
