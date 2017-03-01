@@ -95,10 +95,17 @@
 		margin-bottom: 40px;
 		width: 100%;
 		background: #fff;
+
 		
 		@media #{$s} {
 			padding: 20px;
 			margin-bottom: 20px;
+		}
+
+		&--without {
+			.bs-posts-list__item__content { 
+				width: 100%;
+			}
 		}
 		
 		&__readmore {
