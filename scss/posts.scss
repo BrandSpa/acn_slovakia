@@ -19,7 +19,11 @@
 					width: 100% !important;
 					padding: 20px !important;
 				}
-				
+				h5 {
+					@media #{$s} {
+						font-size: 2em !important;
+					}
+				}
 				p {
 					display: block !important;
 				}
