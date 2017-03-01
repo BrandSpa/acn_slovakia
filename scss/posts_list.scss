@@ -113,26 +113,24 @@
 
 			&__img {
 				float: left;
-				width: 30%;
+				width: 35%;
 				background-position: center;
 				background-size: cover;
 				background-color: #3c515f;
 				height: 300px;
 				
 				@media #{$s} {
-					width: 30%;
 					height: 95px;
 				}
 			}
 
 			&__content {
 				float: left;
-				width: 70%;
+				width: 65%;
 				padding: 40px 40px 40px 40px;
 				background: #fff;
 
 				@media #{$s} {
-					width: 70%;
 					padding: 0 0 0 20px;
 				}
 				
