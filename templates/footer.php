@@ -69,7 +69,7 @@ echo do_shortcode('[bs_accordion btn_title="'.gett('ACN International in the wor
 				<?php echo do_shortcode('[bs_contact_info]') ?>
 			</div>
 
-			<div class="col-6-l">
+			<div class="col-6-l" style="text-align: right">
 				<h6><a href="<?php echo gett('https://acninternational.org/privacy-policy/') ?>"><?php echo gett('PRIVACY POLICY') ?></a></h6>
 				<h6><a href="<?php echo gett('https://acninternational.org/terms-and-conditions/') ?>"><?php echo gett('TERMS & CONDITIONS') ?></a></h6>
 			</div>
