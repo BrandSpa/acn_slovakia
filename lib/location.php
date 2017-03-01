@@ -56,7 +56,7 @@ function getCountryLang($name) {
     $countries = json_decode($json);
 
     $country = array_filter($countries, function($arr) use($name) {
-      return $arr->iso_code == $name;
+      return $arr->name == $name;
     });
 
     return $country[array_keys($country)[0]];
