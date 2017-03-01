@@ -1,6 +1,14 @@
 import React from 'react';
 
 const Post = React.createClass({
+	handleImageLoaded() {
+  	this.initGrid();
+  },
+
+  goToPosts() {
+    window.location = this.props.url;
+  },
+
 	render() {
 		const { post, type } = this.props;
 

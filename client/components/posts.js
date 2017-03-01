@@ -37,13 +37,7 @@ const Posts = React.createClass({
     }
   },
 
-  handleImageLoaded() {
-  	this.initGrid();
-  },
 
-  goToPosts() {
-    window.location = this.props.url;
-  },
 
   render() {
     const {posts} = this.state;
