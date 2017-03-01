@@ -48,10 +48,12 @@ function bs_posts_list_sc($atts, $content = null) {
 	
 			<div class="bs-posts-list__item">
 				<?php if(!empty(get_post_meta($post->ID, 'image_square_key', true))): ?>
+					<a href="<?php echo get_permalink($post->ID) ?>">
 					<div
 						class="bs-posts-list__item__img" 
 						style="background-image: url(<?php echo get_post_meta($post->ID, 'image_square_key', true) ?>);">
 					</div>
+					</a>
 						<?php $itemStyle = ''; ?>
 				<?php else: ?>
 					<?php $itemStyle = 'bs-posts-list__item__content--without'; ?>
