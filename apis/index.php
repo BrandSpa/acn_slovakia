@@ -3,7 +3,6 @@ $main_dir = str_replace('apis', '', __DIR__);
 include_once 'mailchimp.php';
 include_once 'stripe.php';
 include_once 'infusion.php';
-include_once 'location.php';
 include_once 'posts.php';
 include_once $main_dir . '/lib/countries.php';
 include_once $main_dir . '/lib/get_geoip.php';
