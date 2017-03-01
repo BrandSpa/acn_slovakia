@@ -146,3 +146,10 @@ function replace_office_texts() {
 //     return $slug === false ? 'es' : $slug;
 // }
 
+
+function redirectToLang() {
+	$lang = getCountryLang(getCountry());
+	$url = pll_the_languages( array( 'raw' => 1 ) )[$lang]['url'];
+	header('Location:'. $url);
+	exit;
+}

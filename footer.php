@@ -59,8 +59,9 @@
   ga('require', 'ecommerce');  
 </script>
 <!-- End Google Analytics -->
+
 <div class="hidden"><?php var_dump(get_user_location()) ?></div>
 <div class="hidden"><?php var_dump(getCountryLang(getCountry())) ?></div>
-<div><?php var_dump( pll_the_languages( array( 'raw' => 1 ) )[getCountryLang(getCountry())]['url'] ); ?></div>
+<div><?php var_dump(  ); ?></div>
 </body>
 </html>
