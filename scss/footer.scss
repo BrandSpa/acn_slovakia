@@ -153,6 +153,9 @@
 
 	.privacy-terms {
 		text-align: right;
+			@media #{$s} {
+				text-align: center;
+			}
 	}
 }
 
