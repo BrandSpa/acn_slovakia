@@ -53,11 +53,11 @@ function bs_posts_list_sc($atts, $content = null) {
 					</div>
 						<?php $itemStyle = ''; ?>
 				<?php else: ?>
-					<?php $itemStyle = 'width: 100%; padding: 0'; ?>
+					<?php $itemStyle = 'bs-posts-list__item__content--without'; ?>
 				<?php endif; ?>
 
-				<div class="bs-posts-list__item__content" style="<?php echo $itemStyle; ?>">
-					<h2><?php echo substr($post->post_title, 0, 80) ?>...</h2>
+				<div class="bs-posts-list__item__content <?php echo $itemStyle; ?>">
+					<h2><?php echo substr($post->post_title, 0, 70) ?>...</h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 120) ?>...</p>
 					<a class="bs-posts-list__item__readmore" href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?>...</a>
 				</div>
