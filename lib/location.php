@@ -52,7 +52,7 @@ function getCountry() {
 }
 
 function getCountryLang($name) {
-    $json = file_get_contents(__DIR__ . '/countries_info.json');
+    $json = file_get_contents(__DIR__ . '/countries_lang.json');
     $countries = json_decode($json);
 
     $country = array_filter($countries, function($arr) use($name) {
