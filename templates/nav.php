@@ -26,6 +26,9 @@
 	</ul>
 
 		<ul class="menu--mobile">
+		<li>
+			<a href="#close"><i class="ion-close"></i></a>
+		</li>
 	  <?php
 			$args = array(
         'theme_location' => 'header',
