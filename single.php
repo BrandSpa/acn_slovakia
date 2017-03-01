@@ -11,7 +11,7 @@
 
 
 	<div class="l-wrap">
-		<div class="bs-post__content col-8-l col-12-s">
+		<div class="bs-post__content col-8-l col-12-s" id="post-content">
 			<?php the_content() ?>
 		</div>
 	</div>
