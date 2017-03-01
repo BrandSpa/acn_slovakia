@@ -13,6 +13,7 @@ import setMenu from './lib/set_menu';
 import setMenuMobile from './lib/set_menu_mobile';
 import donateRedirect from './lib/donate_redirect';
 import CampaignsSlider from './components/campaigns_slider';
+import smoothScroll from 'smooth-scroll';
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
@@ -34,3 +35,7 @@ multipleRender('.bs-campaings-slider', CampaignsSlider);
 setMenu();
 setMenuMobile();
 donateRedirect();
+
+smoothScroll.init({
+  selectorHeader: '.nav'
+});
