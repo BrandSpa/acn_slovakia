@@ -7,8 +7,12 @@
   <meta property="title" content="<?php echo get_the_title(); ?>" />
   <meta property="og:title" content="<?php echo get_the_title(); ?>" />
   <meta property="og:url" content="<?php echo the_permalink() ?>" />
+  <link rel="icon" href="//acninternational.org/wp-content/uploads/2017/03/fav2x.png" sizes="32x32" />
+  <link rel="icon" href="//acninternational.org/wp-content/uploads/2017/03/fav2x.png" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="//acninternational.org/wp-content/uploads/2017/03/fav2x.png" />
 	<title>ACN - Aid to the Church in Need <?php echo wp_title(); ?></title>
-		<!--wordpress files-->
+	
+  	<!--wordpress files-->
 	  <?php wp_head(); ?>
 		<!-- /wordpress files-->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/css/index.css">
