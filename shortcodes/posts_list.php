@@ -8,6 +8,12 @@ function bs_posts_list_sc($atts, $content = null) {
 		'next' => 'next',
 		'prev' => 'prev'
   ];
+	
+	$pages = 0;
+
+	if(function_exists('pll_count_posts') && function_exists('pll_current_language')){
+		 $pages = ceil(pll_count_posts(pll_current_language()) / 10);
+	}
 
 	$page = isset($_GET['posts']) ?  $_GET['posts'] : 0;
 	$offset = isset($_GET['posts']) ? intval($_GET['posts']) * 10 : 0;
@@ -70,10 +76,11 @@ function bs_posts_list_sc($atts, $content = null) {
 
 <?php endforeach; ?>
 	<div class="bs-posts-list__pagination">
-		<?php if(function_exists('pll_count_posts') && function_exists('pll_current_language')) echo ceil(pll_count_posts(pll_current_language()) / 10); ?>
+		<?php  var_dump(numPaginationPll($page)) ?>
 		<button class="bs-posts-list__pagination__prev">
 			<i class="ion-chevron-left"></i> <?php echo gett('prev') ?>
 		</button>
+		<div class="bs-posts-list__pagination__nums"></div>
 		<button class="bs-posts-list__pagination__next">
 			<?php echo gett('next') ?> <i class="ion-chevron-right"></i>
 		</button>
@@ -83,6 +90,12 @@ function bs_posts_list_sc($atts, $content = null) {
 <script>
 function redirectPage(type) {
 	var page = parseInt('<?php echo $page ?>');
+	var pages = parseInt('<?php echo $pages ?>');
+	var nums = [];
+	for(var i = 0; i <= pages; i++) {
+		console.log(i);
+	}
+	
 	if(type == 'next') page = page + 1;
 	if(type == 'prev') page = page > 0 ? page - 1 : 0;
 	window.location = window.location.origin + '' + window.location.pathname + '?posts=' + page; 
