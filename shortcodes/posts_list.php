@@ -91,7 +91,6 @@ function bs_posts_list_sc($atts, $content = null) {
 function redirectPage(type) {
 	var page = parseInt('<?php echo $page ?>');
 
-
 	if(type == 'next') page = page + 1;
 	if(type == 'prev') page = page > 0 ? page - 1 : 0;
 	window.location = window.location.origin + '' + window.location.pathname + '?posts=' + page; 
@@ -114,13 +113,17 @@ function redirectPage(type) {
 		nums = nums.concat( [paged - 1] );
 		nums = nums.concat( [paged - 2] );
 	}
-
+	
 	if ( ( paged + 2 ) <= pages ) {
 		nums = nums.concat( paged + 2 );
 		nums = nums.concat( paged + 1 );
 	}
 
-	console.log(nums);
+	for(i = 0; i < nums.length; i++) {
+		var el = document.createElement('a');
+		el.href = '?posts=' + nums[i];
+		var parent = document.querySelector('.bs-posts-list__pagination__nums').appendChild(el);
+	}
 
 </script>
 <?php
