@@ -92,7 +92,8 @@ function redirectPage(type) {
 	var page = parseInt('<?php echo $page ?>');
 	var pages = parseInt('<?php echo $pages ?>');
 	var nums = [];
-	for(var i = 0; i <= pages; i++) {
+	
+	for(var i = 0; i < pages; i++) {
 		console.log(i);
 	}
 
