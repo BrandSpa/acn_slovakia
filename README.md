@@ -3,7 +3,6 @@
 
 ##todos
 - [ ] fix logo sizes and pages donate container
-- [ ] add pagination numeric http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
 
 ## frontend
 - es6
