@@ -70,7 +70,7 @@ function bs_posts_list_sc($atts, $content = null) {
 
 <?php endforeach; ?>
 	<div class="bs-posts-list__pagination">
-		<?php echo ceil(wp_count_posts()->publish / 10); ?>
+		<?php if(function_exists('pll_count_posts') && function_exists('pll_current_language')) echo ceil(pll_count_posts(pll_current_language()) / 10); ?>
 		<button class="bs-posts-list__pagination__prev">
 			<i class="ion-chevron-left"></i> <?php echo gett('prev') ?>
 		</button>
