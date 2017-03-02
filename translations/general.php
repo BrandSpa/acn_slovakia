@@ -17,7 +17,9 @@ $general = [
 	'See more',
 	'Pray',
 	'next',
-	'prev'
+	'prev',
+	'Latest news',
+	'All the latest'
 ];
 
 foreach($general as $key => $trans) {

@@ -22,7 +22,7 @@ function bs_posts_list_sc($atts, $content = null) {
 <?php $counter = 0; ?>
 
 <div class="bs-posts-list">
-	<h3><?php echo $at['latest_news']; ?></h3>
+	<h3><?php echo gett('Latest news'); ?></h3>
 <?php  foreach($recent_posts as $post): ?>
 	<?php $counter++; ?>
 	
@@ -43,7 +43,7 @@ function bs_posts_list_sc($atts, $content = null) {
 				</div>
 			</div>
 
-				<h3>	<?php echo  $at['all_the_latest']; ?> </h3>
+			<h3>	<?php echo  gett('All the latest'); ?> </h3>
 		<?php else: ?>
 	
 			<div class="bs-posts-list__item">
