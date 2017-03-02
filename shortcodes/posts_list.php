@@ -39,7 +39,7 @@ function bs_posts_list_sc($atts, $content = null) {
 				<div class="bs-posts-list__main__content" style="background-color: #3C515F;">
 					<h2><a href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 150) ?>...</p>
-					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?> <i class="ion-chevron-down"></i> </a>
+					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo gett('Read more') ?> <i class="ion-chevron-down"></i> </a>
 				</div>
 			</div>
 
@@ -62,18 +62,23 @@ function bs_posts_list_sc($atts, $content = null) {
 				<div class="bs-posts-list__item__content <?php echo $itemStyle; ?>">
 					<h2><a href="<?php echo get_permalink($post->ID) ?>"><?php echo substr($post->post_title, 0, 70) ?>...</a></h2>
 					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 120) ?>...</p>
-					<a class="bs-posts-list__item__readmore" href="<?php echo get_permalink($post->ID) ?>"><?php echo $at['read_more'] ?>...</a>
+					<a class="bs-posts-list__item__readmore" href="<?php echo get_permalink($post->ID) ?>"><?php echo gett('Read more') ?>...</a>
 				</div>
 		</div>
 
 	<?php endif; ?>
 
 <?php endforeach; ?>
-<div class="bs-posts-list__pagination">
-	<button class="bs-posts-list__pagination__prev"><i class="ion-chevron-left"></i> <?php echo $at['prev']?></button>
-	<button class="bs-posts-list__pagination__next"><?php echo $at['next']?> <i class="ion-chevron-right"></i></button>
+	<div class="bs-posts-list__pagination">
+		<button class="bs-posts-list__pagination__prev">
+			<i class="ion-chevron-left"></i> <?php echo gett('prev') ?>
+		</button>
+		<button class="bs-posts-list__pagination__next">
+			<?php echo gett('next') ?> <i class="ion-chevron-right"></i>
+		</button>
+	</div>
 </div>
-</div>
+
 <script>
 function redirectPage(type) {
 	var page = parseInt('<?php echo $page ?>');
