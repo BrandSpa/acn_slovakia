@@ -38,7 +38,7 @@ const Posts = React.createClass({
   },
 
   goToPosts() {
-    window.location = this.props.url;
+    window.location = this.props.see_more_link;
   },
 
   render() {

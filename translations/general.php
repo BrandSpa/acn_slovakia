@@ -15,7 +15,9 @@ $general = [
 	'TO LEARN MORE ABOUT [office_name], VISIT [office_url]',
 	'ACN, during 70 years helping Christians in need',
 	'See more',
-	'Pray'
+	'Pray',
+	'next',
+	'prev'
 ];
 
 foreach($general as $key => $trans) {
