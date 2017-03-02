@@ -152,6 +152,9 @@ function replace_office_texts() {
 //     return $slug === false ? 'es' : $slug;
 // }
 
+function cleanQuote($val) {
+	return str_replace("'", "\u0027", $val);
+}
 
 function redirectToLang() {
 		$lang = getCountryLang(getCountry());

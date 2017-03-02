@@ -12,7 +12,6 @@ function bs_section_video_sc($atts, $content = null) {
   $at = shortcode_atts( $attributes , $atts );
 	$imgUrl = wp_get_attachment_image_src($at['image'], 'full')[0];
 
-
   ob_start();
 ?>
 
