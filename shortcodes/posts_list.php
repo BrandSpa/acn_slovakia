@@ -103,10 +103,18 @@ function redirectPage(type) {
 	document.querySelector('.bs-posts-list__pagination__next').addEventListener('click', function() {
 		redirectPage('next');
 	});
+	
 
 	var paged = parseInt('<?php echo $page ?>');
 	var pages = parseInt('<?php echo $pages ?>');
 	var nums = [];
+
+	if(pages == paged) {
+		var next = document.querySelector('.bs-posts-list__pagination__next');
+		next.style.display = 'none';
+	} else {
+		next.style.display = 'block';
+	}
 
 	if(paged >= 3) {
 		nums = nums.concat( [paged - 2] );
