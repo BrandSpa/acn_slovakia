@@ -4,6 +4,13 @@ import Projects from "../../components/projects";
 import ProjectsIcons from "../../components/projects_icons";
 
 describe('component projects', () => {
+
+	it('should render as expected', () => {
+		let wrapper = shallow(<ProjectsIcons />);
+		expect(wrapper.getNodes()).toMatchSnapshot();
+	})
+
+
 	it('should change num', () => {
 		let mock = jest.fn();
 		let wrapper = shallow(<ProjectsIcons onChange={mock} />);
