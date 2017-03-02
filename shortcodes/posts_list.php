@@ -121,7 +121,9 @@ function redirectPage(type) {
 
 	for(i = 0; i < nums.length; i++) {
 		var el = document.createElement('a');
+		var elText = document.createTextNode(nums[i]);
 		el.href = '?posts=' + nums[i];
+		el.appendChild(elText);
 		var parent = document.querySelector('.bs-posts-list__pagination__nums').appendChild(el);
 	}
 
