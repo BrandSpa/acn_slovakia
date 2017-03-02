@@ -25,17 +25,17 @@
 
 		&__nums {
 			a {
-				display: block;
+				float: left;
+				display: inline-block;
 				background: transparent;
 				border-radius: 2px;
 				border: solid 2px #bbc5c8;
 				color: #3c515f;
 				font-size: 20px;
-				padding: 1px 40px;
+				padding: 8px 40px;
 				height: 45px;
 				font-weight: bold;
 			}
-			
 		}
 		
 		button {
