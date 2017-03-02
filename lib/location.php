@@ -35,6 +35,8 @@ function get_location($ip) {
 		
 		return $e->getMessage();
 	}
+	
+	return '';
 }
 
 function get_user_location() {
