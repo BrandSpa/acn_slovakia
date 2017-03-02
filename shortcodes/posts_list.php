@@ -115,6 +115,11 @@ function redirectPage(type) {
 		nums.concat( [paged - 2] );
 	}
 
+	if ( ( paged + 2 ) <= pages ) {
+		nums.concat( paged + 2 );
+		nums.concat( paged + 1 );
+	}
+
 	console.log(nums);
 
 </script>
