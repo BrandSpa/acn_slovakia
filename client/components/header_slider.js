@@ -41,7 +41,7 @@ const headerSlider = React.createClass({
     let slideWidth = `${100 / slides.length}%`;
     let windowHeight = window.innerHeight;
     let headerBannerHeight = document.querySelector('.header-banner') 
-      ?  headerBanner.offsetHeight
+      ?  document.querySelector('.header-banner').offsetHeight
       : 0;
     let navHeight = document.querySelector('.nav')
       ? document.querySelector('.nav').offsetHeight
