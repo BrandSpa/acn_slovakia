@@ -90,8 +90,7 @@ function bs_posts_list_sc($atts, $content = null) {
 <script>
 function redirectPage(type) {
 	var page = parseInt('<?php echo $page ?>');
-	var pages = parseInt('<?php echo $pages ?>');
-	var nums = [];
+
 
 	if(type == 'next') page = page + 1;
 	if(type == 'prev') page = page > 0 ? page - 1 : 0;
@@ -105,7 +104,8 @@ function redirectPage(type) {
 	document.querySelector('.bs-posts-list__pagination__next').addEventListener('click', function() {
 		redirectPage('next');
 	});
-	
+		var pages = parseInt('<?php echo $pages ?>');
+	var nums = [];
 	console.log(pages);
 	
 	for(i = 0; i < pages; i++) {
