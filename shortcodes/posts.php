@@ -8,6 +8,7 @@ function bs_posts_sc($atts, $content = null) {
   ];
 
   $at = shortcode_atts( $attributes , $atts );
+  
 	$props = [
     'see_more' => $at['see_more'],
     'url' => $at['url'],
