@@ -104,13 +104,18 @@ function redirectPage(type) {
 	document.querySelector('.bs-posts-list__pagination__next').addEventListener('click', function() {
 		redirectPage('next');
 	});
-		var pages = parseInt('<?php echo $pages ?>');
+
+	var paged = parseInt('<?php echo $page ?>');
+	var pages = parseInt('<?php echo $pages ?>');
 	var nums = [];
 	console.log(pages);
-	
-	for(i = 0; i < pages; i++) {
-		console.log(i);
+
+	if(paged >= 3) {
+		nums.concat( [$paged - 1] );
+		nums.concat( [$paged - 2] );
 	}
+
+	console.log(nums);
 
 </script>
 <?php
