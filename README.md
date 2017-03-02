@@ -3,6 +3,11 @@
 
 ##todos
 - [ ] fix logo sizes and pages donate container
+- [ ] add test to apis
+	-	location
+	- stripe
+	- convertloop
+	- posts
 
 ## frontend
 - es6
