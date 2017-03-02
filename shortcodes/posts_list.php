@@ -92,10 +92,6 @@ function redirectPage(type) {
 	var page = parseInt('<?php echo $page ?>');
 	var pages = parseInt('<?php echo $pages ?>');
 	var nums = [];
-	
-	for(var i = 0; i < pages; i++) {
-		console.log(i);
-	}
 
 	if(type == 'next') page = page + 1;
 	if(type == 'prev') page = page > 0 ? page - 1 : 0;
@@ -110,6 +106,12 @@ function redirectPage(type) {
 		redirectPage('next');
 	});
 	
+	console.log(pages);
+	
+	for(i = 0; i < pages; i++) {
+		console.log(i);
+	}
+
 </script>
 <?php
 
