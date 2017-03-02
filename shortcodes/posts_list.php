@@ -113,6 +113,7 @@ function redirectPage(type) {
 		var next = document.querySelector('.bs-posts-list__pagination__next');
 		next.style.display = 'none';
 	} else {
+		var next = document.querySelector('.bs-posts-list__pagination__next');
 		next.style.display = 'block';
 	}
 
