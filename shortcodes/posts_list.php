@@ -107,7 +107,6 @@ function redirectPage(type) {
 	var paged = parseInt('<?php echo $page ?>');
 	var pages = parseInt('<?php echo $pages ?>');
 	var nums = [];
-	console.log(pages);
 
 	if(paged >= 3) {
 		nums = nums.concat( [paged - 1] );
@@ -118,6 +117,8 @@ function redirectPage(type) {
 		nums = nums.concat( paged + 2 );
 		nums = nums.concat( paged + 1 );
 	}
+	
+	nums.sort();
 
 	for(i = 0; i < nums.length; i++) {
 		var el = document.createElement('a');
