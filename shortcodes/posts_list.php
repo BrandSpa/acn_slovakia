@@ -70,6 +70,7 @@ function bs_posts_list_sc($atts, $content = null) {
 
 <?php endforeach; ?>
 	<div class="bs-posts-list__pagination">
+		<?php echo wp_count_posts()->publish; ?>
 		<button class="bs-posts-list__pagination__prev">
 			<i class="ion-chevron-left"></i> <?php echo gett('prev') ?>
 		</button>
