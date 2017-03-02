@@ -109,16 +109,16 @@ function redirectPage(type) {
 	var nums = [];
 
 	if(paged >= 3) {
-		nums = nums.concat( [paged - 1] );
 		nums = nums.concat( [paged - 2] );
+		nums = nums.concat( [paged - 1] );
 	}
 	
 	if ( ( paged + 2 ) <= pages ) {
-		nums = nums.concat( paged + 2 );
 		nums = nums.concat( paged + 1 );
+		nums = nums.concat( paged + 2 );
+		
 	}
 	
-	nums.sort();
 
 	for(i = 0; i < nums.length; i++) {
 		var el = document.createElement('a');
