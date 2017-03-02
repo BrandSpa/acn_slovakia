@@ -24,15 +24,18 @@
 		}
 
 		&__nums {
-			display: block;
-			background: transparent;
-			border-radius: 2px;
-			border: solid 2px #bbc5c8;
-			color: #3c515f;
-			font-size: 20px;
-			padding: 1px 40px;
-			height: 45px;
-			font-weight: bold;
+			a {
+				display: block;
+				background: transparent;
+				border-radius: 2px;
+				border: solid 2px #bbc5c8;
+				color: #3c515f;
+				font-size: 20px;
+				padding: 1px 40px;
+				height: 45px;
+				font-weight: bold;
+			}
+			
 		}
 		
 		button {
