@@ -8,16 +8,13 @@ $general = [
 	'ACN – Aid to the Church in Need gGmbH, HRB 8446 is non-profit organization officially registered in Germany and audited internationally by KPMG.',
 	'Contact',
 	'PRIVACY POLICY',
-	'https://acninternational.org/privacy-policy/',
 	'TERMS & CONDITIONS',
-	'https://acninternational.org/terms-and-conditions/',
 	'Read more',
 	'Latest news',
 	'ACN International in the world',
 	'TO LEARN MORE ABOUT [office_name], VISIT [office_url]',
 	'ACN, during 70 years helping Christians in need',
 	'See more',
-	'https://acninternational.org/news/',
 	'Pray'
 ];
 
