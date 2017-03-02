@@ -76,7 +76,7 @@ function bs_posts_list_sc($atts, $content = null) {
 
 <?php endforeach; ?>
 	<div class="bs-posts-list__pagination">
-		<?php  var_dump(numPaginationPll($page)) ?>
+
 		<button class="bs-posts-list__pagination__prev">
 			<i class="ion-chevron-left"></i> <?php echo gett('prev') ?>
 		</button>
@@ -95,7 +95,7 @@ function redirectPage(type) {
 	for(var i = 0; i <= pages; i++) {
 		console.log(i);
 	}
-	
+
 	if(type == 'next') page = page + 1;
 	if(type == 'prev') page = page > 0 ? page - 1 : 0;
 	window.location = window.location.origin + '' + window.location.pathname + '?posts=' + page; 
