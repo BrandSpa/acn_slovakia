@@ -19,7 +19,8 @@ $general = [
 	'next',
 	'prev',
 	'Latest news',
-	'All the latest'
+	'All the latest',
+	'Select country'
 ];
 
 foreach($general as $key => $trans) {

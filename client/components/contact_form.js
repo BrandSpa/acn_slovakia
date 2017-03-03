@@ -122,6 +122,7 @@ const contactForm = React.createClass({
             onChange={this.handleChange.bind(null, 'country')}
             value={contact.country}
           >
+            <option value="">{texts.select_country}</option>
             {this.state.countries.map((country, i) => (
               <option key={i} value={country}>{country}</option>
             ))}

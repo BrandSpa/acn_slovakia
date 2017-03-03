@@ -22,7 +22,8 @@ function bs_contact_form_sc($atts, $content = null) {
 	data-props='{
 		"country": "<?php echo getCountry() ?>",
 		"texts": {
-			"button": "<?php echo $at['button-text'] ?>"
+			"button": "<?php echo $at['button-text'] ?>",
+			"select_country": "<?php echo gett('Select country') ?>"
 		},
 		"placeholders": {
 			"name": "<?php echo $at['name-placeholder'] ?>",
