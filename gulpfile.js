@@ -18,6 +18,16 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./public/css/'));
 });
 
+gulp.task('compile', function () {
+  return gulp.src('./compile/index.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
+    .pipe(gulp.dest('./compile/'));
+});
+
 gulp.task('sass:watch', function () {
   gulp.watch('./scss/**/*.scss', ['sass']);
 });

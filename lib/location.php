@@ -44,10 +44,8 @@ function get_user_location() {
 }
 
 function getCountry() {
-
-	if(function_exists('get_user_location')) {
-    $geo = get_user_location();
-    return $geo->names['en'];
+  if(function_exists('get_user_location')) {
+    return get_user_location() ? get_user_location()->names['en'] : '';
   }
 
   return '';
@@ -60,6 +58,7 @@ function getCountryLang($name) {
     $country = array_filter($countries, function($arr) use($name) {
       return $arr->name == $name;
     });
+
 		if(array_keys($country)) {
 			return $country[array_keys($country)[0]] ? $country[array_keys($country)[0]]->languages[0] : 'en';
 		} else {
