@@ -3,28 +3,22 @@ import request from 'axios';
 import isEmpty from 'validator/lib/isEmpty';
 import objToFormData from '../lib/obj_to_formdata';
 import qs from 'qs';
+import getCountries from '../lib/getCountries';
 
 const contactForm = React.createClass({
   getInitialState() {
     return {
       contact: {name: '', lastname: '', email: '', country: ''},
       errors: {name: false, lastname: false, email: false},
-      countries: []
+      countries: getCountries
     };
   },
+
   getDefaultProps() {
     return {validationMessages: {}, placeholders: {}, texts: {}, redirect: ''};
   },
   componentDidMount() {
-    let data = qs.stringify({action: 'countries'});
-
-    request
-      .post('/wp-admin/admin-ajax.php', data)
-      .then(res => {
-        this.setState({countries: res.data});
-      })
-      .catch(err => console.error(err));
-
+    
     this.setState({
       contact: {...this.state.contact, country: this.props.country}
     });
