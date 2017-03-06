@@ -3,7 +3,8 @@
 module.exports = {
   watch: true,
   entry: {
-  	app: './client/app.js'
+  	app: './client/app.js',
+  	admin: './client/admin.js',
   },
   output: {
   	path: './public/js',
