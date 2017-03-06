@@ -11,7 +11,8 @@ const contactForm = React.createClass({
       contact: {name: '', lastname: '', email: '', country: ''},
       errors: {name: false, lastname: false, email: false},
       countries: getCountries,
-      loading: false
+      loading: false,
+      showMemberExists: false 
     };
   },
 
@@ -75,7 +76,7 @@ const contactForm = React.createClass({
           if (res.data.id) window.location = this.props.redirect;
           if(res.data.title == 'Member Exists') {
             console.error('member Exists');
-            this.setState({loading: false});
+            this.setState({showMemberExists: true, loading: false});
           };
         })
         .catch(err => console.error(err));
@@ -144,6 +145,7 @@ const contactForm = React.createClass({
         <button style={{marginLeft: '-2px'}} onClick={this.handleSubmit} disabled={this.state.loading}>
           {texts.button}{this.state.loading ? '...' : ''}
         </button>
+        <span style={this.state.showMemberExists ? {float: 'left', width: '100%', padding: '10px', marginTop: '10px', background: '#f4334a'} :{display: 'none'}}>{'you are already praying'}</span>
       </form>
     );
   }
