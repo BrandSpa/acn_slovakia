@@ -15,8 +15,8 @@ add_action('add_meta_boxes', 'bs_geolify_metabox');
 
 function bs_geolify_cb($post) {
   wp_nonce_field('bs_geolify_meta', 'bs_geolify_nonce');
-	$countries = get_post_meta($post->ID, 'geolify_countries_key');
-	$urls = get_post_meta($post->ID, 'geolify_urls_key');
+	$countries = get_post_meta($post->ID, 'geolify_countries_key', true);
+	$urls = get_post_meta($post->ID, 'geolify_urls_key', true);
 ?>
 
 <?php var_dump($countries) ?>
