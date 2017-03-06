@@ -3,35 +3,31 @@ import React from 'react';
 const GeolifyForm = React.createClass({
 	getInitialState(){
 		return {
-			countriesLength: 1
+			countries: [],
+			urls: []
 		}
 	},
 
 	getDefaultProps() {
 		return {
-			countries: [''],
+			countries: [],
 			urls: []
 		}
 	},
 
 	componentDidMount() {
-		console.log(this.props);
+		this.setState({...this.props});
 	},
 
-	addCountry(e) {
-		e.preventDefault();
-		let countriesLength = this.state.countriesLength + 1;
-		this.setState({countriesLength});
-	},
-
-	handleChange() {
-
+	handleChange(ind, e) {
+		console.log('input ', ind);
 	},
 
 	renderInput(i = 0) {
 		return (
 			<p>
-				<input name="countries[]" placeholder="added" onChange={this.handleChange} value='nea 1' />
+				<input name="countries[]" placeholder="added" onChange={this.handleChange.bind(null, i)} value='nea 1' />
+				<button onClick={this.removeNode.bind(null, i)}>remove</button>
 			</p>
 		);
 	},
@@ -41,7 +37,7 @@ const GeolifyForm = React.createClass({
 		return (
 			<form action="">
 				{this.renderInput()}
-				{this.props.countries.map((country, i) => {
+				{this.state.countries.map((country, i) => {
 					return this.renderInput(i)
 				})}
 				<button onClick={this.addCountry}>Add</button>
