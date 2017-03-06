@@ -22,10 +22,10 @@ const GeolifyForm = React.createClass({
 
 	render() {
 		let nodes = [];
-		for(i = 0; i <= countriesLength; i++) {
+		for(var i = 0; i <= countriesLength; i++) {
 			nodes.concat([<input placeholder="added" />])
 		};
-		
+
 		return (
 			<form action="">
 				{this.props.countries.map((country, i) => {
