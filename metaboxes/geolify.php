@@ -15,9 +15,9 @@ add_action('add_meta_boxes', 'bs_geolify_metabox');
 
 function bs_geolify_cb($post) {
   wp_nonce_field('bs_geolify_meta', 'bs_geolify_nonce');
-	$countries = get_post_meta($post->ID, 'countries_key');
+	$countries = get_post_meta($post->ID, 'geolify_countries_key');
+	$urls = get_post_meta($post->ID, 'geolify_urls_key');
 
-	$urls = get_post_meta($post->ID, 'urls_key');
 	$props = [
 		"countries" => $countries,
 		"urls" => $urls
@@ -31,13 +31,13 @@ function bs_geolify_cb($post) {
 
 function bs_geolify_save($post_id) {
   update_field(array(
-    'field_key' => 'countries_key',
+    'field_key' => 'geolify_countries_key',
     'field_name' => 'countries',
     'post_id' => $post_id
   ));
 
 	update_field(array(
-    'field_key' => 'urls_key',
+    'field_key' => 'geolify_urls_key',
     'field_name' => 'urls',
     'post_id' => $post_id
   ));
