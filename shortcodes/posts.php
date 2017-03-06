@@ -2,7 +2,6 @@
 
 function bs_posts_sc($atts, $content = null) {
 	$attributes = [
-    'see_more' => '',
     'url' => '',
 
   ];
@@ -37,17 +36,10 @@ add_action( 'vc_before_init', 'bs_posts_vc' );
 		$params = [
       [
         "type" => "textfield",
-        "heading" => "See More",
-        "param_name" => "see_more",
-        "value" => ''
-			],
-      [
-        "type" => "textfield",
         "heading" => "See More url",
         "param_name" => "url",
         "value" => ''
-			],
-
+			]
 		];
 
   	vc_map(
