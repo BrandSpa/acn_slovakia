@@ -73,6 +73,7 @@ require('shortcodes/campaigns_slider.php');
 
 //metaboxes
 require('metaboxes/image_square.php');
+require('metaboxes/geolify.php');
 
 function get_lang() {
 	if(function_exists('pll_current_language')) {
