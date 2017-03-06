@@ -3,7 +3,7 @@ import React from 'react';
 const GeolifyForm = react.createClass({
 	getDefaultProps() {
 		return {
-			countries: [],
+			countries: [''],
 			urls: []
 		}
 	},
