@@ -20,7 +20,7 @@ function bs_geolify_cb($post) {
 ?>
 
 	<div class="bs-geolify" data-props='{
-	"countries": <?php echo json_encode($countries) ?>
+	"countries": <?php echo json_encode($countries) ?>,
 	"urls": <?php echo json_encode($urls) ?>
 	}'>
 	</div>
