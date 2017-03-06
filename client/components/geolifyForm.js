@@ -28,7 +28,7 @@ const GeolifyForm = React.createClass({
 
 	},
 
-	renderInput(i) {
+	renderInput(i = 0) {
 		return (
 			<p>
 				<input name="countries[]" placeholder="added" onChange={this.handleChange} value='nea 1' />
