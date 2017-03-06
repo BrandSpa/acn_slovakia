@@ -1,4 +1,5 @@
 import React from 'react';
+import getCountries from '../lib/getCountries';
 
 const GeolifyForm = React.createClass({
 	getInitialState(){
@@ -11,7 +12,8 @@ const GeolifyForm = React.createClass({
 	getDefaultProps() {
 		return {
 			countries: [],
-			urls: []
+			urls: [],
+			countriesList: getCountries()
 		}
 	},
 
@@ -47,7 +49,17 @@ const GeolifyForm = React.createClass({
 	renderInput(i = 0) {
 		return (
 			<p>
-				<input name="countries[]" placeholder="Country" onChange={this.handleChange.bind(null, i, 'country')} value={this.state.countries[i]} />
+				<select 
+					name="countries[]" 
+					placeholder="Country" 
+					onChange={this.handleChange.bind(null, i, 'country')} 
+					value={this.state.countries[i]}
+				>
+				<option value="">Select country</option>
+				{getCountries().map((co, i) => {
+					<option key={i} value={co}>{co}</option>
+				})}
+				</select>
 				<input name="urls[]" placeholder="url" onChange={this.handleChange.bind(null, i, 'url')} value={this.state.urls[i]} />
 				<button onClick={this.handleRemove.bind(null, i)}>remove</button>
 			</p>
