@@ -21,6 +21,17 @@ const GeolifyForm = React.createClass({
 
 	handleChange(ind, type, e) {
 		console.log(type, ind);
+		let {countries, urls} = this.state;
+		
+		if(type == 'country') {
+			countries[ind] = e.currentTarget.value;
+		}
+
+		if(type == 'url') {
+			urls[ind] = e.currentTarget.value;
+		}
+
+		this.setState({countries, urls});
 	},
 
 	handleRemove() {
