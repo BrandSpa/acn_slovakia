@@ -3285,7 +3285,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var GeolifyForm = react.createClass({
+var GeolifyForm = _react2.default.createClass({
+	displayName: 'GeolifyForm',
 	getDefaultProps: function getDefaultProps() {
 		return {
 			countries: [''],

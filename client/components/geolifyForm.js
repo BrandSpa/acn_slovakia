@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GeolifyForm = react.createClass({
+const GeolifyForm = React.createClass({
 	getDefaultProps() {
 		return {
 			countries: [''],
@@ -18,7 +18,7 @@ const GeolifyForm = react.createClass({
 		return (
 			<form action="">
 				{this.props.countries.map((country, i) => {
-					return <input placeholder="Country" />
+					return <input placeholder="Country" />;
 				})}
 				<button onClick={this.addCountry}>Add</button>
 			</form>
