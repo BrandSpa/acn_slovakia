@@ -12,8 +12,7 @@ const GeolifyForm = React.createClass({
 	getDefaultProps() {
 		return {
 			countries: [],
-			urls: [],
-			countriesList: getCountries()
+			urls: []
 		}
 	},
 
@@ -56,7 +55,7 @@ const GeolifyForm = React.createClass({
 					value={this.state.countries[i]}
 				>
 				<option value="">Select country</option>
-				{getCountries().map((co, i) => {
+				{getCountries.map((co, i) => {
 					<option key={i} value={co}>{co}</option>
 				})}
 				</select>
