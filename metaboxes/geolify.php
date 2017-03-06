@@ -23,6 +23,7 @@ function bs_geolify_cb($post) {
 		"urls" => $urls
 	];
 ?>
+<?php var_dump($countries) ?>
 	<div class="bs-geolify" data-props='<?php echo json_encode($props) ?>'></div>
 	<script src="<?php echo get_template_directory_uri() ?>/public/js/admin.js"></script>
 <?php
