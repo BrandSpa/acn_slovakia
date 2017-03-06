@@ -44,7 +44,7 @@ const GeolifyForm = React.createClass({
 	handleAdd(e) {
 		e.preventDefault();
 		let countries = this.state.countries.concat(['']);
-		let countries = this.state.urls.concat(['']);
+		let urls = this.state.urls.concat(['']);
 		this.setState({countries, urls});
 	},
 
