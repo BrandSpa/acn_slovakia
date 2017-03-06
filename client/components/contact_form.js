@@ -17,15 +17,17 @@ const contactForm = React.createClass({
   getDefaultProps() {
     return {validationMessages: {}, placeholders: {}, texts: {}, redirect: ''};
   },
+
   componentDidMount() {
-    
     this.setState({
       contact: {...this.state.contact, country: this.props.country}
     });
   },
+
   checkEmpty(field) {
     return isEmpty(this.state.contact[field]);
   },
+
   validate() {
     let errors = {};
     let validations = Object.keys(this.state.errors).map(field => {
@@ -38,17 +40,20 @@ const contactForm = React.createClass({
 
     return Promise.all(validations);
   },
+
   isValid() {
     return this
       .validate()
       .then(arr => arr.every(item => item == false))
       .catch(err => console.error(err));
   },
+
   handleSubmit(e) {
     e.preventDefault();
     let data = objToFormData(this.state.contact);
     this.isValid().then(this.storeContact).catch(err => console.error(err));
   },
+
   storeContact(isValid) {
     let {email, name, lastname, country} = this.state.contact;
 
@@ -66,14 +71,17 @@ const contactForm = React.createClass({
         .post('/wp-admin/admin-ajax.php', data)
         .then(res => {
           if (res.data.id) window.location = this.props.redirect;
+          if(res.data.title == 'Member Exists') console.error('member Exists');
         })
         .catch(err => console.error(err));
     }
   },
+
   handleChange(field, e) {
     let contact = {...this.state.contact, [field]: e.target.value};
     this.setState({contact});
   },
+
   render() {
     let {contact, errors} = this.state;
     let {placeholders, validationMessages, texts} = this.props;
