@@ -25259,6 +25259,8 @@ var _geolifyForm2 = _interopRequireDefault(_geolifyForm);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+console.log(_reactMultipleRender2.default);
+
 (0, _reactMultipleRender2.default)(_geolifyForm2.default, '.bs-geolify');
 
 /***/ }),
