@@ -19,9 +19,6 @@ function bs_geolify_cb($post) {
 	$urls = get_post_meta($post->ID, 'geolify_urls_key', true);
 ?>
 
-<?php var_dump($countries) ?>
-<?php var_dump($urls) ?>
-
 	<div class="bs-geolify" data-props='{"countries": <?php echo json_encode($countries) ?>}'></div>
 	<script src="<?php echo get_template_directory_uri() ?>/public/js/admin.js"></script>
 <?php

@@ -20,7 +20,7 @@ const GeolifyForm = React.createClass({
 	},
 
 	handleChange(ind, e) {
-		console.log('input ', ind);
+			console.log('input ', ind);
 	},
 
 	handleRemove() {
@@ -46,7 +46,6 @@ const GeolifyForm = React.createClass({
 	render() {
 		return (
 			<div>
-				{this.renderInput()}
 				{this.state.countries.map((country, i) => {
 					return this.renderInput(i)
 				})}
