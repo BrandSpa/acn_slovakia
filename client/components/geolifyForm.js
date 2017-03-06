@@ -35,8 +35,10 @@ const GeolifyForm = React.createClass({
 		this.setState({countries, urls});
 	},
 
-	handleRemove() {
-		console.log('input ', ind);
+	handleRemove(ind, e) {
+		e.preventDefault();
+		let countries = this.state.countries.filter((con,i) => i != ind);
+		this.setState({ countries });
 	},
 
 	handleAdd(e) {
