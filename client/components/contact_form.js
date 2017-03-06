@@ -145,7 +145,7 @@ const contactForm = React.createClass({
         <button style={{marginLeft: '-2px'}} onClick={this.handleSubmit} disabled={this.state.loading}>
           {texts.button}{this.state.loading ? '...' : ''}
         </button>
-        <span style={this.state.showMemberExists ? {color: '#fff',float: 'left', width: '90%', padding: '10px', margin: '10px auto', background: '#f4334a', color: '#fff'} :{display: 'none'}}>{'you are already praying'}</span>
+        <span style={this.state.showMemberExists ? {color: '#fff',display: 'inline-block', width: '90%', padding: '10px', margin: '5px auto', background: '#f4334a', color: '#fff'} :{display: 'none'}}>{'you are already praying'}</span>
       </form>
     );
   }
