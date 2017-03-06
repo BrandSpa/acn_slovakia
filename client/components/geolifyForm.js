@@ -40,7 +40,7 @@ const GeolifyForm = React.createClass({
 
 		return (
 			<form action="">
-				{this.renderInput(i)}
+				{this.renderInput()}
 				{this.props.countries.map((country, i) => {
 					return this.renderInput(i)
 				})}
