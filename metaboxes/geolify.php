@@ -8,7 +8,7 @@ function geolify() {
 function bs_geolify_metabox() {
 	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
 
-	add_meta_box('geolify', 'BS Geolify', 'bs_geolify_cb', 'post', 'normal', 'high', null);
+	add_meta_box('geolify', 'BS Geolify', 'bs_geolify_cb', 'page', 'normal', 'high', null);
 }
 
 add_action('add_meta_boxes', 'bs_geolify_metabox');
