@@ -63,7 +63,7 @@ const GeolifyForm = React.createClass({
 				})}
 				</select>
 				<input name="urls[]" placeholder="url" onChange={this.handleChange.bind(null, i, 'url')} value={this.state.urls[i]} />
-				<button onClick={this.handleRemove.bind(null, i)}>remove</button>
+				<button className="button" onClick={this.handleRemove.bind(null, i)}>remove</button>
 			</p>
 		);
 	},
@@ -74,7 +74,7 @@ const GeolifyForm = React.createClass({
 				{this.state.countries.map((country, i) => {
 					return this.renderInput(i)
 				})}
-				<button onClick={this.handleAdd}>Add</button>
+				<button onClick={this.handleAdd} className="button">Add</button>
 			</div>
 		)
 	}
