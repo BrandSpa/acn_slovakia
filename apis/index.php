@@ -201,10 +201,10 @@ add_action( 'wp_ajax_countries', 'countries' );
 function countries() {
   $res = getCountries();
   header('Content-type: application/json');  
+  header('Access-Control-Allow-Origin: *');
   echo json_encode($res);
   die();
 }
-
 
 add_action( 'wp_ajax_nopriv_location', 'location' );
 add_action( 'wp_ajax_location', 'location' );
