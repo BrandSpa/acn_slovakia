@@ -1045,13 +1045,25 @@ Array [
         </select>
     </div>
     <button
+        disabled={false}
         onClick={[Function]}
         style={
             Object {
                 "marginLeft": "-2px",
               }
         }
-    />
+    >
+        
+    </button>
+    <span
+        style={
+            Object {
+                "display": "none",
+              }
+        }
+    >
+        you are already praying
+    </span>
 </form>,
 ]
 `;
