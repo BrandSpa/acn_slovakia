@@ -170,6 +170,6 @@ function redirectToLang() {
 **	Not redirect if the call is via ajax
 **/
 
-if(!wp_doing_ajax()) {
+if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
 	redirectToLang();
 }
