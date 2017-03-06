@@ -69,7 +69,7 @@ const Posts = React.createClass({
           onClick={this.goToPosts}
           className={this.state.seeMore ? 'bs-see-more' : 'hidden'}
         >
-          See more
+          {this.props.see_more}
         </button>
       </div>
     );

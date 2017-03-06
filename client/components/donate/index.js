@@ -38,16 +38,20 @@ const Donate = React.createClass({
       return res.data;
     });
   },
+  
   componentWillMount() {
     this.fetchCountries();
   },
+
   handleChange(field) {
     this.setState({...this.state, ...field});
   },
+
   handleSubmit(e) {
     e.preventDefault();
     this.nextSection();
   },
+
   stripeToken() {
     let data = qs.stringify({action: 'stripe_token', data: this.state.stripe});
 

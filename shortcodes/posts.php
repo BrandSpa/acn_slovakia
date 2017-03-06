@@ -10,7 +10,7 @@ function bs_posts_sc($atts, $content = null) {
   $at = shortcode_atts( $attributes , $atts );
   
 	$props = [
-    'see_more' => $at['see_more'],
+    'see_more' => gett('See more'),
     'url' => $at['url'],
     'read_more' => gett('Read more'),
     'see_more_link' => gett('https://acninternational.org/news/')
