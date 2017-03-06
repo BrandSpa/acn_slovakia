@@ -4121,9 +4121,9 @@ react-dom, react-dom@^15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-multiple-render@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-multiple-render/-/react-multiple-render-1.0.4.tgz#d1ea9fc0ff9e18cb870314448238bb68ee010df8"
+react-multiple-render@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-multiple-render/-/react-multiple-render-1.0.5.tgz#a8f8ee9f94387a46f3a6fde7f07482deff0d145b"
   dependencies:
     react "^15.4.2"
     react-dom "^15.4.2"
