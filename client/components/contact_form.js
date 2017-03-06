@@ -10,7 +10,8 @@ const contactForm = React.createClass({
     return {
       contact: {name: '', lastname: '', email: '', country: ''},
       errors: {name: false, lastname: false, email: false},
-      countries: getCountries
+      countries: getCountries,
+      loading: false
     };
   },
 
@@ -71,7 +72,10 @@ const contactForm = React.createClass({
         .post('/wp-admin/admin-ajax.php', data)
         .then(res => {
           if (res.data.id) window.location = this.props.redirect;
-          if(res.data.title == 'Member Exists') console.error('member Exists');
+          if(res.data.title == 'Member Exists') {
+            console.error('member Exists');
+            this.setState({loading: false});
+          };
         })
         .catch(err => console.error(err));
     }
@@ -136,8 +140,8 @@ const contactForm = React.createClass({
             ))}
           </select>
         </div>
-        <button style={{marginLeft: '-2px'}} onClick={this.handleSubmit}>
-          {texts.button}
+        <button style={{marginLeft: '-2px'}} onClick={this.handleSubmit} disabled={this.state.loading}>
+          {texts.button}{this.state.loading ? '...' : ''}
         </button>
       </form>
     );
