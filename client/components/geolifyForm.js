@@ -23,11 +23,20 @@ const GeolifyForm = React.createClass({
 		console.log('input ', ind);
 	},
 
+	handleRemove() {
+		console.log('input ', ind);
+	},
+
+	handleAdd() {
+		let countries = this.state.countries.concat(['']);
+		this.setState({countries});
+	},
+
 	renderInput(i = 0) {
 		return (
 			<p>
 				<input name="countries[]" placeholder="added" onChange={this.handleChange.bind(null, i)} value='nea 1' />
-				<button onClick={this.removeNode.bind(null, i)}>remove</button>
+				<button onClick={this.handleRemove.bind(null, i)}>remove</button>
 			</p>
 		);
 	},
