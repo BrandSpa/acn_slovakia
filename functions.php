@@ -12,7 +12,9 @@ register_nav_menus(
     'footer' => __('Footer nav')
   )
 );
+
 $vc = '';
+
 function modify_jquery() {
 	if (!is_admin()) {
 		// comment out the next two lines to load the local copy of jQuery
@@ -157,6 +159,18 @@ function cleanQuote($val) {
 	return str_replace("'", "\u0027", $val);
 }
 
+function geolify($post) {
+	$countries = get_post_meta($post->ID, 'geolify_countries_key', true);
+	$urls = get_post_meta($post->ID, 'geolify_urls_key', true);
+	$key = array_search(getCountry(), $countries);
+	
+	if(isset($urls[$key]) && !empty($urls[$key])) {
+		header('Location:'. $urls[$key]);
+		exit;
+	}
+	
+}
+
 function redirectToLang() {
 	$lang = getCountryLang(getCountry());
 	if(!isset($_COOKIE['bs-lang']) && empty($_COOKIE['bs-lang'])) {
@@ -173,4 +187,16 @@ function redirectToLang() {
 
 if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
 	redirectToLang();
+}
+
+
+function geolify($post) {
+	$countries = get_post_meta($post->ID, 'geolify_countries_key', true);
+	$urls = get_post_meta($post->ID, 'geolify_urls_key', true);
+	$key = array_search(getCountry(), $countries);
+
+	if(isset($urls[$key]) && !empty($urls[$key])) {
+		header('Location:'. $urls[$key]);
+	}
+	
 }

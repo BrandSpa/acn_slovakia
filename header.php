@@ -1,5 +1,6 @@
 <?php
  header('Access-Control-Allow-Origin: *');
+ geolify($post);
  ?>
 <!DOCTYPE html>
 <html >

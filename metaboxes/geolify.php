@@ -1,9 +1,6 @@
 <?php
 include_once str_replace('metaboxes', '', __DIR__) . '/lib/update_field.php';
 
-function geolify() {
-	header('Location:'. $url);
-}
 
 function bs_geolify_metabox() {
 	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];

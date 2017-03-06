@@ -21,7 +21,6 @@ const GeolifyForm = React.createClass({
 	},
 
 	handleChange(ind, type, e) {
-		console.log(type, ind);
 		let {countries, urls} = this.state;
 		
 		if(type == 'country') {
