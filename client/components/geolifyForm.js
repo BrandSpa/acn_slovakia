@@ -33,7 +33,7 @@ const GeolifyForm = React.createClass({
 					return input
 				})}
 
-				{nodes};
+				{nodes}
 				<button onClick={this.addCountry}>Add</button>
 			</form>
 		)
