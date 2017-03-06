@@ -188,15 +188,3 @@ function redirectToLang() {
 if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
 	redirectToLang();
 }
-
-
-function geolify($post) {
-	$countries = get_post_meta($post->ID, 'geolify_countries_key', true);
-	$urls = get_post_meta($post->ID, 'geolify_urls_key', true);
-	$key = array_search(getCountry(), $countries);
-
-	if(isset($urls[$key]) && !empty($urls[$key])) {
-		header('Location:'. $urls[$key]);
-	}
-	
-}
