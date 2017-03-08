@@ -7,20 +7,24 @@ const CedritCard = React.createClass({
   getDefaultProps() {
     return {texts: {}, stripe: {}, errors: {}};
   },
+  
   validateCard(card) {
     let number = validCard.number(card).isValid;
     return this.updateErrors({number});
   },
+
   validateExpiry(month, year) {
     let valid = validCard.expirationDate({month, year});
     let exp_month = valid.isValid;
     let exp_year = valid.isValid;
     return this.updateErrors({exp_month, exp_year});
   },
+
   validateCvc(cvc) {
-    cvc = validCard.cvv(cvc).isValid;
+    cvc = cvc.length >= 3;
     return this.updateErrors({cvc});
   },
+
   getCardType(cardNum) {
     return validCard.number(cardNum).card
       ? validCard.number(cardNum).card.type
@@ -51,6 +55,7 @@ const CedritCard = React.createClass({
 
     this.props.onChange({stripe, errors});
   },
+
   handleCvc(e) {
     let {stripe} = this.props;
     let cvc = onlyNum(e.currentTarget.value);
@@ -59,6 +64,7 @@ const CedritCard = React.createClass({
     let errors = this.validateCvc(cvc);
     this.props.onChange({stripe, errors});
   },
+
   showErr(field) {
     if (this.props.errors.stripe) {
       return this.props.errors.stripe[field] == false
@@ -68,6 +74,7 @@ const CedritCard = React.createClass({
 
     return '';
   },
+
   inputErrStyle(field) {
     if (this.props.errors.stripe) {
       return this.props.errors.stripe[field] == false
@@ -77,6 +84,7 @@ const CedritCard = React.createClass({
 
     return '';
   },
+
   allValidations(e) {
     if (e) e.preventDefault();
     const {stripe} = this.props;
@@ -92,6 +100,7 @@ const CedritCard = React.createClass({
     this.props.onChange({errors});
     return errors;
   },
+
   render() {
     const {texts, stripe, errors} = this.props;
 

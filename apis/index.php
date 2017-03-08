@@ -1,4 +1,5 @@
 <?php
+ header('Access-Control-Allow-Origin: *');
 $main_dir = str_replace('apis', '', __DIR__);
 include_once 'mailchimp.php';
 include_once 'stripe.php';
