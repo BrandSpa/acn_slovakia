@@ -73,5 +73,12 @@ describe('donate component', () => {
 		expect(wrapper.state().errors).toEqual(expected);
 		expect(wrapper.state().section).toEqual(2);
 	})
+
+	it('should pass next section with tab', () => {
+		let wrapper = mount(<Donate />);
+		wrapper.simulate('keyDown', {wich: 9, keyCode: 9});
+		wrapper.simulate('keyDown', {wich: 9, keyCode: 9});
+		expect(wrapper.state().section).toEqual(1);
+	})
 })
 

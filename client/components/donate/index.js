@@ -27,9 +27,11 @@ const Donate = React.createClass({
       errors: {stripe: {}, contact: {}}
     };
   },
+  
   getDefaultProps() {
     return {texts: {}, redirect: {}};
   },
+
   fetchCountries() {
     const data = qs.stringify({action: 'countries'});
 
@@ -60,6 +62,7 @@ const Donate = React.createClass({
       this.setState({stripe});
     });
   },
+
   stripeCharge() {
     const {
       contact,
@@ -98,14 +101,17 @@ const Donate = React.createClass({
     let url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
     window.location = url;
   },
+
   creditCardIsValid() {
     let errs = this.creditCard.allValidations();
     return Object.keys(errs.stripe).every(key => errs.stripe[key] == true);
   },
+
   contactIsValid() {
     let errs = this.contact.validateAll();
     return Object.keys(errs.contact).every(key => errs.contact[key] == true);
   },
+
   nextSection() {
     let section = this.state.section < 2 ? this.state.section + 1 : 2;
 
@@ -122,12 +128,21 @@ const Donate = React.createClass({
     let left = `-${section * 100}%`;
     this.setState({section, left});
   },
+
   prevSection(e) {
     e.preventDefault();
     let section = this.state.section >= 0 ? this.state.section - 1 : 0;
     let left = `-${section * 100}%`;
     this.setState({section, left});
   },
+
+  handleTab(e) {
+    if(e.wich == 9) {
+      e.preventDefault();
+      this.nextSection();
+    }
+  },
+
   render() {
     let sectionWidth = `${100 / 3}%`;
     let viewPortStyle = {width: '300%', left: this.state.left};
@@ -143,7 +158,7 @@ const Donate = React.createClass({
     };
 
     return (
-      <form onSubmit={this.handleSubmit} className="donate_react">
+      <form onSubmit={this.handleSubmit} onKeyDown={this.handleTab} className="donate_react">
         <div className="donate_react__viewport" style={viewPortStyle}>
           <Amount
             {...this.state}
