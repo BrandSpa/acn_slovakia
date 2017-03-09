@@ -69,6 +69,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 @media(max-width:767px){.arrow-down{display:none}}#donate{background-position:top center !important}
 .bs-section-donate{height:700px;padding:100px 0 0 100px}@media(max-width:767px){.bs-section-donate h2{font-size:2.2em}
 }@media(max-width:767px){.bs-section-donate{height:auto;padding:20px}}.download-pdf{width:800px;margin:0 auto}
+.download-pdf .input-container{width:32%}.download-pdf button{width:30%}.download-pdf input,.download-pdf select{width:100%}
 .nav{height:120px;width:100%;padding:15px 60px 0 60px;background:#fff;z-index:9999;position:fixed;top:0}
 @media(max-width:767px){.nav{padding:0;text-align:center;height:100px}}@media(max-width:767px){.nav__donate{padding:0 20px}
 }.nav__donate a{font-size:1.33333em !important;border-radius:5px;border:2px solid #f1364e;padding:15px 40px;text-align:center;display:block;color:#f1364e !important}

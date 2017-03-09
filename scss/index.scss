@@ -262,6 +262,15 @@ button, .btn {
 .download-pdf {
 	width: 800px;
 	margin: 0 auto;
+	.input-container {
+		width: 32%;
+	}
+	button {
+		width: 30%;
+	}
+	input, select {
+		width: 100%;
+	}
 }
 
 @import 'menu';
