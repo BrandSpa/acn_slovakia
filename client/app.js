@@ -14,7 +14,7 @@ import setMenuMobile from './lib/set_menu_mobile';
 import donateRedirect from './lib/donate_redirect';
 import CampaignsSlider from './components/campaigns_slider';
 import DownloadPdf from './components/download_pdf';
-import debounce from './lib/debounce';
+import debounce from 'lodash/debounce';
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
@@ -66,7 +66,6 @@ function toggleViaCrucisNav() {
 }
 
 toggleViaCrucisNav();
-
 
 window.addEventListener('scroll', (e) => {
   console.count('scroll');
