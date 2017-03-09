@@ -260,4 +260,5 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 }.via-crucis__right .vc_column-inner{min-height:700px;padding:40px 20px 0 20px}@media(max-width:767px){.via-crucis__right .vc_column-inner{height:auto;min-height:auto;padding:20px}
 }.via-crucis__header{position:absolute;left:0;right:0;width:100%;background:purple;padding:40px}
 @media(max-width:767px){.via-crucis__header{position:relative}}.via-crucis-toggle{display:none}
+.via-crucis-toggle--fixed{position:fixed;top:100px;background:#f1f1f1;padding:20px 0;text-align:center}
 @media(max-width:767px){.via-crucis-toggle{display:block}}

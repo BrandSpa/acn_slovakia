@@ -173,6 +173,14 @@
 .via-crucis-toggle {
 	display: none;
 
+	&--fixed {
+		position: fixed;
+		top: 100px;
+		background: #f1f1f1;
+		padding: 20px 0;
+		text-align: center;
+	}
+
 	@media #{$s} {
 		display: block;
 	}
