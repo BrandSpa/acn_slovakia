@@ -56,3 +56,12 @@ function smoothScroll() {
 }
 
 smoothScroll();
+
+function toggleViaCrucisNav() {
+  $('.via-crucis-toggle').on('click', e => {
+    e.preventDefault();
+    $('.via-crucis-nav').toggleClass( "via-crucis-nav--open" );
+  })
+}
+
+toggleViaCrucisNav();
