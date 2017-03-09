@@ -1,13 +1,8 @@
 export default function debounce(fn, delay) {
-  let delayed;
+  let delayed = null;
 
   return e => {
-    clearTimeout(delayed);
-    delayed = setTimeout(
-      function() {
-        fn(e);
-      },
-      delay
-    );
+    if(delayed !== null) clearTimeout(delayed);
+    delayed = setTimeout( () => fn(e), delay );
   };
 }
