@@ -6,6 +6,7 @@ import qs from 'qs';
 const endpoint = '/wp-admin/admin-ajax.php';
 
 const DownloadPdf = React.createClass({
+	
 	getDefaultProps() {
 		return {
 			btn: {
