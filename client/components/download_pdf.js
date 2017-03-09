@@ -47,13 +47,13 @@ const DownloadPdf = React.createClass({
 			<form onSubmit={this.handlepdf} className="form-inline">
 			<div className="input-container">
 					<input 
-						type="text" 
+						type="text"
 						placeholder={texts.email} 
 						onChange={this.handleChange.bind(null, 'email')} 
 						value={this.state.email}
 					/>
 				</div>
-				
+
 				<div className="input-container">
 					<select 
 						onChange={this.handleChange.bind(null, 'country')}

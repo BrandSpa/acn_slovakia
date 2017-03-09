@@ -13,7 +13,9 @@ function bs_download_pdf_sc($atts, $content = null) {
 			'text' => $at['btn_text'],
 			'background' => $at['btn_color'],
 		],
-		'email' => $at['email'],
+		'texts' => [
+			'email' => $at['email']
+		],
 		'country' => getCountry()
 	];
 	
