@@ -219,7 +219,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .campaigns-slider__btns__next{position:absolute;right:10px}.campaigns-slider__btns__next i{text-shadow:5px 5px 5px rgba(0,0,0,0.3)}
 .campaign__item{padding:60px 30px;float:left;min-height:480px}@media(max-width:767px){.campaign__item{min-height:auto}
 }.campaign__item a,.campaign__item p,.campaign__item span{color:#fff}.via-crucis-nav{border-left:1px solid #979797;list-style:none;padding:0;margin:40px 0 40px 0;margin-bottom:40px !important}
-.via-crucis-nav--fixed{position:fixed;top:160px;background:#f1f1f1;padding:20px 0;text-align:center;width:100%;left:0;z-index:1020}
+.via-crucis-nav--fixed{position:fixed;top:140px;background:#f1f1f1;padding:20px 0;text-align:center;width:100%;left:0;z-index:1020}
 .via-crucis-nav--open{display:block !important}@media(max-width:767px){.via-crucis-nav{display:none}
 }.via-crucis-nav li{position:relative;padding:5px 0 5px 20px}.via-crucis-nav li:first-child{padding-top:0}
 .via-crucis-nav li:first-child:before{top:-8px !important}.via-crucis-nav li:last-child{padding-bottom:0}
