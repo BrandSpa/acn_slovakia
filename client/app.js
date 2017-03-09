@@ -67,10 +67,9 @@ function toggleViaCrucisNav() {
 
 toggleViaCrucisNav();
 
-window.addEventListener('scroll', (e) => {
-  console.count('scroll');
-  debounce(() => {
+let onScroll =  debounce(() => {
     console.count('debounce');
   }, 300);
-});
+
+window.addEventListener('scroll', onScroll);
 
