@@ -6,7 +6,8 @@
 	li {
 		 position: relative;
 		 padding-left: 20px;
-		 &.active {
+		 
+		 .active {
 			 &:before {
 			 content: '+';
 			 position: absolute;
