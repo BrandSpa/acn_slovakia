@@ -71,7 +71,7 @@ function toggleViaCrucisNav() {
 toggleViaCrucisNav();
 
 let onScroll =  debounce(() => {
-  if($('.via-crucis-nav') && $('.nav')) {
+  if($('.via-crucis-nav') && $('.nav') && window.outerHeight <= 767) {
     let navTop = $('.nav').offset().top;
     let viaCrucisTop = $('.via-crucis-nav').offset().top; 
     console.log('nea', navTop > viaCrucisTop);
