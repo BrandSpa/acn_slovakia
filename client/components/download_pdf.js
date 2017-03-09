@@ -32,6 +32,7 @@ const DownloadPdf = React.createClass({
 	
 	validate() {
     let errors = {};
+
     let validations = Object.keys(this.state.errors).map(field => {
       let val = isEmpty(field);
       errors = {...errors, [field]: val};
@@ -62,6 +63,7 @@ const DownloadPdf = React.createClass({
     };
 
     let data = qs.stringify({action: 'mailchimp_subscribe', data: mc_data});
+
 		if(isValid) {
 			request
 			.post(endpoint, data)
@@ -77,6 +79,7 @@ const DownloadPdf = React.createClass({
 
 	render() {
 		const { countries, btn, texts } = this.props;
+		const { errors } = this.state;
 
 		let btnStyle = {
 			borderColor: btn.background,
@@ -95,7 +98,7 @@ const DownloadPdf = React.createClass({
 						value={this.state.email}
 					/>
 					<div className={errors.email ? 'input-error' : 'hidden'}>
-            { errors.email } {texts.validation_email}
+            { errors.email } { texts.validation_email }
           </div>
 				</div>
 

@@ -5,6 +5,7 @@ function bs_download_pdf_sc($atts, $content = null) {
     'btn_text' => 'download PDF',
 		'btn_color' => '',
 		'email' => 'Email',
+		'validation_email' => 'Email required',
 		'pdf_url' => ''
   ];
 
@@ -58,6 +59,12 @@ add_action( 'vc_before_init', 'bs_download_pdf_vc' );
         "heading" => "Email placeholder",
         "param_name" => "email",
         "value" => 'Email'
+			],
+			[
+        "type" => "textfield",
+        "heading" => "Email validation",
+        "param_name" => "validation_email",
+        "value" => 'Email required'
 			],
 			[
         "type" => "textfield",
