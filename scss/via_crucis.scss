@@ -1,10 +1,12 @@
 .via-crucis-nav {	
 	border-left: 2px solid red;
 	list-style: none;
+	padding: 0;
 	
 	li {
 		 position: relative;
 		 margin-left: 20px;
+		 
 		 &:before {
 			 content: '+';
 			 position: relative;
