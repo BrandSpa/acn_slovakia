@@ -224,8 +224,8 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 }.via-crucis-nav li{position:relative;padding:5px 0 5px 20px}.via-crucis-nav li:first-child{padding-top:0}
 .via-crucis-nav li:first-child:before{top:-8px !important}.via-crucis-nav li:last-child{padding-bottom:0}
 .via-crucis-nav li:last-child:before{top:8px !important}.via-crucis-nav li.active--face a{color:#381755 !important}
-.via-crucis-nav li.active--face:before{color:#381755 !important}.via-crucis-nav li.active--i a{color:#381755 !important}
-.via-crucis-nav li.active--i:before{color:#381755 !important}.via-crucis-nav li.active--ii a{color:#142854 !important}
+.via-crucis-nav li.active--face:before{color:#381755 !important}.via-crucis-nav li.active--i a{color:#674886 !important}
+.via-crucis-nav li.active--i:before{color:#674886 !important}.via-crucis-nav li.active--ii a{color:#142854 !important}
 .via-crucis-nav li.active--ii:before{color:#142854 !important}.via-crucis-nav li.active--iii a{color:#124e7d !important}
 .via-crucis-nav li.active--iii:before{color:#124e7d !important}.via-crucis-nav li.active--iv a{color:#9cacbf !important}
 .via-crucis-nav li.active--iv:before{color:#9cacbf !important}.via-crucis-nav li.active--v a{color:#1f876e !important}
