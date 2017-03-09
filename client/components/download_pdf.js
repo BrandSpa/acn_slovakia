@@ -40,9 +40,7 @@ const DownloadPdf = React.createClass({
       errors = {...errors, [field]: val};
       return val;
     });
-		
-		console.log(errors);
-
+	
     this.setState({errors});
 		
     return Promise.all(validations);
@@ -104,6 +102,7 @@ const DownloadPdf = React.createClass({
 						onChange={this.handleChange.bind(null, 'email')} 
 						value={this.state.email}
 					/>
+
 					<div className={errors.email ? 'input-error' : 'hidden'}>
             { errors.email } { texts.validation_email }
           </div>

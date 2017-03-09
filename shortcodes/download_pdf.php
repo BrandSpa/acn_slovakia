@@ -17,7 +17,8 @@ function bs_download_pdf_sc($atts, $content = null) {
 			'background' => $at['btn_color'],
 		],
 		'texts' => [
-			'email' => $at['email']
+			'email' => $at['email'],
+			'validation_email' => $at['validation_email'],
 		],
 		'country' => getCountry(),
 		'pdf_url' => ''
