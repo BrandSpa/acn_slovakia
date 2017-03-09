@@ -3,6 +3,7 @@ import request from 'axios';
 import isEmpty from 'validator/lib/isEmpty';
 import getCountries from '../lib/getCountries';
 import qs from 'qs';
+
 const endpoint = '/wp-admin/admin-ajax.php';
 
 const DownloadPdf = React.createClass({
@@ -35,7 +36,7 @@ const DownloadPdf = React.createClass({
     let errors = {};
 
     let validations = Object.keys(this.state.errors).map(field => {
-      let val = isEmpty(field);
+      let val = isEmpty(this.state.errors[field]);
       errors = {...errors, [field]: val};
       return val;
     });
