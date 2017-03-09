@@ -5,6 +5,10 @@
 	margin: 40px 0 40px 0;
 	margin-bottom: 40px !important;
 	
+	@media #{$s} {
+		display: none;
+	}
+	
 	li {
 		 position: relative;
 		 padding: 5px 0 5px 20px;
