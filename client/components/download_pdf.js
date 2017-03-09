@@ -57,12 +57,12 @@ const DownloadPdf = React.createClass({
 	},
 
 	storeContact(isValid) {
-			const {	email, country } = this.state;
-			let mc_data = {
-      email_address: email,
-      status: 'subscribed',
-      merge_fields: {NAME: '', COUNTRY: country},
-      update_existing: true
+		const {	email, country } = this.state;
+		let mc_data = {
+    	email_address: email,
+    	status: 'subscribed',
+    	merge_fields: {NAME: '', COUNTRY: country},
+    	update_existing: true
     };
 
     let data = qs.stringify({action: 'mailchimp_subscribe', data: mc_data});
