@@ -111,6 +111,7 @@
 		 
 		 &.active, &:hover {
 			 @include addColors;
+			 
 			 &:before {
 			 content: '+';
 			 position: absolute;
