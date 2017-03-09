@@ -6,7 +6,7 @@
 	margin-bottom: 40px !important;
 
 	&--open {
-		display: block;
+		display: block !important;
 	}
 	
 	@media #{$s} {
