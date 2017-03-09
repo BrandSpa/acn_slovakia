@@ -1,22 +1,76 @@
-@mixin addColors() {
-	&--grape {
+@mixin addColor($color) {
 		a {
-			color: #381755 !important;
+			color: $color !important;
 		}
 		
 		&:before {
-			color: #381755 !important;
+			color: $color !important;
 		}
+}
+
+@mixin addColors() {
+	&--face {
+		@include addColor(#381755);
 	}
 
-	&--affair {
-		a {
-			color: #674886 !important;
-		}
-		
-		&:before {
-			color: #674886 !important;
-		}
+	&--i {
+		@include addColor(#381755);
+	}
+
+	&--ii {
+		@include addColor(#142854);
+	}
+
+	&--iii {
+		@include addColor(#124E7D);
+	}
+
+	&--iv {
+		@include addColor(#9CACBF);
+	}
+
+	&--v {
+		@include addColor(#1F876E);
+	}
+
+	&--vi {
+		@include addColor(#168F3E);
+	}
+
+	&--vii {
+		@include addColor(#699837);
+	}
+
+	&--viii {
+		@include addColor(#965837);
+	}
+
+	&--ix {
+		@include addColor(#B1780F);
+	}
+
+	&--x {
+		@include addColor(#E48F10);
+	}
+
+	&--xi {
+		@include addColor(#E4A710);
+	}
+
+	&--xii {
+		@include addColor(#F66A23);
+	}
+
+	&--xiii {
+		@include addColor(#A30B1B);
+	}
+
+	&--xiv {
+		@include addColor(#DD2717);
+	}
+
+	&--pray {
+		@include addColor(#F35E72);
 	}
 }
 
@@ -54,12 +108,9 @@
 			 }
 		 }
 		 
-		 &.active {
-			 @include addColors;
-
-		 }
 		 
 		 &.active, &:hover {
+			 @include addColors;
 			 &:before {
 			 content: '+';
 			 position: absolute;
