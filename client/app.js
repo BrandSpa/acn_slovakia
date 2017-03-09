@@ -13,6 +13,7 @@ import setMenu from './lib/set_menu';
 import setMenuMobile from './lib/set_menu_mobile';
 import donateRedirect from './lib/donate_redirect';
 import CampaignsSlider from './components/campaigns_slider';
+import DownloadPdf from './components/download_pdf';
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
@@ -30,6 +31,7 @@ multipleRender('.projects-container', Projects);
 multipleRender('.bs-accordion', Accordion);
 multipleRender('.section-video', sectionVideo);
 multipleRender('.bs-campaings-slider', CampaignsSlider);
+multipleRender('.bs-download-pdf', DownloadPdf);
 
 setMenu();
 setMenuMobile();
