@@ -7,7 +7,7 @@
 	
 	li {
 		 position: relative;
-		 padding: 10px 0 10px 20px;
+		 padding: 5px 0 5px 20px;
 		 &:first-child {
 			 padding-top: 0;
 			 &:before {
@@ -40,4 +40,10 @@
 		 
 	}
 	
+}
+
+.via-crucis__left  {
+	.vc_column-inner  {
+		padding: 40px 20px;
+	}
 }
