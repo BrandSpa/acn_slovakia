@@ -12,6 +12,12 @@ const DownloadPdf = React.createClass({
 		}
 	},
 
+	getInitialState() {
+		return {
+			email: ''
+		}
+	},
+
 	handlepdf(e) {
 		e.preventDefault();
 		const data = this.state;
@@ -35,7 +41,7 @@ const DownloadPdf = React.createClass({
 					type="text" 
 					placeholder={texts.email} 
 					onChange={this.handleChange.bind(null, 'email')} 
-					value={this.state.email || ''}
+					value={this.state.email}
 				/>
 
 				<select 
