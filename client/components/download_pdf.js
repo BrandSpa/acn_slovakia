@@ -6,7 +6,7 @@ import qs from 'qs';
 const endpoint = '/wp-admin/admin-ajax.php';
 
 const DownloadPdf = React.createClass({
-	
+
 	getDefaultProps() {
 		return {
 			btn: {
@@ -41,7 +41,7 @@ const DownloadPdf = React.createClass({
     });
 
     this.setState({errors});
-
+		console.log('validate');
     return Promise.all(validations);
   },
 
