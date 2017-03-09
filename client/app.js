@@ -80,7 +80,9 @@ let onScroll =  debounce(() => {
     if(navTop > viaCrucisToggleTop) {
       if(!$navToggle.hasClass('via-crucis-toggle--fixed')) $navToggle.addClass('via-crucis-toggle--fixed');
       if(!$viaCrucisNav.hasClass('via-crucis-nav--fixed')) $viaCrucisNav.addClass('via-crucis-nav--fixed');
-    } else {
+    } 
+
+    if(navTop < viaCrucisToggleTop) {
       $navToggle.removeClass('via-crucis-toggle--fixed');
       $viaCrucisNav.removeClass('via-crucis-nav--fixed');
     }
