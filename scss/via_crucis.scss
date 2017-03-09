@@ -81,4 +81,8 @@
   width: 100%;
   background: purple;
   padding: 40px;
+
+	@media #{$s} {
+		position: relative;
+	}
 }
