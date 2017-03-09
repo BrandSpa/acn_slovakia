@@ -14,6 +14,7 @@ import setMenuMobile from './lib/set_menu_mobile';
 import donateRedirect from './lib/donate_redirect';
 import CampaignsSlider from './components/campaigns_slider';
 import DownloadPdf from './components/download_pdf';
+import debounce from './lib/debounce';
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
@@ -48,8 +49,6 @@ function smoothScroll() {
       const less = $('.nav').height();
       const scrollTop = ($(hash).offset().top - less);
      
-      console.log(scrollTop);
-   
       $('html, body').animate({ scrollTop }, 800, () => {});
 
     }
@@ -67,3 +66,9 @@ function toggleViaCrucisNav() {
 }
 
 toggleViaCrucisNav();
+
+
+
+window.addEventListener('scroll', debounce((e) => {
+  console.log(e);
+}, 300));
