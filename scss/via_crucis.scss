@@ -7,6 +7,13 @@
 	li {
 		 position: relative;
 		 padding: 10px 0 10px 20px;
+		 &:first-child {
+			 padding-top: 0;
+		 }
+		 
+		 &:last-child {
+			 padding-bottom: 0;
+		 }
 		 
 		 &.active {
 			 &:before {
