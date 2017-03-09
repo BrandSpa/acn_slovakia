@@ -78,18 +78,16 @@ let onScroll = debounce(() => {
     let navTop = $nav.offset().top;
     let viaCrucisToggleTop = $navToggle.offset().top; 
     let viaCrucisLeft = $('.via-crucis__left').offset().top;
-    console.log('debounce', navTop > viaCrucisLeft);
+    console.log('debounce', );
 
-    if(navTop > viaCrucisToggleTop) {
+    if(navTop > viaCrucisLeft) {
       $navToggle.addClass('via-crucis-toggle--fixed');
       $viaCrucisNav.addClass('via-crucis-nav--fixed');
-    } 
-    
-    if($navToggle.hasClass('via-crucis-toggle--fixed') && navTop == 0) {
-      console.count('dont pass');
-      $navToggle.removeClass('via-crucis-toggle--fixed');
+    } else {
+       $navToggle.removeClass('via-crucis-toggle--fixed');
       $viaCrucisNav.removeClass('via-crucis-nav--fixed');
     }
+
   }
 }, 200);
 
