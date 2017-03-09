@@ -5,6 +5,7 @@ function bs_download_pdf_sc($atts, $content = null) {
     'btn_text' => 'download PDF',
 		'btn_color' => '',
 		'email' => 'Email',
+		'pdf_url' => ''
   ];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -50,11 +51,17 @@ add_action( 'vc_before_init', 'bs_download_pdf_vc' );
         "param_name" => "btn_color",
         "value" => ''
 			],
-				[
+			[
         "type" => "textfield",
         "heading" => "Email placeholder",
         "param_name" => "email",
         "value" => 'Email'
+			],
+			[
+        "type" => "textfield",
+        "heading" => "PDF url",
+        "param_name" => "pdf_url",
+        "value" => ''
 			]
 		];
 
