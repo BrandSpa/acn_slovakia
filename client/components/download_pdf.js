@@ -6,7 +6,10 @@ const endpoint = '/wp-admin/admin-ajax.php';
 const DownloadPdf = React.createClass({
 	getDefaultProps() {
 		return {
-			btnText: '',
+			btn: {
+				text: '',
+				background: ''
+			},
 			texts: {},
 			countries: getCountries
 		}
@@ -33,7 +36,11 @@ const DownloadPdf = React.createClass({
 	},
 
 	render() {
-		const { countries, btnText, texts } = this.props;
+		const { countries, btn, texts } = this.props;
+
+		let btnStyle = {
+			background: btn.background
+		};
 
 		return (
 			<form onSubmit={this.handlepdf}>
@@ -50,7 +57,9 @@ const DownloadPdf = React.createClass({
 				>
 					{countries.map(country => <option value={country}>{country}</option>)}
 				</select>
-				<button onClick={this.handlepdf}>{btnText}</button>
+				<button 
+					onClick={this.handlepdf} 
+					style={btnStyle}>{btn.text}</button>
 			</form>
 		)
 	}
