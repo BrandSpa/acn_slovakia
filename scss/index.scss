@@ -291,6 +291,17 @@ button, .btn {
 	}
 }
 
+.bs-share {
+	border: 1px solid #3C515F;
+	height: 90px;
+	width: 290px;
+	a {
+		display: inline-block;
+		width: 50%;
+		text-align: center;
+		font-size: 32px;
+	}
+}
 @import 'menu';
 @import 'header';
 @import 'footer';
