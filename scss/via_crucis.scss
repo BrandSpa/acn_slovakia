@@ -1,3 +1,20 @@
+@mixin addColors() {
+	&--grape {
+		color: #381755;
+		
+		&:before {
+			color: #381755;
+		}
+	}
+
+	&--affair {
+		color: #674886;
+			&:before {
+			color: #674886;
+		}
+	}
+}
+
 .via-crucis-nav {	
 	border-left: 1px solid #979797;
 	list-style: none;
@@ -30,6 +47,11 @@
 			 &:before {
 				 top: 8px !important;
 			 }
+		 }
+		 
+		 &.active {
+			 @include addColors;
+
 		 }
 		 
 		 &.active, &:hover {
