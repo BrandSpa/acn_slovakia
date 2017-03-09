@@ -5,6 +5,11 @@
 	li {
 		 position: relative;
 		 margin-left: 20px;
+		 &:before {
+			 content: '+';
+			 position: relative;
+			 left: 0;
+		 }
 	}
 	
 }
