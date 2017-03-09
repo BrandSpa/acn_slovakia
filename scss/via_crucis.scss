@@ -1,13 +1,10 @@
-.via-crucis-nav {
-	&:before {
-		content: ' ';
-		height: 100%;
-		width: 1px;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		background: red;
+.via-crucis-nav {	
+	border-left: 2px solid red;
+	list-style: none;
+	
+	li {
+		 position: relative;
+		 margin-left: 20px;
 	}
 	
-	position: absolute;
 }
