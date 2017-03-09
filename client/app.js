@@ -77,7 +77,9 @@ let onScroll = debounce(() => {
     const $navToggle = $('.via-crucis-toggle');
     let navTop = $nav.offset().top;
     let viaCrucisToggleTop = $navToggle.offset().top; 
+    
     console.log('debounce', navTop > viaCrucisToggleTop);
+
     if(navTop > viaCrucisToggleTop) {
       $navToggle.addClass('via-crucis-toggle--fixed');
       $viaCrucisNav.addClass('via-crucis-nav--fixed');
@@ -89,7 +91,7 @@ let onScroll = debounce(() => {
       $viaCrucisNav.removeClass('via-crucis-nav--fixed');
     }
   }
-}, 400);
+}, 200);
 
 window.addEventListener('scroll', onScroll);
 
