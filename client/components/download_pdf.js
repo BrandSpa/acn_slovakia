@@ -39,9 +39,11 @@ const DownloadPdf = React.createClass({
       errors = {...errors, [field]: val};
       return val;
     });
+		
+		console.log(errors);
 
     this.setState({errors});
-		console.log('validate');
+		
     return Promise.all(validations);
   },
 
