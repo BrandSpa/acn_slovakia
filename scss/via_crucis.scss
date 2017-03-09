@@ -4,6 +4,10 @@
 	padding: 0;
 	margin: 40px 0 40px 0;
 	margin-bottom: 40px !important;
+
+	&--open {
+		display: block;
+	}
 	
 	@media #{$s} {
 		display: none;
