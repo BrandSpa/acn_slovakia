@@ -64,7 +64,7 @@ const DownloadPdf = React.createClass({
 
     let data = qs.stringify({action: 'mailchimp_subscribe', data: mc_data});
 
-		if(isValid) {
+		if(this.isValid()) {
 			request
 			.post(endpoint, data)
 			.then(res => {
