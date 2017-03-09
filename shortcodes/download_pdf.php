@@ -21,7 +21,7 @@ function bs_download_pdf_sc($atts, $content = null) {
 			'validation_email' => $at['validation_email'],
 		],
 		'country' => getCountry(),
-		'pdf_url' => ''
+		'pdf_url' => $at['pdf_url']
 	];
 	
   ob_start();
