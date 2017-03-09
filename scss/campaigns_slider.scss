@@ -59,7 +59,11 @@
 		padding: 60px 30px; 
 		float: left;
 		min-height: 480px;
-
+		
+		@media #{$s} {
+			min-height: auto;
+		}
+		
 		a, p, span {
 			color: #fff;
 		}
