@@ -1,9 +1,11 @@
 @mixin addColors() {
 	&--grape {
-		color: #381755;
+		a {
+			color: #381755 !important;
+		}
 		
 		&:before {
-			color: #381755;
+			color: #381755 !important;
 		}
 	}
 
