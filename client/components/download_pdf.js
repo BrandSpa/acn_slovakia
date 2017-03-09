@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'axios';
-import isEmpty from 'validator/lib/isEmpty';
+import isEmail from 'validator/lib/isEmail';
 import getCountries from '../lib/getCountries';
 import qs from 'qs';
 
@@ -36,7 +36,7 @@ const DownloadPdf = React.createClass({
     let errors = {};
 
     let validations = Object.keys(this.state.errors).map(field => {
-      let val = isEmpty(this.state.errors[field]);
+      let val = !isEmail(this.state[field]);
       errors = {...errors, [field]: val};
       return val;
     });
