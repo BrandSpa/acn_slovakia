@@ -70,14 +70,14 @@ function toggleViaCrucisNav() {
 
 toggleViaCrucisNav();
 
-let onScroll =  debounce(() => {
+let onScroll = debounce(() => {
   if($('.via-crucis-nav') && $('.nav') && window.outerHeight <= 767) {
     const $nav = $('.nav');
     const $viaCrucisNav =  $('.via-crucis-nav');
     const $navToggle = $('.via-crucis-toggle');
     let navTop = $nav.offset().top;
     let viaCrucisToggleTop = $navToggle.offset().top; 
-
+    console.count('debounce');
     if(navTop > viaCrucisToggleTop) {
       console.count('pass');
       if(!$navToggle.hasClass('via-crucis-toggle--fixed')) $navToggle.addClass('via-crucis-toggle--fixed');
