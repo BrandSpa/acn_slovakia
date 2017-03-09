@@ -45,15 +45,18 @@
 .via-crucis__left  {
 	.vc_column-inner  {
 		padding: 40px 20px 0  20px;
+		min-height: 700px;
 	}
 }
 
 .via-crucis__right  {
 	.vc_column-inner  {
 		min-height: 700px;
+		padding: 40px 20px 0  20px;
+		
 		@media #{$s} {
 			height: auto;
-			padding: 40px;
+			padding: 20px;
 		}
 	}
 }
