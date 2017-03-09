@@ -89,6 +89,7 @@
 		text-align: center;
 		width: 100%;
 		left: 0;
+		z-index: 1020;
 	}
 
 	&--open {
@@ -191,6 +192,7 @@
 		text-align: center;
 		width: 100%;
 		left: 0;
+		z-index: 1020;
 	}
 
 	@media #{$s} {
