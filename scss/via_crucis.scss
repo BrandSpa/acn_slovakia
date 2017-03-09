@@ -10,9 +10,12 @@
 	}
 
 	&--affair {
-		color: #674886;
-			&:before {
-			color: #674886;
+		a {
+			color: #674886 !important;
+		}
+		
+		&:before {
+			color: #674886 !important;
 		}
 	}
 }
