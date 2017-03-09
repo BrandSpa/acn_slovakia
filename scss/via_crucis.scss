@@ -10,7 +10,7 @@
 		 &:first-child {
 			 padding-top: 0;
 			 &:before {
-				 top: -8px;
+				 top: -8px !important;
 			 }
 		 }
 		 
