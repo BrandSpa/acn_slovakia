@@ -262,10 +262,11 @@ button, .btn {
 .download-pdf {
 	width: 800px;
 	margin: 0 auto;
+
 	@media #{$s} {
 		width: auto;
 	}
-	
+
 	.input-container {
 		@media #{$l}, #{$xl} {
 			width: 35%;
@@ -275,6 +276,10 @@ button, .btn {
 	button {
 		@media #{$l}, #{$xl} {
 			width: 30%;
+		}
+		
+		@media #{$s} {
+			margin-left: 15px;
 		}
 	}
 

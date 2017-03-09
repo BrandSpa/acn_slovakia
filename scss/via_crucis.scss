@@ -1,11 +1,11 @@
 @mixin addColor($color) {
-		a {
-			color: $color !important;
-		}
+	a {
+		color: $color !important;
+	}
 		
-		&:before {
-			color: $color !important;
-		}
+	&:before {
+		color: $color !important;
+	}
 }
 
 @mixin addColors() {
@@ -185,7 +185,7 @@
 			text-align: center;
 		}
 	}
-	
+
 	h4 {
 		@media #{$s} {
 			display: none;
