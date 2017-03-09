@@ -9,7 +9,7 @@ function bs_download_pdf_sc($atts, $content = null) {
   ];
 
   $at = shortcode_atts( $attributes , $atts );
-	
+
 	$props = [
 		'btn' => [
 			'text' => $at['btn_text'],

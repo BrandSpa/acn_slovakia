@@ -179,6 +179,11 @@
 	@media #{$s} {
 		position: relative;
 	}
+	h4 {
+		@media #{$s} {
+			display: none;
+		}
+	}
 }
 
 .via-crucis-toggle {

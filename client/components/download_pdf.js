@@ -1,6 +1,7 @@
 import React from 'react';
 import request from 'axios';
 import getCountries from '../lib/getCountries';
+import qs from 'qs';
 const endpoint = '/wp-admin/admin-ajax.php';
 
 const DownloadPdf = React.createClass({
@@ -11,23 +12,41 @@ const DownloadPdf = React.createClass({
 				background: ''
 			},
 			texts: {},
-			countries: getCountries
+			countries: getCountries,
+			pdf_url: ''
 		}
 	},
 
 	getInitialState() {
+		const { country } = this.props;
+
 		return {
-			email: ''
+			email: '',
+			errors: {
+				email: false
+			},
+			country
 		}
 	},
 
 	handlepdf(e) {
 		e.preventDefault();
-		const data = this.state;
+		const {	email, country } = this.state;
+
+		let mc_data = {
+      email_address: email,
+      status: 'subscribed',
+      merge_fields: {NAME: '', COUNTRY: country},
+      update_existing: true
+    };
+
+    let data = qs.stringify({action: 'mailchimp_subscribe', data: mc_data});
 
 		request
 		.post(endpoint, data)
-		.then(res => console.log(data));
+		.then(res => {
+			if (res.data.id) window.location = this.props.pdf_url;
+		});
 
 	},
 
@@ -54,6 +73,9 @@ const DownloadPdf = React.createClass({
 						onChange={this.handleChange.bind(null, 'email')} 
 						value={this.state.email}
 					/>
+					<div className={errors.email ? 'input-error' : 'hidden'}>
+            { errors.email } {texts.validation_email}
+          </div>
 				</div>
 
 				<div className="input-container">
