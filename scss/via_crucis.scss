@@ -117,9 +117,11 @@
 			 }
 		 }
 		 
-		 
-		 &.active, &:hover {
+		 &.active {
 			 @include addColors;
+		 }
+
+		 &.active, &:hover {
 			 
 			 &:before {
 			 content: '+';

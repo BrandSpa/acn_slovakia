@@ -223,39 +223,23 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .via-crucis-nav--open{display:block !important}@media(max-width:767px){.via-crucis-nav{display:none}
 }.via-crucis-nav li{position:relative;padding:5px 0 5px 20px}.via-crucis-nav li:first-child{padding-top:0}
 .via-crucis-nav li:first-child:before{top:-8px !important}.via-crucis-nav li:last-child{padding-bottom:0}
-.via-crucis-nav li:last-child:before{top:8px !important}.via-crucis-nav li.active--face a,.via-crucis-nav li:hover--face a{color:#381755 !important}
-.via-crucis-nav li.active--face:before,.via-crucis-nav li:hover--face:before{color:#381755 !important}
-.via-crucis-nav li.active--i a,.via-crucis-nav li:hover--i a{color:#381755 !important}
-.via-crucis-nav li.active--i:before,.via-crucis-nav li:hover--i:before{color:#381755 !important}
-.via-crucis-nav li.active--ii a,.via-crucis-nav li:hover--ii a{color:#142854 !important}
-.via-crucis-nav li.active--ii:before,.via-crucis-nav li:hover--ii:before{color:#142854 !important}
-.via-crucis-nav li.active--iii a,.via-crucis-nav li:hover--iii a{color:#124e7d !important}
-.via-crucis-nav li.active--iii:before,.via-crucis-nav li:hover--iii:before{color:#124e7d !important}
-.via-crucis-nav li.active--iv a,.via-crucis-nav li:hover--iv a{color:#9cacbf !important}
-.via-crucis-nav li.active--iv:before,.via-crucis-nav li:hover--iv:before{color:#9cacbf !important}
-.via-crucis-nav li.active--v a,.via-crucis-nav li:hover--v a{color:#1f876e !important}
-.via-crucis-nav li.active--v:before,.via-crucis-nav li:hover--v:before{color:#1f876e !important}
-.via-crucis-nav li.active--vi a,.via-crucis-nav li:hover--vi a{color:#168f3e !important}
-.via-crucis-nav li.active--vi:before,.via-crucis-nav li:hover--vi:before{color:#168f3e !important}
-.via-crucis-nav li.active--vii a,.via-crucis-nav li:hover--vii a{color:#699837 !important}
-.via-crucis-nav li.active--vii:before,.via-crucis-nav li:hover--vii:before{color:#699837 !important}
-.via-crucis-nav li.active--viii a,.via-crucis-nav li:hover--viii a{color:#965837 !important}
-.via-crucis-nav li.active--viii:before,.via-crucis-nav li:hover--viii:before{color:#965837 !important}
-.via-crucis-nav li.active--ix a,.via-crucis-nav li:hover--ix a{color:#b1780f !important}
-.via-crucis-nav li.active--ix:before,.via-crucis-nav li:hover--ix:before{color:#b1780f !important}
-.via-crucis-nav li.active--x a,.via-crucis-nav li:hover--x a{color:#e48f10 !important}
-.via-crucis-nav li.active--x:before,.via-crucis-nav li:hover--x:before{color:#e48f10 !important}
-.via-crucis-nav li.active--xi a,.via-crucis-nav li:hover--xi a{color:#e4a710 !important}
-.via-crucis-nav li.active--xi:before,.via-crucis-nav li:hover--xi:before{color:#e4a710 !important}
-.via-crucis-nav li.active--xii a,.via-crucis-nav li:hover--xii a{color:#f66a23 !important}
-.via-crucis-nav li.active--xii:before,.via-crucis-nav li:hover--xii:before{color:#f66a23 !important}
-.via-crucis-nav li.active--xiii a,.via-crucis-nav li:hover--xiii a{color:#a30b1b !important}
-.via-crucis-nav li.active--xiii:before,.via-crucis-nav li:hover--xiii:before{color:#a30b1b !important}
-.via-crucis-nav li.active--xiv a,.via-crucis-nav li:hover--xiv a{color:#dd2717 !important}
-.via-crucis-nav li.active--xiv:before,.via-crucis-nav li:hover--xiv:before{color:#dd2717 !important}
-.via-crucis-nav li.active--pray a,.via-crucis-nav li:hover--pray a{color:#f35e72 !important}
-.via-crucis-nav li.active--pray:before,.via-crucis-nav li:hover--pray:before{color:#f35e72 !important}
-.via-crucis-nav li.active:before,.via-crucis-nav li:hover:before{content:'+';position:absolute;left:-6px;top:0;color:#9b9b9b;font-size:24px;transition:all 300ms}
+.via-crucis-nav li:last-child:before{top:8px !important}.via-crucis-nav li.active--face a{color:#381755 !important}
+.via-crucis-nav li.active--face:before{color:#381755 !important}.via-crucis-nav li.active--i a{color:#381755 !important}
+.via-crucis-nav li.active--i:before{color:#381755 !important}.via-crucis-nav li.active--ii a{color:#142854 !important}
+.via-crucis-nav li.active--ii:before{color:#142854 !important}.via-crucis-nav li.active--iii a{color:#124e7d !important}
+.via-crucis-nav li.active--iii:before{color:#124e7d !important}.via-crucis-nav li.active--iv a{color:#9cacbf !important}
+.via-crucis-nav li.active--iv:before{color:#9cacbf !important}.via-crucis-nav li.active--v a{color:#1f876e !important}
+.via-crucis-nav li.active--v:before{color:#1f876e !important}.via-crucis-nav li.active--vi a{color:#168f3e !important}
+.via-crucis-nav li.active--vi:before{color:#168f3e !important}.via-crucis-nav li.active--vii a{color:#699837 !important}
+.via-crucis-nav li.active--vii:before{color:#699837 !important}.via-crucis-nav li.active--viii a{color:#965837 !important}
+.via-crucis-nav li.active--viii:before{color:#965837 !important}.via-crucis-nav li.active--ix a{color:#b1780f !important}
+.via-crucis-nav li.active--ix:before{color:#b1780f !important}.via-crucis-nav li.active--x a{color:#e48f10 !important}
+.via-crucis-nav li.active--x:before{color:#e48f10 !important}.via-crucis-nav li.active--xi a{color:#e4a710 !important}
+.via-crucis-nav li.active--xi:before{color:#e4a710 !important}.via-crucis-nav li.active--xii a{color:#f66a23 !important}
+.via-crucis-nav li.active--xii:before{color:#f66a23 !important}.via-crucis-nav li.active--xiii a{color:#a30b1b !important}
+.via-crucis-nav li.active--xiii:before{color:#a30b1b !important}.via-crucis-nav li.active--xiv a{color:#dd2717 !important}
+.via-crucis-nav li.active--xiv:before{color:#dd2717 !important}.via-crucis-nav li.active--pray a{color:#f35e72 !important}
+.via-crucis-nav li.active--pray:before{color:#f35e72 !important}.via-crucis-nav li.active:before,.via-crucis-nav li:hover:before{content:'+';position:absolute;left:-6px;top:0;color:#9b9b9b;font-size:24px;transition:all 300ms}
 .via-crucis-nav li a{color:#9b9b9b}.via-crucis__left .vc_column-inner{padding:40px 20px 0 20px;padding-top:40px !important;min-height:700px}
 @media(max-width:767px){.via-crucis__left .vc_column-inner{height:auto;min-height:auto;padding:20px}
 }.via-crucis__right .vc_column-inner{min-height:700px;padding:40px 20px 0 20px}@media(max-width:767px){.via-crucis__right .vc_column-inner{height:auto;min-height:auto;padding:20px}
