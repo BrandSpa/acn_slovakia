@@ -53,9 +53,12 @@ const DownloadPdf = React.createClass({
 
 	handlepdf(e) {
 		e.preventDefault();
-		const {	email, country } = this.state;
+		this.isValid().then(this.storeContact);
+	},
 
-		let mc_data = {
+	storeContact(isValid) {
+			const {	email, country } = this.state;
+			let mc_data = {
       email_address: email,
       status: 'subscribed',
       merge_fields: {NAME: '', COUNTRY: country},
@@ -64,7 +67,7 @@ const DownloadPdf = React.createClass({
 
     let data = qs.stringify({action: 'mailchimp_subscribe', data: mc_data});
 
-		if(this.isValid()) {
+		if(isValid) {
 			request
 			.post(endpoint, data)
 			.then(res => {
