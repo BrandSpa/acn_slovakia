@@ -39,6 +39,7 @@ const DownloadPdf = React.createClass({
 		const { countries, btn, texts } = this.props;
 
 		let btnStyle = {
+			borderColor: btn.background,
 			background: btn.background
 		};
 
