@@ -59,17 +59,24 @@ function smoothScroll() {
 smoothScroll();
 
 function toggleViaCrucisNav() {
-  $('.via-crucis-toggle').on('click', e => {
-    e.preventDefault();
-    $('.via-crucis-nav').toggleClass( "via-crucis-nav--open" );
-  })
+  if($('.via-crucis-toggle')) {
+     $('.via-crucis-toggle').on('click', e => {
+      e.preventDefault();
+      $('.via-crucis-nav').toggleClass( "via-crucis-nav--open" );
+    })
+  }
+ 
 }
 
 toggleViaCrucisNav();
 
 let onScroll =  debounce(() => {
-    console.count('debounce');
-  }, 300);
+  if($('.via-crucis-nav') && $('.nav')) {
+    let navTop = $('.nav').offset().top;
+    let viaCrucisTop = $('.via-crucis-nav').offset().top; 
+    console.log('nea', navTop > viaCrucisTop);
+  }
+}, 200);
 
 window.addEventListener('scroll', onScroll);
 
