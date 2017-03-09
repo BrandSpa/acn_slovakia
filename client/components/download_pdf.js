@@ -88,9 +88,7 @@ const DownloadPdf = React.createClass({
 
 		let btnStyle = {
 			borderColor: btn.background,
-			background: btn.background,
-			marginLeft: '-2px',
-			borderRadius: '3px'
+			background: btn.background		
 		};
 
 		return (

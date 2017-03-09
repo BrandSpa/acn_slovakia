@@ -70,7 +70,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .bs-section-donate{height:700px;padding:100px 0 0 100px}@media(max-width:767px){.bs-section-donate h2{font-size:2.2em}
 }@media(max-width:767px){.bs-section-donate{height:auto;padding:20px}}.download-pdf{width:800px;margin:0 auto}
 @media(max-width:767px){.download-pdf{width:auto}}@media(min-width:992px) and (max-width:1199px),(min-width:1200px){.download-pdf .input-container{width:35%}
-}@media(min-width:992px) and (max-width:1199px),(min-width:1200px){.download-pdf button{width:30%}
+}.download-pdf button{margin-left:-2px;border-radius:3px}@media(min-width:992px) and (max-width:1199px),(min-width:1200px){.download-pdf button{width:30%}
 }@media(max-width:767px){.download-pdf button{margin-left:15px}}.download-pdf input,.download-pdf select{width:100%}
 .nav{height:120px;width:100%;padding:15px 60px 0 60px;background:#fff;z-index:9999;position:fixed;top:0}
 @media(max-width:767px){.nav{padding:0;text-align:center;height:100px}}@media(max-width:767px){.nav__donate{padding:0 20px}

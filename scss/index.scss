@@ -274,10 +274,13 @@ button, .btn {
 	}
 
 	button {
+		margin-left: -2px;
+		border-radius: 3px;			
+
 		@media #{$l}, #{$xl} {
 			width: 30%;
 		}
-		
+
 		@media #{$s} {
 			margin-left: 15px;
 		}
