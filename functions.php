@@ -27,17 +27,6 @@ function modify_jquery() {
 
 add_action('init', 'modify_jquery');
 
-// function unload_visual_composer() {
-// 	$vc = $GLOBALS['wp_scripts']->registered['wpb_composer_front_js']->src;
-// 	wp_register_script('nea', $vc);
-// 	wp_deregister_script('wpb_composer_front_js');
-// 	wp_enqueue_script('nea');
-// 	//test register inline script to do it async
-// }
-
-// add_action('vc_base_register_front_js', 'unload_visual_composer');
-
-
 function deactivate_plugin_conditional() {
 	if(is_plugin_active('mpc-massive/mpc-massive.php')) {
 		deactivate_plugins('mpc-massive/mpc-massive.php'); 
@@ -72,6 +61,7 @@ require('shortcodes/posts.php');
 require('shortcodes/contact_info.php');
 require('shortcodes/posts_list.php');
 require('shortcodes/campaigns_slider.php');
+require('shortcodes/download_pdf.php');
 
 //metaboxes
 require('metaboxes/image_square.php');

@@ -2,7 +2,7 @@
 
 function bs_download_pdf_sc($atts, $content = null) {
 	$attributes = [
-    'btn_text' => '',
+    'btn_text' => 'download PDF',
 		'btn_color' => '',
 		'email' => 'Email',
   ];
@@ -13,6 +13,7 @@ function bs_download_pdf_sc($atts, $content = null) {
 			'text' => $at['btn_text'],
 			'background' => $at['btn_color'],
 		],
+		'email' => $at['email'],
 		'country' => getCountry()
 	];
 	
@@ -35,23 +36,29 @@ add_action( 'vc_before_init', 'bs_download_pdf_vc' );
 
   function bs_download_pdf_vc() {
 		$params = [
-			[
-        "type" => "textarea_html",
-        "heading" => "Content",
-        "param_name" => "content",
-        "value" => ''
-			],
       [
         "type" => "textfield",
-        "heading" => "Title",
-        "param_name" => "btn_title",
+        "heading" => "btn Text",
+        "param_name" => "btn_text",
+        "value" => 'download PDF'
+			],
+			[
+        "type" => "textfield",
+        "heading" => "btn color",
+        "param_name" => "btn_color",
         "value" => ''
+			],
+				[
+        "type" => "textfield",
+        "heading" => "Email placeholder",
+        "param_name" => "email",
+        "value" => 'Email'
 			]
 		];
 
   	vc_map(
       array(
-        "name" =>  "BS download_pdf",
+        "name" =>  "BS form download pdf",
         "base" => "bs_download_pdf",
         "category" =>  "BS",
         "params" => $params
