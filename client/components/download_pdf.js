@@ -46,7 +46,7 @@ const DownloadPdf = React.createClass({
 		};
 
 		return (
-			<form onSubmit={this.handlepdf} className="form-inline">
+			<form onSubmit={this.handlepdf} className="form-inline download-pdf">
 			<div className="input-container">
 					<input 
 						type="text"
