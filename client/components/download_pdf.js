@@ -1,5 +1,6 @@
 import React from 'react';
 import request from 'axios';
+import isEmpty from 'validator/lib/isEmpty';
 import getCountries from '../lib/getCountries';
 import qs from 'qs';
 const endpoint = '/wp-admin/admin-ajax.php';
@@ -28,6 +29,26 @@ const DownloadPdf = React.createClass({
 			country
 		}
 	},
+	
+	validate() {
+    let errors = {};
+    let validations = Object.keys(this.state.errors).map(field => {
+      let val = isEmpty(field);
+      errors = {...errors, [field]: val};
+      return val;
+    });
+
+    this.setState({errors});
+
+    return Promise.all(validations);
+  },
+
+	isValid() {
+    return this
+      .validate()
+      .then(arr => arr.every(item => item == false))
+      .catch(err => console.error(err));
+  },
 
 	handlepdf(e) {
 		e.preventDefault();
@@ -41,13 +62,13 @@ const DownloadPdf = React.createClass({
     };
 
     let data = qs.stringify({action: 'mailchimp_subscribe', data: mc_data});
-
-		request
-		.post(endpoint, data)
-		.then(res => {
-			if (res.data.id) window.location = this.props.pdf_url;
-		});
-
+		if(isValid) {
+			request
+			.post(endpoint, data)
+			.then(res => {
+				if (res.data.id) window.location = this.props.pdf_url;
+			});
+		}
 	},
 
 	handleChange(field, e) {
