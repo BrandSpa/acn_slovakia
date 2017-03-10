@@ -187,7 +187,7 @@
 
 	@media #{$s} {
 		position: relative;
-		margin-bottom: 30%;
+		margin-bottom: 30% !important;
 	}
 
 	h3 {
