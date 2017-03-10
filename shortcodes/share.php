@@ -1,18 +1,8 @@
 <?php
 function bs_share_sc($atts, $content = null) {
-	$attributes = [
-		'content' => '',
-    'btn_title' => ''
-  ];
-
+	$attributes = [];
   $at = shortcode_atts( $attributes , $atts );
-	$props = [
-		'content' => $content,
-    'btnTitle' => $at['btn_title']
-	];
-	
 	$current_url = esc_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-
   ob_start();
 ?>
 
@@ -25,6 +15,7 @@ function bs_share_sc($atts, $content = null) {
 		<i class="ion-social-twitter"></i>
 	</a>
 </div>
+
 <?php
   return ob_get_clean();
 }

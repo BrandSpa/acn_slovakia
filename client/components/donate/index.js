@@ -4,6 +4,7 @@ import request from 'axios';
 import Amount from './amount';
 import CreditCard from './creditCard';
 import Contact from './contact';
+const endpoint = 'https://acninternational.org/wp-admin/admin-ajax.php';
 
 const Donate = React.createClass({
   getInitialState() {
@@ -32,17 +33,26 @@ const Donate = React.createClass({
     return {texts: {}, redirect: {}};
   },
 
+  componentWillMount() {
+    this.fetchCountries();
+  },
+
+  componentDidMount() {
+    this.donateForm.addEventListener('keydown', e => {
+      if (e.which == 9) {
+        e.preventDefault();
+        this.nextSection();
+      }
+    });
+  },
+
   fetchCountries() {
     const data = qs.stringify({action: 'countries'});
 
-    return request.post('/wp-admin/admin-ajax.php', data).then(res => {
+    return request.post(endpoint, data).then(res => {
       this.setState({countries: res.data});
       return res.data;
     });
-  },
-  
-  componentWillMount() {
-    this.fetchCountries();
   },
 
   handleChange(field) {
@@ -57,9 +67,15 @@ const Donate = React.createClass({
   stripeToken() {
     let data = qs.stringify({action: 'stripe_token', data: this.state.stripe});
 
-    return request.post('/wp-admin/admin-ajax.php', data).then(res => {
-      const stripe = {...this.state.stripe, token: res.data.id};
-      this.setState({stripe});
+    return request.post(endpoint, data).then(res => {
+        if(res.data.id) {
+          const stripe = {...this.state.stripe, token: res.data.id};
+          this.setState({loading: false, stripe});
+        }
+
+        if(res.data.stripeCode) {
+          this.setState({loading: false, declined: true});
+        }
     });
   },
 
@@ -71,6 +87,7 @@ const Donate = React.createClass({
       donation_type,
       stripe: {token}
     } = this.state;
+
     const data = {
       ...contact,
       currency,
@@ -78,10 +95,12 @@ const Donate = React.createClass({
       donation_type,
       stripe_token: token
     };
+    
     const dataAjax = qs.stringify({action: 'stripe_charge', data});
 
-    return request.post('/wp-admin/admin-ajax.php', dataAjax);
+    return request.post(endpoint, dataAjax);
   },
+
   completeTransaction(stripeResponse = {}) {
     const {amount, donation_type} = this.state;
     const base = this.props.redirect[donation_type];
@@ -136,12 +155,6 @@ const Donate = React.createClass({
     this.setState({section, left});
   },
 
-  handleTab(e) {
-    if(e.wich == 9) {
-      e.preventDefault();
-      this.nextSection();
-    }
-  },
 
   render() {
     let sectionWidth = `${100 / 3}%`;
@@ -158,7 +171,11 @@ const Donate = React.createClass({
     };
 
     return (
-      <form onSubmit={this.handleSubmit} onKeyDown={this.handleTab} className="donate_react">
+      <form 
+        onSubmit={this.handleSubmit} 
+        className="donate_react" 
+        ref={donate => this.donateForm = donate}
+      >
         <div className="donate_react__viewport" style={viewPortStyle}>
           <Amount
             {...this.state}
@@ -166,6 +183,7 @@ const Donate = React.createClass({
             width={sectionWidth}
             onChange={this.handleChange}
           />
+
           <CreditCard
             ref={creditCard => this.creditCard = creditCard}
             {...this.state}
@@ -173,6 +191,7 @@ const Donate = React.createClass({
             width={sectionWidth}
             onChange={this.handleChange}
           />
+
           <Contact
             ref={contact => this.contact = contact}
             {...this.state}
