@@ -81,11 +81,6 @@
 	margin: 40px 0 40px 0;
 	margin-bottom: 40px !important;
 	 
-	@media #{$s} {
-		margin: 0 auto;
-		width: 50%;
-	}
-
 	&__container {
 		&--fixed {
 			position: fixed;
@@ -95,6 +90,11 @@
 			left: 0;
 			z-index: 1020;
 			padding: 15px 0;
+
+			.via-crucis-nav {
+				margin: 0 auto;
+				width: 50%;
+			}
 		}
 		
 		&--open {
