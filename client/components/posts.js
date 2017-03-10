@@ -2,7 +2,7 @@ import React from 'react';
 import qs from 'qs';
 import request from 'axios';
 import Minigrid from 'minigrid';
-import debounce from '../lib/debounce';
+import debounce from 'lodash/debounce';
 import Post from './post';
 
 const Posts = React.createClass({
