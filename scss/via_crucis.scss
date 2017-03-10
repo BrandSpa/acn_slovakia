@@ -121,7 +121,7 @@
 			 padding-bottom: 0;
 			 
 			 &:before {
-				 top: 8px !important;
+				 top: 0px !important;
 			 }
 		 }
 		 
@@ -134,7 +134,7 @@
 			 &:before {
 			 content: '+';
 			 position: absolute;
-			 left: -6px;
+			 left: -6.5px;
 			 top: 0;
 			 color: #9B9B9B;
 			 font-size: 24px;

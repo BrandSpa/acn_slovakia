@@ -229,7 +229,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .via-crucis-nav__container--open{display:block !important}@media(max-width:767px){.via-crucis-nav__container{display:none}
 }.via-crucis-nav li{position:relative;padding:5px 0 5px 20px}.via-crucis-nav li:first-child{padding-top:0}
 .via-crucis-nav li:first-child:before{top:-8px !important}.via-crucis-nav li:last-child{padding-bottom:0}
-.via-crucis-nav li:last-child:before{top:8px !important}.via-crucis-nav li.active--face a{color:#381755 !important}
+.via-crucis-nav li:last-child:before{top:0 !important}.via-crucis-nav li.active--face a{color:#381755 !important}
 .via-crucis-nav li.active--face:before{color:#381755 !important}.via-crucis-nav li.active--i a{color:#674886 !important}
 .via-crucis-nav li.active--i:before{color:#674886 !important}.via-crucis-nav li.active--ii a{color:#142854 !important}
 .via-crucis-nav li.active--ii:before{color:#142854 !important}.via-crucis-nav li.active--iii a{color:#124e7d !important}
@@ -245,7 +245,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .via-crucis-nav li.active--xii:before{color:#f66a23 !important}.via-crucis-nav li.active--xiii a{color:#a30b1b !important}
 .via-crucis-nav li.active--xiii:before{color:#a30b1b !important}.via-crucis-nav li.active--xiv a{color:#dd2717 !important}
 .via-crucis-nav li.active--xiv:before{color:#dd2717 !important}.via-crucis-nav li.active--pray a{color:#f35e72 !important}
-.via-crucis-nav li.active--pray:before{color:#f35e72 !important}.via-crucis-nav li.active:before,.via-crucis-nav li:hover:before{content:'+';position:absolute;left:-6px;top:0;color:#9b9b9b;font-size:24px;transition:all 300ms}
+.via-crucis-nav li.active--pray:before{color:#f35e72 !important}.via-crucis-nav li.active:before,.via-crucis-nav li:hover:before{content:'+';position:absolute;left:-6.5px;top:0;color:#9b9b9b;font-size:24px;transition:all 300ms}
 .via-crucis-nav li a{color:#9b9b9b}.via-crucis__left .vc_column-inner{padding:40px 20px 0 20px;padding-top:40px !important;min-height:700px}
 @media(max-width:767px){.via-crucis__left .vc_column-inner{height:auto;min-height:auto;padding:20px}
 }.via-crucis__right .vc_column-inner{min-height:700px;padding:40px 20px 0 20px}@media(max-width:767px){.via-crucis__right .vc_column-inner{height:auto;min-height:auto;padding:20px}
