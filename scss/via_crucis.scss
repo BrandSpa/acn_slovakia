@@ -81,6 +81,11 @@
 	margin: 40px 0 40px 0;
 	margin-bottom: 40px !important;
 	
+	@media #{$s} {
+		margin: 0 auto;
+		width: 50%;
+	}
+
 	&__container {
 		&--fixed {
 			position: fixed;
