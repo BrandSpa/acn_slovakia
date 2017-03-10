@@ -110,7 +110,7 @@ const DownloadPdf = React.createClass({
 						onChange={this.handleChange.bind(null, 'country')}
 						value={this.state.country || this.props.country}
 					>
-						{countries.map(country => <option value={country}>{country}</option>)}
+						{countries.map((country, i) => <option key={i} value={country}>{country}</option>)}
 					</select>
 				</div>
 				<button 
