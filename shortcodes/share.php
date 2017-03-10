@@ -30,3 +30,17 @@ function bs_share_sc($atts, $content = null) {
 }
 
 add_shortcode( 'bs_share', 'bs_share_sc' );
+add_action( 'vc_before_init', 'bs_share_vc' );
+
+  function bs_share_vc() {
+		$params = [];
+
+  	vc_map(
+      array(
+        "name" =>  "BS share",
+        "base" => "bs_share",
+        "category" =>  "BS",
+        "params" => $params
+      ) 
+    );
+  }
