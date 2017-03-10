@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from 'sinon';
-import HeaderSlider from "../../components/header_slider";
+import HeaderSlider from "../../components/headerSlider";
 
 describe("header slider component", () => {
 	it('should render as expected', () => {

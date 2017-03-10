@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import moxios from 'moxios';
-import ContactForm from "../../components/contact_form";
+import ContactForm from "../../components/contactForm";
 
 describe("component ContactForm", () => {
   beforeEach(() => {

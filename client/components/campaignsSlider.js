@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionVideo from './section_video';
+import SectionVideo from './sectionVideo';
 
 const CampaignsSlider = React.createClass({
   getInitialState() {

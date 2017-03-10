@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import Projects from "../../components/projects";
-import ProjectsIcons from "../../components/projects_icons";
+import ProjectsIcons from "../../components/projectsIcons";
 
 describe('component projects', () => {
 

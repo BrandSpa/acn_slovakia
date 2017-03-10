@@ -1,9 +1,8 @@
 import React from 'react';
 import request from 'axios';
+import qs from 'qs';
 import isEmail from 'validator/lib/isEmail';
 import getCountries from '../lib/getCountries';
-import qs from 'qs';
-
 const endpoint = '/wp-admin/admin-ajax.php';
 
 const DownloadPdf = React.createClass({

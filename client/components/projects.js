@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ProjectsIcons from './projects_icons';
+import ProjectsIcons from './projectsIcons';
+
 const backgroundColors = {
   1: '#b91325',
   2: '#00355f',

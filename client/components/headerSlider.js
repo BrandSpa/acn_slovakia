@@ -1,5 +1,5 @@
 import React from 'react';
-import Slide from './header_slide';
+import Slide from './headerSlide';
 
 const headerSlider = React.createClass({
   getInitialState() {

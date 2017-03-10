@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoModal from './video_modal';
+import VideoModal from './videoModal';
 
 const SectionVideo = React.createClass({
   getDefaultProps() {
