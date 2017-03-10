@@ -297,6 +297,11 @@ button, .btn {
 	width: 290px;
 	float: right;
 
+	@media #{$s} {
+		margin: 0 auto;
+		float: none;
+	}
+
 	a {
 		display: block;
 		float: left;
