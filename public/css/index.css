@@ -72,7 +72,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 @media(max-width:767px){.download-pdf{width:auto}}@media(min-width:992px) and (max-width:1199px),(min-width:1200px){.download-pdf .input-container{width:35%}
 }.download-pdf button{margin-left:-2px;border-radius:3px}@media(min-width:992px) and (max-width:1199px),(min-width:1200px){.download-pdf button{width:30%}
 }@media(max-width:767px){.download-pdf button{margin-left:15px}}.download-pdf input,.download-pdf select{width:100%}
-.bs-share{border:1px solid #3c515f;height:90px;width:290px}.bs-share a{display:block;float:left;width:50%;text-align:center;font-size:38px;height:90px;color:#9b9b9b;padding-top:25px}
+.bs-share{border:1px solid #3c515f;height:90px;width:290px;float:right}.bs-share a{display:block;float:left;width:50%;text-align:center;font-size:38px;height:90px;color:#9b9b9b;padding-top:25px}
 .bs-share a:first-child{border-right:1px solid #3c515f}.nav{height:120px;width:100%;padding:15px 60px 0 60px;background:#fff;z-index:9999;position:fixed;top:0}
 @media(max-width:767px){.nav{padding:0;text-align:center;height:100px}}@media(max-width:767px){.nav__donate{padding:0 20px}
 }.nav__donate a{font-size:1.33333em !important;border-radius:5px;border:2px solid #f1364e;padding:15px 40px;text-align:center;display:block;color:#f1364e !important}
