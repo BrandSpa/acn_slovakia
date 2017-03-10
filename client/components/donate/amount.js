@@ -1,5 +1,5 @@
 import React from 'react';
-import AmountBtns from './amount_btns';
+import AmountBtns from './amountBtns';
 import {onlyNum} from '../../lib/clean_inputs';
 
 const amount = React.createClass({

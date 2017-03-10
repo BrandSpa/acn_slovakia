@@ -2,7 +2,7 @@ import React from 'react';
 import qs from 'qs';
 import request from 'axios';
 import Amount from './amount';
-import CreditCard from './credit_card';
+import CreditCard from './creditCard';
 import Contact from './contact';
 
 const Donate = React.createClass({
