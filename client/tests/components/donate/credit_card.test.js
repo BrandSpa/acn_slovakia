@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CreditCard from '../../../components/donate/credit_card';
+import CreditCard from '../../../components/donate/creditCard';
 
 describe('donate amount component', () => {
 	it("should return stripe number", () => {

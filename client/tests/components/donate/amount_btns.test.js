@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import AmountBtns from '../../../components/donate/amount_btns';
+import AmountBtns from '../../../components/donate/amountBtns';
 
 describe('donate amount btns component', () => {
 

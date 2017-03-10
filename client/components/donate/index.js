@@ -4,6 +4,7 @@ import request from 'axios';
 import Amount from './amount';
 import CreditCard from './creditCard';
 import Contact from './contact';
+import sendTransaction from '../../lib/sendTransaction';
 const endpoint = 'https://acninternational.org/wp-admin/admin-ajax.php';
 
 const Donate = React.createClass({
@@ -95,7 +96,7 @@ const Donate = React.createClass({
       donation_type,
       stripe_token: token
     };
-    
+
     const dataAjax = qs.stringify({action: 'stripe_charge', data});
 
     return request.post(endpoint, dataAjax);
@@ -105,20 +106,12 @@ const Donate = React.createClass({
     const {amount, donation_type} = this.state;
     const base = this.props.redirect[donation_type];
     const {customer, id} = stripeResponse;
-
-    if (typeof ga !== 'undefined') {
-      ga('ecommerce:addTransaction', {
-        id: `${this.contact.email}-${id}`,
-        affiliation: 'ACN International',
-        revenue: amount,
-        currency: 'USD'
-      });
-
-      ga('ecommerce:send');
-    }
-
-    let url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
-    window.location = url;
+    const order = {id: `${this.contact.email}-${id}`, amount};
+    sendTransaction(order)
+      .then(() => {
+        let url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
+        window.location = url;
+      })   
   },
 
   creditCardIsValid() {
@@ -145,7 +138,12 @@ const Donate = React.createClass({
     }
 
     let left = `-${section * 100}%`;
-    this.setState({section, left});
+
+    if(this.state.section == 0) {
+      this.setState({section, left, loading: false});
+    } else {
+      this.setState({section, left});
+    } 
   },
 
   prevSection(e) {
