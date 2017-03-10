@@ -211,3 +211,12 @@
 		display: block;
 	}
 }
+
+.via-crucis__hashtag {
+	color: #c3c3c3; 
+	letter-spacing: 5px; 
+	margin-top: 25px;
+	@media #{$s} {
+		text-align: center;
+	}
+}
