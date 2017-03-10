@@ -301,8 +301,14 @@ button, .btn {
 		float: left;
 		width: 50%;
 		text-align: center;
-		font-size: 32px;
+		font-size: 38px;
 		height: 90px;
+		color: #9B9B9B;
+		padding-top: 25px;
+
+		&:first-child {
+			border-right:  1px solid #3C515F;
+		}
 	}
 }
 
