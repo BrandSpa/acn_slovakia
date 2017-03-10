@@ -18,6 +18,7 @@ import setMenuMobile from './lib/set_menu_mobile';
 import donateRedirect from './lib/donate_redirect';
 import smoothScroll from './lib/smoothScroll';
 import scrollViaCrucisNav from './lib/scrollViaCrucisNav';
+import toggleViaCrucisNav from './lib/toggleViaCrucisNav';
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
