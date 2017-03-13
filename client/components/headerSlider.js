@@ -64,7 +64,7 @@ const headerSlider = React.createClass({
         >
           {slides.map((slide, i) => {
             slide = {...slide, width: slideWidth, height: sliderHeight};
-            return <Slide key={i} {...slide} {...this.props} />;
+            return <Slide key={i} {...slide} />;
           })}
         </div>
         {slides.length > 1 ? 
