@@ -12,7 +12,15 @@
 		<?php endif; ?>
 
 		<div class="bs-post__recent__content">
-			<h4><a href="<?php echo get_permalink($recent->ID) ?>"><?php echo substr($recent->post_title, 0, 40) ?>...</></h4>
+			<h4>
+				<a href="<?php echo get_permalink($recent->ID) ?>">
+				<?php if(is_mobile()) : ?>
+					<?php echo substr($recent->post_title, 0, 70) ?>...
+				<?php else: ?>
+					<?php echo $recent->post_title ?>
+				<?php endif; ?>
+				</a>
+			</h4>
 			<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, 80) ?>...</p>
 			<a href="<?php echo get_permalink($recent->ID) ?>"><?php echo gett('Read more') ?>...</a>
 		</div>
