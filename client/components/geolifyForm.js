@@ -17,7 +17,7 @@ const GeolifyForm = React.createClass({
 	},
 
 	componentDidMount() {
-		this.setState({...this.props});
+		this.setState({...this.state, ...this.props});
 	},
 
 	handleChange(ind, type, e) {
