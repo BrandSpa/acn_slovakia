@@ -15,6 +15,11 @@ const Post = React.createClass({
 	render() {
 		const { post, type, read_more } = this.props;
 		const img = post.post_image ? <img src={post.post_image} onLoad={this.handleImageLoaded} /> : '';
+		let title = post.post_title;
+		console.log('is mobile', window.innerWidth <= '767');
+		if(window.innerWidth <= '767') {
+			title = post.post_title.substring(0, 70) + '...';
+		}
 
 		return (
 			<div className={type == 'main' ? 'grid-item grid-item--main' : 'grid-item'}>
@@ -28,7 +33,7 @@ const Post = React.createClass({
 									}
 									style={img == '' ? {width: '100%'} : {} }
 							>
-									<h5><a href={post.post_permalink}>{ post.post_title ? post.post_title.substring(0, 70) + '...' : ''}</a></h5>
+									<h5><a href={post.post_permalink}>{ title }</a></h5>
 									<p>{`${post.post_short}...`}</p>
 									<a href={post.post_permalink} className="grid-item__content__texts__readmore">{read_more}...</a>
 							</div>

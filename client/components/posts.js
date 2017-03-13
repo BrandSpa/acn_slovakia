@@ -9,6 +9,7 @@ const Posts = React.createClass({
   getInitialState() {
     return {posts: [], paged: 1, seeMore: true};
   },
+
   componentWillMount() {
     let data = qs.stringify({action: 'get_posts'});
 
@@ -19,6 +20,7 @@ const Posts = React.createClass({
       })
       .catch(err => console.error(err));
   },
+  
   componentDidUpdate: function() {
     this.initGrid();
   },
