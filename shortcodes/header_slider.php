@@ -75,12 +75,6 @@ function bs_header_slider_sc($atts, $content = null) {
         "value" => 5000
       ],
       [
-        "type" => "textfield",
-        "heading" => "enter anchor",
-        "param_name" => "anchor",
-        "value" => "#"
-      ],
-      [
         'type' => 'param_group',
         'value' => '',
         'param_name' => 'slides',
