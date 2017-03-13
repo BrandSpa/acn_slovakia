@@ -7,7 +7,7 @@ export default function smoothScroll() {
 
       const hash = this.hash;
       const less = $('.nav') ? $('.nav').height() : 0;
-      const scrollTop = ($(hash).offset().top - less);
+      const scrollTop = $(hash) ? ($(hash).offset().top - less) : 0;
      
       $('html, body').animate({ scrollTop }, 800, () => {});
 
