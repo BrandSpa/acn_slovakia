@@ -3,8 +3,7 @@
 function bs_header_slider_sc($atts, $content = null) {
 	$attributes = [ 
     'slides' => '',
-		'interval' => 5000,
-    'anchor' => '#'
+		'interval' => 5000
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -21,8 +20,7 @@ function bs_header_slider_sc($atts, $content = null) {
   class="header-slider" 
   data-props='{
     "slides": <?php echo json_encode($slides) ?>, 
-    "interval": "<?php echo $at["interval"] ?>",
-    "anchor": "<?php echo $at["anchor"] ?>"
+    "interval": "<?php echo $at["interval"] ?>"
   }'
 ></div>
 
@@ -35,7 +33,6 @@ function bs_header_slider_sc($atts, $content = null) {
 
   function bs_header_slider_vc() {
     $subparams = [
-
       [
         "type" => "attach_image",
         "heading" => "enter image",
@@ -55,6 +52,12 @@ function bs_header_slider_sc($atts, $content = null) {
         "type" => "textfield",
         "heading" => "enter url",
         "param_name" => "url"
+      ],
+      [
+        "type" => "textfield",
+        "heading" => "Enter anchor",
+        "param_name" => "anchor",
+        "value" => "#contact"
       ],
       [
         "type" => "checkbox",
