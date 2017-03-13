@@ -24,6 +24,7 @@
     "lodash": "^4.17.4",
     "minigrid": "^3.1.1",
     "qs": "^6.3.0",
+    "radium": "^0.18.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-multiple-render": "^1.0.7",

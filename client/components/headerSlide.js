@@ -2,6 +2,7 @@ import React from 'react';
 import VideoModal from './videoModal';
 
 const headerSlide = React.createClass({
+
   handleLink(e) {
     e.preventDefault();
     if (this.props.is_video) return this.modal.show();
@@ -32,7 +33,8 @@ const headerSlide = React.createClass({
             />
             : ''
         }
-        <div className="slider__slide" style={style} onClick={this.handleLink}></div>
+
+        <div className="slider__slide" style={style} onClick={this.handleLink}>
           <div className="slider__slide__content col-6-l col-12-m">
             <h2>{title}</h2>
             <h4>{subtitle}</h4>
@@ -54,8 +56,10 @@ const headerSlide = React.createClass({
                       <use id="Rectangle-Copy" stroke="#F1364E" mask="url(#mask-4)" strokeWidth="4" transform="translate(9.943348, 10.088390) rotate(-315.000000) translate(-9.943348, -10.088390) " xlinkHref="#path-3"></use>
                   </g>
               </svg>
+
             </a>
           </div>
+      </div>
       </div>
     );
   }
