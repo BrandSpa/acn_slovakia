@@ -45,6 +45,7 @@ function bs_header_slider_sc($atts, $content = null) {
           "center",
           "left",
           "right"
+        ]
       ],
       [
         "type" => "textfield",
