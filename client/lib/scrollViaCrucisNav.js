@@ -6,9 +6,9 @@ export default function scrollViaCrucisNav() {
     const $nav = $('.nav');
     const $viaCrucisNav =  $('.via-crucis-nav__container');
     const $navToggle = $('.via-crucis-toggle');
-    let navTop = $nav.offset().top;
-    let viaCrucisToggleTop = $navToggle.offset().top; 
-    let viaCrucisLeft = $('.via-crucis__left').offset().top;
+    let navTop = $nav ? $nav.offset().top : 0;
+    let viaCrucisToggleTop = $navToggle ? $navToggle.offset().top : 0; 
+    let viaCrucisLeft = $('.via-crucis__left') ? $('.via-crucis__left').offset().top : 0;
 
     if(navTop > viaCrucisLeft) {
       $navToggle.addClass('via-crucis-toggle--fixed');
