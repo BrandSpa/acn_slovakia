@@ -4,7 +4,8 @@
         "stripe/stripe-php": "^4.1",
         "infusionsoft/php-sdk": "^1.2",
         "geoip2/geoip2": "~2.0",
-        "nielse63/phpimagecache": "^1.0"
+        "nielse63/phpimagecache": "^1.0",
+        "mobiledetect/mobiledetectlib": "^2.8"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.8",
