@@ -16,9 +16,7 @@ const headerSlide = React.createClass({
 
     let style = {
       backgroundImage: bg,
-      backgroundSize: 'cover',
       backgroundPosition: 'center',
-      cursor: 'pointer',
       width,
       height
     };
@@ -34,7 +32,8 @@ const headerSlide = React.createClass({
             : ''
         }
 
-        <div className="slider__slide" style={style} onClick={this.handleLink}>
+        <div className="slider__slide" style={style}>
+          <a href="#" className="slider__slide__link-zone" onClick={this.handleLink}></a>
             <a href={this.props.anchor} className="slider__slide__anchor">
               <svg width="50px" height="57px" viewBox="178 602 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg">
                   <defs>
