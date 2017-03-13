@@ -27907,7 +27907,7 @@ function scrollViaCrucisNav() {
     }
   }, 200);
 
-  if ($('.via-crucis-toggle') && $('.nav') && window.outerHeight <= 767) {
+  if ($('.via-crucis-toggle').length > 0 && $('.nav').length > 0 && window.outerHeight <= 767) {
     window.addEventListener('scroll', onScroll);
   }
 }
