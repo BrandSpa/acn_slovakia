@@ -39,6 +39,14 @@ function bs_header_slider_sc($atts, $content = null) {
         "param_name" => "image"
       ],
       [
+        "type" => "dropdown",
+        "heading" => "image position",
+        "value" => [
+          "center",
+          "left",
+          "right"
+      ],
+      [
         "type" => "textfield",
         "heading" => "enter title",
         "param_name" => "title"
@@ -64,6 +72,8 @@ function bs_header_slider_sc($atts, $content = null) {
         "heading" => "is a video?",
         "param_name" => "is_video",
         "value" => false
+      ],
+   
       ]
     ];
 
