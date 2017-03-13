@@ -74,8 +74,7 @@ function bs_header_slider_sc($atts, $content = null) {
         "param_name" => "is_video",
         "value" => false
       ],
-   
-      ]
+  
     ];
 
     $params = [
