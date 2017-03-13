@@ -8,15 +8,19 @@
     position: relative;
     transition: left 400ms ease;
 		overflow: hidden;
+
 		@media #{$s} {
-			height: 200px;
+			height: 200px !important;
 		}
-		
+
 		&__viewport {
     	width: 100%;
     	position: relative;
   		transition: left 400ms ease;
     	height: 520px;
+			@media #{$s} {
+				height: 200px !important;
+			}
   	}
 		
 		&__slide {
