@@ -1,4 +1,9 @@
-  .slider {
+@keyframes moveAnchor {
+    from {bottom: 5px;}
+    to {top: 30px;}
+}
+
+.slider {
   	 width: 100%;
     position: relative;
     transition: left 400ms ease;
@@ -28,8 +33,9 @@
 				bottom: 40px;
 				left: 0;
 				right: 0;
+				animation: moveAnchor 1s linear 1s infinite alternate;
 			}
-ı
+
 			&__content {
 				position: absolute;
 				bottom: 0;
