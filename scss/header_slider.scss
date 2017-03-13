@@ -23,9 +23,13 @@
 			&__anchor {
 				display: block;
 				margin: 0 auto;
-				width: 20px;
+				width: 50px;
+				position: absolute;
+				bottom: 40px;
+				left: 0;
+				right: 0;
 			}
-
+ı
 			&__content {
 				position: absolute;
 				bottom: 0;
