@@ -8,7 +8,10 @@
     position: relative;
     transition: left 400ms ease;
 		overflow: hidden;
-
+		@media #{$s} {
+			height: 200px;
+		}
+		
 		&__viewport {
     	width: 100%;
     	position: relative;
