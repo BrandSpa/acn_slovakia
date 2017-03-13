@@ -106,7 +106,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 }.bs-footer__menu li a{color:#3c515f}.bs-footer .privacy-terms{text-align:right}@media(max-width:767px){.bs-footer .privacy-terms{text-align:center}
 }.learn-more{background:rgba(241,54,78,1);padding:30px;float:left;width:100%;text-align:center}
 .learn-more-link{font-size:1.86667em;text-align:center;display:block;width:70%;margin:0 auto;text-decoration:none;color:#fff;text-transform:uppercase}
-@keyframes moveAnchor{from{bottom:5px}to{top:30px}}.slider{width:100%;position:relative;transition:left 400ms ease;overflow:hidden}
+@keyframes moveAnchor{from{bottom:40px}to{bottom:10px}}.slider{width:100%;position:relative;transition:left 400ms ease;overflow:hidden}
 .slider__viewport{width:100%;position:relative;transition:left 400ms ease;height:520px}
 .slider__slide{width:100%;background:#274f5e;float:left;position:relative}@media(max-width:767px){.slider__slide{height:200px !important}
 }.slider__slide__anchor{display:block;margin:0 auto;width:50px;position:absolute;bottom:40px;left:0;right:0;animation:moveAnchor 1s linear 1s infinite alternate}
