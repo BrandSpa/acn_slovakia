@@ -27890,25 +27890,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function scrollViaCrucisNav() {
   var onScroll = (0, _debounce2.default)(function () {
-    if ($('.via-crucis-toggle') && $('.nav') && window.outerHeight <= 767) {
-      var $nav = $('.nav');
-      var $viaCrucisNav = $('.via-crucis-nav__container');
-      var $navToggle = $('.via-crucis-toggle');
-      var navTop = $nav ? $nav.offset().top : 0;
-      var viaCrucisToggleTop = $navToggle ? $navToggle.offset().top : 0;
-      var viaCrucisLeft = $('.via-crucis__left') ? $('.via-crucis__left').offset().top : 0;
 
-      if (navTop > viaCrucisLeft) {
-        $navToggle.addClass('via-crucis-toggle--fixed');
-        $viaCrucisNav.addClass('via-crucis-nav__container--fixed');
-      } else {
-        $navToggle.removeClass('via-crucis-toggle--fixed');
-        $viaCrucisNav.removeClass('via-crucis-nav__container--fixed');
-      }
+    var $nav = $('.nav');
+    var $viaCrucisNav = $('.via-crucis-nav__container');
+    var $navToggle = $('.via-crucis-toggle');
+    var navTop = $nav ? $nav.offset().top : 0;
+    var viaCrucisToggleTop = $navToggle ? $navToggle.offset().top : 0;
+    var viaCrucisLeft = $('.via-crucis__left') ? $('.via-crucis__left').offset().top : 0;
+
+    if (navTop > viaCrucisLeft) {
+      $navToggle.addClass('via-crucis-toggle--fixed');
+      $viaCrucisNav.addClass('via-crucis-nav__container--fixed');
+    } else {
+      $navToggle.removeClass('via-crucis-toggle--fixed');
+      $viaCrucisNav.removeClass('via-crucis-nav__container--fixed');
     }
   }, 200);
 
-  window.addEventListener('scroll', onScroll);
+  if ($('.via-crucis-toggle') && $('.nav') && window.outerHeight <= 767) {
+    window.addEventListener('scroll', onScroll);
+  }
 }
 
 /***/ }),

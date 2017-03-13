@@ -2,7 +2,7 @@ import debounce from 'lodash/debounce';
 
 export default function scrollViaCrucisNav() {
 	let onScroll = debounce(() => {
-  if($('.via-crucis-toggle') && $('.nav') && window.outerHeight <= 767) {
+  
     const $nav = $('.nav');
     const $viaCrucisNav =  $('.via-crucis-nav__container');
     const $navToggle = $('.via-crucis-toggle');
@@ -18,8 +18,10 @@ export default function scrollViaCrucisNav() {
       $viaCrucisNav.removeClass('via-crucis-nav__container--fixed');
     }
 
-  }
+ 
 }, 200);
 
-window.addEventListener('scroll', onScroll);
+  if($('.via-crucis-toggle') && $('.nav') && window.outerHeight <= 767) {
+    window.addEventListener('scroll', onScroll);
+  }
 }
