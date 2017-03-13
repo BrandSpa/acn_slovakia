@@ -27890,7 +27890,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function scrollViaCrucisNav() {
   var onScroll = (0, _debounce2.default)(function () {
-    if ($('.via-crucis-nav') && $('.nav') && window.outerHeight <= 767) {
+    if ($('.via-crucis-toggle') && $('.nav') && window.outerHeight <= 767) {
       var $nav = $('.nav');
       var $viaCrucisNav = $('.via-crucis-nav__container');
       var $navToggle = $('.via-crucis-toggle');

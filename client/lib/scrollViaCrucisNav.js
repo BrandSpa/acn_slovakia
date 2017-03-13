@@ -2,7 +2,7 @@ import debounce from 'lodash/debounce';
 
 export default function scrollViaCrucisNav() {
 	let onScroll = debounce(() => {
-  if($('.via-crucis-nav') && $('.nav') && window.outerHeight <= 767) {
+  if($('.via-crucis-toggle') && $('.nav') && window.outerHeight <= 767) {
     const $nav = $('.nav');
     const $viaCrucisNav =  $('.via-crucis-nav__container');
     const $navToggle = $('.via-crucis-toggle');
