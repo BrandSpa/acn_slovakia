@@ -41,6 +41,7 @@ function bs_header_slider_sc($atts, $content = null) {
       [
         "type" => "dropdown",
         "heading" => "image position",
+        "param_name" => "image_position",
         "value" => [
           "center",
           "left",
