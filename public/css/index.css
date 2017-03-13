@@ -85,7 +85,7 @@ button:focus,.btn:focus{outline:0}.bs-see-more{margin:30px auto;background:trans
 .menu--mobile li a{display:block;padding:10px 0;color:#fff;font-size:1.5em}@media(max-width:767px){.menu{display:none}
 }.menu li{list-style:none;display:inline-block;margin-right:40px}.menu li a{color:#3c515f;text-decoration:none;font-size:16px;font-weight:bold;font-style:normal;font-stretch:normal;line-height:1.5}
 .header-banner{background:#f1364e;font-size:2em;text-align:center;color:#fff;padding:20px 0;float:none;margin:0 auto;margin-bottom:-40px !important;z-index:1010;text-transform:uppercase}
-@media(max-width:767px){.header-banner{font-size:1.3em;padding:10px;margin:-40px 0 0 0 !important}
+@media(max-width:767px){.header-banner{font-size:1.3em;padding:10px;margin:0 !important;min-height:80px}
 }.bs-about__left{text-align:right;padding:40px 0 0 0}@media(max-width:767px){.bs-about__left{text-align:center}
 }.bs-about__right{padding:40px}@media(max-width:767px){.bs-about__right{text-align:center}
 }.bs-about__right h3{color:rgba(241,54,78,1);display:inline-block;padding-bottom:20px}
