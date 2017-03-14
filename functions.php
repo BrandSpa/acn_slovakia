@@ -44,6 +44,7 @@ require('lib/clean_menu.php');
 require('lib/space_to_lodash.php');
 require('lib/translation.php');
 require('lib/is_mobile.php');
+require('lib/infusionsoft.php');
 
 //translations
 require('translations/index.php');
