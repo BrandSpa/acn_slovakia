@@ -133,6 +133,7 @@ add_action( 'wp_ajax_infusion_contact', 'infusion_contact' );
 
 function infusion_contact() {
   $data = $_POST['data'];
+  try {
   $key = get_option('infusionsoft_key');
   $subdomain = get_option('infusionsoft_subdomain');
 
@@ -167,7 +168,7 @@ function infusion_contact() {
   $dataTags = $data['tags'] ? explode(',',  $data['tags']) : [];
   $tags = array_merge($tags, $defaultTags, $countryTag, $dataTags);
 
-  try {
+
     
     $infusionsoft = new Infusionsoft($subdomain, $key);
     $name = explode(" ", $data['name']);
