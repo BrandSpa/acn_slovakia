@@ -2,11 +2,6 @@
 $dir_base =  str_replace('apis', '', __DIR__);
 require $dir_base . 'vendor/autoload.php';
 
-function infusion_create_contact() {
-    
-}
-
-
 function infusion_get_countries_tags($country = '') {
 	$countries = [
     'Australia' => '822',
@@ -32,7 +27,7 @@ function infusion_get_countries_tags($country = '') {
     'Switzerland' => '862'
   ];
 
-	return array_key_exists($country, $countryTags) ? [$countryTags[$country]] : [];
+	return array_key_exists($country, $countryTags) ? [ $countryTags[$country] ] : [];
 }
 
 function get_arr($str_to_explode = '', $default = '') {
