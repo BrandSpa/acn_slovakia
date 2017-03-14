@@ -30,7 +30,11 @@ add_action('init', 'modify_jquery');
 function deactivate_plugin_conditional() {
 	if(is_plugin_active('mpc-massive/mpc-massive.php')) {
 		deactivate_plugins('mpc-massive/mpc-massive.php'); 
-	}   	
+	} 
+
+	if(is_plugin_active('conditional-menus/init.php')) {
+		deactivate_plugins('conditional-menus/init.php'); 
+	}
 }
 
 add_action( 'init', 'deactivate_plugin_conditional' );
