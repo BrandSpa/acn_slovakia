@@ -10,10 +10,8 @@
 	<?php require('templates/post_header.php') ?>
 <?php endif; ?>
 
-
-
-	<div class="l-wrap">
-	<div class="breadcrumbs" style="margin-top: 20px" typeof="BreadcrumbList" vocab="https://schema.org/">
+<div class="l-wrap">
+	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if(function_exists('bcn_display'))
     {
         bcn_display();
