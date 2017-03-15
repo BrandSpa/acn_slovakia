@@ -296,6 +296,7 @@ button, .btn {
 	height: 85px;
 	width: 220px;
 	float: right;
+	margin-right: 30px;
 
 	@media #{$s} {
 		margin: 0 auto;
