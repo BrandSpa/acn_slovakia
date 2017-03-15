@@ -319,6 +319,13 @@ button, .btn {
 	}
 }
 
+.breadcrumbs {
+	color: #b9b9b9;
+	a {
+		color: #b5b5b5;
+	}
+}
+
 @import 'menu';
 @import 'header';
 @import 'footer';
