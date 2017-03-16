@@ -14,7 +14,7 @@ function bs_download_pdf_sc($atts, $content = null) {
 		'btn_color' => '',
 		'email' => 'Email',
 		'validation_email' => 'Email required',
-		'pdf_url' => $pdfs[get_lang()]
+		'pdf_url' => $pdfs[get_lang()] ? $pdfs[get_lang()] : ''
   ];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -80,7 +80,7 @@ add_action( 'vc_before_init', 'bs_download_pdf_vc' );
         "type" => "textfield",
         "heading" => "PDF url",
         "param_name" => "pdf_url",
-        "value" => $pdfs[get_lang()]
+        "value" => $pdfs[get_lang()] ? $pdfs[get_lang()] : ''
 			]
 		];
 
