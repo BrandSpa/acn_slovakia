@@ -1,15 +1,24 @@
 <?php
 
 function bs_download_pdf_sc($atts, $content = null) {
+
+  $pdfs = [
+    "en" => "http://acninternational.org/wp-content/uploads/2017/03/via_crucis_final_ENGLISH.pdf",
+    "es" => "http://acninternational.org/wp-content/uploads/2017/03/via_crucis_final_SPANISH.pdf",
+    "fr" => "http://acninternational.org/wp-content/uploads/2017/03/via_crucis_final_FRENCH.pdf",
+    "de" => "http://acninternational.org/wp-content/uploads/2017/03/via_crucis_final_GERMAN.pdf"
+ ];
+
 	$attributes = [
     'btn_text' => 'download PDF',
 		'btn_color' => '',
 		'email' => 'Email',
 		'validation_email' => 'Email required',
-		'pdf_url' => ''
+		'pdf_url' => $pdfs[get_lang()]
   ];
 
   $at = shortcode_atts( $attributes , $atts );
+
 
 	$props = [
 		'btn' => [
@@ -71,7 +80,7 @@ add_action( 'vc_before_init', 'bs_download_pdf_vc' );
         "type" => "textfield",
         "heading" => "PDF url",
         "param_name" => "pdf_url",
-        "value" => ''
+        "value" => $pdfs[get_lang()]
 			]
 		];
 
