@@ -1,8 +1,11 @@
 <?php
-/*
-Gallery Post Template: to show gallery on header post
-Description: This part is optional, but helpful for describing the Post Template
-*/
+/**
+ * Template Name: Gallery Header
+ *
+ * @package WordPress
+ * @since acn_int 1.0
+ */
+
 ?>
 
 <?php get_header() ?>
