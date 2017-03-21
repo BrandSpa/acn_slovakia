@@ -16,7 +16,7 @@
 		$('.video__header').height(h);
 		var titleH = $('.video__header-title').height();
 		console.log(titleH);
-		$('.video__header-title').css({top: '-' + titleH + 'px'});
+		$('.video__header-title').css({position: 'relative', top: '-' + titleH + 'px'});
 	})
 	</script>
 <?php endif; ?>
