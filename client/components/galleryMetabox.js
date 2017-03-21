@@ -15,8 +15,8 @@ const GalleryMetabox = React.createClass({
 		}
 	},
 	
-	componentWillReceive() {
-		console.log(this.props);
+	componentWillReceiveProps(props) {
+		console.log(this.props, props);
 	},
 
 	componentDidMount() {
