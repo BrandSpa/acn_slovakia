@@ -22362,10 +22362,12 @@ var GalleryMetabox = _react2.default.createClass({
 	render: function render() {
 		var _this = this;
 
+		var images = this.state.images;
+
 		return _react2.default.createElement(
 			'form',
 			null,
-			this.state.images.map(function (image, i) {
+			images.map(function (image, i) {
 				return _this.renderInputs(i);
 			}),
 			_react2.default.createElement(
