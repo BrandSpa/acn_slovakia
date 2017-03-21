@@ -7,9 +7,11 @@
 <?php if(get_post_meta($post->ID, 'video_url_key', true)): ?>
 	<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>?modestbranding=1&autohide=1&showinfo=0&controls=0" width="100%" frameborder="0"></iframe>
 	<script>
-
-	var h = window.innerHeight;
-	$('.video__header').height(h);
+	onLoad(function() {
+		var h = window.innerHeight;
+		$('.video__header').height(h);
+	})
+	
 	</script>
 <?php endif; ?>
 <div class="l-wrap">
