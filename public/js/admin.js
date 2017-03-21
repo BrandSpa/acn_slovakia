@@ -22338,6 +22338,13 @@ var GalleryMetabox = _react2.default.createClass({
 		var excerpts = this.state.excerpts.concat(['']);
 		this.setState({ images: images, excerpts: excerpts });
 	},
+	handleRemove: function handleRemove(ind, e) {
+		e.preventDefault();
+		var images = this.state.images.filter(function (con, i) {
+			return i != ind;
+		});
+		this.setState({ images: images });
+	},
 	renderInputs: function renderInputs() {
 		var _React$createElement, _React$createElement2;
 

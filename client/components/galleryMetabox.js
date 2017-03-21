@@ -40,6 +40,12 @@ const GalleryMetabox = React.createClass({
 		this.setState({images, excerpts});
 	},
 
+	handleRemove(ind, e) {
+		e.preventDefault();
+		let images = this.state.images.filter((con,i) => i != ind);
+		this.setState({ images });
+	},
+
 	renderInputs(i = 0) {
 		return (
 			<p>
