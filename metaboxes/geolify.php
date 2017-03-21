@@ -28,7 +28,6 @@ function bs_geolify_cb($post) {
 <?php
 }
 
-
 function bs_geolify_save($post_id) {
   update_field(array(
     'field_key' => 'geolify_countries_key',

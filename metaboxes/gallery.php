@@ -3,7 +3,7 @@ include_once str_replace('metaboxes', '', __DIR__) . '/lib/update_field.php';
 
 function bs_type_gallery_metabox() {
 	$post_id = null;
-	if(isset($_GET['post'])) $post_id =  $_GET['post'] ? $_GET['post'] : null; 
+	if(isset($_GET['post'])) $post_id = $_GET['post'] ? $_GET['post'] : null; 
 	if(isset($_POST['post_ID']) && $post_id == null) $post_id = $_POST['post_ID'] ? $_POST['post_ID']: null;
 
 	add_meta_box('bs_gallery', 'BS gallery', 'bs_type_gallery_cb', 'gallery', 'normal', 'high', null);
@@ -18,7 +18,6 @@ function bs_type_gallery_cb($post) {
 	$props = ["images" => $images, "excerpts" => $excerpts];
 ?>
 	
-
 	<div 
 		class="bs-gallery-metabox" 
 		data-props='<?php echo cleanQuote(json_encode($props)) ?>'>
