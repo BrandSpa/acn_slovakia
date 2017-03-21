@@ -15,8 +15,9 @@
 	<script>
 	onLoad(function() {
 		var h = window.innerHeight;
-			var titleH = $('.video__header-title').height();
-		$('.video__header').height((h - titleH));
+		var navH = $('.nav').height();
+		var titleH = $('.video__header-title').height();
+		$('.video__header').height((h - navH));
 		$('.video__header-title').css({position: 'relative', top: '-' + titleH + 'px'});
 	})
 	</script>
