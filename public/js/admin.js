@@ -22297,8 +22297,6 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var GalleryMetabox = _react2.default.createClass({
 	displayName: 'GalleryMetabox',
 	getInitialState: function getInitialState() {
@@ -22346,8 +22344,6 @@ var GalleryMetabox = _react2.default.createClass({
 		this.setState({ images: images });
 	},
 	renderInputs: function renderInputs() {
-		var _React$createElement, _React$createElement2;
-
 		var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
 
 		return _react2.default.createElement(
@@ -22356,16 +22352,27 @@ var GalleryMetabox = _react2.default.createClass({
 			_react2.default.createElement(
 				'p',
 				null,
-				_react2.default.createElement('input', (_React$createElement = {
-					type: 'text'
-				}, _defineProperty(_React$createElement, 'type', 'images[]'), _defineProperty(_React$createElement, 'placeholder', 'Image url'), _defineProperty(_React$createElement, 'onChange', this.handleChange.bind(null, i, 'image')), _defineProperty(_React$createElement, 'value', this.state.images[i]), _defineProperty(_React$createElement, 'style', { width: '100%', display: 'blockJ' }), _React$createElement))
+				_react2.default.createElement('input', {
+					type: 'text',
+					name: 'images[]',
+					placeholder: 'Image url',
+					onChange: this.handleChange.bind(null, i, 'image'),
+					value: this.state.images[i],
+					style: { width: '100%', display: 'blockJ' }
+				})
 			),
 			_react2.default.createElement(
 				'p',
 				null,
-				_react2.default.createElement('textarea', (_React$createElement2 = {
-					type: 'text'
-				}, _defineProperty(_React$createElement2, 'type', 'excerpts[]'), _defineProperty(_React$createElement2, 'placeholder', 'excerpt'), _defineProperty(_React$createElement2, 'rows', '4'), _defineProperty(_React$createElement2, 'onChange', this.handleChange.bind(null, i, 'excerpt')), _defineProperty(_React$createElement2, 'value', this.state.excerpts[i]), _defineProperty(_React$createElement2, 'style', { width: '100%', display: 'blockJ' }), _React$createElement2))
+				_react2.default.createElement('textarea', {
+					type: 'text',
+					name: 'excerpts[]',
+					placeholder: 'excerpt',
+					rows: '4',
+					onChange: this.handleChange.bind(null, i, 'excerpt'),
+					value: this.state.excerpts[i],
+					style: { width: '100%', display: 'blockJ' }
+				})
 			),
 			_react2.default.createElement(
 				'button',

@@ -52,7 +52,7 @@ const GalleryMetabox = React.createClass({
 			<p>
 				<input 
 						type="text" 
-						type="images[]" 
+						name="images[]" 
 						placeholder="Image url"
 						onChange={this.handleChange.bind(null, i, 'image')} 
 						value={ this.state.images[i] } 
@@ -62,7 +62,7 @@ const GalleryMetabox = React.createClass({
 			<p>
 				<textarea
 					type="text" 
-					type="excerpts[]"
+					name="excerpts[]"
 					placeholder="excerpt"
 					rows="4"
 					onChange={this.handleChange.bind(null, i, 'excerpt')} 
