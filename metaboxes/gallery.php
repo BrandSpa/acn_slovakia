@@ -18,7 +18,8 @@ function bs_type_gallery_cb($post) {
 	$excerpts = get_post_meta($post->ID, 'type_gallery_excerpts_key', true) ? get_post_meta($post->ID, 'type_gallery_excerpts_key', true) : [];
 	$props = ["images" => $images, "excerpts" => $excerpts];
 ?>
-
+	<?php echo $post_id; ?>
+	
 	<div 
 		class="bs-gallery-metabox" 
 		data-props='<?php echo cleanQuote(json_encode($props)) ?>'>
@@ -27,7 +28,6 @@ function bs_type_gallery_cb($post) {
 	<script src="<?php echo get_template_directory_uri() ?>/public/js/admin.js"></script>
 <?php
 }
-
 
 function bs_type_gallery_save($post_id) {
   update_field(array(
