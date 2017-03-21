@@ -17,7 +17,7 @@ $vc = '';
 add_action( 'init', 'create_post_type' );
 
 function create_post_type() {
-  register_post_type( 'bs_video_posts',
+  register_post_type( 'video',
     array(
       'labels' => array(
         'name' => __( 'Posts video' ),
@@ -28,7 +28,7 @@ function create_post_type() {
     )
   );
 
-	register_post_type( 'bs_gallery_posts',
+	register_post_type( 'gallery',
     array(
       'labels' => array(
         'name' => __( 'Posts gallery' ),
