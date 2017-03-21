@@ -8,11 +8,15 @@ const GalleryMetabox = React.createClass({
 		}
 	},
 
-		getDefaultProps() {
+	getDefaultProps() {
 		return {
 			images: [],
 			excerpts: []
 		}
+	},
+	
+	componentWillReceive() {
+		console.log(this.props);
 	},
 
 	componentDidMount() {

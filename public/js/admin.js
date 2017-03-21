@@ -22311,6 +22311,9 @@ var GalleryMetabox = _react2.default.createClass({
 			excerpts: []
 		};
 	},
+	componentWillReceive: function componentWillReceive() {
+		console.log(this.props);
+	},
 	componentDidMount: function componentDidMount() {
 		if (this.props.images.length > 1) {
 			this.setState(_extends({}, this.state, this.props));
