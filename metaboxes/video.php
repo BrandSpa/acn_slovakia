@@ -60,7 +60,7 @@ section();
 	} //end bs_type_video_cb
 
 
-function bs_save_image_square_meta($post_id) {
+function bs_save_type_video_meta($post_id) {
   update_field(array(
     'field_key' => 'image_square_key',
     'field_name' => 'image_square_name',
@@ -68,4 +68,4 @@ function bs_save_image_square_meta($post_id) {
   ));
 }
 
-add_action( 'save_post', 'bs_save_image_square_meta');
+add_action( 'save_post', 'bs_save_type_video_meta');
