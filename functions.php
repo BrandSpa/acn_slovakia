@@ -17,11 +17,21 @@ $vc = '';
 add_action( 'init', 'create_post_type' );
 
 function create_post_type() {
-  register_post_type( 'acme_product',
+  register_post_type( 'bs_video_posts',
     array(
       'labels' => array(
-        'name' => __( 'Products' ),
-        'singular_name' => __( 'Product' )
+        'name' => __( 'Video Posts' ),
+        'singular_name' => __( 'Video Post' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+	register_post_type( 'bs_gallery_posts',
+    array(
+      'labels' => array(
+        'name' => __( 'Gallery Posts' ),
+        'singular_name' => __( 'Gallery Post' )
       ),
       'public' => true,
       'has_archive' => true,
