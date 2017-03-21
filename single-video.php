@@ -6,14 +6,17 @@
 
 <?php if(get_post_meta($post->ID, 'video_url_key', true)): ?>
 	<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>?modestbranding=1&autohide=1&showinfo=0&controls=0" width="100%" frameborder="0"></iframe>
+	<div class="video__header-title">
+		<h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title() ?></h3>
+	</div>
 	<script>
 	onLoad(function() {
 		var h = window.innerHeight;
 		$('.video__header').height(h);
 	})
-	
 	</script>
 <?php endif; ?>
+
 <div class="l-wrap">
 	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if(function_exists('bcn_display'))
