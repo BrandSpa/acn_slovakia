@@ -22312,7 +22312,7 @@ var GalleryMetabox = _react2.default.createClass({
 		};
 	},
 	componentWillReceiveProps: function componentWillReceiveProps(props) {
-		console.log(this.props, props);
+		console.log('props', this.props, props);
 	},
 	componentDidMount: function componentDidMount() {
 		if (this.props.images.length > 1) {
