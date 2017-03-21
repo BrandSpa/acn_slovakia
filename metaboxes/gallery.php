@@ -7,7 +7,7 @@ function bs_type_gallery_metabox() {
 	if(isset($_GET['post'])) $post_id =  $_GET['post'] ? $_GET['post'] : null; 
 	if(isset($_POST['post_ID']) && $post_id == null) $post_id = $_POST['post_ID'] ? $_POST['post_ID']: null;
 
-	add_meta_box('geolify', 'BS gallery', 'bs_type_gallery_cb', 'gallery', 'normal', 'high', null);
+	add_meta_box('bs_gallery', 'BS gallery', 'bs_type_gallery_cb', 'gallery', 'normal', 'high', null);
 }
 
 add_action('add_meta_boxes', 'bs_type_gallery_metabox');
