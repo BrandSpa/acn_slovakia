@@ -14,9 +14,7 @@ register_nav_menus(
 
 $vc = '';
 
-add_theme_support('post-formats', ['video', 'gallery', 'image']);
 
-add_action( 'init', 'create_post_type' );
 
 function create_post_type() {
   register_post_type( 'acme_product',
@@ -30,6 +28,10 @@ function create_post_type() {
     )
   );
 }
+
+add_theme_support('post-formats', ['video', 'gallery', 'image', 'Product']);
+
+add_action( 'init', 'create_post_type' );
 
 function modify_jquery() {
 	if (!is_admin()) {
