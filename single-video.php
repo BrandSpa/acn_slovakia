@@ -5,7 +5,11 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <?php if(get_post_meta($post->ID, 'video_url_key', true)): ?>
-	<iframe src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>" frameborder="0"></iframe>
+	<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>" width="100%" frameborder="0"></iframe>
+	<script>
+	var h = window.innerHeight;
+	jQuery('.video__header').height(h);
+	</script>
 <?php endif; ?>
 <div class="l-wrap">
 	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
