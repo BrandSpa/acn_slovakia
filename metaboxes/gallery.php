@@ -14,9 +14,9 @@ add_action('add_meta_boxes', 'bs_type_gallery_metabox');
 
 function bs_type_gallery_cb($post) {
   wp_nonce_field('bs_type_gallery_meta', 'bs_type_gallery_nonce');
-	$countries = get_post_meta($post->ID, 'type_gallery_images_key', true);
-	$urls = get_post_meta($post->ID, 'type_gallery_excerpts_key', true);
-	$props = [];
+	$images = get_post_meta($post->ID, 'type_gallery_images_key', true);
+	$excerpts = get_post_meta($post->ID, 'type_gallery_excerpts_key', true);
+	$props = ["images" => $images, "excerpts" => $excerpts];
 ?>
 
 	<div 
