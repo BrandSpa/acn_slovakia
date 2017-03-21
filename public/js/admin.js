@@ -22353,12 +22353,20 @@ var GalleryMetabox = _react2.default.createClass({
 		return _react2.default.createElement(
 			'p',
 			null,
-			_react2.default.createElement('input', (_React$createElement = {
-				type: 'text'
-			}, _defineProperty(_React$createElement, 'type', 'images[]'), _defineProperty(_React$createElement, 'placeholder', 'Image url'), _defineProperty(_React$createElement, 'onChange', this.handleChange.bind(null, i, 'image')), _defineProperty(_React$createElement, 'value', this.state.images[i]), _defineProperty(_React$createElement, 'style', { width: '100%', display: 'block' }), _React$createElement)),
-			_react2.default.createElement('textarea', (_React$createElement2 = {
-				type: 'text'
-			}, _defineProperty(_React$createElement2, 'type', 'excerpts[]'), _defineProperty(_React$createElement2, 'placeholder', 'excerpt'), _defineProperty(_React$createElement2, 'rows', '4'), _defineProperty(_React$createElement2, 'onChange', this.handleChange.bind(null, i, 'excerpt')), _defineProperty(_React$createElement2, 'value', this.state.excerpts[i]), _defineProperty(_React$createElement2, 'style', { width: '100%', display: 'block' }), _React$createElement2)),
+			_react2.default.createElement(
+				'p',
+				null,
+				_react2.default.createElement('input', (_React$createElement = {
+					type: 'text'
+				}, _defineProperty(_React$createElement, 'type', 'images[]'), _defineProperty(_React$createElement, 'placeholder', 'Image url'), _defineProperty(_React$createElement, 'onChange', this.handleChange.bind(null, i, 'image')), _defineProperty(_React$createElement, 'value', this.state.images[i]), _defineProperty(_React$createElement, 'style', { width: '100%', display: 'blockJ' }), _React$createElement))
+			),
+			_react2.default.createElement(
+				'p',
+				null,
+				_react2.default.createElement('textarea', (_React$createElement2 = {
+					type: 'text'
+				}, _defineProperty(_React$createElement2, 'type', 'excerpts[]'), _defineProperty(_React$createElement2, 'placeholder', 'excerpt'), _defineProperty(_React$createElement2, 'rows', '4'), _defineProperty(_React$createElement2, 'onChange', this.handleChange.bind(null, i, 'excerpt')), _defineProperty(_React$createElement2, 'value', this.state.excerpts[i]), _defineProperty(_React$createElement2, 'style', { width: '100%', display: 'blockJ' }), _React$createElement2))
+			),
 			_react2.default.createElement(
 				'button',
 				{ onClick: this.handleRemove.bind(null, i) },

@@ -49,15 +49,17 @@ const GalleryMetabox = React.createClass({
 	renderInputs(i = 0) {
 		return (
 			<p>
-			<input 
-					type="text" 
-					type="images[]" 
-					placeholder="Image url"
-					onChange={this.handleChange.bind(null, i, 'image')} 
-					value={ this.state.images[i] } 
-					style={{width: '100%', display: 'block'}}
-				/>
-
+			<p>
+				<input 
+						type="text" 
+						type="images[]" 
+						placeholder="Image url"
+						onChange={this.handleChange.bind(null, i, 'image')} 
+						value={ this.state.images[i] } 
+						style={{width: '100%', display: 'blockJ'}}
+					/>
+			</p>
+			<p>
 				<textarea
 					type="text" 
 					type="excerpts[]"
@@ -65,9 +67,9 @@ const GalleryMetabox = React.createClass({
 					rows="4"
 					onChange={this.handleChange.bind(null, i, 'excerpt')} 
 					value={this.state.excerpts[i]} 
-					style={{width: '100%', display: 'block'}}
+					style={{width: '100%', display: 'blockJ'}}
 				/>
-
+			</p>
 				<button onClick={this.handleRemove.bind(null, i)}>Remove</button>
 			</p>
 		)
