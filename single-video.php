@@ -9,7 +9,9 @@
 	<div class="l-wrap">
 	<div class="video__header-title" style="background: #fff; text-align: center; min-height: 100px">
 		<h3 style="padding-bottom: 20px;"><?php the_title() ?></h3>
-		<?php require(__DIR__. '/templates/down_arrow.php')?>
+		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
+			<?php require(__DIR__. '/templates/down_arrow.php')?>
+		</a>
 	</div>
 </div>
 
