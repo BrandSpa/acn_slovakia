@@ -9,10 +9,13 @@
 	<div class="video__header-title">
 		<h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title() ?></h3>
 	</div>
+
 	<script>
 	onLoad(function() {
 		var h = window.innerHeight;
 		$('.video__header').height(h);
+		var titleH = $('.video__header-title').height();
+		$('.video__header-title').css({top: '-' + titleH});
 	})
 	</script>
 <?php endif; ?>
