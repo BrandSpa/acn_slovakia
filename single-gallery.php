@@ -1,3 +1,10 @@
+<?php
+/*
+Gallery Post Template: to show gallery on header post
+Description: This part is optional, but helpful for describing the Post Template
+*/
+?>
+
 <?php get_header() ?>
 
 <div id="acn_int" class="bs-post--gallery" >
