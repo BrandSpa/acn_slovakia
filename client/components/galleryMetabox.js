@@ -63,7 +63,7 @@ const GalleryMetabox = React.createClass({
 	},
 
 	render() {
-		const { images } = this.state;
+		const { images = [] } = this.state;
 		return (
 			<form>
 			{ images.map((image, i) => this.renderInputs(i) ) }

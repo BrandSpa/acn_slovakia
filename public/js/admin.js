@@ -22362,7 +22362,8 @@ var GalleryMetabox = _react2.default.createClass({
 	render: function render() {
 		var _this = this;
 
-		var images = this.state.images;
+		var _state$images = this.state.images,
+		    images = _state$images === undefined ? [] : _state$images;
 
 		return _react2.default.createElement(
 			'form',
