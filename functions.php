@@ -20,19 +20,19 @@ function create_post_type() {
   register_post_type( 'bs_video_posts',
     array(
       'labels' => array(
-        'name' => __( 'Video Posts' ),
-        'singular_name' => __( 'Video Post' )
+        'name' => __( 'Posts video' ),
+        'singular_name' => __( 'Post video' )
       ),
       'public' => true,
       'has_archive' => true,
     )
   );
-	
+
 	register_post_type( 'bs_gallery_posts',
     array(
       'labels' => array(
-        'name' => __( 'Gallery Posts' ),
-        'singular_name' => __( 'Gallery Post' )
+        'name' => __( 'Posts gallery' ),
+        'singular_name' => __( 'Post gallery' )
       ),
       'public' => true,
       'has_archive' => true,
