@@ -6,7 +6,7 @@
 
 <?php if(get_post_meta($post->ID, 'video_url_key', true)): ?>
 	<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>?modestbranding=1&autohide=1&showinfo=0&controls=0" width="100%" frameborder="0"></iframe>
-	<div class="l-wrap">
+	<div class="l-wrap" style="height: 0">
 	<div class="video__header-title" style="background: #fff; text-align: center; min-height: 100px">
 		<h3 style="padding-bottom: 20px;"><?php the_title() ?></h3>
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
