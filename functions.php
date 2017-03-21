@@ -14,8 +14,10 @@ register_nav_menus(
 
 $vc = '';
 
+add_theme_support('post-formats', ['video']);
 
 add_action( 'init', 'create_post_type' );
+
 function create_post_type() {
   register_post_type( 'acme_product',
     array(
