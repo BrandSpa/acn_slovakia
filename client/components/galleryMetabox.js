@@ -21,7 +21,7 @@ const GalleryMetabox = React.createClass({
 
 	componentDidMount() {
 		console.log('props', this.props);
-		if(this.props.images.length > 1 ) {
+		if(this.props.images.length >= 1 ) {
 			this.setState({...this.state, ...this.props});
 		}
 	},
