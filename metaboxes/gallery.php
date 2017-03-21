@@ -20,7 +20,7 @@ function bs_type_gallery_cb($post) {
 ?>
 
 	<div 
-		class="bs-gallery" 
+		class="bs-gallery-metabox" 
 		data-props='<?php echo json_encode(cleanQuote($props)) ?>'>
 	</div>
 
@@ -38,7 +38,7 @@ function bs_type_gallery_save($post_id) {
 
 	update_field(array(
     'field_key' => 'type_gallery_excerpt_key',
-    'field_name' => 'excerpt',
+    'field_name' => 'excerpts',
     'post_id' => $post_id
   ));
 }
