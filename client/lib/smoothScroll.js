@@ -6,7 +6,7 @@ export default function smoothScroll() {
       event.preventDefault();
 
       const hash = this.hash;
-      const less = $('.nav') ? $('.nav').height() : 0;
+      const less = $('.nav') ? $('.nav').height() + 20 : 0;
 
       const scrollTop = $(hash) ? ($(hash).offset().top - less) : 0;
       console.log( $(hash) );
