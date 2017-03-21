@@ -22307,14 +22307,14 @@ var GalleryMetabox = _react2.default.createClass({
 			excerpts: []
 		};
 	},
-	componentDidMount: function componentDidMount() {
-		this.setState(_extends({}, this.state, this.props));
-	},
 	getDefaultProps: function getDefaultProps() {
 		return {
 			images: [],
 			excerpts: []
 		};
+	},
+	componentDidMount: function componentDidMount() {
+		this.setState(_extends({}, this.state, this.props));
 	},
 	handleChange: function handleChange(ind, type, e) {
 		var _state = this.state,

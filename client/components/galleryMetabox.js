@@ -8,15 +8,15 @@ const GalleryMetabox = React.createClass({
 		}
 	},
 
-	componentDidMount() {
-		this.setState({...this.state, ...this.props});
-	},
-
-	getDefaultProps() {
+		getDefaultProps() {
 		return {
 			images: [],
 			excerpts: []
 		}
+	},
+
+	componentDidMount() {
+		this.setState({...this.state, ...this.props});
 	},
 
 	handleChange(ind, type, e) {
