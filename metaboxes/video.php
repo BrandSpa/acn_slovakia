@@ -14,7 +14,7 @@
 
   function bs_type_video_cb($post) {
     wp_nonce_field('bs_type_video_meta', 'bs_image_square_nonce'); 
-    $value = get_post_meta($post->ID, 'ivideo_url_key', true);
+    $value = get_post_meta($post->ID, 'video_url_key', true);
 ?>
 
 <div>
@@ -37,7 +37,7 @@
 
 function bs_save_type_video_meta($post_id) {
   update_field(array(
-    'field_key' => 'ivideo_url_key',
+    'field_key' => 'video_url_key',
     'field_name' => 'video_url',
     'post_id' => $post_id
   ));
