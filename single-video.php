@@ -3,13 +3,8 @@
 <div id="acn_int" class="bs-post--video" >
 <!--video template-->
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		
-<?php if(!empty(get_the_post_thumbnail_url($post->ID, 'full'))): ?>
-	<?php require('templates/post_header_image.php') ?>
-<?php else: ?>
-	<?php require('templates/post_header.php') ?>
-<?php endif; ?>
 
+<?php echo get_post_meta($post->ID, 'video_url_key', true); ?>
 <div class="l-wrap">
 	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if(function_exists('bcn_display'))
