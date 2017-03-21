@@ -14,7 +14,7 @@
 
   function bs_type_video_cb($post) {
     wp_nonce_field('bs_type_video_meta', 'bs_image_square_nonce'); 
-    $value = get_post_meta($post->ID, 'image_square_key', true);
+    $value = get_post_meta($post->ID, 'ivideo_url_key', true);
 ?>
 
 <div>
@@ -22,8 +22,8 @@
 		<input
 			type="text" 
 			class="uploader" 
-			name="image_square_name"
-			placeholder="Image Square" 
+			name="video_url"
+			placeholder="Video url Embed" 
 			value="<?php echo $value ?>" 
 			style="height: 35px; width: 100%;"
 		/>
@@ -31,39 +31,14 @@
 
 </div>
 
-<script>
-const open_media_uploader_image = () => {
-	let media_uploader = wp.media({ frame: 'post', state: 'insert', multiple: false });
-
-	let promise = new Promise((resolve) => {
-		media_uploader.on('insert', () => {
-			let json = media_uploader.state().get('selection').first().toJSON();
-			return resolve(json);
-		});
-	});
-
-	media_uploader.open();
-
-	return promise;
-};
-
-const section = () => {
-
-	jQuery('.uploader').on('click', (e) => {
-		open_media_uploader_image() .then(res => { jQuery(e.currentTarget).attr('value', res.url); });
-	});
-};
-
-section();
-</script>
 <?php 
 	} //end bs_type_video_cb
 
 
 function bs_save_type_video_meta($post_id) {
   update_field(array(
-    'field_key' => 'image_square_key',
-    'field_name' => 'image_square_name',
+    'field_key' => 'ivideo_url_key',
+    'field_name' => 'video_url',
     'post_id' => $post_id
   ));
 }
