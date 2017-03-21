@@ -6,10 +6,11 @@
 
 <?php if(get_post_meta($post->ID, 'video_url_key', true)): ?>
 	<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>?modestbranding=1&autohide=1&showinfo=0&controls=0" width="100%" frameborder="0"></iframe>
+	<div class="l-wrap">
 	<div class="video__header-title" style="background: #b9b9b9; text-align: center; min-height: 100px">
 		<h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title() ?></h3>
 	</div>
-
+</div>
 	<script>
 	onLoad(function() {
 		var h = window.innerHeight;
