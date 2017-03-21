@@ -80,10 +80,10 @@ const GalleryMetabox = React.createClass({
 	render() {
 		const { images = [] } = this.state;
 		return (
-			<form>
+			<div>
 			{ images.map((image, i) => this.renderInputs(i) ) }
 			<button onClick={this.handleAdd} className="button">Add</button>
-			</form>
+			</div>
 		)
 	}
 });
