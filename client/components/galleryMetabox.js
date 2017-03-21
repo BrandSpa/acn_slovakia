@@ -70,7 +70,7 @@ const GalleryMetabox = React.createClass({
 					style={{width: '100%', display: 'blockJ'}}
 				/>
 			</p>
-				<button onClick={this.handleRemove.bind(null, i)}>Remove</button>
+				<button className="button" onClick={this.handleRemove.bind(null, i)}>Remove</button>
 			</p>
 		)
 	},

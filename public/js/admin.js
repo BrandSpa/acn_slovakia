@@ -22369,7 +22369,7 @@ var GalleryMetabox = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				'button',
-				{ onClick: this.handleRemove.bind(null, i) },
+				{ className: 'button', onClick: this.handleRemove.bind(null, i) },
 				'Remove'
 			)
 		);
