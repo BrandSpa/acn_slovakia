@@ -9,6 +9,7 @@
 	<div class="l-wrap">
 	<div class="video__header-title" style="background: #b9b9b9; text-align: center; min-height: 100px">
 		<h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title() ?></h3>
+		<?php require(__DIR__. '/templates/down_arrow.php')?>
 	</div>
 </div>
 	<script>
@@ -16,8 +17,6 @@
 		var h = window.innerHeight;
 			var titleH = $('.video__header-title').height();
 		$('.video__header').height((h - titleH));
-
-		console.log(titleH);
 		$('.video__header-title').css({position: 'relative', top: '-' + titleH + 'px'});
 	})
 	</script>
