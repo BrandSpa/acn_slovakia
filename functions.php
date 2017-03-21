@@ -14,7 +14,7 @@ register_nav_menus(
 
 $vc = '';
 
-add_theme_support('post-formats', ['video']);
+add_theme_support('post-formats', ['video', 'gallery', 'image']);
 
 add_action( 'init', 'create_post_type' );
 
