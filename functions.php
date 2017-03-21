@@ -27,6 +27,7 @@ function create_post_type() {
       'has_archive' => true,
     )
   );
+	
 	register_post_type( 'bs_gallery_posts',
     array(
       'labels' => array(
