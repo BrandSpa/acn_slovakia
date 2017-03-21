@@ -3,7 +3,9 @@ include_once str_replace('metaboxes', '', __DIR__) . '/lib/update_field.php';
 
 
 function bs_geolify_metabox() {
-	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+	$post_id = null;
+	if(isset($_GET['post'])) $post_id =  $_GET['post'] ? $_GET['post'] : null; 
+	if(isset($_POST['post_ID']) && $post_id == null) $post_id = $_POST['post_ID'] ? $_POST['post_ID']: null;
 
 	add_meta_box('geolify', 'BS Geolify', 'bs_geolify_cb', 'page', 'normal', 'high', null);
 }

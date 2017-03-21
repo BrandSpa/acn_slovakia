@@ -3,7 +3,9 @@
 
   function bs_page_image_square_metabox() {
 
-    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+    $post_id = null;
+		if(isset($_GET['post'])) $post_id =  $_GET['post'] ? $_GET['post'] : null; 
+		if(isset($_POST['post_ID']) && $post_id == null) $post_id = $_POST['post_ID'] ? $_POST['post_ID']: null;
 
     add_meta_box('page_image_square', 'Square Image', 'bs_page_image_square_cb', 'post', 'normal', 'high', null);
   }
