@@ -55,6 +55,7 @@ const GalleryMetabox = React.createClass({
 					placeholder="Image url"
 					onChange={this.handleChange.bind(null, i, 'image')} 
 					value={ this.state.images[i] } 
+					style={{width: '100%', display: 'block'}}
 				/>
 
 				<textarea
@@ -64,6 +65,7 @@ const GalleryMetabox = React.createClass({
 					rows="4"
 					onChange={this.handleChange.bind(null, i, 'excerpt')} 
 					value={this.state.excerpts[i]} 
+					style={{width: '100%', display: 'block'}}
 				/>
 
 				<button onClick={this.handleRemove.bind(null, i)}>Remove</button>
