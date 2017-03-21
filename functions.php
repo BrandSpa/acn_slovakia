@@ -98,6 +98,7 @@ require('shortcodes/share.php');
 require('metaboxes/image_square.php');
 require('metaboxes/geolify.php');
 require('metaboxes/video.php');
+require('metaboxes/gallery.php');
 
 function get_lang() {
 	if(function_exists('pll_current_language')) {
