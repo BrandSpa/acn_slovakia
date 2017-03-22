@@ -17,8 +17,8 @@ const GalleryHeader = React.createClass({
 	componentDidMount() {
 		let container = document.querySelector('.header-gallery__container');
 		let containerH = container.offsetWidth / 1.5;
-		console.log(Math.round(containerH));
 
+		document.querySelector('.header-gallery__caption-image').style.height = `${Math.round(containerH)}px`;
 	},
 	
 	changeCaption(type, e) {
