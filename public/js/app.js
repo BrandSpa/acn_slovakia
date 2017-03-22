@@ -28682,7 +28682,7 @@ var GalleryHeader = _react2.default.createClass({
 
 		var linkRight = _extends({}, linkLeft, { left: 'auto', right: 0 });
 
-		var mainStyle = { height: h + 'px', background: 'rgba(0,0,0,.9)', position: 'relative' };
+		var mainStyle = { height: h + 'px', background: '#222', position: 'relative' };
 
 		var viewportStyle = {
 			height: h + 'px',
