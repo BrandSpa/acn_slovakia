@@ -40,18 +40,18 @@ const GalleryHeader = React.createClass({
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'prev')} 
-								style={{border: '1px solid #fff', background: '#fff', position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%'}}></a>
+								style={{ position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%'}}></a>
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'next')} 
-								style={{border: '1px solid #fff', background: '#fff', position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%'}}></a>
+								style={{ position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%'}}></a>
 						</div>
 					)}
 					</div>
 				</div>
 				<div className="header-gallery__btns" style={{position: 'absolute', bottom: '40px', right: '40px'}}>
-					<button onClick={this.changeCaption.bind(null, 'prev')}><i className="ion-chevron-left"></i></button>\
-					<button onClick={this.changeCaption.bind(null, 'next')}><i className="ion-chevron-right"></i></button>
+					<button onClick={this.changeCaption.bind(null, 'prev')} style={{border: '1px solid #fff', background: '#fff',}}><i className="ion-chevron-left"></i></button>\
+					<button onClick={this.changeCaption.bind(null, 'next')} style={{border: '1px solid #fff', background: '#fff',}}><i className="ion-chevron-right"></i></button>
 				</div>
 			</div>
 		)	

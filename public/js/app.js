@@ -36390,11 +36390,11 @@ var GalleryHeader = _react2.default.createClass({
 							_react2.default.createElement('a', {
 								href: '#',
 								onClick: _this.changeCaption.bind(null, 'prev'),
-								style: { border: '1px solid #fff', background: '#fff', position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%' } }),
+								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%' } }),
 							_react2.default.createElement('a', {
 								href: '#',
 								onClick: _this.changeCaption.bind(null, 'next'),
-								style: { border: '1px solid #fff', background: '#fff', position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%' } })
+								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%' } })
 						);
 					})
 				)
@@ -36404,13 +36404,13 @@ var GalleryHeader = _react2.default.createClass({
 				{ className: 'header-gallery__btns', style: { position: 'absolute', bottom: '40px', right: '40px' } },
 				_react2.default.createElement(
 					'button',
-					{ onClick: this.changeCaption.bind(null, 'prev') },
+					{ onClick: this.changeCaption.bind(null, 'prev'), style: { border: '1px solid #fff', background: '#fff' } },
 					_react2.default.createElement('i', { className: 'ion-chevron-left' })
 				),
 				'\\',
 				_react2.default.createElement(
 					'button',
-					{ onClick: this.changeCaption.bind(null, 'next') },
+					{ onClick: this.changeCaption.bind(null, 'next'), style: { border: '1px solid #fff', background: '#fff' } },
 					_react2.default.createElement('i', { className: 'ion-chevron-right' })
 				)
 			)
