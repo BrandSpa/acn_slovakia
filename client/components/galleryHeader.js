@@ -66,8 +66,15 @@ const GalleryHeader = React.createClass({
 		};
 
 		const mainStyle = {height: `${h}px`, background: '#2C2C2C', position: 'relative'};
-		const viewportStyle = {height: `${h}px`, padding: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center'};
 
+		const viewportStyle = {
+			height: `${h}px`, 
+			padding: '40px', 
+			display: 'flex', 
+			justifyContent: 'center', 
+			alignItems: 'center'
+		};
+		console.log(viewportStyle);
 		return (
 			<StyleRoot>
 			<div className="header-gallery" style={mainStyle}>
