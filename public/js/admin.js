@@ -22312,11 +22312,11 @@ var GalleryMetabox = _react2.default.createClass({
 	componentWillReceiveProps: function componentWillReceiveProps(props) {},
 	componentDidMount: function componentDidMount() {
 		console.log('props', this.props);
-		if (typeof this.props.images == 'array') {
+		if (Array.isArray(this.props.images)) {
 			this.setState({ images: this.props.images });
 		}
 
-		if (typeof this.props.excerpts == 'array') {
+		if (Array.isArray(this.props.excerpts)) {
 			this.setState({ excerpts: this.props.excerpts });
 		}
 	},
