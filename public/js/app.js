@@ -36373,7 +36373,7 @@ var GalleryHeader = _react2.default.createClass({
 				{ className: 'header-gallery__viewport', style: { padding: '40px' } },
 				_react2.default.createElement(
 					'div',
-					{ className: 'l-wrap' },
+					{ style: { maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' } },
 					images.map(function (image, i) {
 						return _react2.default.createElement(
 							'div',
