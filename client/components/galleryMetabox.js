@@ -62,7 +62,7 @@ const GalleryMetabox = React.createClass({
 
 	renderInputs(i = 0) {
 		return (
-			<p>
+			<p key={i}>
 			<p>
 				<input 
 						type="text" 

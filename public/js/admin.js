@@ -22357,7 +22357,7 @@ var GalleryMetabox = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'p',
-			null,
+			{ key: i },
 			_react2.default.createElement(
 				'p',
 				null,
