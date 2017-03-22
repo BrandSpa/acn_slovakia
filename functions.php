@@ -12,8 +12,6 @@ register_nav_menus(
   )
 );
 
-$vc = '';
-
 add_action( 'init', 'create_post_type' );
 
 function create_post_type() {
@@ -44,7 +42,6 @@ function create_post_type() {
 		]
   );
 }
-
 
 function modify_jquery() {
 	if (!is_admin()) {
@@ -90,6 +87,7 @@ require('options/index.php');
 require('shortcodes/contact_form.php');
 require('shortcodes/header_slider.php');
 require('shortcodes/projects.php');
+require('shortcodes/projects_about.php');
 require('shortcodes/section_video.php');
 require('shortcodes/accordion.php');
 require('shortcodes/donate.php');
