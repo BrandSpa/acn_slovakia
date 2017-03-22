@@ -94,4 +94,4 @@ const GalleryHeader = React.createClass({
 	}
 });
 
-export default Radium()(GalleryHeader);
+export default Radium(GalleryHeader);
