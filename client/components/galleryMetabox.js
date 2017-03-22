@@ -16,14 +16,20 @@ const GalleryMetabox = React.createClass({
 	},
 	
 	componentWillReceiveProps(props) {
-		console.log('props', this.props, props);
+	
+
 	},
 
 	componentDidMount() {
 		console.log('props', this.props);
-		if(this.props.images.length >= 1 ) {
-			this.setState({...this.state, ...this.props});
+		if(typeof this.props.images 'array') {
+			this.setState({images, this.props.images});
 		}
+
+		if(typeof this.props.excerpts 'array') {
+			this.setState({excerpts, this.props.excerpts});
+		}
+
 	},
 
 	handleChange(ind, type, e) {
@@ -72,7 +78,7 @@ const GalleryMetabox = React.createClass({
 					name="excerpts[]"
 					placeholder="excerpt"
 					rows="4"
-					// onChange={this.handleChange.bind(null, i, 'excerpt')}
+					onChange={this.handleChange.bind(null, i, 'excerpt')}
 					style={{width: '100%', display: 'block '}}
 				>{this.state.excerpts[i]}</textarea>
 			</p>
