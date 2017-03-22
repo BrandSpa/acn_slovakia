@@ -34,7 +34,7 @@ const PostsAbout = React.createClass({
 		return (
 			<div>
 			{posts.map((post, i) => {
-				return <h3>{post.title}</h3>
+				return <h3>{post.post_title}</h3>
 			})}
 			</div>
 		)

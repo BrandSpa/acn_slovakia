@@ -40764,7 +40764,7 @@ var PostsAbout = _react2.default.createClass({
 				return _react2.default.createElement(
 					'h3',
 					null,
-					post.title
+					post.post_title
 				);
 			})
 		);
