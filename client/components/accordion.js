@@ -12,6 +12,7 @@ const Accordion = React.createClass({
   toggle() {
     this.setState({show: !this.state.show});
   },
+  
   render() {
     const {content, btnTitle} = this.props;
     const btnStyle = {

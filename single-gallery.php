@@ -13,12 +13,13 @@
 <div id="acn_int" class="bs-post--gallery" >
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		
-<?php if(!empty(get_the_post_thumbnail_url($post->ID, 'full'))): ?>
-	<?php require('templates/post_header_image.php') ?>
-<?php else: ?>
-	<?php require('templates/post_header.php') ?>
-<?php endif; ?>
+<?php
+$images = get_post_meta($post->ID, 'type_gallery_images_key', true);
+$excerpts = get_post_meta($post->ID, 'type_gallery_excerpts_key', true);
+$props = ["images" => $images, "excerpts" => $excerpts];
+?>
+
+<div class="bs-gallery" data-props='<?php echo cleanQuote(json_encode($props)) ?>'></div>
 
 <div class="l-wrap">
 	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
