@@ -21904,8 +21904,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _uploader = __webpack_require__(568);
 
-var _uploader2 = _interopRequireDefault(_uploader);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var GalleryMetabox = _react2.default.createClass({
@@ -21966,7 +21964,7 @@ var GalleryMetabox = _react2.default.createClass({
 		this.setState({ images: images, excerpts: excerpts });
 	},
 	handleClick: function handleClick() {
-		(0, _uploader2.default)().then(function (res) {
+		(0, _uploader.openMediaUploader)().then(function (res) {
 			return console.log(res);
 		});
 	},

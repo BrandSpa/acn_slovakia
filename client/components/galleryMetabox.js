@@ -1,5 +1,5 @@
 import React from 'react';
-import MediaUploader from '../lib/uploader';
+import { openMediaUploader } from '../lib/uploader';
 
 const GalleryMetabox = React.createClass({
 	getInitialState(){
@@ -62,7 +62,7 @@ const GalleryMetabox = React.createClass({
 	},
 
 	handleClick() {
-		MediaUploader().then(res => console.log(res));
+		openMediaUploader().then(res => console.log(res));
 	},
 
 	renderInputs(i = 0) {
