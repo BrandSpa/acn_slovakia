@@ -41,7 +41,6 @@ function create_post_type() {
   );
 }
 
-add_theme_support( 'post-thumbnails' );
 
 function modify_jquery() {
 	if (!is_admin()) {
@@ -216,3 +215,6 @@ function redirectToLang() {
 if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
 	redirectToLang();
 }
+
+add_theme_support( 'post-thumbnails', ['post', 'gallery', 'video'] );
+
