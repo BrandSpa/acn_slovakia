@@ -11,7 +11,7 @@ function bs_projects_about_sc($atts, $content = null) {
 	$projects = array_map(function($slide) {
 		$slide['image'] = wp_get_attachment_url($slide['image']);
 		return $slide;
-	}, vc_param_group_parse_atts( $at['slides'] ));
+	}, vc_param_group_parse_atts( $at['projects'] ));
 
   ob_start();
 ?>
