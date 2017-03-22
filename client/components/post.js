@@ -4,6 +4,7 @@ const Post = React.createClass({
 	handleImageLoaded() {
   	this.props.onImageLoaded();
   },
+
 	getDefaultProps() {
 		return {
 			post: {
@@ -16,7 +17,7 @@ const Post = React.createClass({
 		const { post, type, read_more } = this.props;
 		const img = post.post_image ? <img src={post.post_image} onLoad={this.handleImageLoaded} /> : '';
 		let title = post.post_title;
-		console.log('is mobile', window.innerWidth <= '767');
+		console.log(post);
 		if(window.innerWidth <= '767') {
 			title = post.post_title.substring(0, 70) + '...';
 		}

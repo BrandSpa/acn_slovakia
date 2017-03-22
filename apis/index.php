@@ -18,7 +18,6 @@ function update_geo() {
   die();
 }
 
-
 add_action( 'wp_ajax_nopriv_get_posts', 'wp_get_posts' );
 add_action( 'wp_ajax_get_posts', 'wp_get_posts' );
 

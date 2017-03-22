@@ -30943,7 +30943,7 @@ var Post = _react2.default.createClass({
 
 		var img = post.post_image ? _react2.default.createElement('img', { src: post.post_image, onLoad: this.handleImageLoaded }) : '';
 		var title = post.post_title;
-		console.log('is mobile', window.innerWidth <= '767');
+		console.log(post);
 		if (window.innerWidth <= '767') {
 			title = post.post_title.substring(0, 70) + '...';
 		}
