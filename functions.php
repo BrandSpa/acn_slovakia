@@ -19,29 +19,29 @@ add_action( 'init', 'create_post_type' );
 function create_post_type() {
 
   register_post_type( 'video',
-    array(
-      'labels' => array(
+    [
+      'labels' => [
         'name' => __( 'Posts video' ),
         'singular_name' => __( 'Post video' )
-      ),
-			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'),
-			'taxonomies' => array( 'category'),
+			],
+			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+			'taxonomies' => [ 'category'],
       'public' => true,
       'has_archive' => true,
-    )
+		]
   );
 
 	register_post_type( 'gallery',
-    array(
-      'labels' => array(
+    [
+      'labels' => [
         'name' => __( 'Posts gallery' ),
         'singular_name' => __( 'Post gallery' )
-      ),
-			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'),
-			'taxonomies' => array( 'category'),
+			],
+			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+			'taxonomies' => [ 'category'],
       'public' => true,
       'has_archive' => true,
-    )
+		]
   );
 }
 
