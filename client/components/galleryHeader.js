@@ -79,21 +79,20 @@ const GalleryHeader = React.createClass({
 
 		return (
 			<StyleRoot>
-			<div className="header-gallery" style={mainStyle}>
-				<div className="header-gallery__viewport" style={viewportStyle}>
-				<div className="header-gallery__container" style={{ maxWidth: '700px',  marginLeft: 'auto', marginRight: 'auto' }}>
+			<div style={mainStyle}>
+				<div style={viewportStyle}>
+				<div style={{ maxWidth: '800px',  marginLeft: 'auto', marginRight: 'auto' }}>
 					{images.map((image, i) =>
 						<div
-							className="header-gallery__caption" 
 							style={i == this.state.section ? {opacity: 'block', position: 'relative'} : {display: 'none'}}
 						>
 							<img src={image} alt="" style={{maxWidth: '100%', height: 'auto'}} />
 							<span
-								className="header-gallery__caption-image" 
+	
 								style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', display: 'none'}}
 							>
 							</span>
-							<span className="header-gallery__caption-text" style={{color: '#fff', marginTop: '20px', display: 'block'}}>{excerpts[i]}</span>
+							<span style={{color: '#fff', marginTop: '20px', display: 'block'}}>{excerpts[i]}</span>
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'prev')} 
@@ -107,7 +106,7 @@ const GalleryHeader = React.createClass({
 					</div>
 				</div>
 
-				<div className="header-gallery__btns" style={btnsStyle}>
+				<div style={btnsStyle}>
 					<button 
 						onClick={this.changeCaption.bind(null, 'prev')} 
 						style={btnStyle}>

@@ -28697,28 +28697,27 @@ var GalleryHeader = _react2.default.createClass({
 			null,
 			_react2.default.createElement(
 				'div',
-				{ className: 'header-gallery', style: mainStyle },
+				{ style: mainStyle },
 				_react2.default.createElement(
 					'div',
-					{ className: 'header-gallery__viewport', style: viewportStyle },
+					{ style: viewportStyle },
 					_react2.default.createElement(
 						'div',
-						{ className: 'header-gallery__container', style: { maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' } },
+						{ style: { maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' } },
 						images.map(function (image, i) {
 							return _react2.default.createElement(
 								'div',
 								{
-									className: 'header-gallery__caption',
 									style: i == _this.state.section ? { opacity: 'block', position: 'relative' } : { display: 'none' }
 								},
 								_react2.default.createElement('img', { src: image, alt: '', style: { maxWidth: '100%', height: 'auto' } }),
 								_react2.default.createElement('span', {
-									className: 'header-gallery__caption-image',
+
 									style: { backgroundImage: 'url(' + image + ')', backgroundSize: 'cover', display: 'none' }
 								}),
 								_react2.default.createElement(
 									'span',
-									{ className: 'header-gallery__caption-text', style: { color: '#fff', marginTop: '20px', display: 'block' } },
+									{ style: { color: '#fff', marginTop: '20px', display: 'block' } },
 									excerpts[i]
 								),
 								_react2.default.createElement('a', {
@@ -28735,7 +28734,7 @@ var GalleryHeader = _react2.default.createClass({
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'header-gallery__btns', style: btnsStyle },
+					{ style: btnsStyle },
 					_react2.default.createElement(
 						'button',
 						{
