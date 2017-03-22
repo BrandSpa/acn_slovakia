@@ -37,7 +37,15 @@ const GalleryHeader = React.createClass({
 	render() {
 		const { images, excerpts } = this.props;
 		const h = (window.innerHeight - 140);
-
+		const btnsStyle = {
+			position: 'absolute', 
+			bottom: '40px', 
+			right: '40px'
+			'@media(max-width: 767px)': {
+				bottom: '10px', 
+				right: '10px'
+			} 
+		};
 		return (
 			<div className="header-gallery" style={{height: `${h}px`, background: '#2C2C2C', position: 'relative'}}>
 				<div className="header-gallery__viewport" style={{padding: '40px'}}>
@@ -66,7 +74,7 @@ const GalleryHeader = React.createClass({
 					</div>
 				</div>
 
-				<div className="header-gallery__btns" style={{position: 'absolute', bottom: '40px', right: '40px'}}>
+				<div className="header-gallery__btns" style={btnsStyle}>
 					<button 
 						onClick={this.changeCaption.bind(null, 'prev')} 
 						style={{border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0'}}>
