@@ -24,7 +24,7 @@ const GalleryHeader = React.createClass({
 
 	render() {
 		const { images, excerpts } = this.props;
-		const h = window.innerHeight - 120;
+		const h = (window.innerHeight - 140);
 
 		return (
 			<div className="header-gallery" style={{height: `${h}px`, background: '#111', position: 'relative'}}>
