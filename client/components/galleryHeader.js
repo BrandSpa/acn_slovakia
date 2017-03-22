@@ -17,7 +17,7 @@ const GalleryHeader = React.createClass({
 
 	componentDidMount() {
 		let container = document.querySelector('.header-gallery__container');
-		let containerH = container.offsetWidth / 1.5;
+		let containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		let images =[...document.querySelectorAll('.header-gallery__caption-image')];
 
 		images.forEach(image => {

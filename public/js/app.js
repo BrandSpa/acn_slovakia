@@ -28630,7 +28630,7 @@ var GalleryHeader = _react2.default.createClass({
 	},
 	componentDidMount: function componentDidMount() {
 		var container = document.querySelector('.header-gallery__container');
-		var containerH = container.offsetWidth / 1.5;
+		var containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		var images = [].concat(_toConsumableArray(document.querySelectorAll('.header-gallery__caption-image')));
 
 		images.forEach(function (image) {
