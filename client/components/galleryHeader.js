@@ -98,19 +98,10 @@ const GalleryHeader = React.createClass({
 							style={i == this.state.section ? {opacity: 'block', position: 'relative'} : {display: 'none'}}
 						>
 							<img src={image} alt="" style={{maxWidth: '100%', height: 'auto'}} />
-							<span
-								style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', display: 'none'}}
-							>
-							</span>
 							<span style={excerptStyle}>{excerpts[i]}</span>
-							<a 
-								href="#" 
-								onClick={this.changeCaption.bind(null, 'prev')} 
-								style={linkLeft}></a>
-							<a 
-								href="#" 
-								onClick={this.changeCaption.bind(null, 'next')} 
-								style={linkRight}></a>
+
+							<a href="#" onClick={this.changeCaption.bind(null, 'prev')} style={linkLeft}></a> 
+							<a href="#" onClick={this.changeCaption.bind(null, 'next')} style={linkRight}></a>
 						</div>
 					)}
 					</div>

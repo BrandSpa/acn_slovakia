@@ -28722,22 +28722,13 @@ var GalleryHeader = _react2.default.createClass({
 									style: i == _this.state.section ? { opacity: 'block', position: 'relative' } : { display: 'none' }
 								},
 								_react2.default.createElement('img', { src: image, alt: '', style: { maxWidth: '100%', height: 'auto' } }),
-								_react2.default.createElement('span', {
-									style: { backgroundImage: 'url(' + image + ')', backgroundSize: 'cover', display: 'none' }
-								}),
 								_react2.default.createElement(
 									'span',
 									{ style: excerptStyle },
 									excerpts[i]
 								),
-								_react2.default.createElement('a', {
-									href: '#',
-									onClick: _this.changeCaption.bind(null, 'prev'),
-									style: linkLeft }),
-								_react2.default.createElement('a', {
-									href: '#',
-									onClick: _this.changeCaption.bind(null, 'next'),
-									style: linkRight })
+								_react2.default.createElement('a', { href: '#', onClick: _this.changeCaption.bind(null, 'prev'), style: linkLeft }),
+								_react2.default.createElement('a', { href: '#', onClick: _this.changeCaption.bind(null, 'next'), style: linkRight })
 							);
 						})
 					)
