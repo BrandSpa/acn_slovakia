@@ -40,7 +40,7 @@ const GalleryHeader = React.createClass({
 		const btnsStyle = {
 			position: 'absolute', 
 			bottom: '40px', 
-			right: '40px'
+			right: '40px',
 			'@media(max-width: 767px)': {
 				bottom: '10px', 
 				right: '10px'
