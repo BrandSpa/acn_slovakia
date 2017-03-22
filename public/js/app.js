@@ -36258,6 +36258,10 @@ var _downloadPdf = __webpack_require__(321);
 
 var _downloadPdf2 = _interopRequireDefault(_downloadPdf);
 
+var _galleryHeader = __webpack_require__(570);
+
+var _galleryHeader2 = _interopRequireDefault(_galleryHeader);
+
 var _set_menu = __webpack_require__(329);
 
 var _set_menu2 = _interopRequireDefault(_set_menu);
@@ -36285,6 +36289,8 @@ var _toggleViaCrucisNav2 = _interopRequireDefault(_toggleViaCrucisNav);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //jquery stuff :(
+
+//React components :)
 _webfontloader2.default.load({
   google: { families: ['Source Sans Pro:400,600,700'] },
   custom: { families: ['Ionicons'], testStrings: { Ionicons: '\uF10C\uF109' } },
@@ -36292,8 +36298,6 @@ _webfontloader2.default.load({
     console.error(familyName + ' failed to load');
   }
 });
-//React components :)
-
 
 (0, _reactMultipleRender2.default)(_headerSlider2.default, '.header-slider');
 (0, _reactMultipleRender2.default)(_contactForm2.default, '.contact-form');
@@ -36304,6 +36308,7 @@ _webfontloader2.default.load({
 (0, _reactMultipleRender2.default)(_sectionVideo2.default, '.section-video');
 (0, _reactMultipleRender2.default)(_campaignsSlider2.default, '.bs-campaings-slider');
 (0, _reactMultipleRender2.default)(_downloadPdf2.default, '.bs-download-pdf');
+(0, _reactMultipleRender2.default)(_galleryHeader2.default, '.bs-gallery-header');
 
 (0, _set_menu2.default)();
 (0, _set_menu_mobile2.default)();
@@ -36311,6 +36316,62 @@ _webfontloader2.default.load({
 (0, _smoothScroll2.default)();
 (0, _toggleViaCrucisNav2.default)();
 (0, _scrollViaCrucisNav2.default)();
+
+/***/ }),
+/* 568 */,
+/* 569 */,
+/* 570 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(16);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var GalleryHeader = _react2.default.createClass({
+	displayName: "GalleryHeader",
+	getDefaultProps: function getDefaultProps() {
+		return {
+			images: [],
+			excerpts: []
+		};
+	},
+	render: function render() {
+		var _props = this.props,
+		    images = _props.images,
+		    excerpts = _props.excerpts;
+
+
+		return _react2.default.createElement(
+			"div",
+			{ className: "header-gallery" },
+			_react2.default.createElement(
+				"div",
+				{ "class": "header-gallery__viewport" },
+				_react2.default.createElement(
+					"div",
+					{ "class": "l-wrap" },
+					images.map(function (image, i) {
+						return _react2.default.createElement(
+							"div",
+							{ "class": "header-gallery__caption", style: i == 0 ? { dispaly: 'block' } : { display: 'none' } },
+							_react2.default.createElement("img", { src: image, alt: "", style: { maxWidth: '100%' } }),
+							_react2.default.createElement(
+								"span",
+								{ "class": "header-gallery__caption-text" },
+								excerpts[i]
+							)
+						);
+					})
+				)
+			)
+		);
+	}
+});
 
 /***/ })
 /******/ ]);
