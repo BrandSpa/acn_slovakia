@@ -36367,7 +36367,7 @@ var GalleryHeader = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'div',
-			{ className: 'header-gallery', style: { height: h + 'px' } },
+			{ className: 'header-gallery', style: { height: h + 'px', background: '#333' } },
 			_react2.default.createElement(
 				'div',
 				{ className: 'header-gallery__viewport' },

@@ -27,7 +27,7 @@ const GalleryHeader = React.createClass({
 		const h = window.innerHeight;
 
 		return (
-			<div className="header-gallery" style={{height: `${h}px`}}>
+			<div className="header-gallery" style={{height: `${h}px`, background: '#333'}}>
 				<div className="header-gallery__viewport">
 				<div className="l-wrap">
 					{images.map((image, i) =>
