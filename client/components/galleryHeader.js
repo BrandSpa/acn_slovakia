@@ -64,16 +64,17 @@ const GalleryHeader = React.createClass({
 					)}
 					</div>
 				</div>
-				
+
 				<div className="header-gallery__btns" style={{position: 'absolute', bottom: '40px', right: '40px'}}>
 					<button 
 						onClick={this.changeCaption.bind(null, 'prev')} 
-						style={{border: '1px solid #fff', background: 'transparent'}}>
+						style={{border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0'}}>
 						<i className="ion-chevron-left"></i>
 					</button>
+
 					<button 
 						onClick={this.changeCaption.bind(null, 'next')} 
-						style={{border: '1px solid #fff', background: 'transparent'}}>
+						style={{border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0'}}>
 						<i className="ion-chevron-right"></i>
 					</button>
 				</div>
