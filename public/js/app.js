@@ -36363,10 +36363,11 @@ var GalleryHeader = _react2.default.createClass({
 		    images = _props.images,
 		    excerpts = _props.excerpts;
 
+		var h = window.innerHeight;
 
 		return _react2.default.createElement(
 			'div',
-			{ className: 'header-gallery' },
+			{ className: 'header-gallery', style: { height: h + 'px' } },
 			_react2.default.createElement(
 				'div',
 				{ className: 'header-gallery__viewport' },

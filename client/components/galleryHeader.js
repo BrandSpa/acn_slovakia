@@ -24,9 +24,10 @@ const GalleryHeader = React.createClass({
 
 	render() {
 		const { images, excerpts } = this.props;
+		const h = window.innerHeight;
 
 		return (
-			<div className="header-gallery">
+			<div className="header-gallery" style={{height: `${h}px`}}>
 				<div className="header-gallery__viewport">
 				<div className="l-wrap">
 					{images.map((image, i) =>
