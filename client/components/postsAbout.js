@@ -14,6 +14,10 @@ const PostsAbout = React.createClass({
 		this.fetchPosts();
 	},
 
+	componentDidMount() {
+		this.fetchPosts();
+	},
+
 	fetchPosts() {
 		console.log(this.props.category);
 		let data = qs.stringify({action: 'get_posts'});
@@ -26,7 +30,7 @@ const PostsAbout = React.createClass({
 	},
 
 	render() {
-		const { posts } = this.props;
+		const { posts } = this.state;
 		return (
 			<div>
 			{posts.map((post, i) => {

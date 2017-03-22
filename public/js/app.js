@@ -40739,6 +40739,9 @@ var PostsAbout = _react2.default.createClass({
 	componentWillReceiveProps: function componentWillReceiveProps() {
 		this.fetchPosts();
 	},
+	componentDidMount: function componentDidMount() {
+		this.fetchPosts();
+	},
 	fetchPosts: function fetchPosts() {
 		var _this = this;
 
@@ -40752,7 +40755,7 @@ var PostsAbout = _react2.default.createClass({
 		});
 	},
 	render: function render() {
-		var posts = this.props.posts;
+		var posts = this.state.posts;
 
 		return _react2.default.createElement(
 			'div',
