@@ -40695,7 +40695,7 @@ var ProjectsAbout = _react2.default.createClass({
 					this.props.projects[section] ? this.props.projects[section].number_text : ''
 				)
 			),
-			_react2.default.createElement(_postsAbout2.default, null)
+			_react2.default.createElement(_postsAbout2.default, { category: this.props.projects[section] ? this.props.projects[section].post_category : '' })
 		);
 	}
 });
