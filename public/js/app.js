@@ -36381,7 +36381,10 @@ var GalleryHeader = _react2.default.createClass({
 								className: 'header-gallery__caption',
 								style: i == _this.state.section ? { dispaly: 'block', position: 'relative' } : { display: 'none' }
 							},
-							_react2.default.createElement('span', { 'class': 'header-gallery__caption-image', style: { background: 'url(' + image + ')', backgroundSize: 'cover' } }),
+							_react2.default.createElement('span', {
+								className: 'header-gallery__caption-image',
+								style: { background: 'url(' + image + ')', backgroundSize: 'cover', display: 'block' }
+							}),
 							_react2.default.createElement(
 								'span',
 								{ className: 'header-gallery__caption-text' },
