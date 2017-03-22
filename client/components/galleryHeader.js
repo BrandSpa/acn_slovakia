@@ -81,6 +81,13 @@ const GalleryHeader = React.createClass({
 			alignItems: 'center'
 		};
 
+		const excerptStyle = {
+			color: '#fff', 
+			marginTop: '20px', 
+			display: 'block', 
+			textShadow: '2px 2px 2px #222'
+		};
+
 		return (
 			<StyleRoot>
 			<div style={mainStyle}>
@@ -95,7 +102,7 @@ const GalleryHeader = React.createClass({
 								style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', display: 'none'}}
 							>
 							</span>
-							<span style={{color: '#fff', marginTop: '20px', display: 'block', textShadow: '2px 2px 2px #222'}}>{excerpts[i]}</span>
+							<span style={excerptStyle}>{excerpts[i]}</span>
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'prev')} 

@@ -28696,6 +28696,13 @@ var GalleryHeader = _react2.default.createClass({
 			alignItems: 'center'
 		};
 
+		var excerptStyle = {
+			color: '#fff',
+			marginTop: '20px',
+			display: 'block',
+			textShadow: '2px 2px 2px #222'
+		};
+
 		return _react2.default.createElement(
 			_radium.StyleRoot,
 			null,
@@ -28720,7 +28727,7 @@ var GalleryHeader = _react2.default.createClass({
 								}),
 								_react2.default.createElement(
 									'span',
-									{ style: { color: '#fff', marginTop: '20px', display: 'block', textShadow: '2px 2px 2px #222' } },
+									{ style: excerptStyle },
 									excerpts[i]
 								),
 								_react2.default.createElement('a', {
