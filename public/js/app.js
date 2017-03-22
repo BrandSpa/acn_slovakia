@@ -28679,7 +28679,8 @@ var GalleryHeader = _react2.default.createClass({
 		};
 
 		var mainStyle = { height: h + 'px', background: '#2C2C2C', position: 'relative' };
-		var viewportStyle = { padding: '40px', display: 'flex', justifyContent: 'center' };
+		var viewportStyle = { height: h + 'px', padding: '40px', display: 'flex', justifyContent: 'center' };
+
 		return _react2.default.createElement(
 			_radium.StyleRoot,
 			null,
