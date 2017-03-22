@@ -38,8 +38,8 @@ const GalleryHeader = React.createClass({
 					</div>
 				</div>
 				<div class="header-gallery__btns">
-					<button onClick={this.changeCaption.bind(null, 'next')}><i class="ion-chevron-right"></i></button>
-					<button onClick={this.changeCaption.bind(null, 'prev')}><i class="ion-chevron-left"></i></button>
+					<button onClick={this.changeCaption.bind(null, 'prev')}><i className="ion-chevron-left"></i></button>\
+					<button onClick={this.changeCaption.bind(null, 'next')}><i className="ion-chevron-right"></i></button>
 				</div>
 			</div>
 		)	

@@ -36392,13 +36392,14 @@ var GalleryHeader = _react2.default.createClass({
 				{ 'class': 'header-gallery__btns' },
 				_react2.default.createElement(
 					'button',
-					{ onClick: this.changeCaption.bind(null, 'next') },
-					_react2.default.createElement('i', { 'class': 'ion-chevron-right' })
+					{ onClick: this.changeCaption.bind(null, 'prev') },
+					_react2.default.createElement('i', { className: 'ion-chevron-left' })
 				),
+				'\\',
 				_react2.default.createElement(
 					'button',
-					{ onClick: this.changeCaption.bind(null, 'prev') },
-					_react2.default.createElement('i', { 'class': 'ion-chevron-left' })
+					{ onClick: this.changeCaption.bind(null, 'next') },
+					_react2.default.createElement('i', { className: 'ion-chevron-right' })
 				)
 			)
 		);
