@@ -3,6 +3,7 @@ import Projects from './projects';
 
 const ProjectsAbout = React.createClass({
 	render() {
+		console.log(this.props.projects);
 		return (
 			<div>
 				<Projects contents={this.props.projects} donate={this.props.donate} />
