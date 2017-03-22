@@ -2,15 +2,14 @@
 
 function bs_projects_about_sc($atts, $content = null) {
 	$attributes = [ 
-    'projects' => '',
-		'interval' => 5000
+    'projects' => ''
 	];
 
   $at = shortcode_atts( $attributes , $atts );
 	
-	$projects = array_map(function($slide) {
-		$slide['image'] = wp_get_attachment_url($slide['image']);
-		return $slide;
+	$projects = array_map(function($project) {
+		$project['image'] = wp_get_attachment_url($project['image']);
+		return $project;
 	}, vc_param_group_parse_atts( $at['projects'] ));
 
   ob_start();
@@ -71,16 +70,10 @@ function bs_projects_about_sc($atts, $content = null) {
 
     $params = [
       [
-        "type" => "textfield",
-        "heading" => "enter interval",
-        "param_name" => "interval",
-        "value" => 5000
-      ],
-      [
         'type' => 'param_group',
-        'value' => '',
         'param_name' => 'projects',
-        'params' => $subparams
+        'params' => $subparams,
+				'value' => ''
       ]
     ];
 
