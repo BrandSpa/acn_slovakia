@@ -19,8 +19,7 @@ const PostsAbout = React.createClass({
 	},
 
 	fetchPosts() {
-		console.log(this.props.category);
-		let data = qs.stringify({action: 'get_posts', 'post_perpage': 4});
+		let data = qs.stringify({action: 'get_posts', 'post_perpage': 4, 'post_category': this.props.category});
 
 		request.post(endpoint, data)
 		.then(res => {
