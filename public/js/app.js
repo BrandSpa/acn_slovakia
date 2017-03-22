@@ -28703,7 +28703,7 @@ var GalleryHeader = _react2.default.createClass({
 								}),
 								_react2.default.createElement(
 									'span',
-									{ className: 'header-gallery__caption-text', style: { color: '#fff' } },
+									{ className: 'header-gallery__caption-text', style: { color: '#fff', marginTop: '40px' } },
 									excerpts[i]
 								),
 								_react2.default.createElement('a', {
