@@ -10,7 +10,12 @@ function bs_breadcrumb_sc($atts, $content = null) {
   ob_start();
 ?>
 
-<div class="breadcrumbs" style="<?php echo $at['style'] ?>" typeof="BreadcrumbList" vocab="https://schema.org/">
+<div
+	class="breadcrumbs" 
+	style="<?php echo $at['style'] ?>" 
+	typeof="BreadcrumbList" 
+	vocab="https://schema.org/"
+>
 	<?php if(function_exists('bcn_display')) { bcn_display(); }?>
 </div>
 
