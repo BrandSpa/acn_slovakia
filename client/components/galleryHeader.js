@@ -47,6 +47,24 @@ const GalleryHeader = React.createClass({
 			} 
 		};
 
+		const btnStyle = {
+			border: '1px solid #fff', 
+			background: 'transparent', 
+			width: '50px', 
+			height: '50px', 
+			borderRadius: '0', 
+			padding: '0'
+		};
+
+		const links = { 
+			position: 'absolute', 
+			height: '100%', 
+			top: '0',
+			 bottom: 'auto', 
+			 left: 0, 
+			 width: '50%'
+		};
+
 		return (
 			<StyleRoot>
 			<div className="header-gallery" style={{height: `${h}px`, background: '#2C2C2C', position: 'relative'}}>
@@ -59,18 +77,18 @@ const GalleryHeader = React.createClass({
 						>
 							<span
 								className="header-gallery__caption-image" 
-								style={{background: `url(${image})`, backgroundSize: 'cover', display: 'block'}}
+								style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', display: 'block'}}
 							>
 							</span>
 							<span className="header-gallery__caption-text" style={{color: '#fff'}}>{excerpts[i]}</span>
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'prev')} 
-								style={{ position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%'}}></a>
+								style={links}></a>
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'next')} 
-								style={{ position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%'}}></a>
+								style={links}></a>
 						</div>
 					)}
 					</div>
@@ -79,13 +97,13 @@ const GalleryHeader = React.createClass({
 				<div className="header-gallery__btns" style={btnsStyle}>
 					<button 
 						onClick={this.changeCaption.bind(null, 'prev')} 
-						style={{border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0'}}>
+						style={btnStyle}>
 						<i className="ion-chevron-left"></i>
 					</button>
 
 					<button 
 						onClick={this.changeCaption.bind(null, 'next')} 
-						style={{border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0'}}>
+						style={btnStyle}>
 						<i className="ion-chevron-right"></i>
 					</button>
 				</div>

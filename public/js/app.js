@@ -28660,6 +28660,24 @@ var GalleryHeader = _react2.default.createClass({
 			}
 		};
 
+		var btnStyle = {
+			border: '1px solid #fff',
+			background: 'transparent',
+			width: '50px',
+			height: '50px',
+			borderRadius: '0',
+			padding: '0'
+		};
+
+		var links = {
+			position: 'absolute',
+			height: '100%',
+			top: '0',
+			bottom: 'auto',
+			left: 0,
+			width: '50%'
+		};
+
 		return _react2.default.createElement(
 			_radium.StyleRoot,
 			null,
@@ -28681,7 +28699,7 @@ var GalleryHeader = _react2.default.createClass({
 								},
 								_react2.default.createElement('span', {
 									className: 'header-gallery__caption-image',
-									style: { background: 'url(' + image + ')', backgroundSize: 'cover', display: 'block' }
+									style: { backgroundImage: 'url(' + image + ')', backgroundSize: 'cover', display: 'block' }
 								}),
 								_react2.default.createElement(
 									'span',
@@ -28691,11 +28709,11 @@ var GalleryHeader = _react2.default.createClass({
 								_react2.default.createElement('a', {
 									href: '#',
 									onClick: _this.changeCaption.bind(null, 'prev'),
-									style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%' } }),
+									style: links }),
 								_react2.default.createElement('a', {
 									href: '#',
 									onClick: _this.changeCaption.bind(null, 'next'),
-									style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%' } })
+									style: links })
 							);
 						})
 					)
@@ -28707,14 +28725,14 @@ var GalleryHeader = _react2.default.createClass({
 						'button',
 						{
 							onClick: this.changeCaption.bind(null, 'prev'),
-							style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0' } },
+							style: btnStyle },
 						_react2.default.createElement('i', { className: 'ion-chevron-left' })
 					),
 					_react2.default.createElement(
 						'button',
 						{
 							onClick: this.changeCaption.bind(null, 'next'),
-							style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0' } },
+							style: btnStyle },
 						_react2.default.createElement('i', { className: 'ion-chevron-right' })
 					)
 				)
