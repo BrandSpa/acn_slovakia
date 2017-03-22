@@ -67,7 +67,7 @@ const GalleryHeader = React.createClass({
 
 		const linkRight = {...linkLeft, left: 'auto', right: 0};
 
-		const mainStyle = {height: `${h}px`, background: '#2C2C2C', position: 'relative'};
+		const mainStyle = {height: `${h}px`, background: 'rgba(0,0,0,.9)', position: 'relative'};
 
 		const viewportStyle = {
 			height: `${h}px`, 
