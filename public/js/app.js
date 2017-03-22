@@ -28682,7 +28682,11 @@ var GalleryHeader = _react2.default.createClass({
 
 		var linkRight = _extends({}, linkLeft, { left: 'auto', right: 0 });
 
-		var mainStyle = { height: h + 'px', background: '#222', position: 'relative' };
+		var mainStyle = {
+			height: h + 'px',
+			background: '#222',
+			position: 'relative'
+		};
 
 		var viewportStyle = {
 			height: h + 'px',
@@ -28712,12 +28716,11 @@ var GalleryHeader = _react2.default.createClass({
 								},
 								_react2.default.createElement('img', { src: image, alt: '', style: { maxWidth: '100%', height: 'auto' } }),
 								_react2.default.createElement('span', {
-
 									style: { backgroundImage: 'url(' + image + ')', backgroundSize: 'cover', display: 'none' }
 								}),
 								_react2.default.createElement(
 									'span',
-									{ style: { color: '#fff', marginTop: '20px', display: 'block' } },
+									{ style: { color: '#fff', marginTop: '20px', display: 'block', textShadow: '2px 2px 2px #222' } },
 									excerpts[i]
 								),
 								_react2.default.createElement('a', {

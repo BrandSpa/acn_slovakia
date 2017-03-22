@@ -67,7 +67,11 @@ const GalleryHeader = React.createClass({
 
 		const linkRight = {...linkLeft, left: 'auto', right: 0};
 
-		const mainStyle = {height: `${h}px`, background: '#222', position: 'relative'};
+		const mainStyle = {
+			height: `${h}px`, 
+			background: '#222', 
+			position: 'relative'
+		};
 
 		const viewportStyle = {
 			height: `${h}px`, 
@@ -88,11 +92,10 @@ const GalleryHeader = React.createClass({
 						>
 							<img src={image} alt="" style={{maxWidth: '100%', height: 'auto'}} />
 							<span
-	
 								style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', display: 'none'}}
 							>
 							</span>
-							<span style={{color: '#fff', marginTop: '20px', display: 'block'}}>{excerpts[i]}</span>
+							<span style={{color: '#fff', marginTop: '20px', display: 'block', textShadow: '2px 2px 2px #222'}}>{excerpts[i]}</span>
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'prev')} 
