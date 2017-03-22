@@ -14,7 +14,6 @@ register_nav_menus(
 
 $vc = '';
 add_theme_support( 'post-thumbnails' );
-
 add_action( 'init', 'create_post_type' );
 
 function create_post_type() {
