@@ -1,5 +1,5 @@
 import React from 'react';
-import Radium, {StyleRoot} from 'radium';
+import Radium, { StyleRoot } from 'radium';
 
 const GalleryHeader = React.createClass({
 	getInitialState() {
@@ -46,7 +46,7 @@ const GalleryHeader = React.createClass({
 				right: '10px'
 			} 
 		};
-		
+
 		return (
 			<StyleRoot>
 			<div className="header-gallery" style={{height: `${h}px`, background: '#2C2C2C', position: 'relative'}}>
