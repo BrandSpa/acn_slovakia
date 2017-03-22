@@ -62,7 +62,7 @@ const GalleryMetabox = React.createClass({
 	},
 
 	handleClick() {
-		MediaUploader.then(res => console.log(res));
+		MediaUploader().then(res => console.log(res));
 	},
 
 	renderInputs(i = 0) {

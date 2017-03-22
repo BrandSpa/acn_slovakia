@@ -21966,7 +21966,7 @@ var GalleryMetabox = _react2.default.createClass({
 		this.setState({ images: images, excerpts: excerpts });
 	},
 	handleClick: function handleClick() {
-		_uploader2.default.then(function (res) {
+		(0, _uploader2.default)().then(function (res) {
 			return console.log(res);
 		});
 	},
