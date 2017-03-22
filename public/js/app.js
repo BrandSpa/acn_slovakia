@@ -40694,7 +40694,8 @@ var ProjectsAbout = _react2.default.createClass({
 					{ 'class': 'projects-about-num__text' },
 					this.props.projects[section] ? this.props.projects[section].number_text : ''
 				)
-			)
+			),
+			_react2.default.createElement(_postsAbout2.default, null)
 		);
 	}
 });

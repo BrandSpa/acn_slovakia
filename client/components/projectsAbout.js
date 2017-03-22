@@ -29,6 +29,8 @@ const ProjectsAbout = React.createClass({
 						{this.props.projects[section] ? this.props.projects[section].number_text : ''}
 					</div>
 				</div>
+				
+				<PostsAbout />
 			</div>
 		)
 	}
