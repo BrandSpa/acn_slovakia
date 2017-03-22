@@ -8,7 +8,7 @@ function bs_projects_about_sc($atts, $content = null) {
   $at = shortcode_atts( $attributes , $atts );
 	
 	$projects = array_map(function($project) {
-		$project['image'] = isset($project['image']) ?  wp_get_attachment_url($project['image']) : '';
+		$project['imgUrl'] = isset($project['image']) ?  wp_get_attachment_url($project['image']) : '';
 		return $project;
 	}, vc_param_group_parse_atts( $at['projects'] ));
 
