@@ -21,11 +21,11 @@ const ProjectsAbout = React.createClass({
 			<div>
 				<Projects contents={this.props.projects} donate={this.props.donate} changeSection={this.handleSection} />
 				<div class="projects-about-num">
-					<div class="projects-about-num__num">
+					<div class="projects-about-num__num" style={{width: '50%', float: 'left'}}>
 						{this.props.projects[section] ? this.props.projects[section].number : ''}
 					</div>
 
-					<div class="projects-about-num__text">
+					<div class="projects-about-num__text" style={{width: '50%', float: 'left'}}>
 						{this.props.projects[section] ? this.props.projects[section].number_text : ''}
 					</div>
 				</div>

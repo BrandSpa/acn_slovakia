@@ -40686,12 +40686,12 @@ var ProjectsAbout = _react2.default.createClass({
 				{ 'class': 'projects-about-num' },
 				_react2.default.createElement(
 					'div',
-					{ 'class': 'projects-about-num__num' },
+					{ 'class': 'projects-about-num__num', style: { width: '50%', float: 'left' } },
 					this.props.projects[section] ? this.props.projects[section].number : ''
 				),
 				_react2.default.createElement(
 					'div',
-					{ 'class': 'projects-about-num__text' },
+					{ 'class': 'projects-about-num__text', style: { width: '50%', float: 'left' } },
 					this.props.projects[section] ? this.props.projects[section].number_text : ''
 				)
 			),
