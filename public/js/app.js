@@ -40658,11 +40658,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ProjectsAbout = _react2.default.createClass({
 	displayName: 'ProjectsAbout',
+	getInitialState: function getInitialState() {
+		return {
+			section: 0
+		};
+	},
 	handleSection: function handleSection(i) {
-		console.log(i);
+		var section = i - 1;
+		this.setState({ section: section });
 	},
 	render: function render() {
-		console.log(this.props.projects);
+		var section = this.state.section;
+
+
 		return _react2.default.createElement(
 			'div',
 			null,
@@ -40673,12 +40681,12 @@ var ProjectsAbout = _react2.default.createClass({
 				_react2.default.createElement(
 					'div',
 					{ 'class': 'projects-about-num__num' },
-					this.props.projects[0].number
+					this.props.projects[section].number
 				),
 				_react2.default.createElement(
 					'div',
 					{ 'class': 'projects-about-num__text' },
-					this.props.projects[0].number_text
+					this.props.projects[section].number_text
 				)
 			)
 		);

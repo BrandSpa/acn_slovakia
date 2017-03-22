@@ -2,21 +2,29 @@ import React from 'react';
 import Projects from './projects';
 
 const ProjectsAbout = React.createClass({
+	getInitialState() {
+		return {
+			section: 0
+		}
+	},
+
 	handleSection(i) {
-		console.log(i);
+		let section = (i - 1);
+		this.setState({section});
 	},
 
 	render() {
-		console.log(this.props.projects);
+		const { section } = this.state;
+		
 		return (
 			<div>
 				<Projects contents={this.props.projects} donate={this.props.donate} changeSection={this.handleSection} />
 				<div class="projects-about-num">
 					<div class="projects-about-num__num">
-						{this.props.projects[0].number}
+						{this.props.projects[section].number}
 					</div>
 					<div class="projects-about-num__text">
-						{this.props.projects[0].number_text}
+						{this.props.projects[section].number_text}
 					</div>
 				</div>
 			</div>
