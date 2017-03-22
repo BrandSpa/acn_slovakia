@@ -17,7 +17,8 @@ const GalleryHeader = React.createClass({
 	componentDidMount() {
 		let container = document.querySelector('.header-gallery__container');
 		let containerH = container.offsetWidth / 1.5;
-		console.log(containerH);
+		console.log(Math.round(containerH));
+
 	},
 	
 	changeCaption(type, e) {
@@ -41,7 +42,7 @@ const GalleryHeader = React.createClass({
 							className="header-gallery__caption" 
 							style={i == this.state.section ? {dispaly: 'block', position: 'relative'} : {display: 'none'}}
 						>
-							<span 
+							<span
 								className="header-gallery__caption-image" 
 								style={{background: `url(${image})`, backgroundSize: 'cover', display: 'block'}}
 							>

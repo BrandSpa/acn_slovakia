@@ -36352,7 +36352,7 @@ var GalleryHeader = _react2.default.createClass({
 	componentDidMount: function componentDidMount() {
 		var container = document.querySelector('.header-gallery__container');
 		var containerH = container.offsetWidth / 1.5;
-		console.log(containerH);
+		console.log(Math.round(containerH));
 	},
 	changeCaption: function changeCaption(type, e) {
 		e.preventDefault();
