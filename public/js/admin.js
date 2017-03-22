@@ -22377,9 +22377,9 @@ var GalleryMetabox = _react2.default.createClass({
 						name: 'excerpts[]',
 						placeholder: 'excerpt',
 						rows: '4',
-						onChange: this.handleChange.bind(null, i, 'excerpt'),
-						value: this.state.excerpts[i],
-						style: { width: '100%', display: 'block ' }
+						onChange: this.handleChange.bind(null, i, 'excerpt')
+						// value={this.state.excerpts[i]} 
+						, style: { width: '100%', display: 'block ' }
 					},
 					this.state.excerpts[i]
 				)

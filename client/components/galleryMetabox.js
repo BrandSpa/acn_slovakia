@@ -73,7 +73,7 @@ const GalleryMetabox = React.createClass({
 					placeholder="excerpt"
 					rows="4"
 					onChange={this.handleChange.bind(null, i, 'excerpt')} 
-					value={this.state.excerpts[i]} 
+					// value={this.state.excerpts[i]} 
 					style={{width: '100%', display: 'block '}}
 				>{this.state.excerpts[i]}</textarea>
 			</p>
