@@ -61,8 +61,13 @@ const GalleryMetabox = React.createClass({
 		this.setState({ images, excerpts });
 	},
 
-	handleClick() {
-		openMediaUploader().then(res => console.log(res));
+	handleClick(i) {
+		let { images } = this.state;
+
+		openMediaUploader().then(res => {
+			images[i] = res.url;
+			this.setState({images});
+		});
 	},
 
 	renderInputs(i = 0) {
@@ -73,7 +78,7 @@ const GalleryMetabox = React.createClass({
 						type="text" 
 						name="images[]" 
 						placeholder="Image url"
-						onClick={this.handleClick}
+						onClick={this.handleClick.bind(null, i)}
 						onChange={this.handleChange.bind(null, i, 'image')} 
 						value={ this.state.images[i] } 
 						style={{width: '100%', display: 'blockJ'}}

@@ -21963,9 +21963,15 @@ var GalleryMetabox = _react2.default.createClass({
 		});
 		this.setState({ images: images, excerpts: excerpts });
 	},
-	handleClick: function handleClick() {
+	handleClick: function handleClick(i) {
+		var _this = this;
+
+		var images = this.state.images;
+
+
 		(0, _uploader.openMediaUploader)().then(function (res) {
-			return console.log(res);
+			images[i] = res.url;
+			_this.setState({ images: images });
 		});
 	},
 	renderInputs: function renderInputs() {
@@ -21981,7 +21987,7 @@ var GalleryMetabox = _react2.default.createClass({
 					type: 'text',
 					name: 'images[]',
 					placeholder: 'Image url',
-					onClick: this.handleClick,
+					onClick: this.handleClick.bind(null, i),
 					onChange: this.handleChange.bind(null, i, 'image'),
 					value: this.state.images[i],
 					style: { width: '100%', display: 'blockJ' }
@@ -22008,7 +22014,7 @@ var GalleryMetabox = _react2.default.createClass({
 		);
 	},
 	render: function render() {
-		var _this = this;
+		var _this2 = this;
 
 		var _state$images = this.state.images,
 		    images = _state$images === undefined ? [] : _state$images;
@@ -22017,7 +22023,7 @@ var GalleryMetabox = _react2.default.createClass({
 			'div',
 			null,
 			images.map(function (image, i) {
-				return _this.renderInputs(i);
+				return _this2.renderInputs(i);
 			}),
 			_react2.default.createElement(
 				'button',
