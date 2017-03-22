@@ -11,7 +11,7 @@ const Posts = React.createClass({
   },
 
   componentWillMount() {
-    let data = qs.stringify({action: 'get_posts', post_type: ['video', 'gallery', 'post']});
+    let data = qs.stringify({action: 'get_posts', post_type: ['video', 'gallery']});
 
     request
       .post('/wp-admin/admin-ajax.php', data)
