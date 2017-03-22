@@ -40746,7 +40746,7 @@ var PostsAbout = _react2.default.createClass({
 		var _this = this;
 
 		console.log(this.props.category);
-		var data = _qs2.default.stringify({ action: 'get_posts' });
+		var data = _qs2.default.stringify({ action: 'get_posts', perpage: 4 });
 
 		_axios2.default.post(endpoint, data).then(function (res) {
 			_this.setState({ posts: res.data });
