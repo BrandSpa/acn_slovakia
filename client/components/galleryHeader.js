@@ -17,7 +17,7 @@ const GalleryHeader = React.createClass({
 	changeCaption(type, e) {
 		e.preventDefault();
 		let section = this.state.section;
-		if(type == 'next') section = this.state.section < this.props.images.length ? this.state.section + 1 : 0;
+		if(type == 'next') section = this.state.section < (this.props.images.length - 1)  ? this.state.section + 1 : 0;
 		if(type == 'prev') section = this.state.section > 0 ? this.state.section - 1 : 0;
 		this.setState({section});
 	},
