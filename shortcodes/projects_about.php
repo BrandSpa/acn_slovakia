@@ -18,7 +18,8 @@ function bs_projects_about_sc($atts, $content = null) {
 <div
   class="bs-projects-about" 
   data-props='{
-    "projects": <?php echo cleanQuote(json_encode($projects)) ?>
+    "projects": <?php echo cleanQuote(json_encode($projects)) ?>,
+		"donate": "<?php echo gett('Donate') ?>"
   }'
 >
 </div>

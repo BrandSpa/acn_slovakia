@@ -40658,7 +40658,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var ProjectsAbout = _react2.default.createClass({
 	displayName: 'ProjectsAbout',
 	render: function render() {
-		return _react2.default.createElement(_projects2.default, { contents: this.props.projects });
+		return _react2.default.createElement(_projects2.default, { contents: this.props.projects, donate: this.props.donate });
 	}
 });
 
