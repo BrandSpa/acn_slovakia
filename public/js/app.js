@@ -36420,14 +36420,14 @@ var GalleryHeader = _react2.default.createClass({
 					'button',
 					{
 						onClick: this.changeCaption.bind(null, 'prev'),
-						style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0' } },
+						style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0' } },
 					_react2.default.createElement('i', { className: 'ion-chevron-left' })
 				),
 				_react2.default.createElement(
 					'button',
 					{
 						onClick: this.changeCaption.bind(null, 'next'),
-						style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0' } },
+						style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0' } },
 					_react2.default.createElement('i', { className: 'ion-chevron-right' })
 				)
 			)
