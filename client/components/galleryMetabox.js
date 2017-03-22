@@ -22,12 +22,12 @@ const GalleryMetabox = React.createClass({
 
 	componentDidMount() {
 		console.log('props', this.props);
-		if(typeof this.props.images 'array') {
-			this.setState({images, this.props.images});
+		if(typeof this.props.images == 'array') {
+			this.setState({images: this.props.images});
 		}
 
-		if(typeof this.props.excerpts 'array') {
-			this.setState({excerpts, this.props.excerpts});
+		if(typeof this.props.excerpts == 'array') {
+			this.setState({excerpts: this.props.excerpts});
 		}
 
 	},

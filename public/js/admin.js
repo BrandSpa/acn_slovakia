@@ -22280,10 +22280,138 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /***/ }),
 /* 566 */,
 /* 567 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token, expected ) (25:30)\n\n\u001b[0m \u001b[90m 23 | \u001b[39m\tcomponentDidMount() {\n \u001b[90m 24 | \u001b[39m\t\tconsole\u001b[33m.\u001b[39mlog(\u001b[32m'props'\u001b[39m\u001b[33m,\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 | \u001b[39m\t\t\u001b[36mif\u001b[39m(\u001b[36mtypeof\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mimages \u001b[32m'array'\u001b[39m) {\n \u001b[90m    | \u001b[39m\t\t                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 | \u001b[39m\t\t\t\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msetState({images\u001b[33m,\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mimages})\u001b[33m;\u001b[39m\n \u001b[90m 27 | \u001b[39m\t\t}\n \u001b[90m 28 | \u001b[39m\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(16);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var GalleryMetabox = _react2.default.createClass({
+	displayName: 'GalleryMetabox',
+	getInitialState: function getInitialState() {
+		return {
+			images: [],
+			excerpts: []
+		};
+	},
+	getDefaultProps: function getDefaultProps() {
+		return {
+			images: [],
+			excerpts: []
+		};
+	},
+	componentWillReceiveProps: function componentWillReceiveProps(props) {},
+	componentDidMount: function componentDidMount() {
+		console.log('props', this.props);
+		if (typeof this.props.images == 'array') {
+			this.setState({ images: this.props.images });
+		}
+
+		if (typeof this.props.excerpts == 'array') {
+			this.setState({ excerpts: this.props.excerpts });
+		}
+	},
+	handleChange: function handleChange(ind, type, e) {
+		var _state = this.state,
+		    images = _state.images,
+		    excerpts = _state.excerpts;
+
+
+		if (type == 'image') {
+			images[ind] = e.currentTarget.value;
+		}
+
+		if (type == 'excerpt') {
+			excerpts[ind] = e.currentTarget.value;
+		}
+
+		this.setState({ images: images, excerpts: excerpts });
+	},
+	handleAdd: function handleAdd(e) {
+		e.preventDefault();
+		var images = this.state.images.concat(['']);
+		var excerpts = this.state.excerpts.concat(['']);
+		this.setState({ images: images, excerpts: excerpts });
+	},
+	handleRemove: function handleRemove(ind, e) {
+		e.preventDefault();
+		var images = this.state.images.filter(function (con, i) {
+			return i != ind;
+		});
+		this.setState({ images: images });
+	},
+	renderInputs: function renderInputs() {
+		var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+		return _react2.default.createElement(
+			'p',
+			null,
+			_react2.default.createElement(
+				'p',
+				null,
+				_react2.default.createElement('input', {
+					type: 'text',
+					name: 'images[]',
+					placeholder: 'Image url',
+					onChange: this.handleChange.bind(null, i, 'image'),
+					value: this.state.images[i],
+					style: { width: '100%', display: 'blockJ' }
+				})
+			),
+			_react2.default.createElement(
+				'p',
+				null,
+				_react2.default.createElement(
+					'textarea',
+					{
+						type: 'text',
+						name: 'excerpts[]',
+						placeholder: 'excerpt',
+						rows: '4',
+						onChange: this.handleChange.bind(null, i, 'excerpt'),
+						style: { width: '100%', display: 'block ' }
+					},
+					this.state.excerpts[i]
+				)
+			),
+			_react2.default.createElement(
+				'button',
+				{ className: 'button', onClick: this.handleRemove.bind(null, i) },
+				'Remove'
+			)
+		);
+	},
+	render: function render() {
+		var _this = this;
+
+		var _state$images = this.state.images,
+		    images = _state$images === undefined ? [] : _state$images;
+
+		return _react2.default.createElement(
+			'div',
+			null,
+			images.map(function (image, i) {
+				return _this.renderInputs(i);
+			}),
+			_react2.default.createElement(
+				'button',
+				{ onClick: this.handleAdd, className: 'button' },
+				'Add'
+			)
+		);
+	}
+});
+
+exports.default = GalleryMetabox;
 
 /***/ })
 /******/ ]);
