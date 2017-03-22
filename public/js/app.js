@@ -36337,40 +36337,67 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var GalleryHeader = _react2.default.createClass({
-	displayName: "GalleryHeader",
+	displayName: 'GalleryHeader',
+	getInitialState: function getInitialState() {
+		return {
+			section: 0
+		};
+	},
 	getDefaultProps: function getDefaultProps() {
 		return {
 			images: [],
 			excerpts: []
 		};
 	},
+	changeCaption: function changeCaption() {
+		var section = this.state.section;
+		if (type == 'next') section = this.state.section < this.props.images.length ? this.state.section + 1 : 0;
+		if (type == 'prev') section = this.state.section > 0 ? this.state.section - 1 : 0;
+		this.setState({ section: section });
+	},
 	render: function render() {
+		var _this = this;
+
 		var _props = this.props,
 		    images = _props.images,
 		    excerpts = _props.excerpts;
 
 
 		return _react2.default.createElement(
-			"div",
-			{ className: "header-gallery" },
+			'div',
+			{ className: 'header-gallery' },
 			_react2.default.createElement(
-				"div",
-				{ className: "header-gallery__viewport" },
+				'div',
+				{ className: 'header-gallery__viewport' },
 				_react2.default.createElement(
-					"div",
-					{ className: "l-wrap" },
+					'div',
+					{ className: 'l-wrap' },
 					images.map(function (image, i) {
 						return _react2.default.createElement(
-							"div",
-							{ className: "header-gallery__caption", style: i == 0 ? { dispaly: 'block' } : { display: 'none' } },
-							_react2.default.createElement("img", { src: image, alt: "", style: { maxWidth: '100%' } }),
+							'div',
+							{ className: 'header-gallery__caption', style: i == _this.state.section ? { dispaly: 'block' } : { display: 'none' } },
+							_react2.default.createElement('img', { src: image, alt: '', style: { maxWidth: '100%', display: 'block', margin: '40px auto' } }),
 							_react2.default.createElement(
-								"span",
-								{ className: "header-gallery__caption-text" },
+								'span',
+								{ className: 'header-gallery__caption-text' },
 								excerpts[i]
 							)
 						);
 					})
+				)
+			),
+			_react2.default.createElement(
+				'div',
+				{ 'class': 'header-gallery__btns' },
+				_react2.default.createElement(
+					'button',
+					{ onClick: this.changeCaption.bind(null, 'next') },
+					_react2.default.createElement('i', { 'class': 'ion-chevron-right' })
+				),
+				_react2.default.createElement(
+					'button',
+					{ onClick: this.changeCaption.bind(null, 'prev') },
+					_react2.default.createElement('i', { 'class': 'ion-chevron-left' })
 				)
 			)
 		);

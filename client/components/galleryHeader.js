@@ -1,6 +1,12 @@
 import React from 'react';
 
 const GalleryHeader = React.createClass({
+	getInitialState() {
+		return {
+			section: 0
+		}
+	},
+
 	getDefaultProps() {
 		return {
 			images: [],
@@ -8,6 +14,13 @@ const GalleryHeader = React.createClass({
 		}
 	},
 	
+	changeCaption() {
+		let section = this.state.section;
+		if(type == 'next') section = this.state.section < this.props.images.length ? this.state.section + 1 : 0;
+		if(type == 'prev') section = this.state.section > 0 ? this.state.section - 1 : 0;
+		this.setState({section});
+	},
+
 	render() {
 		const { images, excerpts } = this.props;
 
@@ -16,12 +29,16 @@ const GalleryHeader = React.createClass({
 				<div className="header-gallery__viewport">
 				<div className="l-wrap">
 					{images.map((image, i) =>
-						<div className="header-gallery__caption" style={i == 0 ? {dispaly: 'block'} : {display: 'none'}}>
-							<img src={image} alt="" style={{maxWidth: '100%'}} />
+						<div className="header-gallery__caption" style={i == this.state.section ? {dispaly: 'block'} : {display: 'none'}}>
+							<img src={image} alt="" style={{maxWidth: '100%', display: 'block', margin: '40px auto'}} />
 							<span className="header-gallery__caption-text">{excerpts[i]}</span>
 						</div>
 					)}
 					</div>
+				</div>
+				<div class="header-gallery__btns">
+					<button onClick={this.changeCaption.bind(null, 'next')}><i class="ion-chevron-right"></i></button>
+					<button onClick={this.changeCaption.bind(null, 'prev')}><i class="ion-chevron-left"></i></button>
 				</div>
 			</div>
 		)	
