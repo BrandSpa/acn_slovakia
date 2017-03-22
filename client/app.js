@@ -13,6 +13,7 @@ import Donate from './components/donate';
 import CampaignsSlider from './components/campaignsSlider';
 import DownloadPdf from './components/downloadPdf';
 import GalleryHeader from './components/galleryHeader';
+import ProjectsAbout from './components/projectsAbout';
 
 //jquery stuff :(
 import setMenu from './lib/set_menu';
@@ -40,6 +41,7 @@ multipleRender(sectionVideo, '.section-video');
 multipleRender(CampaignsSlider, '.bs-campaings-slider', );
 multipleRender(DownloadPdf, '.bs-download-pdf');
 multipleRender(GalleryHeader, '.bs-gallery-header');
+multipleRender(ProjectsAbout, '.bs-projects-about');
 
 setMenu();
 setMenuMobile();

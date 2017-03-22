@@ -40574,6 +40574,10 @@ var _galleryHeader = __webpack_require__(340);
 
 var _galleryHeader2 = _interopRequireDefault(_galleryHeader);
 
+var _projectsAbout = __webpack_require__(632);
+
+var _projectsAbout2 = _interopRequireDefault(_projectsAbout);
+
 var _set_menu = __webpack_require__(348);
 
 var _set_menu2 = _interopRequireDefault(_set_menu);
@@ -40601,8 +40605,6 @@ var _toggleViaCrucisNav2 = _interopRequireDefault(_toggleViaCrucisNav);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //jquery stuff :(
-
-//React components :)
 _webfontloader2.default.load({
   google: { families: ['Source Sans Pro:400,600,700'] },
   custom: { families: ['Ionicons'], testStrings: { Ionicons: '\uF10C\uF109' } },
@@ -40610,6 +40612,8 @@ _webfontloader2.default.load({
     console.error(familyName + ' failed to load');
   }
 });
+//React components :)
+
 
 (0, _reactMultipleRender2.default)(_headerSlider2.default, '.header-slider');
 (0, _reactMultipleRender2.default)(_contactForm2.default, '.contact-form');
@@ -40621,6 +40625,7 @@ _webfontloader2.default.load({
 (0, _reactMultipleRender2.default)(_campaignsSlider2.default, '.bs-campaings-slider');
 (0, _reactMultipleRender2.default)(_downloadPdf2.default, '.bs-download-pdf');
 (0, _reactMultipleRender2.default)(_galleryHeader2.default, '.bs-gallery-header');
+(0, _reactMultipleRender2.default)(_projectsAbout2.default, '.bs-projects-about');
 
 (0, _set_menu2.default)();
 (0, _set_menu_mobile2.default)();
@@ -40628,6 +40633,36 @@ _webfontloader2.default.load({
 (0, _smoothScroll2.default)();
 (0, _toggleViaCrucisNav2.default)();
 (0, _scrollViaCrucisNav2.default)();
+
+/***/ }),
+/* 632 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(11);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _projects = __webpack_require__(345);
+
+var _projects2 = _interopRequireDefault(_projects);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ProjectsAbout = _react2.default.createClass({
+	displayName: 'ProjectsAbout',
+	render: function render() {
+		return _react2.default.createElement(_projects2.default, { contents: this.props.projects });
+	}
+});
+
+exports.default = ProjectsAbout;
 
 /***/ })
 /******/ ]);

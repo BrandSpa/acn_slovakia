@@ -20,7 +20,8 @@ function bs_projects_about_sc($atts, $content = null) {
   data-props='{
     "projects": <?php echo cleanQuote(json_encode($projects)) ?>
   }'
-></div>
+>
+</div>
 
 <?php
   return ob_get_clean();
