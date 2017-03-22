@@ -36377,13 +36377,24 @@ var GalleryHeader = _react2.default.createClass({
 					images.map(function (image, i) {
 						return _react2.default.createElement(
 							'div',
-							{ className: 'header-gallery__caption', style: i == _this.state.section ? { dispaly: 'block' } : { display: 'none' } },
-							_react2.default.createElement('img', { src: image, alt: '', style: { maxWidth: '100%', display: 'block', margin: '40px auto' } }),
+							{
+								className: 'header-gallery__caption',
+								style: i == _this.state.section ? { dispaly: 'block', position: 'relative' } : { display: 'none' }
+							},
+							_react2.default.createElement('img', { src: image, style: { maxWidth: '100%', display: 'block', margin: '40px auto' } }),
 							_react2.default.createElement(
 								'span',
 								{ className: 'header-gallery__caption-text' },
 								excerpts[i]
-							)
+							),
+							_react2.default.createElement('a', {
+								href: '#',
+								onClick: _this.changeCaption.bind(null, 'prev'),
+								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 'auto', width: '50%' } }),
+							_react2.default.createElement('a', {
+								href: '#',
+								onClick: _this.changeCaption.bind(null, 'next'),
+								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 'auto', width: '50%' } })
 						);
 					})
 				)

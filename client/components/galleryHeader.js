@@ -31,9 +31,20 @@ const GalleryHeader = React.createClass({
 				<div className="header-gallery__viewport">
 				<div className="l-wrap">
 					{images.map((image, i) =>
-						<div className="header-gallery__caption" style={i == this.state.section ? {dispaly: 'block'} : {display: 'none'}}>
-							<img src={image} alt="" style={{maxWidth: '100%', display: 'block', margin: '40px auto'}} />
+						<div 
+							className="header-gallery__caption" 
+							style={i == this.state.section ? {dispaly: 'block', position: 'relative'} : {display: 'none'}}
+						>
+							<img src={image} style={{maxWidth: '100%', display: 'block', margin: '40px auto'}} />
 							<span className="header-gallery__caption-text">{excerpts[i]}</span>
+							<a 
+								href="#" 
+								onClick={this.changeCaption.bind(null, 'prev')} 
+								style={{position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 'auto', width: '50%'}}></a>
+							<a 
+								href="#" 
+								onClick={this.changeCaption.bind(null, 'next')} 
+								style={{position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 'auto', width: '50%'}}></a>
 						</div>
 					)}
 					</div>
