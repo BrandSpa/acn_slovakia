@@ -22370,15 +22370,19 @@ var GalleryMetabox = _react2.default.createClass({
 			_react2.default.createElement(
 				'p',
 				null,
-				_react2.default.createElement('textarea', {
-					type: 'text',
-					name: 'excerpts[]',
-					placeholder: 'excerpt',
-					rows: '4',
-					onChange: this.handleChange.bind(null, i, 'excerpt'),
-					value: this.state.excerpts[i],
-					style: { width: '100%', display: 'blockJ' }
-				})
+				_react2.default.createElement(
+					'textarea',
+					{
+						type: 'text',
+						name: 'excerpts[]',
+						placeholder: 'excerpt',
+						rows: '4',
+						onChange: this.handleChange.bind(null, i, 'excerpt'),
+						value: this.state.excerpts[i],
+						style: { width: '100%', display: 'block ' }
+					},
+					this.state.excerpts[i]
+				)
 			),
 			_react2.default.createElement(
 				'button',

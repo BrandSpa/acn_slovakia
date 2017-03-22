@@ -74,8 +74,8 @@ const GalleryMetabox = React.createClass({
 					rows="4"
 					onChange={this.handleChange.bind(null, i, 'excerpt')} 
 					value={this.state.excerpts[i]} 
-					style={{width: '100%', display: 'blockJ'}}
-				/>
+					style={{width: '100%', display: 'block '}}
+				>{this.state.excerpts[i]}</textarea>
 			</p>
 				<button className="button" onClick={this.handleRemove.bind(null, i)}>Remove</button>
 			</p>
