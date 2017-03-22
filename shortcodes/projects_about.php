@@ -14,6 +14,7 @@ function bs_projects_about_sc($atts, $content = null) {
 
   ob_start();
 ?>
+<?php echo json_encode(vc_param_group_parse_atts( $at['projects'] )) ?>
 
 <div
   class="bs-projects-about" 
