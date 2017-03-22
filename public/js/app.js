@@ -40681,12 +40681,12 @@ var ProjectsAbout = _react2.default.createClass({
 				_react2.default.createElement(
 					'div',
 					{ 'class': 'projects-about-num__num' },
-					this.props.projects[section].number
+					this.props.projects[section] ? this.props.projects[section].number : ''
 				),
 				_react2.default.createElement(
 					'div',
 					{ 'class': 'projects-about-num__text' },
-					this.props.projects[section].number_text
+					this.props.projects[section] ? this.props.projects[section].number_text : ''
 				)
 			)
 		);
