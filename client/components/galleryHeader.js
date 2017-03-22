@@ -28,14 +28,14 @@ const GalleryHeader = React.createClass({
 
 		return (
 			<div className="header-gallery" style={{height: `${h}px`, background: '#2C2C2C', position: 'relative'}}>
-				<div className="header-gallery__viewport">
+				<div className="header-gallery__viewport" style={{padding: '40px'}}>
 				<div className="l-wrap">
 					{images.map((image, i) =>
 						<div 
 							className="header-gallery__caption" 
 							style={i == this.state.section ? {dispaly: 'block', position: 'relative'} : {display: 'none'}}
 						>
-							<img src={image} style={{maxWidth: '100%', display: 'block', margin: '40px auto'}} />
+							<img src={image} style={{maxWidth: '100%', display: 'block', margin: '0 auto'}} />
 							<span className="header-gallery__caption-text">{excerpts[i]}</span>
 							<a 
 								href="#" 

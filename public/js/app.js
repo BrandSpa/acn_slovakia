@@ -36370,7 +36370,7 @@ var GalleryHeader = _react2.default.createClass({
 			{ className: 'header-gallery', style: { height: h + 'px', background: '#2C2C2C', position: 'relative' } },
 			_react2.default.createElement(
 				'div',
-				{ className: 'header-gallery__viewport' },
+				{ className: 'header-gallery__viewport', style: { padding: '40px' } },
 				_react2.default.createElement(
 					'div',
 					{ className: 'l-wrap' },
@@ -36381,7 +36381,7 @@ var GalleryHeader = _react2.default.createClass({
 								className: 'header-gallery__caption',
 								style: i == _this.state.section ? { dispaly: 'block', position: 'relative' } : { display: 'none' }
 							},
-							_react2.default.createElement('img', { src: image, style: { maxWidth: '100%', display: 'block', margin: '40px auto' } }),
+							_react2.default.createElement('img', { src: image, style: { maxWidth: '100%', display: 'block', margin: '0 auto' } }),
 							_react2.default.createElement(
 								'span',
 								{ className: 'header-gallery__caption-text' },
