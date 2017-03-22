@@ -51,7 +51,7 @@ const GalleryHeader = React.createClass({
 								style={{background: `url(${image})`, backgroundSize: 'cover', display: 'block'}}
 							>
 							</span>
-							<span className="header-gallery__caption-text">{excerpts[i]}</span>
+							<span className="header-gallery__caption-text" style={{color: '#fff'}}>{excerpts[i]}</span>
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'prev')} 

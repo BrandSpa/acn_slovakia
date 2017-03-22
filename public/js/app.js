@@ -36398,7 +36398,7 @@ var GalleryHeader = _react2.default.createClass({
 							}),
 							_react2.default.createElement(
 								'span',
-								{ className: 'header-gallery__caption-text' },
+								{ className: 'header-gallery__caption-text', style: { color: '#fff' } },
 								excerpts[i]
 							),
 							_react2.default.createElement('a', {
