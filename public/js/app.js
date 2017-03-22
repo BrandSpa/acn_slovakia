@@ -40656,6 +40656,10 @@ var _projects = __webpack_require__(345);
 
 var _projects2 = _interopRequireDefault(_projects);
 
+var _postsAbout = __webpack_require__(633);
+
+var _postsAbout2 = _interopRequireDefault(_postsAbout);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ProjectsAbout = _react2.default.createClass({
@@ -40696,6 +40700,74 @@ var ProjectsAbout = _react2.default.createClass({
 });
 
 exports.default = ProjectsAbout;
+
+/***/ }),
+/* 633 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(11);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(100);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _qs = __webpack_require__(107);
+
+var _qs2 = _interopRequireDefault(_qs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var endpoint = '/wp-admin/admin-ajax.php';
+
+var PostsAbout = _react2.default.createClass({
+	displayName: 'PostsAbout',
+	getInitialState: function getInitialState() {
+		return {
+			posts: []
+		};
+	},
+	componentWillReceiveProps: function componentWillReceiveProps() {
+		this.fetchPosts();
+	},
+	fetchPosts: function fetchPosts() {
+		var _this = this;
+
+		console.log(this.props.category);
+		var data = _qs2.default.stringify({ action: 'get_posts' });
+
+		_axios2.default.post(endpoint, data).then(function (res) {
+			_this.setState({ posts: res.data });
+		}).catch(function (err) {
+			return console.error(err);
+		});
+	},
+	render: function render() {
+		var posts = this.props.posts;
+
+		return _react2.default.createElement(
+			'div',
+			null,
+			posts.map(function (post, i) {
+				return _react2.default.createElement(
+					'h3',
+					null,
+					post.title
+				);
+			})
+		);
+	}
+});
+
+exports.default = PostsAbout;
 
 /***/ })
 /******/ ]);

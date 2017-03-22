@@ -29,10 +29,12 @@ const PostsAbout = React.createClass({
 		const { posts } = this.props;
 		return (
 			<div>
-			{posts.map((post, i) {
-				{post.title}
+			{posts.map((post, i) => {
+				return <h3>{post.title}</h3>
 			})}
 			</div>
 		)
 	}
 });
+
+export default PostsAbout;
