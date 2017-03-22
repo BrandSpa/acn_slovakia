@@ -10,7 +10,7 @@
 
 <?php get_header() ?>
 
-<div id="acn_int" class="bs-post--gallery" >
+<div id="acn_int" class="bs-post" >
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php
