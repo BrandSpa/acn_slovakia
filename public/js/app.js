@@ -29001,9 +29001,9 @@ var _react = __webpack_require__(11);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(147);
+var _debounce = __webpack_require__(320);
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
+var _debounce2 = _interopRequireDefault(_debounce);
 
 var _projectsIcons = __webpack_require__(378);
 
@@ -29034,13 +29034,14 @@ var Projects = _react2.default.createClass({
     var patt = new RegExp(/#projects-[1-9]/);
     var hash = window.location.hash;
     var num = 1;
+
     if (patt.test(hash)) {
       num = hash.split('-')[1];
     }
 
-    window.addEventListener('resize', function (event) {
+    window.addEventListener('resize', (0, _debounce2.default)(function (event) {
       _this.moveArrow(_this.state.section);
-    });
+    }, 200));
 
     setTimeout(function () {
       _this.moveArrow(num);

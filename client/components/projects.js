@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import debounce from 'lodash/debounce';
 import ProjectsIcons from './projectsIcons';
 
 const backgroundColors = {
@@ -23,27 +23,26 @@ const Projects = React.createClass({
     let patt = new RegExp(/#projects-[1-9]/);
     let hash = window.location.hash;
     let num = 1;
+
     if (patt.test(hash)) {
       num = hash.split('-')[1];
     }
 
-    window.addEventListener('resize', event => {
+    window.addEventListener('resize', debounce( event => {
       this.moveArrow(this.state.section);
-    });
+    }, 200));
 
-    setTimeout(
-      () => {
+    setTimeout(() => {
         this.moveArrow(num);
         this.changeContent(num);
       },
       1000
     );
+
   },
 
   moveArrow(num) {
-    let left = this.el.querySelector(
-      `.projects__icons li:nth-child(${num})`
-    ).offsetLeft;
+    let left = this.el.querySelector( `.projects__icons li:nth-child(${num})` ).offsetLeft;
     this.el.querySelector('.projects__arrow').style.left = `${left}px`;
   },
 

@@ -8,7 +8,7 @@ function bs_projects_about_sc($atts, $content = null) {
 
   $at = shortcode_atts( $attributes , $atts );
 	
-	$slides = array_map(function($slide) {
+	$projects = array_map(function($slide) {
 		$slide['image'] = wp_get_attachment_url($slide['image']);
 		return $slide;
 	}, vc_param_group_parse_atts( $at['slides'] ));
@@ -19,7 +19,7 @@ function bs_projects_about_sc($atts, $content = null) {
 <div
   class="bs-projects-about" 
   data-props='{
-    "slides": <?php echo json_encode($slides) ?>, 
+    "projects": <?php echo json_encode($projects) ?>, 
     "interval": "<?php echo $at["interval"] ?>"
   }'
 ></div>
