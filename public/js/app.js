@@ -40636,33 +40636,10 @@ _webfontloader2.default.load({
 
 /***/ }),
 /* 632 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = __webpack_require__(11);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _projects = __webpack_require__(345);
-
-var _projects2 = _interopRequireDefault(_projects);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ProjectsAbout = _react2.default.createClass({
-	displayName: 'ProjectsAbout',
-	render: function render() {
-		return _react2.default.createElement(_projects2.default, { contents: this.props.projects, donate: this.props.donate });
-	}
-});
-
-exports.default = ProjectsAbout;
+throw new Error("Module build failed: SyntaxError: Adjacent JSX elements must be wrapped in an enclosing tag (8:3)\n\n\u001b[0m \u001b[90m  6 | \u001b[39m\t\t\u001b[36mreturn\u001b[39m (\n \u001b[90m  7 | \u001b[39m\t\t\t\u001b[33m<\u001b[39m\u001b[33mProjects\u001b[39m contents\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mprojects} donate\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mdonate} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 | \u001b[39m\t\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m \u001b[36mclass\u001b[39m\u001b[33m=\u001b[39m\u001b[32m\"projects-about-num\"\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    | \u001b[39m\t\t\t\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 | \u001b[39m\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m \u001b[36mclass\u001b[39m\u001b[33m=\u001b[39m\u001b[32m\"projects-about-num__num\"\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 10 | \u001b[39m\t\t\t\t\t{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mprojects[\u001b[35m1\u001b[39m]\u001b[33m.\u001b[39mnumber}\n \u001b[90m 11 | \u001b[39m\t\t\t\t\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n");
 
 /***/ })
 /******/ ]);
