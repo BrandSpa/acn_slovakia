@@ -28601,6 +28601,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _react = __webpack_require__(11);
 
 var _react2 = _interopRequireDefault(_react);
@@ -28669,7 +28671,7 @@ var GalleryHeader = _react2.default.createClass({
 			padding: '0'
 		};
 
-		var links = {
+		var linkLeft = {
 			position: 'absolute',
 			height: '100%',
 			top: '0',
@@ -28677,6 +28679,8 @@ var GalleryHeader = _react2.default.createClass({
 			left: 0,
 			width: '50%'
 		};
+
+		var linkRight = _extends({}, linkLeft, { left: 'auto', right: 0 });
 
 		var mainStyle = { height: h + 'px', background: '#2C2C2C', position: 'relative' };
 
@@ -28687,7 +28691,7 @@ var GalleryHeader = _react2.default.createClass({
 			justifyContent: 'center',
 			alignItems: 'center'
 		};
-		console.log(viewportStyle);
+
 		return _react2.default.createElement(
 			_radium.StyleRoot,
 			null,
@@ -28719,11 +28723,11 @@ var GalleryHeader = _react2.default.createClass({
 								_react2.default.createElement('a', {
 									href: '#',
 									onClick: _this.changeCaption.bind(null, 'prev'),
-									style: links }),
+									style: linkLeft }),
 								_react2.default.createElement('a', {
 									href: '#',
 									onClick: _this.changeCaption.bind(null, 'next'),
-									style: links })
+									style: linkRight })
 							);
 						})
 					)

@@ -56,14 +56,16 @@ const GalleryHeader = React.createClass({
 			padding: '0'
 		};
 
-		const links = { 
+		const linkLeft = { 
 			position: 'absolute', 
 			height: '100%', 
 			top: '0',
-			 bottom: 'auto', 
-			 left: 0, 
-			 width: '50%'
+			bottom: 'auto', 
+			left: 0, 
+			width: '50%'
 		};
+
+		const linkRight = {...linkLeft, left: 'auto', right: 0};
 
 		const mainStyle = {height: `${h}px`, background: '#2C2C2C', position: 'relative'};
 
@@ -74,7 +76,7 @@ const GalleryHeader = React.createClass({
 			justifyContent: 'center', 
 			alignItems: 'center'
 		};
-		console.log(viewportStyle);
+
 		return (
 			<StyleRoot>
 			<div className="header-gallery" style={mainStyle}>
@@ -94,11 +96,11 @@ const GalleryHeader = React.createClass({
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'prev')} 
-								style={links}></a>
+								style={linkLeft}></a>
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'next')} 
-								style={links}></a>
+								style={linkRight}></a>
 						</div>
 					)}
 					</div>
