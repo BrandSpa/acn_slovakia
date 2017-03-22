@@ -36336,6 +36336,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var GalleryHeader = _react2.default.createClass({
 	displayName: 'GalleryHeader',
 	getInitialState: function getInitialState() {
@@ -36352,8 +36354,11 @@ var GalleryHeader = _react2.default.createClass({
 	componentDidMount: function componentDidMount() {
 		var container = document.querySelector('.header-gallery__container');
 		var containerH = container.offsetWidth / 1.5;
+		var images = [].concat(_toConsumableArray(document.querySelectorAll('.header-gallery__caption-image')));
 
-		document.querySelector('.header-gallery__caption-image').style.height = Math.round(containerH) + 'px';
+		images.forEach(function (image) {
+			image.style.height = Math.round(containerH) + 'px';
+		});
 	},
 	changeCaption: function changeCaption(type, e) {
 		e.preventDefault();
