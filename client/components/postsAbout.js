@@ -34,7 +34,12 @@ const PostsAbout = React.createClass({
 		return (
 			<div>
 			{posts.map((post, i) => {
-				return <h3>{post.post_title}</h3>
+				return (
+					<div class="col-3">
+						<img src={post.post_image} alt="" />
+						<h3>{post.post_title}</h3>
+					</div>
+					)
 			})}
 			</div>
 		)

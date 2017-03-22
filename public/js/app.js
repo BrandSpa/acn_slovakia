@@ -40762,9 +40762,14 @@ var PostsAbout = _react2.default.createClass({
 			null,
 			posts.map(function (post, i) {
 				return _react2.default.createElement(
-					'h3',
-					null,
-					post.post_title
+					'div',
+					{ 'class': 'col-3' },
+					_react2.default.createElement('img', { src: post.post_image, alt: '' }),
+					_react2.default.createElement(
+						'h3',
+						null,
+						post.post_title
+					)
 				);
 			})
 		);
