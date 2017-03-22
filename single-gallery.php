@@ -22,6 +22,7 @@ $props = ["images" => $images, "excerpts" => $excerpts];
 <div class="bs-gallery-header" data-props='<?php echo cleanQuote(json_encode($props)) ?>'></div>
 
 <div class="l-wrap">
+
 	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if(function_exists('bcn_display'))
     {
