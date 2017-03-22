@@ -10,7 +10,7 @@ const GalleryHeader = React.createClass({
 	
 	render() {
 		const { images, excerpts } = this.props;
-		
+
 		return (
 			<div className="header-gallery">
 				<div class="header-gallery__viewport">
@@ -27,3 +27,5 @@ const GalleryHeader = React.createClass({
 		)	
 	}
 });
+
+export default GalleryHeader;
