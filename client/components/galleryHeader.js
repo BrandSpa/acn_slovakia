@@ -16,7 +16,7 @@ const GalleryHeader = React.createClass({
 
 	componentDidMount() {
 		let container = document.querySelector('.header-gallery__container');
-		let containerH = container.innerWidth / 1.5;
+		let containerH = container.offsetWidth / 1.5;
 		console.log(containerH);
 	},
 	
