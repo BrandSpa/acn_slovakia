@@ -13,6 +13,12 @@ const GalleryHeader = React.createClass({
 			excerpts: []
 		}
 	},
+
+	componentDidMount() {
+		let container = document.querySelector('.header-gallery__container');
+		let containerH = container.innerWidth / 1.5;
+		console.log(containerH);
+	},
 	
 	changeCaption(type, e) {
 		e.preventDefault();
@@ -29,9 +35,9 @@ const GalleryHeader = React.createClass({
 		return (
 			<div className="header-gallery" style={{height: `${h}px`, background: '#2C2C2C', position: 'relative'}}>
 				<div className="header-gallery__viewport" style={{padding: '40px'}}>
-				<div style={{ maxWidth: '700px',  marginLeft: 'auto', marginRight: 'auto' }}>
+				<div className="header-gallery__container" style={{ maxWidth: '700px',  marginLeft: 'auto', marginRight: 'auto' }}>
 					{images.map((image, i) =>
-						<div 
+						<div
 							className="header-gallery__caption" 
 							style={i == this.state.section ? {dispaly: 'block', position: 'relative'} : {display: 'none'}}
 						>

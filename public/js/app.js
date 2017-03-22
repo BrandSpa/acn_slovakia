@@ -36349,6 +36349,11 @@ var GalleryHeader = _react2.default.createClass({
 			excerpts: []
 		};
 	},
+	componentDidMount: function componentDidMount() {
+		var container = document.querySelector('.header-gallery__container');
+		var containerH = container.innerWidth / 1.5;
+		console.log(containerH);
+	},
 	changeCaption: function changeCaption(type, e) {
 		e.preventDefault();
 		var section = this.state.section;
@@ -36373,7 +36378,7 @@ var GalleryHeader = _react2.default.createClass({
 				{ className: 'header-gallery__viewport', style: { padding: '40px' } },
 				_react2.default.createElement(
 					'div',
-					{ style: { maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' } },
+					{ className: 'header-gallery__container', style: { maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' } },
 					images.map(function (image, i) {
 						return _react2.default.createElement(
 							'div',
