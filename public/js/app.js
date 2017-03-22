@@ -40763,7 +40763,7 @@ var PostsAbout = _react2.default.createClass({
 				return _react2.default.createElement(
 					'div',
 					{ key: i, className: 'col-12 col-3-l' },
-					_react2.default.createElement('img', { src: post.post_image, alt: '' }),
+					_react2.default.createElement('img', { src: post.post_image, alt: '', style: { width: '100%' } }),
 					_react2.default.createElement(
 						'h3',
 						null,
