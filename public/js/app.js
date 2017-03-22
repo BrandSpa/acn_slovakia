@@ -36355,18 +36355,18 @@ var GalleryHeader = _react2.default.createClass({
 			{ className: "header-gallery" },
 			_react2.default.createElement(
 				"div",
-				{ "class": "header-gallery__viewport" },
+				{ className: "header-gallery__viewport" },
 				_react2.default.createElement(
 					"div",
-					{ "class": "l-wrap" },
+					{ className: "l-wrap" },
 					images.map(function (image, i) {
 						return _react2.default.createElement(
 							"div",
-							{ "class": "header-gallery__caption", style: i == 0 ? { dispaly: 'block' } : { display: 'none' } },
+							{ className: "header-gallery__caption", style: i == 0 ? { dispaly: 'block' } : { display: 'none' } },
 							_react2.default.createElement("img", { src: image, alt: "", style: { maxWidth: '100%' } }),
 							_react2.default.createElement(
 								"span",
-								{ "class": "header-gallery__caption-text" },
+								{ className: "header-gallery__caption-text" },
 								excerpts[i]
 							)
 						);
