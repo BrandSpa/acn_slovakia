@@ -2,10 +2,6 @@
 include_once str_replace('metaboxes', '', __DIR__) . '/lib/update_field.php';
 
 function bs_type_gallery_metabox() {
-	$post_id = null;
-	if(isset($_GET['post'])) $post_id = $_GET['post'] ? $_GET['post'] : null; 
-	if(isset($_POST['post_ID']) && $post_id == null) $post_id = $_POST['post_ID'] ? $_POST['post_ID']: null;
-
 	add_meta_box('bs_gallery', 'BS gallery', 'bs_type_gallery_cb', 'gallery', 'normal', 'high', null);
 }
 
@@ -35,7 +31,7 @@ function bs_type_gallery_save($post_id) {
   ));
 
 	update_field(array(
-    'field_key' => 'type_gallery_excerpt_key',
+    'field_key' => 'type_gallery_excerpts_key',
     'field_name' => 'excerpts',
     'post_id' => $post_id
   ));
