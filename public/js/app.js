@@ -29056,6 +29056,7 @@ var Projects = _react2.default.createClass({
     var color = backgroundColors[num];
     this.setState({ bg: color, donateColor: color, section: num });
     this.moveArrow(num);
+    this.props.changeSection ? this.props.changeSection(num) : '';
   },
   render: function render() {
     var _this2 = this;
@@ -40657,12 +40658,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ProjectsAbout = _react2.default.createClass({
 	displayName: 'ProjectsAbout',
+	handleSection: function handleSection(i) {
+		console.log(i);
+	},
 	render: function render() {
 		console.log(this.props.projects);
 		return _react2.default.createElement(
 			'div',
 			null,
-			_react2.default.createElement(_projects2.default, { contents: this.props.projects, donate: this.props.donate }),
+			_react2.default.createElement(_projects2.default, { contents: this.props.projects, donate: this.props.donate, changeSection: this.handleSection }),
 			_react2.default.createElement(
 				'div',
 				{ 'class': 'projects-about-num' },

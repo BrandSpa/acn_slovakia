@@ -50,6 +50,7 @@ const Projects = React.createClass({
     let color = backgroundColors[num];
     this.setState({bg: color, donateColor: color, section: num});
     this.moveArrow(num);
+    this.props.changeSection ? this.props.changeSection(num) : '';
   },
   
   render() {
