@@ -36394,7 +36394,7 @@ var GalleryHeader = _react2.default.createClass({
 							_react2.default.createElement('a', {
 								href: '#',
 								onClick: _this.changeCaption.bind(null, 'next'),
-								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 'auto', width: '50%' } })
+								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 'auto', width: '50%' } })
 						);
 					})
 				)

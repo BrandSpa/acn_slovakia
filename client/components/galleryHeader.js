@@ -44,7 +44,7 @@ const GalleryHeader = React.createClass({
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'next')} 
-								style={{position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 'auto', width: '50%'}}></a>
+								style={{position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 'auto', width: '50%'}}></a>
 						</div>
 					)}
 					</div>
