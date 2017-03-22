@@ -36349,7 +36349,8 @@ var GalleryHeader = _react2.default.createClass({
 			excerpts: []
 		};
 	},
-	changeCaption: function changeCaption() {
+	changeCaption: function changeCaption(type, e) {
+		e.preventDefault();
 		var section = this.state.section;
 		if (type == 'next') section = this.state.section < this.props.images.length ? this.state.section + 1 : 0;
 		if (type == 'prev') section = this.state.section > 0 ? this.state.section - 1 : 0;
