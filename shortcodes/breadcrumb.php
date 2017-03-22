@@ -27,7 +27,14 @@ add_shortcode( 'bs_breadcrumb', 'bs_breadcrumb_sc' );
 add_action( 'vc_before_init', 'bs_breadcrumb_vc' );
 
   function bs_breadcrumb_vc() {
-		$params = [];
+		$params = [
+			[
+        "type" => "textfield",
+        "heading" => "Style",
+        "param_name" => "style",
+        "value" => "margin-top: 20px; text-align: center; color: #b9b9b9"
+			]
+		];
 
   	vc_map(
       array(
