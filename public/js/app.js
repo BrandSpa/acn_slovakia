@@ -36363,7 +36363,7 @@ var GalleryHeader = _react2.default.createClass({
 		    images = _props.images,
 		    excerpts = _props.excerpts;
 
-		var h = window.innerHeight;
+		var h = window.innerHeight - 120;
 
 		return _react2.default.createElement(
 			'div',
