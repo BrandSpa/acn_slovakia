@@ -26,6 +26,7 @@ function wp_get_posts() {
   $post_type = isset($_POST['post_type']) ? $_POST['post_type'] : 'post';
   $category = isset($_POST['post_category']) ? $_POST['post_category'] : '';
   $perpage = isset($_POST['post_perpage']) ? $_POST['post_perpage'] : '6';
+  // bs_get_posts($type = 'post', $paged = 1, $category = '', $perpage = '6')
   $res = bs_get_posts($post_type, $paged, $category, $perpage);
   header('Content-type: application/json');
   echo json_encode($res);
