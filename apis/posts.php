@@ -1,12 +1,13 @@
 <?php
 
-function bs_get_posts($type = 'post', $paged = 1, $category = '') {
+function bs_get_posts($type = 'post', $paged = 1, $category = '', $perpage = '6') {
 	$query = new Wp_Query(array(
     'post_type' => $type,
     'paged' => $paged,
-    'category' => $category
+    'category' => $category,
+		'posts_per_page' => $perpage
   ));
-	
+
 	$posts = array_map(function($post) {
 		$thumbId = get_post_thumbnail_id($post->ID);
 		$post->post_image = get_post_meta($post->ID, 'image_square_key') ? str_replace('http:', '', get_post_meta($post->ID, 'image_square_key')) : '';

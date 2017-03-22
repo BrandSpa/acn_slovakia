@@ -28909,7 +28909,7 @@ var Posts = _react2.default.createClass({
   componentWillMount: function componentWillMount() {
     var _this = this;
 
-    var data = _qs2.default.stringify({ action: 'get_posts', post_type: ['video', 'gallery'] });
+    var data = _qs2.default.stringify({ action: 'get_posts' });
 
     _axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
       _this.setState({ posts: res.data });

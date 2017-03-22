@@ -24,7 +24,9 @@ add_action( 'wp_ajax_get_posts', 'wp_get_posts' );
 function wp_get_posts() {
   $paged = $_POST['paged'];
   $post_type = isset($_POST['post_type']) ? $_POST['post_type'] : 'post';
-  $res = bs_get_posts($post_type, $paged);
+  $category = isset($_POST['post_category']) ? $_POST['post_category'] : '';
+  $perpage = isset($_POST['post_perpage']) ? $_POST['post_perpage'] : '6';
+  $res = bs_get_posts($post_type, $paged, $category, $perpage);
   header('Content-type: application/json');
   echo json_encode($res);
   die();
