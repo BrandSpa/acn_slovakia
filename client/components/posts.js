@@ -4,6 +4,7 @@ import request from 'axios';
 import Minigrid from 'minigrid';
 import debounce from 'lodash/debounce';
 import Post from './post';
+const endpoint = '/wp-admin/admin-ajax.php';
 
 const Posts = React.createClass({
   getInitialState() {
@@ -14,7 +15,7 @@ const Posts = React.createClass({
     let data = qs.stringify({action: 'get_posts'});
 
     request
-      .post('/wp-admin/admin-ajax.php', data)
+      .post(endpoint, data)
       .then(res => {
         this.setState({posts: res.data});
       })

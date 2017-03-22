@@ -23,6 +23,7 @@ const ProjectsAbout = React.createClass({
 					<div class="projects-about-num__num">
 						{this.props.projects[section] ? this.props.projects[section].number : ''}
 					</div>
+					
 					<div class="projects-about-num__text">
 						{this.props.projects[section] ? this.props.projects[section].number_text : ''}
 					</div>

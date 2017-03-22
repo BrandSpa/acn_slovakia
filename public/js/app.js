@@ -28901,6 +28901,8 @@ var _post2 = _interopRequireDefault(_post);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var endpoint = '/wp-admin/admin-ajax.php';
+
 var Posts = _react2.default.createClass({
   displayName: 'Posts',
   getInitialState: function getInitialState() {
@@ -28911,7 +28913,7 @@ var Posts = _react2.default.createClass({
 
     var data = _qs2.default.stringify({ action: 'get_posts' });
 
-    _axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
+    _axios2.default.post(endpoint, data).then(function (res) {
       _this.setState({ posts: res.data });
     }).catch(function (err) {
       return console.error(err);
