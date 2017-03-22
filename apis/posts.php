@@ -4,7 +4,7 @@ function bs_get_posts($type = 'post', $paged = 1, $category = '', $perpage = '6'
 	$query = new Wp_Query(array(
     'post_type' => $type,
     'paged' => $paged,
-    'category' => $category,
+    'category_name' => $category,
 		'posts_per_page' => $perpage
   ));
 
