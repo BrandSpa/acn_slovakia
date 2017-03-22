@@ -44,7 +44,7 @@ const GalleryHeader = React.createClass({
 					{images.map((image, i) =>
 						<div
 							className="header-gallery__caption" 
-							style={i == this.state.section ? {opacity: '1', position: 'relative', transition: 'all 300ms'} : {opacity: '0'}}
+							style={i == this.state.section ? {opacity: 'block', position: 'relative'} : {display: 'none'}}
 						>
 							<span
 								className="header-gallery__caption-image" 

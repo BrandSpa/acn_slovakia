@@ -36390,7 +36390,7 @@ var GalleryHeader = _react2.default.createClass({
 							'div',
 							{
 								className: 'header-gallery__caption',
-								style: i == _this.state.section ? { opacity: '1', position: 'relative', transition: 'all 300ms' } : { opacity: '0' }
+								style: i == _this.state.section ? { opacity: 'block', position: 'relative' } : { display: 'none' }
 							},
 							_react2.default.createElement('span', {
 								className: 'header-gallery__caption-image',
