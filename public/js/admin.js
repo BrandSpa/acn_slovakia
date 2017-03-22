@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 565);
+/******/ 	return __webpack_require__(__webpack_require__.s = 566);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -21898,6 +21898,151 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _react = __webpack_require__(16);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _uploader = __webpack_require__(568);
+
+var _uploader2 = _interopRequireDefault(_uploader);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var GalleryMetabox = _react2.default.createClass({
+	displayName: 'GalleryMetabox',
+	getInitialState: function getInitialState() {
+		return {
+			images: [],
+			excerpts: []
+		};
+	},
+	getDefaultProps: function getDefaultProps() {
+		return {
+			images: [],
+			excerpts: []
+		};
+	},
+	componentWillReceiveProps: function componentWillReceiveProps(props) {},
+	componentDidMount: function componentDidMount() {
+		console.log('props', this.props);
+		if (Array.isArray(this.props.images)) {
+			this.setState({ images: this.props.images });
+		}
+
+		if (Array.isArray(this.props.excerpts)) {
+			this.setState({ excerpts: this.props.excerpts });
+		}
+	},
+	handleChange: function handleChange(ind, type, e) {
+		var _state = this.state,
+		    images = _state.images,
+		    excerpts = _state.excerpts;
+
+
+		if (type == 'image') {
+			images[ind] = e.currentTarget.value;
+		}
+
+		if (type == 'excerpt') {
+			excerpts[ind] = e.currentTarget.value;
+		}
+
+		this.setState({ images: images, excerpts: excerpts });
+	},
+	handleAdd: function handleAdd(e) {
+		e.preventDefault();
+		var images = this.state.images.concat(['']);
+		var excerpts = this.state.excerpts.concat(['']);
+		this.setState({ images: images, excerpts: excerpts });
+	},
+	handleRemove: function handleRemove(ind, e) {
+		e.preventDefault();
+		var images = this.state.images.filter(function (con, i) {
+			return i != ind;
+		});
+		var excerpts = this.state.excerpts.filter(function (con, i) {
+			return i != ind;
+		});
+		this.setState({ images: images, excerpts: excerpts });
+	},
+	handleClick: function handleClick() {
+		_uploader2.default.then(function (res) {
+			return console.log(res);
+		});
+	},
+	renderInputs: function renderInputs() {
+		var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+		return _react2.default.createElement(
+			'p',
+			{ key: i },
+			_react2.default.createElement(
+				'p',
+				null,
+				_react2.default.createElement('input', {
+					type: 'text',
+					name: 'images[]',
+					placeholder: 'Image url',
+					onClick: this.handleClick,
+					onChange: this.handleChange.bind(null, i, 'image'),
+					value: this.state.images[i],
+					style: { width: '100%', display: 'blockJ' }
+				})
+			),
+			_react2.default.createElement(
+				'p',
+				null,
+				_react2.default.createElement('textarea', {
+					type: 'text',
+					name: 'excerpts[]',
+					placeholder: 'excerpt',
+					rows: '4',
+					value: this.state.excerpts[i],
+					onChange: this.handleChange.bind(null, i, 'excerpt'),
+					style: { width: '100%', display: 'block ' }
+				})
+			),
+			_react2.default.createElement(
+				'button',
+				{ className: 'button', onClick: this.handleRemove.bind(null, i) },
+				'Remove'
+			)
+		);
+	},
+	render: function render() {
+		var _this = this;
+
+		var _state$images = this.state.images,
+		    images = _state$images === undefined ? [] : _state$images;
+
+		return _react2.default.createElement(
+			'div',
+			null,
+			images.map(function (image, i) {
+				return _this.renderInputs(i);
+			}),
+			_react2.default.createElement(
+				'button',
+				{ onClick: this.handleAdd, className: 'button' },
+				'Add'
+			)
+		);
+	}
+});
+
+exports.default = GalleryMetabox;
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = __webpack_require__(16);
@@ -22012,7 +22157,6 @@ var GeolifyForm = _react2.default.createClass({
 exports.default = GeolifyForm;
 
 /***/ }),
-/* 323 */,
 /* 324 */,
 /* 325 */,
 /* 326 */,
@@ -22254,7 +22398,8 @@ exports.default = GeolifyForm;
 /* 562 */,
 /* 563 */,
 /* 564 */,
-/* 565 */
+/* 565 */,
+/* 566 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22264,11 +22409,11 @@ var _reactMultipleRender = __webpack_require__(131);
 
 var _reactMultipleRender2 = _interopRequireDefault(_reactMultipleRender);
 
-var _geolifyForm = __webpack_require__(322);
+var _geolifyForm = __webpack_require__(323);
 
 var _geolifyForm2 = _interopRequireDefault(_geolifyForm);
 
-var _galleryMetabox = __webpack_require__(567);
+var _galleryMetabox = __webpack_require__(322);
 
 var _galleryMetabox2 = _interopRequireDefault(_galleryMetabox);
 
@@ -22278,8 +22423,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactMultipleRender2.default)(_galleryMetabox2.default, '.bs-gallery-metabox');
 
 /***/ }),
-/* 566 */,
-/* 567 */
+/* 567 */,
+/* 568 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22288,130 +22433,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+var openMediaUploader = exports.openMediaUploader = function openMediaUploader() {
+	var media_uploader = wp.media({
+		frame: 'post',
+		state: 'insert',
+		multiple: false
+	});
 
-var _react = __webpack_require__(16);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var GalleryMetabox = _react2.default.createClass({
-	displayName: 'GalleryMetabox',
-	getInitialState: function getInitialState() {
-		return {
-			images: [],
-			excerpts: []
-		};
-	},
-	getDefaultProps: function getDefaultProps() {
-		return {
-			images: [],
-			excerpts: []
-		};
-	},
-	componentWillReceiveProps: function componentWillReceiveProps(props) {},
-	componentDidMount: function componentDidMount() {
-		console.log('props', this.props);
-		if (Array.isArray(this.props.images)) {
-			this.setState({ images: this.props.images });
-		}
-
-		if (Array.isArray(this.props.excerpts)) {
-			this.setState({ excerpts: this.props.excerpts });
-		}
-	},
-	handleChange: function handleChange(ind, type, e) {
-		var _state = this.state,
-		    images = _state.images,
-		    excerpts = _state.excerpts;
-
-
-		if (type == 'image') {
-			images[ind] = e.currentTarget.value;
-		}
-
-		if (type == 'excerpt') {
-			excerpts[ind] = e.currentTarget.value;
-		}
-
-		this.setState({ images: images, excerpts: excerpts });
-	},
-	handleAdd: function handleAdd(e) {
-		e.preventDefault();
-		var images = this.state.images.concat(['']);
-		var excerpts = this.state.excerpts.concat(['']);
-		this.setState({ images: images, excerpts: excerpts });
-	},
-	handleRemove: function handleRemove(ind, e) {
-		e.preventDefault();
-		var images = this.state.images.filter(function (con, i) {
-			return i != ind;
+	var promise = new Promise(function (resolve) {
+		media_uploader.on('insert', function () {
+			var json = media_uploader.state().get('selection').first().toJSON();
+			return resolve(json);
 		});
-		var excerpts = this.state.excerpts.filter(function (con, i) {
-			return i != ind;
+	});
+
+	media_uploader.open();
+
+	return promise;
+};
+
+var section = exports.section = function section() {
+
+	$('.uploader').on('click', function (e) {
+
+		openMediaUploader().then(function (res) {
+			$(e.currentTarget).val(res.url);
 		});
-		this.setState({ images: images, excerpts: excerpts });
-	},
-	renderInputs: function renderInputs() {
-		var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-
-		return _react2.default.createElement(
-			'p',
-			{ key: i },
-			_react2.default.createElement(
-				'p',
-				null,
-				_react2.default.createElement('input', {
-					type: 'text',
-					name: 'images[]',
-					placeholder: 'Image url',
-					onChange: this.handleChange.bind(null, i, 'image'),
-					value: this.state.images[i],
-					style: { width: '100%', display: 'blockJ' }
-				})
-			),
-			_react2.default.createElement(
-				'p',
-				null,
-				_react2.default.createElement('textarea', {
-					type: 'text',
-					name: 'excerpts[]',
-					placeholder: 'excerpt',
-					rows: '4',
-					value: this.state.excerpts[i],
-					onChange: this.handleChange.bind(null, i, 'excerpt'),
-					style: { width: '100%', display: 'block ' }
-				})
-			),
-			_react2.default.createElement(
-				'button',
-				{ className: 'button', onClick: this.handleRemove.bind(null, i) },
-				'Remove'
-			)
-		);
-	},
-	render: function render() {
-		var _this = this;
-
-		var _state$images = this.state.images,
-		    images = _state$images === undefined ? [] : _state$images;
-
-		return _react2.default.createElement(
-			'div',
-			null,
-			images.map(function (image, i) {
-				return _this.renderInputs(i);
-			}),
-			_react2.default.createElement(
-				'button',
-				{ onClick: this.handleAdd, className: 'button' },
-				'Add'
-			)
-		);
-	}
-});
-
-exports.default = GalleryMetabox;
+	});
+};
 
 /***/ })
 /******/ ]);

@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaUploader from '../lib/uploader';
 
 const GalleryMetabox = React.createClass({
 	getInitialState(){
@@ -60,6 +61,10 @@ const GalleryMetabox = React.createClass({
 		this.setState({ images, excerpts });
 	},
 
+	handleClick() {
+		MediaUploader.then(res => console.log(res));
+	},
+
 	renderInputs(i = 0) {
 		return (
 			<p key={i}>
@@ -68,6 +73,7 @@ const GalleryMetabox = React.createClass({
 						type="text" 
 						name="images[]" 
 						placeholder="Image url"
+						onClick={this.handleClick}
 						onChange={this.handleChange.bind(null, i, 'image')} 
 						value={ this.state.images[i] } 
 						style={{width: '100%', display: 'blockJ'}}
