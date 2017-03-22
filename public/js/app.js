@@ -30908,9 +30908,89 @@ exports.default = headerSlide;
 
 /***/ }),
 /* 377 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token, expected , (43:9)\n\n\u001b[0m \u001b[90m 41 | \u001b[39m\t\t\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 42 | \u001b[39m\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 43 | \u001b[39m\t\t\t\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m    | \u001b[39m\t\t\t      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 44 | \u001b[39m\n \u001b[90m 45 | \u001b[39m\t\t)\n \u001b[90m 46 | \u001b[39m\t}\u001b[0m\n");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(11);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Post = _react2.default.createClass({
+	displayName: 'Post',
+	handleImageLoaded: function handleImageLoaded() {
+		this.props.onImageLoaded();
+	},
+	getDefaultProps: function getDefaultProps() {
+		return {
+			post: {
+				post_title: ''
+			}
+		};
+	},
+	render: function render() {
+		var _props = this.props,
+		    post = _props.post,
+		    type = _props.type,
+		    read_more = _props.read_more;
+
+		var img = post.post_image ? _react2.default.createElement('img', { src: post.post_image, onLoad: this.handleImageLoaded }) : '';
+		var title = post.post_title;
+		if (window.innerWidth <= '767') {
+			title = post.post_title.substring(0, 70) + '...';
+		}
+
+		return _react2.default.createElement(
+			'div',
+			{ className: type == 'main' ? 'grid-item grid-item--main' : 'grid-item' },
+			_react2.default.createElement(
+				'div',
+				{ className: type == 'main' ? 'grid-item__content grid-item--main__content' : 'grid-item__content' },
+				_react2.default.createElement(
+					'a',
+					{ href: post.post_permalink },
+					img
+				),
+				_react2.default.createElement(
+					'div',
+					{
+						className: type == 'main' ? 'grid-item__content__texts grid-item--main__content__texts' : 'grid-item__content__texts',
+						style: img == '' ? { width: '100%' } : {}
+					},
+					_react2.default.createElement(
+						'h5',
+						null,
+						_react2.default.createElement(
+							'a',
+							{ href: post.post_permalink },
+							title
+						)
+					),
+					_react2.default.createElement(
+						'p',
+						null,
+						post.post_short + '...'
+					),
+					_react2.default.createElement(
+						'a',
+						{ href: post.post_permalink, className: 'grid-item__content__texts__readmore' },
+						read_more,
+						'...'
+					)
+				)
+			)
+		);
+	}
+});
+
+exports.default = Post;
 
 /***/ }),
 /* 378 */

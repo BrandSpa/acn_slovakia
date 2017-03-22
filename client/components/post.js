@@ -40,8 +40,7 @@ const Post = React.createClass({
 									<a href={post.post_permalink} className="grid-item__content__texts__readmore">{read_more}...</a>
 							</div>
 					</div>
-			</div>;
-
+			</div>
 		)
 	}
 })
