@@ -46,6 +46,7 @@ const GalleryHeader = React.createClass({
 				right: '10px'
 			} 
 		};
+		
 		return (
 			<StyleRoot>
 			<div className="header-gallery" style={{height: `${h}px`, background: '#2C2C2C', position: 'relative'}}>

@@ -28659,6 +28659,7 @@ var GalleryHeader = _react2.default.createClass({
 				right: '10px'
 			}
 		};
+
 		return _react2.default.createElement(
 			_radium.StyleRoot,
 			null,
