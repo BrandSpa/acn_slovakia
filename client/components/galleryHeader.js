@@ -27,7 +27,7 @@ const GalleryHeader = React.createClass({
 		const h = (window.innerHeight - 140);
 
 		return (
-			<div className="header-gallery" style={{height: `${h}px`, background: '#111', position: 'relative'}}>
+			<div className="header-gallery" style={{height: `${h}px`, background: '#2C2C2C', position: 'relative'}}>
 				<div className="header-gallery__viewport">
 				<div className="l-wrap">
 					{images.map((image, i) =>
@@ -40,11 +40,11 @@ const GalleryHeader = React.createClass({
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'prev')} 
-								style={{position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%'}}></a>
+								style={{border: '1px solid #fff', background: '#fff', position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%'}}></a>
 							<a 
 								href="#" 
 								onClick={this.changeCaption.bind(null, 'next')} 
-								style={{position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%'}}></a>
+								style={{border: '1px solid #fff', background: '#fff', position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%'}}></a>
 						</div>
 					)}
 					</div>

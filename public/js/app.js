@@ -36367,7 +36367,7 @@ var GalleryHeader = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'div',
-			{ className: 'header-gallery', style: { height: h + 'px', background: '#111', position: 'relative' } },
+			{ className: 'header-gallery', style: { height: h + 'px', background: '#2C2C2C', position: 'relative' } },
 			_react2.default.createElement(
 				'div',
 				{ className: 'header-gallery__viewport' },
@@ -36390,11 +36390,11 @@ var GalleryHeader = _react2.default.createClass({
 							_react2.default.createElement('a', {
 								href: '#',
 								onClick: _this.changeCaption.bind(null, 'prev'),
-								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%' } }),
+								style: { border: '1px solid #fff', background: '#fff', position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%' } }),
 							_react2.default.createElement('a', {
 								href: '#',
 								onClick: _this.changeCaption.bind(null, 'next'),
-								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%' } })
+								style: { border: '1px solid #fff', background: '#fff', position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%' } })
 						);
 					})
 				)
