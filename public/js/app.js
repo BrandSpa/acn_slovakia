@@ -28660,58 +28660,62 @@ var GalleryHeader = _react2.default.createClass({
 			}
 		};
 		return _react2.default.createElement(
-			'div',
-			{ className: 'header-gallery', style: { height: h + 'px', background: '#2C2C2C', position: 'relative' } },
+			_radium.StyleRoot,
+			null,
 			_react2.default.createElement(
 				'div',
-				{ className: 'header-gallery__viewport', style: { padding: '40px' } },
+				{ className: 'header-gallery', style: { height: h + 'px', background: '#2C2C2C', position: 'relative' } },
 				_react2.default.createElement(
 					'div',
-					{ className: 'header-gallery__container', style: { maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' } },
-					images.map(function (image, i) {
-						return _react2.default.createElement(
-							'div',
-							{
-								className: 'header-gallery__caption',
-								style: i == _this.state.section ? { opacity: 'block', position: 'relative' } : { display: 'none' }
-							},
-							_react2.default.createElement('span', {
-								className: 'header-gallery__caption-image',
-								style: { background: 'url(' + image + ')', backgroundSize: 'cover', display: 'block' }
-							}),
-							_react2.default.createElement(
-								'span',
-								{ className: 'header-gallery__caption-text', style: { color: '#fff' } },
-								excerpts[i]
-							),
-							_react2.default.createElement('a', {
-								href: '#',
-								onClick: _this.changeCaption.bind(null, 'prev'),
-								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%' } }),
-							_react2.default.createElement('a', {
-								href: '#',
-								onClick: _this.changeCaption.bind(null, 'next'),
-								style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%' } })
-						);
-					})
-				)
-			),
-			_react2.default.createElement(
-				'div',
-				{ className: 'header-gallery__btns', style: btnsStyle },
-				_react2.default.createElement(
-					'button',
-					{
-						onClick: this.changeCaption.bind(null, 'prev'),
-						style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0' } },
-					_react2.default.createElement('i', { className: 'ion-chevron-left' })
+					{ className: 'header-gallery__viewport', style: { padding: '40px' } },
+					_react2.default.createElement(
+						'div',
+						{ className: 'header-gallery__container', style: { maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' } },
+						images.map(function (image, i) {
+							return _react2.default.createElement(
+								'div',
+								{
+									className: 'header-gallery__caption',
+									style: i == _this.state.section ? { opacity: 'block', position: 'relative' } : { display: 'none' }
+								},
+								_react2.default.createElement('span', {
+									className: 'header-gallery__caption-image',
+									style: { background: 'url(' + image + ')', backgroundSize: 'cover', display: 'block' }
+								}),
+								_react2.default.createElement(
+									'span',
+									{ className: 'header-gallery__caption-text', style: { color: '#fff' } },
+									excerpts[i]
+								),
+								_react2.default.createElement('a', {
+									href: '#',
+									onClick: _this.changeCaption.bind(null, 'prev'),
+									style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', left: 0, width: '50%' } }),
+								_react2.default.createElement('a', {
+									href: '#',
+									onClick: _this.changeCaption.bind(null, 'next'),
+									style: { position: 'absolute', height: '100%', top: '0', bottom: 'auto', right: 0, width: '50%' } })
+							);
+						})
+					)
 				),
 				_react2.default.createElement(
-					'button',
-					{
-						onClick: this.changeCaption.bind(null, 'next'),
-						style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0' } },
-					_react2.default.createElement('i', { className: 'ion-chevron-right' })
+					'div',
+					{ className: 'header-gallery__btns', style: btnsStyle },
+					_react2.default.createElement(
+						'button',
+						{
+							onClick: this.changeCaption.bind(null, 'prev'),
+							style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0' } },
+						_react2.default.createElement('i', { className: 'ion-chevron-left' })
+					),
+					_react2.default.createElement(
+						'button',
+						{
+							onClick: this.changeCaption.bind(null, 'next'),
+							style: { border: '1px solid #fff', background: 'transparent', width: '50px', height: '50px', borderRadius: '0', padding: '0' } },
+						_react2.default.createElement('i', { className: 'ion-chevron-right' })
+					)
 				)
 			)
 		);

@@ -1,5 +1,5 @@
 import React from 'react';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 
 const GalleryHeader = React.createClass({
 	getInitialState() {
@@ -47,6 +47,7 @@ const GalleryHeader = React.createClass({
 			} 
 		};
 		return (
+			<StyleRoot>
 			<div className="header-gallery" style={{height: `${h}px`, background: '#2C2C2C', position: 'relative'}}>
 				<div className="header-gallery__viewport" style={{padding: '40px'}}>
 				<div className="header-gallery__container" style={{ maxWidth: '700px',  marginLeft: 'auto', marginRight: 'auto' }}>
@@ -88,6 +89,7 @@ const GalleryHeader = React.createClass({
 					</button>
 				</div>
 			</div>
+			</StyleRoot>
 		)	
 	}
 });
