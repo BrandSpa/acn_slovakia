@@ -64,6 +64,7 @@ const GalleryHeader = React.createClass({
 					)}
 					</div>
 				</div>
+				
 				<div className="header-gallery__btns" style={{position: 'absolute', bottom: '40px', right: '40px'}}>
 					<button 
 						onClick={this.changeCaption.bind(null, 'prev')} 
