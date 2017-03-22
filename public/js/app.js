@@ -36390,7 +36390,7 @@ var GalleryHeader = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				'div',
-				{ 'class': 'header-gallery__btns', style: { position: 'absolute', bottom: '40px', right: '40px' } },
+				{ className: 'header-gallery__btns', style: { position: 'absolute', bottom: '40px', right: '40px' } },
 				_react2.default.createElement(
 					'button',
 					{ onClick: this.changeCaption.bind(null, 'prev') },

@@ -38,7 +38,7 @@ const GalleryHeader = React.createClass({
 					)}
 					</div>
 				</div>
-				<div class="header-gallery__btns" style={{position: 'absolute', bottom: '40px', right: '40px'}}>
+				<div className="header-gallery__btns" style={{position: 'absolute', bottom: '40px', right: '40px'}}>
 					<button onClick={this.changeCaption.bind(null, 'prev')}><i className="ion-chevron-left"></i></button>\
 					<button onClick={this.changeCaption.bind(null, 'next')}><i className="ion-chevron-right"></i></button>
 				</div>
