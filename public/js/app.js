@@ -28678,15 +28678,17 @@ var GalleryHeader = _react2.default.createClass({
 			width: '50%'
 		};
 
+		var mainStyle = { height: h + 'px', background: '#2C2C2C', position: 'relative' };
+		var viewportStyle = { padding: '40px', display: 'flex', justifyContent: 'center' };
 		return _react2.default.createElement(
 			_radium.StyleRoot,
 			null,
 			_react2.default.createElement(
 				'div',
-				{ className: 'header-gallery', style: { height: h + 'px', background: '#2C2C2C', position: 'relative' } },
+				{ className: 'header-gallery', style: mainStyle },
 				_react2.default.createElement(
 					'div',
-					{ className: 'header-gallery__viewport', style: { padding: '40px' } },
+					{ className: 'header-gallery__viewport', style: viewportStyle },
 					_react2.default.createElement(
 						'div',
 						{ className: 'header-gallery__container', style: { maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' } },

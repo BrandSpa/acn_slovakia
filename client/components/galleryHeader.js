@@ -65,10 +65,12 @@ const GalleryHeader = React.createClass({
 			 width: '50%'
 		};
 
+		const mainStyle = {height: `${h}px`, background: '#2C2C2C', position: 'relative'};
+		const viewportStyle = {padding: '40px', display: 'flex', justifyContent: 'center'};
 		return (
 			<StyleRoot>
-			<div className="header-gallery" style={{height: `${h}px`, background: '#2C2C2C', position: 'relative'}}>
-				<div className="header-gallery__viewport" style={{padding: '40px'}}>
+			<div className="header-gallery" style={mainStyle}>
+				<div className="header-gallery__viewport" style={viewportStyle}>
 				<div className="header-gallery__container" style={{ maxWidth: '700px',  marginLeft: 'auto', marginRight: 'auto' }}>
 					{images.map((image, i) =>
 						<div
