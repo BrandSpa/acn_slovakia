@@ -28723,7 +28723,7 @@ var GalleryHeader = _react2.default.createClass({
 	}
 });
 
-exports.default = (0, _radium2.default)(GalleryHeader);
+exports.default = GalleryHeader;
 
 /***/ }),
 /* 341 */,
