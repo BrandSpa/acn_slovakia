@@ -87,9 +87,10 @@ const GalleryHeader = React.createClass({
 							className="header-gallery__caption" 
 							style={i == this.state.section ? {opacity: 'block', position: 'relative'} : {display: 'none'}}
 						>
+							<img src={image} alt="" style={{maxWidth: '100%', height: 'auto'}} />
 							<span
 								className="header-gallery__caption-image" 
-								style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', display: 'block'}}
+								style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', display: 'none'}}
 							>
 							</span>
 							<span className="header-gallery__caption-text" style={{color: '#fff', marginTop: '20px', display: 'block'}}>{excerpts[i]}</span>

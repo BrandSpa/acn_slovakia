@@ -28711,9 +28711,10 @@ var GalleryHeader = _react2.default.createClass({
 									className: 'header-gallery__caption',
 									style: i == _this.state.section ? { opacity: 'block', position: 'relative' } : { display: 'none' }
 								},
+								_react2.default.createElement('img', { src: image, alt: '', style: { maxWidth: '100%', height: 'auto' } }),
 								_react2.default.createElement('span', {
 									className: 'header-gallery__caption-image',
-									style: { backgroundImage: 'url(' + image + ')', backgroundSize: 'cover', display: 'block' }
+									style: { backgroundImage: 'url(' + image + ')', backgroundSize: 'cover', display: 'none' }
 								}),
 								_react2.default.createElement(
 									'span',
