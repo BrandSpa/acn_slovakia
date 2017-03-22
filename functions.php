@@ -24,7 +24,8 @@ function create_post_type() {
         'name' => __( 'Posts video' ),
         'singular_name' => __( 'Post video' )
       ),
-			'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
+			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'),
+			'taxonomies' => array( 'category'),
       'public' => true,
       'has_archive' => true,
     )
@@ -36,6 +37,8 @@ function create_post_type() {
         'name' => __( 'Posts gallery' ),
         'singular_name' => __( 'Post gallery' )
       ),
+			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'),
+			'taxonomies' => array( 'category'),
       'public' => true,
       'has_archive' => true,
     )
