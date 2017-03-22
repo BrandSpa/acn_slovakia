@@ -27,7 +27,7 @@ const GalleryHeader = React.createClass({
 		const h = window.innerHeight;
 
 		return (
-			<div className="header-gallery" style={{height: `${h}px`, background: '#333'}}>
+			<div className="header-gallery" style={{height: `${h}px`, background: '#111', position: 'relative'}}>
 				<div className="header-gallery__viewport">
 				<div className="l-wrap">
 					{images.map((image, i) =>
@@ -38,7 +38,7 @@ const GalleryHeader = React.createClass({
 					)}
 					</div>
 				</div>
-				<div class="header-gallery__btns">
+				<div class="header-gallery__btns" style={{position: 'absolute', bottom: '40px', right: '40px'}}>
 					<button onClick={this.changeCaption.bind(null, 'prev')}><i className="ion-chevron-left"></i></button>\
 					<button onClick={this.changeCaption.bind(null, 'next')}><i className="ion-chevron-right"></i></button>
 				</div>
