@@ -79,7 +79,7 @@ function bs_projects_about_sc($atts, $content = null) {
       [
         'type' => 'param_group',
         'value' => '',
-        'param_name' => 'slides',
+        'param_name' => 'projects',
         'params' => $subparams
       ]
     ];
