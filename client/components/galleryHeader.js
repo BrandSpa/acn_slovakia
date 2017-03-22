@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium';
 
 const GalleryHeader = React.createClass({
 	getInitialState() {
@@ -83,4 +84,4 @@ const GalleryHeader = React.createClass({
 	}
 });
 
-export default GalleryHeader;
+export default Radium(GalleryHeader);
