@@ -24,6 +24,7 @@ function create_post_type() {
         'name' => __( 'Posts video' ),
         'singular_name' => __( 'Post video' )
       ),
+			'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
       'public' => true,
       'has_archive' => true,
     )
