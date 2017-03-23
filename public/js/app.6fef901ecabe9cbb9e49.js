@@ -18924,10 +18924,10 @@ var PostsAbout = _react2.default.createClass({
 			posts.map(function (post, i) {
 				return _react2.default.createElement(
 					'div',
-					{ key: i, className: 'col-12 col-3-l', style: { background: '#fff' } },
+					{ key: i, className: 'col-12 col-3-l' },
 					_react2.default.createElement(
 						'a',
-						{ href: post.post_permalink },
+						{ href: post.post_permalink, style: { background: '#fff' } },
 						_react2.default.createElement('img', { src: post.post_image, alt: '', style: { width: '100%' } })
 					),
 					_react2.default.createElement(

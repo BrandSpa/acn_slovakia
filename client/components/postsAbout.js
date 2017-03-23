@@ -34,8 +34,8 @@ const PostsAbout = React.createClass({
 			<div>
 			{posts.map((post, i) => {
 				return (
-					<div key={i} className="col-12 col-3-l" style={{background: '#fff'}}>
-						<a href={post.post_permalink}>
+					<div key={i} className="col-12 col-3-l" >
+						<a href={post.post_permalink} style={{background: '#fff'}}>
 							<img src={post.post_image} alt="" style={{width: '100%'}} />
 						</a>
 						<div className="post-about__title" style={{background: '#fff', padding: '20px'}}>
