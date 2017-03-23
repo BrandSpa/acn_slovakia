@@ -40833,7 +40833,7 @@ _webfontloader2.default.load({
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function (e) {
     e.preventDefault();
-    console.log($(this).find('.dropdown-list'));
+    console.log($(this).parent().find('.dropdown-list'));
     if ($(this).find('.dropdown-list').hasClass('dropdown-list--show')) {
       $(this).find('.dropdown-list').removeClass('dropdown-list--show');
     } else {
