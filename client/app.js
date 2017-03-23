@@ -49,3 +49,12 @@ donateRedirect();
 smoothScroll();
 toggleViaCrucisNav();
 scrollViaCrucisNav();
+
+function toggleMenu() {
+  $('.dropdown-trigger').on('click', (e) => {
+    e.preventDefault();
+    $(e).find('.dropdown-list').toggleClass('dropdown-list--show');
+  })
+}
+
+toggleMenu();

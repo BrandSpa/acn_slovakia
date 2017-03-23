@@ -40830,5 +40830,14 @@ _webfontloader2.default.load({
 (0, _toggleViaCrucisNav2.default)();
 (0, _scrollViaCrucisNav2.default)();
 
+function toggleMenu() {
+  $('.dropdown-trigger').on('click', function (e) {
+    e.preventDefault();
+    $(e).find('.dropdown-list').toggleClass('dropdown-list--show');
+  });
+}
+
+toggleMenu();
+
 /***/ })
 /******/ ]);
