@@ -16897,13 +16897,24 @@ var ProjectsAbout = _react2.default.createClass({
 					'div',
 					{
 						'class': 'projects-about-num__num',
-						style: { width: '50%', float: 'left', height: '100px', background: '#ECEAEC', color: colors[this.state.section + 1] }
+						style: {
+							width: '50%',
+							textAlign: 'center',
+							paddingTop: '20px',
+							float: 'left', height: '100px', background: '#ECEAEC', color: colors[this.state.section + 1] }
 					},
-					this.props.projects[section] ? this.props.projects[section].number : ''
+					_react2.default.createElement(
+						'h2',
+						null,
+						this.props.projects[section] ? this.props.projects[section].number : ''
+					)
 				),
 				_react2.default.createElement(
 					'div',
-					{ 'class': 'projects-about-num__text', style: { width: '50%', float: 'left', height: '100px' } },
+					{
+						'class': 'projects-about-num__text',
+						style: { width: '50%', float: 'left', height: '100px', padding: '40px', textAlign: 'center' }
+					},
 					this.props.projects[section] ? this.props.projects[section].number_text : ''
 				)
 			),
@@ -18905,9 +18916,13 @@ var PostsAbout = _react2.default.createClass({
 					{ key: i, className: 'col-12 col-3-l' },
 					_react2.default.createElement('img', { src: post.post_image, alt: '', style: { width: '100%' } }),
 					_react2.default.createElement(
-						'h3',
-						null,
-						post.post_title
+						'div',
+						{ className: 'post-about__title', style: { background: '#fff', padding: '20px' } },
+						_react2.default.createElement(
+							'h5',
+							null,
+							post.post_title
+						)
 					)
 				);
 			})
