@@ -21,7 +21,7 @@ function bs_projects_about_sc($atts, $content = null) {
     "projects": <?php echo str_replace('\n', '<br/>', cleanQuote(json_encode($projects)))  ?>,
 		"donate": "<?php echo gett('Donate') ?>",
     "texts": {
-      "stories": <?php echo gett('stories') ?>
+      "stories": "<?php echo gett('stories') ?>"
     }
   }'
 >
