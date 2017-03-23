@@ -39,7 +39,7 @@ const PostsAbout = React.createClass({
 							<img src={post.post_image} alt="" style={{width: '100%'}} />
 						</a>
 						<div className="post-about__title" style={{background: '#fff', padding: '20px'}}>
-							<h5><a href={post.guid}>{post.post_title}</a></h5>
+							<h5><a style={{color: '#324049'}} href={post.guid}>{post.post_title}</a></h5>
 						</div>
 					</div>
 					)

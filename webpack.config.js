@@ -29,25 +29,18 @@ module.exports = {
           if (!stats.errors.length) {
             var htmlFileName = "footer.php";
             var lastFile = stats.chunks[0].files[0];
+            var lastHash = fs.readFileSync(Path.join(__dirname, 'lasthash.txt'), "utf8");
             fs.writeFileSync( Path.join(__dirname, 'lasthash.txt'), lastFile);
-
-            if(fs.existsSync(Path.join(__dirname, 'public/js/' + lastHash ))) {
+            console.log(lastFile !=  lastHash);
+            if(fs.existsSync(Path.join(__dirname, 'public/js/' + lastHash )) && lastFile !=  lastHash) {
               fs.unlinkSync(Path.join(__dirname, 'public/js/' + lastHash ));
             } 
-              
+            //get footer content
             var html = fs.readFileSync(Path.join(__dirname, htmlFileName), "utf8");
-            var lastHash = fs.readFileSync(Path.join(__dirname, 'lasthash.txt'), "utf8");
-            var lastFile = stats.chunks[0].files[0];
-            fs.writeFileSync( Path.join(__dirname, 'lasthash.txt'), lastFile);
-
-            var htmlOutput = html.replace(
-              /<script\s+src=(["'])(.+?)app.*\.js\1/i,
-              "<script src=$1$2" + stats.chunks[0].files[0] + "$1");
-
-            fs.writeFileSync(
-              Path.join(__dirname, htmlFileName),
-              htmlOutput);
-          }
+           //replace script name
+            var htmlOutput = html.replace( /<script\s+src=(["'])(.+?)app.*\.js\1/i, "<script src=$1$2" + lastFile + "$1");
+            //write footer and replace script app name
+            fs.writeFileSync( Path.join(__dirname, htmlFileName), htmlOutput); }
         });
       }
     ]
