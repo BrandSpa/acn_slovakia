@@ -35,11 +35,11 @@ const PostsAbout = React.createClass({
 			{posts.map((post, i) => {
 				return (
 					<div key={i} className="col-12 col-3-l">
-						<a href={post.guid}>
+						<a href={post.post_permalink}>
 							<img src={post.post_image} alt="" style={{width: '100%'}} />
 						</a>
 						<div className="post-about__title" style={{background: '#fff', padding: '20px'}}>
-							<h5><a style={{color: '#324049'}} href={post.guid}>{post.post_title}</a></h5>
+							<h5><a style={{color: '#324049'}} href={post.post_permalink}>{post.post_title}</a></h5>
 						</div>
 					</div>
 					)

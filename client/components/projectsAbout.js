@@ -52,6 +52,7 @@ const ProjectsAbout = React.createClass({
 				</div>
 				<div style={{background: '#F8F6F8', padding: '80px 0', float: 'left', width: '100%'}}>
 					<div className="l-wrap">
+					
 						<PostsAbout category={this.props.projects[section] ? this.props.projects[section].post_category : ''} />
 					</div>
 				</div>
