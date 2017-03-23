@@ -43,7 +43,10 @@ const ProjectsAbout = React.createClass({
 						<h2>{this.props.projects[section] ? this.props.projects[section].number : ''}</h2>
 					</div>
 
-					<div class="projects-about-num__text" style={{width: '50%', float: 'left', height: '100px'}}>
+					<div 
+						class="projects-about-num__text" 
+						style={{width: '50%', float: 'left', height: '100px', padding: '40px', textAlign: 'center'}}
+					>
 						{this.props.projects[section] ? this.props.projects[section].number_text : ''}
 					</div>
 				</div>
