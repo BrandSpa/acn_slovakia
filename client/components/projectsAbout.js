@@ -43,8 +43,9 @@ const ProjectsAbout = React.createClass({
 						{this.props.projects[section] ? this.props.projects[section].number_text : ''}
 					</div>
 				</div>
-
-				<PostsAbout category={this.props.projects[section] ? this.props.projects[section].post_category : ''} />
+				<div style={{background: '#F8F6F8', padding: '80px 0'}}>
+					<PostsAbout category={this.props.projects[section] ? this.props.projects[section].post_category : ''} />
+				</div>
 			</div>
 		)
 	}
