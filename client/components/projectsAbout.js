@@ -34,7 +34,7 @@ const ProjectsAbout = React.createClass({
 				<div class="projects-about-num">
 					<div 
 						class="projects-about-num__num" 
-						style={{width: '50%', float: 'left', height: '100px', background: '#ECEAEC', color: color[this.state.section + 1]}}
+						style={{width: '50%', float: 'left', height: '100px', background: '#ECEAEC', color: colors[this.state.section + 1]}}
 					>
 						{this.props.projects[section] ? this.props.projects[section].number : ''}
 					</div>
