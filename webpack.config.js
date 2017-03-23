@@ -25,7 +25,6 @@ module.exports = {
       function () {
         this.plugin("done", function (statsData) {
           var stats = statsData.toJson();
-          console.log(stats.chunks[0].files[0]);
           if (!stats.errors.length) {
             var htmlFileName = "footer.php";
             var html = fs.readFileSync(Path.join(__dirname, htmlFileName), "utf8");
