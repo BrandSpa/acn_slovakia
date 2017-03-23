@@ -18924,7 +18924,7 @@ var PostsAbout = _react2.default.createClass({
 			posts.map(function (post, i) {
 				return _react2.default.createElement(
 					'div',
-					{ key: i, className: 'col-12 col-3-l' },
+					{ key: i, className: 'col-12 col-3-l', style: { background: '#fff' } },
 					_react2.default.createElement(
 						'a',
 						{ href: post.post_permalink },

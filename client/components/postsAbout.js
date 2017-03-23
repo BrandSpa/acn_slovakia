@@ -34,7 +34,7 @@ const PostsAbout = React.createClass({
 			<div>
 			{posts.map((post, i) => {
 				return (
-					<div key={i} className="col-12 col-3-l">
+					<div key={i} className="col-12 col-3-l" style={{background: '#fff'}}>
 						<a href={post.post_permalink}>
 							<img src={post.post_image} alt="" style={{width: '100%'}} />
 						</a>
