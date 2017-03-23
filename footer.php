@@ -22,7 +22,7 @@
   }
 
   function downloadJS (){
-    [ '<?php echo get_template_directory_uri() ?>/public/js/app.js' ]
+    [ ]
     .forEach(function(src) {
       appendScript(src);
     });
@@ -37,6 +37,8 @@
   }
 </script>
 	<!--/async load app-->
+
+<script src='<?php echo get_template_directory_uri() ?>/public/js/app.e45438428fd41b303f5b.js'></script>
 
 <!--/app theme-->
 
