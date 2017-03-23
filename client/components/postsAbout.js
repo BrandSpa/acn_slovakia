@@ -35,9 +35,11 @@ const PostsAbout = React.createClass({
 			{posts.map((post, i) => {
 				return (
 					<div key={i} className="col-12 col-3-l">
-						<img src={post.post_image} alt="" style={{width: '100%'}} />
+						<a href={post.guid}>
+							<img src={post.post_image} alt="" style={{width: '100%'}} />
+						</a>
 						<div className="post-about__title" style={{background: '#fff', padding: '20px'}}>
-							<h5>{post.post_title}</h5>
+							<h5><a href={post.guid}>{post.post_title}</a></h5>
 						</div>
 					</div>
 					)
