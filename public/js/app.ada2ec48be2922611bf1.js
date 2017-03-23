@@ -40833,7 +40833,11 @@ _webfontloader2.default.load({
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function (e) {
     e.preventDefault();
-    $(e).find('.dropdown-list').toggleClass('dropdown-list--show');
+    if ($(this).find('.dropdown-list').hasClass('dropdown-list--show')) {
+      $(this).find('.dropdown-list').removeClass('dropdown-list--show');
+    } else {
+      $(this).find('.dropdown-list').addClass('dropdown-list--show');
+    }
   });
 }
 
