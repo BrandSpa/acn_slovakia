@@ -25,13 +25,12 @@ module.exports = {
       function () {
         this.plugin("done", function (statsData) {
           var stats = statsData.toJson();
-          var lastFile = stats.chunks[0].files[0];
-
+          
           if (!stats.errors.length) {
             var htmlFileName = "footer.php";
             var html = fs.readFileSync(Path.join(__dirname, htmlFileName), "utf8");
             var lastHash = fs.readFileSync(Path.join(__dirname, 'lasthash.txt'), "utf8");
-            
+            var lastFile = stats.chunks[0].files[0];
             if(fs.existsSync(Path.join(__dirname, 'public/js/' + lastHash ))) {
               fs.unlinkSync(Path.join(__dirname, 'public/js/' + lastHash ));
             } 
