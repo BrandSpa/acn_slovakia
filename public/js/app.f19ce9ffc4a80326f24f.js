@@ -16926,7 +16926,7 @@ var ProjectsAbout = _react2.default.createClass({
 					{ className: 'l-wrap' },
 					_react2.default.createElement(
 						'h3',
-						{ style: { color: '#324049', textTransform: 'uppercase' } },
+						{ style: { color: '#324049', textTransform: 'uppercase', marginBottom: '20px' } },
 						this.props.texts.stories
 					),
 					_react2.default.createElement(_postsAbout2.default, { category: this.props.projects[section] ? this.props.projects[section].post_category : '' })
