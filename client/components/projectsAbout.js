@@ -1,7 +1,7 @@
 import React from 'react';
 import Projects from './projects';
 import PostsAbout from './postsAbout';
-const backgroundColors = {
+const colors = {
   1: '#b91325',
   2: '#00355f',
   3: '#6e5785',
@@ -32,7 +32,10 @@ const ProjectsAbout = React.createClass({
 			<div>
 				<Projects contents={this.props.projects} donate={this.props.donate} changeSection={this.handleSection} />
 				<div class="projects-about-num">
-					<div class="projects-about-num__num" style={{width: '50%', float: 'left', height: '100px'}}>
+					<div 
+						class="projects-about-num__num" 
+						style={{width: '50%', float: 'left', height: '100px', background: '#ECEAEC', color: color[this.state.section + 1]}}
+					>
 						{this.props.projects[section] ? this.props.projects[section].number : ''}
 					</div>
 
