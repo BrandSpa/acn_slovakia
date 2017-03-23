@@ -37,6 +37,7 @@ const ProjectsAbout = React.createClass({
 						style={{
 							width: '50%', 
 							textAlign: 'center',
+							paddingTop: '20px',
 							float: 'left', height: '100px', background: '#ECEAEC', color: colors[this.state.section + 1]}}
 					>
 						<h2>{this.props.projects[section] ? this.props.projects[section].number : ''}</h2>
