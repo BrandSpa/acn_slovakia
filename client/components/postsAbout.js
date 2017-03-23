@@ -36,7 +36,9 @@ const PostsAbout = React.createClass({
 				return (
 					<div key={i} className="col-12 col-3-l">
 						<img src={post.post_image} alt="" style={{width: '100%'}} />
-						<h3>{post.post_title}</h3>
+						<div className="post-about__title" style={{background: '#fff'}}>
+							<h5>{post.post_title}</h5>
+						</div>
 					</div>
 					)
 			})}
