@@ -16927,7 +16927,7 @@ var ProjectsAbout = _react2.default.createClass({
 					_react2.default.createElement(
 						'h3',
 						{ style: { color: '#324049', textTransform: 'uppercase' } },
-						texts.stories
+						this.props.texts.stories
 					),
 					_react2.default.createElement(_postsAbout2.default, { category: this.props.projects[section] ? this.props.projects[section].post_category : '' })
 				)
