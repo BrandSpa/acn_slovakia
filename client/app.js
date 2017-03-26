@@ -54,11 +54,13 @@ scrollViaCrucisNav();
 function stickMenu() {
   const $nav = $('.nav');
   const $stickyMenu = $('.sticky-menu');
+  const $parentSticky = $stickyMenu ? $('.sticky-menu').parent().offset().top : 0;
   let stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
   let navTop = $nav ? $nav.offset().top : 0;
-  console.log(stickyMenuTop, navTop);
   if(navTop > stickyMenuTop) {
-    $stickyMenu.css({marginTop: `${stickyMenuTop}px` });
+    if(stickyMenuTop < $parentSticky) {
+      $stickyMenu.css({marginTop: `${stickyMenuTop}px` });
+    }
   }
 }
 
