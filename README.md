@@ -16,13 +16,6 @@ $ webpack --p
 ssh -i key.pem user@ip 'cd wp/wp-content/themes/acn_int && git pull origin master'
 ```
 
-## todos
-- [ ] add test to backend apis
-	-	[ ] location
-	- [ ] stripe
-	- [ ] convertloop
-	- [ ] posts
-
 ## frontend
 - [es6 with babel](https://babeljs.io/)
 - [react](https://facebook.github.io/react/)
@@ -36,5 +29,9 @@ ssh -i key.pem user@ip 'cd wp/wp-content/themes/acn_int && git pull origin maste
 ## backend
 - Wordpress
 
-#### tests
-- phpunit
+## todos
+- [ ] add test to backend apis
+	-	[ ] location
+	- [ ] stripe
+	- [ ] convertloop
+	- [ ] posts
