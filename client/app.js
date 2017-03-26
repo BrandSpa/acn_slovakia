@@ -24,11 +24,6 @@ import smoothScroll from './lib/smoothScroll';
 import scrollViaCrucisNav from './lib/scrollViaCrucisNav';
 import toggleViaCrucisNav from './lib/toggleViaCrucisNav';
 
-
-  const {whyDidYouUpdate} = require('why-did-you-update')
-  whyDidYouUpdate(React)
-
-
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
   custom: {families: ['Ionicons'], testStrings: {Ionicons: '\uf10c\uf109'}},
@@ -72,7 +67,10 @@ function stickMenu(e) {
   }
 }
 
-  window.addEventListener('scroll', stickMenu);
+if($('.sticky-menu').length > 1) {
+ window.addEventListener('scroll', stickMenu);
+}
+ 
 
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function(e) {
