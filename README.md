@@ -1,13 +1,13 @@
 # acn_int
 [![Build Status](https://semaphoreci.com/api/v1/developersoul/acn_int/branches/master/shields_badge.svg)](https://semaphoreci.com/developersoul/acn_int)
 
-##todos
+## todos
 - [ ] fix logo sizes and pages donate container
 - [ ] add test to apis
-	-	location
-	- stripe
-	- convertloop
-	- posts
+	-	[ ] location
+	- [ ] stripe
+	- [ ] convertloop
+	- [ ] posts
 
 ## frontend
 - es6
@@ -17,7 +17,7 @@
 #### tests
 - jest
 - enzyme
-- moxios`=
+- moxios
 - sinon
 
 ---
