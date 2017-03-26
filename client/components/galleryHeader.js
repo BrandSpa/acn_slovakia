@@ -26,8 +26,8 @@ const GalleryHeader = React.createClass({
 		
 	},
 	
-	changeCaption(type, e) {
-		e.preventDefault();
+	changeSection(type, e) {
+		if(e) e.preventDefault();
 		let section = this.state.section;
 		if(type == 'next') section = this.state.section < (this.props.images.length - 1)  ? this.state.section + 1 : 0;
 		if(type == 'prev') section = this.state.section > 0 ? this.state.section - 1 : 0;
@@ -95,13 +95,15 @@ const GalleryHeader = React.createClass({
 				<div style={{ maxWidth: '800px',  marginLeft: 'auto', marginRight: 'auto' }}>
 					{images.map((image, i) =>
 						<div
-							style={i == this.state.section ? {opacity: 'block', position: 'relative'} : {display: 'none'}}
+							className="gallery-header__item"
+							key={i}
+							style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
 						>
 							<img src={image} alt="" style={{maxWidth: '100%', height: 'auto'}} />
 							<span style={excerptStyle}>{excerpts[i]}</span>
 
-							<a href="#" onClick={this.changeCaption.bind(null, 'prev')} style={linkLeft}></a> 
-							<a href="#" onClick={this.changeCaption.bind(null, 'next')} style={linkRight}></a>
+							<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
+							<a href="#" onClick={this.changeSection.bind(null, 'next')} style={linkRight}></a>
 						</div>
 					)}
 					</div>
@@ -109,13 +111,13 @@ const GalleryHeader = React.createClass({
 
 				<div style={btnsStyle}>
 					<button 
-						onClick={this.changeCaption.bind(null, 'prev')} 
+						onClick={this.changeSection.bind(null, 'prev')} 
 						style={btnStyle}>
 						<i className="ion-chevron-left"></i>
 					</button>
 
 					<button 
-						onClick={this.changeCaption.bind(null, 'next')} 
+						onClick={this.changeSection.bind(null, 'next')} 
 						style={btnStyle}>
 						<i className="ion-chevron-right"></i>
 					</button>

@@ -20,8 +20,6 @@
 - moxios
 - sinon
 
----
-
 ## backend
 - php
 - wordpress
