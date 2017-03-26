@@ -191,9 +191,8 @@ function stickMenu() {
   var stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
   var navTop = $nav ? $nav.offset().top : 0;
   if (navTop > stickyMenuTop) {
-    if (stickyMenuTop < $parentSticky) {
-      $stickyMenu.css({ marginTop: stickyMenuTop + 'px' });
-    }
+    console.log($parentSticky);
+    $stickyMenu.css({ position: 'relative', top: stickyMenuTop + 'px' });
   }
 }
 
