@@ -57,14 +57,11 @@ function stickMenu() {
   const $parentSticky = $stickyMenu ? $('.sticky-menu').parent().offset().top : 0;
   let stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
   let navTop = $nav ? $nav.offset().top : 0;
+  let containerTop = $('.sticky-menu__container').offset().top;
 
-  if(navTop >  stickyMenuTop) {
+  if(navTop >  stickyMenuTop && stickyMenuTop < containerTop) {
     $stickyMenu.css({position: 'relative', top: `${stickyMenuTop}px` });
   }
-
-   if(stickyMenuTop > $parentSticky) {
-      $stickyMenu.css({position: 'relative', top: `${stickyMenuTop}px` });
-  } 
 }
 
   window.addEventListener('scroll', stickMenu);
