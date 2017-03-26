@@ -42,7 +42,7 @@
   bs.donate = '<?php echo gett('Donate') ?>'
 </script>
 
-<script src='<?php echo get_template_directory_uri() ?>/public/js/app.f47b5157760278cd1b6d.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/app.4a77613e5aa50a814c45.js'></script>
 
 <!--/app theme-->
 
