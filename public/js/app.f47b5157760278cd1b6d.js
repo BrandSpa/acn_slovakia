@@ -184,14 +184,14 @@ _webfontloader2.default.load({
 (0, _scrollViaCrucisNav2.default)();
 
 //.sticky-menu
-function stickMenu() {
+function stickMenu(e) {
   var $nav = $('.nav');
   var $stickyMenu = $('.sticky-menu');
   var $parentSticky = $stickyMenu ? $('.sticky-menu').parent().offset().top : 0;
   var stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
   var navTop = $nav ? $nav.offset().top : 0;
   var containerHeight = $('.sticky-menu__container').height();
-  console.log(stickyMenuTop + $nav.innerHeight() - $stickyMenu.innerHeight());
+  console.log(e, stickyMenuTop + $nav.innerHeight() - $stickyMenu.innerHeight());
   if (navTop > stickyMenuTop && stickyMenuTop < containerHeight) {
     $stickyMenu.css({ position: 'relative', top: stickyMenuTop + 'px' });
   }
