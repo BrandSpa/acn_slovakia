@@ -5,7 +5,7 @@ import Amount from './amount';
 import CreditCard from './creditCard';
 import Contact from './contact';
 import sendTransaction from '../../lib/sendTransaction';
-const endpoint = 'https://acninternational.org/wp-admin/admin-ajax.php';
+const endpoint = '/wp-admin/admin-ajax.php';
 
 const Donate = React.createClass({
   getInitialState() {

@@ -40830,6 +40830,7 @@ _webfontloader2.default.load({
 (0, _toggleViaCrucisNav2.default)();
 (0, _scrollViaCrucisNav2.default)();
 
+//.sticky-menu
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function (e) {
     e.preventDefault();

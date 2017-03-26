@@ -26,7 +26,7 @@ describe("header slider component", () => {
 
 	it('should show video modal', () => {
 			let wrapper = mount(<HeaderSlider slides={[{title: 'acn pope', 'is_video': true}]} />);
-			wrapper.find('.slider__slide').simulate('click');
+			wrapper.find('.slider__slide__link-zone').simulate('click');
 			expect( wrapper.find('.modal--show').length).toEqual(1);
 	})
 

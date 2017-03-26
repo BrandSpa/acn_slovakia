@@ -23,14 +23,7 @@ const headerSlide = React.createClass({
 
     return (
       <div>
-        {
-          this.props.is_video
-            ? <VideoModal
-              ref={modal => this.modal = modal}
-              url={this.props.url}
-            />
-            : ''
-        }
+        { this.props.is_video ? <VideoModal ref={modal => this.modal = modal} url={this.props.url} /> : '' }
 
         <div className="slider__slide" style={style}>
           <a href="#" className="slider__slide__link-zone" onClick={this.handleLink}></a>

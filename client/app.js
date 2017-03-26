@@ -50,6 +50,7 @@ smoothScroll();
 toggleViaCrucisNav();
 scrollViaCrucisNav();
 
+//.sticky-menu
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function(e) {
     e.preventDefault();
