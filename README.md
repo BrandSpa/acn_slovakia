@@ -18,7 +18,6 @@
 - jest
 - enzyme
 - moxios
-- sinon
 
 ## backend
 - php
@@ -26,3 +25,13 @@
 
 #### tests
 - phpunit
+
+## run Tests
+```bash
+$ yarn jest
+```
+
+## Compile frontend
+```bash
+$ webpack --p
+```
