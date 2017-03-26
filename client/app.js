@@ -58,7 +58,7 @@ function stickMenu() {
   let stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
   let navTop = $nav ? $nav.offset().top : 0;
   if(navTop > stickyMenuTop) {
-      $stickyMenu.css({marginTop: `${stickyMenuTop}px` });
+      $stickyMenu.css({position: 'relative', top: `${stickyMenuTop}px` });
   }
 }
 
