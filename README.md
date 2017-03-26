@@ -1,4 +1,4 @@
-# acn_int
+# ACN International
 [![Build Status](https://semaphoreci.com/api/v1/developersoul/acn_int/branches/master/shields_badge.svg)](https://semaphoreci.com/developersoul/acn_int)
 
 ## Run Tests
@@ -24,18 +24,17 @@ ssh -i key.pem user@ip 'cd wp/wp-content/themes/acn_int && git pull origin maste
 	- [ ] posts
 
 ## frontend
-- es6 with babel
-- react
-- axios
+- [es6 with babel](https://babeljs.io/)
+- [react](https://facebook.github.io/react/)
+- [axios for ajax requests](https://github.com/mzabriskie/axios)
 
 #### tests
 - [jest](https://facebook.github.io/jest/)
 - [enzyme](http://airbnb.io/enzyme/)
-- moxios
+- [moxios for mock ajax requests](https://github.com/mzabriskie/moxios)
 
 ## backend
-- php
-- wordpress
+- Wordpress
 
 #### tests
 - phpunit
