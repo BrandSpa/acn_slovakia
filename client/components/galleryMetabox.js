@@ -24,7 +24,6 @@ const GalleryMetabox = React.createClass({
 		if(Array.isArray(this.props.excerpts)) {
 			this.setState({excerpts: this.props.excerpts});
 		}
-
 	},
 
 	handleChange(ind, type, e) {
@@ -90,7 +89,7 @@ const GalleryMetabox = React.createClass({
 				>
 				</textarea>
 			</p>
-				<button className="button" onClick={this.handleRemove.bind(null, i)}>Remove</button>
+				<button className="button gallery-metabox__remove" onClick={this.handleRemove.bind(null, i)}>Remove</button>
 			</p>
 		)
 	},
@@ -100,7 +99,7 @@ const GalleryMetabox = React.createClass({
 		return (
 			<div>
 			{ images.map((image, i) => this.renderInputs(i) ) }
-			<button onClick={this.handleAdd} className="button">Add</button>
+			<button onClick={this.handleAdd} className="button gallery-metabox__add">Add</button>
 			</div>
 		)
 	}

@@ -10,7 +10,7 @@ let projects = [
 		number: '1 million',
 		number_text: 'a 1 million text'
 	},
-		{
+	{
 		title: '',
 		content: '',
 		imgUrl: '',
