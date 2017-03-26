@@ -51,6 +51,16 @@ toggleViaCrucisNav();
 scrollViaCrucisNav();
 
 //.sticky-menu
+function stickMenu() {
+  const $nav = $('.nav');
+  const $stickyMenu = $('.sticky-menu');
+  let stickyMenuTop = $stickyMenu ? $stickyMenu.offset.top() : 0;
+  let navTop = $nav ? $nav.offset().top : 0;
+  console.log(stickyMenuTop, navTop);
+}
+
+  window.addEventListener('scroll', stickMenu);
+
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function(e) {
     e.preventDefault();

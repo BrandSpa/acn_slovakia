@@ -18,6 +18,7 @@ const CampaignsSlider = React.createClass({
       this.props.interval
     );
   },
+  
   nextSlide(clear = true) {
     if (clear) clearInterval(this.interval);
     let total = this.props.slides.length - 1;
