@@ -190,6 +190,9 @@ function stickMenu() {
   var stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
   var navTop = $nav ? $nav.offset().top : 0;
   console.log(stickyMenuTop, navTop);
+  if (navTop > stickyMenuTop) {
+    $stickyMenu.css({ marginTop: stickyMenuTop + 'px' });
+  }
 }
 
 window.addEventListener('scroll', stickMenu);
