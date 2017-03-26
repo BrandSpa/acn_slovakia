@@ -1,4 +1,5 @@
 'use strict';
+import React from 'react';
 import 'babel-polyfill';
 import WebFont from 'webfontloader';
 import multipleRender from 'react-multiple-render';
@@ -22,6 +23,11 @@ import donateRedirect from './lib/donate_redirect';
 import smoothScroll from './lib/smoothScroll';
 import scrollViaCrucisNav from './lib/scrollViaCrucisNav';
 import toggleViaCrucisNav from './lib/toggleViaCrucisNav';
+
+if (process.env.NODE_ENV !== 'production') {
+  const {whyDidYouUpdate} = require('why-did-you-update')
+  whyDidYouUpdate(React)
+}
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
