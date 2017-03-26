@@ -187,7 +187,7 @@ _webfontloader2.default.load({
 function stickMenu() {
   var $nav = $('.nav');
   var $stickyMenu = $('.sticky-menu');
-  var stickyMenuTop = $stickyMenu ? $stickyMenu.offset.top : 0;
+  var stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
   var navTop = $nav ? $nav.offset().top : 0;
   console.log(stickyMenuTop, navTop);
 }
