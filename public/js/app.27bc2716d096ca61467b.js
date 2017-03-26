@@ -193,7 +193,7 @@ function stickMenu(e) {
   var containerHeight = $('.sticky-menu__container').height();
   var top = stickyMenuTop + $nav.innerHeight();
   var maxTop = containerHeight - $stickyMenu.innerHeight() - 120;
-  console.log(stickyMenuTop < maxTop);
+  console.log(maxTop);
   if (navTop > stickyMenuTop && stickyMenuTop < maxTop) {
     $stickyMenu.css({ position: 'relative', top: top });
   }
