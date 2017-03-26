@@ -58,7 +58,7 @@ function stickMenu(e) {
   let stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top  : 0;
   let navTop = $nav ? $nav.offset().top : 0;
   let containerHeight = $('.sticky-menu__container').height();
-  let top = (stickyMenuTop +  $nav.innerHeight()) - $stickyMenu.innerHeight();
+  let top = (stickyMenuTop +  $nav.innerHeight());
   let maxTop = containerHeight - $stickyMenu.innerHeight();
   console.log(stickyMenuTop < maxTop);
   if(navTop > stickyMenuTop && stickyMenuTop < maxTop) {
