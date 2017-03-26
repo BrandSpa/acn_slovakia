@@ -24,13 +24,13 @@ ssh -i key.pem user@ip 'cd wp/wp-content/themes/acn_int && git pull origin maste
 	- [ ] posts
 
 ## frontend
-- es6
+- es6 with babel
 - react
 - axios
 
 #### tests
-- jest
-- enzyme
+- [jest](https://facebook.github.io/jest/)
+- [enzyme](http://airbnb.io/enzyme/)
 - moxios
 
 ## backend
