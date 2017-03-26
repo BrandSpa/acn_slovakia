@@ -55,12 +55,12 @@ function stickMenu() {
   const $nav = $('.nav');
   const $stickyMenu = $('.sticky-menu');
   const $parentSticky = $stickyMenu ? $('.sticky-menu').parent().offset().top : 0;
-  let stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
+  let stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top  : 0;
   let navTop = $nav ? $nav.offset().top : 0;
   let containerHeight = $('.sticky-menu__container').height();
 
-  if(navTop >  stickyMenuTop && stickyMenuTop < containerHeight) {
-    $stickyMenu.css({position: 'relative', top: `${stickyMenuTop}px` });
+  if(navTop > stickyMenuTop && stickyMenuTop < containerHeight) {
+    $stickyMenu.css({position: 'relative', top: `${stickyMenuTop + $nav.height() }px` });
   }
 }
 
