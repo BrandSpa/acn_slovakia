@@ -45371,7 +45371,7 @@ module.exports = union;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+
 
 var _react = __webpack_require__(8);
 
@@ -45458,14 +45458,12 @@ var _toggleViaCrucisNav2 = _interopRequireDefault(_toggleViaCrucisNav);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //jquery stuff :(
-if (process.env.NODE_ENV !== 'production') {
-  var _require = __webpack_require__(297),
-      whyDidYouUpdate = _require.whyDidYouUpdate;
-
-  whyDidYouUpdate(_react2.default);
-}
+var _require = __webpack_require__(297),
+    whyDidYouUpdate = _require.whyDidYouUpdate;
 //React components :)
 
+
+whyDidYouUpdate(_react2.default);
 
 _webfontloader2.default.load({
   google: { families: ['Source Sans Pro:400,600,700'] },
@@ -45525,7 +45523,6 @@ function toggleMenu() {
 }
 
 toggleMenu();
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ })
 /******/ ]);

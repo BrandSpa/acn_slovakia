@@ -24,10 +24,10 @@ import smoothScroll from './lib/smoothScroll';
 import scrollViaCrucisNav from './lib/scrollViaCrucisNav';
 import toggleViaCrucisNav from './lib/toggleViaCrucisNav';
 
-if (process.env.NODE_ENV !== 'production') {
+
   const {whyDidYouUpdate} = require('why-did-you-update')
   whyDidYouUpdate(React)
-}
+
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
