@@ -17,7 +17,7 @@ function bs_julian_sc($atts, $content = null) {
 <script>
 	onLoad(function() {
 			jQuery('.julian-form').on('submit, function(e) {
-				console.log($(this).serialize);
+				console.log($(this).serialize());
 		});
 	})
 </script>
