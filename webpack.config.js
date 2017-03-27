@@ -2,6 +2,7 @@
 const webpack = require('webpack');
 const fs = require('fs');
 const Path = require('path');
+const WebpackCleanupPlugin =  require('webpack-cleanup-plugin');
 
 module.exports = {
   watch: true,
@@ -22,6 +23,7 @@ module.exports = {
 			} 
 		]
   },
+  devtool: 'cheap-source-map',
 	plugins: [
       new webpack.optimize.CommonsChunkPlugin('vendor'),
       function () {
@@ -42,6 +44,9 @@ module.exports = {
           }
         });
       },
+      new WebpackCleanupPlugin({
+        exclude: ["admin.js"],
+      })
       
     ]
 };

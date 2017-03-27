@@ -52,6 +52,7 @@
     "uglifycss": "^0.0.25",
     "webpack": "^2.2.1",
     "webpack-clean-obsolete-chunks": "^0.1.4",
+    "webpack-cleanup-plugin": "^0.5.1",
     "webpack-dashboard": "^0.3.0",
     "webpack-shell-plugin": "^0.5.0",
     "why-did-you-update": "^0.0.8"
