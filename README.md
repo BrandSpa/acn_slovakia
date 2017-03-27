@@ -23,10 +23,8 @@ yarn jest
 ## Compile frontend
 We use [webpack](https://webpack.js.org/)
 ```bash
-webpack --p
+yarn build
 ```
-
-
 
 ## deploy 
 ```bash
