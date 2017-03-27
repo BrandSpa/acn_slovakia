@@ -17,7 +17,13 @@ function bs_example_sc($atts, $content = null) {
 ?>
 
 <?php  var_dump(explode(',', $at['name'])) ?>
-<?php  var_dump($at['lastname']) ?>
+
+<?php
+foreach(explode(',', $at['lastname']) as $imageId) {
+  echo wp_get_attachment_url($imageId);
+}
+
+?>
 
 <form action="">
 	<div class="input-container">
