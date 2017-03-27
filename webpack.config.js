@@ -40,9 +40,13 @@ module.exports = {
       }
 		]
   },
-  devtool: 'cheap-source-map',
+  devtool: 'source-map',
 	plugins: [
-      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.[chunkhash].js', minChunks: Infinity}),
+      new webpack.optimize.CommonsChunkPlugin({ 
+        name: 'vendor', 
+        filename: 'vendor.[chunkhash].js', 
+        minChunks: Infinity
+      }),
       function () {
         this.plugin("done", function (statsData) {
           const stats = statsData.toJson();

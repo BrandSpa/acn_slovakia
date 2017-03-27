@@ -71,7 +71,6 @@ if($('.sticky-menu').length > 1) {
  window.addEventListener('scroll', stickMenu);
 }
  
-
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function(e) {
     e.preventDefault();
