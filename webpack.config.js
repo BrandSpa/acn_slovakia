@@ -5,7 +5,6 @@ const Path = require('path');
 const WebpackCleanupPlugin =  require('webpack-cleanup-plugin');
 
 module.exports = {
-  watch: true,
   entry: {
     vendor: ['react', 'react-dom', 'axios'],
   	app: './client/app.js'
