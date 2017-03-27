@@ -4,7 +4,6 @@ import './scss/index.scss';
 import 'babel-polyfill';
 import WebFont from 'webfontloader';
 import multipleRender from 'react-multiple-render';
-
 //React components :)
 import ContactForm from './components/contactForm';
 import HeaderSlider from './components/headerSlider';

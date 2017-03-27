@@ -44,6 +44,11 @@
 
 <script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.53d3182beedd8c762adc.js'></script>
 <script src='<?php echo get_template_directory_uri() ?>/public/js/app.6dcd18f05e1c3aa3a80e.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js"></script>
+<script>
+
+  
+</script>
 <!--/app theme-->
 
  <!-- Google Analytics -->

@@ -98,7 +98,7 @@ require('shortcodes/campaigns_slider.php');
 require('shortcodes/download_pdf.php');
 require('shortcodes/share.php');
 require('shortcodes/breadcrumb.php');
-require('shortcodes/example.php');
+require('shortcodes/flexslider.php');
 
 
 //metaboxes
