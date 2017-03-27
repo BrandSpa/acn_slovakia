@@ -15,6 +15,7 @@ import CampaignsSlider from './components/campaignsSlider';
 import DownloadPdf from './components/downloadPdf';
 import GalleryHeader from './components/galleryHeader';
 import ProjectsAbout from './components/projectsAbout';
+import Julian from './lib/julian';
 
 //jquery stuff :(
 import setMenu from './lib/set_menu';
@@ -50,9 +51,9 @@ donateRedirect();
 smoothScroll();
 toggleViaCrucisNav();
 scrollViaCrucisNav();
+Julian();
 
 function stickMenu(e) {
-  
   const $nav = $('.nav');
   const $stickyMenu = $('.sticky-menu');
   const $parentSticky = $stickyMenu ? $('.sticky-menu').parent().offset().top : 0;

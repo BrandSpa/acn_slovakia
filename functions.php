@@ -98,6 +98,7 @@ require('shortcodes/campaigns_slider.php');
 require('shortcodes/download_pdf.php');
 require('shortcodes/share.php');
 require('shortcodes/breadcrumb.php');
+require('shortcodes/julian.php');
 
 //metaboxes
 require('metaboxes/image_square.php');
