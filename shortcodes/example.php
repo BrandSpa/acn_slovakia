@@ -15,6 +15,7 @@ function bs_example_sc($atts, $content = null) {
 
   ob_start();
 ?>
+<?php var_dump($at) ?>
 <form action="">
 	<div class="input-container">
 		<input type="text" placeholder="<?php echo $at['name'] ?>" name="name">
