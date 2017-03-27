@@ -328,6 +328,15 @@ button, .btn {
 	}
 }
 
+.bs-example h1 {
+	color: 'red';
+}
+
+.bs-example h3 {
+	color: 'blue';
+}
+
+
 @import 'menu';
 @import 'header';
 @import 'footer';

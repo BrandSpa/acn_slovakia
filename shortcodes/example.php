@@ -18,7 +18,7 @@ function bs_example_sc($atts, $content = null) {
 ?>
 
 
-<div>
+<div class="bs-example">
 <img src="<?php echo wp_get_attachment_url($at['image']) ?>" alt="">
 <h1><?php echo $at['title'] ?></h1> 
 <h3><?php echo $at['subtitle'] ?></h3>
