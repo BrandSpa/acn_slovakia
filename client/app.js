@@ -65,8 +65,8 @@ function stickMenu(e) {
   if(navTop > stickyMenuTop && stickyMenuTop <= maxTop) {
     $stickyMenu.css({position: 'relative', top });
   }
-  
-  console.log(stickyMenuTop <= maxTop, stickyMenuTop > maxTop);
+
+  console.log('minor then:', stickyMenuTop <= maxTop,'higher then:', stickyMenuTop > maxTop);
   if(navTop < stickyMenuTop) {
     console.log('minor');
     $stickyMenu.css({position: 'relative', top });
