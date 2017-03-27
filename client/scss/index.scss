@@ -342,6 +342,17 @@ button, .btn {
 	}
 }
 
+.skrollr_container {
+	position:relative;
+	width:100%;
+}
+
+.skrollr_container h1{
+	position:inherit;
+	margin:auto;
+	padding:200px;
+	font-size:20px;
+}
 
 @import 'menu';
 @import 'header';
