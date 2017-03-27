@@ -20,7 +20,7 @@ function bs_skrollr_sc($atts, $content = null) {
 
 <div class="skrollr_container">
     <?php foreach($at as $titulo){ ?>
-        <h1 data-0="transform:rotate(0);" data-200="transform:rotate(90);"><?php echo($titulo);?></h1><br />
+        <h1 data-0="transform:rotate(0deg);" data-200="transform:rotate(90deg);"><?php echo($titulo);?></h1><br />
     <?php } ?>
 
 </div>
