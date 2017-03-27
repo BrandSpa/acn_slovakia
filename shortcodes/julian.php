@@ -1,6 +1,6 @@
 <?php
 
-function bs_accordion_sc($atts, $content = null) {
+function bs_julian_sc($atts, $content = null) {
 	$attributes = [
 		'name' => 'julian'
   ];
@@ -23,7 +23,7 @@ function bs_accordion_sc($atts, $content = null) {
   return ob_get_clean();
 }
 
-add_shortcode( 'bs_julian', 'bs_accordion_sc' );
+add_shortcode( 'bs_julian', 'bs_julian_sc' );
 
 add_action( 'vc_before_init', 'bs_julian_vc' );
 
