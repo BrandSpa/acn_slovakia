@@ -19,8 +19,8 @@ function bs_skrollr_sc($atts, $content = null) {
 
 
 <div class="skrollr_container">
-    <?php foreach($at as $key=>$titulo){//$key = ($key+1) * 200; 
-    var_dump($key); ?>
+    <?php 
+    foreach($at as $key => $titulo){$key = ($key+1) * 200;  ?>
         <h1 data-0="transform:rotate(0deg);" data-<?php echo $key;?> ="transform:rotate(360deg);"><?php echo($titulo);?></h1><br />
     <?php } ?>
 
