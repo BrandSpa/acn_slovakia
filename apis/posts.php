@@ -5,7 +5,8 @@ function bs_get_posts($type = 'post', $paged = 1, $category = '', $perpage = '6'
     'post_type' => $type,
     'paged' => $paged,
     'category_name' => $category,
-		'posts_per_page' => $perpage
+		'posts_per_page' => $perpage,
+		'post_status' => 'publish'
   ));
 
 	$posts = array_map(function($post) {

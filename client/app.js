@@ -1,8 +1,10 @@
 'use strict';
+//get sass file and compiled to css
 import './scss/index.scss';
 import 'babel-polyfill';
 import WebFont from 'webfontloader';
 import multipleRender from 'react-multiple-render';
+
 //React components :)
 import ContactForm from './components/contactForm';
 import HeaderSlider from './components/headerSlider';
@@ -15,7 +17,6 @@ import CampaignsSlider from './components/campaignsSlider';
 import DownloadPdf from './components/downloadPdf';
 import GalleryHeader from './components/galleryHeader';
 import ProjectsAbout from './components/projectsAbout';
-import Julian from './lib/julian';
 
 //jquery stuff :(
 import setMenu from './lib/set_menu';
@@ -33,6 +34,7 @@ WebFont.load({
   }
 });
 
+//react renders
 multipleRender(HeaderSlider, '.header-slider');
 multipleRender(ContactForm, '.contact-form');
 multipleRender(Posts, '.bs-posts');
@@ -45,13 +47,14 @@ multipleRender(DownloadPdf, '.bs-download-pdf');
 multipleRender(GalleryHeader, '.bs-gallery-header');
 multipleRender(ProjectsAbout, '.bs-projects-about');
 
+//jquery calls
 setMenu();
 setMenuMobile();
 donateRedirect();
 smoothScroll();
 toggleViaCrucisNav();
 scrollViaCrucisNav();
-Julian();
+
 
 function stickMenu(e) {
   const $nav = $('.nav');

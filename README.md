@@ -1,10 +1,10 @@
 # ACN International [![Build Status](https://semaphoreci.com/api/v1/developersoul/acn_int/branches/master/shields_badge.svg)](https://semaphoreci.com/developersoul/acn_int)
 
-## install php dependencies
-[composer](https://getcomposer.org/)
-```bash
-composer install
-``` 
+## Wordpress Shortcode
+[Documentation](https://codex.wordpress.org/Shortcode_API)
+
+## Visual composer Map
+[Documentation](https://wpbakery.atlassian.net/wiki/pages/viewpage.action?pageId=524332)
 
 ## install javascript dependencies
 ```bash
@@ -30,6 +30,13 @@ yarn build
 ```bash
 ssh -i key.pem user@ip 'cd wp/wp-content/themes/acn_int && git pull origin master'
 ```
+## install php dependencies
+Only neccesary when a new copy the this theme is installed
+[composer](https://getcomposer.org/)
+```bash
+composer install
+``` 
+
 
 ## frontend
 - [es6 with babel](https://babeljs.io/)
