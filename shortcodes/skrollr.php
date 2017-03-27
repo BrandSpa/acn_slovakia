@@ -28,7 +28,7 @@ function bs_skrollr_sc($atts, $content = null) {
 <script>
 	onload(function() {
 		//jquery stuff iría acá
-
+	    var s = skrollr.init();
 	});
 </script>
 <?php
