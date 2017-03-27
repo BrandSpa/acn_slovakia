@@ -51,8 +51,8 @@ smoothScroll();
 toggleViaCrucisNav();
 scrollViaCrucisNav();
 
-//.sticky-menu
 function stickMenu(e) {
+  
   const $nav = $('.nav');
   const $stickyMenu = $('.sticky-menu');
   const $parentSticky = $stickyMenu ? $('.sticky-menu').parent().offset().top : 0;
@@ -67,7 +67,7 @@ function stickMenu(e) {
   }
 }
 
-if($('.sticky-menu').length > 1) {
+if($('.sticky-menu').length > 0) {
  window.addEventListener('scroll', stickMenu);
 }
  
