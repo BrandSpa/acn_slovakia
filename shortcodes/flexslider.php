@@ -3,7 +3,7 @@
 ** 	
 **/
 
-add_shortcode( 'bs_example', 'bs_example_sc' );
+add_shortcode( 'bs_flexslider', 'bs_example_sc' );
 
 function bs_example_sc($atts, $content = null) {
 	$attributes = [
@@ -56,8 +56,8 @@ add_action( 'vc_before_init', 'bs_example_vc' );
 
   	vc_map(
       array(
-        "name" =>  "BS Example",
-        "base" => "bs_example",
+        "name" =>  "BS flexslider",
+        "base" => "bs_flexslider",// igual a add_shortcode( 'bs_flexslider', 'bs_example_sc' );
         "category" =>  "BS",
         "params" => $params
       ) 
