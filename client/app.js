@@ -65,6 +65,8 @@ function stickMenu(e) {
      let top = navTop;
     $stickyMenu.css({position: 'relative', top });
   }
+
+  console.log(navTop, stickyMenuTop);
 }
 
 if($('.sticky-menu').length > 0) {
