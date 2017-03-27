@@ -7,8 +7,9 @@ add_shortcode( 'bs_example', 'bs_example_sc' );
 
 function bs_example_sc($atts, $content = null) {
 	$attributes = [
-		'name' => '',
-		'lastname' => ''
+		'title' => '',
+		'subtitle' => '',
+    'image' => ''
   ];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -16,24 +17,13 @@ function bs_example_sc($atts, $content = null) {
   ob_start();
 ?>
 
-<?php  var_dump(explode(',', $at['name'])) ?>
 
-<?php
-foreach(explode(',', $at['lastname']) as $imageId) {
-  echo "<img src='". wp_get_attachment_url($imageId)  ."'>";
-}
-
-?>
-
-<form action="">
-	<div class="input-container">
-		<input type="text" placeholder="<?php echo $at['name'] ?>" name="name">
-	</div>
-		<div class="input-container">
-		<input type="text" placeholder="<?php echo $at['lastname'] ?>" name="lastname">
-	</div>
-	<button>Guardar</button>
-</form>
+<div>
+<img src="<?php echo wp_get_attachment_url($at['image']) ?>" alt="">
+<h1><?php echo $at['title'] ?></h1> 
+<h3><?php echo $at['subtitle'] ?></h3>
+<p><?php echo $content ?></p>
+</div>
 
 <script>
 	onload(function() {
@@ -52,23 +42,29 @@ add_action( 'vc_before_init', 'bs_example_vc' );
   function bs_example_vc() {
 		$params = [
 			[
-        "type" => "textarea_html",
-        "heading" => "Content",
-        "param_name" => "content",
+        "type" => "textfield",
+        "heading" => "Title",
+        "param_name" => "title",
         "value" => ''
 			],
       [
-        "type" => "exploded_textarea",
-        "heading" => "Name",
-        "param_name" => "name",
+        "type" => "textfield",
+        "heading" => "Subtitle",
+        "param_name" => "subtitle",
         "value" => ''
 			],
 			[
-        "type" => "attach_images",
-        "heading" => "Lastname",
-        "param_name" => "lastname",
+        "type" => "attach_image",
+        "heading" => "Image",
+        "param_name" => "image",
         "value" => ''
-			]
+			],
+      [
+        "type" => "textarea_html",
+        "heading" => "Contenido",
+        "param_name" => 'content',
+        "value" => ""
+      ]
 		];
 
   	vc_map(
