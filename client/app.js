@@ -66,9 +66,9 @@ function stickMenu(e) {
     $stickyMenu.css({position: 'relative', top });
   }
 
-  // if(stickyMenuTop > 0 && ) {
-  //   $stickyMenu.css({position: 'relative', top });
-  // }
+  if(stickyMenuTop > 0 && navTop < stickyMenuTop) {
+    $stickyMenu.css({position: 'relative', top });
+  }
 
   console.log('navtop is minor', navTop < stickyMenuTop, 'navtop is higher', navTop > stickyMenuTop);
 }
