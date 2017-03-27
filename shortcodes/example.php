@@ -20,7 +20,7 @@ function bs_example_sc($atts, $content = null) {
 
 <?php
 foreach(explode(',', $at['lastname']) as $imageId) {
-  echo wp_get_attachment_url($imageId);
+  echo "<img src='". wp_get_attachment_url($imageId)  ."'>";
 }
 
 ?>
