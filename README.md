@@ -1,11 +1,13 @@
 # ACN International [![Build Status](https://semaphoreci.com/api/v1/developersoul/acn_int/branches/master/shields_badge.svg)](https://semaphoreci.com/developersoul/acn_int)
 
 ## Run Tests
+Yarn it's like npm, but more faster
 ```bash
 $ yarn jest
 ```
 
 ## Compile frontend
+We use [webpack](https://webpack.js.org/)
 ```bash
 $ webpack --p
 ```
