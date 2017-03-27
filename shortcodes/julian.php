@@ -10,15 +10,16 @@ function bs_julian_sc($atts, $content = null) {
   ob_start();
 ?>
 
-<a class="bs-julian"><?php echo $at['name'] ?></a>
+<form action="" class="julian-form`">
+	<input type="text" name="name" value="" />
+</form>
 
 <script>
 	onLoad(function() {
-			jQuery('.bs-julian').on('click', function(e) {
-			console.log("<?php echo $at['name'] ?>");
+			jQuery('.julian-form').on('submit, function(e) {
+				console.log($(this).serialize);
 		});
 	})
-
 </script>
 
 <?php
