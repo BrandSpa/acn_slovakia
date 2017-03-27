@@ -48,13 +48,13 @@ add_action( 'vc_before_init', 'bs_example_vc' );
         "value" => ''
 			],
       [
-        "type" => "textfield",
+        "type" => "exploded_textarea",
         "heading" => "Name",
         "param_name" => "name",
         "value" => ''
 			],
 			[
-        "type" => "textfield",
+        "type" => "attach_images",
         "heading" => "Lastname",
         "param_name" => "lastname",
         "value" => ''
