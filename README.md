@@ -1,5 +1,19 @@
 # ACN International [![Build Status](https://semaphoreci.com/api/v1/developersoul/acn_int/branches/master/shields_badge.svg)](https://semaphoreci.com/developersoul/acn_int)
 
+## install php dependencies
+[composer](https://getcomposer.org/)
+```bash
+composer install
+``` 
+
+## install javascript dependencies
+```bash
+npm install
+``` 
+or
+```bash
+yarn install
+``` 
 ## Run Tests
 Yarn it's like npm, but more faster
 ```bash
@@ -12,11 +26,7 @@ We use [webpack](https://webpack.js.org/)
 webpack --p
 ```
 
-## install php dependencies
-we use [composer](https://getcomposer.org/)
-```bash
-composer install
-``` 
+
 
 ## deploy 
 ```bash
