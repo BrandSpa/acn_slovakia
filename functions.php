@@ -99,6 +99,7 @@ require('shortcodes/download_pdf.php');
 require('shortcodes/share.php');
 require('shortcodes/breadcrumb.php');
 require('shortcodes/flexslider.php');
+require('shortcodes/skrollr.php');
 
 
 //metaboxes
