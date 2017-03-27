@@ -63,12 +63,11 @@ function stickMenu(e) {
   let top = navTop;
 
   if(navTop > stickyMenuTop && stickyMenuTop <= maxTop) {
+    console.log('higher');
     $stickyMenu.css({position: 'relative', top });
   }
 
-  console.log('minor then:', navTop < stickyMenuTop && stickyMenuTop > maxTop);
-
-  if(navTop < stickyMenuTop && stickyMenuTop <= maxTop) {
+  if(navTop < stickyMenuTop && stickyMenuTop > maxTop) {
     console.log('minor');
     $stickyMenu.css({position: 'relative', top });
   }
