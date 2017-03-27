@@ -16,7 +16,7 @@ function bs_example_sc($atts, $content = null) {
   ob_start();
 ?>
 
-<?php var_dump($at) ?>
+<?php  var_dump(explode(',', $at['name'])) ?>
 
 <form action="">
 	<div class="input-container">
