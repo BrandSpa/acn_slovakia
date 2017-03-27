@@ -7,21 +7,24 @@
 [Documentation](https://wpbakery.atlassian.net/wiki/pages/viewpage.action?pageId=524332)
 
 ### install javascript dependencies
+First install node version higher to 6 [link to download](https://nodejs.org/en/)
+
 ```bash
 npm install
 ``` 
-or
+Yarn it's like npm, but more faster 
 ```bash
+npm i -g yarn
 yarn install
 ``` 
+
 ### Run Tests
-Yarn it's like npm, but more faster
 ```bash
 yarn jest
 ```
 
 ### Compile frontend
-We use [webpack](https://webpack.js.org/)
+[webpack](https://webpack.js.org/) compile all js and sass
 ```bash
 yarn build
 ```
@@ -30,6 +33,7 @@ yarn build
 ```bash
 ssh -i key.pem user@ip 'cd wp/wp-content/themes/acn_int && git pull origin master'
 ```
+
 ### install php dependencies
 Only neccesary when a new copy the this theme is installed
 [composer](https://getcomposer.org/)
@@ -38,9 +42,10 @@ composer install
 ``` 
 
 ## frontend
-- [es6 with babel](https://babeljs.io/)
+- [babel](https://babeljs.io/)
 - [react](https://facebook.github.io/react/)
 - [axios for ajax requests](https://github.com/mzabriskie/axios)
+- [sass](http://sass-lang.com/)
 
 #### tests
 - [jest](https://facebook.github.io/jest/)
@@ -50,9 +55,6 @@ composer install
 ## backend
 - Wordpress
 
-## todos
-- [ ] add test to backend apis
-	-	[ ] location
-	- [ ] stripe
-	- [ ] convertloop
-	- [ ] posts
+## notes 
+All javascript it's written on ecmacript 6 or es2015 then compiled with babel and webpack to ecmascript 5
+All css it's written on sass and then compiled with webpack
