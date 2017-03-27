@@ -2,7 +2,8 @@
 	$args = array( 'posts_per_page' => 4, 'exclude' => $post->ID );
   $recent_posts = get_posts( $args );
 ?>
-<div class="l-wrap" style="text-align:center">
+
+<div class="l-wrap">
 <?php foreach($recent_posts as $recent): ?>
 	<div class="bs-post__recent">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
