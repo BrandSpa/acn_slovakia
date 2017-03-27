@@ -3,6 +3,12 @@ const webpack = require('webpack');
 const fs = require('fs');
 const Path = require('path');
 const WebpackCleanupPlugin =  require('webpack-cleanup-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === "development"
+});
 
 module.exports = {
   entry: {
@@ -19,7 +25,19 @@ module.exports = {
 				test: /\.js$/, 
 				exclude: /node_modules/, 
 				loader: 'babel-loader' 
-			} 
+			},
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+          use: [{
+            loader: "css-loader"
+          }, {
+            loader: "sass-loader"
+          }],
+           // use style-loader in development
+          fallback: "style-loader"
+        })
+      }
 		]
   },
   devtool: 'cheap-source-map',
@@ -43,8 +61,9 @@ module.exports = {
       },
       new WebpackCleanupPlugin({
         exclude: ["admin.js"],
-      })
-      
+      }),
+
+      extractSass
     ]
 };
 
