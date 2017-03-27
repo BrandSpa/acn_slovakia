@@ -2,7 +2,7 @@
 	$args = array( 'posts_per_page' => 4, 'exclude' => $post->ID );
   $recent_posts = get_posts( $args );
 ?>
-
+<div class="l-wrap" style="text-align:center">
 <?php foreach($recent_posts as $recent): ?>
 	<div class="bs-post__recent">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
@@ -26,6 +26,7 @@
 		</div>
 	</div>
 <?php endforeach; ?>
+ </div>
 <div class="l-wrap" style="text-align:center">
  <a href="<?php echo gett('https://acninternational.org/news/') ?>" class='btn bs-see-more' > <?php echo gett('See more') ?> </a>
  </div>
