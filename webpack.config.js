@@ -28,18 +28,16 @@ module.exports = {
       new webpack.optimize.CommonsChunkPlugin('vendor'),
       function () {
         this.plugin("done", function (statsData) {
-          var stats = statsData.toJson();
+          const stats = statsData.toJson();
           
           if (!stats.errors.length) {
-            var htmlFileName = "footer.php";
-            console.log(stats.chunks);
-            var appName = stats.chunks[0].files[0];
-            var vendorName = stats.chunks[1] ? stats.chunks[1].files[0] : '';
-            var html = fs.readFileSync(Path.join(__dirname, htmlFileName), "utf8");
-
-            var htmlOutput = html.replace( /app.*\.js/, appName);
+            const htmlFileName = "footer.php";
+            const appName = stats.chunks[0].files[0];
+            const vendorName = stats.chunks[1].files[0];
+            const html = fs.readFileSync(Path.join(__dirname, htmlFileName), "utf8");
+            let htmlOutput = html.replace( /app.*\.js/, appName);
             htmlOutput = htmlOutput.replace( /vendor.*\.js/, vendorName);
-
+            
             fs.writeFileSync( Path.join(__dirname, htmlFileName), htmlOutput); 
           }
         });

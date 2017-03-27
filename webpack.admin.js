@@ -3,10 +3,10 @@
 module.exports = {
   watch: true,
   entry: {
-  	admin: '../client/admin.js',
+  	admin: './client/admin.js',
   },
   output: {
-  	path: '../public/js',
+  	path: './public/js',
     filename: '[name].js'
   },
   module: {
@@ -17,6 +17,7 @@ module.exports = {
 				loader: 'babel-loader' 
 			} 
 		]
-  }
+  },
+	devtool: 'cheap-source-map',
 };
 

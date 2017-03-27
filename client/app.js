@@ -1,5 +1,4 @@
 'use strict';
-import React from 'react';
 import 'babel-polyfill';
 import WebFont from 'webfontloader';
 import multipleRender from 'react-multiple-render';

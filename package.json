@@ -9,8 +9,8 @@
   "scripts": {
     "test:watch": "jest -- --watch",
     "test": "jest",
-    "production": "cd production && webpack --p",
-    "pro": "webpack --p --optimize-minimize"
+    "build": "webpack --p",
+    "build:admin": "webpack  --config=webpack.admin.js --p"
   },
   "author": "Alejandro Sanabria <alesanabriav@gmail.com>",
   "license": "MIT",

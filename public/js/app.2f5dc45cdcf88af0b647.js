@@ -17742,10 +17742,6 @@ module.exports = function() {
 "use strict";
 
 
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
 __webpack_require__(254);
 
 var _webfontloader = __webpack_require__(256);
@@ -17892,4 +17888,4 @@ toggleMenu();
 
 /***/ })
 ],[629]);
-//# sourceMappingURL=app.cafb9239d2c8af97e1aa.js.map
+//# sourceMappingURL=app.2f5dc45cdcf88af0b647.js.map
