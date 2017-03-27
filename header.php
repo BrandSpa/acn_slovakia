@@ -21,7 +21,7 @@
 	  <?php wp_head(); ?>
 		<!-- /wordpress files-->
     
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.1a4acbc79d9308d898921def9f68c166.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.c4b275c0b12d15d56ffb46abd1d82979.css">
 	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<script>
       function onLoad(cb) {
