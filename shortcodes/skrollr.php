@@ -37,9 +37,9 @@ function bs_skrollr_sc($atts, $content = null) {
 }
 
 
-add_action( 'vc_before_init', 'bs_example_vc' );
+add_action( 'vc_before_init', 'bs_skrollr_vc' );
 
-  function bs_example_vc() {
+  function bs_skrollr_vc() {
 		$params = [
 			[
         "type" => "textfield",
