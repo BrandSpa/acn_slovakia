@@ -13,9 +13,12 @@ function bs_julian_sc($atts, $content = null) {
 <a class="bs-julian"><?php echo $at['name'] ?></a>
 
 <script>
-	jQuery('.bs-julian').on('click', function(e) {
-		console.log('julian');
-	});
+	onLoad(function() {
+			jQuery('.bs-julian').on('click', function(e) {
+			console.log('julian');
+		});
+	})
+
 </script>
 
 <?php
