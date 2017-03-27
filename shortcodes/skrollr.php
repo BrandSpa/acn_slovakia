@@ -20,8 +20,8 @@ function bs_skrollr_sc($atts, $content = null) {
 
 <div class="skrollr_container">
     <?php foreach($at as $titulo){ ?>
-        <h1><?php echo($titulo)?></h1><br />
-    }
+        <h1><?php echo($titulo);?></h1><br />
+    <?php } ?>
 
 </div>
 
