@@ -22,7 +22,10 @@
   }
 
   function downloadJS (){
-    [ ]
+    [
+      '<?php echo get_template_directory_uri() ?>/public/js/vendor.15fa208af38db0c1f1a5.js', 
+      '<?php echo get_template_directory_uri() ?>/public/js/app.bb27954c1be012e15099.js'
+    ]
     .forEach(function(src) {
       appendScript(src);
     });
@@ -42,7 +45,6 @@
   bs.donate = '<?php echo gett('Donate') ?>'
 </script>
 
-<script src='<?php echo get_template_directory_uri() ?>/public/js/app.f423c31913b82990ed35.js'></script>
 
 <!--/app theme-->
 

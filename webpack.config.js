@@ -1,15 +1,17 @@
 'use strict';
+const webpack = require('webpack');
 const fs = require('fs');
 const Path = require('path');
 
 module.exports = {
   watch: true,
   entry: {
+    vendor: ['react', 'react-dom', 'axios'],
   	app: './client/app.js'
   },
   output: {
   	path: './public/js',
-    filename: '[name].[hash].js'
+    filename: '[name].[chunkhash].js'
   },
   module: {
   	loaders: [
@@ -21,31 +23,26 @@ module.exports = {
 		]
   },
 	plugins: [
-      // new BundleAnalyzerPlugin()
+      new webpack.optimize.CommonsChunkPlugin('vendor'),
       function () {
         this.plugin("done", function (statsData) {
           var stats = statsData.toJson();
           
           if (!stats.errors.length) {
             var htmlFileName = "footer.php";
-            var lastFile = stats.chunks[0].files[0];
-            var lastHash = fs.readFileSync(Path.join(__dirname, 'lasthash.txt'), "utf8");
-            
-            //if file exists and doesnt have the same name then before remove it.            
-            if(fs.existsSync(Path.join(__dirname, 'public/js/' + lastHash )) && lastFile !=  lastHash) {
-              fs.unlinkSync(Path.join(__dirname, 'public/js/' + lastHash ));
-            } 
-
-            //get footer content
+            console.log(stats.chunks);
+            var appName = stats.chunks[0].files[0];
+            var vendorName = stats.chunks[1] ? stats.chunks[1].files[0] : '';
             var html = fs.readFileSync(Path.join(__dirname, htmlFileName), "utf8");
-           //replace script name
-            var htmlOutput = html.replace( /<script\s+src=(["'])(.+?)app.*\.js\1/i, "<script src=$1$2" + lastFile + "$1");
-            //write footer and replace script app name
+
+            var htmlOutput = html.replace( /app.*\.js/, appName);
+            htmlOutput = htmlOutput.replace( /vendor.*\.js/, vendorName);
+
             fs.writeFileSync( Path.join(__dirname, htmlFileName), htmlOutput); 
-            fs.writeFileSync( Path.join(__dirname, 'lasthash.txt'), lastFile);
           }
         });
-      }
+      },
+      
     ]
 };
 

@@ -51,6 +51,7 @@
     "sinon": "^1.17.7",
     "uglifycss": "^0.0.25",
     "webpack": "^2.2.1",
+    "webpack-clean-obsolete-chunks": "^0.1.4",
     "webpack-dashboard": "^0.3.0",
     "webpack-shell-plugin": "^0.5.0",
     "why-did-you-update": "^0.0.8"
