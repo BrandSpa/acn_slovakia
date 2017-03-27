@@ -15,7 +15,7 @@ function bs_julian_sc($atts, $content = null) {
 <script>
 	onLoad(function() {
 			jQuery('.bs-julian').on('click', function(e) {
-			console.log('julian');
+			console.log("<?php echo $at['name'] ?>");
 		});
 	})
 
