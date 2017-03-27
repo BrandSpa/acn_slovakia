@@ -23,7 +23,7 @@ function bs_skrollr_sc($atts, $content = null) {
     $increme=0;
     foreach($at as $titulo){ 
          $increme+=200; ?>
-        <h1 data-0="transform:rotate(0deg);" data-<?php echo $increme;?> ="transform:rotate(360deg);"><?php echo($titulo);?></h1><br />
+        <h1 data-<?php echo $increme-200;?>="transform:rotate(0deg);" data-<?php echo $increme;?> ="transform:rotate(360deg);"><?php echo($titulo);?></h1><br />
 
     <?php } ?>
 
