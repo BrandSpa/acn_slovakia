@@ -26,7 +26,7 @@ function bs_skrollr_sc($atts, $content = null) {
 </div>
 
 <script>
-	onload(function() {
+	onLoad(function() {
 		//jquery stuff iría acá
 	    var s = skrollr.init();
 	});
