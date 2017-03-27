@@ -3,14 +3,20 @@
 ## Run Tests
 Yarn it's like npm, but more faster
 ```bash
-$ yarn jest
+yarn jest
 ```
 
 ## Compile frontend
 We use [webpack](https://webpack.js.org/)
 ```bash
-$ webpack --p
+webpack --p
 ```
+
+## install php dependencies
+we use [composer](https://getcomposer.org/)
+```bash
+composer install
+``` 
 
 ## deploy 
 ```bash
