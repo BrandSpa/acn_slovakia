@@ -9,7 +9,7 @@ function bs_skrollr_sc($atts, $content = null) {
 	$attributes = [
 		'titulo1' => '',
 		'titulo2' => '',
-        'titulo3' => ''
+    'titulo3' => ''
   ];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -24,6 +24,7 @@ function bs_skrollr_sc($atts, $content = null) {
     foreach($at as $titulo){ 
          $increme+=200; ?>
         <h1 data-0="transform:rotate(0deg);" data-<?php echo $increme;?> ="transform:rotate(360deg);"><?php echo($titulo);?></h1><br />
+
     <?php } ?>
 
 </div>
