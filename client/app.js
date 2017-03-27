@@ -60,13 +60,17 @@ function stickMenu(e) {
   let navTop = $nav ? $nav.offset().top : 0;
   let containerHeight = $('.sticky-menu__container').height();
   let maxTop = containerHeight - $('.sticky-menu').innerHeight();
-  
+  let top = navTop;
+
   if(navTop > stickyMenuTop && stickyMenuTop <= maxTop) {
-     let top = navTop;
     $stickyMenu.css({position: 'relative', top });
   }
 
-  console.log(navTop, stickyMenuTop);
+  // if(stickyMenuTop > 0 && ) {
+  //   $stickyMenu.css({position: 'relative', top });
+  // }
+
+  console.log('navtop is minor', navTop < stickyMenuTop, 'navtop is higher', navTop > stickyMenuTop);
 }
 
 if($('.sticky-menu').length > 0) {
