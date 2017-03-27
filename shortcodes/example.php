@@ -57,7 +57,7 @@ add_action( 'vc_before_init', 'bs_example_vc' );
         "value" => ''
 			],
 			[
-        "type" => "textfield",
+        "type" => "attach_images",
         "heading" => "Lastname",
         "param_name" => "lastname",
         "value" => ''
