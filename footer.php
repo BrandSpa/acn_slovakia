@@ -23,8 +23,8 @@
 
   function downloadJS (){
     [
-      '<?php echo get_template_directory_uri() ?>/public/js/vendor.f7921602a4c95cd5101a.js', 
-      '<?php echo get_template_directory_uri() ?>/public/js/app.3180b20d14a6207c3eeb.js'
+      '<?php echo get_template_directory_uri() ?>/public/js/vendor.40f020c896ba28d6a576.js', 
+      '<?php echo get_template_directory_uri() ?>/public/js/app.bbb31b928f4bc7f26de3.js'
     ]
     .forEach(function(src) {
       appendScript(src);

@@ -6,7 +6,7 @@ const WebpackCleanupPlugin =  require('webpack-cleanup-plugin');
 
 module.exports = {
   entry: {
-    vendor: ['react', 'react-dom', 'axios'],
+    vendor: ['babel-polyfill', 'react', 'react-dom', 'axios'],
   	app: './client/app.js'
   },
   output: {
