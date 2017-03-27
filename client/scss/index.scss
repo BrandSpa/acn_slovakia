@@ -336,6 +336,12 @@ button, .btn {
 	color: blue;
 }
 
+@media(max-width:767px) and (min-width:480px){
+	.bs-example h3 {
+	color: orange;
+	}
+}
+
 
 @import 'menu';
 @import 'header';
