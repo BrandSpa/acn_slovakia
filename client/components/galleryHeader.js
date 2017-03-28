@@ -30,6 +30,7 @@ const GalleryHeader = React.createClass({
 	getImage(e) {
 		e.target.style.opacity = 0;
 		setTimeout(() => {
+			console.log('mmm');
 			if(e.target.height > e.target.width ) {
 				e.target.style.maxWidth = '45%';
 				e.target.style.opacity = 1;
@@ -38,7 +39,6 @@ const GalleryHeader = React.createClass({
 				e.target.style.opacity = 1;
 			}
 		}, 300);
-
 	},
 
   render() {

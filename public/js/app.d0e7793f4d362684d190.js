@@ -3284,6 +3284,7 @@ var GalleryHeader = _react2.default.createClass({
   getImage: function getImage(e) {
     e.target.style.opacity = 0;
     setTimeout(function () {
+      console.log('mmm');
       if (e.target.height > e.target.width) {
         e.target.style.maxWidth = '45%';
         e.target.style.opacity = 1;
@@ -10160,4 +10161,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.dc0519ff721d5b96fcdf.js.map
+//# sourceMappingURL=app.d0e7793f4d362684d190.js.map
