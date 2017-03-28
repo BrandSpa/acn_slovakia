@@ -92,7 +92,8 @@ const GalleryHeader = React.createClass({
 			width: '20px',
 			height: '20px',
 			borderRadius: '20px',
-			textAlign: 'center'
+			textAlign: 'center',
+			display: 'block'
 		};
 
     return (
