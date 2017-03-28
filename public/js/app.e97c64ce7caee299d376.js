@@ -3322,7 +3322,10 @@ var GalleryHeader = _react2.default.createClass({
       width: "50px",
       height: "50px",
       borderRadius: "0",
-      padding: "0"
+      padding: "0",
+      ':hover': {
+        background: 'rgba(255, 255, 255, .2)'
+      }
     };
 
     var linkLeft = {
@@ -3332,6 +3335,7 @@ var GalleryHeader = _react2.default.createClass({
       bottom: "auto",
       left: 0,
       width: "50%"
+
     };
 
     var linkRight = _extends({}, linkLeft, { left: "auto", right: 0 });
@@ -10169,4 +10173,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.487d934c72832be834a9.js.map
+//# sourceMappingURL=app.e97c64ce7caee299d376.js.map

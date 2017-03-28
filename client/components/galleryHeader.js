@@ -65,6 +65,9 @@ const GalleryHeader = React.createClass({
       height: "50px",
       borderRadius: "0",
       padding: "0",
+			':hover': {
+				background: 'rgba(255, 255, 255, .2)'
+			}
     };
 
     const linkLeft = {
@@ -74,6 +77,7 @@ const GalleryHeader = React.createClass({
       bottom: "auto",
       left: 0,
       width: "50%",
+		
     };
 
     const linkRight = { ...linkLeft, left: "auto", right: 0 };
