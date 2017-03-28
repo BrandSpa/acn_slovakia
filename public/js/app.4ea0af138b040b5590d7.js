@@ -3375,7 +3375,7 @@ var GalleryHeader = _react2.default.createClass({
               _react2.default.createElement("img", {
                 onLoad: this.getImage,
                 src: images[this.state.section],
-                style: { maxWidth: "100%" }
+                style: { maxWidth: "100%", display: 'block', margin: '0 auto' }
               }),
               _react2.default.createElement(
                 "span",
@@ -10124,4 +10124,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.e50fd0ffe4544c8bb86d.js.map
+//# sourceMappingURL=app.4ea0af138b040b5590d7.js.map

@@ -102,7 +102,7 @@ const GalleryHeader = React.createClass({
                 <img
 									onLoad={this.getImage}
                   src={images[this.state.section]}
-                  style={{ maxWidth: "100%" }}
+                  style={{ maxWidth: "100%", display: 'block', margin: '0 auto' }}
                 />
                 <span style={excerptStyle}>{excerpts[this.state.section]}</span>
                 <a
