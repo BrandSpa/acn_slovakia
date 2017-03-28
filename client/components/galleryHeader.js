@@ -39,8 +39,9 @@ const GalleryHeader = React.createClass({
 	render() {
 		const { images, excerpts } = this.props;
 		const h = (window.innerHeight - 100);
-		const w = window.innerHeight * 1.5;
+		const w = (window.innerHeight * 1.5);
 		const imageH = (window.innerHeight - 180);
+
 		const btnsStyle = {
 			position: 'absolute', 
 			bottom: '40px', 
@@ -97,7 +98,7 @@ const GalleryHeader = React.createClass({
 			<StyleRoot>
 				<div style={mainStyle}>
 					<div style={viewportStyle}>
-					<div className="l-wrap" style={{width: w}}>
+					<div className="l-wrap" style={{maxWidth: w}}>
 						<h5 style={{color: '#fff'}}>{this.props.texts.gallery} <i className="ion-camera"></i></h5>
 						{images.map((image, i) =>
 							<div
