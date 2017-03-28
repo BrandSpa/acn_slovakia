@@ -116,7 +116,7 @@ const GalleryHeader = React.createClass({
 							<div
 								className="gallery-header__item"
 								key={i}
-								style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
+								style={i == this.state.section ? {opacity: 1, position: 'relative'} : {opacity: 0}}
 							>
 								<img src={image} style={{maxWidth: '100%'}} />
 								<span style={excerptStyle}>{excerpts[i]}</span>
