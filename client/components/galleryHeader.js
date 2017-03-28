@@ -20,8 +20,8 @@ const GalleryHeader = React.createClass({
 		nav.style.background = 'rgb(34, 34, 34)';
 		let container = document.querySelector('.header-gallery__container');
 		let containerH = container ? container.offsetWidth / 1.5 : 'auto';
-		let images =[...document.querySelectorAll('.header-gallery__caption-image')];
-
+		let images =[...this.gallery.querySelectorAll('.header-gallery__caption-image')];
+		console.log(images);
 		images.forEach(image => {
 			console.log(image.offsetHeight);
 			image.style.height = `${Math.round(containerH)}px`;
