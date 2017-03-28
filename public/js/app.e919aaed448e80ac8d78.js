@@ -3388,24 +3388,21 @@ var GalleryHeader = _react2.default.createClass({
 							' ',
 							_react2.default.createElement('i', { className: 'ion-camera' })
 						),
-						images.map(function (image, i) {
-							return _react2.default.createElement(
-								'div',
-								{
-									className: 'gallery-header__item',
-									key: i,
-									style: i == _this.state.section ? { visibility: 'visible', position: 'relative' } : { visibility: 'hidden' }
-								},
-								_react2.default.createElement('img', { src: image, style: { maxWidth: '100%' } }),
-								_react2.default.createElement(
-									'span',
-									{ style: excerptStyle },
-									excerpts[i]
-								),
-								_react2.default.createElement('a', { href: '#', onClick: _this.changeSection.bind(null, 'prev'), style: linkLeft }),
-								_react2.default.createElement('a', { href: '#', onClick: _this.changeSection.bind(null, 'next'), style: linkRight })
-							);
-						})
+						_react2.default.createElement(
+							'div',
+							{
+								className: 'gallery-header__item',
+								style: { position: 'relative' }
+							},
+							_react2.default.createElement('img', { src: images[this.state.section], style: { maxWidth: '100%' } }),
+							_react2.default.createElement(
+								'span',
+								{ style: excerptStyle },
+								excerpts[this.state.section]
+							),
+							_react2.default.createElement('a', { href: '#', onClick: this.changeSection.bind(null, 'prev'), style: linkLeft }),
+							_react2.default.createElement('a', { href: '#', onClick: this.changeSection.bind(null, 'next'), style: linkRight })
+						)
 					)
 				),
 				_react2.default.createElement(
@@ -10135,4 +10132,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.e2802656fbfb876ed315.js.map
+//# sourceMappingURL=app.e919aaed448e80ac8d78.js.map

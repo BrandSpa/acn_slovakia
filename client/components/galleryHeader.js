@@ -112,18 +112,15 @@ const GalleryHeader = React.createClass({
 					<div style={viewportStyle}>
 					<div style={{maxWidth: w}}>
 						<h5 style={{color: '#fff', marginBottom: '20px'}}>{this.props.texts.gallery} <i className="ion-camera"></i></h5>
-						{images.map((image, i) =>
 							<div
 								className="gallery-header__item"
-								key={i}
-								style={i == this.state.section ? {visibility: 'visible', position: 'relative'} : {visibility: 'hidden'}}
+								style={{position: 'relative'}}
 							>
-								<img src={image} style={{maxWidth: '100%'}} />
-								<span style={excerptStyle}>{excerpts[i]}</span>
+								<img src={images[this.state.section]} style={{maxWidth: '100%'}} />
+								<span style={excerptStyle}>{excerpts[this.state.section]}</span>
 								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
 								<a href="#" onClick={this.changeSection.bind(null, 'next')} style={linkRight}></a>
 							</div>
-						)}
 						</div>
 					</div>
 
