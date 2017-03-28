@@ -156,14 +156,14 @@ const GalleryHeader = React.createClass({
               {images.length} {this.props.texts.of} {this.state.section + 1}
             </span>
             <button
-							key={1}
+							key={4}
               onClick={this.changeSection.bind(null, "prev")}
               style={btnStyle}
             >
               <i className="ion-chevron-left" />
             </button>
             <button
-							key={2}
+							key={5}
               onClick={this.changeSection.bind(null, "next")}
               style={btnStyle}
             >
