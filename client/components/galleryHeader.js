@@ -112,7 +112,7 @@ const GalleryHeader = React.createClass({
 							<div
 								className="gallery-header__item"
 								key={i}
-								style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
+								style={i == this.state.section ? {transition: 'all 300ms', opacity: '0', position: 'relative'} : {transition: 'all 300ms',opacity: '0'}}
 							>
 								<img src={image} />
 								<span style={excerptStyle}>{excerpts[i]}</span>
