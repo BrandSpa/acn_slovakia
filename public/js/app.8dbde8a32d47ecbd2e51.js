@@ -10089,14 +10089,14 @@ _webfontloader2.default.load({
 function stickMenu(e) {
   var $nav = $('.nav');
   var $stickyMenu = $('.sticky-menu');
-  var $parentSticky = $stickyMenu ? $('.sticky-menu').parent().offset().top : 0;
+  var $parentSticky = $stickyMenu ? $stickyMenu.parent().offset().top : 0;
   var stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
   var navTop = $nav ? $nav.offset().top : 0;
   var containerHeight = $('.sticky-menu__container').height();
   var maxTop = containerHeight - $('.sticky-menu').innerHeight();
   var top = navTop;
   var br = document.querySelector('.sticky-menu__container').getBoundingClientRect();
-  console.log(top);
+  console.log($stickyMenu.height());
 
   if (br.top - 110 < 0 && br.bottom - 274 > 0) {
     $stickyMenu.css({ position: 'relative', top: top });
@@ -10125,4 +10125,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.ea711a45034ccda0c04e.js.map
+//# sourceMappingURL=app.8dbde8a32d47ecbd2e51.js.map
