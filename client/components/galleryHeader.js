@@ -21,11 +21,11 @@ const GalleryHeader = React.createClass({
 		let container = document.querySelector('.header-gallery__container');
 		let containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		let images =[...this.gallery.querySelectorAll('img')];
-		let myImage = new Image('100%', '100%');
+		let myImg = new Image('100%', '100%');
 		
 		this.props.images.forEach(image => {
-			myImage.src = image;
-			console.log(myImage, myImage.width, myImage.naturalWidth);
+			myImg.src = image;
+			console.log(myImg, myImg.width, myImg.naturalWidth);
 			// console.log('natural width', image.naturalWidth, image.width);
 
 			// if(image.naturalWidth > image.naturalHeight) {
