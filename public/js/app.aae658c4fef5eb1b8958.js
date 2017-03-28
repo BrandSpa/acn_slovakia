@@ -3287,7 +3287,7 @@ var GalleryHeader = _react2.default.createClass({
 		this.props.images.forEach(function (image) {
 			var myImage = new Image();
 			myImage.src = image;
-			console.log('myImage', myImage.width, myImage.naturalWidth);
+			console.log(myImage, myImage.width, myImage.naturalWidth);
 			// console.log('natural width', image.naturalWidth, image.width);
 
 			// if(image.naturalWidth > image.naturalHeight) {
@@ -10135,4 +10135,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.8583db63a35c27ecae27.js.map
+//# sourceMappingURL=app.aae658c4fef5eb1b8958.js.map
