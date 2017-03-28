@@ -39,7 +39,7 @@ const GalleryHeader = React.createClass({
 	render() {
 		const { images, excerpts } = this.props;
 		const h = (window.innerHeight - 100);
-		
+		const imageH = (window.innerHeight - 180);
 		const btnsStyle = {
 			position: 'absolute', 
 			bottom: '40px', 
@@ -91,7 +91,7 @@ const GalleryHeader = React.createClass({
 			display: 'block', 
 			textShadow: '2px 2px 2px #222'
 		};
-
+		
 		return (
 			<StyleRoot>
 				<div style={mainStyle}>
@@ -105,7 +105,7 @@ const GalleryHeader = React.createClass({
 								style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
 							>
 
-								<img src={image} alt="" style={{width: 'auto', height: 'calc(100vh - 135px)'}} />
+								<img src={image} alt="" style={{width: 'auto', maxWidth: '100%', height: imageH}} />
 								<span style={excerptStyle}>{excerpts[i]}</span>
 
 								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
