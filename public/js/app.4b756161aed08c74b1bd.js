@@ -3289,7 +3289,7 @@ var GalleryHeader = _react2.default.createClass({
       e.target.style.maxWidth = '100%';
     }
 
-    setTimeout(function () {
+    setTimeout(function (e) {
       e.target.style.opacity = 1;
     }, 300);
   },
@@ -10160,4 +10160,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.06cb83ca8d9afb8459a9.js.map
+//# sourceMappingURL=app.4b756161aed08c74b1bd.js.map
