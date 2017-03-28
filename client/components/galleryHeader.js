@@ -25,7 +25,7 @@ const GalleryHeader = React.createClass({
 		this.props.images.forEach(image => {
 			let myImage = new Image();
 			myImage.src = image;
-			console.log(myImage.width, myImage.naturalWidth);
+			console.log('myImage', myImage.width, myImage.naturalWidth);
 			// console.log('natural width', image.naturalWidth, image.width);
 
 			// if(image.naturalWidth > image.naturalHeight) {
