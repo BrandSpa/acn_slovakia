@@ -3414,7 +3414,7 @@ var GalleryHeader = _react2.default.createClass({
                   { style: { display: 'inline-block', marginLeft: '5px' } },
                   _react2.default.createElement(
                     "a",
-                    { style: shareBtn, href: "#" },
+                    { key: 1, style: shareBtn, href: "#" },
                     _react2.default.createElement("i", { className: "ion-social-facebook" })
                   )
                 ),
@@ -3423,7 +3423,7 @@ var GalleryHeader = _react2.default.createClass({
                   { style: { display: 'inline-block', marginLeft: '5px' } },
                   _react2.default.createElement(
                     "a",
-                    { style: shareBtn, href: "#" },
+                    { key: 2, style: shareBtn, href: "#" },
                     _react2.default.createElement("i", { className: "ion-social-twitter" })
                   )
                 ),
@@ -3432,7 +3432,7 @@ var GalleryHeader = _react2.default.createClass({
                   { style: { display: 'inline-block', marginLeft: '5px' } },
                   _react2.default.createElement(
                     "a",
-                    { style: shareBtn, href: "#" },
+                    { key: 3, style: shareBtn, href: "#" },
                     _react2.default.createElement("i", { className: "ion-social-linkedin-outline" })
                   )
                 )
@@ -10169,4 +10169,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.afeb4a80c02be3ad2f70.js.map
+//# sourceMappingURL=app.487d934c72832be834a9.js.map
