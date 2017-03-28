@@ -10098,13 +10098,8 @@ function stickMenu(e) {
   var br = document.querySelector('.sticky-menu__container').getBoundingClientRect();
   console.log(br.top < 0 && br.bottom > 0);
 
-  if (navTop > stickyMenuTop && stickyMenuTop <= maxTop) {
+  if (br.top < 0 && br.bottom > 0) {
     console.log('higher');
-    $stickyMenu.css({ position: 'relative', top: top });
-  }
-
-  if (navTop < stickyMenuTop && stickyMenuTop > maxTop) {
-    console.log('minor');
     $stickyMenu.css({ position: 'relative', top: top });
   }
 
@@ -10131,4 +10126,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.a2167e4a8a93a611a067.js.map
+//# sourceMappingURL=app.c374af2ee21a1f8d8862.js.map
