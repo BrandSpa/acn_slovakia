@@ -23,7 +23,7 @@ const GalleryHeader = React.createClass({
 		let images =[...this.gallery.querySelectorAll('img')];
 
 		this.props.images.forEach(image => {
-			let myImage = new Image();
+			let myImage = new Image('100%', '100%');
 			myImage.src = image;
 			console.log(myImage, myImage.width, myImage.naturalWidth);
 			// console.log('natural width', image.naturalWidth, image.width);
