@@ -3285,6 +3285,8 @@ var GalleryHeader = _react2.default.createClass({
     console.log(e.target.height > e.target.width);
     if (e.target.height > e.target.width) {
       e.target.style.maxWidth = '45%';
+    } else {
+      e.target.style.maxWidth = '100%';
     }
   },
   render: function render() {
@@ -10126,4 +10128,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.e97c65f097694b9edf8a.js.map
+//# sourceMappingURL=app.5c2f9f297f3c96bfbca2.js.map
