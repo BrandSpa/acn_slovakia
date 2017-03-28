@@ -71,7 +71,7 @@ function stickMenu(e) {
     $stickyMenu.css({position: 'relative', top: top});
   }
 
-  // console.log('navtop is minor', navTop < stickyMenuTop, 'navtop is higher', navTop > stickyMenuTop);
+
 }
 
 
@@ -82,7 +82,7 @@ if($('.sticky-menu').length > 0) {
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function(e) {
     e.preventDefault();
-    const $list = $(this).parents('.dropdown-list');
+    const $list = $(this).parent().find('.dropdown-list');
     if($list.hasClass('dropdown-list--show')) {
       $list.removeClass('dropdown-list--show');
     } else {
