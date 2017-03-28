@@ -20,7 +20,7 @@
 	  <?php wp_head(); ?>
 		<!-- /wordpress files-->
     
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.6300619369b1ede0456f3e9a7f018762.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.26909e78035c127bb6ebc36b5a3c4a79.css">
 	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<script>
       function onLoad(cb) {

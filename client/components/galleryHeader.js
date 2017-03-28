@@ -37,14 +37,13 @@ const GalleryHeader = React.createClass({
 	},
 
 	loadImage(e) {
-		console.log(e.target.offsetHeight);
+		console.log(e.target);
 	},
 
 	render() {
 		const { images, excerpts } = this.props;
 		const h = (window.innerHeight - 100);
 		const w = window.innerHeight;
-		const imageH = (window.innerHeight - 180);
 
 		const btnsStyle = {
 			position: 'absolute', 
