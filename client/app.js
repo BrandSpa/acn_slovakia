@@ -68,8 +68,7 @@ function stickMenu(e) {
   console.log('top:', br.top - 100, 'bottom:', br.bottom - 100);
 
   if(br.top - 100 < 0 && br.bottom - 274 > 0) {
-
-    $stickyMenu.css({position: 'relative', top: top});
+    $stickyMenu.css({top: top});
   }
 
   // console.log('navtop is minor', navTop < stickyMenuTop, 'navtop is higher', navTop > stickyMenuTop);

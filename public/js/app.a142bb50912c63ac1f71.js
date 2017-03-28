@@ -10099,8 +10099,7 @@ function stickMenu(e) {
   console.log('top:', br.top - 100, 'bottom:', br.bottom - 100);
 
   if (br.top - 100 < 0 && br.bottom - 274 > 0) {
-
-    $stickyMenu.css({ position: 'relative', top: top });
+    $stickyMenu.css({ top: top });
   }
 
   // console.log('navtop is minor', navTop < stickyMenuTop, 'navtop is higher', navTop > stickyMenuTop);
@@ -10126,4 +10125,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.c6dcf1ece9e8f82326e6.js.map
+//# sourceMappingURL=app.a142bb50912c63ac1f71.js.map
