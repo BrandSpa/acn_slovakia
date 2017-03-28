@@ -121,7 +121,7 @@ const GalleryHeader = React.createClass({
 					</div>
 
 					<div style={btnsStyle}>
-						<span style={{color: '#fff'}}>{ images.length } {this.props.texts.of} { this.state.section + 1 }</span>
+						<span style={{color: '#fff', paddingRight: '10px'}}>{ images.length } {this.props.texts.of} { this.state.section + 1 }</span>
 						<button 
 							onClick={this.changeSection.bind(null, 'prev')} 
 							style={btnStyle}>
