@@ -3300,8 +3300,6 @@ var GalleryHeader = _react2.default.createClass({
     }
   },
   render: function render() {
-    var _this = this;
-
     var _props = this.props,
         images = _props.images,
         excerpts = _props.excerpts;
@@ -3378,15 +3376,13 @@ var GalleryHeader = _react2.default.createClass({
       null,
       _react2.default.createElement(
         "div",
-        { style: mainStyle, ref: function ref(gallery) {
-            return _this.gallery = gallery;
-          } },
+        { style: mainStyle },
         _react2.default.createElement(
           "div",
           { style: viewportStyle },
           _react2.default.createElement(
             "div",
-            { style: { maxWidth: w, margin: '0 auto' } },
+            { style: { maxWidth: w, margin: '0 auto', padding: '0 20px' } },
             _react2.default.createElement(
               "h5",
               { style: { color: "#fff", marginBottom: "20px" } },
@@ -10175,4 +10171,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.813bfdc1bac2fec0f932.js.map
+//# sourceMappingURL=app.968f3a8514b7126860ed.js.map
