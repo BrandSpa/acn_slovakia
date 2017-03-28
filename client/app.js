@@ -64,7 +64,8 @@ function stickMenu(e) {
   let containerHeight = $('.sticky-menu__container').height();
   let maxTop = containerHeight - $('.sticky-menu').innerHeight();
   let top = navTop;
-  console.log($('.sticky-menu__container').getBoundingClientRect);
+  console.log(document.querySelector('.sticky-menu__container').getBoundingClientRect());
+
   if(navTop > stickyMenuTop && stickyMenuTop <= maxTop) {
     console.log('higher');
     $stickyMenu.css({position: 'relative', top });
@@ -77,6 +78,7 @@ function stickMenu(e) {
 
   // console.log('navtop is minor', navTop < stickyMenuTop, 'navtop is higher', navTop > stickyMenuTop);
 }
+
 
 if($('.sticky-menu').length > 0) {
  window.addEventListener('scroll', stickMenu);
