@@ -3262,8 +3262,6 @@ var _radium2 = _interopRequireDefault(_radium);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 var GalleryHeader = _react2.default.createClass({
   displayName: "GalleryHeader",
   getInitialState: function getInitialState() {
@@ -3275,9 +3273,6 @@ var GalleryHeader = _react2.default.createClass({
   componentDidMount: function componentDidMount() {
     var nav = document.querySelector(".nav");
     nav.style.background = "rgb(34, 34, 34)";
-    var container = document.querySelector(".header-gallery__container");
-    var containerH = container ? container.offsetWidth / 1.5 : "auto”";
-    var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll("img")));
   },
   changeSection: function changeSection(type, e) {
     if (e) e.preventDefault();
@@ -10130,4 +10125,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.7657d630885f1af5cfa6.js.map
+//# sourceMappingURL=app.7a7156889dd08e5bc008.js.map

@@ -13,9 +13,6 @@ const GalleryHeader = React.createClass({
   componentDidMount() {
     let nav = document.querySelector(".nav");
     nav.style.background = "rgb(34, 34, 34)";
-    let container = document.querySelector(".header-gallery__container");
-    let containerH = container ? container.offsetWidth / 1.5 : "auto”";
-    let images = [ ...this.gallery.querySelectorAll("img") ];
   },
 
   changeSection(type, e) {
