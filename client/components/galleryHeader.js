@@ -22,9 +22,9 @@ const GalleryHeader = React.createClass({
 		let containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		let images =[...this.gallery.querySelectorAll('img')];
 		console.log(images, this.gallery);
+		
 		images.forEach(image => {
-			console.log(image.height);
-			image.style.height = `${Math.round(containerH)}px`;
+			console.log(image.height > window.innerHeight);
 		})
 		
 	},

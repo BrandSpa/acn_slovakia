@@ -3284,9 +3284,9 @@ var GalleryHeader = _react2.default.createClass({
 		var containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('img')));
 		console.log(images, this.gallery);
+
 		images.forEach(function (image) {
-			console.log(image.height);
-			image.style.height = Math.round(containerH) + 'px';
+			console.log(image.height > window.innerHeight);
 		});
 	},
 	changeSection: function changeSection(type, e) {
@@ -10120,4 +10120,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.fb7b1ee9b16f085fc2ce.js.map
+//# sourceMappingURL=app.bb5c9dfd34caacd26ec1.js.map
