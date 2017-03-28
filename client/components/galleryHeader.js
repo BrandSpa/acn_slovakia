@@ -89,12 +89,13 @@ const GalleryHeader = React.createClass({
 
 		const shareBtn = {
 			color: '#fff',
-			width: '20px',
-			height: '20px',
-			borderRadius: '20px',
+			width: '30px',
+			height: '30px',
+			borderRadius: '30px',
 			textAlign: 'center',
 			display: 'block',
-			border: '1px solid #fff'
+			border: '1px solid #fff',
+			padding: '5px'
 		};
 
     return (

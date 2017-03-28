@@ -3347,12 +3347,13 @@ var GalleryHeader = _react2.default.createClass({
 
     var shareBtn = {
       color: '#fff',
-      width: '20px',
-      height: '20px',
-      borderRadius: '20px',
+      width: '30px',
+      height: '30px',
+      borderRadius: '30px',
       textAlign: 'center',
       display: 'block',
-      border: '1px solid #fff'
+      border: '1px solid #fff',
+      padding: '5px'
     };
 
     return _react2.default.createElement(
@@ -10155,4 +10156,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.7c15c3362adac2ba6e95.js.map
+//# sourceMappingURL=app.7fc09ff7b3b467831fd3.js.map
