@@ -3285,7 +3285,7 @@ var GalleryHeader = _react2.default.createClass({
 		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('img')));
 		console.log(images, this.gallery);
 		images.forEach(function (image) {
-			console.log(image.offsetHeight);
+			console.log(image.height);
 			image.style.height = Math.round(containerH) + 'px';
 		});
 	},
@@ -10120,4 +10120,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.cc5a160948073f20dfcd.js.map
+//# sourceMappingURL=app.fb7b1ee9b16f085fc2ce.js.map
