@@ -2257,8 +2257,8 @@ var GalleryHeader = _react2.default.createClass({
 								},
 								_react2.default.createElement(
 									_reactAspectRatio2.default,
-									{ ratio: '3/4' },
-									_react2.default.createElement('img', { src: image, onLoad: _this.loadImage, style: { maxWidth: '100%' } }),
+									{ ratio: '3/4', style: { maxWidth: '100%' } },
+									_react2.default.createElement('img', { src: image, onLoad: _this.loadImage }),
 									_react2.default.createElement(
 										'span',
 										{ style: excerptStyle },
@@ -11881,4 +11881,4 @@ module.exports = function() {
 
 /***/ })
 ]),[568]);
-//# sourceMappingURL=app.5c2122e87c89e0a4e4f0.js.map
+//# sourceMappingURL=app.88bde461d20c15eda591.js.map

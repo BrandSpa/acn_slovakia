@@ -111,8 +111,8 @@ const GalleryHeader = React.createClass({
 								key={i}
 								style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
 							>
-								<AspectRatio ratio="3/4">
-								<img src={image} onLoad={this.loadImage} style={{maxWidth: '100%'}} />
+								<AspectRatio ratio="3/4" style={{maxWidth: '100%'}}>
+								<img src={image} onLoad={this.loadImage} />
 								<span style={excerptStyle}>{excerpts[i]}</span>
 								</AspectRatio>
 								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
