@@ -8,8 +8,7 @@ const GalleryHeader = React.createClass({
 			imageStyle: {
 				maxWidth: "100%", 
 				display: 'block', 
-				margin: '0 auto', 
-				transition: 'height 300ms'
+				margin: '0 auto'
 			} 
 		};
   },
@@ -19,6 +18,7 @@ const GalleryHeader = React.createClass({
   },
 
   componentDidMount() {
+		//side effect, but necessary
     let nav = document.querySelector(".nav");
     nav.style.background = "rgb(34, 34, 34)";
   },
@@ -105,7 +105,10 @@ const GalleryHeader = React.createClass({
 			textAlign: 'center',
 			display: 'block',
 			border: '1px solid #fff',
-			padding: '5px'
+			padding: '5px',
+			'hover': {
+				background: 'rgba(255, 255, 255, .2)'
+			}
 		};
 
     return (
