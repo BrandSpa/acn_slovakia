@@ -3271,7 +3271,7 @@ var GalleryHeader = _react2.default.createClass({
         maxWidth: "100%",
         display: 'block',
         margin: '0 auto',
-        transition: 'all 300ms'
+        transition: 'height 300ms'
       }
     };
   },
@@ -10166,4 +10166,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.0354e800206296a16518.js.map
+//# sourceMappingURL=app.d6fe6f898b04cb0c72df.js.map

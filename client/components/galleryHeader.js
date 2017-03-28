@@ -9,7 +9,7 @@ const GalleryHeader = React.createClass({
 				maxWidth: "100%", 
 				display: 'block', 
 				margin: '0 auto', 
-				transition: 'all 300ms'
+				transition: 'height 300ms'
 			} 
 		};
   },
