@@ -3359,7 +3359,7 @@ var GalleryHeader = _react2.default.createClass({
           { style: viewportStyle },
           _react2.default.createElement(
             "div",
-            { style: { maxWidth: w } },
+            { style: { maxWidth: w, margin: '0 auto' } },
             _react2.default.createElement(
               "h5",
               { style: { color: "#fff", marginBottom: "20px" } },
@@ -10125,4 +10125,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.7a7156889dd08e5bc008.js.map
+//# sourceMappingURL=app.0deb5f9070d68bfa69a1.js.map

@@ -92,7 +92,7 @@ const GalleryHeader = React.createClass({
       <StyleRoot>
         <div style={mainStyle} ref={gallery => this.gallery = gallery}>
           <div style={viewportStyle}>
-            <div style={{ maxWidth: w }}>
+            <div style={{ maxWidth: w, margin: '0 auto' }}>
               <h5 style={{ color: "#fff", marginBottom: "20px" }}>
                 {this.props.texts.gallery} <i className="ion-camera" />
               </h5>
