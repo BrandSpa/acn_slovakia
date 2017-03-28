@@ -10112,7 +10112,7 @@ if ($('.sticky-menu').length > 0) {
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function (e) {
     e.preventDefault();
-    var $list = $(this).parent().find('.dropdown-list');
+    var $list = $(this).parentsUntil($('.grant-menu'), ".dropdown-list");
     if ($list.hasClass('dropdown-list--show')) {
       $list.removeClass('dropdown-list--show');
     } else {
@@ -10125,4 +10125,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.da7ef3daccc1c2ab6303.js.map
+//# sourceMappingURL=app.8b545118ef993887494d.js.map
