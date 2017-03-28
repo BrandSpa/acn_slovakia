@@ -101,6 +101,7 @@ require('shortcodes/breadcrumb.php');
 require('shortcodes/flexslider.php');
 require('shortcodes/skrollr.php');
 
+remove_filter( 'the_content', 'wpautop' );
 
 //metaboxes
 require('metaboxes/image_square.php');
