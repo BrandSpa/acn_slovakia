@@ -25,7 +25,9 @@ const GalleryHeader = React.createClass({
 		images.forEach(image => {
 			if(image.width > image.height) {
 				image.style.maxWidth = '100%';
-			} else {
+			}  
+			
+			if(image.width < image.height){
 				image.style.maxWidth = '45%';
 				image.style.display = 'block';
 				image.style.margin = '0 auto';
