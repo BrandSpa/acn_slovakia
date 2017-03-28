@@ -80,6 +80,16 @@ if($('.sticky-menu').length > 0) {
 }
  
 function toggleMenu() {
+  $('.grant-menu__title').on('click', function() {
+    const $list = $(this).parent().find('.grant-menu__list');
+    
+    if($list.hasClass('dropdown-list--show')) {
+      $list.removeClass('dropdown-list--show');
+    } else {
+       $list.addClass('dropdown-list--show');
+    }
+  });
+
   $('.dropdown-trigger').on('click', function(e) {
     e.preventDefault();
     const $list = $(this).parent().find('.dropdown-list');
