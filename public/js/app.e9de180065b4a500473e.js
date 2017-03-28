@@ -3282,7 +3282,7 @@ var GalleryHeader = _react2.default.createClass({
     this.setState({ section: section });
   },
   getImage: function getImage(e) {
-    console.log(e.target.height > e.target.width);
+    console.log(e.target.height > e.target.width, e.target.height, e.target.width);
     if (e.target.height > e.target.width) {
       e.target.style.maxWidth = '45%';
     } else {
@@ -10128,4 +10128,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.5c2f9f297f3c96bfbca2.js.map
+//# sourceMappingURL=app.e9de180065b4a500473e.js.map
