@@ -3382,7 +3382,7 @@ var GalleryHeader = _react2.default.createClass({
 						{ style: { maxWidth: w } },
 						_react2.default.createElement(
 							'h5',
-							{ style: { color: '#fff' } },
+							{ style: { color: '#fff', marginBottom: '20px' } },
 							this.props.texts.gallery,
 							' ',
 							_react2.default.createElement('i', { className: 'ion-camera' })
@@ -10125,4 +10125,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.eb9fa1589cef1a22c03b.js.map
+//# sourceMappingURL=app.eaddfddcde82677bbb57.js.map
