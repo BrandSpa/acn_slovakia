@@ -16,6 +16,8 @@ const GalleryHeader = React.createClass({
 	},
 
 	componentDidMount() {
+		let nav = document.querySelector('.nav');
+		nav.style.background = 'rgb(34, 34, 34)';
 		let container = document.querySelector('.header-gallery__container');
 		let containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		let images =[...document.querySelectorAll('.header-gallery__caption-image')];
@@ -37,6 +39,7 @@ const GalleryHeader = React.createClass({
 	render() {
 		const { images, excerpts } = this.props;
 		const h = (window.innerHeight - 140);
+		
 		const btnsStyle = {
 			position: 'absolute', 
 			bottom: '40px', 
@@ -99,6 +102,7 @@ const GalleryHeader = React.createClass({
 							key={i}
 							style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
 						>
+
 							<img src={image} alt="" style={{maxWidth: '100%', height: 'auto'}} />
 							<span style={excerptStyle}>{excerpts[i]}</span>
 
