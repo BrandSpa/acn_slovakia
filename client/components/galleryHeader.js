@@ -110,7 +110,7 @@ const GalleryHeader = React.createClass({
 								style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
 							>
 
-								<img src={image} style={{maxWidth: '100%', height: 'auto'}} />
+								<img src={image} onLoad={(e) => console.log(e)} style={{maxWidth: '100%', height: 'auto'}} />
 								<span style={excerptStyle}>{excerpts[i]}</span>
 
 								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
