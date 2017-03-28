@@ -3283,13 +3283,15 @@ var GalleryHeader = _react2.default.createClass({
   },
   getImage: function getImage(e) {
     e.target.style.opacity = 0;
-    if (e.target.height > e.target.width) {
-      e.target.style.maxWidth = '45%';
-      e.target.style.opacity = 1;
-    } else {
-      e.target.style.maxWidth = '100%';
-      e.target.style.opacity = 1;
-    }
+    setTimeout(function () {
+      if (e.target.height > e.target.width) {
+        e.target.style.maxWidth = '45%';
+        e.target.style.opacity = 1;
+      } else {
+        e.target.style.maxWidth = '100%';
+        e.target.style.opacity = 1;
+      }
+    }, 300);
   },
   render: function render() {
     var _this = this;
@@ -10158,4 +10160,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.82ddc317425e9250a4d6.js.map
+//# sourceMappingURL=app.dc0519ff721d5b96fcdf.js.map
