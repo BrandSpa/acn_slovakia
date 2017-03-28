@@ -36,8 +36,9 @@ const GalleryHeader = React.createClass({
 		}
 
 		setTimeout(function(e){
+			console.log(e);
 				e.target.style.opacity = 1;
-		}, 300);
+		}.bind(this), 300);
 	},
 
   render() {

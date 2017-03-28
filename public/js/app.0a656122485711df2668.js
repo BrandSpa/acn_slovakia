@@ -3290,8 +3290,9 @@ var GalleryHeader = _react2.default.createClass({
     }
 
     setTimeout(function (e) {
+      console.log(e);
       e.target.style.opacity = 1;
-    }, 300);
+    }.bind(this), 300);
   },
   render: function render() {
     var _this = this;
@@ -10160,4 +10161,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.4b756161aed08c74b1bd.js.map
+//# sourceMappingURL=app.0a656122485711df2668.js.map
