@@ -3282,11 +3282,13 @@ var GalleryHeader = _react2.default.createClass({
     this.setState({ section: section });
   },
   getImage: function getImage(e) {
-    console.log(e.target.height > e.target.width, e.target.height, e.target.width);
+    e.target.style.opacity = 0;
     if (e.target.height > e.target.width) {
       e.target.style.maxWidth = '45%';
+      e.target.style.opacity = 1;
     } else {
       e.target.style.maxWidth = '100%';
+      e.target.style.opacity = 1;
     }
   },
   render: function render() {
@@ -3386,7 +3388,7 @@ var GalleryHeader = _react2.default.createClass({
               _react2.default.createElement("img", {
                 onLoad: this.getImage,
                 src: images[this.state.section],
-                style: { maxWidth: "100%", display: 'block', margin: '0 auto' }
+                style: { maxWidth: "100%", display: 'block', margin: '0 auto', transition: 'all 300ms' }
               }),
               _react2.default.createElement(
                 "span",
@@ -10156,4 +10158,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.b7ec3f431d2da49020d2.js.map
+//# sourceMappingURL=app.82ddc317425e9250a4d6.js.map

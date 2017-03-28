@@ -28,11 +28,13 @@ const GalleryHeader = React.createClass({
   },
 
 	getImage(e) {
-		console.log(e.target.height > e.target.width, e.target.height, e.target.width);
+		e.target.style.opacity = 0;
 		if(e.target.height > e.target.width ) {
 			e.target.style.maxWidth = '45%';
+			e.target.style.opacity = 1;
 		} else {
 			e.target.style.maxWidth = '100%';
+			e.target.style.opacity = 1;
 		}
 	},
 
@@ -113,7 +115,7 @@ const GalleryHeader = React.createClass({
                 <img
 									onLoad={this.getImage}
                   src={images[this.state.section]}
-                  style={{ maxWidth: "100%", display: 'block', margin: '0 auto' }}
+                  style={{ maxWidth: "100%", display: 'block', margin: '0 auto', transition: 'all 300ms' }}
                 />
                 <span style={excerptStyle}>{excerpts[this.state.section]}</span>
 								<ul style={{listStyle: 'none', padding: '0'}}>
