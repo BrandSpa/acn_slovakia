@@ -35,10 +35,10 @@ const GalleryHeader = React.createClass({
 			e.target.style.maxWidth = '100%';
 		}
 
-		setTimeout(function(e){
-			console.log(e);
-				e.target.style.opacity = 1;
-		}.bind(this), 300);
+		setTimeout(function(evt){
+			console.log(evt);
+				evt.target.style.opacity = 1;
+		}.bind(null, e), 300);
 	},
 
   render() {
