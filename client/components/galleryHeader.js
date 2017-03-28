@@ -106,7 +106,7 @@ const GalleryHeader = React.createClass({
 			display: 'block',
 			border: '1px solid #fff',
 			padding: '5px',
-			'hover': {
+			':hover': {
 				background: 'rgba(255, 255, 255, .2)'
 			}
 		};

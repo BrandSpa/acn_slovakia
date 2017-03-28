@@ -3364,7 +3364,7 @@ var GalleryHeader = _react2.default.createClass({
       display: 'block',
       border: '1px solid #fff',
       padding: '5px',
-      'hover': {
+      ':hover': {
         background: 'rgba(255, 255, 255, .2)'
       }
     };
@@ -10169,4 +10169,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.b8d2da799cdeb61baeba.js.map
+//# sourceMappingURL=app.afeb4a80c02be3ad2f70.js.map
