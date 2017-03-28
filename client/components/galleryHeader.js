@@ -87,6 +87,14 @@ const GalleryHeader = React.createClass({
       textShadow: "2px 2px 2px #222",
     };
 
+		const shareBtn = {
+			color: '#fff',
+			width: '20px',
+			height: '20px',
+			borderRadius: '20px',
+			textAlign: 'center'
+		};
+
     return (
       <StyleRoot>
         <div style={mainStyle} ref={gallery => this.gallery = gallery}>
@@ -105,12 +113,12 @@ const GalleryHeader = React.createClass({
                   style={{ maxWidth: "100%", display: 'block', margin: '0 auto' }}
                 />
                 <span style={excerptStyle}>{excerpts[this.state.section]}</span>
-								<ul >
-									<li><a href="#"><i className="ion-social-facebook"></i></a></li>
-									<li><a href="#"><i className="ion-social-twitter"></i></a></li>
-									<li><a href="#"><i className="ion-social-linkedin-outline"></i></a></li>
+								<ul style={{}}>
+									<li><a style={shareBtn} href="#"><i className="ion-social-facebook"></i></a></li>
+									<li><a style={shareBtn} href="#"><i className="ion-social-twitter"></i></a></li>
+									<li><a style={shareBtn} href="#"><i className="ion-social-linkedin-outline"></i></a></li>
 								</ul>
-                <a
+                {/*<a
                   href="#"
                   onClick={this.changeSection.bind(null, "prev")}
                   style={linkLeft}
@@ -119,7 +127,7 @@ const GalleryHeader = React.createClass({
                   href="#"
                   onClick={this.changeSection.bind(null, "next")}
                   style={linkRight}
-                />
+                />*/}
               </div>
             </div>
           </div>

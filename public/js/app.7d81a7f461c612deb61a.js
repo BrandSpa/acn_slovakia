@@ -3345,6 +3345,14 @@ var GalleryHeader = _react2.default.createClass({
       textShadow: "2px 2px 2px #222"
     };
 
+    var shareBtn = {
+      color: '#fff',
+      width: '20px',
+      height: '20px',
+      borderRadius: '20px',
+      textAlign: 'center'
+    };
+
     return _react2.default.createElement(
       _radium.StyleRoot,
       null,
@@ -3384,13 +3392,13 @@ var GalleryHeader = _react2.default.createClass({
               ),
               _react2.default.createElement(
                 "ul",
-                null,
+                { style: {} },
                 _react2.default.createElement(
                   "li",
                   null,
                   _react2.default.createElement(
                     "a",
-                    { href: "#" },
+                    { style: shareBtn, href: "#" },
                     _react2.default.createElement("i", { className: "ion-social-facebook" })
                   )
                 ),
@@ -3399,7 +3407,7 @@ var GalleryHeader = _react2.default.createClass({
                   null,
                   _react2.default.createElement(
                     "a",
-                    { href: "#" },
+                    { style: shareBtn, href: "#" },
                     _react2.default.createElement("i", { className: "ion-social-twitter" })
                   )
                 ),
@@ -3408,21 +3416,11 @@ var GalleryHeader = _react2.default.createClass({
                   null,
                   _react2.default.createElement(
                     "a",
-                    { href: "#" },
+                    { style: shareBtn, href: "#" },
                     _react2.default.createElement("i", { className: "ion-social-linkedin-outline" })
                   )
                 )
-              ),
-              _react2.default.createElement("a", {
-                href: "#",
-                onClick: this.changeSection.bind(null, "prev"),
-                style: linkLeft
-              }),
-              _react2.default.createElement("a", {
-                href: "#",
-                onClick: this.changeSection.bind(null, "next"),
-                style: linkRight
-              })
+              )
             )
           )
         ),
@@ -10155,4 +10153,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.109989bf4ac2b7af9daa.js.map
+//# sourceMappingURL=app.7d81a7f461c612deb61a.js.map
