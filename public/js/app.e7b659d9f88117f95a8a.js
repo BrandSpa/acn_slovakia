@@ -3284,18 +3284,21 @@ var GalleryHeader = _react2.default.createClass({
 		var containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('img')));
 
-		images.forEach(function (image) {
-			console.log('natural width', image.naturalWidth, image.width);
+		this.props.images.forEach(function (image) {
+			var myImage = new Image();
+			myImage.src = image;
+			console.log(myImage.width, myImage.naturalWidth);
+			// console.log('natural width', image.naturalWidth, image.width);
 
-			if (image.naturalWidth > image.naturalHeight) {
-				image.style.maxWidth = '100%';
-			}
+			// if(image.naturalWidth > image.naturalHeight) {
+			// 	image.style.maxWidth = '100%';
+			// }
 
-			if (image.naturalWidth < image.naturalHeight) {
-				image.style.maxWidth = '45%';
-				image.style.display = 'block';
-				image.style.margin = '0 auto';
-			}
+			// if(image.naturalWidth < image.naturalHeight){
+			// 	image.style.maxWidth = '45%';
+			// 	image.style.display = 'block';
+			// 	image.style.margin = '0 auto';
+			// }
 		});
 	},
 	changeSection: function changeSection(type, e) {
@@ -3394,9 +3397,7 @@ var GalleryHeader = _react2.default.createClass({
 								className: 'gallery-header__item',
 								style: { position: 'relative' }
 							},
-							_react2.default.createElement('img', { src: images[this.state.section], ref: function ref(img) {
-									return console.log(img.width);
-								}, style: { maxWidth: '100%' } }),
+							_react2.default.createElement('img', { src: images[this.state.section], style: { maxWidth: '100%' } }),
 							_react2.default.createElement(
 								'span',
 								{ style: excerptStyle },
@@ -10134,4 +10135,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.e8112bfbfe21786b97b2.js.map
+//# sourceMappingURL=app.e7b659d9f88117f95a8a.js.map

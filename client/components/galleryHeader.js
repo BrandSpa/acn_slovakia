@@ -22,18 +22,21 @@ const GalleryHeader = React.createClass({
 		let containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		let images =[...this.gallery.querySelectorAll('img')];
 
-		images.forEach(image => {
-			console.log('natural width', image.naturalWidth, image.width);
+		this.props.images.forEach(image => {
+			let myImage = new Image();
+			myImage.src = image;
+			console.log(myImage.width, myImage.naturalWidth);
+			// console.log('natural width', image.naturalWidth, image.width);
 
-			if(image.naturalWidth > image.naturalHeight) {
-				image.style.maxWidth = '100%';
-			}
+			// if(image.naturalWidth > image.naturalHeight) {
+			// 	image.style.maxWidth = '100%';
+			// }
 
-			if(image.naturalWidth < image.naturalHeight){
-				image.style.maxWidth = '45%';
-				image.style.display = 'block';
-				image.style.margin = '0 auto';
-			}
+			// if(image.naturalWidth < image.naturalHeight){
+			// 	image.style.maxWidth = '45%';
+			// 	image.style.display = 'block';
+			// 	image.style.margin = '0 auto';
+			// }
 		})
 	
 	},
@@ -116,7 +119,7 @@ const GalleryHeader = React.createClass({
 								className="gallery-header__item"
 								style={{position: 'relative'}}
 							>
-								<img src={images[this.state.section]} ref={img => console.log(img.width)} style={{maxWidth: '100%'}} />
+								<img src={images[this.state.section]} style={{maxWidth: '100%'}} />
 								<span style={excerptStyle}>{excerpts[this.state.section]}</span>
 								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
 								<a href="#" onClick={this.changeSection.bind(null, 'next')} style={linkRight}></a>
