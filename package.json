@@ -18,6 +18,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "card-validator": "^4.0.0",
+    "coverer": "^1.0.3",
     "hex-rgba": "^1.0.1",
     "lodash": "^4.17.4",
     "minigrid": "^3.1.1",

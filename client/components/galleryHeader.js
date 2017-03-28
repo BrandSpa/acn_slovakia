@@ -1,6 +1,5 @@
 import React from 'react';
 import Radium, { StyleRoot } from 'radium';
-import AspectRatio from 'react-aspect-ratio';
 
 const GalleryHeader = React.createClass({
 	getInitialState() {
@@ -25,10 +24,13 @@ const GalleryHeader = React.createClass({
 		console.log(images, this.gallery);
 
 		images.forEach(image => {
-			console.log(image.height > window.innerHeight);
-
+			if(image.width > image.height) {
+				image.style.maxWidth = '100%';
+			} else {
+				image.style.maxWidth = '50%';
+			}
 		})
-		
+	
 	},
 	
 	changeSection(type, e) {
@@ -111,9 +113,8 @@ const GalleryHeader = React.createClass({
 								key={i}
 								style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
 							>
-								<AspectRatio ratio="3/4" style={{maxWidth: '100%'}}>
-									<img src={image} onLoad={this.loadImage} />
-								</AspectRatio>
+								<img src={image} />
+
 								<span style={excerptStyle}>{excerpts[i]}</span>
 								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
 								<a href="#" onClick={this.changeSection.bind(null, 'next')} style={linkRight}></a>
