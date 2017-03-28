@@ -3393,7 +3393,7 @@ var GalleryHeader = _react2.default.createClass({
 								{
 									className: 'gallery-header__item',
 									key: i,
-									style: i == _this.state.section ? { transition: 'all 300ms', opacity: '0', position: 'relative' } : { transition: 'all 300ms', opacity: '0' }
+									style: i == _this.state.section ? { transition: 'all 300ms', opacity: 1, position: 'relative' } : { transition: 'all 300ms', opacity: '0' }
 								},
 								_react2.default.createElement('img', { src: image }),
 								_react2.default.createElement(
@@ -10125,4 +10125,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.725bb288ee9f805b5426.js.map
+//# sourceMappingURL=app.b60a3e3427a442f2e84f.js.map
