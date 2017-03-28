@@ -3285,7 +3285,7 @@ var GalleryHeader = _react2.default.createClass({
 		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('img')));
 
 		images.forEach(function (image) {
-			console.log(image.naturalWidth);
+			console.log('natural width', image.naturalWidth);
 			if (image.naturalWidth > image.naturalHeight) {
 				image.style.maxWidth = '100%';
 			} else if (image.naturalWidth < image.naturalHeight) {
@@ -10128,4 +10128,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.8d74eb2915856a1c38f3.js.map
+//# sourceMappingURL=app.a27007382ab91946df6b.js.map

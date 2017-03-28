@@ -23,7 +23,7 @@ const GalleryHeader = React.createClass({
 		let images =[...this.gallery.querySelectorAll('img')];
 
 		images.forEach(image => {
-			console.log(image.naturalWidth);
+			console.log('natural width', image.naturalWidth);
 			if(image.naturalWidth > image.naturalHeight) {
 				image.style.maxWidth = '100%';
 			}  else if(image.naturalWidth < image.naturalHeight){
