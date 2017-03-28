@@ -94,9 +94,9 @@ const GalleryHeader = React.createClass({
 		const viewportStyle = {
 			height: `${h}px`, 
 			padding: '40px', 
-			display: 'flex', 
-			justifyContent: 'center', 
-			alignItems: 'center'
+			// display: 'flex', 
+			// justifyContent: 'center', 
+			// alignItems: 'center'
 		};
 
 		const excerptStyle = {

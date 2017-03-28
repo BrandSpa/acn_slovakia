@@ -42,8 +42,8 @@
   bs.donate = '<?php echo gett('Donate') ?>'
 </script>
 
-<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.82d04694dd87d048bb38.js'></script>
-<script src='<?php echo get_template_directory_uri() ?>/public/js/app.a694128ef4119cf33893.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.cb0c3d6f39168823e830.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/app.e2802656fbfb876ed315.js'></script>
 <script>
 
   
