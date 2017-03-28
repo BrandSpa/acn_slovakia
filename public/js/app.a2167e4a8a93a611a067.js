@@ -10095,7 +10095,8 @@ function stickMenu(e) {
   var containerHeight = $('.sticky-menu__container').height();
   var maxTop = containerHeight - $('.sticky-menu').innerHeight();
   var top = navTop;
-  console.log(document.querySelector('.sticky-menu__container').getBoundingClientRect());
+  var br = document.querySelector('.sticky-menu__container').getBoundingClientRect();
+  console.log(br.top < 0 && br.bottom > 0);
 
   if (navTop > stickyMenuTop && stickyMenuTop <= maxTop) {
     console.log('higher');
@@ -10130,4 +10131,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.8ace74348ead660464ec.js.map
+//# sourceMappingURL=app.a2167e4a8a93a611a067.js.map
