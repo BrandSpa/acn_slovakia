@@ -16,12 +16,6 @@ const GalleryHeader = React.createClass({
     let container = document.querySelector(".header-gallery__container");
     let containerH = container ? container.offsetWidth / 1.5 : "auto”";
     let images = [ ...this.gallery.querySelectorAll("img") ];
-    let myImg = new Image();
-
-    this.props.images.forEach(imageSrc => {
-      myImg.src = imageSrc;
-      console.log(myImg, myImg.width, 'natural', myImg.naturalWidth);
-    });
   },
 
   changeSection(type, e) {
@@ -35,6 +29,10 @@ const GalleryHeader = React.createClass({
       section = this.state.section > 0 ? this.state.section - 1 : 0;
     this.setState({ section });
   },
+
+	getImage(e) {
+		console.log('image', e.width, e.height);
+	},
 
   render() {
     const { images, excerpts } = this.props;
@@ -104,6 +102,7 @@ const GalleryHeader = React.createClass({
                 style={{ position: "relative" }}
               >
                 <img
+									onLoad={this.getImage}
                   src={images[this.state.section]}
                   style={{ maxWidth: "100%" }}
                 />

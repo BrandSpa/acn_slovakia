@@ -3278,12 +3278,6 @@ var GalleryHeader = _react2.default.createClass({
     var container = document.querySelector(".header-gallery__container");
     var containerH = container ? container.offsetWidth / 1.5 : "auto”";
     var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll("img")));
-    var myImg = new Image();
-
-    this.props.images.forEach(function (imageSrc) {
-      myImg.src = imageSrc;
-      console.log(myImg, myImg.width, 'natural', myImg.naturalWidth);
-    });
   },
   changeSection: function changeSection(type, e) {
     if (e) e.preventDefault();
@@ -3291,6 +3285,9 @@ var GalleryHeader = _react2.default.createClass({
     if (type == "next") section = this.state.section < this.props.images.length - 1 ? this.state.section + 1 : 0;
     if (type == "prev") section = this.state.section > 0 ? this.state.section - 1 : 0;
     this.setState({ section: section });
+  },
+  getImage: function getImage(e) {
+    console.log('image', e.width, e.height);
   },
   render: function render() {
     var _this = this;
@@ -3380,6 +3377,7 @@ var GalleryHeader = _react2.default.createClass({
                 style: { position: "relative" }
               },
               _react2.default.createElement("img", {
+                onLoad: this.getImage,
                 src: images[this.state.section],
                 style: { maxWidth: "100%" }
               }),
@@ -10130,4 +10128,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.298becf57a73e721fe3c.js.map
+//# sourceMappingURL=app.6e174ecf288acc5d90af.js.map
