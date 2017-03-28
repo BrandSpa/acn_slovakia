@@ -36,6 +36,10 @@ const GalleryHeader = React.createClass({
 		this.setState({section});
 	},
 
+	loadImage(e) {
+		console.log(e.target.offsetWidth);
+	},
+
 	render() {
 		const { images, excerpts } = this.props;
 		const h = (window.innerHeight - 100);
@@ -110,7 +114,7 @@ const GalleryHeader = React.createClass({
 								style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
 							>
 
-								<img src={image} ref={img => this.images[i] = img } onLoad={(e) => console.log(this.images[i])} style={{maxWidth: '100%', height: 'auto'}} />
+								<img src={image} onLoad={this.loadImage} style={{maxWidth: '100%', height: 'auto'}} />
 								<span style={excerptStyle}>{excerpts[i]}</span>
 
 								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
