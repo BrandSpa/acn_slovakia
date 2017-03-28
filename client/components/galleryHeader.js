@@ -3,7 +3,15 @@ import Radium, { StyleRoot } from "radium";
 
 const GalleryHeader = React.createClass({
   getInitialState() {
-    return { section: 0 };
+    return { 
+			section: 0, 
+			imageStyle: {
+				maxWidth: "100%", 
+				display: 'block', 
+				margin: '0 auto', 
+				transition: 'all 300ms'
+			} 
+		};
   },
 
   getDefaultProps() {
@@ -28,17 +36,11 @@ const GalleryHeader = React.createClass({
   },
 
 	getImage(e) {
-		e.target.style.opacity = 0;
 		if(e.target.height > e.target.width ) {
-			e.target.style.maxWidth = '45%';
+			this.setState({...this.state.imageStyle, maxWidth: '45%'});
 		} else {
-			e.target.style.maxWidth = '100%';
+			this.setState({...this.state.imageStyle, maxWidth: '100%'});
 		}
-
-		setTimeout(function(evt){
-			console.log(evt);
-				evt.target.style.opacity = 1;
-		}.bind(null, e), 300);
 	},
 
   render() {
@@ -118,7 +120,7 @@ const GalleryHeader = React.createClass({
                 <img
 									onLoad={this.getImage}
                   src={images[this.state.section]}
-                  style={{ maxWidth: "100%", display: 'block', margin: '0 auto', transition: 'all 300ms' }}
+                  style={this.state.imageStyle}
                 />
                 <span style={excerptStyle}>{excerpts[this.state.section]}</span>
 								<ul style={{listStyle: 'none', padding: '0'}}>
