@@ -105,6 +105,11 @@ const GalleryHeader = React.createClass({
                   style={{ maxWidth: "100%", display: 'block', margin: '0 auto' }}
                 />
                 <span style={excerptStyle}>{excerpts[this.state.section]}</span>
+								<ul >
+									<li><a href="#"><i className="ion-social-facebook"></i></a></li>
+									<li><a href="#"><i className="ion-social-twitter"></i></a></li>
+									<li><a href="#"><i className="ion-social-linkedin-outline"></i></a></li>
+								</ul>
                 <a
                   href="#"
                   onClick={this.changeSection.bind(null, "prev")}

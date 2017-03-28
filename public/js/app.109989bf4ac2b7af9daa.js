@@ -3382,6 +3382,37 @@ var GalleryHeader = _react2.default.createClass({
                 { style: excerptStyle },
                 excerpts[this.state.section]
               ),
+              _react2.default.createElement(
+                "ul",
+                null,
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  _react2.default.createElement(
+                    "a",
+                    { href: "#" },
+                    _react2.default.createElement("i", { className: "ion-social-facebook" })
+                  )
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  _react2.default.createElement(
+                    "a",
+                    { href: "#" },
+                    _react2.default.createElement("i", { className: "ion-social-twitter" })
+                  )
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  _react2.default.createElement(
+                    "a",
+                    { href: "#" },
+                    _react2.default.createElement("i", { className: "ion-social-linkedin-outline" })
+                  )
+                )
+              ),
               _react2.default.createElement("a", {
                 href: "#",
                 onClick: this.changeSection.bind(null, "prev"),
@@ -10124,4 +10155,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.4ea0af138b040b5590d7.js.map
+//# sourceMappingURL=app.109989bf4ac2b7af9daa.js.map
