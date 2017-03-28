@@ -3459,6 +3459,7 @@ var GalleryHeader = _react2.default.createClass({
           _react2.default.createElement(
             "button",
             {
+              key: 1,
               onClick: this.changeSection.bind(null, "prev"),
               style: btnStyle
             },
@@ -3467,6 +3468,7 @@ var GalleryHeader = _react2.default.createClass({
           _react2.default.createElement(
             "button",
             {
+              key: 2,
               onClick: this.changeSection.bind(null, "next"),
               style: btnStyle
             },
@@ -10173,4 +10175,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.e97c64ce7caee299d376.js.map
+//# sourceMappingURL=app.3469fb028555b90143dd.js.map
