@@ -20,7 +20,7 @@ const GalleryHeader = React.createClass({
 
     this.props.images.forEach(imageSrc => {
       myImg.src = imageSrc;
-      console.log(myImg, myImg.width, myImg.naturalWidth);
+      console.log(myImg, myImg.width, 'natural', myImg.naturalWidth);
     });
   },
 

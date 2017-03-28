@@ -3282,7 +3282,7 @@ var GalleryHeader = _react2.default.createClass({
 
     this.props.images.forEach(function (imageSrc) {
       myImg.src = imageSrc;
-      console.log(myImg, myImg.width, myImg.naturalWidth);
+      console.log(myImg, myImg.width, 'natural', myImg.naturalWidth);
     });
   },
   changeSection: function changeSection(type, e) {
@@ -10130,4 +10130,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.edb85d7ee98661a1fcc6.js.map
+//# sourceMappingURL=app.298becf57a73e721fe3c.js.map
