@@ -3290,10 +3290,13 @@ var GalleryHeader = _react2.default.createClass({
     this.setState({ section: section });
   },
   getImage: function getImage(e) {
+    var imageStyle = void 0;
     if (e.target.height > e.target.width) {
-      this.setState(_extends({}, this.state.imageStyle, { maxWidth: '45%' }));
+      imageStyle = _extends({}, this.state.imageStyle, { maxWidth: '45%' });
+      this.setState({ imageStyle: imageStyle });
     } else {
-      this.setState(_extends({}, this.state.imageStyle, { maxWidth: '100%' }));
+      imageStyle = _extends({}, this.state.imageStyle, { maxWidth: '100%' });
+      this.setState({ imageStyle: imageStyle });
     }
   },
   render: function render() {
@@ -10163,4 +10166,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.28adc19cd4c6e4994807.js.map
+//# sourceMappingURL=app.0354e800206296a16518.js.map

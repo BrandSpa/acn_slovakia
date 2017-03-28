@@ -36,10 +36,13 @@ const GalleryHeader = React.createClass({
   },
 
 	getImage(e) {
-		if(e.target.height > e.target.width ) {
-			this.setState({...this.state.imageStyle, maxWidth: '45%'});
+		let imageStyle;
+		if(e.target.height > e.target.width) {
+			imageStyle = {...this.state.imageStyle, maxWidth: '45%'};
+			this.setState({imageStyle});
 		} else {
-			this.setState({...this.state.imageStyle, maxWidth: '100%'});
+			imageStyle = {...this.state.imageStyle, maxWidth: '100%'};
+			this.setState({imageStyle});
 		}
 	},
 
