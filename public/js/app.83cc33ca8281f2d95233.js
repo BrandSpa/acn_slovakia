@@ -10109,7 +10109,7 @@ if ($('.sticky-menu').length > 0) {
 
 function toggleMenu() {
   $('.grant-menu__title').on('click', function () {
-    var $list = $(this).parent().find('.grant-menu__list');
+    var $list = $('.grant-menu__list');
 
     if ($list.hasClass('dropdown-list--show')) {
       $list.removeClass('dropdown-list--show');
@@ -10133,4 +10133,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.10a2458670faea9c8100.js.map
+//# sourceMappingURL=app.83cc33ca8281f2d95233.js.map
