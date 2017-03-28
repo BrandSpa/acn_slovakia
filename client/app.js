@@ -82,7 +82,7 @@ if($('.sticky-menu').length > 0) {
 function toggleMenu() {
   $('.dropdown-trigger').on('click', function(e) {
     e.preventDefault();
-    const $list = $(this).closest('.dropdown-list');
+    const $list = $(this).parent().find('.dropdown-list');
     if($list.hasClass('dropdown-list--show')) {
       $list.removeClass('dropdown-list--show');
     } else {
