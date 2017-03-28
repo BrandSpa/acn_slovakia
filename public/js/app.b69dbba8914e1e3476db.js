@@ -3283,9 +3283,9 @@ var GalleryHeader = _react2.default.createClass({
 		var container = document.querySelector('.header-gallery__container');
 		var containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('img')));
+		var myImage = new Image('100%', '100%');
 
 		this.props.images.forEach(function (image) {
-			var myImage = new Image('100%', '100%');
 			myImage.src = image;
 			console.log(myImage, myImage.width, myImage.naturalWidth);
 			// console.log('natural width', image.naturalWidth, image.width);
@@ -10135,4 +10135,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.866eb9710e7bf0618fce.js.map
+//# sourceMappingURL=app.b69dbba8914e1e3476db.js.map
