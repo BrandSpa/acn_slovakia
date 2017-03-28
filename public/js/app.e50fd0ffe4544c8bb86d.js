@@ -3335,11 +3335,7 @@ var GalleryHeader = _react2.default.createClass({
     };
 
     var viewportStyle = {
-      height: h + "px",
-      // display: 'flex',
-      // justifyContent: 'center',
-      // alignItems: 'center'
-      padding: "40px"
+      height: h + "px"
     };
 
     var excerptStyle = {
@@ -10128,4 +10124,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.e9de180065b4a500473e.js.map
+//# sourceMappingURL=app.e50fd0ffe4544c8bb86d.js.map
