@@ -3285,14 +3285,15 @@ var GalleryHeader = _react2.default.createClass({
 		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('img')));
 
 		images.forEach(function (image) {
+			console.log(image.width);
 			if (image.width > image.height) {
 				image.style.maxWidth = '100%';
-			}
-
-			if (image.width < image.height) {
+			} else if (image.width < image.height) {
 				image.style.maxWidth = '45%';
 				image.style.display = 'block';
 				image.style.margin = '0 auto';
+			} else {
+				image.style.maxWidth = '100%';
 			}
 		});
 	},
@@ -10127,4 +10128,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.b16c055d0937b9607e5c.js.map
+//# sourceMappingURL=app.61574c3e30e2bc4d4d39.js.map
