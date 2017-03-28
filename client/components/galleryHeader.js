@@ -97,7 +97,7 @@ const GalleryHeader = React.createClass({
 				<div style={mainStyle}>
 					<div style={viewportStyle}>
 					<div className="l-wrap">
-						<h5>{this.props.texts.gallery}<i class="ion-camera"></i></h5>
+						<h5 style={{color: '#fff'}}>{this.props.texts.gallery}<i className="ion-camera"></i></h5>
 						{images.map((image, i) =>
 							<div
 								className="gallery-header__item"
