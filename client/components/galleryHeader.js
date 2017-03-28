@@ -101,7 +101,7 @@ const GalleryHeader = React.createClass({
 			<StyleRoot>
 				<div style={mainStyle}>
 					<div style={viewportStyle}>
-					<div style={{margin: '0 auto', maxWidth: w}}>
+					<div style={{maxWidth: w}}>
 						<h5 style={{color: '#fff'}}>{this.props.texts.gallery} <i className="ion-camera"></i></h5>
 						{images.map((image, i) =>
 							<div
