@@ -3395,10 +3395,10 @@ var GalleryHeader = _react2.default.createClass({
               ),
               _react2.default.createElement(
                 "ul",
-                { style: { listStyle: 'none' } },
+                { style: { listStyle: 'none', padding: '0' } },
                 _react2.default.createElement(
                   "li",
-                  { style: { display: 'inline-block' } },
+                  { style: { display: 'inline-block', marginLeft: '5px' } },
                   _react2.default.createElement(
                     "a",
                     { style: shareBtn, href: "#" },
@@ -3407,7 +3407,7 @@ var GalleryHeader = _react2.default.createClass({
                 ),
                 _react2.default.createElement(
                   "li",
-                  { style: { display: 'inline-block' } },
+                  { style: { display: 'inline-block', marginLeft: '5px' } },
                   _react2.default.createElement(
                     "a",
                     { style: shareBtn, href: "#" },
@@ -3416,7 +3416,7 @@ var GalleryHeader = _react2.default.createClass({
                 ),
                 _react2.default.createElement(
                   "li",
-                  { style: { display: 'inline-block' } },
+                  { style: { display: 'inline-block', marginLeft: '5px' } },
                   _react2.default.createElement(
                     "a",
                     { style: shareBtn, href: "#" },
@@ -10156,4 +10156,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.6d042c8c60753ba077b5.js.map
+//# sourceMappingURL=app.b7ec3f431d2da49020d2.js.map
