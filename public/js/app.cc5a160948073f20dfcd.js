@@ -3282,8 +3282,8 @@ var GalleryHeader = _react2.default.createClass({
 		nav.style.background = 'rgb(34, 34, 34)';
 		var container = document.querySelector('.header-gallery__container');
 		var containerH = container ? container.offsetWidth / 1.5 : 'auto';
-		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('.header-gallery__caption-image')));
-		console.log(images);
+		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('img')));
+		console.log(images, this.gallery);
 		images.forEach(function (image) {
 			console.log(image.offsetHeight);
 			image.style.height = Math.round(containerH) + 'px';
@@ -10120,4 +10120,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.aef1fa759d72d8d1ba9b.js.map
+//# sourceMappingURL=app.cc5a160948073f20dfcd.js.map
