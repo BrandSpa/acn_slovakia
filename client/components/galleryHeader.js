@@ -31,7 +31,7 @@ const GalleryHeader = React.createClass({
   },
 
 	getImage(e) {
-		console.log('image', e.width, e.height);
+		console.log('image', e.target.width, e.target.height);
 	},
 
   render() {
