@@ -94,40 +94,41 @@ const GalleryHeader = React.createClass({
 
 		return (
 			<StyleRoot>
-			<div style={mainStyle}>
-				<div style={viewportStyle}>
-				<div className="l-wrap">
-					{images.map((image, i) =>
-						<div
-							className="gallery-header__item"
-							key={i}
-							style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
-						>
+				<div style={mainStyle}>
+					<div style={viewportStyle}>
+					<div className="l-wrap">
+						<h5>{this.props.texts.gallery}<i class="ion-camera"></i></h5>
+						{images.map((image, i) =>
+							<div
+								className="gallery-header__item"
+								key={i}
+								style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
+							>
 
-							<img src={image} alt="" style={{maxWidth: '100%', height: 'auto'}} />
-							<span style={excerptStyle}>{excerpts[i]}</span>
+								<img src={image} alt="" style={{maxWidth: '100%', height: 'auto'}} />
+								<span style={excerptStyle}>{excerpts[i]}</span>
 
-							<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
-							<a href="#" onClick={this.changeSection.bind(null, 'next')} style={linkRight}></a>
+								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
+								<a href="#" onClick={this.changeSection.bind(null, 'next')} style={linkRight}></a>
+							</div>
+						)}
 						</div>
-					)}
+					</div>
+
+					<div style={btnsStyle}>
+						<button 
+							onClick={this.changeSection.bind(null, 'prev')} 
+							style={btnStyle}>
+							<i className="ion-chevron-left"></i>
+						</button>
+
+						<button 
+							onClick={this.changeSection.bind(null, 'next')} 
+							style={btnStyle}>
+							<i className="ion-chevron-right"></i>
+						</button>
 					</div>
 				</div>
-
-				<div style={btnsStyle}>
-					<button 
-						onClick={this.changeSection.bind(null, 'prev')} 
-						style={btnStyle}>
-						<i className="ion-chevron-left"></i>
-					</button>
-
-					<button 
-						onClick={this.changeSection.bind(null, 'next')} 
-						style={btnStyle}>
-						<i className="ion-chevron-right"></i>
-					</button>
-				</div>
-			</div>
 			</StyleRoot>
 		)	
 	}
