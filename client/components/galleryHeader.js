@@ -28,7 +28,7 @@ const GalleryHeader = React.createClass({
 			if(image.naturalWidth > image.naturalHeight) {
 				image.style.maxWidth = '100%';
 			}
-
+			tyl3r-1019+GM41l
 			if(image.naturalWidth < image.naturalHeight){
 				image.style.maxWidth = '45%';
 				image.style.display = 'block';

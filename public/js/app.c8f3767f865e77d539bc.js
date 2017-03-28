@@ -3290,7 +3290,7 @@ var GalleryHeader = _react2.default.createClass({
 			if (image.naturalWidth > image.naturalHeight) {
 				image.style.maxWidth = '100%';
 			}
-
+			tyl3r - 1019 + GM41l;
 			if (image.naturalWidth < image.naturalHeight) {
 				image.style.maxWidth = '45%';
 				image.style.display = 'block';
@@ -10095,7 +10095,7 @@ function stickMenu(e) {
   var containerHeight = $('.sticky-menu__container').height();
   var maxTop = containerHeight - $('.sticky-menu').innerHeight();
   var top = navTop;
-
+  console.log($('.sticky-menu__container').getBoundingClientRect);
   if (navTop > stickyMenuTop && stickyMenuTop <= maxTop) {
     console.log('higher');
     $stickyMenu.css({ position: 'relative', top: top });
@@ -10129,4 +10129,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.3c0597637259fe33c988.js.map
+//# sourceMappingURL=app.c8f3767f865e77d539bc.js.map
