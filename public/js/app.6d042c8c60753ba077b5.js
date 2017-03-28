@@ -3395,10 +3395,10 @@ var GalleryHeader = _react2.default.createClass({
               ),
               _react2.default.createElement(
                 "ul",
-                { style: {} },
+                { style: { listStyle: 'none' } },
                 _react2.default.createElement(
                   "li",
-                  null,
+                  { style: { display: 'inline-block' } },
                   _react2.default.createElement(
                     "a",
                     { style: shareBtn, href: "#" },
@@ -3407,7 +3407,7 @@ var GalleryHeader = _react2.default.createClass({
                 ),
                 _react2.default.createElement(
                   "li",
-                  null,
+                  { style: { display: 'inline-block' } },
                   _react2.default.createElement(
                     "a",
                     { style: shareBtn, href: "#" },
@@ -3416,7 +3416,7 @@ var GalleryHeader = _react2.default.createClass({
                 ),
                 _react2.default.createElement(
                   "li",
-                  null,
+                  { style: { display: 'inline-block' } },
                   _react2.default.createElement(
                     "a",
                     { style: shareBtn, href: "#" },
@@ -10156,4 +10156,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.7fc09ff7b3b467831fd3.js.map
+//# sourceMappingURL=app.6d042c8c60753ba077b5.js.map
