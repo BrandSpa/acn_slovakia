@@ -3394,7 +3394,9 @@ var GalleryHeader = _react2.default.createClass({
 								className: 'gallery-header__item',
 								style: { position: 'relative' }
 							},
-							_react2.default.createElement('img', { src: images[this.state.section], style: { maxWidth: '100%' } }),
+							_react2.default.createElement('img', { src: images[this.state.section], ref: function ref(img) {
+									return console.log(img.width);
+								}, style: { maxWidth: '100%' } }),
 							_react2.default.createElement(
 								'span',
 								{ style: excerptStyle },
@@ -10132,4 +10134,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.e919aaed448e80ac8d78.js.map
+//# sourceMappingURL=app.e8112bfbfe21786b97b2.js.map

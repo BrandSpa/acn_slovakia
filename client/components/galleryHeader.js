@@ -116,7 +116,7 @@ const GalleryHeader = React.createClass({
 								className="gallery-header__item"
 								style={{position: 'relative'}}
 							>
-								<img src={images[this.state.section]} style={{maxWidth: '100%'}} />
+								<img src={images[this.state.section]} ref={img => console.log(img.width)} style={{maxWidth: '100%'}} />
 								<span style={excerptStyle}>{excerpts[this.state.section]}</span>
 								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
 								<a href="#" onClick={this.changeSection.bind(null, 'next')} style={linkRight}></a>
