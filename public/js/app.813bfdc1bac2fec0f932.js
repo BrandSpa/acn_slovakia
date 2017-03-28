@@ -3275,7 +3275,7 @@ var GalleryHeader = _react2.default.createClass({
     };
   },
   getDefaultProps: function getDefaultProps() {
-    return { images: [], excerpts: [] };
+    return { images: [], excerpts: [], texts: {} };
   },
   componentDidMount: function componentDidMount() {
     //side effect, but necessary
@@ -10149,7 +10149,7 @@ function toggleMenu() {
     $('.grant-menu__list') ? $('.grant-menu__list').removeClass('dropdown-list--show') : '';
   }
 
-  $('.grant-menu__title').on('click', function (e) {
+  $('.grant-menu__open').on('click', function (e) {
     e.preventDefault();
     var $list = $('.grant-menu__list');
 
@@ -10175,4 +10175,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.3b40c7698a3a2739e72f.js.map
+//# sourceMappingURL=app.813bfdc1bac2fec0f932.js.map

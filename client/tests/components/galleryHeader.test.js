@@ -8,7 +8,7 @@ describe('Gallery Header Component', () => {
 		wrapper.instance().changeSection('next');
 		wrapper.instance().changeSection('next');
 		wrapper.instance().changeSection('prev');
-		expect(wrapper.state()).toEqual({section: 1});
+		expect(wrapper.state().section).toEqual(1);
 	})
 
 	it('should change section with buttons', () => {
@@ -16,19 +16,15 @@ describe('Gallery Header Component', () => {
 		wrapper.find('button').at(1).simulate('click');
 		wrapper.find('button').at(1).simulate('click');
 		wrapper.find('button').at(0).simulate('click');
-		expect(wrapper.state()).toEqual({section: 1});
+		expect(wrapper.state().section).toEqual(1);
 	})
 
 	it('should change div style depend on section', () => {
 		const wrapper = shallow(<GalleryHeader images={[{image: ''}, {image: ''}, {image: ''}]} />);
 		wrapper.instance().changeSection('next');
-		let item = wrapper.find('.gallery-header__item').at(1);
-		expect(item.props().style).toEqual({display: 'block', position: 'relative'});
+		let item = wrapper.find('.gallery-header__item img').at(1);
+		expect(item.props()).toEqual({display: 'block', position: 'relative'});
 	})
 
-	it('should show three images', () => {
-		const wrapper = shallow(<GalleryHeader images={[{image: ''}, {image: ''}, {image: ''}]} />);
-		expect( wrapper.find('img').length ).toEqual(3);
-	})
 	
 })

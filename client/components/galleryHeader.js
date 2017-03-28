@@ -4,7 +4,7 @@ import Radium, { StyleRoot } from "radium";
 const GalleryHeader = React.createClass({
   getInitialState() {
     return { 
-			section: 0, 
+			section: 0,
 			imageStyle: {
 				maxWidth: "100%", 
 				display: 'block', 
@@ -14,7 +14,7 @@ const GalleryHeader = React.createClass({
   },
 
   getDefaultProps() {
-    return { images: [], excerpts: [] };
+    return { images: [], excerpts: [], texts: {} };
   },
 
   componentDidMount() {

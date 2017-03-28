@@ -16,7 +16,6 @@ import CampaignsSlider from './components/campaignsSlider';
 import DownloadPdf from './components/downloadPdf';
 import GalleryHeader from './components/galleryHeader';
 import ProjectsAbout from './components/projectsAbout';
-
 //jquery stuff :(
 import setMenu from './lib/set_menu';
 import setMenuMobile from './lib/set_menu_mobile';
@@ -71,7 +70,6 @@ function stickMenu(e) {
     $stickyMenu.css({position: 'relative', top: top});
   }
 
-
 }
 
 
@@ -84,7 +82,7 @@ function toggleMenu() {
      $('.grant-menu__list') ?  $('.grant-menu__list').removeClass('dropdown-list--show'): '';
   }
   
-  $('.grant-menu__title').on('click', function(e) {
+  $('.grant-menu__open').on('click', function(e) {
     e.preventDefault();
     const $list = $('.grant-menu__list');
   
