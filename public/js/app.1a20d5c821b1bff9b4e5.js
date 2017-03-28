@@ -10096,11 +10096,11 @@ function stickMenu(e) {
   var maxTop = containerHeight - $('.sticky-menu').innerHeight();
   var top = navTop;
   var br = document.querySelector('.sticky-menu__container').getBoundingClientRect();
-  console.log('top:', br.top, 'bottom:', br.bottom);
+  console.log('top:', br.top - 200, 'bottom:', br.bottom - 200);
 
   if (br.top < 0 && br.bottom > 0) {
 
-    $stickyMenu.css({ position: 'relative', top: top - 100 });
+    $stickyMenu.css({ position: 'relative', top: top });
   }
 
   // console.log('navtop is minor', navTop < stickyMenuTop, 'navtop is higher', navTop > stickyMenuTop);
@@ -10126,4 +10126,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.380a01102d76d050e38e.js.map
+//# sourceMappingURL=app.1a20d5c821b1bff9b4e5.js.map

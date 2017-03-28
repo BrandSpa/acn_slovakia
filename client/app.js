@@ -65,11 +65,11 @@ function stickMenu(e) {
   let maxTop = containerHeight - $('.sticky-menu').innerHeight();
   let top = navTop;
   let br = document.querySelector('.sticky-menu__container').getBoundingClientRect()
-  console.log('top:', br.top, 'bottom:', br.bottom);
+  console.log('top:', br.top - 200, 'bottom:', br.bottom - 200);
 
   if(br.top < 0 && br.bottom > 0) {
 
-    $stickyMenu.css({position: 'relative', top: top - 100 });
+    $stickyMenu.css({position: 'relative', top: top});
   }
 
   // console.log('navtop is minor', navTop < stickyMenuTop, 'navtop is higher', navTop > stickyMenuTop);
