@@ -3283,13 +3283,14 @@ var GalleryHeader = _react2.default.createClass({
 		var container = document.querySelector('.header-gallery__container');
 		var containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('img')));
-		console.log(images, this.gallery);
 
 		images.forEach(function (image) {
 			if (image.width > image.height) {
 				image.style.maxWidth = '100%';
 			} else {
 				image.style.maxWidth = '50%';
+				image.style.display = 'block';
+				image.style.margin = '0 auto';
 			}
 		});
 	},
@@ -10124,4 +10125,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.c3b1d078c899a753f4a3.js.map
+//# sourceMappingURL=app.fa63d10e1f7e9298b00d.js.map

@@ -21,13 +21,14 @@ const GalleryHeader = React.createClass({
 		let container = document.querySelector('.header-gallery__container');
 		let containerH = container ? container.offsetWidth / 1.5 : 'auto';
 		let images =[...this.gallery.querySelectorAll('img')];
-		console.log(images, this.gallery);
 
 		images.forEach(image => {
 			if(image.width > image.height) {
 				image.style.maxWidth = '100%';
 			} else {
 				image.style.maxWidth = '50%';
+				image.style.display = 'block';
+				image.style.margin = '0 auto';
 			}
 		})
 	
@@ -114,7 +115,6 @@ const GalleryHeader = React.createClass({
 								style={i == this.state.section ? {display: 'block', position: 'relative'} : {display: 'none'}}
 							>
 								<img src={image} />
-
 								<span style={excerptStyle}>{excerpts[i]}</span>
 								<a href="#" onClick={this.changeSection.bind(null, 'prev')} style={linkLeft}></a> 
 								<a href="#" onClick={this.changeSection.bind(null, 'next')} style={linkRight}></a>
