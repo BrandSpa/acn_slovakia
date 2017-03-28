@@ -3247,7 +3247,7 @@ exports.default = DownloadPdf;
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -3265,179 +3265,174 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var GalleryHeader = _react2.default.createClass({
-	displayName: 'GalleryHeader',
-	getInitialState: function getInitialState() {
-		return {
-			section: 0
-		};
-	},
-	getDefaultProps: function getDefaultProps() {
-		return {
-			images: [],
-			excerpts: []
-		};
-	},
-	componentDidMount: function componentDidMount() {
-		var nav = document.querySelector('.nav');
-		nav.style.background = 'rgb(34, 34, 34)';
-		var container = document.querySelector('.header-gallery__container');
-		var containerH = container ? container.offsetWidth / 1.5 : 'auto';
-		var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll('img')));
-		var myImg = new Image('100%', '100%');
+  displayName: "GalleryHeader",
+  getInitialState: function getInitialState() {
+    return { section: 0 };
+  },
+  getDefaultProps: function getDefaultProps() {
+    return { images: [], excerpts: [] };
+  },
+  componentDidMount: function componentDidMount() {
+    var nav = document.querySelector(".nav");
+    nav.style.background = "rgb(34, 34, 34)";
+    var container = document.querySelector(".header-gallery__container");
+    var containerH = container ? container.offsetWidth / 1.5 : "auto";
+    var images = [].concat(_toConsumableArray(this.gallery.querySelectorAll("img")));
+    var myImg = new Image("100%", "100%");
 
-		this.props.images.forEach(function (image) {
-			myImg.src = image;
-			console.log(myImg, myImg.width, myImg.naturalWidth);
-			// console.log('natural width', image.naturalWidth, image.width);
+    this.props.images.forEach(function (imageSrc) {
+      myImg.src = imageSrc;
+      console.log(myImg, myImg.width, myImg.naturalWidth);
+    });
+  },
+  changeSection: function changeSection(type, e) {
+    if (e) e.preventDefault();
+    var section = this.state.section;
+    if (type == "next") section = this.state.section < this.props.images.length - 1 ? this.state.section + 1 : 0;
+    if (type == "prev") section = this.state.section > 0 ? this.state.section - 1 : 0;
+    this.setState({ section: section });
+  },
+  render: function render() {
+    var _this = this;
 
-			// if(image.naturalWidth > image.naturalHeight) {
-			// 	image.style.maxWidth = '100%';
-			// }
+    var _props = this.props,
+        images = _props.images,
+        excerpts = _props.excerpts;
 
-			// if(image.naturalWidth < image.naturalHeight){
-			// 	image.style.maxWidth = '45%';
-			// 	image.style.display = 'block';
-			// 	image.style.margin = '0 auto';
-			// }
-		});
-	},
-	changeSection: function changeSection(type, e) {
-		if (e) e.preventDefault();
-		var section = this.state.section;
-		if (type == 'next') section = this.state.section < this.props.images.length - 1 ? this.state.section + 1 : 0;
-		if (type == 'prev') section = this.state.section > 0 ? this.state.section - 1 : 0;
-		this.setState({ section: section });
-	},
-	render: function render() {
-		var _this = this;
+    var h = window.innerHeight - 100;
+    var w = window.innerHeight;
 
-		var _props = this.props,
-		    images = _props.images,
-		    excerpts = _props.excerpts;
+    var btnsStyle = {
+      position: "absolute",
+      bottom: "40px",
+      right: "40px",
+      "@media(max-width: 767px)": { bottom: "10px", right: "10px" }
+    };
 
-		var h = window.innerHeight - 100;
-		var w = window.innerHeight;
+    var btnStyle = {
+      border: "1px solid #fff",
+      background: "transparent",
+      width: "50px",
+      height: "50px",
+      borderRadius: "0",
+      padding: "0"
+    };
 
-		var btnsStyle = {
-			position: 'absolute',
-			bottom: '40px',
-			right: '40px',
-			'@media(max-width: 767px)': {
-				bottom: '10px',
-				right: '10px'
-			}
-		};
+    var linkLeft = {
+      position: "absolute",
+      height: "100%",
+      top: "0",
+      bottom: "auto",
+      left: 0,
+      width: "50%"
+    };
 
-		var btnStyle = {
-			border: '1px solid #fff',
-			background: 'transparent',
-			width: '50px',
-			height: '50px',
-			borderRadius: '0',
-			padding: '0'
-		};
+    var linkRight = _extends({}, linkLeft, { left: "auto", right: 0 });
 
-		var linkLeft = {
-			position: 'absolute',
-			height: '100%',
-			top: '0',
-			bottom: 'auto',
-			left: 0,
-			width: '50%'
-		};
+    var mainStyle = {
+      height: h + "px",
+      background: "#222",
+      position: "relative",
+      overflow: "hidden",
+      "@media(max-width: 767px)": { margin: "0 -20px" }
+    };
 
-		var linkRight = _extends({}, linkLeft, { left: 'auto', right: 0 });
+    var viewportStyle = {
+      height: h + "px",
+      // display: 'flex',
+      // justifyContent: 'center',
+      // alignItems: 'center'
+      padding: "40px"
+    };
 
-		var mainStyle = {
-			height: h + 'px',
-			background: '#222',
-			position: 'relative',
-			overflow: 'hidden',
-			'@media(max-width: 767px)': {
-				margin: '0 -20px'
-			}
-		};
+    var excerptStyle = {
+      color: "#fff",
+      marginTop: "20px",
+      display: "block",
+      textShadow: "2px 2px 2px #222"
+    };
 
-		var viewportStyle = {
-			height: h + 'px',
-			padding: '40px'
-		};
-
-		var excerptStyle = {
-			color: '#fff',
-			marginTop: '20px',
-			display: 'block',
-			textShadow: '2px 2px 2px #222'
-		};
-
-		return _react2.default.createElement(
-			_radium.StyleRoot,
-			null,
-			_react2.default.createElement(
-				'div',
-				{ style: mainStyle, ref: function ref(gallery) {
-						return _this.gallery = gallery;
-					} },
-				_react2.default.createElement(
-					'div',
-					{ style: viewportStyle },
-					_react2.default.createElement(
-						'div',
-						{ style: { maxWidth: w } },
-						_react2.default.createElement(
-							'h5',
-							{ style: { color: '#fff', marginBottom: '20px' } },
-							this.props.texts.gallery,
-							' ',
-							_react2.default.createElement('i', { className: 'ion-camera' })
-						),
-						_react2.default.createElement(
-							'div',
-							{
-								className: 'gallery-header__item',
-								style: { position: 'relative' }
-							},
-							_react2.default.createElement('img', { src: images[this.state.section], style: { maxWidth: '100%' } }),
-							_react2.default.createElement(
-								'span',
-								{ style: excerptStyle },
-								excerpts[this.state.section]
-							),
-							_react2.default.createElement('a', { href: '#', onClick: this.changeSection.bind(null, 'prev'), style: linkLeft }),
-							_react2.default.createElement('a', { href: '#', onClick: this.changeSection.bind(null, 'next'), style: linkRight })
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ style: btnsStyle },
-					_react2.default.createElement(
-						'span',
-						{ style: { color: '#fff', paddingRight: '10px' } },
-						images.length,
-						' ',
-						this.props.texts.of,
-						' ',
-						this.state.section + 1
-					),
-					_react2.default.createElement(
-						'button',
-						{
-							onClick: this.changeSection.bind(null, 'prev'),
-							style: btnStyle },
-						_react2.default.createElement('i', { className: 'ion-chevron-left' })
-					),
-					_react2.default.createElement(
-						'button',
-						{
-							onClick: this.changeSection.bind(null, 'next'),
-							style: btnStyle },
-						_react2.default.createElement('i', { className: 'ion-chevron-right' })
-					)
-				)
-			)
-		);
-	}
+    return _react2.default.createElement(
+      _radium.StyleRoot,
+      null,
+      _react2.default.createElement(
+        "div",
+        { style: mainStyle, ref: function ref(gallery) {
+            return _this.gallery = gallery;
+          } },
+        _react2.default.createElement(
+          "div",
+          { style: viewportStyle },
+          _react2.default.createElement(
+            "div",
+            { style: { maxWidth: w } },
+            _react2.default.createElement(
+              "h5",
+              { style: { color: "#fff", marginBottom: "20px" } },
+              this.props.texts.gallery,
+              " ",
+              _react2.default.createElement("i", { className: "ion-camera" })
+            ),
+            _react2.default.createElement(
+              "div",
+              {
+                className: "gallery-header__item",
+                style: { position: "relative" }
+              },
+              _react2.default.createElement("img", {
+                src: images[this.state.section],
+                style: { maxWidth: "100%" }
+              }),
+              _react2.default.createElement(
+                "span",
+                { style: excerptStyle },
+                excerpts[this.state.section]
+              ),
+              _react2.default.createElement("a", {
+                href: "#",
+                onClick: this.changeSection.bind(null, "prev"),
+                style: linkLeft
+              }),
+              _react2.default.createElement("a", {
+                href: "#",
+                onClick: this.changeSection.bind(null, "next"),
+                style: linkRight
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { style: btnsStyle },
+          _react2.default.createElement(
+            "span",
+            { style: { color: "#fff", paddingRight: "10px" } },
+            images.length,
+            " ",
+            this.props.texts.of,
+            " ",
+            this.state.section + 1
+          ),
+          _react2.default.createElement(
+            "button",
+            {
+              onClick: this.changeSection.bind(null, "prev"),
+              style: btnStyle
+            },
+            _react2.default.createElement("i", { className: "ion-chevron-left" })
+          ),
+          _react2.default.createElement(
+            "button",
+            {
+              onClick: this.changeSection.bind(null, "next"),
+              style: btnStyle
+            },
+            _react2.default.createElement("i", { className: "ion-chevron-right" })
+          )
+        )
+      )
+    );
+  }
 });
 
 exports.default = GalleryHeader;
@@ -10135,4 +10130,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.6373edadf9aa511e7be8.js.map
+//# sourceMappingURL=app.4def6483bd21c64dee7d.js.map
