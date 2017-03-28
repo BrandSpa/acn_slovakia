@@ -42,8 +42,8 @@
   bs.donate = '<?php echo gett('Donate') ?>'
 </script>
 
-<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.117edd28d5ade080bd00.js'></script>
-<script src='<?php echo get_template_directory_uri() ?>/public/js/app.9bf6e88365858fc9d400.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.08a8aca89f46b3cac0ed.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/app.5edd86729d144dae6389.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
 <script>
