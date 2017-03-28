@@ -32,7 +32,7 @@ const GalleryHeader = React.createClass({
 
 	getImage(e) {
 		if(e.target.width < e.target.height) {
-			e.target.style.maxWidth '45%';
+			e.target.style.maxWidth = '45%';
 		}
 	},
 
