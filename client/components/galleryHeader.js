@@ -23,6 +23,7 @@ const GalleryHeader = React.createClass({
 		let images =[...document.querySelectorAll('.header-gallery__caption-image')];
 
 		images.forEach(image => {
+			console.log(image.offsetHeight);
 			image.style.height = `${Math.round(containerH)}px`;
 		})
 		
@@ -34,10 +35,6 @@ const GalleryHeader = React.createClass({
 		if(type == 'next') section = this.state.section < (this.props.images.length - 1)  ? this.state.section + 1 : 0;
 		if(type == 'prev') section = this.state.section > 0 ? this.state.section - 1 : 0;
 		this.setState({section});
-	},
-
-	loadImage(e) {
-		console.log(e.target, e.target.clientHeight);
 	},
 
 	render() {
@@ -102,7 +99,7 @@ const GalleryHeader = React.createClass({
 		
 		return (
 			<StyleRoot>
-				<div style={mainStyle}>
+				<div style={mainStyle} ref={gallery => this.gallery = gallery}>
 					<div style={viewportStyle}>
 					<div style={{maxWidth: w}}>
 						<h5 style={{color: '#fff'}}>{this.props.texts.gallery} <i className="ion-camera"></i></h5>
