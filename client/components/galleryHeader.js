@@ -5,7 +5,7 @@ const GalleryHeader = React.createClass({
   getInitialState() {
     return { section: 0 };
   },
-	
+
   getDefaultProps() {
     return { images: [], excerpts: [] };
   },
@@ -14,9 +14,9 @@ const GalleryHeader = React.createClass({
     let nav = document.querySelector(".nav");
     nav.style.background = "rgb(34, 34, 34)";
     let container = document.querySelector(".header-gallery__container");
-    let containerH = container ? container.offsetWidth / 1.5 : "auto";
+    let containerH = container ? container.offsetWidth / 1.5 : "auto”";
     let images = [ ...this.gallery.querySelectorAll("img") ];
-    let myImg = new Image("100%", "100%");
+    let myImg = new Image(1, 1);
 
     this.props.images.forEach(imageSrc => {
       myImg.src = imageSrc;
