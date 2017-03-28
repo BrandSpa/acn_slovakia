@@ -5,7 +5,8 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <?php if(get_post_meta($post->ID, 'video_url_key', true)): ?>
-	<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>?modestbranding=1&autohide=1&showinfo=0&controls=0" width="100%" frameborder="0"></iframe>
+<?php do_shortcode('[SectionVideo imgUrl="'. get_the_post_thumbnail_url($post->ID, 'full')  .'" url="'.get_post_meta($post->ID, 'video_url_key', true).'"]') ?>
+	<!--<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>?modestbranding=1&autohide=1&showinfo=0&controls=0" width="100%" frameborder="0"></iframe>-->
 	<div class="l-wrap" style="height: 0">
 
 	<div class="video__header-title" style="background: #fff; text-align: center; min-height: 100px">
