@@ -76,7 +76,10 @@ const GalleryHeader = React.createClass({
 			height: `${h}px`, 
 			background: '#222', 
 			position: 'relative',
-			overflow: 'hidden'
+			overflow: 'hidden',
+			'@media(max-width: 767px)': {
+				margin: '0 -20px'
+			} 
 		};
 
 		const viewportStyle = {
