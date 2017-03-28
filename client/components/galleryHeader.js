@@ -39,7 +39,7 @@ const GalleryHeader = React.createClass({
 	render() {
 		const { images, excerpts } = this.props;
 		const h = (window.innerHeight - 100);
-		const w = (window.innerHeight * 1.5);
+		const w = window.innerHeight;
 		const imageH = (window.innerHeight - 180);
 
 		const btnsStyle = {
