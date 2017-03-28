@@ -44,8 +44,6 @@
 
 <script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.4f07f313b6c7fff7f578.js'></script>
 <script src='<?php echo get_template_directory_uri() ?>/public/js/app.1123f8caabf030abccf3.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
 <script>
 
   
