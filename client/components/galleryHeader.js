@@ -95,7 +95,7 @@ const GalleryHeader = React.createClass({
 			<StyleRoot>
 			<div style={mainStyle}>
 				<div style={viewportStyle}>
-				<div style={{ maxWidth: '800px',  marginLeft: 'auto', marginRight: 'auto' }}>
+				<div className="l-wrap">
 					{images.map((image, i) =>
 						<div
 							className="gallery-header__item"
