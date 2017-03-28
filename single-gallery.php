@@ -20,7 +20,8 @@ $props = [
 	"images" => $images, 
 	"excerpts" => $excerpts, 
 	"texts" => [
-		"gallery" => gett('Gallery')
+		"gallery" => gett('Gallery'),
+		"of" => gett('of')
 	]
 ];
 ?>
