@@ -29,15 +29,14 @@ const GalleryHeader = React.createClass({
 
 	getImage(e) {
 		e.target.style.opacity = 0;
+		if(e.target.height > e.target.width ) {
+			e.target.style.maxWidth = '45%';
+		} else {
+			e.target.style.maxWidth = '100%';
+		}
+
 		setTimeout(() => {
-			console.log('mmm');
-			if(e.target.height > e.target.width ) {
-				e.target.style.maxWidth = '45%';
 				e.target.style.opacity = 1;
-			} else {
-				e.target.style.maxWidth = '100%';
-				e.target.style.opacity = 1;
-			}
 		}, 300);
 	},
 
