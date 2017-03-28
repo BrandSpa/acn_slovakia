@@ -80,9 +80,10 @@ if($('.sticky-menu').length > 0) {
 }
  
 function toggleMenu() {
-  $('.grant-menu__title').on('click', function() {
+  $('.grant-menu__title').on('click', function(e) {
+    e.preventDefault();
     const $list = $('.grant-menu__list');
-    
+  
     if($list.hasClass('dropdown-list--show')) {
       $list.removeClass('dropdown-list--show');
     } else {

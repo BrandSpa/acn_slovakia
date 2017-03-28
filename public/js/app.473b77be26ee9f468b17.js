@@ -10108,7 +10108,8 @@ if ($('.sticky-menu').length > 0) {
 }
 
 function toggleMenu() {
-  $('.grant-menu__title').on('click', function () {
+  $('.grant-menu__title').on('click', function (e) {
+    e.preventDefault();
     var $list = $('.grant-menu__list');
 
     if ($list.hasClass('dropdown-list--show')) {
@@ -10133,4 +10134,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.83cc33ca8281f2d95233.js.map
+//# sourceMappingURL=app.473b77be26ee9f468b17.js.map
