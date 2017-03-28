@@ -3398,7 +3398,7 @@ var GalleryHeader = _react2.default.createClass({
 									key: i,
 									style: i == _this.state.section ? { display: 'block', position: 'relative' } : { display: 'none' }
 								},
-								_react2.default.createElement('img', { src: image }),
+								_react2.default.createElement('img', { src: image, style: { maxWidth: '100%' } }),
 								_react2.default.createElement(
 									'span',
 									{ style: excerptStyle },
@@ -10128,4 +10128,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.61574c3e30e2bc4d4d39.js.map
+//# sourceMappingURL=app.bc7227bcf5cf5f907b78.js.map
