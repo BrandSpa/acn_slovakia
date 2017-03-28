@@ -3351,7 +3351,8 @@ var GalleryHeader = _react2.default.createClass({
       height: '20px',
       borderRadius: '20px',
       textAlign: 'center',
-      display: 'block'
+      display: 'block',
+      border: '1px solid #fff'
     };
 
     return _react2.default.createElement(
@@ -10154,4 +10155,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.5cf2b4f6c458fdbbd0c5.js.map
+//# sourceMappingURL=app.7c15c3362adac2ba6e95.js.map
