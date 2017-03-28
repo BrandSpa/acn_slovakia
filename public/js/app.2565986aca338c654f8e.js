@@ -10108,6 +10108,10 @@ if ($('.sticky-menu').length > 0) {
 }
 
 function toggleMenu() {
+  if (window.innerWidth < 701) {
+    $('.grant-menu__list') ? $('.grant-menu__list').removeClass('dropdown-list--show') : '';
+  }
+
   $('.grant-menu__title').on('click', function (e) {
     e.preventDefault();
     var $list = $('.grant-menu__list');
@@ -10134,4 +10138,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.473b77be26ee9f468b17.js.map
+//# sourceMappingURL=app.2565986aca338c654f8e.js.map
