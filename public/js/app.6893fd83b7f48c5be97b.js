@@ -3296,7 +3296,7 @@ var GalleryHeader = _react2.default.createClass({
 		this.setState({ section: section });
 	},
 	loadImage: function loadImage(e) {
-		console.log(e.target);
+		console.log(e.target.clientHeight);
 	},
 	render: function render() {
 		var _this = this;
@@ -10120,4 +10120,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.629920bd63190733bc4d.js.map
+//# sourceMappingURL=app.6893fd83b7f48c5be97b.js.map
