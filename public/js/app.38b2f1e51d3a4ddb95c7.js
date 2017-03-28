@@ -10096,7 +10096,7 @@ function stickMenu(e) {
   var maxTop = containerHeight - $('.sticky-menu').innerHeight();
   var top = navTop;
   var br = document.querySelector('.sticky-menu__container').getBoundingClientRect();
-  console.log(br.top < 0 && br.bottom > 0);
+  console.log(br.top, br.bottom);
 
   if (br.top < 0 && br.bottom > 0) {
     console.log('higher');
@@ -10126,4 +10126,4 @@ toggleMenu();
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.c374af2ee21a1f8d8862.js.map
+//# sourceMappingURL=app.38b2f1e51d3a4ddb95c7.js.map
