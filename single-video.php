@@ -12,7 +12,7 @@
 	<div class="l-wrap" style="height: 0">
 
 	<div class="video__header-title" style="background: #fff; text-align: center; min-height: 100px; float: left; width: 100%">
-		<span class="metadata"><?php echo get_the_date( 'MM YYYY', $post->ID ); ?></span>
+		<span class="metadata"><?php echo get_the_date( 'm Y', $post->ID ); ?></span>
 		<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if(function_exists('bcn_display'))
     {
