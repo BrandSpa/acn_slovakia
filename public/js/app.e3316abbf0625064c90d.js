@@ -10193,10 +10193,11 @@ function stickMenu(e) {
   var $parentSticky = $stickyMenu ? $stickyMenu.parent().offset().top : 0;
   var stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
   var navTop = $nav ? $nav.offset().top : 0;
-  var containerHeight = $('.sticky-menu__container').height();
+  var $container = $('.sticky-menu__container') ? $('.sticky-menu__container') : $('.grant-right');
+  var containerHeight = $container.height();
   var maxTop = containerHeight - $('.sticky-menu').innerHeight();
   var top = navTop;
-  var br = document.querySelector('.sticky-menu__container').getBoundingClientRect();
+  var br = document.querySelector('.sticky-menu__container') ? document.querySelector('.sticky-menu__container').getBoundingClientRect() : document.querySelector('.grant-right').getBoundingClientRect();
   var h = $('.sticky-menu').innerHeight() + 40;
 
   if (br.top - 110 < 0 && br.bottom - h > 0) {
@@ -10212,4 +10213,4 @@ function stickyMenu() {
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.06effb1b6da0f01c9e75.js.map
+//# sourceMappingURL=app.e3316abbf0625064c90d.js.map
