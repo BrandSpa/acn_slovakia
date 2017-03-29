@@ -33,8 +33,11 @@ onLoad(function() {
 	function changeColor() {
 		$('.nav img').css({filter: 'grayscale() invert()'});
 		$('.nav li > a').css('color', ' #fff');
+		$('.nav').css({background: 'rgb(34, 34, 34)'});
 	}
+	
 	changeColor();
+
 	function changeColorNormal() {
 		$('.nav').css('background-color', '#fff');
 		$('.nav img').css('filter', 'none');
@@ -45,7 +48,7 @@ onLoad(function() {
     if(document.querySelector('.bs-gallery-header').getBoundingClientRect().bottom < 0 ) {
 			changeColorNormal();
     }
-		
+
     if(document.querySelector('.bs-gallery-header').getBoundingClientRect().bottom > 0) {
       changeColor();
     }
