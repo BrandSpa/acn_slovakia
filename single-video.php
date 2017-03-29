@@ -19,10 +19,7 @@
 		/ <?php echo get_the_date( 'm Y', $post->ID ); ?>
 		</span>
 		<div class="breadcrumbs" style="margin-top: 20px;  color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
-    <?php if(function_exists('bcn_display'))
-    {
-        bcn_display();
-    }?>
+    <?php if(function_exists('bcn_display')) { bcn_display(); }?>
 </div>
 		<h3 style="padding-bottom: 20px;"><?php the_title() ?></h3>
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
