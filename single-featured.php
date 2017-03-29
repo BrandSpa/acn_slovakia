@@ -40,7 +40,7 @@
     console.log(jQuery, $);
     jQuery(document).ready(function() {
         console.log('ready', jQuery, $);
-        jQuery('body').css('padding', '0');​
+        jQuery('body').css('padding', 0);​
         jQuery('.nav').css('background-color', 'rgba(60,81,95,.7)');​
         jQuery('.nav a').css('color', '#FFF');​
         jQuery('.nav img').css('filter', 'grayscale() invert()');​
