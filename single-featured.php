@@ -39,7 +39,7 @@
 <script>
     onLoad(function() {
         function changeColor() {
-            $('body').css('padding', 0);
+            $('body').css('padding', 0).css('height', '100vh');
             $('.nav').css('transition', 'all 300ms');
             $('.nav').css('background-color', 'transparent');
             $('.nav li > a').css('color', '#FFF');
