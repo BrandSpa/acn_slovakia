@@ -42,11 +42,11 @@ onLoad(function() {
 	}
 	
 	  window.addEventListener('scroll', function() {
-    if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom < 0 ) {
+    if(document.querySelector('.bs-gallery-header').getBoundingClientRect().bottom < 0 ) {
 			changeColorNormal();
     }
-
-    if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom > 0) {
+		
+    if(document.querySelector('.bs-gallery-header').getBoundingClientRect().bottom > 0) {
       changeColor();
     }
 		});
