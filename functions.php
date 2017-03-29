@@ -4,8 +4,6 @@
  * Alejandro Sanabria <alejandro@brandspa.com>
  * Copyright 2017 BrandSpa
  */
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 99);
 
 register_nav_menus(
   array(
