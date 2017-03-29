@@ -38,8 +38,9 @@
 
 <script>
     onLoad(function() {
+        $('.bs-post__header--image').css('height', '100vh');
         function changeColor() {
-            $('body').css('padding', 0).css('height', '100vh');
+            $('body').css('padding', 0);
             $('.nav').css('transition', 'all 300ms');
             $('.nav').css('background-color', 'transparent');
             $('.nav li > a').css('color', '#FFF');
