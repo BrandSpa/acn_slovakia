@@ -40,7 +40,8 @@
     onLoad(function() {
         function changeColor() {
              $('body').css('padding', 0);
-            $('.nav').css('background-color', 'rgba(60,81,95,.7)');
+            $('.nav').css('transition', 'all 300ms');
+            $('.nav').css('background-color', 'transparent');
             $('.nav a').css('color', '#FFF');
             $('.nav img').css('filter', 'grayscale() invert()');
         }
