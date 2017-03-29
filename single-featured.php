@@ -42,7 +42,7 @@
              $('body').css('padding', 0);
             $('.nav').css('transition', 'all 300ms');
             $('.nav').css('background-color', 'transparent');
-            $('.nav a').css('color', '#FFF');
+            $('.nav li > a').css('color', '#FFF');
             $('.nav img').css('filter', 'grayscale() invert()');
         }
        changeColor();
