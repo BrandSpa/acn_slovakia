@@ -39,7 +39,7 @@
 <script>
     onLoad(function() {
         function changeColor() {
-             $('body').css('padding', 0);
+            $('body').css('padding', 0);
             $('.nav').css('transition', 'all 300ms');
             $('.nav').css('background-color', 'transparent');
             $('.nav li > a').css('color', '#FFF');
@@ -52,6 +52,7 @@
             if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom < 0 ) {
                 $('.nav').css('background-color', '#fff');
                 $('.nav img').css('filter', 'none');
+                $('.nav li > a').css('color', ' #3C515F');
             }
 
              if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom > 0) {
