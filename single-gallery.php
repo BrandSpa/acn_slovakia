@@ -28,7 +28,9 @@ $props = [
 
 <div class="bs-gallery-header" data-props='<?php echo cleanQuote(json_encode($props)) ?>'></div>
 <script type="text/javascript">
+onLoad(function() {
 	$('.nav').css({filter: 'grayscale() invert()'});
+})
 </script>
 <div class="l-wrap">
 
