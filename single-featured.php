@@ -44,7 +44,7 @@
             $('.nav a').css('color', '#FFF');
             $('.nav img').css('filter', 'grayscale() invert()');
         }
-       
+       changeColor();
 
         window.addEventListener('scroll', function() {
             
