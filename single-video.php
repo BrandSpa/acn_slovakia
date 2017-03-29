@@ -17,10 +17,10 @@
 		<?php endforeach; ?>
 		/ <?php echo get_the_date( 'm - Y', $post->ID ); ?>
 		</span>
-		<div class="breadcrumbs" style="margin-top: 10px;  color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
+		<div class="breadcrumbs" style="margin: 10px 0 20px 0;  color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if(function_exists('bcn_display')) { bcn_display(); }?>
 </div>
-		<h3 style="padding-bottom: 20px;"><?php the_title() ?></h3>
+		<h3 style="padding-bottom: 10px;"><?php the_title() ?></h3>
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
 			<?php require(__DIR__. '/templates/down_arrow.php')?>
 		</a>
