@@ -37,7 +37,7 @@
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).load(function() {
         $('body').css('padding', 0);
         $('.nav').css('background-color', 'rgba(60,81,95,.7)');
         $('.nav a').css('color', '#FFF');
