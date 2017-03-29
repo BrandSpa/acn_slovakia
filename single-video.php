@@ -12,7 +12,7 @@
 	<div class="l-wrap" style="height: 0">
 
 	<div class="video__header-title" style="background: #fff; min-height: 100px; float: left; width: 100%">
-		<span class="video__header__metadata">
+		<span class="video__header__metadata" style="font-size: 18px; color: #4A4A4A">
 		<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
 			<?php echo $category->name ?> <?php echo $ind >= 0 && $ind + 1 != count(get_the_category($post->ID)) ?  ',' : '' ?>
 		<?php endforeach; ?>
