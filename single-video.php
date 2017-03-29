@@ -16,7 +16,7 @@
 		<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
 			<?php echo $category->name ?> <?php echo $ind >= 0 && $ind + 1 != count(get_the_category($post->ID)) ?  '|' : '' ?>
 		<?php endforeach; ?>
-		/ <?php echo get_the_date( 'm Y', $post->ID ); ?>
+		/ <?php echo get_the_date( 'm - Y', $post->ID ); ?>
 		</span>
 		<div class="breadcrumbs" style="margin-top: 20px;  color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if(function_exists('bcn_display')) { bcn_display(); }?>
