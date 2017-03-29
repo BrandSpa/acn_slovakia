@@ -31,7 +31,7 @@ $props = [
 <script type="text/javascript">
 onLoad(function() {
 	function changeColor() {
-		$('.nav img').css({filter: 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale") invert()'});
+		$('.nav img').css({filter: 'grayscale() invert()'});
 		$('.nav li > a').css('color', ' #fff');
 		$('.nav').css({background: 'rgb(34, 34, 34)'});
 	}
