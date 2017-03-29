@@ -12,7 +12,12 @@
 	<div class="l-wrap" style="height: 0">
 
 	<div class="video__header-title" style="background: #fff; text-align: center; min-height: 100px">
-		asdasdas
+		<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <?php if(function_exists('bcn_display'))
+    {
+        bcn_display();
+    }?>
+</div>
 		<h3 style="padding-bottom: 20px;"><?php the_title() ?></h3>
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
 			<?php require(__DIR__. '/templates/down_arrow.php')?>
@@ -33,13 +38,6 @@
 <?php endif; ?>
 
 <div class="l-wrap">
-	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
-    <?php if(function_exists('bcn_display'))
-    {
-        bcn_display();
-    }?>
-</div>
-
 		<div class="bs-post__content col-8-l col-12-s" id="post-content">
 			<?php the_content() ?>
 		</div>
