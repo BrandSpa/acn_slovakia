@@ -37,11 +37,11 @@
 </div>
 
 <script>
-    $(document).load(function() {
-        $('body').css('padding', 0);
-        $('.nav').css('background-color', 'rgba(60,81,95,.7)');
-        $('.nav a').css('color', '#FFF');
-        $('.nav img').css('filter', 'grayscale() invert()');
+    jQuery.load(function() {
+        jQuery.('body').css('padding', 0);
+        jQuery.('.nav').css('background-color', 'rgba(60,81,95,.7)');
+        jQuery.('.nav a').css('color', '#FFF');
+        jQuery.('.nav img').css('filter', 'grayscale() invert()');
     });
 
 </script>
