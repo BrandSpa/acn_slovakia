@@ -60,7 +60,7 @@
   ga('send', 'pageview');
   ga('require', 'ecommerce');  
   
-  <?php if($_GET['customer_id'] && $_GET['order_revenue']): ?>
+  <?php if(isset($_GET['customer_id']) && isset($_GET['order_revenue'])): ?>
     ga('ecommerce:addTransaction', {
       id: "<?php echo $_GET['customer_id'] ?>",
       revenue: "<?php echo $_GET['order_revenue'] ?>",
