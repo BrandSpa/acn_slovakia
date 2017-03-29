@@ -72,18 +72,6 @@ function logos_settings_page() {
 							/>
 						</p>
 
-						<h4>White logo url</h4>
-						<p>
-							<input
-								style="background: rgba(255,255,255,.4); width: 60%; height: 35px"
-								type="text"
-								class="uploader"
-								placeholder="logo white url"
-								name="logo_<?php echo $value ?>"
-								value="<?php echo esc_attr( get_option('logo_white_' . $value ) ); ?>"
-							/>
-						</p>
-
 						<h4>Donate url</h4>
 
 						<input
