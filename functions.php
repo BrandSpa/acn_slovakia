@@ -41,6 +41,19 @@ function create_post_type() {
       'has_archive' => true,
 		]
   );
+
+  register_post_type( 'featured',
+    [
+      'labels' => [
+        'name' => __( 'Posts featured' ),
+        'singular_name' => __( 'Post featured' )
+			],
+			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+			'taxonomies' => [ 'category'],
+      'public' => true,
+      'has_archive' => true,
+		]
+  );
 }
 
 function modify_jquery() {
