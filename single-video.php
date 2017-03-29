@@ -11,7 +11,7 @@
 	<!--<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>?modestbranding=1&autohide=1&showinfo=0&controls=0" width="100%" frameborder="0"></iframe>-->
 	<div class="l-wrap" style="height: 0">
 
-	<div class="video__header-title" style="background: #fff; min-height: 100px; float: left; width: 100%;padding: 40px 80px">
+	<div class="video__header-title" style="background: #fff; min-height: 100px; float: left; width: 100%;padding: 40px 80px 0 80px">
 		<span class="video__header__metadata" style="font-size: 18px; color: #4A4A4A">
 		<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
 			<?php echo $category->name ?> <?php echo $ind >= 0 && $ind + 1 != count(get_the_category($post->ID)) ?  ',' : '' ?>
