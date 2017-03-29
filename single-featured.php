@@ -42,10 +42,12 @@
         $('.nav').css('background-color', 'rgba(60,81,95,.7)');
         $('.nav a').css('color', '#FFF');
         $('.nav img').css('filter', 'grayscale() invert()');
+
         window.addEventListener('scroll', function() {
             
             if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom < 0 ) {
                 $('.nav').css('background-color', '#fff');
+                $('.nav img').css('filter', 'none');
             }
 
              if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom > 0) {
