@@ -11,7 +11,7 @@
 	<!--<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>?modestbranding=1&autohide=1&showinfo=0&controls=0" width="100%" frameborder="0"></iframe>-->
 	<div class="l-wrap" style="height: 0">
 
-	<div class="video__header-title" style="background: #fff; text-align: center; min-height: 100px">
+	<div class="video__header-title" style="background: #fff; text-align: center; min-height: 100px; float: left: width: 100%">
 		<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if(function_exists('bcn_display'))
     {
