@@ -46,6 +46,7 @@ function bs_donate_react_sc($atts, $content = null) {
 <?php else: ?>
 <script>
   onLoad(function() {
+    console.log(jQuery('.donate-react__container'));
     if(typeof jQuery !== 'undefined') {
       if(jQuery('.donate-react__container')) {
         jQuery('.donate-react__container').remove();
