@@ -15,7 +15,7 @@
 		<span class="video__header__metadata">
 		<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
 			<?php echo $category->name ?>
-			 <?php echo $ind > 0 ?  ',' : '' ?>
+			 <?php echo $ind >= 0 && $ind != count(get_the_category($post->ID)) ?  ',' : '' ?>
 		<?php endforeach; ?>
 		<?php echo get_the_date( 'm Y', $post->ID ); ?>
 		</span>
