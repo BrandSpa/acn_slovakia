@@ -37,13 +37,13 @@
 </div>
 
 <script>
-    console.log(jQuery, $);
-    jQuery(document).ready(function() {
+    console.log($);
+    $(document).ready(function() {
         console.log('ready', jQuery, $);
-        jQuery('body').css('padding', 0);
-        jQuery('.nav').css('background-color', 'rgba(60,81,95,.7)');
-        jQuery('.nav a').css('color', '#FFF');
-        jQuery('.nav img').css('filter', 'grayscale() invert()');
+        $('body').css('padding', 0);
+        $('.nav').css('background-color', 'rgba(60,81,95,.7)');
+        $('.nav a').css('color', '#FFF');
+        $('.nav img').css('filter', 'grayscale() invert()');
     });
     
 
