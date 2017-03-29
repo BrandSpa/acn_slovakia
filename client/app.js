@@ -23,6 +23,8 @@ import donateRedirect from './lib/donate_redirect';
 import smoothScroll from './lib/smoothScroll';
 import scrollViaCrucisNav from './lib/scrollViaCrucisNav';
 import toggleViaCrucisNav from './lib/toggleViaCrucisNav';
+import toggleMenu from './lib/toggleMenu';
+import stickyMenu from './lib/stickMenu';
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
@@ -52,57 +54,5 @@ donateRedirect();
 smoothScroll();
 toggleViaCrucisNav();
 scrollViaCrucisNav();
-
-
-function stickMenu(e) {
-  const $nav = $('.nav');
-  const $stickyMenu = $('.sticky-menu');
-  const $parentSticky = $stickyMenu ? $stickyMenu.parent().offset().top : 0;
-  let stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top  : 0;
-  let navTop = $nav ? $nav.offset().top : 0;
-  let containerHeight = $('.sticky-menu__container').height();
-  let maxTop = containerHeight - $('.sticky-menu').innerHeight();
-  let top = navTop;
-  let br = document.querySelector('.sticky-menu__container').getBoundingClientRect()
-  let h = $('.sticky-menu').innerHeight() + 40;
-
-  if(br.top - 110 < 0 && br.bottom - h > 0) {
-    $stickyMenu.css({position: 'relative', top: top});
-  }
-
-}
-
-
-if($('.sticky-menu').length > 0) {
- window.addEventListener('scroll', stickMenu);
-}
- 
-function toggleMenu() {
-  if(window.innerWidth < 701) {
-     $('.grant-menu__list') ?  $('.grant-menu__list').removeClass('dropdown-list--show'): '';
-  }
-  
-  $('.grant-menu__open').on('click', function(e) {
-    e.preventDefault();
-    const $list = $('.grant-menu__list');
-  
-    if($list.hasClass('dropdown-list--show')) {
-      $list.removeClass('dropdown-list--show');
-    } else {
-       $list.addClass('dropdown-list--show');
-    }
-  });
-
-  $('.dropdown-trigger').on('click', function(e) {
-    e.preventDefault();
-    const $list = $(this).parent().find('.dropdown-list');
-    if($list.hasClass('dropdown-list--show')) {
-      $list.removeClass('dropdown-list--show');
-    } else {
-       $list.addClass('dropdown-list--show');
-    }
-   
-  })
-}
-
+stickyMenu();
 toggleMenu();

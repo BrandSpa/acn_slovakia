@@ -10085,6 +10085,14 @@ var _toggleViaCrucisNav = __webpack_require__(254);
 
 var _toggleViaCrucisNav2 = _interopRequireDefault(_toggleViaCrucisNav);
 
+var _toggleMenu = __webpack_require__(640);
+
+var _toggleMenu2 = _interopRequireDefault(_toggleMenu);
+
+var _stickMenu = __webpack_require__(641);
+
+var _stickMenu2 = _interopRequireDefault(_stickMenu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //jquery stuff :(
@@ -10118,28 +10126,29 @@ _webfontloader2.default.load({
 (0, _smoothScroll2.default)();
 (0, _toggleViaCrucisNav2.default)();
 (0, _scrollViaCrucisNav2.default)();
+(0, _stickMenu2.default)();
+(0, _toggleMenu2.default)();
 
-function stickMenu(e) {
-  var $nav = $('.nav');
-  var $stickyMenu = $('.sticky-menu');
-  var $parentSticky = $stickyMenu ? $stickyMenu.parent().offset().top : 0;
-  var stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
-  var navTop = $nav ? $nav.offset().top : 0;
-  var containerHeight = $('.sticky-menu__container').height();
-  var maxTop = containerHeight - $('.sticky-menu').innerHeight();
-  var top = navTop;
-  var br = document.querySelector('.sticky-menu__container').getBoundingClientRect();
-  var h = $('.sticky-menu').innerHeight() + 40;
+/***/ }),
+/* 631 */,
+/* 632 */,
+/* 633 */,
+/* 634 */,
+/* 635 */,
+/* 636 */,
+/* 637 */,
+/* 638 */,
+/* 639 */,
+/* 640 */
+/***/ (function(module, exports, __webpack_require__) {
 
-  if (br.top - 110 < 0 && br.bottom - h > 0) {
-    $stickyMenu.css({ position: 'relative', top: top });
-  }
-}
+"use strict";
 
-if ($('.sticky-menu').length > 0) {
-  window.addEventListener('scroll', stickMenu);
-}
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = toggleMenu;
 function toggleMenu() {
   if (window.innerWidth < 701) {
     $('.grant-menu__list') ? $('.grant-menu__list').removeClass('dropdown-list--show') : '';
@@ -10167,8 +10176,40 @@ function toggleMenu() {
   });
 }
 
-toggleMenu();
+/***/ }),
+/* 641 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = stickyMenu;
+function stickMenu(e) {
+  var $nav = $('.nav');
+  var $stickyMenu = $('.sticky-menu');
+  var $parentSticky = $stickyMenu ? $stickyMenu.parent().offset().top : 0;
+  var stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top : 0;
+  var navTop = $nav ? $nav.offset().top : 0;
+  var containerHeight = $('.sticky-menu__container').height();
+  var maxTop = containerHeight - $('.sticky-menu').innerHeight();
+  var top = navTop;
+  var br = document.querySelector('.sticky-menu__container').getBoundingClientRect();
+  var h = $('.sticky-menu').innerHeight() + 40;
+
+  if (br.top - 110 < 0 && br.bottom - h > 0) {
+    $stickyMenu.css({ position: 'relative', top: top });
+  }
+}
+
+function stickyMenu() {
+  if ($('.sticky-menu').length > 0) {
+    window.addEventListener('scroll', stickMenu);
+  }
+}
 
 /***/ })
 ]),[630]);
-//# sourceMappingURL=app.968f3a8514b7126860ed.js.map
+//# sourceMappingURL=app.06effb1b6da0f01c9e75.js.map
