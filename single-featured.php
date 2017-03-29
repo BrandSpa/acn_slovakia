@@ -44,11 +44,11 @@
         $('.nav img').css('filter', 'grayscale() invert()');
         window.addEventListener('scroll', function() {
             
-            if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom < 0) {
+            if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom < 0 ) {
                 $('.nav').css('background-color', '#fff');
             }
 
-             if(document.querySelector('.bs-post__header--image').getBoundingClientRect().top > 0) {
+             if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom > 0) {
                 $('.nav').css('background-color', 'rgba(60,81,95,.7)');
             }
 		});
