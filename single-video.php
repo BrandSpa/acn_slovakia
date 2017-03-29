@@ -39,6 +39,7 @@
 		var titleH = $('.video__header-title').height();
 		$('.video__header').height((h - navH));
 		$('.video__header-title').css({position: 'relative', top: '-' + titleH + 'px'});
+		console.log(document.querySelector('.bs-post__header--image').getBoundingClientRect());
 	})
 	</script>
 <?php endif; ?>
