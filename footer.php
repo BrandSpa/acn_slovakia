@@ -42,8 +42,8 @@
   bs.donate = '<?php echo gett('Donate') ?>'
 </script>
 
-<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.30e397d97998a81ed907.js'></script>
-<script src='<?php echo get_template_directory_uri() ?>/public/js/app.e3316abbf0625064c90d.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.388716ba0b497d7d3090.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/app.ee58d8f19309fc3c09d4.js'></script>
 <script>
 
   
@@ -59,6 +59,14 @@
   ga('create', '<?php echo get_option('analytics_id') ?>', 'auto');
   ga('send', 'pageview');
   ga('require', 'ecommerce');  
+  
+  <?php if($_GET['customer_id'] && $_GET['order_revenue']): ?>
+    ga('ecommerce:addTransaction', {
+      id: "<?php echo $_GET['customer_id'] ?>",
+      revenue: "<?php echo $_GET['order_revenue'] ?>",
+			currency: 'USD',
+    });
+  <?php endif; ?>
 </script>
 <!-- End Google Analytics -->
 

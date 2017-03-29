@@ -4,7 +4,6 @@ import request from 'axios';
 import Amount from './amount';
 import CreditCard from './creditCard';
 import Contact from './contact';
-import sendTransaction from '../../lib/sendTransaction';
 const endpoint = '/wp-admin/admin-ajax.php';
 
 const Donate = React.createClass({
@@ -107,11 +106,8 @@ const Donate = React.createClass({
     const base = this.props.redirect[donation_type];
     const {customer, id} = stripeResponse;
     const order = {id: `${this.contact.email}-${id}`, amount};
-    sendTransaction(order)
-      .then(() => {
-        let url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
-        window.location = url;
-      })   
+    const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
+    window.location = url;  
   },
 
   creditCardIsValid() {
