@@ -30,7 +30,26 @@ $props = [
 
 <script type="text/javascript">
 onLoad(function() {
-	$('.nav img').css({filter: 'grayscale() invert()'});
+	function changeColor() {
+		$('.nav img').css({filter: 'grayscale() invert()'});
+		$('.nav li > a').css('color', ' #fff');
+	}
+	changeColor();
+	function changeColorNormal() {
+		$('.nav').css('background-color', '#fff');
+		$('.nav img').css('filter', 'none');
+		$('.nav li > a').css('color', ' #3C515F');
+	}
+	
+	  window.addEventListener('scroll', function() {
+    if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom < 0 ) {
+			changeColorNormal();
+    }
+
+    if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom > 0) {
+      changeColor();
+    }
+		});
 })
 </script>
 
