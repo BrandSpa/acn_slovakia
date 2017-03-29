@@ -32,6 +32,7 @@ $props = [
 onLoad(function() {
 	function changeColor() {
 		$('.nav img').css({filter: 'grayscale() invert()'});
+		$('.nav img').css({'-ms-filter': 'grayscale() invert()'});
 		$('.nav li > a').css('color', ' #fff');
 		$('.nav').css({background: 'rgb(34, 34, 34)'});
 	}
