@@ -115,6 +115,7 @@ require('shortcodes/flexslider.php');
 require('shortcodes/skrollr.php');
 
 
+
 //metaboxes
 require('metaboxes/image_square.php');
 require('metaboxes/geolify.php');

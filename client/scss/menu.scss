@@ -1,7 +1,7 @@
 .nav {
-	height: 120px;
+	height: 100px;
 	width: 100%;
-	padding: 15px 60px 0  60px;
+	padding: 7px 60px 0  60px;
 	background: #fff;
 	z-index: 9999;
 	position: fixed;
@@ -10,7 +10,6 @@
 	@media #{$s} {
 		padding: 0;
 		text-align: center;
-		height: 100px;
 	}
 
 	&__donate {

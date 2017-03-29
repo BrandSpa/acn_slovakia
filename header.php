@@ -14,14 +14,13 @@
   <link rel="icon" href="//acninternational.org/wp-content/uploads/2017/03/fav2x.png" sizes="32x32" />
   <link rel="icon" href="//acninternational.org/wp-content/uploads/2017/03/fav2x.png" sizes="192x192" />
   <link rel="apple-touch-icon-precomposed" href="//acninternational.org/wp-content/uploads/2017/03/fav2x.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.css">
 	<title>ACN - Aid to the Church in Need <?php echo wp_title(); ?></title>
 
   	<!--wordpress files-->
 	  <?php wp_head(); ?>
 		<!-- /wordpress files-->
     
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.c4b275c0b12d15d56ffb46abd1d82979.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.26909e78035c127bb6ebc36b5a3c4a79.css">
 	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<script>
       function onLoad(cb) {

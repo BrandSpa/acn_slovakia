@@ -16,7 +16,6 @@ import CampaignsSlider from './components/campaignsSlider';
 import DownloadPdf from './components/downloadPdf';
 import GalleryHeader from './components/galleryHeader';
 import ProjectsAbout from './components/projectsAbout';
-
 //jquery stuff :(
 import setMenu from './lib/set_menu';
 import setMenuMobile from './lib/set_menu_mobile';
@@ -24,6 +23,8 @@ import donateRedirect from './lib/donate_redirect';
 import smoothScroll from './lib/smoothScroll';
 import scrollViaCrucisNav from './lib/scrollViaCrucisNav';
 import toggleViaCrucisNav from './lib/toggleViaCrucisNav';
+import toggleMenu from './lib/toggleMenu';
+import stickyMenu from './lib/stickMenu';
 
 WebFont.load({
   google: {families: ['Source Sans Pro:400,600,700']},
@@ -53,46 +54,5 @@ donateRedirect();
 smoothScroll();
 toggleViaCrucisNav();
 scrollViaCrucisNav();
-
-
-function stickMenu(e) {
-  const $nav = $('.nav');
-  const $stickyMenu = $('.sticky-menu');
-  const $parentSticky = $stickyMenu ? $('.sticky-menu').parent().offset().top : 0;
-  let stickyMenuTop = $stickyMenu ? $stickyMenu.offset().top  : 0;
-  let navTop = $nav ? $nav.offset().top : 0;
-  let containerHeight = $('.sticky-menu__container').height();
-  let maxTop = containerHeight - $('.sticky-menu').innerHeight();
-  let top = navTop;
-
-  if(navTop > stickyMenuTop && stickyMenuTop <= maxTop) {
-    console.log('higher');
-    $stickyMenu.css({position: 'relative', top });
-  }
-
-  if(navTop < stickyMenuTop && stickyMenuTop > maxTop) {
-    console.log('minor');
-    $stickyMenu.css({position: 'relative', top });
-  }
-
-  // console.log('navtop is minor', navTop < stickyMenuTop, 'navtop is higher', navTop > stickyMenuTop);
-}
-
-if($('.sticky-menu').length > 0) {
- window.addEventListener('scroll', stickMenu);
-}
- 
-function toggleMenu() {
-  $('.dropdown-trigger').on('click', function(e) {
-    e.preventDefault();
-    const $list = $(this).parent().find('.dropdown-list');
-    if($list.hasClass('dropdown-list--show')) {
-      $list.removeClass('dropdown-list--show');
-    } else {
-       $list.addClass('dropdown-list--show');
-    }
-   
-  })
-}
-
+stickyMenu();
 toggleMenu();

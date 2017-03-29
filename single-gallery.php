@@ -16,7 +16,14 @@
 <?php
 $images = get_post_meta($post->ID, 'type_gallery_images_key', true);
 $excerpts = get_post_meta($post->ID, 'type_gallery_excerpts_key', true);
-$props = ["images" => $images, "excerpts" => $excerpts];
+$props = [
+	"images" => $images, 
+	"excerpts" => $excerpts, 
+	"texts" => [
+		"gallery" => gett('Gallery'),
+		"of" => gett('of')
+	]
+];
 ?>
 
 <div class="bs-gallery-header" data-props='<?php echo cleanQuote(json_encode($props)) ?>'></div>

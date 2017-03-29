@@ -18,7 +18,7 @@ export default function sendTransaction(order) {
       }
     };
 
-    ga('require', 'ecommerce');
+    
     ga('ecommerce:addTransaction', {
       id: order.id,
       revenue: order.amount,
