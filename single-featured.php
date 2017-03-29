@@ -38,10 +38,13 @@
 
 <script>
     onLoad(function() {
-        $('body').css('padding', 0);
-        $('.nav').css('background-color', 'rgba(60,81,95,.7)');
-        $('.nav a').css('color', '#FFF');
-        $('.nav img').css('filter', 'grayscale() invert()');
+        function changeColor() {
+             $('body').css('padding', 0);
+            $('.nav').css('background-color', 'rgba(60,81,95,.7)');
+            $('.nav a').css('color', '#FFF');
+            $('.nav img').css('filter', 'grayscale() invert()');
+        }
+       
 
         window.addEventListener('scroll', function() {
             
@@ -51,7 +54,7 @@
             }
 
              if(document.querySelector('.bs-post__header--image').getBoundingClientRect().bottom > 0) {
-                $('.nav').css('background-color', 'rgba(60,81,95,.7)');
+                changeColor();
             }
 		});
     });
