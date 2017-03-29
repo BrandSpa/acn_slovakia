@@ -42,6 +42,9 @@
         $('.nav').css('background-color', 'rgba(60,81,95,.7)');
         $('.nav a').css('color', '#FFF');
         $('.nav img').css('filter', 'grayscale() invert()');
+        window.addEventListener('scroll', function() {
+				console.log(document.querySelector('.bs-post__header--image').getBoundingClientRect());
+		});
     });
 
 </script>
