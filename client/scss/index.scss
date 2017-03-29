@@ -39,7 +39,11 @@ body {
 
 a {
 	text-decoration: none;
-	outline: none;
+	outline: none !important;
+}
+
+img {
+	border: 0;
 }
 
 .menu-open {
