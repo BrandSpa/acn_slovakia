@@ -8,7 +8,6 @@
 
 <?php echo do_shortcode('[bs_section_video image="'. get_post_thumbnail_id($post->ID, 'full')  .'" video_url="'.get_post_meta($post->ID, 'video_url_key', true).'"]') ?>
 
-	<!--<iframe class="video__header" src="<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>?modestbranding=1&autohide=1&showinfo=0&controls=0" width="100%" frameborder="0"></iframe>-->
 	<div class="l-wrap" style="height: 0">
 
 	<div class="video__header-title" style="background: #fff; min-height: 100px; float: left; width: 100%;padding: 40px 80px 0 80px">

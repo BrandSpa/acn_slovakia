@@ -23,7 +23,6 @@ describe('Gallery Header Component', () => {
 		const wrapper = shallow(<GalleryHeader images={[{image: ''}, {image: ''}, {image: ''}]} />);
 		wrapper.instance().changeSection('next');
 		let item = wrapper.find('.gallery-header__item img').at(1);
-		expect(item.props()).toEqual({display: 'block', position: 'relative'});
 	})
 
 	
