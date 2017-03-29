@@ -14,7 +14,8 @@
 	<div class="video__header-title" style="background: #fff; min-height: 100px; float: left; width: 100%">
 		<span class="video__header__metadata">
 		<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
-			<?php echo $ind.'-'. $category->name ?>
+			<?php echo $category->name ?>
+			 <?php echo $ind > 0 ?  ',' : '' ?>
 		<?php endforeach; ?>
 		<?php echo get_the_date( 'm Y', $post->ID ); ?>
 		</span>
