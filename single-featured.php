@@ -16,7 +16,6 @@
     {
         bcn_display();
     }?>
-    !!!
 </div>
 
 		<div class="bs-post__content col-8-l col-12-s" id="post-content">
