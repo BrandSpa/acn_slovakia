@@ -694,6 +694,14 @@ button, .btn {
   transform-origin: center;
   text-align: center; }
 
+.bs-feat__img__textbox {
+  background: transparent;
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  max-width: 40%;
+  color: #FFF; }
+
 .nav {
   height: 100px;
   width: 100%;
@@ -1962,4 +1970,4 @@ a:hover {
     .video__header-title {
       padding: 20px; } }
 
-/*# sourceMappingURL=app.c904f4944bf29c9b9a57886c414fc428.css.map*/
+/*# sourceMappingURL=app.bca1f7d1de1b049abba9a4b0155e65e1.css.map*/
