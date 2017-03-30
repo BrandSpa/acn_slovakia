@@ -57,18 +57,34 @@ onLoad(function() {
 })
 </script>
 
+
 <div class="l-wrap">
+	<div class="col-8-l">
+	<span class="video__header__metadata" style="font-size: 1.1em; color: #4A4A4A; display: block; margin-top: 80px">
+		<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
+			<span style="font-weight: 600">
+				<?php echo $category->name ?> <?php echo $ind >= 0 && $ind + 1 != count(get_the_category($post->ID)) ?  '|' : '/' ?>
+			</span>
+		<?php endforeach; ?>
+		<?php echo  get_the_date( 'm - Y', $post->ID ); ?>
+	</span>
+	<div class="breadcrumbs" style="margin: 3px 0 10px 0;  color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
+		<?php if(function_exists('bcn_display')) { bcn_display(); }?>
+	</div>
 
-	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
-    <?php if(function_exists('bcn_display'))
-    {
-        bcn_display();
-    }?>
+	<h3 style="padding-bottom: 10px;color: #3C515F"><?php the_title() ?></h3>
+	</div>
 </div>
-
-		<div class="bs-post__content col-8-l col-12-s" id="post-content">
+	<div class="l-wrap">
+		<div class="col-1-l"></div>
+		<div class="col-5-l col-12-s">
 			<?php the_content() ?>
 		</div>
+		<div class="col-2-l"></div>
+		<div class="col-3-l">
+			<img src="http://placehold.it/300x600" height="600">
+		</div>
+
 	</div>
 
 	<?php require('templates/post_donate.php') ?>

@@ -40,7 +40,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 8.33333%; } }
+    width: 8.33333%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-2 {
@@ -64,7 +65,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 16.66667%; } }
+    width: 16.66667%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-3 {
@@ -88,7 +90,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 25%; } }
+    width: 25%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-4 {
@@ -112,7 +115,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 33.33333%; } }
+    width: 33.33333%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-5 {
@@ -136,7 +140,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 41.66667%; } }
+    width: 41.66667%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-6 {
@@ -160,7 +165,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 50%; } }
+    width: 50%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-7 {
@@ -184,7 +190,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 58.33333%; } }
+    width: 58.33333%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-8 {
@@ -208,7 +215,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 66.66667%; } }
+    width: 66.66667%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-9 {
@@ -232,7 +240,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 75%; } }
+    width: 75%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-10 {
@@ -256,7 +265,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 83.33333%; } }
+    width: 83.33333%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-11 {
@@ -280,7 +290,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 91.66667%; } }
+    width: 91.66667%;
+    min-height: 1px; } }
 
 @media (max-width: 767px), (max-width: 369px) {
   .col-12 {
@@ -304,7 +315,8 @@
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 100%; } }
+    width: 100%;
+    min-height: 1px; } }
 
 .col-1-2,
 .col-1-3,
@@ -699,7 +711,8 @@ button, .btn {
   position: absolute;
   left: 10%;
   bottom: 10%;
-  max-width: 40%;
+  max-width: 35%;
+  min-width: 400px;
   color: #FFF; }
 
 .nav {
@@ -1970,4 +1983,4 @@ a:hover {
     .video__header-title {
       padding: 20px; } }
 
-/*# sourceMappingURL=app.bca1f7d1de1b049abba9a4b0155e65e1.css.map*/
+/*# sourceMappingURL=app.02909b99f25fe45ef366b827cb3b1dd3.css.map*/

@@ -3357,6 +3357,7 @@ var GalleryHeader = _react2.default.createClass({
       display: 'block',
       border: '1px solid #fff',
       padding: '5px',
+      fontSize: '12px',
       ':hover': {
         background: 'rgba(255, 255, 255, .2)'
       }
@@ -10255,4 +10256,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.3e621b5149e8c9c3f1b7.js.map
+//# sourceMappingURL=app.c6e89f00ea9cccb5b98a.js.map
