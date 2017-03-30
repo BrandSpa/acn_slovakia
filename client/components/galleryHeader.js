@@ -131,19 +131,22 @@ const GalleryHeader = React.createClass({
                   src={images[this.state.section]}
                   style={this.state.imageStyle}
                 />
-                <span style={excerptStyle}>{excerpts[this.state.section]}</span>
-								<ul style={{listStyle: 'none', padding: '0'}}>
-									<li style={{display: 'inline-block', marginLeft: '5px'}}>
-                    <a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a>
-                  </li>
-									<li style={{display: 'inline-block', marginLeft: '5px'}}>
-                    <a key={2} style={shareBtn} href="#"><i className="ion-social-twitter"></i></a>
-                  </li>
-									<li style={{display: 'inline-block', marginLeft: '5px'}}>
-                    <a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin"></i></a>
-                  </li>
-								</ul>
-                <div style={btnsStyle}>
+                <div className="col-8-l">
+                  <span style={excerptStyle}>{excerpts[this.state.section]}</span>
+                  <ul style={{listStyle: 'none', padding: '0'}}>
+                    <li style={{display: 'inline-block', marginLeft: '5px'}}>
+                      <a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a>
+                    </li>
+                    <li style={{display: 'inline-block', marginLeft: '5px'}}>
+                      <a key={2} style={shareBtn} href="#"><i className="ion-social-twitter"></i></a>
+                    </li>
+                    <li style={{display: 'inline-block', marginLeft: '5px'}}>
+                      <a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div style={btnsStyle} className="col-4-l">
                   <span style={{ color: "#fff", paddingRight: "10px" }}>
                     {images.length} {this.props.texts.of} {this.state.section + 1}
                   </span>

@@ -3395,44 +3395,48 @@ var GalleryHeader = _react2.default.createClass({
                 style: this.state.imageStyle
               }),
               _react2.default.createElement(
-                "span",
-                { style: excerptStyle },
-                excerpts[this.state.section]
-              ),
-              _react2.default.createElement(
-                "ul",
-                { style: { listStyle: 'none', padding: '0' } },
+                "div",
+                { className: "col-8-l" },
                 _react2.default.createElement(
-                  "li",
-                  { style: { display: 'inline-block', marginLeft: '5px' } },
-                  _react2.default.createElement(
-                    "a",
-                    { key: 1, style: shareBtn, href: "#" },
-                    _react2.default.createElement("i", { className: "ion-social-facebook" })
-                  )
+                  "span",
+                  { style: excerptStyle },
+                  excerpts[this.state.section]
                 ),
                 _react2.default.createElement(
-                  "li",
-                  { style: { display: 'inline-block', marginLeft: '5px' } },
+                  "ul",
+                  { style: { listStyle: 'none', padding: '0' } },
                   _react2.default.createElement(
-                    "a",
-                    { key: 2, style: shareBtn, href: "#" },
-                    _react2.default.createElement("i", { className: "ion-social-twitter" })
-                  )
-                ),
-                _react2.default.createElement(
-                  "li",
-                  { style: { display: 'inline-block', marginLeft: '5px' } },
+                    "li",
+                    { style: { display: 'inline-block', marginLeft: '5px' } },
+                    _react2.default.createElement(
+                      "a",
+                      { key: 1, style: shareBtn, href: "#" },
+                      _react2.default.createElement("i", { className: "ion-social-facebook" })
+                    )
+                  ),
                   _react2.default.createElement(
-                    "a",
-                    { key: 3, style: shareBtn, href: "#" },
-                    _react2.default.createElement("i", { className: "ion-social-linkedin" })
+                    "li",
+                    { style: { display: 'inline-block', marginLeft: '5px' } },
+                    _react2.default.createElement(
+                      "a",
+                      { key: 2, style: shareBtn, href: "#" },
+                      _react2.default.createElement("i", { className: "ion-social-twitter" })
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "li",
+                    { style: { display: 'inline-block', marginLeft: '5px' } },
+                    _react2.default.createElement(
+                      "a",
+                      { key: 3, style: shareBtn, href: "#" },
+                      _react2.default.createElement("i", { className: "ion-social-linkedin" })
+                    )
                   )
                 )
               ),
               _react2.default.createElement(
                 "div",
-                { style: btnsStyle },
+                { style: btnsStyle, className: "col-4-l" },
                 _react2.default.createElement(
                   "span",
                   { style: { color: "#fff", paddingRight: "10px" } },
@@ -10238,4 +10242,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.a4d2591b6e3c209e1f8d.js.map
+//# sourceMappingURL=app.9688c36607d7c3c702ae.js.map
