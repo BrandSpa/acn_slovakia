@@ -7,7 +7,7 @@
 <div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
     <div class="bs-feat__img__textbox" style="background:black;">
         <div class="news_date">News / May 2017</div>
-        <div class="breadcrumbs" style=" color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
+        <div class="breadcrumbs" style=" color: #b9b9b9; text-align:left; " typeof="BreadcrumbList" vocab="https://schema.org/">
         <h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title(); ?></h3>
     </div> 
 </div>
