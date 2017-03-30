@@ -13,7 +13,7 @@
 						<?php echo $category->name ?> <?php echo $ind >= 0 && $ind + 1 != count(get_the_category($post->ID)) ?  '|' : '' ?>
 					</span>
 				<?php endforeach; ?>
-				<?php echo '/ ' . get_the_date( 'M - Y', $post->ID ); ?>
+				<?php echo '/ ' . get_the_date( 'M Y', $post->ID ); ?>
 			</span>
         </div>
         <div class="breadcrumbs" style=" color: #b9b9b9; text-align:left; " typeof="BreadcrumbList" vocab="https://schema.org/">
