@@ -8,6 +8,11 @@
     <div class="bs-feat__img__textbox" style="background:black;">
         <div class="news_date">News / May 2017</div>
         <div class="breadcrumbs" style=" color: #b9b9b9; text-align:left; " typeof="BreadcrumbList" vocab="https://schema.org/">
+        <?php if(function_exists('bcn_display'))
+        {
+         bcn_display();
+        }?>
+        </div>
         <h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title(); ?></h3>
     </div> 
 </div>
@@ -20,8 +25,8 @@
 	</div>-->
 
 
-<!--<div class="l-wrap">
-	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
+<div class="l-wrap">
+	<!--<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if(function_exists('bcn_display'))
     {
         bcn_display();
