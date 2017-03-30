@@ -70,8 +70,11 @@ onLoad(function() {
 			<div class="breadcrumbs" style="margin: 3px 0 10px 0;  color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
 			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
 		</div>
-
-		<h3 style="padding-bottom: 10px;color: #3C515F"><?php the_title() ?></h3>
+		
+		<div class="col-8-l">
+			<h3 style="padding-bottom: 10px;color: #3C515F"><?php the_title() ?></h3>
+		</div>
+	
 		<div class="col-1-l"></div>
 		<div class="col-5-l col-12-s">
 			<?php the_content() ?>
