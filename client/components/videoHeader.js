@@ -29,7 +29,12 @@ const VideoHeader = React.createClass({
 			<div>
 				<VideoModal ref={modal => this.modal = modal} url={videoUrl} />
 				<div style={style} onClick={this.openModal}>
-					Video <i className="ion-ios-videocam"></i> 
+			
+				<div style={{background: 'rgba(0,0,0, .5)', width: '100%'}}>
+					<div class="l-wrap">
+						Video <i className="ion-ios-videocam"></i> 
+					</div>
+				</div>
 				</div>
 			</div>
 		)
