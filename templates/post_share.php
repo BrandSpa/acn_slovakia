@@ -1,21 +1,16 @@
 <?php $current_url = esc_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>
+<?php echo gett('¿Quiéres que el mundo conozca la realidad de la Iglesia que Sufre en el Mundo?') ?>
 <div class="bs-post__share" style="background: #F7F7F7">
 	<div class="l-wrap">
+	 <span><?php echo gett('Comparte este artículo'); ?></span>
+
 		<ul>
 			<li style="display: inline-block">
-      	<a key={1} style="	color: #939597;
-			width: 40px;
-			height: 40px;
-			border-radius: 40px;
-			text-align: center;
-			display: block;
-			border: 1px solid #939597;
-			padding: 5px;
-      font-size: 20px;" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url ?>">
+      	<a key={1} style="color: #939597; width: 40px; height: 40px; border-radius: 40px; text-align: center; display: block; border: 1px solid #939597; padding: 5px; font-size: 20px;" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url ?>">
         	<i class="ion-social-facebook"></i></a>
       </li>
 			<li style="display: inline-block">
-				<a key={2} style="	color: #939597;
+				<a key={2} style="color: #939597;
 			width: 40px;
 			height: 40px;
 			border-radius: 40px;
