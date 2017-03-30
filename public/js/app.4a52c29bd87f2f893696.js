@@ -3389,6 +3389,7 @@ var GalleryHeader = _react2.default.createClass({
                 className: "gallery-header__item",
                 style: { position: "relative" }
               },
+              images[this.state.section],
               _react2.default.createElement("img", {
                 onLoad: this.getImage,
                 src: images[this.state.section],
@@ -10242,4 +10243,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.44f6fc2c4fba87dc8aaf.js.map
+//# sourceMappingURL=app.4a52c29bd87f2f893696.js.map

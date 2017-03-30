@@ -126,7 +126,7 @@ const GalleryHeader = React.createClass({
                 className="gallery-header__item"
                 style={{ position: "relative" }}
               >
-              
+              {images[this.state.section]}
                 <img
 									onLoad={this.getImage}
                   src={images[this.state.section]}
