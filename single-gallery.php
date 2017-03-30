@@ -62,10 +62,10 @@ onLoad(function() {
 <span class="video__header__metadata" style="font-size: 1.1em; color: #4A4A4A">
 				<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
 					<span style="font-weight: 600">
-						<?php echo $category->name ?> <?php echo $ind >= 0 && $ind + 1 != count(get_the_category($post->ID)) ?  '|' : '' ?>
+						<?php echo $category->name ?> <?php echo $ind >= 0 && $ind + 1 != count(get_the_category($post->ID)) ?  '|' : '/' ?>
 					</span>
 				<?php endforeach; ?>
-				<?php echo '/ ' . get_the_date( 'm - Y', $post->ID ); ?>
+				<?php echo  get_the_date( 'm - Y', $post->ID ); ?>
 			</span>
 			<div class="breadcrumbs" style="margin: 3px 0 10px 0;  color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
 			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
