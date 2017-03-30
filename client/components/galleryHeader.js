@@ -135,8 +135,7 @@ const GalleryHeader = React.createClass({
                   <span style={excerptStyle}>{excerpts[this.state.section]}</span>
                 </div>
         
-
-                <div style={{width: '100%',float:'left'}}>
+                <div style={{width: '100%',float:'left', marginTop: '10px'}}>
                 <ul style={{listStyle: 'none', padding: '0', float: 'left'}}>
                     <li style={{display: 'inline-block', marginLeft: '5px'}}>
                       <a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a>
