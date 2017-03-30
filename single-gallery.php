@@ -74,9 +74,10 @@ onLoad(function() {
 		<h3 style="padding-bottom: 10px;color: #3C515F"><?php the_title() ?></h3>
 
 
-		<div class="bs-post__content col-8-l col-12-s" id="post-content">
+		<div class="bs-post__content col-5-l col-12-s" id="post-content">
 			<?php the_content() ?>
 		</div>
+		
 	</div>
 
 	<?php require('templates/post_donate.php') ?>
