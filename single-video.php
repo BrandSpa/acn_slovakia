@@ -10,7 +10,6 @@
 	"videoUrl": "<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>"
 }'></div>
 
-
 	<div class="l-wrap">
 	<div class="video__header-title" style="background: #fff; min-height: 100px; float: left; width: 100%;padding: 40px 80px 0 80px">
 		<span class="video__header__metadata" style="font-size: 18px; color: #4A4A4A">
@@ -34,7 +33,7 @@
 	onLoad(function() {
 		var h = window.innerHeight;
 		var navH = $('.nav').height() + 20;
-		var titleH = $('.video__header-title').height();
+		var titleH = $('.video__header-title').innerHeight();
 		$('.video__header').height((h - navH));
 		$('.video__header-title').css({position: 'relative', top: '-' + titleH + 'px'});
 	})
