@@ -3435,6 +3435,15 @@ var GalleryHeader = _react2.default.createClass({
                       { key: 3, style: shareBtn, href: "https://www.linkedin.com/shareArticle?mini=true&url=" + window.location.href },
                       _react2.default.createElement("i", { className: "ion-social-linkedin" })
                     )
+                  ),
+                  _react2.default.createElement(
+                    "li",
+                    { style: liStyle },
+                    _react2.default.createElement(
+                      "a",
+                      { key: 4, style: shareBtn, href: "whatsapp://send?text=" + window.location.href },
+                      _react2.default.createElement("i", { className: "ion-social-whatsapp-outline" })
+                    )
                   )
                 ),
                 _react2.default.createElement(
@@ -10246,4 +10255,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.2b37e9421604631bcac6.js.map
+//# sourceMappingURL=app.0359e74e8182f3c52f71.js.map
