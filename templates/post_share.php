@@ -2,8 +2,8 @@
 <span style="text-align: center; font-size: 20px; color: #3C515F; display:block; margin: 40px auto"> <?php echo gett('¿Quiéres que el mundo conozca la realidad de la Iglesia que Sufre en el Mundo?') ?></span>
 
 <div class="bs-post__share" style="background: #F7F7F7">
-	<div class="l-wrap">
-	 <span style="display: inline-block"><?php echo gett('Comparte este artículo'); ?></span>
+	<div class="l-wrap" style="text-align: center">
+	 <span style="display: inline-block;font-size: 20px;color: #3C515F;"><?php echo gett('Comparte este artículo'); ?></span>
 
 		<ul style="display: inline-block">
 			<li style="display: inline-block">
