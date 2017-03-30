@@ -10228,10 +10228,10 @@ var VideoHeader = _react2.default.createClass({
 				{ style: style, onClick: this.openModal },
 				_react2.default.createElement(
 					'div',
-					{ style: { background: 'rgba(0,0,0, .5)', width: '100%' } },
+					{ style: { background: 'rgba(0,0,0, .5)', width: '100%', 'padding': '7px 0' } },
 					_react2.default.createElement(
 						'div',
-						{ 'class': 'l-wrap' },
+						{ className: 'l-wrap', style: { color: '#fff' } },
 						'Video ',
 						_react2.default.createElement('i', { className: 'ion-ios-videocam' })
 					)
@@ -10245,4 +10245,4 @@ exports.default = VideoHeader;
 
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.61c8fd8d76c451a2e954.js.map
+//# sourceMappingURL=app.d22db82238b97e0a50da.js.map
