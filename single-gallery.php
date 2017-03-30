@@ -76,7 +76,9 @@ onLoad(function() {
 		<div class="col-5-l col-12-s">
 			<?php the_content() ?>
 		</div>
-
+		<div class="col-3-l">
+			<img src="http://placehold.it/300x600" height="600">
+		</div>
 	</div>
 
 	<?php require('templates/post_donate.php') ?>
