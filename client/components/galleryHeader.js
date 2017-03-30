@@ -52,9 +52,7 @@ const GalleryHeader = React.createClass({
     const w = window.innerHeight;
 
     const btnsStyle = {
-      position: "absolute",
-      bottom: "0",
-      right: "0"
+      float: 'right'
     };
 
     const btnStyle = {
@@ -133,7 +131,7 @@ const GalleryHeader = React.createClass({
                   style={this.state.imageStyle}
                 />
 
-                <div>
+                <div style={{width: '70%', float: 'left'}}>
                   <span style={excerptStyle}>{excerpts[this.state.section]}</span>
                   <ul style={{listStyle: 'none', padding: '0'}}>
                     <li style={{display: 'inline-block', marginLeft: '5px'}}>

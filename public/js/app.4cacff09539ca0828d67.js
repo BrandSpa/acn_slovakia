@@ -3302,9 +3302,7 @@ var GalleryHeader = _react2.default.createClass({
     var w = window.innerHeight;
 
     var btnsStyle = {
-      position: "absolute",
-      bottom: "0",
-      right: "0"
+      float: 'right'
     };
 
     var btnStyle = {
@@ -3397,7 +3395,7 @@ var GalleryHeader = _react2.default.createClass({
               }),
               _react2.default.createElement(
                 "div",
-                null,
+                { style: { width: '70%', float: 'left' } },
                 _react2.default.createElement(
                   "span",
                   { style: excerptStyle },
@@ -10243,4 +10241,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.4a52c29bd87f2f893696.js.map
+//# sourceMappingURL=app.4cacff09539ca0828d67.js.map
