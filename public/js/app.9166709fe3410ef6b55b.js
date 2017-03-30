@@ -10086,6 +10086,10 @@ var _projectsAbout = __webpack_require__(248);
 
 var _projectsAbout2 = _interopRequireDefault(_projectsAbout);
 
+var _videoHeader = __webpack_require__(641);
+
+var _videoHeader2 = _interopRequireDefault(_videoHeader);
+
 var _set_menu = __webpack_require__(251);
 
 var _set_menu2 = _interopRequireDefault(_set_menu);
@@ -10121,6 +10125,8 @@ var _stickMenu2 = _interopRequireDefault(_stickMenu);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //jquery stuff :(
+
+//React components :)
 _webfontloader2.default.load({
   google: { families: ['Source Sans Pro:400,600,700'] },
   custom: { families: ['Ionicons'], testStrings: { Ionicons: '\uF10C\uF109' } },
@@ -10130,8 +10136,6 @@ _webfontloader2.default.load({
 });
 
 //react renders
-
-//React components :)
 (0, _reactMultipleRender2.default)(_headerSlider2.default, '.header-slider');
 (0, _reactMultipleRender2.default)(_contactForm2.default, '.contact-form');
 (0, _reactMultipleRender2.default)(_posts2.default, '.bs-posts');
@@ -10143,6 +10147,7 @@ _webfontloader2.default.load({
 (0, _reactMultipleRender2.default)(_downloadPdf2.default, '.bs-download-pdf');
 (0, _reactMultipleRender2.default)(_galleryHeader2.default, '.bs-gallery-header');
 (0, _reactMultipleRender2.default)(_projectsAbout2.default, '.bs-projects-about');
+(0, _reactMultipleRender2.default)(_videoHeader2.default, '.bs-video-header');
 
 //jquery calls
 (0, _set_menu2.default)();
@@ -10154,6 +10159,83 @@ _webfontloader2.default.load({
 (0, _stickMenu2.default)();
 (0, _toggleMenu2.default)();
 
+/***/ }),
+/* 632 */,
+/* 633 */,
+/* 634 */,
+/* 635 */,
+/* 636 */,
+/* 637 */,
+/* 638 */,
+/* 639 */,
+/* 640 */,
+/* 641 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(8);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _videoModal = __webpack_require__(162);
+
+var _videoModal2 = _interopRequireDefault(_videoModal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var VideoHeader = _react2.default.createClass({
+	displayName: 'VideoHeader',
+	getDefaultProps: function getDefaultProps() {
+		return {
+			videoUrl: '',
+			imageUrl: ''
+		};
+	},
+	openModal: function openModal(e) {
+		e.preventDefault();
+		this.modal.show();
+	},
+	render: function render() {
+		var _this = this;
+
+		var props = {
+			imgUrl: '',
+			url: 'https://www.youtube.com/embed/_lQvw2vSDbs'
+		};
+
+		var style = {
+			backgroundImage: 'url(' + props.imgUrl + ')',
+			backgroundPosition: 'cover',
+			height: window.innerHeight - 100 + 'px',
+			width: '100%',
+			position: 'relative',
+			cursor: 'pointer'
+		};
+
+		return _react2.default.createElement(
+			'div',
+			null,
+			_react2.default.createElement(_videoModal2.default, { ref: function ref(modal) {
+					return _this.modal = modal;
+				}, url: this.props.url }),
+			_react2.default.createElement(
+				'div',
+				{ style: style, onClick: this.openModal },
+				'Video ',
+				_react2.default.createElement('i', { className: 'ion-ios-videocam' })
+			)
+		);
+	}
+});
+
+exports.default = VideoHeader;
+
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.e56001b0c31fea366780.js.map
+//# sourceMappingURL=app.9166709fe3410ef6b55b.js.map

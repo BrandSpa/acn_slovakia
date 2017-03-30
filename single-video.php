@@ -5,7 +5,11 @@
 
 <?php if(get_post_meta($post->ID, 'video_url_key', true)): ?>
 
-<?php echo do_shortcode('[bs_section_video image="'. get_post_thumbnail_id($post->ID, 'full')  .'" video_url="'.get_post_meta($post->ID, 'video_url_key', true).'"]') ?>
+<div class="bs-video-header" data-props='{
+	"imageUrl": "<?php echo get_post_thumbnail_id($post->ID, 'full')  ?>",
+	"videoUrl": "<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>"
+}'></div>
+
 
 	<div class="l-wrap">
 	<div class="video__header-title" style="background: #fff; min-height: 100px; float: left; width: 100%;padding: 40px 80px 0 80px">
