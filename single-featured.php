@@ -6,7 +6,16 @@
 		
 <div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
     <div class="bs-feat__img__textbox" style="background:black;">
-        <div class="news_date" style="color:#FFF;">News / May 2017</div>
+        <div class="news_date" style="color:#FFF;">
+        <span class="featured__metadata" style="font-size: 1.1em; color: #4A4A4A">
+				<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
+					<span style="font-weight: 600">
+						<?php echo $category->name ?> <?php echo $ind >= 0 && $ind + 1 != count(get_the_category($post->ID)) ?  '|' : '' ?>
+					</span>
+				<?php endforeach; ?>
+				<?php echo '/ ' . get_the_date( 'M Y', $post->ID ); ?>
+			</span>
+        </div>
         <div class="breadcrumbs" style=" color: #b9b9b9; text-align:left; " typeof="BreadcrumbList" vocab="https://schema.org/">
         <?php if(function_exists('bcn_display'))
         {
