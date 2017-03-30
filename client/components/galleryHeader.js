@@ -112,6 +112,8 @@ const GalleryHeader = React.createClass({
 			}
 		};
 
+    const liStyle = {display: 'inline-block', marginLeft: '5px'};
+
     return (
       <StyleRoot>
         <div style={mainStyle}>
@@ -124,7 +126,6 @@ const GalleryHeader = React.createClass({
                 className="gallery-header__item"
                 style={{ position: "relative" }}
               >
-              {images[this.state.section]}
                 <img
 									onLoad={this.getImage}
                   src={images[this.state.section]}
@@ -137,13 +138,13 @@ const GalleryHeader = React.createClass({
         
                 <div style={{width: '100%',float:'left', marginTop: '10px'}}>
                 <ul style={{listStyle: 'none', padding: '0', float: 'left'}}>
-                    <li style={{display: 'inline-block', marginLeft: '5px'}}>
+                    <li style={liStyle}>
                       <a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a>
                     </li>
-                    <li style={{display: 'inline-block', marginLeft: '5px'}}>
+                    <li style={liStyle}>
                       <a key={2} style={shareBtn} href="#"><i className="ion-social-twitter"></i></a>
                     </li>
-                    <li style={{display: 'inline-block', marginLeft: '5px'}}>
+                    <li style={liStyle}>
                       <a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin"></i></a>
                     </li>
                   </ul>
