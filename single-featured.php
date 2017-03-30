@@ -5,12 +5,6 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
 <div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
-	<!--<div class="bs-post__header--image__title">
-		<h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title() ?></h3>
-		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
-			<?php //require('down_arrow.php') ?>
-		</a>
-	</div>-->
     <div class="bs-feat__img__textbox">
         <div class="news_date">News / May 2017</div>
         <div class="breadcrumbs" style=" color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
@@ -18,12 +12,12 @@
     </div> 
 </div>
 
-	<div class="bs-post__header--image__title--mobile">
+	<!--<div class="bs-post__header--image__title--mobile">
 		<h3><?php the_title() ?></h3>
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
 				<?php //require('down_arrow.php') ?>
 		</a>
-	</div>
+	</div>-->
 
 
 <div class="l-wrap">
