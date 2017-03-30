@@ -5,6 +5,7 @@
 
 <?php if(get_post_meta($post->ID, 'video_url_key', true)): ?>
 
+<!--this call react component-->
 <div class="bs-video-header" data-props='{
 	"imageUrl": "<?php echo the_post_thumbnail_url( 'full' )  ?>",
 	"videoUrl": "<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>"
@@ -33,15 +34,15 @@
 </div>
 
 	<script>
-	onLoad(function() {
-		var h = window.innerHeight;
-		var navH = $('.nav').height() + 20;
-		var titleH = $('.video__header-title').innerHeight();
-	
-		if(window.innerWidth > '700') {
-			$('.video__header-title').css({position: 'relative', marginTop: '-' + titleH + 'px'});
-		}
-	})
+		onLoad(function() {
+			var h = window.innerHeight;
+			var navH = $('.nav').height() + 20;
+			var titleH = $('.video__header-title').innerHeight();
+		
+			if(window.innerWidth > '700') {
+				$('.video__header-title').css({position: 'relative', marginTop: '-' + titleH + 'px'});
+			}
+		});
 	</script>
 <?php endif; ?>
 
