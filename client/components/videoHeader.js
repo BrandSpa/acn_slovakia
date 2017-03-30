@@ -34,7 +34,7 @@ const VideoHeader = React.createClass({
 			<div>
 				<VideoModal ref={modal => this.modal = modal} url={videoUrl} />
 				<div style={style} onClick={this.openModal}>
-					<div style={{background: 'rgba(60,81,90, .5)', width: '100%', 'padding': '10px 0'}}>
+					<div style={{background: 'rgba(60,81,90, .5)', width: '100%', 'padding': '10px 10px'}}>
 						<div className="l-wrap" style={{color: '#fff', fontSize: '18px'}}>
 							Video <i className="ion-ios-videocam"></i> 
 						</div>

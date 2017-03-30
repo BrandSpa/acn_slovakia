@@ -10231,7 +10231,7 @@ var VideoHeader = _react2.default.createClass({
 				{ style: style, onClick: this.openModal },
 				_react2.default.createElement(
 					'div',
-					{ style: { background: 'rgba(60,81,90, .5)', width: '100%', 'padding': '10px 0' } },
+					{ style: { background: 'rgba(60,81,90, .5)', width: '100%', 'padding': '10px 10px' } },
 					_react2.default.createElement(
 						'div',
 						{ className: 'l-wrap', style: { color: '#fff', fontSize: '18px' } },
@@ -10248,4 +10248,4 @@ exports.default = VideoHeader;
 
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.f8a610cc16884fd7baed.js.map
+//# sourceMappingURL=app.25bc38d6ff9b2c5e7f02.js.map
