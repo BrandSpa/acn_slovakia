@@ -53,8 +53,8 @@ const GalleryHeader = React.createClass({
 
     const btnsStyle = {
       position: "absolute",
-      bottom: "10px",
-      right: "10px"
+      bottom: "0",
+      right: "0"
     };
 
     const btnStyle = {
