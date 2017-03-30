@@ -34,8 +34,10 @@
 		var h = window.innerHeight;
 		var navH = $('.nav').height() + 20;
 		var titleH = $('.video__header-title').innerHeight();
-		$('.video__header').height((h - navH));
-		$('.video__header-title').css({position: 'relative', top: '-' + titleH + 'px'});
+	
+		if(window.innerWidth > '700') {
+			$('.video__header-title').css({position: 'relative', top: '-' + titleH + 'px'});
+		}
 	})
 	</script>
 <?php endif; ?>
