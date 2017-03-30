@@ -3362,6 +3362,8 @@ var GalleryHeader = _react2.default.createClass({
       }
     };
 
+    var liStyle = { display: 'inline-block', marginLeft: '5px' };
+
     return _react2.default.createElement(
       _radium.StyleRoot,
       null,
@@ -3409,7 +3411,7 @@ var GalleryHeader = _react2.default.createClass({
                   { style: { listStyle: 'none', padding: '0', float: 'left' } },
                   _react2.default.createElement(
                     "li",
-                    { style: { display: 'inline-block', marginLeft: '5px' } },
+                    { style: liStyle },
                     _react2.default.createElement(
                       "a",
                       { key: 1, style: shareBtn, href: "#" },
@@ -3418,7 +3420,7 @@ var GalleryHeader = _react2.default.createClass({
                   ),
                   _react2.default.createElement(
                     "li",
-                    { style: { display: 'inline-block', marginLeft: '5px' } },
+                    { style: liStyle },
                     _react2.default.createElement(
                       "a",
                       { key: 2, style: shareBtn, href: "#" },
@@ -3427,7 +3429,7 @@ var GalleryHeader = _react2.default.createClass({
                   ),
                   _react2.default.createElement(
                     "li",
-                    { style: { display: 'inline-block', marginLeft: '5px' } },
+                    { style: liStyle },
                     _react2.default.createElement(
                       "a",
                       { key: 3, style: shareBtn, href: "#" },
@@ -10244,4 +10246,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.477fad21e8bbf39e11de.js.map
+//# sourceMappingURL=app.fdb14037441140be0306.js.map
