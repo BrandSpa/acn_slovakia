@@ -18,7 +18,8 @@ const VideoHeader = React.createClass({
 		const {videoUrl, imageUrl} = this.props;
 		let style = {
 			backgroundImage: `url(${imageUrl})`,
-			backgroundPosition: 'cover',
+			backgroundSize: 'cover',
+			backgroundPosition: 'center',
 			height: `${window.innerHeight - 100}px`,
 			width: '100%',
 			position: 'relative',

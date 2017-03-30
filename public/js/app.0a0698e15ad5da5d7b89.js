@@ -10210,7 +10210,8 @@ var VideoHeader = _react2.default.createClass({
 
 		var style = {
 			backgroundImage: 'url(' + imageUrl + ')',
-			backgroundPosition: 'cover',
+			backgroundSize: 'cover',
+			backgroundPosition: 'center',
 			height: window.innerHeight - 100 + 'px',
 			width: '100%',
 			position: 'relative',
@@ -10245,4 +10246,4 @@ exports.default = VideoHeader;
 
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.34fddabf58c385352658.js.map
+//# sourceMappingURL=app.0a0698e15ad5da5d7b89.js.map
