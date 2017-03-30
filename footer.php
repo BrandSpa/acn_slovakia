@@ -44,10 +44,7 @@
 
 <script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.147b442dae8c553a89aa.js'></script>
 <script src='<?php echo get_template_directory_uri() ?>/public/js/app.cd1c410c9bb985ebfba7.js'></script>
-<script>
 
-  
-</script>
 <!--/app theme-->
 
  <!-- Google Analytics -->
