@@ -88,6 +88,7 @@ onLoad(function() {
 	</div>
 
 	<?php require('templates/post_donate.php') ?>
+	<?php require('templates/post_share.php') ?>
 
 	<div class="l-wrap" style="margin: 40px auto">
 		<h3 style="font-size: 28px; font-weight: normal; display: block; margin: 40px 0;color: #3C515F"><?php echo gett('Latest news'); ?></h3>
