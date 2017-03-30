@@ -4,9 +4,9 @@
 		<ul>
 			<li style="display: inline-block">
       	<a key={1} style="	color: #939597;
-			width: 30px;
-			height: 30px;
-			borderRadius: 30px;
+			width: 40px;
+			height: 40px;
+			border-radius: 40px;
 			textAlign: center;
 			display: block;
 			border: 1px solid #939597;
@@ -16,9 +16,9 @@
       </li>
 			<li style="display: inline-block">
 				<a key={2} style="	color: #939597;
-			width: 30px;
-			height: 30px;
-			borderRadius: 30px;
+			width: 40px;
+			height: 40px;
+			border-radius: 40px;
 			textAlign: center;
 			display: block;
 			border: 1px solid #939597;
@@ -28,9 +28,9 @@
 			</li>
 			<li style="display: inline-block">
 				<a key={3} style="	color: #939597;
-			width: 30px;
-			height: 30px;
-			borderRadius: 30px;
+			width: 40px;
+			height: 40px;
+			border-radius: 40px;
 			textAlign: center;
 			display: block;
 			border: 1px solid #939597;
@@ -40,9 +40,9 @@
 			</li>
 			<li style="display: inline-block">
 				<a key={4} style="	color: #939597;
-			width: 30px;
-			height: 30px;
-			borderRadius: 30px;
+			width: 40px;
+			height: 40px;
+			border-radius: 40px;
 			textAlign: center;
 			display: block;
 			border: 1px solid #939597;
