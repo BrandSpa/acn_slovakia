@@ -136,7 +136,7 @@ const GalleryHeader = React.createClass({
 								<ul style={{listStyle: 'none', padding: '0'}}>
 									<li style={{display: 'inline-block', marginLeft: '5px'}}><a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a></li>
 									<li style={{display: 'inline-block', marginLeft: '5px'}}><a key={2} style={shareBtn} href="#"><i className="ion-social-twitter"></i></a></li>
-									<li style={{display: 'inline-block', marginLeft: '5px'}}><a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin-outline"></i></a></li>
+									<li style={{display: 'inline-block', marginLeft: '5px'}}><a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin"></i></a></li>
 								</ul>
                 {/*<a
                   href="#"

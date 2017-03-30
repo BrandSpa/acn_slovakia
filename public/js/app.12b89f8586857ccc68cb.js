@@ -3427,7 +3427,7 @@ var GalleryHeader = _react2.default.createClass({
                   _react2.default.createElement(
                     "a",
                     { key: 3, style: shareBtn, href: "#" },
-                    _react2.default.createElement("i", { className: "ion-social-linkedin-outline" })
+                    _react2.default.createElement("i", { className: "ion-social-linkedin" })
                   )
                 )
               )
@@ -10248,4 +10248,4 @@ exports.default = VideoHeader;
 
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.25bc38d6ff9b2c5e7f02.js.map
+//# sourceMappingURL=app.12b89f8586857ccc68cb.js.map
