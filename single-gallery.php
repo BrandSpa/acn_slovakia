@@ -72,13 +72,15 @@ onLoad(function() {
 		</div>
 
 		<h3 style="padding-bottom: 10px;color: #3C515F"><?php the_title() ?></h3>
-
+		<div class="col-1-l"></div>
 		<div class="col-5-l col-12-s">
 			<?php the_content() ?>
 		</div>
+		<div class="col-2-l"></div>
 		<div class="col-3-l">
 			<img src="http://placehold.it/300x600" height="600">
 		</div>
+
 	</div>
 
 	<?php require('templates/post_donate.php') ?>
