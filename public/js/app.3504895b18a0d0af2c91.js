@@ -3302,10 +3302,9 @@ var GalleryHeader = _react2.default.createClass({
     var w = window.innerHeight;
 
     var btnsStyle = {
-      position: "relative",
-      bottom: "20px",
-      right: "20px",
-      "@media(max-width: 767px)": { bottom: "10px", right: "10px" }
+      position: "absolute",
+      bottom: "10px",
+      right: "10px"
     };
 
     var btnStyle = {
@@ -10248,4 +10247,4 @@ exports.default = VideoHeader;
 
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.cfe07c5292bd14331341.js.map
+//# sourceMappingURL=app.3504895b18a0d0af2c91.js.map

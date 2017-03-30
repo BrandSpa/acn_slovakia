@@ -52,10 +52,9 @@ const GalleryHeader = React.createClass({
     const w = window.innerHeight;
 
     const btnsStyle = {
-      position: "relative",
-      bottom: "20px",
-      right: "20px",
-      "@media(max-width: 767px)": { bottom: "10px", right: "10px" },
+      position: "absolute",
+      bottom: "10px",
+      right: "10px"
     };
 
     const btnStyle = {
