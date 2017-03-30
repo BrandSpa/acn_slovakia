@@ -3414,7 +3414,7 @@ var GalleryHeader = _react2.default.createClass({
                     { style: liStyle },
                     _react2.default.createElement(
                       "a",
-                      { key: 1, style: shareBtn, href: "#" },
+                      { key: 1, style: shareBtn, href: "https://www.facebook.com/sharer/sharer.php?u=" + window.location.href },
                       _react2.default.createElement("i", { className: "ion-social-facebook" })
                     )
                   ),
@@ -3423,7 +3423,7 @@ var GalleryHeader = _react2.default.createClass({
                     { style: liStyle },
                     _react2.default.createElement(
                       "a",
-                      { key: 2, style: shareBtn, href: "#" },
+                      { key: 2, style: shareBtn, href: "https://twitter.com/intent/tweet?text=" + window.location.href },
                       _react2.default.createElement("i", { className: "ion-social-twitter" })
                     )
                   ),
@@ -10246,4 +10246,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.cd1c410c9bb985ebfba7.js.map
+//# sourceMappingURL=app.2b37e9421604631bcac6.js.map

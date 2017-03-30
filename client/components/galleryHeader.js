@@ -139,10 +139,10 @@ const GalleryHeader = React.createClass({
                 <div style={{width: '100%',float:'left', marginTop: '10px'}}>
                 <ul style={{listStyle: 'none', padding: '0', float: 'left'}}>
                     <li style={liStyle}>
-                      <a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a>
+                      <a key={1} style={shareBtn} href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}><i className="ion-social-facebook"></i></a>
                     </li>
                     <li style={liStyle}>
-                      <a key={2} style={shareBtn} href="#"><i className="ion-social-twitter"></i></a>
+                      <a key={2} style={shareBtn} href={`https://twitter.com/intent/tweet?text=${window.location.href}`}><i className="ion-social-twitter"></i></a>
                     </li>
                     <li style={liStyle}>
                       <a key={3} style={shareBtn} href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`}><i className="ion-social-linkedin"></i></a>
