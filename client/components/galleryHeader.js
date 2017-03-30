@@ -150,7 +150,7 @@ const GalleryHeader = React.createClass({
                       <a key={3} style={shareBtn} href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`}>
                       <i className="ion-social-linkedin"></i></a>
                     </li>
-                    <li style={{...liStyle, display: 'none', '@media(max-width: 767px)': {display: 'block'} }}>
+                    <li style={{...liStyle, display: 'none', '@media(max-width: 767px)': {display: 'inline-block'} }}>
                       <a key={4} style={shareBtn} href={`whatsapp://send?text=${window.location.href}`}>
                         <i className="ion-social-whatsapp-outline"></i>
                       </a>

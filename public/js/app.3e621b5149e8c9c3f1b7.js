@@ -3438,7 +3438,7 @@ var GalleryHeader = _react2.default.createClass({
                   ),
                   _react2.default.createElement(
                     "li",
-                    { style: _extends({}, liStyle, { display: 'none', '@media(max-width: 767px)': { display: 'block' } }) },
+                    { style: _extends({}, liStyle, { display: 'none', '@media(max-width: 767px)': { display: 'inline-block' } }) },
                     _react2.default.createElement(
                       "a",
                       { key: 4, style: shareBtn, href: "whatsapp://send?text=" + window.location.href },
@@ -10255,4 +10255,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.8151972e3daa393a2016.js.map
+//# sourceMappingURL=app.3e621b5149e8c9c3f1b7.js.map
