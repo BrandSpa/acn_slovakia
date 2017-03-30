@@ -6,7 +6,7 @@
 <?php if(get_post_meta($post->ID, 'video_url_key', true)): ?>
 
 <div class="bs-video-header" data-props='{
-	"imageUrl": "<?php echo get_post_thumbnail_id($post->ID, 'full')  ?>",
+	"imageUrl": "<?php echo the_post_thumbnail_url( 'full' )  ?>",
 	"videoUrl": "<?php echo get_post_meta($post->ID, 'video_url_key', true) ?>"
 }'></div>
 
