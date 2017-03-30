@@ -137,7 +137,7 @@ const GalleryHeader = React.createClass({
         
 
                 <div style={{width: '100%',float:'left'}}>
-                <ul style={{listStyle: 'none', padding: '0'}}>
+                <ul style={{listStyle: 'none', padding: '0', float: 'left'}}>
                     <li style={{display: 'inline-block', marginLeft: '5px'}}>
                       <a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a>
                     </li>
@@ -148,24 +148,25 @@ const GalleryHeader = React.createClass({
                       <a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin"></i></a>
                     </li>
                   </ul>
-                
-                  <span style={{ color: "#fff", paddingRight: "10px" }}>
-                    {images.length} {this.props.texts.of} {this.state.section + 1}
-                  </span>
-                  <button
-                    key={'btn-1'}
-                    onClick={this.changeSection.bind(null, "prev")}
-                    style={btnStyle}
-                  >
-                    <i className="ion-chevron-left" />
-                  </button>
-                  <button
-                    key={'btn-2'}
-                    onClick={this.changeSection.bind(null, "next")}
-                    style={btnStyle}
-                  >
-                    <i className="ion-chevron-right" />
-                  </button>
+                  <div style={{float: 'right'}}>
+                    <span style={{ color: "#fff", paddingRight: "10px" }}>
+                      {images.length} {this.props.texts.of} {this.state.section + 1}
+                    </span>
+                    <button
+                      key={'btn-1'}
+                      onClick={this.changeSection.bind(null, "prev")}
+                      style={btnStyle}
+                    >
+                      <i className="ion-chevron-left" />
+                    </button>
+                    <button
+                      key={'btn-2'}
+                      onClick={this.changeSection.bind(null, "next")}
+                      style={btnStyle}
+                    >
+                      <i className="ion-chevron-right" />
+                    </button>
+                  </div>
                 </div>
 
               </div>

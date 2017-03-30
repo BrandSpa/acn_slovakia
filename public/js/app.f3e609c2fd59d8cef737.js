@@ -3407,7 +3407,7 @@ var GalleryHeader = _react2.default.createClass({
                 { style: { width: '100%', float: 'left' } },
                 _react2.default.createElement(
                   "ul",
-                  { style: { listStyle: 'none', padding: '0' } },
+                  { style: { listStyle: 'none', padding: '0', float: 'left' } },
                   _react2.default.createElement(
                     "li",
                     { style: { display: 'inline-block', marginLeft: '5px' } },
@@ -3437,31 +3437,35 @@ var GalleryHeader = _react2.default.createClass({
                   )
                 ),
                 _react2.default.createElement(
-                  "span",
-                  { style: { color: "#fff", paddingRight: "10px" } },
-                  images.length,
-                  " ",
-                  this.props.texts.of,
-                  " ",
-                  this.state.section + 1
-                ),
-                _react2.default.createElement(
-                  "button",
-                  {
-                    key: 'btn-1',
-                    onClick: this.changeSection.bind(null, "prev"),
-                    style: btnStyle
-                  },
-                  _react2.default.createElement("i", { className: "ion-chevron-left" })
-                ),
-                _react2.default.createElement(
-                  "button",
-                  {
-                    key: 'btn-2',
-                    onClick: this.changeSection.bind(null, "next"),
-                    style: btnStyle
-                  },
-                  _react2.default.createElement("i", { className: "ion-chevron-right" })
+                  "div",
+                  { style: { float: 'right' } },
+                  _react2.default.createElement(
+                    "span",
+                    { style: { color: "#fff", paddingRight: "10px" } },
+                    images.length,
+                    " ",
+                    this.props.texts.of,
+                    " ",
+                    this.state.section + 1
+                  ),
+                  _react2.default.createElement(
+                    "button",
+                    {
+                      key: 'btn-1',
+                      onClick: this.changeSection.bind(null, "prev"),
+                      style: btnStyle
+                    },
+                    _react2.default.createElement("i", { className: "ion-chevron-left" })
+                  ),
+                  _react2.default.createElement(
+                    "button",
+                    {
+                      key: 'btn-2',
+                      onClick: this.changeSection.bind(null, "next"),
+                      style: btnStyle
+                    },
+                    _react2.default.createElement("i", { className: "ion-chevron-right" })
+                  )
                 )
               )
             )
@@ -10241,4 +10245,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.a5c3484a9baa2d8bf427.js.map
+//# sourceMappingURL=app.f3e609c2fd59d8cef737.js.map
