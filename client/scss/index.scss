@@ -370,6 +370,13 @@ button, .btn {
 	max-width: 35%;
 	min-width:400px;
 	color:#FFF;
+	@media #{$s} {
+		left: 0;
+		width: 100%;
+		padding:0 10%;
+		bottom:5%;
+		min-width:100%;
+	}
 }
 
 @import 'menu';
