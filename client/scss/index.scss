@@ -379,6 +379,17 @@ button, .btn {
 	}
 }
 
+.bs-down-btn{
+	display:none;
+	@media #{$s} {
+		display:block;
+		position:absolute;
+		left:0;
+		right:0;
+		bottom:4%;
+	}
+}
+
 @import 'menu';
 @import 'header';
 @import 'footer';
