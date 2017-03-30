@@ -16,7 +16,7 @@
 				<?php echo '/ ' . get_the_date( 'M Y', $post->ID ); ?>
 			</span>
         </div>
-        <div class="breadcrumbs" style=" color: #e1e1e1; text-align:left; font-size:15px;" typeof="BreadcrumbList" vocab="https://schema.org/">
+        <div class="breadcrumbs" style=" color: #e1e1e1; text-align:left; font-size:15px; margin:0;" typeof="BreadcrumbList" vocab="https://schema.org/">
         <?php if(function_exists('bcn_display'))
         {
          bcn_display();
