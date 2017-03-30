@@ -9,9 +9,15 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
   <meta name="theme-color" content="#f1364e">
   <meta property="title" content="<?php echo get_the_title(); ?>" />
+
   <meta property="og:title" content="<?php echo get_the_title(); ?>" />
   <meta property="og:url" content="<?php echo the_permalink() ?>" />
   <meta property="og:image" content="<?php echo get_the_post_thumbnail_url() ?>" />
+
+  <meta name="twitter:title" content="<?php echo get_the_title(); ?>">
+  <meta name="twitter:image" content="<?php echo get_the_post_thumbnail_url() ?>">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="icon" href="//acninternational.org/wp-content/uploads/2017/03/fav2x.png" sizes="32x32" />
   <link rel="icon" href="//acninternational.org/wp-content/uploads/2017/03/fav2x.png" sizes="192x192" />
   <link rel="apple-touch-icon-precomposed" href="//acninternational.org/wp-content/uploads/2017/03/fav2x.png" />
