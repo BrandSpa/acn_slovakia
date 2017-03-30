@@ -3395,12 +3395,16 @@ var GalleryHeader = _react2.default.createClass({
               }),
               _react2.default.createElement(
                 "div",
-                { style: { width: '70%', float: 'left' } },
+                { style: { width: '100%', float: 'left' } },
                 _react2.default.createElement(
                   "span",
                   { style: excerptStyle },
                   excerpts[this.state.section]
-                ),
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { style: { width: '100%', float: 'left' } },
                 _react2.default.createElement(
                   "ul",
                   { style: { listStyle: 'none', padding: '0' } },
@@ -3431,11 +3435,7 @@ var GalleryHeader = _react2.default.createClass({
                       _react2.default.createElement("i", { className: "ion-social-linkedin" })
                     )
                   )
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { style: btnsStyle },
+                ),
                 _react2.default.createElement(
                   "span",
                   { style: { color: "#fff", paddingRight: "10px" } },
@@ -10241,4 +10241,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.4cacff09539ca0828d67.js.map
+//# sourceMappingURL=app.a5c3484a9baa2d8bf427.js.map
