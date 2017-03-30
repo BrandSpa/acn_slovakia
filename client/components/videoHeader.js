@@ -15,13 +15,9 @@ const VideoHeader = React.createClass({
 	},
 
 	render() {
-		let props = {
-			imgUrl: '',
-      url: 'https://www.youtube.com/embed/_lQvw2vSDbs',
-		};
-
+		const {videoUrl, imageUrl} = this.props;
 		let style = {
-			backgroundImage: `url(${props.imgUrl})`,
+			backgroundImage: `url(${imageUrl})`,
 			backgroundPosition: 'cover',
 			height: `${window.innerHeight - 100}px`,
 			width: '100%',
@@ -31,7 +27,7 @@ const VideoHeader = React.createClass({
 
 		return (
 			<div>
-				<VideoModal ref={modal => this.modal = modal} url={this.props.url} />
+				<VideoModal ref={modal => this.modal = modal} url={videoUrl} />
 				<div style={style} onClick={this.openModal}>
 					Video <i className="ion-ios-videocam"></i> 
 				</div>

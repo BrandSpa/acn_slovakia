@@ -10204,13 +10204,12 @@ var VideoHeader = _react2.default.createClass({
 	render: function render() {
 		var _this = this;
 
-		var props = {
-			imgUrl: '',
-			url: 'https://www.youtube.com/embed/_lQvw2vSDbs'
-		};
+		var _props = this.props,
+		    videoUrl = _props.videoUrl,
+		    imageUrl = _props.imageUrl;
 
 		var style = {
-			backgroundImage: 'url(' + props.imgUrl + ')',
+			backgroundImage: 'url(' + imageUrl + ')',
 			backgroundPosition: 'cover',
 			height: window.innerHeight - 100 + 'px',
 			width: '100%',
@@ -10223,7 +10222,7 @@ var VideoHeader = _react2.default.createClass({
 			null,
 			_react2.default.createElement(_videoModal2.default, { ref: function ref(modal) {
 					return _this.modal = modal;
-				}, url: this.props.url }),
+				}, url: videoUrl }),
 			_react2.default.createElement(
 				'div',
 				{ style: style, onClick: this.openModal },
@@ -10238,4 +10237,4 @@ exports.default = VideoHeader;
 
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.9166709fe3410ef6b55b.js.map
+//# sourceMappingURL=app.e2db2aa8f4f0528338a3.js.map
