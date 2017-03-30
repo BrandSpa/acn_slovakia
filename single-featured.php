@@ -4,11 +4,22 @@
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
-<?php if(!empty(get_the_post_thumbnail_url($post->ID, 'full'))): ?>
-	<?php require('templates/post_header_image.php') ?>
-<?php else: ?>
-	<?php require('templates/post_header.php') ?>
-<?php endif; ?>
+<div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
+	<div class="bs-post__header--image__title">
+		<h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title() ?></h3>
+		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
+			<?php require('down_arrow.php') ?>
+		</a>
+	</div>
+</div>
+
+	<div class="bs-post__header--image__title--mobile">
+		<h3><?php the_title() ?></h3>
+		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
+				<?php require('down_arrow.php') ?>
+		</a>
+	</div>
+
 
 <div class="l-wrap">
 	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
