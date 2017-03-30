@@ -1,0 +1,10 @@
+.video__header-title {
+	background: #fff; 
+	min-height: 100px; 
+	float: left; 
+	width: 100%;
+	padding: 40px 80px 0 80px;
+	@media #{$s} {
+		padding: 20px;
+	}
+}
