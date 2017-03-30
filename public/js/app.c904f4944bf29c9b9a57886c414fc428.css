@@ -1952,4 +1952,14 @@ a:hover {
     .via-crucis__hashtag {
       text-align: center; } }
 
-/*# sourceMappingURL=app.5a3934fa89e38a46623eb65f99d6800f.css.map*/
+.video__header-title {
+  background: #fff;
+  min-height: 100px;
+  float: left;
+  width: 100%;
+  padding: 40px 80px 0 80px; }
+  @media (max-width: 767px) {
+    .video__header-title {
+      padding: 20px; } }
+
+/*# sourceMappingURL=app.c904f4944bf29c9b9a57886c414fc428.css.map*/
