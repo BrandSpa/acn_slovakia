@@ -19,11 +19,5 @@ describe('Gallery Header Component', () => {
 		expect(wrapper.state().section).toEqual(1);
 	})
 
-	it('should change div style depend on section', () => {
-		const wrapper = shallow(<GalleryHeader images={[{image: ''}, {image: ''}, {image: ''}]} />);
-		wrapper.instance().changeSection('next');
-		let item = wrapper.find('.gallery-header__item img').at(1);
-	})
-
 	
 })
