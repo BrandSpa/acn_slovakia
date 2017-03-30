@@ -1,6 +1,5 @@
 <?php get_header() ?>
-
-<div id="acn_int" class="bs-post--video" >
+<div id="acn_int" class="bs-post" >
 <!--video template-->
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -8,8 +7,7 @@
 
 <?php echo do_shortcode('[bs_section_video image="'. get_post_thumbnail_id($post->ID, 'full')  .'" video_url="'.get_post_meta($post->ID, 'video_url_key', true).'"]') ?>
 
-	<div class="l-wrap" style="height: 0">
-
+	<div class="l-wrap">
 	<div class="video__header-title" style="background: #fff; min-height: 100px; float: left; width: 100%;padding: 40px 80px 0 80px">
 		<span class="video__header__metadata" style="font-size: 18px; color: #4A4A4A">
 		<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
