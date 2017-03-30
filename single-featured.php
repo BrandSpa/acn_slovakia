@@ -5,7 +5,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
 <div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
-    <div class="bs-feat__img__textbox" style="/*background:black;*/">
+    <div class="bs-feat__img__textbox" style="">
         <div class="news_date" style="color:#FFF;">
         <span class="featured__metadata" style="font-weight:600; font-size:18px; color:#eaeaea line-height:1.28; text-align:left;">
 				<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
