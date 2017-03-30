@@ -24,6 +24,9 @@
         </div>
         <h3 style="color:#FFF; font-size:40px; line-height:1.05; margin:40px 0;"><?php the_title(); ?></h3>
     </div> 
+    <a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
+			<?php require(__DIR__. '/templates/down_arrow.php')?>
+	</a>
 </div>
 
 	<!--<div class="bs-post__header--image__title--mobile">
