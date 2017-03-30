@@ -57,8 +57,8 @@ onLoad(function() {
 })
 </script>
 
-<div class="l-wrap">
 
+<div class="l-wrap">
 <span class="video__header__metadata" style="font-size: 1.1em; color: #4A4A4A; display: block; margin-top: 80px">
 				<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
 					<span style="font-weight: 600">
@@ -70,11 +70,12 @@ onLoad(function() {
 			<div class="breadcrumbs" style="margin: 3px 0 10px 0;  color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
 			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
 		</div>
-		
+
 		<div class="col-8-l">
 			<h3 style="padding-bottom: 10px;color: #3C515F"><?php the_title() ?></h3>
 		</div>
-	
+</div>
+	<div class="l-wrap">
 		<div class="col-1-l"></div>
 		<div class="col-5-l col-12-s">
 			<?php the_content() ?>
