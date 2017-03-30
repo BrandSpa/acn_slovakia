@@ -3396,7 +3396,7 @@ var GalleryHeader = _react2.default.createClass({
               }),
               _react2.default.createElement(
                 "div",
-                { className: "col-8-l" },
+                null,
                 _react2.default.createElement(
                   "span",
                   { style: excerptStyle },
@@ -3436,7 +3436,7 @@ var GalleryHeader = _react2.default.createClass({
               ),
               _react2.default.createElement(
                 "div",
-                { style: btnsStyle, className: "col-4-l" },
+                { style: btnsStyle },
                 _react2.default.createElement(
                   "span",
                   { style: { color: "#fff", paddingRight: "10px" } },
@@ -10242,4 +10242,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.9688c36607d7c3c702ae.js.map
+//# sourceMappingURL=app.44f6fc2c4fba87dc8aaf.js.map

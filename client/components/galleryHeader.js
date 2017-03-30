@@ -126,12 +126,14 @@ const GalleryHeader = React.createClass({
                 className="gallery-header__item"
                 style={{ position: "relative" }}
               >
+              
                 <img
 									onLoad={this.getImage}
                   src={images[this.state.section]}
                   style={this.state.imageStyle}
                 />
-                <div className="col-8-l">
+
+                <div>
                   <span style={excerptStyle}>{excerpts[this.state.section]}</span>
                   <ul style={{listStyle: 'none', padding: '0'}}>
                     <li style={{display: 'inline-block', marginLeft: '5px'}}>
@@ -145,8 +147,8 @@ const GalleryHeader = React.createClass({
                     </li>
                   </ul>
                 </div>
-                
-                <div style={btnsStyle} className="col-4-l">
+
+                <div style={btnsStyle}>
                   <span style={{ color: "#fff", paddingRight: "10px" }}>
                     {images.length} {this.props.texts.of} {this.state.section + 1}
                   </span>
