@@ -7,11 +7,11 @@
 			width: 40px;
 			height: 40px;
 			border-radius: 40px;
-			textAlign: center;
+			text-align: center;
 			display: block;
 			border: 1px solid #939597;
 			padding: 5px;
-      fontSize: 12px;" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url ?>">
+      font-size: 15px;" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url ?>">
         	<i class="ion-social-facebook"></i></a>
       </li>
 			<li style="display: inline-block">
@@ -19,11 +19,11 @@
 			width: 40px;
 			height: 40px;
 			border-radius: 40px;
-			textAlign: center;
+			text-align: center;
 			display: block;
 			border: 1px solid #939597;
 			padding: 5px;
-      fontSize: 12px;" href="https://twitter.com/intent/tweet?text=<?php echo $current_url ?>">
+      font-size: 15px;" href="https://twitter.com/intent/tweet?text=<?php echo $current_url ?>">
 					<i class="ion-social-twitter"></i></a>
 			</li>
 			<li style="display: inline-block">
@@ -31,11 +31,11 @@
 			width: 40px;
 			height: 40px;
 			border-radius: 40px;
-			textAlign: center;
+			text-align: center;
 			display: block;
 			border: 1px solid #939597;
 			padding: 5px;
-      fontSize: 12px;" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url ?>">
+      font-size: 15px;" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url ?>">
 					<i class="ion-social-linkedin"></i></a>
 			</li>
 			<li style="display: inline-block">
@@ -43,11 +43,11 @@
 			width: 40px;
 			height: 40px;
 			border-radius: 40px;
-			textAlign: center;
+			text-align: center;
 			display: block;
 			border: 1px solid #939597;
 			padding: 5px;
-      fontSize: 12px;" href="whatsapp://send?text=<?php echo $current_url ?>">
+      font-size: 15px;" href="whatsapp://send?text=<?php echo $current_url ?>">
 					<i class="ion-social-whatsapp-outline"></i>
 				</a>
 			</li>
