@@ -381,7 +381,7 @@ button, .btn {
 
 .bs-down-btn{
 	display:none;
-	
+	width: 20px;
 	@media #{$s} {
 		display:block;
 		position:absolute;
