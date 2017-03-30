@@ -131,9 +131,13 @@ const GalleryHeader = React.createClass({
                   style={this.state.imageStyle}
                 />
 
-                <div style={{width: '70%', float: 'left'}}>
+                <div style={{width: '100%', float: 'left'}}>
                   <span style={excerptStyle}>{excerpts[this.state.section]}</span>
-                  <ul style={{listStyle: 'none', padding: '0'}}>
+                </div>
+        
+
+                <div style={{width: '100%',float:'left'}}>
+                <ul style={{listStyle: 'none', padding: '0'}}>
                     <li style={{display: 'inline-block', marginLeft: '5px'}}>
                       <a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a>
                     </li>
@@ -144,9 +148,7 @@ const GalleryHeader = React.createClass({
                       <a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin"></i></a>
                     </li>
                   </ul>
-                </div>
-
-                <div style={btnsStyle}>
+                
                   <span style={{ color: "#fff", paddingRight: "10px" }}>
                     {images.length} {this.props.texts.of} {this.state.section + 1}
                   </span>
