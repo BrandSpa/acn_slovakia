@@ -22,7 +22,7 @@
          bcn_display();
         }?>
         </div>
-        <h3 style="color:#FFF; font-size:40px; line-height:1.05"><?php the_title(); ?></h3>
+        <h3 style="color:#FFF; font-size:40px; line-height:1.05 margin:40px 0;"><?php the_title(); ?></h3>
     </div> 
 </div>
 
