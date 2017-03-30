@@ -362,6 +362,15 @@ button, .btn {
 	text-align: center;
 }
 
+.bs-feat__img__textbox{
+	background:transparent;
+	position:absolute;
+	left:10%;
+	bottom:10%;
+	max-width: 40%;
+	color:#FFF;
+}
+
 @import 'menu';
 @import 'header';
 @import 'footer';
