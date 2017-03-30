@@ -52,9 +52,9 @@ const GalleryHeader = React.createClass({
     const w = window.innerHeight;
 
     const btnsStyle = {
-      position: "absolute",
-      bottom: "40px",
-      right: "40px",
+      position: "relative",
+      bottom: "20px",
+      right: "20px",
       "@media(max-width: 767px)": { bottom: "10px", right: "10px" },
     };
 
@@ -134,42 +134,40 @@ const GalleryHeader = React.createClass({
                 />
                 <span style={excerptStyle}>{excerpts[this.state.section]}</span>
 								<ul style={{listStyle: 'none', padding: '0'}}>
-									<li style={{display: 'inline-block', marginLeft: '5px'}}><a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a></li>
-									<li style={{display: 'inline-block', marginLeft: '5px'}}><a key={2} style={shareBtn} href="#"><i className="ion-social-twitter"></i></a></li>
-									<li style={{display: 'inline-block', marginLeft: '5px'}}><a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin"></i></a></li>
+									<li style={{display: 'inline-block', marginLeft: '5px'}}>
+                    <a key={1} style={shareBtn} href="#"><i className="ion-social-facebook"></i></a>
+                  </li>
+									<li style={{display: 'inline-block', marginLeft: '5px'}}>
+                    <a key={2} style={shareBtn} href="#"><i className="ion-social-twitter"></i></a>
+                  </li>
+									<li style={{display: 'inline-block', marginLeft: '5px'}}>
+                    <a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin"></i></a>
+                  </li>
 								</ul>
-                {/*<a
-                  href="#"
-                  onClick={this.changeSection.bind(null, "prev")}
-                  style={linkLeft}
-                />
-                <a
-                  href="#"
-                  onClick={this.changeSection.bind(null, "next")}
-                  style={linkRight}
-                />*/}
+                <div style={btnsStyle}>
+                  <span style={{ color: "#fff", paddingRight: "10px" }}>
+                    {images.length} {this.props.texts.of} {this.state.section + 1}
+                  </span>
+                  <button
+                    key={'btn-1'}
+                    onClick={this.changeSection.bind(null, "prev")}
+                    style={btnStyle}
+                  >
+                    <i className="ion-chevron-left" />
+                  </button>
+                  <button
+                    key={'btn-2'}
+                    onClick={this.changeSection.bind(null, "next")}
+                    style={btnStyle}
+                  >
+                    <i className="ion-chevron-right" />
+                  </button>
+                </div>
+
               </div>
             </div>
           </div>
-          <div style={btnsStyle}>
-            <span style={{ color: "#fff", paddingRight: "10px" }}>
-              {images.length} {this.props.texts.of} {this.state.section + 1}
-            </span>
-            <button
-							key={'btn-1'}
-              onClick={this.changeSection.bind(null, "prev")}
-              style={btnStyle}
-            >
-              <i className="ion-chevron-left" />
-            </button>
-            <button
-							key={'btn-2'}
-              onClick={this.changeSection.bind(null, "next")}
-              style={btnStyle}
-            >
-              <i className="ion-chevron-right" />
-            </button>
-          </div>
+      
         </div>
       </StyleRoot>
     );

@@ -3302,9 +3302,9 @@ var GalleryHeader = _react2.default.createClass({
     var w = window.innerHeight;
 
     var btnsStyle = {
-      position: "absolute",
-      bottom: "40px",
-      right: "40px",
+      position: "relative",
+      bottom: "20px",
+      right: "20px",
       "@media(max-width: 767px)": { bottom: "10px", right: "10px" }
     };
 
@@ -3430,39 +3430,39 @@ var GalleryHeader = _react2.default.createClass({
                     _react2.default.createElement("i", { className: "ion-social-linkedin" })
                   )
                 )
+              ),
+              _react2.default.createElement(
+                "div",
+                { style: btnsStyle },
+                _react2.default.createElement(
+                  "span",
+                  { style: { color: "#fff", paddingRight: "10px" } },
+                  images.length,
+                  " ",
+                  this.props.texts.of,
+                  " ",
+                  this.state.section + 1
+                ),
+                _react2.default.createElement(
+                  "button",
+                  {
+                    key: 'btn-1',
+                    onClick: this.changeSection.bind(null, "prev"),
+                    style: btnStyle
+                  },
+                  _react2.default.createElement("i", { className: "ion-chevron-left" })
+                ),
+                _react2.default.createElement(
+                  "button",
+                  {
+                    key: 'btn-2',
+                    onClick: this.changeSection.bind(null, "next"),
+                    style: btnStyle
+                  },
+                  _react2.default.createElement("i", { className: "ion-chevron-right" })
+                )
               )
             )
-          )
-        ),
-        _react2.default.createElement(
-          "div",
-          { style: btnsStyle },
-          _react2.default.createElement(
-            "span",
-            { style: { color: "#fff", paddingRight: "10px" } },
-            images.length,
-            " ",
-            this.props.texts.of,
-            " ",
-            this.state.section + 1
-          ),
-          _react2.default.createElement(
-            "button",
-            {
-              key: 'btn-1',
-              onClick: this.changeSection.bind(null, "prev"),
-              style: btnStyle
-            },
-            _react2.default.createElement("i", { className: "ion-chevron-left" })
-          ),
-          _react2.default.createElement(
-            "button",
-            {
-              key: 'btn-2',
-              onClick: this.changeSection.bind(null, "next"),
-              style: btnStyle
-            },
-            _react2.default.createElement("i", { className: "ion-chevron-right" })
           )
         )
       )
@@ -10248,4 +10248,4 @@ exports.default = VideoHeader;
 
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.12b89f8586857ccc68cb.js.map
+//# sourceMappingURL=app.cfe07c5292bd14331341.js.map
