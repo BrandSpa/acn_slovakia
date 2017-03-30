@@ -59,7 +59,7 @@ onLoad(function() {
 
 <div class="l-wrap">
 
-<span class="video__header__metadata" style="font-size: 1.1em; color: #4A4A4A; margin-top: 80px">
+<span class="video__header__metadata" style="font-size: 1.1em; color: #4A4A4A; display: block; margin-top: 80px">
 				<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
 					<span style="font-weight: 600">
 						<?php echo $category->name ?> <?php echo $ind >= 0 && $ind + 1 != count(get_the_category($post->ID)) ?  '|' : '/' ?>
