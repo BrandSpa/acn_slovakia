@@ -145,7 +145,7 @@ const GalleryHeader = React.createClass({
                       <a key={2} style={shareBtn} href="#"><i className="ion-social-twitter"></i></a>
                     </li>
                     <li style={liStyle}>
-                      <a key={3} style={shareBtn} href="#"><i className="ion-social-linkedin"></i></a>
+                      <a key={3} style={shareBtn} href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`}><i className="ion-social-linkedin"></i></a>
                     </li>
                   </ul>
                   <div style={{float: 'right'}}>

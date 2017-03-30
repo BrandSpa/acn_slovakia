@@ -3432,7 +3432,7 @@ var GalleryHeader = _react2.default.createClass({
                     { style: liStyle },
                     _react2.default.createElement(
                       "a",
-                      { key: 3, style: shareBtn, href: "#" },
+                      { key: 3, style: shareBtn, href: "https://www.linkedin.com/shareArticle?mini=true&url=" + window.location.href },
                       _react2.default.createElement("i", { className: "ion-social-linkedin" })
                     )
                   )
@@ -10246,4 +10246,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.fdb14037441140be0306.js.map
+//# sourceMappingURL=app.cd1c410c9bb985ebfba7.js.map
