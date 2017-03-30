@@ -10208,14 +10208,15 @@ var VideoHeader = _react2.default.createClass({
 		    videoUrl = _props.videoUrl,
 		    imageUrl = _props.imageUrl;
 
+		var height = window.innerHeight < 700 ? window.innerHeight / 2 - 100 + 'px' : window.innerHeight - 100 + 'px';
 		var style = {
 			backgroundImage: 'url(' + imageUrl + ')',
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
-			height: window.innerHeight - 100 + 'px',
 			width: '100%',
 			position: 'relative',
-			cursor: 'pointer'
+			cursor: 'pointer',
+			height: height
 		};
 
 		return _react2.default.createElement(
@@ -10246,4 +10247,4 @@ exports.default = VideoHeader;
 
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.0a0698e15ad5da5d7b89.js.map
+//# sourceMappingURL=app.6b1afe99588bc2025eb5.js.map

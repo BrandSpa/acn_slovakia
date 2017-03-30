@@ -16,14 +16,15 @@ const VideoHeader = React.createClass({
 
 	render() {
 		const {videoUrl, imageUrl} = this.props;
+		let height = window.innerHeight < 700 ? `${(window.innerHeight / 2) - 100}px` :  `${window.innerHeight - 100}px`;
 		let style = {
 			backgroundImage: `url(${imageUrl})`,
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
-			height: `${window.innerHeight - 100}px`,
 			width: '100%',
 			position: 'relative',
-			cursor: 'pointer'
+			cursor: 'pointer',
+			height 
 		};
 
 		return (
