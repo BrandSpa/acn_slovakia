@@ -16,7 +16,10 @@ const VideoHeader = React.createClass({
 
 	render() {
 		const {videoUrl, imageUrl} = this.props;
-		let height = window.innerHeight < 700 ? `${(window.innerHeight / 2) - 100}px` :  `${window.innerHeight - 100}px`;
+		let height = window.innerHeight < 700
+			? `${window.innerHeight / 2 - 100}px`
+			: `${window.innerHeight - 100}px`;
+
 		let style = {
 			backgroundImage: `url(${imageUrl})`,
 			backgroundSize: 'cover',
@@ -31,12 +34,11 @@ const VideoHeader = React.createClass({
 			<div>
 				<VideoModal ref={modal => this.modal = modal} url={videoUrl} />
 				<div style={style} onClick={this.openModal}>
-			
-				<div style={{background: 'rgba(60,81,90, .5)', width: '100%', 'padding': '10px 0'}}>
-					<div className="l-wrap" style={{color: '#fff', fontSize: '18px'}}>
-						Video <i className="ion-ios-videocam"></i> 
+					<div style={{background: 'rgba(60,81,90, .5)', width: '100%', 'padding': '10px 0'}}>
+						<div className="l-wrap" style={{color: '#fff', fontSize: '18px'}}>
+							Video <i className="ion-ios-videocam"></i> 
+						</div>
 					</div>
-				</div>
 				</div>
 			</div>
 		)

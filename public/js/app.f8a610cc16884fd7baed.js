@@ -10209,6 +10209,7 @@ var VideoHeader = _react2.default.createClass({
 		    imageUrl = _props.imageUrl;
 
 		var height = window.innerHeight < 700 ? window.innerHeight / 2 - 100 + 'px' : window.innerHeight - 100 + 'px';
+
 		var style = {
 			backgroundImage: 'url(' + imageUrl + ')',
 			backgroundSize: 'cover',
@@ -10247,4 +10248,4 @@ exports.default = VideoHeader;
 
 /***/ })
 ]),[631]);
-//# sourceMappingURL=app.6b1afe99588bc2025eb5.js.map
+//# sourceMappingURL=app.f8a610cc16884fd7baed.js.map
