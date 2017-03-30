@@ -6,7 +6,7 @@
 		
 <div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
     <div class="bs-feat__img__textbox" style="background:black;">
-        <div class="news_date">News / May 2017</div>
+        <div class="news_date" style="color:#FFF;">News / May 2017</div>
         <div class="breadcrumbs" style=" color: #b9b9b9; text-align:left; " typeof="BreadcrumbList" vocab="https://schema.org/">
         <?php if(function_exists('bcn_display'))
         {
