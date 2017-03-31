@@ -182,7 +182,6 @@ function store_contact() {
   die();
 }
 
-
 add_action( 'wp_ajax_nopriv_infusion_contact', 'infusion_contact' );
 add_action( 'wp_ajax_infusion_contact', 'infusion_contact' );
 
@@ -192,12 +191,10 @@ function infusion_contact() {
   try {
     $key = get_option('infusionsoft_key');
     $subdomain = get_option('infusionsoft_subdomain');
-    $defaultTags = [800, 802];
     $tags = get_option('infusionsoft_tags') ? explode(',', get_option('infusionsoft_tags')) : [];
     $dataTags = $data['tags'] ? explode(',',  $data['tags']) : [];
-    $tags = array_merge($tags, $defaultTags, $dataTags);
+    $tags = array_merge($tags, $dataTags);
     $res = infusion_createContact($subdomain, $key);
-
     return responseJson($res);
 
   } catch(Exception $e) {
