@@ -40,7 +40,7 @@ add_action( 'wp_ajax_nopriv_office_countries', 'office_countries' );
 add_action( 'wp_ajax_office_countries', 'office_countries' );
 
 function office_countries() {
-  $res = etOfficesCountries(); 
+  $res = getOfficesCountries(); 
   responseJson($res);
   die();
 }
