@@ -40,7 +40,7 @@ require $dir_base . 'vendor/autoload.php';
 
 			return $res;
 		} catch(Exception $e) {
-			return $e;
+			return ['err' => $e];
 		}
 		
 	}
