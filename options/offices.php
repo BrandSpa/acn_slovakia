@@ -128,6 +128,21 @@ function logos_settings_page() {
 							name="contact_info_email_<?php echo $value ?>"
 							value="<?php echo esc_attr( get_option('contact_info_email_' . $value ) ); ?>"
 						/>
+						<p></p>
+						<h4>ConvertLoop</h4>
+							<input 
+								style="background: rgba(255,255,255,.4); width: 60%; height: 35px" 
+								type="text" 
+								name="convertloop_api_key_<?php echo $value ?>"
+							value="<?php echo esc_attr( get_option('convertloop_api_key_' . $value ) ); ?>"
+							/>
+							<p></p>
+							<input 
+								style="background: rgba(255,255,255,.4); width: 60%; height: 35px" 
+								type="text" 
+								name="convertloop_app_id_<?php echo $value ?>"
+								value="<?php echo esc_attr( get_option('convertloop_app_id' . $value ) ); ?>"
+							/>
 
 							<?php submit_button(); ?>
 
