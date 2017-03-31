@@ -22,12 +22,17 @@ function cl_createPerson($appId, $apiKey, $data) {
 }
 
 function cl_createPersonWithTags($appId, $apiKey, $data) {
-	$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");	
-	$res = $cl->people()->createOrUpdate(array(
-  	"email" => $data['email'],
-  	"add_tags" => $data['tags'] //is an array
-	));
-	return $res;
+	try {
+		$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");	
+		$res = $cl->people()->createOrUpdate(array(
+			"email" => $data['email'],
+			"add_tags" => $data['tags'] //is an array
+		));
+		return $res;
+	} catch(Exception $e) {
+		return $e;
+	}
+	
 }
 
 function cl_createEvent($appId, $apiKey, $data) {
