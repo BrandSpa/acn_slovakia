@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "580eef3316442ceb85ef64ce0e53afac",
-    "content-hash": "6b91238b770c5bfdd69880dffcadc955",
+    "hash": "7d1578b02b2188a11756df3468b9c39a",
+    "content-hash": "8b85fed2f47aa940944c48c3c2808d08",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -64,6 +64,48 @@
                 "tls"
             ],
             "time": "2016-11-02 18:11:27"
+        },
+        {
+            "name": "convertloop/convertloop-php",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/germanescobar/convertloop-php.git",
+                "reference": "a4d9a1e2d6385d093d016a876c53970a6753ea1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/germanescobar/convertloop-php/zipball/a4d9a1e2d6385d093d016a876c53970a6753ea1a",
+                "reference": "a4d9a1e2d6385d093d016a876c53970a6753ea1a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ConvertLoop\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "German Escobar",
+                    "email": "german.escobarc@gmail.com"
+                }
+            ],
+            "description": "A PHP client of the ConvertLoop API",
+            "time": "2016-12-16 23:11:11"
         },
         {
             "name": "egeloen/http-adapter",
@@ -592,6 +634,58 @@
             "description": "Internal MaxMind Web Service API",
             "homepage": "https://github.com/maxmind/mm-web-service-api-php",
             "time": "2016-08-18 16:36:52"
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "version": "2.8.25",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/serbanghita/Mobile-Detect.git",
+                "reference": "f0896b5c7274d1450023b0b376240be902c3251c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/f0896b5c7274d1450023b0b376240be902c3251c",
+                "reference": "f0896b5c7274d1450023b0b376240be902c3251c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Mobile_Detect.php"
+                ],
+                "psr-0": {
+                    "Detection": "namespaced/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serban Ghita",
+                    "email": "serbanghita@gmail.com",
+                    "homepage": "http://mobiledetect.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "keywords": [
+                "detect mobile devices",
+                "mobile",
+                "mobile detect",
+                "mobile detector",
+                "php mobile detect"
+            ],
+            "time": "2017-03-29 13:59:30"
         },
         {
             "name": "nielse63/phpimagecache",
