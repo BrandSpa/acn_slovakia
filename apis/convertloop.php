@@ -23,7 +23,7 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
 
 	function clcreatePersonWithTags($appId, $apiKey, $data) {
 		try {
-			$cl = new \ConvertLoop($appId, $apiKey, "v1");
+			$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");
 
 			$res = $cl->people()->createOrUpdate([
 				"email" => $data['email'],
