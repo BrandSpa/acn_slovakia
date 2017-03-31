@@ -174,7 +174,7 @@ function store_contact() {
     var_dump( cl_createPerson($appId, $apiKey, $data));
     
   } else {
-    var_dump($_POST);
+    var_dump($_GET);
     return responseJson(['infusion', $lang]);
   }
 
