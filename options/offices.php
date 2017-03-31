@@ -143,7 +143,7 @@ function logos_settings_page() {
 								type="text"
 								placeholder="Convertloop app id"
 								name="convertloop_app_id_<?php echo $value ?>"
-								value="<?php echo esc_attr( get_option('convertloop_app_id' . $value ) ); ?>"
+								value="<?php echo esc_attr( get_option('convertloop_app_id_' . $value ) ); ?>"
 							/>
 
 							<?php submit_button(); ?>
