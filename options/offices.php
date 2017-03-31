@@ -133,13 +133,15 @@ function logos_settings_page() {
 							<input 
 								style="background: rgba(255,255,255,.4); width: 60%; height: 35px" 
 								type="text" 
+								placeholder="Convertloop api key"
 								name="convertloop_api_key_<?php echo $value ?>"
-							value="<?php echo esc_attr( get_option('convertloop_api_key_' . $value ) ); ?>"
+								value="<?php echo esc_attr( get_option('convertloop_api_key_' . $value ) ); ?>"
 							/>
 							<p></p>
 							<input 
 								style="background: rgba(255,255,255,.4); width: 60%; height: 35px" 
-								type="text" 
+								type="text"
+								placeholder="Convertloop app id"
 								name="convertloop_app_id_<?php echo $value ?>"
 								value="<?php echo esc_attr( get_option('convertloop_app_id' . $value ) ); ?>"
 							/>
