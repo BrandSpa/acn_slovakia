@@ -20,15 +20,15 @@ const Accordion = React.createClass({
   },
   
   render() {
-    const {content, btnTitle} = this.props;
+    const {content, btnTitle, background} = this.props;
     const btnStyle = {
       width: '100%',
       height: '60px',
       border: 'none',
-      background: this.props.background,
       borderRadius: '0',
       fontSize: '18px',
-      fontWeight: 'normal'
+      fontWeight: 'normal',
+      background
     };
 
     return (

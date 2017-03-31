@@ -2394,16 +2394,17 @@ var Accordion = _react2.default.createClass({
   render: function render() {
     var _props = this.props,
         content = _props.content,
-        btnTitle = _props.btnTitle;
+        btnTitle = _props.btnTitle,
+        background = _props.background;
 
     var btnStyle = {
       width: '100%',
       height: '60px',
       border: 'none',
-      background: this.props.background,
       borderRadius: '0',
       fontSize: '18px',
-      fontWeight: 'normal'
+      fontWeight: 'normal',
+      background: background
     };
 
     return _react2.default.createElement(
@@ -10261,4 +10262,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.490edebedc10b442ba67.js.map
+//# sourceMappingURL=app.01e627c31cebb2d32d28.js.map
