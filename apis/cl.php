@@ -5,9 +5,8 @@ $dir_base =  str_replace('apis', '', __DIR__);
 ** Documentation
 ** url: https://convertloop.co/docs/developers/getting-started
 **/
-if( file_exists($dir_base . '/vendor/autoload.php') ) {
 
-	require $dir_base . 'vendor/autoload.php';
+require $dir_base . 'vendor/autoload.php';
 
 	function cl_createPerson($appId, $apiKey, $data) {
 		try {
@@ -54,8 +53,5 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
 		));
 	}
 
-} else {
-	return 'no autoload';
-}
 
 ?>
