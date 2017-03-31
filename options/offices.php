@@ -58,7 +58,7 @@ function logos_settings_page() {
 					<?php $value = str_replace(' ', '_', $value); ?>
 
           <section id="#office-<?php echo $value ?>" style="padding: 15px; margin: 15px auto;background: #fff; box-shadow: 1px 1px 5px rgba(0,0,0, .1); width: 100%">
-						<h3><?php echo str_replace('_', ' ', $value) ?></h3>
+						<h3><a href="#office-<?php echo $value ?>"><?php echo str_replace('_', ' ', $value) ?></a></h3>
 						<hr>
 
 						<h4>Logo url</h4>
