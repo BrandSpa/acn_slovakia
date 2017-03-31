@@ -164,13 +164,17 @@ add_action( 'wp_ajax_store_contact', 'store_contact' );
 
 function store_contact() {
   $data = $_POST['data'];
-  $lang = getCountryLang($data['country']);
+  try {
+    $lang = getCountryLang($data['country']);
 
-  if(in_array($data['country'], getOfficesCountries())) {
-    return responseJson(['convertloop', $lang]);
+    if(in_array($data['country'], getOfficesCountries())) {
+      return responseJson(['convertloop', $lang]);
+    }
+
+    return responseJson(['infusion', $lang]);
+  } catch(Exception $e) {
+    return responseJson($e);
   }
-
-  return responseJson(['infusion', $lang]);
   die();
 }
 
