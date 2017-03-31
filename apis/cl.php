@@ -7,7 +7,7 @@ $dir_base =  str_replace('apis', '', __DIR__);
 **/
 if( file_exists($dir_base . '/vendor/autoload.php') ) {
 
-	require $dir_base . '/vendor/autoload.php';
+	require $dir_base . 'vendor/autoload.php';
 
 	function cl_createPerson($appId, $apiKey, $data) {
 		try {
@@ -24,12 +24,12 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
 		}
 	}
 
-	function clcreatePersonWithTags($appId, $apiKey, $data) {
+	function cl_create_person($appId, $apiKey, $data) {
 		try {
 			$data = json_encode($data);
 			$auth_string = $appId . ":" . $apiKey;
       $auth = base64_encode($auth_string);
-			
+
 			$headers = array(
 				"Authorization" => "Basic " . $auth,
 				'Accept' => 'application/json', 'content-type' => 'application/json'

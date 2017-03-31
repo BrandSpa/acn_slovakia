@@ -10,7 +10,7 @@ include_once 'mailchimp.php';
 include_once 'stripe.php';
 include_once 'infusion.php';
 include_once 'posts.php';
-include_once 'convertloop.php';
+include_once 'cl.php';
 
 function responseJson($res = []) {
   header('Content-type: application/json');  
@@ -171,10 +171,10 @@ function store_contact() {
     $countryKey = str_replace(' ', '_', $data['country']);
     $appId = get_option('convertloop_app_' . $countryKey);
     $apiKey = get_option('convertloop_api_' . $countryKey);
-    var_dump( clcreatePersonWithTags($appId, $apiKey, $data));
+    var_dump( cl_create_person($appId, $apiKey, $data));
     return $data;
   } else {
-    var_dump(clcreatePersonWithTags());
+    var_dump(cl_create_person());
     return responseJson(['infusion', $lang]);
   }
 
