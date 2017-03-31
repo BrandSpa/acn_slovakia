@@ -4,6 +4,7 @@ import isEmpty from 'validator/lib/isEmpty';
 import qs from 'qs';
 import objToFormData from '../lib/obj_to_formdata';
 import getCountries from '../lib/getCountries';
+const endpoint = '/wp-admin/admin-ajax.php';
 
 const contactForm = React.createClass({
   getInitialState() {
@@ -11,6 +12,7 @@ const contactForm = React.createClass({
       contact: {name: '', lastname: '', email: '', country: ''},
       errors: {name: false, lastname: false, email: false},
       countries: getCountries,
+      officeCountries: [],
       loading: false,
       showMemberExists: false 
     };
@@ -21,6 +23,8 @@ const contactForm = React.createClass({
   },
 
   componentDidMount() {
+    request.post(endpoint, qs.stringify({action: 'office_countries'})).then(cons => console.log(cons));
+
     this.setState({
       contact: {...this.state.contact, country: this.props.country}
     });
@@ -54,6 +58,16 @@ const contactForm = React.createClass({
     e.preventDefault();
     let data = objToFormData(this.state.contact);
     this.isValid().then(this.storeContact).catch(err => console.error(err));
+  },
+  
+  storeConvertLoop() {
+    const data = qs.stringify({...this.state.contact, action: 'convertloop_contact'});
+    return request.post(endpoint, data);
+  },
+
+  storeInfusion() {
+    const data = qs.stringify({...this.state.contact, action: 'infusion_contact'});
+    return request.post(endpoint, data);
   },
 
   storeContact(isValid) {

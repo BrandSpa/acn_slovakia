@@ -2602,6 +2602,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var endpoint = '/wp-admin/admin-ajax.php';
+
 var contactForm = _react2.default.createClass({
   displayName: 'contactForm',
   getInitialState: function getInitialState() {
@@ -2609,6 +2611,7 @@ var contactForm = _react2.default.createClass({
       contact: { name: '', lastname: '', email: '', country: '' },
       errors: { name: false, lastname: false, email: false },
       countries: _getCountries2.default,
+      officeCountries: [],
       loading: false,
       showMemberExists: false
     };
@@ -2617,6 +2620,10 @@ var contactForm = _react2.default.createClass({
     return { validationMessages: {}, placeholders: {}, texts: {}, redirect: '' };
   },
   componentDidMount: function componentDidMount() {
+    _axios2.default.post(endpoint, _qs2.default.stringify({ action: 'office_countries' })).then(function (cons) {
+      return console.log(cons);
+    });
+
     this.setState({
       contact: _extends({}, this.state.contact, { country: this.props.country })
     });
@@ -2653,6 +2660,14 @@ var contactForm = _react2.default.createClass({
     this.isValid().then(this.storeContact).catch(function (err) {
       return console.error(err);
     });
+  },
+  storeConvertLoop: function storeConvertLoop() {
+    var data = _qs2.default.stringify(_extends({}, this.state.contact, { action: 'convertloop_contact' }));
+    return _axios2.default.post(endpoint, data);
+  },
+  storeInfusion: function storeInfusion() {
+    var data = _qs2.default.stringify(_extends({}, this.state.contact, { action: 'infusion_contact' }));
+    return _axios2.default.post(endpoint, data);
   },
   storeContact: function storeContact(isValid) {
     var _this2 = this;
@@ -2927,6 +2942,17 @@ var Donate = _react2.default.createClass({
 
     return _axios2.default.post(endpoint, dataAjax);
   },
+  infusion: function infusion() {
+    var tags = '';
+    if (this.state.donation_type == 'monthly') tags = '870';
+    if (this.state.donation_type == 'once') tags = '868';
+
+    var data = _qs2.default.stringify({ action: 'infusion_contact', data: _extends({}, this.state.contact, { tags: tags }) });
+    return _axios2.default.post(endpoint, data);
+  },
+  convertLoop: function convertLoop() {
+    var tags = '';
+  },
   completeTransaction: function completeTransaction() {
     var stripeResponse = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     var _state2 = this.state,
@@ -2937,9 +2963,10 @@ var Donate = _react2.default.createClass({
     var customer = stripeResponse.customer,
         id = stripeResponse.id;
 
-    var order = { id: this.contact.email + '-' + id, amount: amount };
-    var url = base + '?customer_id=' + customer + '-' + id + '&order_revenue=' + amount + '&order_id=' + id;
-    window.location = url;
+    infusion().then(function (res) {
+      var url = base + '?customer_id=' + customer + '-' + id + '&order_revenue=' + amount + '&order_id=' + id;
+      window.location = url;
+    });
   },
   creditCardIsValid: function creditCardIsValid() {
     var errs = this.creditCard.allValidations();
@@ -10266,4 +10293,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.d674cef79c7a40f8445a.js.map
+//# sourceMappingURL=app.773369fd80618f8bb599.js.map
