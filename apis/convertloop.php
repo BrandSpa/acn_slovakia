@@ -27,12 +27,17 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
 
 	function clcreatePersonWithTags($appId, $apiKey, $data) {
 		try {
-			$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");
+			$data = json_encode($data);
+			$auth_string = $appId . ":" . $apiKey;
+      $auth = base64_encode($auth_string);
+			$headers = array(
+				"Authorization" => "Basic " . $auth,
+				'Accept' => 'application/json', 'content-type' => 'application/json'
+			);
 
-			$res = $cl->people()->createOrUpdate([
-				"email" => $data['email'],
-				"add_tags" => $data['tags'] //is an array
-			]);
+			$endpoint = 'https://api.convertloop.co/v1/people';
+
+			$req = Requests::post($endpoint, $headers, $data);
 
 			return $res;
 		} catch(Exception $e) {
