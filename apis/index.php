@@ -163,13 +163,13 @@ add_action( 'wp_ajax_store_contact', 'store_contact' );
 
 function store_contact() {
   $data = $_POST['data'];
-  
+
   if(in_array($data['country'], getOfficesCountries())) {
     return responseJson(['convertloop']);
   }
 
   return responseJson(['infusion']);
-
+  die();
 }
 
 
