@@ -76,29 +76,19 @@ const contactForm = React.createClass({
   },
 
   storeContact(isValid) {
-    let {email, name, lastname, country} = this.state.contact;
-
-    let mc_data = {
-      email_address: email,
-      status: 'subscribed',
-      merge_fields: {NAME: `${name} ${lastname}`, COUNTRY: country},
-      update_existing: true
-    };
-
-    let data = qs.stringify({action: 'mailchimp_subscribe', data: mc_data});
-
     if (isValid) {
       this.setState({loading: true});
-      request
-        .post('/wp-admin/admin-ajax.php', data)
+      if(this.state.inOffice) {
+       this.storeConvertLoop().then(res => {
+          if (res.data.email) window.location = this.props.redirect;
+        });
+      } else {
+        this.storeConvertLoop()
+        .then(this.storeInfusion)
         .then(res => {
-          if (res.data.id) window.location = this.props.redirect;
-          if(res.data.title == 'Member Exists') {
-            console.error('member Exists');
-            this.setState({showMemberExists: true, loading: false});
-          };
+          if (res.data.email) window.location = this.props.redirect;
         })
-        .catch(err => console.error(err));
+      }
     }
   },
 

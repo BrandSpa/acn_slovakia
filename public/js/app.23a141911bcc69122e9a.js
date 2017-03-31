@@ -2676,33 +2676,17 @@ var contactForm = _react2.default.createClass({
   storeContact: function storeContact(isValid) {
     var _this3 = this;
 
-    var _state$contact = this.state.contact,
-        email = _state$contact.email,
-        name = _state$contact.name,
-        lastname = _state$contact.lastname,
-        country = _state$contact.country;
-
-
-    var mc_data = {
-      email_address: email,
-      status: 'subscribed',
-      merge_fields: { NAME: name + ' ' + lastname, COUNTRY: country },
-      update_existing: true
-    };
-
-    var data = _qs2.default.stringify({ action: 'mailchimp_subscribe', data: mc_data });
-
     if (isValid) {
       this.setState({ loading: true });
-      _axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
-        if (res.data.id) window.location = _this3.props.redirect;
-        if (res.data.title == 'Member Exists') {
-          console.error('member Exists');
-          _this3.setState({ showMemberExists: true, loading: false });
-        };
-      }).catch(function (err) {
-        return console.error(err);
-      });
+      if (this.state.inOffice) {
+        this.storeConvertLoop().then(function (res) {
+          if (res.data.email) window.location = _this3.props.redirect;
+        });
+      } else {
+        this.storeConvertLoop().then(this.storeInfusion).then(function (res) {
+          if (res.data.email) window.location = _this3.props.redirect;
+        });
+      }
     }
   },
   handleChange: function handleChange(field, e) {
@@ -10297,4 +10281,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.4ad0fcec622f23aa9486.js.map
+//# sourceMappingURL=app.23a141911bcc69122e9a.js.map
