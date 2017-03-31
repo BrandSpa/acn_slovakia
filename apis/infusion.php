@@ -3,7 +3,7 @@ $dir_base =  str_replace('apis', '', __DIR__);
 require $dir_base . 'vendor/autoload.php';
 
 function infusion_get_countries_tags($country = '') {
-	$countries = [
+	  $countryTags = [
     'Australia' => '822',
     'Austria' => '824',
     'Belgium' => '826',
@@ -36,4 +36,25 @@ function get_arr($str_to_explode = '', $default = '') {
 	} else {
 		return [$default];
 	}
+}
+
+function infusion_createContact($subdomain, $key) {
+  $infusionsoft = new Infusionsoft($subdomain, $key);
+  $name = explode(" ", $data['name']);
+
+  $res = $infusionsoft->contact( 'add', array(
+      'FirstName' => $name[0],
+      'LastName' => $name[1],
+      'Email' => $data['email'],
+      'Phone1' => $data['phone'],
+      'Country' => $data['country']
+    ));
+
+  $optin = $infusionsoft->APIEmail('optIn', $data['email'], 'SingleOptIn');
+
+  foreach($tags as $tag) {
+    $infusionsoft->contact('addToGroup', $res, $tag);
+  }
+
+  return $optin;
 }

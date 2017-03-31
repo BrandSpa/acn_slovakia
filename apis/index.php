@@ -1,23 +1,49 @@
 <?php
- header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: *');
 $main_dir = str_replace('apis', '', __DIR__);
+include_once $main_dir . '/lib/countries.php';
+include_once $main_dir . '/lib/get_geoip.php';
+include_once $main_dir . '/lib/location.php';
 include_once 'mailchimp.php';
 include_once 'stripe.php';
 include_once 'infusion.php';
 include_once 'posts.php';
-include_once $main_dir . '/lib/countries.php';
-include_once $main_dir . '/lib/get_geoip.php';
-include_once $main_dir . '/lib/location.php';
 
+function responseJson($res = []) {
+  header('Content-type: application/json');  
+  echo json_encode($res);
+}
+
+/**
+** API
+** endpoint base: wp-admin/admin-ajax.php
+**/
+
+/**
+** action: update_geo
+**/
 add_action( 'wp_ajax_nopriv_update_geo', 'update_geo' );
 add_action( 'wp_ajax_update_geo', 'update_geo' );
 
 function update_geo() {
   $res = geoip_db(); 
-  echo json_encode($res);
+  return responseJson($res);
   die();
 }
 
+add_action( 'wp_ajax_nopriv_test_json', 'test_json' );
+add_action( 'wp_ajax_test_json', 'test_json' );
+
+function test_json() {
+  $res = $_POST['data'];
+  return responseJson($res);
+  die();
+}
+
+/**
+** endpoint
+** action: get_posts
+**/
 add_action( 'wp_ajax_nopriv_get_posts', 'wp_get_posts' );
 add_action( 'wp_ajax_get_posts', 'wp_get_posts' );
 
@@ -26,24 +52,28 @@ function wp_get_posts() {
   $post_type = isset($_POST['post_type']) ? $_POST['post_type'] : 'post';
   $category = isset($_POST['post_category']) ? $_POST['post_category'] : '';
   $perpage = isset($_POST['post_perpage']) ? $_POST['post_perpage'] : '6';
-  // bs_get_posts($type = 'post', $paged = 1, $category = '', $perpage = '6')
+
   $res = bs_get_posts($post_type, $paged, $category, $perpage);
-  header('Content-type: application/json');
-  echo json_encode($res);
+  return responseJson($res);
   die();
 }
 
+/**
+** action: get_menu
+**/
 add_action( 'wp_ajax_nopriv_get_menu', 'wp_get_menu' );
 add_action( 'wp_ajax_get_menu', 'wp_get_menu' );
 
 function wp_get_menu() {
   $name = $_POST['name'];
   $res = wp_get_nav_menu_items($name);
-  header('Content-type: application/json');
-  echo json_encode($res);
+  return responseJson($res);
   die();
 }
 
+/**
+** action: donate_redirect
+**/
 add_action( 'wp_ajax_nopriv_donate_redirect', 'donate_redirect' );
 add_action( 'wp_ajax_donate_redirect', 'donate_redirect' );
 
@@ -56,11 +86,11 @@ function donate_redirect() {
     $res = '#donate';
   }
 
-  header('Content-type: application/json');
-  echo json_encode($res);
+  return responseJson($res);
   die();
 }
 
+// mailchimp_subscribe
 add_action( 'wp_ajax_nopriv_mailchimp_subscribe', 'mailchimp_subscribe' );
 add_action( 'wp_ajax_mailchimp_subscribe', 'mailchimp_subscribe' );
 
@@ -80,8 +110,7 @@ function stripe_token() {
   $card = $_POST['data'];
   $apiKey =  get_option('stripe_key_private');
   $res = stripe_create_token( $apiKey, $card);
-  header('Content-type: application/json');
-  echo json_encode($res);
+  return responseJson($res);
   die();
 }
 
@@ -92,10 +121,8 @@ function get_plan() {
   $card = $_POST['data'];
   $apiKey =  get_option('stripe_key_private');
   $res = stripe_get_plan($apiKey, 'donation-2');
-  header('Content-type: application/json');
-  echo json_encode($res);
+  return responseJson($res);
   die();
-  
 }
 
 add_action( 'wp_ajax_nopriv_stripe_charge', 'stripe_charge' );
@@ -114,10 +141,10 @@ function stripe_charge() {
     $res = stripe_once($apiKey, $data);
   }
   
-  header('Content-type: application/json');
-  echo json_encode($res);
+  return responseJson($res);
   die();
 }
+
 add_action( 'wp_ajax_nopriv_stripe_update_plan', 'stripe_plan' );
 add_action( 'wp_ajax_stripe_update_plan', 'stripe_plan' );
 
@@ -126,8 +153,7 @@ function stripe_plan() {
   $api_key =  get_option('stripe_key_private');
 
   $res = stripe_update_plan($api_key, $data);
-  header('Content-type: application/json');
-  echo json_encode($res);
+  return responseJson($res);
   die();
 }
 
@@ -139,60 +165,13 @@ function infusion_contact() {
   try {
   $key = get_option('infusionsoft_key');
   $subdomain = get_option('infusionsoft_subdomain');
-
-  $countryTags = [
-    'Australia' => '822',
-    'Austria' => '824',
-    'Belgium' => '826',
-    'Brazil' => '828',
-    'Canada' => '830',
-    'Chile' => '832',
-    'Colombia' => '834',
-    'France' => '836',
-    'Germany' => '838',
-    'Ireland' => '840',
-    'Italy' => '842',
-    'Malta' => '844',
-    'Mexico' => '846',
-    'Netherlands' => '848',
-    'Philippines' => '850',
-    'Poland' => '852',
-    'Portugal' => '854',
-    'Slovakia' => '856',
-    'Republic of Korea' => '858',
-    'Spain' => '860',
-    'Switzerland' => '862'
-  ];
-
   $countryTag = array_key_exists($data['country'], $countryTags) ? [$countryTags[$data['country']]] : [820];
-  
   $defaultTags = [800, 802];
   $tags = get_option('infusionsoft_tags') ? explode(',', get_option('infusionsoft_tags')) : [];
   $dataTags = $data['tags'] ? explode(',',  $data['tags']) : [];
   $tags = array_merge($tags, $defaultTags, $countryTag, $dataTags);
-
-
-    
-    $infusionsoft = new Infusionsoft($subdomain, $key);
-    $name = explode(" ", $data['name']);
-
-    $res = $infusionsoft->contact( 'add', array(
-      'FirstName' => $name[0],
-      'LastName' => $name[1],
-      'Email' => $data['email'],
-      'Phone1' => $data['phone'],
-      'Country' => $data['country']
-    ));
-
-    $optin = $infusionsoft->APIEmail('optIn', $data['email'], 'SingleOptIn');
-
-    foreach($tags as $tag) {
-      $infusionsoft->contact('addToGroup', $res, $tag);
-    }
-
-    header('Content-type: application/json');
-    
-    echo json_encode($optin);
+  $res = infusion_createContact($subdomain, $key);
+  return responseJson($res);
 
   } catch(Exception $e) {
     echo json_encode(['error' => $e]);
@@ -206,8 +185,8 @@ add_action( 'wp_ajax_countries', 'countries' );
 
 function countries() {
   $res = getCountries();
-  header('Content-type: application/json');  
   header('Access-Control-Allow-Origin: *');
+  header('Content-type: application/json');  
   echo json_encode($res);
   die();
 }

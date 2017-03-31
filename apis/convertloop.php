@@ -7,7 +7,7 @@ require $dir_base . 'vendor/autoload.php';
 **/
 
 
-function createPerson($appId, $apiKey, $data) {
+function cl_createPerson($appId, $apiKey, $data) {
 	$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");	
 	$person = array(
     "email" => $data['email'],
@@ -18,7 +18,7 @@ function createPerson($appId, $apiKey, $data) {
 	$cl->people()->createOrUpdate($person);	
 }
 
-function createPersonWithTags($appId, $apiKey, $data) {
+function cl_createPersonWithTags($appId, $apiKey, $data) {
 	$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");	
 	$cl->people()->createOrUpdate(array(
   	"email" => $data['email'],
@@ -26,7 +26,7 @@ function createPersonWithTags($appId, $apiKey, $data) {
 	));
 }
 
-function createEvent($appId, $apiKey, $data) {
+function cl_createEvent($appId, $apiKey, $data) {
 	$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");
 	$cl->eventLogs()->send(array(
 		"name" => $data['event'], 
