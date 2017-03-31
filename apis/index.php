@@ -166,6 +166,7 @@ add_action( 'wp_ajax_store_contact', 'store_contact' );
 function store_contact() {
   $data = $_POST['data'];
   $lang = getCountryLang($data['country']);
+  $data['add_tags'][] = $lang == 'es' ? 'SPANISH' : 'ENGLISH';
 
   if(in_array($data['country'], getOfficesCountries())) {
     $countryKey = str_replace(' ', '_', $data['country']);
