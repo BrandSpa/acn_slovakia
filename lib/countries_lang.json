@@ -168,7 +168,7 @@
     ]
   },
   {
-    "name":"Bolivia (Plurinational State of)",
+    "name":"Bolivia",
     "languages":[
       "es",
       "ay",
@@ -176,7 +176,7 @@
     ]
   },
   {
-    "name":"Bonaire, Sint Eustatius and Saba",
+    "name":"Bonaire",
     "languages":[
       "nl"
     ]
@@ -351,7 +351,7 @@
     ]
   },
   {
-    "name":"Congo (Democratic Republic of the)",
+    "name":"Congo",
     "languages":[
       "fr",
       "ln",
@@ -1364,7 +1364,7 @@
     ]
   },
   {
-    "name":"Korea (Republic of)",
+    "name":"Republic of Korea",
     "languages":[
       "ko"
     ]
@@ -1548,7 +1548,7 @@
     ]
   },
   {
-    "name":"United States of America",
+    "name":"United States",
     "languages":[
       "en"
     ]
@@ -1575,7 +1575,7 @@
     ]
   },
   {
-    "name":"Venezuela (Bolivarian Republic of)",
+    "name":"Venezuela",
     "languages":[
       "es"
     ]
