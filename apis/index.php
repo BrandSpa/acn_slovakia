@@ -34,15 +34,6 @@ function update_geo() {
   die();
 }
 
-add_action( 'wp_ajax_nopriv_test_json', 'test_json' );
-add_action( 'wp_ajax_test_json', 'test_json' );
-
-function test_json() {
-  $res = $_POST['data'];
-  responseJson($res);
-  die();
-}
-
 /**
 ** endpoint
 ** action: get_posts
@@ -194,10 +185,9 @@ function infusion_contact() {
     $tags = get_option('infusionsoft_tags') ? explode(',', get_option('infusionsoft_tags')) : [];
     $data['tags'] = array_merge($tags, $data['tags']);
     $res = infusion_createContact($subdomain, $key, $data);
-    echo responseJson($res);
-
+    responseJson($data);
   } catch(Exception $e) {
-    return responseJson(['error' => $e]);
+    responseJson(['error' => $e]);
   }
 
   die();
