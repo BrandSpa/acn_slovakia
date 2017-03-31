@@ -173,8 +173,9 @@ function store_contact() {
     $apiKey = get_option('convertloop_api_' . $countryKey);
     echo cl_create_person($appId, $apiKey, $data);
   } else {
-    var_dump(cl_create_person());
-    return responseJson(['infusion', $lang]);
+    $appId = get_option('convertloop_app_default');
+    $apiKey = get_option('convertloop_api_default');
+    echo  $appId; //cl_create_person($appId, $apiKey, $data);
   }
 
   die();
