@@ -4,14 +4,17 @@ function bs_accordion_sc($atts, $content = null) {
 	$attributes = [
 		'content' => '',
     'btn_title' => '',
-    'background' => '#687f87'
+    'background' => '#687f87',
+    'btn_title_color' => '#fff'
   ];
 
   $at = shortcode_atts( $attributes , $atts );
+
 	$props = [
 		'content' => $content,
     'btnTitle' => $at['btn_title'],
-    'background' => $at['background']
+    'background' => $at['background'],
+    'titleColor' => $at['btn_title_color']
 	];
 	
   ob_start();
@@ -50,7 +53,13 @@ add_action( 'vc_before_init', 'bs_accordion_vc' );
         "heading" => "Background",
         "param_name" => "background",
         "value" => '#687f87'
-			]
+			],
+      [
+        "type" => "textfield",
+        "heading" => "Title color",
+        "param_name" => 'btn_title_color',
+        "value" => '#fff'
+      ]
 		];
 
   	vc_map(
