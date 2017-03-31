@@ -175,7 +175,7 @@ function store_contact() {
   } else {
     $appId = get_option('convertloop_app_default');
     $apiKey = get_option('convertloop_api_default');
-    echo  $appId; //cl_create_person($appId, $apiKey, $data);
+    echo cl_create_person($appId, $apiKey, $data);
   }
 
   die();
