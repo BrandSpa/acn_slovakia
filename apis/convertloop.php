@@ -29,6 +29,7 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
 			$data = json_encode($data);
 			$auth_string = $appId . ":" . $apiKey;
       $auth = base64_encode($auth_string);
+			
 			$headers = array(
 				"Authorization" => "Basic " . $auth,
 				'Accept' => 'application/json', 'content-type' => 'application/json'
