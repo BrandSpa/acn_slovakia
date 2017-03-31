@@ -30,7 +30,7 @@ add_action( 'wp_ajax_update_geo', 'update_geo' );
 
 function update_geo() {
   $res = geoip_db(); 
-  return responseJson($res);
+  responseJson($res);
   die();
 }
 
@@ -39,7 +39,7 @@ add_action( 'wp_ajax_test_json', 'test_json' );
 
 function test_json() {
   $res = $_POST['data'];
-  return responseJson($res);
+  responseJson($res);
   die();
 }
 
@@ -57,7 +57,7 @@ function wp_get_posts() {
   $perpage = isset($_POST['post_perpage']) ? $_POST['post_perpage'] : '6';
 
   $res = bs_get_posts($post_type, $paged, $category, $perpage);
-  return responseJson($res);
+  responseJson($res);
   die();
 }
 
@@ -70,7 +70,7 @@ add_action( 'wp_ajax_get_menu', 'wp_get_menu' );
 function wp_get_menu() {
   $name = $_POST['name'];
   $res = wp_get_nav_menu_items($name);
-  return responseJson($res);
+  responseJson($res);
   die();
 }
 
@@ -89,7 +89,7 @@ function donate_redirect() {
     $res = '#donate';
   }
 
-  return responseJson($res);
+  responseJson($res);
   die();
 }
 
@@ -113,7 +113,7 @@ function stripe_token() {
   $card = $_POST['data'];
   $apiKey =  get_option('stripe_key_private');
   $res = stripe_create_token( $apiKey, $card);
-  return responseJson($res);
+  responseJson($res);
   die();
 }
 
@@ -124,7 +124,7 @@ function get_plan() {
   $card = $_POST['data'];
   $apiKey =  get_option('stripe_key_private');
   $res = stripe_get_plan($apiKey, 'donation-2');
-  return responseJson($res);
+  responseJson($res);
   die();
 }
 
@@ -144,7 +144,7 @@ function stripe_charge() {
     $res = stripe_once($apiKey, $data);
   }
   
-  return responseJson($res);
+  responseJson($res);
   die();
 }
 
@@ -156,7 +156,7 @@ function stripe_plan() {
   $api_key =  get_option('stripe_key_private');
 
   $res = stripe_update_plan($api_key, $data);
-  return responseJson($res);
+  responseJson($res);
   die();
 }
 
@@ -194,7 +194,7 @@ function infusion_contact() {
     $tags = get_option('infusionsoft_tags') ? explode(',', get_option('infusionsoft_tags')) : [];
     $data['tags'] = array_merge($tags, $data['tags']);
     $res = infusion_createContact($subdomain, $key, $data);
-    return responseJson($res);
+    echo responseJson($res);
 
   } catch(Exception $e) {
     return responseJson(['error' => $e]);
