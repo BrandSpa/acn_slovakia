@@ -36,11 +36,10 @@ require $dir_base . 'vendor/autoload.php';
 
 			$endpoint = 'https://api.convertloop.co/v1/people';
 
-			$res = Requests::post($endpoint, $headers, $data);
-
-			return $res;
+			$req = Requests::post($endpoint, $headers, $data);
+			return $req->body;
 		} catch(Exception $e) {
-			return ['err' => $e];
+			return ['error' => $e];
 		}
 		
 	}
