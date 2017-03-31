@@ -66,12 +66,12 @@ const contactForm = React.createClass({
   },
   
   storeConvertLoop() {
-    const data = qs.stringify({...this.state.contact, action: 'convertloop_contact'});
+    const data = qs.stringify({data: this.state.contact, action: 'convertloop_contact'});
     return request.post(endpoint, data);
   },
 
   storeInfusion() {
-    const data = qs.stringify({...this.state.contact, action: 'infusion_contact'});
+    const data = qs.stringify({data: this.state.contact, action: 'infusion_contact'});
     return request.post(endpoint, data);
   },
 

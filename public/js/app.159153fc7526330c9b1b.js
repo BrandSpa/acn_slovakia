@@ -2666,11 +2666,11 @@ var contactForm = _react2.default.createClass({
     });
   },
   storeConvertLoop: function storeConvertLoop() {
-    var data = _qs2.default.stringify(_extends({}, this.state.contact, { action: 'convertloop_contact' }));
+    var data = _qs2.default.stringify({ data: this.state.contact, action: 'convertloop_contact' });
     return _axios2.default.post(endpoint, data);
   },
   storeInfusion: function storeInfusion() {
-    var data = _qs2.default.stringify(_extends({}, this.state.contact, { action: 'infusion_contact' }));
+    var data = _qs2.default.stringify({ data: this.state.contact, action: 'infusion_contact' });
     return _axios2.default.post(endpoint, data);
   },
   storeContact: function storeContact(isValid) {
@@ -10281,4 +10281,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.23a141911bcc69122e9a.js.map
+//# sourceMappingURL=app.159153fc7526330c9b1b.js.map
