@@ -10,6 +10,7 @@ include_once 'mailchimp.php';
 include_once 'stripe.php';
 include_once 'infusion.php';
 include_once 'posts.php';
+include_once 'convertloop.php';
 
 function responseJson($res = []) {
   header('Content-type: application/json');  
@@ -164,18 +165,18 @@ add_action( 'wp_ajax_store_contact', 'store_contact' );
 
 function store_contact() {
   $data = $_POST['data'];
+  $lang = getCountryLang($data['country']);
 
-  try {
-    $lang = getCountryLang($data['country']);
+  if(in_array($data['country'], getOfficesCountries())) {
+    $countryKey = str_replace(' ', '_', $data['country']);
+    $api = get_option('convertloop_api_' . $countryKey);
+    // $res = cl_createPersonWithTags($appId, $apiKey, $data);
+    return responseJson(['convertloop', $api, $lang]);
 
-    if(in_array($data['country'], getOfficesCountries())) {
-      return responseJson(['convertloop', $lang]);
-    }
-
+  } else {
     return responseJson(['infusion', $lang]);
-  } catch(Exception $e) {
-    return responseJson($e);
   }
+
   die();
 }
 
