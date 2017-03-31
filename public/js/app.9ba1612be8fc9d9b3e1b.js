@@ -2625,7 +2625,7 @@ var contactForm = _react2.default.createClass({
     _axios2.default.post(endpoint, _qs2.default.stringify({ action: 'office_countries' })).then(function (cons) {
       _this.setState({
         contact: _extends({}, _this.state.contact, { country: _this.props.country }),
-        officeCountries: cons
+        officeCountries: cons.data
       });
     });
   },
@@ -10294,4 +10294,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.9004a1889e0fbf5712b9.js.map
+//# sourceMappingURL=app.9ba1612be8fc9d9b3e1b.js.map
