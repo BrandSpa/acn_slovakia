@@ -13,6 +13,7 @@ const contactForm = React.createClass({
       errors: {name: false, lastname: false, email: false},
       countries: getCountries,
       officeCountries: [],
+      inOffice: false,
       loading: false,
       showMemberExists: false 
     };
@@ -25,8 +26,11 @@ const contactForm = React.createClass({
   componentDidMount() {
     request.post(endpoint, qs.stringify({action: 'office_countries'})).then(cons => {
       this.setState({
-        contact: {...this.state.contact, country: this.props.country},
-        officeCountries: cons.data
+        contact: {
+          ...this.state.contact, country: this.props.country
+        },
+        officeCountries: cons.data,
+        inOffice: cons.data.indexOf(this.props.country) !== -1
       });
     });
   },

@@ -2612,6 +2612,7 @@ var contactForm = _react2.default.createClass({
       errors: { name: false, lastname: false, email: false },
       countries: _getCountries2.default,
       officeCountries: [],
+      inOffice: false,
       loading: false,
       showMemberExists: false
     };
@@ -2624,8 +2625,10 @@ var contactForm = _react2.default.createClass({
 
     _axios2.default.post(endpoint, _qs2.default.stringify({ action: 'office_countries' })).then(function (cons) {
       _this.setState({
-        contact: _extends({}, _this.state.contact, { country: _this.props.country }),
-        officeCountries: cons.data
+        contact: _extends({}, _this.state.contact, { country: _this.props.country
+        }),
+        officeCountries: cons.data,
+        inOffice: cons.data.indexOf(_this.props.country) !== -1
       });
     });
   },
@@ -10294,4 +10297,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.9ba1612be8fc9d9b3e1b.js.map
+//# sourceMappingURL=app.4ad0fcec622f23aa9486.js.map
