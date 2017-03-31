@@ -33,7 +33,7 @@ function bs_add_country_info_settings() {
     register_setting( 'bs_country_info_group', 'url_' . $value );
     register_setting( 'bs_country_info_group', 'contact_info_address_' . $value );
     register_setting( 'bs_country_info_group', 'contact_info_phone_' . $value );
-    register_setting( 'bs_country_info_group', 'convertloop_api' . $value );
+    register_setting( 'bs_country_info_group', 'convertloop_api_' . $value );
     register_setting( 'bs_country_info_group', 'convertloop_app_' . $value );
   }
 
