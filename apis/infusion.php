@@ -38,7 +38,7 @@ function get_arr($str_to_explode = '', $default = '') {
 	}
 }
 
-function infusion_createContact($subdomain, $key) {
+function infusion_createContact($subdomain, $key, $data) {
   $infusionsoft = new Infusionsoft($subdomain, $key);
   $name = explode(" ", $data['name']);
 
@@ -52,7 +52,7 @@ function infusion_createContact($subdomain, $key) {
 
   $optin = $infusionsoft->APIEmail('optIn', $data['email'], 'SingleOptIn');
 
-  foreach($tags as $tag) {
+  foreach($data['tags'] as $tag) {
     $infusionsoft->contact('addToGroup', $res, $tag);
   }
 

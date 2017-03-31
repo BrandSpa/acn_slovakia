@@ -160,10 +160,10 @@ function stripe_plan() {
   die();
 }
 
-add_action( 'wp_ajax_nopriv_store_contact', 'store_contact' );
-add_action( 'wp_ajax_store_contact', 'store_contact' );
+add_action( 'wp_ajax_nopriv_convertloop_contact', 'convertloop_contact' );
+add_action( 'wp_ajax_convertloop_contact', 'convertloop_contact' );
 
-function store_contact() {
+function convertloop_contact() {
   $data = $_POST['data'];
   $lang = getCountryLang($data['country']);
   $data['add_tags'][] = $lang == 'es' ? 'SPANISH' : 'ENGLISH';
@@ -192,9 +192,8 @@ function infusion_contact() {
     $key = get_option('infusionsoft_key');
     $subdomain = get_option('infusionsoft_subdomain');
     $tags = get_option('infusionsoft_tags') ? explode(',', get_option('infusionsoft_tags')) : [];
-    $dataTags = $data['tags'] ? explode(',',  $data['tags']) : [];
-    $tags = array_merge($tags, $dataTags);
-    $res = infusion_createContact($subdomain, $key);
+    $data['tags'] = array_merge($tags, $data['tags']);
+    $res = infusion_createContact($subdomain, $key, $data);
     return responseJson($res);
 
   } catch(Exception $e) {
