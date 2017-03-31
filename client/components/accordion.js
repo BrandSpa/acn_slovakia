@@ -3,7 +3,8 @@ import React from 'react';
 const Accordion = React.createClass({
   getDefaultProps() {
     return {
-      background: '#687f87'
+      background: '#687f87',
+      titleColor: ''
     }
   },
 
@@ -20,8 +21,8 @@ const Accordion = React.createClass({
   },
   
   render() {
-    const {content, btnTitle, background} = this.props;
-    
+    const {content, btnTitle, background, titleColor} = this.props;
+
     const btnStyle = {
       width: '100%',
       height: '60px',
@@ -29,6 +30,7 @@ const Accordion = React.createClass({
       borderRadius: '0',
       fontSize: '18px',
       fontWeight: 'normal',
+      color: titleColor,
       background
     };
 

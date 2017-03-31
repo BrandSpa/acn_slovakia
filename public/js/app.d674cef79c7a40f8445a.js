@@ -2379,7 +2379,8 @@ var Accordion = _react2.default.createClass({
   displayName: 'Accordion',
   getDefaultProps: function getDefaultProps() {
     return {
-      background: '#687f87'
+      background: '#687f87',
+      titleColor: ''
     };
   },
   getInitialState: function getInitialState() {
@@ -2395,7 +2396,9 @@ var Accordion = _react2.default.createClass({
     var _props = this.props,
         content = _props.content,
         btnTitle = _props.btnTitle,
-        background = _props.background;
+        background = _props.background,
+        titleColor = _props.titleColor;
+
 
     var btnStyle = {
       width: '100%',
@@ -2404,6 +2407,7 @@ var Accordion = _react2.default.createClass({
       borderRadius: '0',
       fontSize: '18px',
       fontWeight: 'normal',
+      color: titleColor,
       background: background
     };
 
@@ -10262,4 +10266,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.01e627c31cebb2d32d28.js.map
+//# sourceMappingURL=app.d674cef79c7a40f8445a.js.map
