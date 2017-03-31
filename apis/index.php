@@ -182,7 +182,8 @@ function infusion_contact() {
   try {
     $key = get_option('infusionsoft_key');
     $subdomain = get_option('infusionsoft_subdomain');
-    $tags = get_option('infusionsoft_tags') ? explode(',', trim(get_option('infusionsoft_tags'))) : [];
+
+    $tags = get_option('infusionsoft_tags') ? explode(',', str_replace(' ', '', 'get_option('infusionsoft_tags') )) : [];
     $data['tags'] = array_merge($tags, $data['tags']);
     $res = infusion_createContact($subdomain, $key, $data);
     responseJson($data);
