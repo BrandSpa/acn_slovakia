@@ -173,7 +173,7 @@ function store_contact() {
     $appId = get_option('convertloop_app_' . $countryKey);
     // $res = cl_createPersonWithTags($appId, $apiKey, $data);
     // return $res;
-    return responseJson([$data, $countryKey]);
+    return responseJson([$countryKey, $data]);
   } else {
     return responseJson(['infusion', $lang]);
   }
