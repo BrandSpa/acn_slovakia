@@ -101,13 +101,29 @@ const Donate = React.createClass({
     return request.post(endpoint, dataAjax);
   },
 
+  infusion() {
+    let tags = '';
+    if(this.state.donation_type == 'monthly') tags = '870';
+    if(this.state.donation_type == 'once') tags = '868';
+    
+    let data = qs.stringify({ action: 'infusion_contact', data: { ...this.state.contact, tags } });
+    return request.post(endpoint, data);
+  },
+  
+  convertLoop() {
+    let tags = '';
+    
+  },
+
   completeTransaction(stripeResponse = {}) {
     const {amount, donation_type} = this.state;
     const base = this.props.redirect[donation_type];
     const {customer, id} = stripeResponse;
-    const order = {id: `${this.contact.email}-${id}`, amount};
-    const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
-    window.location = url;  
+    infusion()
+    .then(res => {
+      const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
+      window.location = url;  
+    });
   },
 
   creditCardIsValid() {

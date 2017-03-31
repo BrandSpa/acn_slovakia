@@ -2,6 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 $main_dir = str_replace('apis', '', __DIR__);
 include_once $main_dir . '/lib/countries.php';
+include_once $main_dir . '/lib/offices_countries.php';
 include_once $main_dir . '/lib/get_geoip.php';
 include_once $main_dir . '/lib/location.php';
 include_once 'mailchimp.php';
@@ -157,24 +158,40 @@ function stripe_plan() {
   die();
 }
 
+add_action( 'wp_ajax_nopriv_store_contact', 'store_contact' );
+add_action( 'wp_ajax_store_contact', 'store_contact' );
+
+function store_contact() {
+  $data = $_POST['data'];
+  
+  if(in_array($data['country'], getOfficesCountries())) {
+    return responseJson(['convertloop']);
+  }
+
+  return responseJson(['infusion']);
+
+}
+
+
 add_action( 'wp_ajax_nopriv_infusion_contact', 'infusion_contact' );
 add_action( 'wp_ajax_infusion_contact', 'infusion_contact' );
 
 function infusion_contact() {
   $data = $_POST['data'];
+
   try {
-  $key = get_option('infusionsoft_key');
-  $subdomain = get_option('infusionsoft_subdomain');
-  $countryTag = array_key_exists($data['country'], $countryTags) ? [$countryTags[$data['country']]] : [820];
-  $defaultTags = [800, 802];
-  $tags = get_option('infusionsoft_tags') ? explode(',', get_option('infusionsoft_tags')) : [];
-  $dataTags = $data['tags'] ? explode(',',  $data['tags']) : [];
-  $tags = array_merge($tags, $defaultTags, $countryTag, $dataTags);
-  $res = infusion_createContact($subdomain, $key);
-  return responseJson($res);
+    $key = get_option('infusionsoft_key');
+    $subdomain = get_option('infusionsoft_subdomain');
+    $defaultTags = [800, 802];
+    $tags = get_option('infusionsoft_tags') ? explode(',', get_option('infusionsoft_tags')) : [];
+    $dataTags = $data['tags'] ? explode(',',  $data['tags']) : [];
+    $tags = array_merge($tags, $defaultTags, $dataTags);
+    $res = infusion_createContact($subdomain, $key);
+
+    return responseJson($res);
 
   } catch(Exception $e) {
-    echo json_encode(['error' => $e]);
+    return responseJson(['error' => $e]);
   }
 
   die();
