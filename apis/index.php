@@ -171,7 +171,6 @@ function store_contact() {
     $countryKey = str_replace(' ', '_', $data['country']);
     $appId = get_option('convertloop_app_' . $countryKey);
     $apiKey = get_option('convertloop_api_' . $countryKey);
-    var_dump( cl_create_person($appId, $apiKey, $data));
     return $data;
   } else {
     var_dump(cl_create_person());
