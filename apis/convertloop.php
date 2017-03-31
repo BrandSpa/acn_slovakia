@@ -11,6 +11,7 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
 	require $dir_base . '/vendor/autoload.php';
 
 	function cl_createPerson($appId, $apiKey, $data) {
+		try {
 		$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");	
 		$person = array(
 			"email" => $data['email'],
@@ -19,6 +20,9 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
 		);
 
 		$cl->people()->createOrUpdate($person);	
+		} catch(Exception $e) {
+			return $e;
+		}
 	}
 
 	function clcreatePersonWithTags($appId, $apiKey, $data) {
