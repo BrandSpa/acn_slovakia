@@ -2620,23 +2620,24 @@ var contactForm = _react2.default.createClass({
     return { validationMessages: {}, placeholders: {}, texts: {}, redirect: '' };
   },
   componentDidMount: function componentDidMount() {
-    _axios2.default.post(endpoint, _qs2.default.stringify({ action: 'office_countries' })).then(function (cons) {
-      return console.log(cons);
-    });
+    var _this = this;
 
-    this.setState({
-      contact: _extends({}, this.state.contact, { country: this.props.country })
+    _axios2.default.post(endpoint, _qs2.default.stringify({ action: 'office_countries' })).then(function (cons) {
+      _this.setState({
+        contact: _extends({}, _this.state.contact, { country: _this.props.country }),
+        officeCountries: cons
+      });
     });
   },
   checkEmpty: function checkEmpty(field) {
     return (0, _isEmpty2.default)(this.state.contact[field]);
   },
   validate: function validate() {
-    var _this = this;
+    var _this2 = this;
 
     var errors = {};
     var validations = Object.keys(this.state.errors).map(function (field) {
-      var val = _this.checkEmpty(field);
+      var val = _this2.checkEmpty(field);
       errors = _extends({}, errors, _defineProperty({}, field, val));
       return val;
     });
@@ -2670,7 +2671,7 @@ var contactForm = _react2.default.createClass({
     return _axios2.default.post(endpoint, data);
   },
   storeContact: function storeContact(isValid) {
-    var _this2 = this;
+    var _this3 = this;
 
     var _state$contact = this.state.contact,
         email = _state$contact.email,
@@ -2691,10 +2692,10 @@ var contactForm = _react2.default.createClass({
     if (isValid) {
       this.setState({ loading: true });
       _axios2.default.post('/wp-admin/admin-ajax.php', data).then(function (res) {
-        if (res.data.id) window.location = _this2.props.redirect;
+        if (res.data.id) window.location = _this3.props.redirect;
         if (res.data.title == 'Member Exists') {
           console.error('member Exists');
-          _this2.setState({ showMemberExists: true, loading: false });
+          _this3.setState({ showMemberExists: true, loading: false });
         };
       }).catch(function (err) {
         return console.error(err);
@@ -10293,4 +10294,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.773369fd80618f8bb599.js.map
+//# sourceMappingURL=app.9004a1889e0fbf5712b9.js.map

@@ -23,10 +23,11 @@ const contactForm = React.createClass({
   },
 
   componentDidMount() {
-    request.post(endpoint, qs.stringify({action: 'office_countries'})).then(cons => console.log(cons));
-
-    this.setState({
-      contact: {...this.state.contact, country: this.props.country}
+    request.post(endpoint, qs.stringify({action: 'office_countries'})).then(cons => {
+      this.setState({
+        contact: {...this.state.contact, country: this.props.country},
+        officeCountries: cons
+      });
     });
   },
 
