@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Accordion = React.createClass({
+  getDefaultProps() {
+    return {
+      background: '#687f87'
+    }
+  },
+
   getInitialState() {
     return {show: false};
   },
@@ -19,7 +25,7 @@ const Accordion = React.createClass({
       width: '100%',
       height: '60px',
       border: 'none',
-      background: '#687f87',
+      background: this.props.background,
       borderRadius: '0',
       fontSize: '18px',
       fontWeight: 'normal'
