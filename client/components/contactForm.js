@@ -86,7 +86,7 @@ const contactForm = React.createClass({
         this.storeConvertLoop()
         .then(this.storeInfusion)
         .then(res => {
-          if (res.data.email) window.location = this.props.redirect;
+          if (res.data.success) window.location = this.props.redirect;
         })
       }
     }
