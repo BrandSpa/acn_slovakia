@@ -19,10 +19,11 @@ function cl_createPerson($appId, $apiKey, $data) {
 
 function cl_createPersonWithTags($appId, $apiKey, $data) {
 	$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");	
-	$cl->people()->createOrUpdate(array(
+	$res = $cl->people()->createOrUpdate(array(
   	"email" => $data['email'],
   	"add_tags" => $data['tags'] //is an array
 	));
+	return $res;
 }
 
 function cl_createEvent($appId, $apiKey, $data) {
