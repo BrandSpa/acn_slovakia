@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 $main_dir = str_replace('apis', '', __DIR__);
 include_once $main_dir . '/lib/countries.php';
 include_once $main_dir . '/lib/offices_countries.php';
-include_once $main_dir . '/lib/country_lang.php';
+// include_once $main_dir . '/lib/country_lang.php';
 include_once $main_dir . '/lib/get_geoip.php';
 include_once $main_dir . '/lib/location.php';
 include_once 'mailchimp.php';
@@ -164,6 +164,7 @@ add_action( 'wp_ajax_store_contact', 'store_contact' );
 
 function store_contact() {
   $data = $_POST['data'];
+
   try {
     $lang = getCountryLang($data['country']);
 
