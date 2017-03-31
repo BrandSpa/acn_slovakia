@@ -169,11 +169,10 @@ function store_contact() {
 
   if(in_array($data['country'], getOfficesCountries())) {
     $countryKey = str_replace(' ', '_', $data['country']);
-    $apiKey = get_option('convertloop_api_' . $countryKey);
     $appId = get_option('convertloop_app_' . $countryKey);
-    // $res = cl_createPersonWithTags($appId, $apiKey, $data);
-    // return $res;s
-    return responseJson([$apiKey]);
+    $apiKey = get_option('convertloop_api_' . $countryKey);
+    $res = cl_createPersonWithTags($appId, $apiKey, $data);
+    return responseJson($res);
   } else {
     return responseJson(['infusion', $lang]);
   }

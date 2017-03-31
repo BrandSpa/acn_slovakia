@@ -23,11 +23,13 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
 
 	function cl_createPersonWithTags($appId, $apiKey, $data) {
 		try {
-			$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");	
-			$res = $cl->people()->createOrUpdate(array(
+			$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");
+
+			$res = $cl->people()->createOrUpdate([
 				"email" => $data['email'],
 				"add_tags" => $data['tags'] //is an array
-			));
+			]);
+
 			return $res;
 		} catch(Exception $e) {
 			return $e;
