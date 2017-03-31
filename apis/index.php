@@ -196,7 +196,7 @@ function infusion_contact() {
     $tags = get_option('infusionsoft_tags') ? explode(',', str_replace(' ', '', get_option('infusionsoft_tags') )) : [];
     $data['tags'] = array_merge($tags, $data['tags']);
     $res = infusion_createContact($subdomain, $key, $data);
-    responseJson(["succes" => $res, "data" => $data]);
+    responseJson(["success" => $res, "data" => $data]);
   } catch(Exception $e) {
     responseJson(['error' => $e]);
   }
