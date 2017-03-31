@@ -1,10 +1,14 @@
 <?php
 $dir_base =  str_replace('apis', '', __DIR__);
-require $dir_base . 'vendor/autoload.php';
+
+
 /**
 ** Documentation
 ** url: https://convertloop.co/docs/developers/getting-started
 **/
+if( file_exists($dir_base . '/vendor/autoload.php') ) {
+
+require $dir_base . '/vendor/autoload.php';
 
 function cl_createPerson($appId, $apiKey, $data) {
 	$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");	
@@ -32,4 +36,7 @@ function cl_createEvent($appId, $apiKey, $data) {
 		"name" => $data['event'], 
 		"email" => $data['email']
 	));
+}
+} else {
+	return 'no autoload';
 }
