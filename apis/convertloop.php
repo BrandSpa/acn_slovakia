@@ -21,7 +21,7 @@ if( file_exists($dir_base . '/vendor/autoload.php') ) {
 		$cl->people()->createOrUpdate($person);	
 	}
 
-	function cl_createPersonWithTags($appId, $apiKey, $data) {
+	function clcreatePersonWithTags($appId, $apiKey, $data) {
 		try {
 			$cl = new \ConvertLoop\ConvertLoop($appId, $apiKey, "v1");
 
