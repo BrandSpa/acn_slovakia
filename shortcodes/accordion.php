@@ -11,7 +11,7 @@ function bs_accordion_sc($atts, $content = null) {
 	$props = [
 		'content' => $content,
     'btnTitle' => $at['btn_title'],
-    'background' => '#687f87'
+    'background' => $at['background']
 	];
 	
   ob_start();
