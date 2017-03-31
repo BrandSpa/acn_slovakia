@@ -2,6 +2,11 @@
 $dir_base =  str_replace('apis', '', __DIR__);
 require $dir_base . 'vendor/autoload.php';
 
+/**
+** Documentation
+** url: https://stripe.com/docs/api/php
+**/
+
 function stripe_create_token($api_key, $card) {
     \Stripe\Stripe::setApiKey($api_key);
 

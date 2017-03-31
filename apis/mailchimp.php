@@ -1,6 +1,12 @@
 <?php
 $dir_base =  str_replace('apis', '', __DIR__);
 
+/**
+** Documentation
+** Mailchimp endpoint: http://developer.mailchimp.com/documentation/mailchimp/reference/lists/
+** Library to make the request: https://github.com/rmccue/Requests
+**/
+
 if( file_exists($dir_base . '/vendor/autoload.php') ) {
 
   require $dir_base . 'vendor/autoload.php';
