@@ -2931,16 +2931,16 @@ var Donate = _react2.default.createClass({
 
     return _axios2.default.post(endpoint, dataAjax);
   },
-  infusion: function infusion() {
+  storeConvertLoop: function storeConvertLoop() {
+    var data = _qs2.default.stringify({ data: this.state.contact, action: 'convertloop_contact' });
+    return _axios2.default.post(endpoint, data);
+  },
+  storeInfusion: function storeInfusion() {
     var tags = '';
     if (this.state.donation_type == 'monthly') tags = '870';
     if (this.state.donation_type == 'once') tags = '868';
-
-    var data = _qs2.default.stringify({ action: 'infusion_contact', data: _extends({}, this.state.contact, { tags: tags }) });
+    var data = _qs2.default.stringify({ data: _extends({}, this.state.contact, { tags: tags }), action: 'infusion_contact' });
     return _axios2.default.post(endpoint, data);
-  },
-  convertLoop: function convertLoop() {
-    var tags = '';
   },
   completeTransaction: function completeTransaction() {
     var stripeResponse = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -2952,7 +2952,7 @@ var Donate = _react2.default.createClass({
     var customer = stripeResponse.customer,
         id = stripeResponse.id;
 
-    infusion().then(function (res) {
+    this.storeConvertLoop().then(this.storeInfusion).then(function (res) {
       var url = base + '?customer_id=' + customer + '-' + id + '&order_revenue=' + amount + '&order_id=' + id;
       window.location = url;
     });
@@ -10282,4 +10282,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.8d2696b36cb6b4cbd996.js.map
+//# sourceMappingURL=app.7ee9772262f3be3c37aa.js.map

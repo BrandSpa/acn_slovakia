@@ -100,26 +100,26 @@ const Donate = React.createClass({
 
     return request.post(endpoint, dataAjax);
   },
+  
+  storeConvertLoop() {
+    const data = qs.stringify({data: this.state.contact, action: 'convertloop_contact'});
+    return request.post(endpoint, data);
+  },
 
-  infusion() {
+  storeInfusion() {
     let tags = '';
     if(this.state.donation_type == 'monthly') tags = '870';
     if(this.state.donation_type == 'once') tags = '868';
-    
-    let data = qs.stringify({ action: 'infusion_contact', data: { ...this.state.contact, tags } });
+    const data = qs.stringify({data: {...this.state.contact, tags}, action: 'infusion_contact'});
     return request.post(endpoint, data);
-  },
-  
-  convertLoop() {
-    let tags = '';
-    
   },
 
   completeTransaction(stripeResponse = {}) {
     const {amount, donation_type} = this.state;
     const base = this.props.redirect[donation_type];
     const {customer, id} = stripeResponse;
-    infusion()
+    this.storeConvertLoop()
+    .then(this.storeInfusion)
     .then(res => {
       const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
       window.location = url;  
