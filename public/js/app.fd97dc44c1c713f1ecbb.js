@@ -2690,7 +2690,7 @@ var contactForm = _react2.default.createClass({
       if (this.state.inOffice) {
         this.storeConvertLoop().then(this.storeEventConvertLoop).then(function (res) {
           console.log(res.data);
-          if (res.data.email) window.location = _this3.props.redirect;
+          if (res.data.person.email) window.location = _this3.props.redirect;
         });
       } else {
         this.storeConvertLoop().then(this.storeEventConvertLoop).then(this.storeInfusion).then(function (res) {
@@ -10305,4 +10305,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.6856a5bd9b4a8f274d75.js.map
+//# sourceMappingURL=app.fd97dc44c1c713f1ecbb.js.map
