@@ -22,7 +22,8 @@
 			<?php the_content() ?>
 		</div>
 	</div>
-
+	
+	<?php require('templates/post_share.php') ?>
 	<?php require('templates/post_donate.php') ?>
 
 	<div class="l-wrap" style="margin: 40px auto">
