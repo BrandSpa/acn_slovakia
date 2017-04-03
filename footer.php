@@ -2,7 +2,7 @@
   <a 
     href="#"
     id="return-to-top" 
-     style="color: #fff; text-align: center; padding-top: 10px; position: fixed; bottom: 40px; right: 40px; background: rgba(0, 0, 0, .5); width: 40px; height: 40px; border-radius: 40px"
+     style="display: none;color: #fff; text-align: center; padding-top: 10px; position: fixed; bottom: 40px; right: 40px; background: rgba(0, 0, 0, .5); width: 40px; height: 40px; border-radius: 40px"
   >
     <i class="ion-chevron-up"></i>
   </a>
@@ -50,8 +50,8 @@
   bs.donate = '<?php echo gett('Donate') ?>'
 </script>
 
-<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.49022cac499e21ace501.js'></script>
-<script src='<?php echo get_template_directory_uri() ?>/public/js/app.86c062861579a880205a.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.dd8f83f5db43302940af.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/app.42377667df0e39a72ff3.js'></script>
 
 <!--/app theme-->
 

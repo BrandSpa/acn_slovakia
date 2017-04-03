@@ -4141,11 +4141,16 @@ function smoothScroll() {
   });
 
   window.addEventListener('scroll', (0, _debounce2.default)(function () {
-    console.count('scroll');
-  }, 250));
+    if ($('.nav').offset().top > 0) {
+      $('#return-to-top').css({ display: 'block' });
+    } else {
+      $('#return-to-top').css({ display: 'none' });
+    }
+  }, 200));
 
   $('#return-to-top').on('click', function (e) {
     e.preventDefault();
+
     $('html, body').animate({ scrollTop: 0 }, 800, function () {});
   });
 }
@@ -10315,4 +10320,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.86c062861579a880205a.js.map
+//# sourceMappingURL=app.42377667df0e39a72ff3.js.map

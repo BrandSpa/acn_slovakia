@@ -17,11 +17,17 @@ export default function smoothScroll() {
   });
 
   window.addEventListener('scroll', debounce(function() {
-    console.count('scroll');
-  }, 250));
+     if($('.nav').offset().top > 0) {
+       $('#return-to-top').css({display: 'block'})
+     } else {
+       $('#return-to-top').css({display: 'none'})
+     }
+
+  }, 200));
   
   $('#return-to-top').on('click', function(e) {
     e.preventDefault();
+   
     $('html, body').animate({ scrollTop: 0 }, 800, () => {});
   })
 
