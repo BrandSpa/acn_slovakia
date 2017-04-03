@@ -45,9 +45,21 @@
     }?>
 </div>-->
 
-		<div class="bs-post__content col-8-l col-12-s" id="post-content">
+	<div class="l-wrap">
+		<div class="col-1-l"></div>
+		<div class="col-5-l col-12-s">
 			<?php the_content() ?>
+			<div class="banner-horizontal">
+				<?php echo get_option('banner_horizontal') ?>
+			</div>
 		</div>
+
+		<div class="col-2-l"></div>
+		
+		<div class="col-3-l banner-vertical">
+			<?php echo get_option('banner_vertical') ?>
+		</div>
+
 	</div>
 
     <?php require('templates/post_share.php') ?>
