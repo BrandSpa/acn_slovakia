@@ -39,6 +39,7 @@
 	<!--/async load app-->
 <script>
   var bs = {};
+  bs.lang = '<?php echo getCountryLang(getCountry()) ?>'
   bs.donate = '<?php echo gett('Donate') ?>'
 </script>
 
