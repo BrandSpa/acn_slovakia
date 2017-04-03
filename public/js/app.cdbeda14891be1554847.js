@@ -2687,6 +2687,7 @@ var contactForm = _react2.default.createClass({
       this.setState({ loading: true });
       if (this.state.inOffice) {
         this.storeConvertLoop().then(this.storeEventConvertLoop).then(function (res) {
+          console.log(res.data);
           if (res.data.email) window.location = _this3.props.redirect;
         });
       } else {
@@ -10288,4 +10289,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.c5dd12d6d18fb92955ed.js.map
+//# sourceMappingURL=app.cdbeda14891be1554847.js.map
