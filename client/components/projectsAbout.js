@@ -31,7 +31,10 @@ const ProjectsAbout = React.createClass({
 		return (
 			<div>
 				<Projects 
-					contents={this.props.projects.map(project => project['text'] = project.content)} 
+					contents={this.props.projects.map(project => {
+						project['text'] = project.content;
+						return project;
+					})} 
 					donate={this.props.donate} 
 					changeSection={this.handleSection} 
 				/>
