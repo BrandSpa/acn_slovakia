@@ -82,7 +82,8 @@ onLoad(function() {
 		</div>
 		<div class="col-2-l"></div>
 		<div class="col-3-l">
-			<img src="http://placehold.it/300x600" height="600">
+		<?php echo get_option('banner_vertical') ?>
+		
 		</div>
 
 	</div>
