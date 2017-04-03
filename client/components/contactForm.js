@@ -70,23 +70,32 @@ const contactForm = React.createClass({
     return request.post(endpoint, data);
   },
 
+  storeEventConvertLoop() {
+    const { email } = this.state.contact;
+    const event = {name: 'Subscription', {person: {email}}};
+    const data = qs.stringify({data: , action: 'convertloop_event'});
+    return request.post(endpoint, data);
+  },
+
   storeInfusion() {
     const data = qs.stringify({data: this.state.contact, action: 'infusion_contact'});
     return request.post(endpoint, data);
   },
-
+  
   storeContact(isValid) {
     if (isValid) {
       this.setState({loading: true});
       if(this.state.inOffice) {
-       this.storeConvertLoop().then(res => {
+       this.storeConvertLoop()
+       .then(this.storeEventConvertLoop)
+       .then(res => {
           if (res.data.email) window.location = this.props.redirect;
         });
       } else {
         this.storeConvertLoop()
+        .then(this.storeEventConvertLoop)
         .then(this.storeInfusion)
         .then(res => {
-          console.log(res.data);
           if (res.data.success) window.location = this.props.redirect;
         })
       }
