@@ -3818,7 +3818,8 @@ var ProjectsAbout = _react2.default.createClass({
 			null,
 			_react2.default.createElement(_projects2.default, {
 				contents: this.props.projects.map(function (project) {
-					return project['text'] = project.content;
+					project['text'] = project.content;
+					return project;
 				}),
 				donate: this.props.donate,
 				changeSection: this.handleSection
@@ -3835,7 +3836,7 @@ var ProjectsAbout = _react2.default.createClass({
 							textAlign: 'center',
 							paddingTop: '20px',
 							float: 'left', height: '100px',
-							background: '#ECEAEC',
+							background: '#fff',
 							color: colors[this.state.section + 1]
 						}
 					},
@@ -3849,7 +3850,7 @@ var ProjectsAbout = _react2.default.createClass({
 					'div',
 					{
 						className: 'projects-about-num__text',
-						style: { width: '50%', float: 'left', height: '100px', padding: '40px', textAlign: 'center' }
+						style: { background: '#ECEAEC', width: '50%', float: 'left', height: '100px', padding: '40px', textAlign: 'center' }
 					},
 					this.props.projects[section] ? this.props.projects[section].number_text : ''
 				)
@@ -10322,4 +10323,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.c48d8574300597369025.js.map
+//# sourceMappingURL=app.c4cb618407086e0080ef.js.map

@@ -46,7 +46,7 @@ const ProjectsAbout = React.createClass({
 							textAlign: 'center',
 							paddingTop: '20px',
 							float: 'left', height: '100px', 
-							background: '#ECEAEC', 
+							background: '#fff',
 							color: colors[this.state.section + 1]
 						}}
 					>
@@ -55,7 +55,7 @@ const ProjectsAbout = React.createClass({
 
 					<div 
 						className="projects-about-num__text" 
-						style={{width: '50%', float: 'left', height: '100px', padding: '40px', textAlign: 'center'}}
+						style={{ background: '#ECEAEC', width: '50%', float: 'left', height: '100px', padding: '40px', textAlign: 'center'}}
 					>
 						{this.props.projects[section] ? this.props.projects[section].number_text : ''}
 					</div>
