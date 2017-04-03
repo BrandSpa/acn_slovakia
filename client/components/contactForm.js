@@ -69,10 +69,10 @@ const contactForm = React.createClass({
     const data = qs.stringify({data: this.state.contact, action: 'convertloop_contact'});
     return request.post(endpoint, data);
   },
-
+ 
   storeEventConvertLoop() {
-    const { email } = this.state.contact;
-    const event = {name: 'Subscription', person: {email: email} };
+    const { email, country } = this.state.contact;
+    const event = {name: 'Subscription', country , person: { email } };
     const data = qs.stringify({data: event, action: 'convertloop_event'});
     return request.post(endpoint, data);
   },

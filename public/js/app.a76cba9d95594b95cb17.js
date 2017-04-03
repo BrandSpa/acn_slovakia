@@ -2670,9 +2670,11 @@ var contactForm = _react2.default.createClass({
     return _axios2.default.post(endpoint, data);
   },
   storeEventConvertLoop: function storeEventConvertLoop() {
-    var email = this.state.contact.email;
+    var _state$contact = this.state.contact,
+        email = _state$contact.email,
+        country = _state$contact.country;
 
-    var event = { name: 'Subscription', person: { email: email } };
+    var event = { name: 'Subscription', country: country, person: { email: email } };
     var data = _qs2.default.stringify({ data: event, action: 'convertloop_event' });
     return _axios2.default.post(endpoint, data);
   },
@@ -10289,4 +10291,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.cdbeda14891be1554847.js.map
+//# sourceMappingURL=app.a76cba9d95594b95cb17.js.map
