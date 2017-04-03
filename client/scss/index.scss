@@ -391,8 +391,11 @@ button, .btn {
 		margin:auto;
 	}
 }
+
 .banner-vertical {
 	display: block;
+	margin-top: 16px;
+
 	@media #{$s} {
 		display: none;
 	}
@@ -400,6 +403,7 @@ button, .btn {
 
 .banner-horizontal {
 	display: none;
+	
 	@media #{$s} {
 		display: block;
 	}
