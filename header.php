@@ -1,7 +1,7 @@
 <?php
  header('Access-Control-Allow-Origin: *');
  geolify($post);
- if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
+ if(function_exists('wp_doing_ajax')) {
   echo 'ajax';
 }
  ?>
