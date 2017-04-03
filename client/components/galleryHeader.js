@@ -52,7 +52,8 @@ const GalleryHeader = React.createClass({
     const w = window.innerHeight;
 
     const btnsStyle = {
-      float: 'right'
+      float: 'right',
+      marginTop: '5px'
     };
 
     const btnStyle = {
