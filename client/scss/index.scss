@@ -404,8 +404,15 @@ button, .btn {
 .banner-horizontal {
 	display: none;
 	
+	img {
+		margin: 40px auto;
+    display: block;
+	}
+
 	@media #{$s} {
 		display: block;
+
+		}
 	}
 }
 
