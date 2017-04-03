@@ -1,5 +1,11 @@
 	<?php require('templates/footer.php') ?>
-  
+   <a 
+   href="#"
+   id="return-to-top" 
+   style="position: fixed; bottom: 40px; right: 40px; background: rgba(255, 255, 255, .5); width: 40px; height: 40px; border-radius: 40px">
+    <i class="ion-chevron-up"></i>
+</a>
+
 	<!--wordpress files-->
 	  <?php wp_footer() ?>
 	<!-- /wordpress files-->
