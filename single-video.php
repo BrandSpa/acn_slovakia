@@ -47,7 +47,7 @@
 	</script>
 <?php endif; ?>
 
-	<div class="l-wrap" style="margin-top: 40px">
+	<div class="l-wrap" >
 		<div class="col-1-l"></div>
 		<div class="col-5-l col-12-s" style="word-wrap: break-word;">
 			<?php the_content() ?>
