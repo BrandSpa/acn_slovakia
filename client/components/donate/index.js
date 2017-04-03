@@ -106,6 +106,13 @@ const Donate = React.createClass({
     return request.post(endpoint, data);
   },
 
+  storeEventConvertLoop() {
+    const { email, country } = this.state.contact;
+    const event = {name: `Donation-${this.state.donation_type}`, country , person: { email } };
+    const data = qs.stringify({data: event, action: 'convertloop_event'});
+    return request.post(endpoint, data);
+  },
+
   storeInfusion() {
     let tags = '';
     if(this.state.donation_type == 'monthly') tags = '870';
@@ -119,6 +126,7 @@ const Donate = React.createClass({
     const base = this.props.redirect[donation_type];
     const {customer, id} = stripeResponse;
     this.storeConvertLoop()
+    .then(this.storeEventConvertLoop)
     .then(this.storeInfusion)
     .then(res => {
       const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;

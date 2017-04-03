@@ -2944,6 +2944,15 @@ var Donate = _react2.default.createClass({
     var data = _qs2.default.stringify({ data: this.state.contact, action: 'convertloop_contact' });
     return _axios2.default.post(endpoint, data);
   },
+  storeEventConvertLoop: function storeEventConvertLoop() {
+    var _state$contact = this.state.contact,
+        email = _state$contact.email,
+        country = _state$contact.country;
+
+    var event = { name: 'Donation-' + this.state.donation_type, country: country, person: { email: email } };
+    var data = _qs2.default.stringify({ data: event, action: 'convertloop_event' });
+    return _axios2.default.post(endpoint, data);
+  },
   storeInfusion: function storeInfusion() {
     var tags = '';
     if (this.state.donation_type == 'monthly') tags = '870';
@@ -2961,7 +2970,7 @@ var Donate = _react2.default.createClass({
     var customer = stripeResponse.customer,
         id = stripeResponse.id;
 
-    this.storeConvertLoop().then(this.storeInfusion).then(function (res) {
+    this.storeConvertLoop().then(this.storeEventConvertLoop).then(this.storeInfusion).then(function (res) {
       var url = base + '?customer_id=' + customer + '-' + id + '&order_revenue=' + amount + '&order_id=' + id;
       window.location = url;
     });
@@ -10291,4 +10300,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.a76cba9d95594b95cb17.js.map
+//# sourceMappingURL=app.54df7affd012a53877b2.js.map
