@@ -192,7 +192,7 @@ function convertloop_contact() {
 add_action( 'wp_ajax_nopriv_convertloop_event', 'convertloop_event' );
 add_action( 'wp_ajax_convertloop_event', 'convertloop_event' );
 
-function covertloop_event() {
+function convertloop_event() {
   $data = $_POST['data'];
 
   if(in_array($data['country'], getOfficesCountries())) {
