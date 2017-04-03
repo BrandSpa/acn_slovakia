@@ -3352,8 +3352,8 @@ var GalleryHeader = _react2.default.createClass({
     var btnStyle = {
       border: "1px solid #fff",
       background: "transparent",
-      width: "50px",
-      height: "50px",
+      width: "40px",
+      height: "40px",
       borderRadius: "0",
       padding: "0",
       ':hover': {
@@ -10320,4 +10320,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.42377667df0e39a72ff3.js.map
+//# sourceMappingURL=app.5a948d3a6f50bcf47a37.js.map

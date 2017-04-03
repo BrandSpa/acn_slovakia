@@ -58,8 +58,8 @@ const GalleryHeader = React.createClass({
     const btnStyle = {
       border: "1px solid #fff",
       background: "transparent",
-      width: "50px",
-      height: "50px",
+      width: "40px",
+      height: "40px",
       borderRadius: "0",
       padding: "0",
 			':hover': {
