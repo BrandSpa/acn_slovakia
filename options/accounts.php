@@ -231,9 +231,7 @@ function bs_accounts_options() {
           type="text" 
           placeholder="Banner vertical" 
           name="banner_vertical" 
-        >
-        <?php echo get_option('banner_vertical') ?>
-        </textarea>
+        ><?php echo get_option('banner_vertical') ?></textarea>
       </p>
 
       <p>
@@ -243,9 +241,7 @@ function bs_accounts_options() {
           type="text" 
           placeholder="Banner horizontal" 
           name="banner_horizontal"  
-        >
-        <?php echo get_option('banner_horizontal') ?>
-        </textarea>
+        ><?php echo get_option('banner_horizontal') ?></textarea>
       </p>
     <p>
       <?php submit_button(); ?>
