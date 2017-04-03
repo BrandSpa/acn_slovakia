@@ -85,6 +85,7 @@ onLoad(function() {
 		</div>
 
 		<div class="col-2-l"></div>
+		
 		<div class="col-3-l banner-vertical">
 			<?php echo get_option('banner_vertical') ?>
 		</div>

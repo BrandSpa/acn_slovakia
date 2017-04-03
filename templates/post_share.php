@@ -36,17 +36,18 @@
 			</li>
 			<li style="display: inline-block; margin-right: 15px">
 				<a key={4} style="	color: #939597;
-			width: 40px;
-			height: 40px;
-			border-radius: 40px;
-			text-align: center;
-			display: block;
-			border: 1px solid #939597;
-			padding: 5px;
-      font-size: 20px;" href="whatsapp://send?text=<?php echo $current_url ?>">
+					width: 40px;
+					height: 40px;
+					border-radius: 40px;
+					text-align: center;
+					display: block;
+					border: 1px solid #939597;
+					padding: 5px;
+					font-size: 20px;" href="whatsapp://send?text=<?php echo $current_url ?>">
 					<i class="ion-social-whatsapp-outline"></i>
 				</a>
 			</li>
 		</ul>
 	</div>
 </div>
+

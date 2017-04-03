@@ -28,7 +28,7 @@
 		<!-- /wordpress files-->
     
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.4db293d7bec308bab93510824fd73210.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.23435972c19621855edbacc673a675fc.css">
 
 	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<script>

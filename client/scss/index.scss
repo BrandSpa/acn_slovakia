@@ -391,6 +391,20 @@ button, .btn {
 		margin:auto;
 	}
 }
+.banner-vertical {
+	display: block;
+	@media #{$s} {
+		display: none;
+	}
+}
+
+.banner-vertical {
+	display: none;
+	@media #{$s} {
+		display: block;
+	}
+}
+
 
 @import 'menu';
 @import 'header';
