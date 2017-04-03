@@ -1,7 +1,7 @@
 <?php
  header('Access-Control-Allow-Origin: *');
  geolify($post);
- if(defined('DOING_AJAX') && !DOING_AJAX) {
+ if(!defined('DOING_AJAX') && !DOING_AJAX) {
   echo 'ajax';
 }
 
