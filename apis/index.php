@@ -184,8 +184,8 @@ function convertloop_contact() {
   }
 
     $res = cl_create_person($appId, $apiKey, $data);
+    header('Content-type: application/json');  
     echo $res;
-
   die();
 }
 
@@ -203,8 +203,9 @@ function convertloop_event() {
     $appId = get_option('convertloop_app_default');
     $apiKey = get_option('convertloop_api_default');
   }
-
+  
   $res = cl_create_event($appId, $apiKey, $data);
+  header('Content-type: application/json');  
   echo $res;
 }
 
