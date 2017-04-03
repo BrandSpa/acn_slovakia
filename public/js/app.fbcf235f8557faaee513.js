@@ -3493,7 +3493,7 @@ var GalleryHeader = _react2.default.createClass({
                 ),
                 _react2.default.createElement(
                   "div",
-                  { style: { float: 'right' } },
+                  { style: { float: 'right', marginTop: '7px' } },
                   _react2.default.createElement(
                     "span",
                     { style: { color: "#fff", paddingRight: "10px" } },
@@ -10320,4 +10320,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.0450ea6b4a318ab5c4e9.js.map
+//# sourceMappingURL=app.fbcf235f8557faaee513.js.map

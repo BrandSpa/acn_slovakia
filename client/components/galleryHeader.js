@@ -157,7 +157,7 @@ const GalleryHeader = React.createClass({
                       </a>
                     </li>
                   </ul>
-                  <div style={{float: 'right'}}>
+                  <div style={{float: 'right', marginTop: '7px'}}>
                     <span style={{ color: "#fff", paddingRight: "10px" }}>
                       {images.length} {this.props.texts.of} {this.state.section + 1}
                     </span>
