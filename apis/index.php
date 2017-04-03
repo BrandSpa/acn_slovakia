@@ -203,10 +203,10 @@ function convertloop_event() {
     $appId = get_option('convertloop_app_default');
     $apiKey = get_option('convertloop_api_default');
   }
-  
-  $res = cl_create_event($appId, $apiKey, $data);
+
   header('Content-type: application/json');  
-  echo $res;
+  echo cl_create_event($appId, $apiKey, $data);
+  die();
 }
 
 add_action( 'wp_ajax_nopriv_infusion_contact', 'infusion_contact' );
