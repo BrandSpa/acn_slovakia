@@ -89,6 +89,7 @@ const contactForm = React.createClass({
        this.storeConvertLoop()
        .then(this.storeEventConvertLoop)
        .then(res => {
+         console.log(res.data);
           if (res.data.email) window.location = this.props.redirect;
         });
       } else {
