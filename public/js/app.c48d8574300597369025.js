@@ -3817,7 +3817,9 @@ var ProjectsAbout = _react2.default.createClass({
 			'div',
 			null,
 			_react2.default.createElement(_projects2.default, {
-				contents: this.props.projects,
+				contents: this.props.projects.map(function (project) {
+					return project['text'] = project.content;
+				}),
 				donate: this.props.donate,
 				changeSection: this.handleSection
 			}),
@@ -10320,4 +10322,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.fbcf235f8557faaee513.js.map
+//# sourceMappingURL=app.c48d8574300597369025.js.map
