@@ -31,6 +31,8 @@ function bs_accounts_settings() {
   register_setting( 'bs_accounts_info_group', 'subscribe_redirect' );
   register_setting( 'bs_accounts_info_group', 'analytics_id' );
   register_setting( 'bs_accounts_info_group', 'gta_id' );
+  register_setting( 'bs_accounts_info_group', 'banner_vertical' );
+  register_setting( 'bs_accounts_info_group', 'banner_horizontal' );
 }
 
 function bs_accounts_options() {
@@ -177,7 +179,6 @@ function bs_accounts_options() {
         value="<?php echo get_option('donate_monthly_redirect') ?>"
         >
      </p>
-
     <p>
 
      <label for=""> <b>Subscribe thanks / redirect</b>  </label>
@@ -221,6 +222,24 @@ function bs_accounts_options() {
         <br>
         <button class="button update-geoip">Update Geoip Database</button>
         <span class="update-geoip-message"></span>
+      </p>
+
+      <p>
+        <input 
+          type="text" 
+          placeholder="Banner vertical" 
+          name="banner_vertical" 
+          value="<?php echo get_option('banner_vertical') ?>" 
+        />
+      </p>
+
+      <p>
+        <input 
+          type="text" 
+          placeholder="Banner horizontal" 
+          name="banner_horizontal" 
+          value="<?php echo get_option('banner_horizontal') ?>" 
+        />
       </p>
     <p>
       <?php submit_button(); ?>

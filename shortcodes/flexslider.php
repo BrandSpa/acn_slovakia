@@ -1,8 +1,4 @@
 <?php
-/**
-** 	
-**/
-
 add_shortcode( 'bs_flexslider', 'bs_example_sc' );
 
 function bs_example_sc($atts, $content = null) {
