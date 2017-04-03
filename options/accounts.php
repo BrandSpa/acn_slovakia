@@ -225,23 +225,25 @@ function bs_accounts_options() {
       </p>
 
       <p>
-        <input 
+        <textarea
           style="background: rgba(255,255,255,.4); width: 60%; height: 35px"
           type="text" 
           placeholder="Banner vertical" 
           name="banner_vertical" 
-          value="<?php echo wp_filter_post_kses(get_option('banner_vertical')) ?>" 
-        />
+        >
+        <?php echo wp_filter_post_kses(get_option('banner_vertical')) ?>
+        </textarea>
       </p>
 
       <p>
-        <input 
+        <textarea
           style="background: rgba(255,255,255,.4); width: 60%; height: 35px"
           type="text" 
           placeholder="Banner horizontal" 
-          name="banner_horizontal" 
-          value="<?php echo wp_filter_post_kses(get_option('banner_horizontal')) ?>" 
-        />
+          name="banner_horizontal"  
+        >
+        <?php echo wp_filter_post_kses(get_option('banner_horizontal')) ?>
+        </textarea>
       </p>
     <p>
       <?php submit_button(); ?>
