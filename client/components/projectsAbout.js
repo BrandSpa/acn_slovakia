@@ -45,7 +45,8 @@ const ProjectsAbout = React.createClass({
 							width: '50%', 
 							textAlign: 'center',
 							paddingTop: '20px',
-							float: 'left', height: '100px', 
+							float: 'left', 
+							height: '100px', 
 							background: '#fff',
 							color: colors[this.state.section + 1]
 						}}
