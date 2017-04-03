@@ -2,7 +2,7 @@
   <a 
     href="#"
     id="return-to-top" 
-     style="text-align: center; padding-top: 5px; position: fixed; bottom: 40px; right: 40px; background: rgba(0, 0, 0, .5); width: 40px; height: 40px; border-radius: 40px"
+     style="color: #fff; text-align: center; padding-top: 10px; position: fixed; bottom: 40px; right: 40px; background: rgba(0, 0, 0, .5); width: 40px; height: 40px; border-radius: 40px"
   >
     <i class="ion-chevron-up"></i>
   </a>
