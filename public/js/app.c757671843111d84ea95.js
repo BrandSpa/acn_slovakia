@@ -3347,7 +3347,7 @@ var GalleryHeader = _react2.default.createClass({
 
     var btnsStyle = {
       float: 'right',
-      marginTop: '5px'
+      marginTop: '7px'
     };
 
     var btnStyle = {
@@ -10321,4 +10321,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.b9cd42c8acd0f2412614.js.map
+//# sourceMappingURL=app.c757671843111d84ea95.js.map

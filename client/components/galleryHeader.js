@@ -53,7 +53,7 @@ const GalleryHeader = React.createClass({
 
     const btnsStyle = {
       float: 'right',
-      marginTop: '5px'
+      marginTop: '7px'
     };
 
     const btnStyle = {
