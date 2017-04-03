@@ -33,7 +33,7 @@ require $dir_base . 'vendor/autoload.php';
 
 	// $data: { "name": "Signed Up", "person": { "email": "german.escobar@convertloop.co" } }
 	function cl_create_event($appId, $apiKey, $data) {
-			try {
+		try {
 			$data = json_encode($data);
 			$auth_string = $appId . ":" . $apiKey;
       $auth = base64_encode($auth_string);
@@ -47,7 +47,7 @@ require $dir_base . 'vendor/autoload.php';
 			$endpoint = 'https://api.convertloop.co/v1/event_logs';
 
 			$req = Requests::post($endpoint, $headers, $data);
-			return $req->body;
+			return $data;
 		} catch(Exception $e) {
 			return ['error' => $e];
 		}
