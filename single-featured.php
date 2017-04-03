@@ -72,8 +72,9 @@
             $('.nav').css('transition', 'all 300ms');
             $('.nav').css('background-color', 'transparent');
             $('.nav li > a').css('color', '#FFF');
-            $('.nav img').css('filter', 'grayscale() invert()');
+            $('.nav img').css('filter', 'grayscale(100%) invert(100%)');
         }
+        
        changeColor();
 
         window.addEventListener('scroll', function() {
