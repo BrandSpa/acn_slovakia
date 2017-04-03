@@ -3369,7 +3369,6 @@ var GalleryHeader = _react2.default.createClass({
       bottom: "auto",
       left: 0,
       width: "50%"
-
     };
 
     var linkRight = _extends({}, linkLeft, { left: "auto", right: 0 });
@@ -10321,4 +10320,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.c757671843111d84ea95.js.map
+//# sourceMappingURL=app.0450ea6b4a318ab5c4e9.js.map

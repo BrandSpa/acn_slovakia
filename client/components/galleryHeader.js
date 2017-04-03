@@ -74,8 +74,7 @@ const GalleryHeader = React.createClass({
       top: "0",
       bottom: "auto",
       left: 0,
-      width: "50%",
-		
+      width: "50%"
     };
 
     const linkRight = { ...linkLeft, left: "auto", right: 0 };
