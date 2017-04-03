@@ -138,217 +138,7 @@ exports['default'] = function (property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = assertString;
-function assertString(input) {
-  if (typeof input !== 'string') {
-    throw new TypeError('This library (validator.js) validates strings only');
-  }
-}
-module.exports = exports['default'];
-
-/***/ }),
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(8);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Modal = _react2.default.createClass({
-  displayName: 'Modal',
-  getInitialState: function getInitialState() {
-    return { show: false };
-  },
-  componentDidMount: function componentDidMount() {
-    document.addEventListener('keydown', this.handleEscKey, false);
-  },
-  componentWillUnmount: function componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleEscKey, false);
-  },
-  handleEscKey: function handleEscKey(e) {
-    if (e.keyCode == 27) this.setState({ show: false });
-  },
-  close: function close(e) {
-    e.preventDefault();
-    this.setState({ show: false });
-  },
-  show: function show() {
-    this.setState({ show: true });
-  },
-  render: function render() {
-    var url = this.props.url;
-
-
-    var iframeStyle = {
-      height: window.innerHeight ? window.innerHeight : '100hv'
-    };
-
-    return _react2.default.createElement(
-      'div',
-      { className: this.state.show ? 'modal modal--show' : 'modal' },
-      _react2.default.createElement(
-        'a',
-        { className: 'modal__close', href: '#', onClick: this.close },
-        _react2.default.createElement('i', { className: 'ion-close' })
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'iframe-container', style: iframeStyle },
-        this.state.show ? _react2.default.createElement('iframe', {
-          src: url + '?autoplay=1',
-          frameBorder: '0',
-          height: '315',
-          width: '100%',
-          allowFullScreen: true
-        }) : ''
-      )
-    );
-  }
-});
-
-exports.default = Modal;
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var maxYear = 19;
-
-function verification(isValid, isPotentiallyValid, isCurrentYear) {
-  return {
-    isValid: isValid,
-    isPotentiallyValid: isPotentiallyValid,
-    isCurrentYear: isCurrentYear || false
-  };
-}
-
-function expirationYear(value) {
-  var currentFirstTwo, currentYear, firstTwo, len, twoDigitYear, valid, isCurrentYear;
-
-  if (typeof value !== 'string') {
-    return verification(false, false);
-  }
-  if (value.replace(/\s/g, '') === '') {
-    return verification(false, true);
-  }
-  if (!/^\d*$/.test(value)) {
-    return verification(false, false);
-  }
-
-  len = value.length;
-
-  if (len < 2) {
-    return verification(false, true);
-  }
-
-  currentYear = new Date().getFullYear();
-
-  if (len === 3) {
-    // 20x === 20x
-    firstTwo = value.slice(0, 2);
-    currentFirstTwo = String(currentYear).slice(0, 2);
-    return verification(false, firstTwo === currentFirstTwo);
-  }
-
-  if (len > 4) {
-    return verification(false, false);
-  }
-
-  value = parseInt(value, 10);
-  twoDigitYear = Number(String(currentYear).substr(2, 2));
-
-  if (len === 2) {
-    isCurrentYear = twoDigitYear === value;
-    valid = value >= twoDigitYear && value <= twoDigitYear + maxYear;
-  } else if (len === 4) {
-    isCurrentYear = currentYear === value;
-    valid = value >= currentYear && value <= currentYear + maxYear;
-  }
-
-  return verification(valid, valid, isCurrentYear);
-}
-
-module.exports = expirationYear;
-
-
-/***/ }),
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-exports['default'] = function (value) {
-  if (Array.isArray(value)) value = value.join(',');
-
-  return value.match(/-webkit-|-moz-|-ms-/) !== null;
-};
-
-module.exports = exports['default'];
-
-/***/ }),
-/* 131 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(202),
@@ -542,6 +332,216 @@ module.exports = debounce;
 
 
 /***/ }),
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = assertString;
+function assertString(input) {
+  if (typeof input !== 'string') {
+    throw new TypeError('This library (validator.js) validates strings only');
+  }
+}
+module.exports = exports['default'];
+
+/***/ }),
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(8);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Modal = _react2.default.createClass({
+  displayName: 'Modal',
+  getInitialState: function getInitialState() {
+    return { show: false };
+  },
+  componentDidMount: function componentDidMount() {
+    document.addEventListener('keydown', this.handleEscKey, false);
+  },
+  componentWillUnmount: function componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleEscKey, false);
+  },
+  handleEscKey: function handleEscKey(e) {
+    if (e.keyCode == 27) this.setState({ show: false });
+  },
+  close: function close(e) {
+    e.preventDefault();
+    this.setState({ show: false });
+  },
+  show: function show() {
+    this.setState({ show: true });
+  },
+  render: function render() {
+    var url = this.props.url;
+
+
+    var iframeStyle = {
+      height: window.innerHeight ? window.innerHeight : '100hv'
+    };
+
+    return _react2.default.createElement(
+      'div',
+      { className: this.state.show ? 'modal modal--show' : 'modal' },
+      _react2.default.createElement(
+        'a',
+        { className: 'modal__close', href: '#', onClick: this.close },
+        _react2.default.createElement('i', { className: 'ion-close' })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'iframe-container', style: iframeStyle },
+        this.state.show ? _react2.default.createElement('iframe', {
+          src: url + '?autoplay=1',
+          frameBorder: '0',
+          height: '315',
+          width: '100%',
+          allowFullScreen: true
+        }) : ''
+      )
+    );
+  }
+});
+
+exports.default = Modal;
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var maxYear = 19;
+
+function verification(isValid, isPotentiallyValid, isCurrentYear) {
+  return {
+    isValid: isValid,
+    isPotentiallyValid: isPotentiallyValid,
+    isCurrentYear: isCurrentYear || false
+  };
+}
+
+function expirationYear(value) {
+  var currentFirstTwo, currentYear, firstTwo, len, twoDigitYear, valid, isCurrentYear;
+
+  if (typeof value !== 'string') {
+    return verification(false, false);
+  }
+  if (value.replace(/\s/g, '') === '') {
+    return verification(false, true);
+  }
+  if (!/^\d*$/.test(value)) {
+    return verification(false, false);
+  }
+
+  len = value.length;
+
+  if (len < 2) {
+    return verification(false, true);
+  }
+
+  currentYear = new Date().getFullYear();
+
+  if (len === 3) {
+    // 20x === 20x
+    firstTwo = value.slice(0, 2);
+    currentFirstTwo = String(currentYear).slice(0, 2);
+    return verification(false, firstTwo === currentFirstTwo);
+  }
+
+  if (len > 4) {
+    return verification(false, false);
+  }
+
+  value = parseInt(value, 10);
+  twoDigitYear = Number(String(currentYear).substr(2, 2));
+
+  if (len === 2) {
+    isCurrentYear = twoDigitYear === value;
+    valid = value >= twoDigitYear && value <= twoDigitYear + maxYear;
+  } else if (len === 4) {
+    isCurrentYear = currentYear === value;
+    valid = value >= currentYear && value <= currentYear + maxYear;
+  }
+
+  return verification(valid, valid, isCurrentYear);
+}
+
+module.exports = expirationYear;
+
+
+/***/ }),
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+exports['default'] = function (value) {
+  if (Array.isArray(value)) value = value.join(',');
+
+  return value.match(/-webkit-|-moz-|-ms-/) !== null;
+};
+
+module.exports = exports['default'];
+
+/***/ }),
 /* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -674,7 +674,7 @@ function getPrefixedStyle(style, userAgent) {
   var prefixedStyle = prefixer.prefix(styleWithFallbacks);
   return prefixedStyle;
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(98), __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(99), __webpack_require__(1)))
 
 /***/ }),
 /* 134 */
@@ -784,7 +784,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _debounce = __webpack_require__(131);
+var _debounce = __webpack_require__(91);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
@@ -931,7 +931,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _videoModal = __webpack_require__(101);
+var _videoModal = __webpack_require__(102);
 
 var _videoModal2 = _interopRequireDefault(_videoModal);
 
@@ -2227,7 +2227,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = isEmail;
 
-var _assertString = __webpack_require__(97);
+var _assertString = __webpack_require__(98);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
@@ -2322,7 +2322,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = isEmpty;
 
-var _assertString = __webpack_require__(97);
+var _assertString = __webpack_require__(98);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
@@ -3664,7 +3664,7 @@ var _minigrid = __webpack_require__(526);
 
 var _minigrid2 = _interopRequireDefault(_minigrid);
 
-var _debounce = __webpack_require__(131);
+var _debounce = __webpack_require__(91);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
@@ -3896,7 +3896,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _videoModal = __webpack_require__(101);
+var _videoModal = __webpack_require__(102);
 
 var _videoModal2 = _interopRequireDefault(_videoModal);
 
@@ -4006,7 +4006,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = scrollViaCrucisNav;
 
-var _debounce = __webpack_require__(131);
+var _debounce = __webpack_require__(91);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
@@ -4118,6 +4118,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = smoothScroll;
+
+var _debounce = __webpack_require__(91);
+
+var _debounce2 = _interopRequireDefault(_debounce);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function smoothScroll() {
   $("a").on('click', function (event) {
 
@@ -4129,10 +4136,13 @@ function smoothScroll() {
       var less = $('.nav') ? $('.nav').height() + 20 : 0;
 
       var scrollTop = $(hash) ? $(hash).offset().top - less : 0;
-      console.log($(hash));
       $('html, body').animate({ scrollTop: scrollTop }, 800, function () {});
     }
   });
+
+  window.addEventListener('scroll', (0, _debounce2.default)(function () {
+    console.count('scroll');
+  }, 250));
 
   $('#return-to-top').on('click', function (e) {
     e.preventDefault();
@@ -4942,7 +4952,7 @@ var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _videoModal = __webpack_require__(101);
+var _videoModal = __webpack_require__(102);
 
 var _videoModal2 = _interopRequireDefault(_videoModal);
 
@@ -6040,7 +6050,7 @@ module.exports = {
   number: __webpack_require__(290),
   expirationDate: __webpack_require__(292),
   expirationMonth: __webpack_require__(165),
-  expirationYear: __webpack_require__(102),
+  expirationYear: __webpack_require__(103),
   cvv: __webpack_require__(291),
   postalCode: __webpack_require__(296)
 };
@@ -6163,7 +6173,7 @@ module.exports = cvv;
 
 var parseDate = __webpack_require__(295);
 var expirationMonth = __webpack_require__(165);
-var expirationYear = __webpack_require__(102);
+var expirationYear = __webpack_require__(103);
 
 function verification(isValid, isPotentiallyValid, month, year) {
   return {
@@ -6292,7 +6302,7 @@ module.exports = luhn10;
 "use strict";
 
 
-var expirationYear = __webpack_require__(102);
+var expirationYear = __webpack_require__(103);
 var isArray = __webpack_require__(293);
 
 function parseDate(value) {
@@ -6814,7 +6824,7 @@ var _utilsJoinPrefixedRules = __webpack_require__(90);
 
 var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 
-var _utilsIsPrefixedValue = __webpack_require__(130);
+var _utilsIsPrefixedValue = __webpack_require__(131);
 
 var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 
@@ -6999,7 +7009,7 @@ var _utilsJoinPrefixedRules = __webpack_require__(90);
 
 var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 
-var _utilsIsPrefixedValue = __webpack_require__(130);
+var _utilsIsPrefixedValue = __webpack_require__(131);
 
 var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 
@@ -7082,7 +7092,7 @@ var _utilsCapitalizeString = __webpack_require__(198);
 
 var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 
-var _utilsIsPrefixedValue = __webpack_require__(130);
+var _utilsIsPrefixedValue = __webpack_require__(131);
 
 var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 
@@ -8114,7 +8124,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(98)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(99)))
 
 /***/ }),
 /* 520 */
@@ -10070,7 +10080,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = isByteLength;
 
-var _assertString = __webpack_require__(97);
+var _assertString = __webpack_require__(98);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
@@ -10106,7 +10116,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = isFDQN;
 
-var _assertString = __webpack_require__(97);
+var _assertString = __webpack_require__(98);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
@@ -10176,7 +10186,7 @@ module.exports = function() {
 
 __webpack_require__(258);
 
-__webpack_require__(99);
+__webpack_require__(100);
 
 var _webfontloader = __webpack_require__(260);
 
@@ -10305,4 +10315,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.fd97dc44c1c713f1ecbb.js.map
+//# sourceMappingURL=app.86c062861579a880205a.js.map
