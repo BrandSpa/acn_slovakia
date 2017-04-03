@@ -232,7 +232,7 @@ function bs_accounts_options() {
           placeholder="Banner vertical" 
           name="banner_vertical" 
         >
-        <?php echo wp_filter_post_kses(get_option('banner_vertical')) ?>
+        <?php echo get_option('banner_vertical') ?>
         </textarea>
       </p>
 
@@ -244,7 +244,7 @@ function bs_accounts_options() {
           placeholder="Banner horizontal" 
           name="banner_horizontal"  
         >
-        <?php echo wp_filter_post_kses(get_option('banner_horizontal')) ?>
+        <?php echo get_option('banner_horizontal') ?>
         </textarea>
       </p>
     <p>
