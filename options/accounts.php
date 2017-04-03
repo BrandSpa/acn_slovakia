@@ -226,7 +226,8 @@ function bs_accounts_options() {
 
       <p>
         <textarea
-          style="background: rgba(255,255,255,.4); width: 60%; height: 35px"
+          style="background: rgba(255,255,255,.4); width: 60%;"
+          rows="4"
           type="text" 
           placeholder="Banner vertical" 
           name="banner_vertical" 
@@ -237,7 +238,8 @@ function bs_accounts_options() {
 
       <p>
         <textarea
-          style="background: rgba(255,255,255,.4); width: 60%; height: 35px"
+          style="background: rgba(255,255,255,.4); width: 60%;"
+          rows="4"
           type="text" 
           placeholder="Banner horizontal" 
           name="banner_horizontal"  
