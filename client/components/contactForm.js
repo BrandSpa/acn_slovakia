@@ -72,8 +72,8 @@ const contactForm = React.createClass({
 
   storeEventConvertLoop() {
     const { email } = this.state.contact;
-    const event = {name: 'Subscription', {person: {email}}};
-    const data = qs.stringify({data: , action: 'convertloop_event'});
+    const event = {name: 'Subscription', person: {email: email} };
+    const data = qs.stringify({data: event, action: 'convertloop_event'});
     return request.post(endpoint, data);
   },
 
