@@ -13,6 +13,11 @@ export default function smoothScroll() {
       $('html, body').animate({ scrollTop }, 800, () => {});
 
     }
+  });
+
+  $('#return-to-top').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 800, () => {});
   })
 
 }

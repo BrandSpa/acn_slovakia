@@ -4133,6 +4133,11 @@ function smoothScroll() {
       $('html, body').animate({ scrollTop: scrollTop }, 800, function () {});
     }
   });
+
+  $('#return-to-top').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 800, function () {});
+  });
 }
 
 /***/ }),
@@ -10300,4 +10305,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.54df7affd012a53877b2.js.map
+//# sourceMappingURL=app.6856a5bd9b4a8f274d75.js.map
