@@ -115,8 +115,8 @@ const Donate = React.createClass({
 
   storeInfusion() {
     let tags = '';
-    if(this.state.donation_type == 'monthly') tags = '870';
-    if(this.state.donation_type == 'once') tags = '868';
+    if(this.state.donation_type == 'monthly') tags = ['870'];
+    if(this.state.donation_type == 'once') tags = ['868'];
     const data = qs.stringify({data: {...this.state.contact, tags}, action: 'infusion_contact'});
     return request.post(endpoint, data);
   },
@@ -172,7 +172,6 @@ const Donate = React.createClass({
     let left = `-${section * 100}%`;
     this.setState({section, left});
   },
-
 
   render() {
     let sectionWidth = `${100 / 3}%`;
