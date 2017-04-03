@@ -250,6 +250,4 @@ if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
 	redirectToLang();
 }
 
-
 add_theme_support( 'post-thumbnails', ['post', 'gallery', 'video'] );
-
