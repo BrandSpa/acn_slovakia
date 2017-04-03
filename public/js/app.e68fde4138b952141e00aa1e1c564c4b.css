@@ -1128,7 +1128,7 @@ button, .btn {
     font-size: 32px;
     display: block;
     position: absolute;
-    left: 20px;
+    right: 20px;
     top: 10px;
     z-index: 1010; }
     @media (max-width: 767px) {
@@ -2002,4 +2002,4 @@ a:hover {
     .video__header-title {
       padding: 20px; } }
 
-/*# sourceMappingURL=app.0d0318a1be2534f0393b1656c4113555.css.map*/
+/*# sourceMappingURL=app.e68fde4138b952141e00aa1e1c564c4b.css.map*/
