@@ -30,7 +30,17 @@
 	</div>
 	</div>
 </div>
-
+<script>
+		onLoad(function() {
+			var h = window.innerHeight;
+			var navH = $('.nav').height() + 20;
+			var titleH = $('.single__header-title').innerHeight();
+		
+			if(window.innerWidth > '700') {
+				$('.single__header-title').css({position: 'relative', marginTop: '-' + titleH + 'px'});
+			}
+		});
+	</script>
 	<!-- <div class="bs-post__header--image__title--mobile">
 		<h3><?php the_title() ?></h3>
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
