@@ -31,9 +31,9 @@
 	</div>
 </div>
 
-	<div class="bs-post__header--image__title--mobile">
+	<!-- <div class="bs-post__header--image__title--mobile">
 		<h3><?php the_title() ?></h3>
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
-				<?php require('down_arrow.php') ?>
+				<?php //require('down_arrow.php') ?>
 		</a>
-	</div>
+	</div> -->
