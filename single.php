@@ -21,7 +21,7 @@
 
 <!-- Fin Nuevo-->
 
-		<div class="bs-post__content col-8-l col-12-s" id="post-content">
+		<div class="bs-post__content col-8-l col-12-s" id="post-content" style="margin-top:80px;">
 			<?php the_content() ?>
 		</div>
 	</div>
