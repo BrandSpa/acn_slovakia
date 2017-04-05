@@ -10,7 +10,7 @@
 <div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
 	
 		<div class="l-wrap">
-		<div class="video__header-title">
+		<div class="single__header-title">
 			<span class="video__header__metadata" style="font-size: 1.1em; color: #4A4A4A">
 				<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
 					<span style="font-weight: 600">
