@@ -30,7 +30,7 @@
 	</div>
 	</div>
 	<script>
-		onLoad(function() {
+		/*onLoad(function() {
 			console.log("working!!");
 			var h = window.innerHeight;
 			var navH = $('.nav').height() + 20;
@@ -39,7 +39,7 @@
 			if(window.innerWidth > '700') {
 				$('.single__header-title').css({position: 'relative', marginTop: '-' + titleH + 'px'});
 			}
-		});
+		});*/
 	</script>
 </div>
 
