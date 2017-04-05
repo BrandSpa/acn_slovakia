@@ -28,7 +28,7 @@
 			<?php require('down_arrow.php')?>
 		</a>
 	</div>
-	
+	</div>
 </div>
 
 	<div class="bs-post__header--image__title--mobile">
