@@ -8,7 +8,7 @@
 </div> -->
 
 <div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
-	<div class="bs-post__header--image__title">
+	
 		<div class="l-wrap">
 		<div class="video__header-title">
 			<span class="video__header__metadata" style="font-size: 1.1em; color: #4A4A4A">
@@ -28,7 +28,7 @@
 			<?php require('down_arrow.php')?>
 		</a>
 	</div>
-	</div>
+	
 </div>
 
 	<div class="bs-post__header--image__title--mobile">
