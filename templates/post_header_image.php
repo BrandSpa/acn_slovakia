@@ -29,9 +29,9 @@
 		</a>
 	</div>
 	</div>
-</div>
-<script>
+	<script>
 		onLoad(function() {
+			console.log("working!!");
 			var h = window.innerHeight;
 			var navH = $('.nav').height() + 20;
 			var titleH = $('.single__header-title').innerHeight();
@@ -41,6 +41,9 @@
 			}
 		});
 	</script>
+</div>
+
+
 	<!-- <div class="bs-post__header--image__title--mobile">
 		<h3><?php the_title() ?></h3>
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
