@@ -1,3 +1,12 @@
+<!--<div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
+	<div class="bs-post__header--image__title">
+		<h3 style="padding-bottom: 20px; border-bottom: 1px solid #D3D3D3"><?php the_title() ?></h3>
+		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
+			<?php //require('down_arrow.php') ?>
+		</a>
+	</div>
+</div> -->
+
 <div class="bs-post__header--image" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>)">
 	<div class="bs-post__header--image__title">
 		<div class="l-wrap">
@@ -11,12 +20,12 @@
 				<?php echo '/ ' . get_the_date( 'm - Y', $post->ID ); ?>
 			</span>
 			<div class="breadcrumbs" style="margin: 3px 0 10px 0;  color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
-			<?php if(function_exists('bcn_display')) { bcn_display();}?>
+			<?php if(function_exists('bcn_display')) { bcn_display(); }?>
 		</div>
 
 		<h3 style="padding-bottom: 10px;color: #3C515F"><?php the_title() ?></h3>
 		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
-			<?php require(__DIR__. '/templates/down_arrow.php')?>
+			<?php require('down_arrow.php')?>
 		</a>
 	</div>
 	</div>
