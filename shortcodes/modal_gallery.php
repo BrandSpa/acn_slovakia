@@ -30,8 +30,8 @@ function bs_modal_gallery_sc($atts, $content = null) {
 <!-- Place somewhere in the <body> of your page -->
 <!--<link href="<?php echo get_template_directory_uri() ?>/public/css/lightbox.css" rel="stylesheet">-->
 <div class="modal_gallery">
-		<?php foreach(explode(',', $at['images']) as $image):?>
-        <?php $attachment_meta = wp_get_attachment($image);?>
+		<?php foreach(explode(',', $at['images']) as $image): ?>
+        <?php $attachment_meta = wp_get_attachment($image); ?>
 		 
       <a href="<?php echo wp_get_attachment_url($image) ?>" data-lightbox="<?php echo $at['groupname'] ?>" data-title="<?php $attachment_meta['description']; ?>">
         <img src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php $attachment_meta['alt']; ?>" />
