@@ -75,7 +75,7 @@
   Lightbox.prototype.init = function() {
     var self = this;
     // Both enable and build methods require the body tag to be in the DOM.
-    $(document).ready(function() {
+    $(document).onLoad(function() {
       self.enable();
       self.build();
     });
