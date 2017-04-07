@@ -16,10 +16,10 @@ function bs_modal_gallery_sc($atts, $content = null) {
 <div class="flexslider">
   <ul class="slides">
 		<?php foreach(explode(',', $at['images']) as $image): 
-        $attachment_meta = wp_get_attachment([$image]);
+        $attachment = get_post( $image );
         ?>
 		 <li>
-     	 <img src="<?php echo wp_get_attachment_url($image)  ?>" rel="prueba" alt="<?php echo get_post_meta($image, '_wp_attachment_image_alt', true);;  ?>" data-title="<?php echo $attachment_meta['description'];  ?>" />
+     	 <img src="<?php echo wp_get_attachment_url($image)  ?>" rel="prueba" alt="<?php echo get_post_meta($image, '_wp_attachment_image_alt', true);;  ?>" data-title="<?php echo $attachment['description'];  ?>" />
     </li>
 		<?php
 		endforeach;
