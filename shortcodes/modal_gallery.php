@@ -17,7 +17,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
   <ul class="slides">
 		<?php foreach(explode(',', $at['images']) as $image): ?>
 		 <li>
-     	 <img src="<?php echo wp_get_attachment_url($image)  ?>" />
+     	 <img src="<?php echo wp_get_attachment_url($image)  ?>" alt="<?php echo $image->post_excerpt;  ?>" data-title="<?php echo $image->post_description;  ?>" />
     </li>
 		<?php
 		endforeach;
