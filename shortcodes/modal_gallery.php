@@ -37,7 +37,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
         <img src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php $attachment_meta['alt']; ?>" />
       </a>
 
-      <a href="<?php echo wp_get_attachment_url($image) ?> rel="lightbox" ?>">image #1</a>
+      <a href="<?php echo wp_get_attachment_url($image) ?> rel='lightbox'>">image #1</a>
 		<?php
 		endforeach;
 		?>
