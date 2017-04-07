@@ -30,6 +30,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
 <!-- Place somewhere in the <body> of your page -->
 <!--<link href="<?php echo get_template_directory_uri() ?>/public/css/lightbox.css" rel="stylesheet">-->
 <div class="modal_gallery">
+    <?php $countmodal=0;?>
 		<?php foreach(explode(',', $at['images']) as $image): ?>
         <?php $attachment_meta = wp_get_attachment($image); ?>
 		 
@@ -37,8 +38,16 @@ function bs_modal_gallery_sc($atts, $content = null) {
         <img src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php $attachment_meta['alt']; ?>" />
       </a>-->
 
-      <a href="<?php echo wp_get_attachment_url($image) ?>" rel="lightbox" title="<?php $attachment_meta['description']; ?>">image # <?php echo $image ?></a>
+      <a href="<?php echo wp_get_attachment_url($image) ?>" rel="lightbox" title="<?php $attachment_meta['description']; ?>">
+      <?php if($countmodal==0)
+      {?>
+        <img style="max-width:700px;" src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php $attachment_meta['alt']; ?>" />
+      <?php }else{?>
+        <img style="display:none;" src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php $attachment_meta['alt']; ?>" />
+      <?php }?>
+      </a>
 		<?php
+    $countmodal++;
 		endforeach;
 		?>
 </div>
