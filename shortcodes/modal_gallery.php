@@ -16,6 +16,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
 <div class="flexslider">
   <ul class="slides">
         <?php $lGroupName = $at['groupName']?>
+        <?php echo $lGroupName  ?>
 		<?php foreach(explode(',', $at['images']) as $image):?>
 		 <li>
      	 <img src="<?php echo wp_get_attachment_url($image)  ?>" data-lightbox="<?php echo $lGroupName  ?>" rel="prueba" alt="<?php echo get_post_meta($image, '_wp_attachment_image_alt', true);;  ?>" data-title="" />
