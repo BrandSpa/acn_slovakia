@@ -33,9 +33,8 @@ function bs_modal_gallery_sc($atts, $content = null) {
 
 		<?php foreach(explode(',', $at['images']) as $image):?>
         <?php $attachment_meta = wp_get_attachment($image);?>
-		 <li>
-     	 <img src="<?php echo wp_get_attachment_url($image)  ?>" data-lightbox="<?php echo $at['groupname']  ?>" rel="" alt="<?php echo get_post_meta($image, '_wp_attachment_image_alt', true);;  ?>" data-title="<?php $attachment_meta['description']; ?>" />
-    </li>
+		 
+      <a href="i<?php echo wp_get_attachment_url($image) ?>" data-lightbox="<?php echo $at['groupname'] ?>" data-title="<?php $attachment_meta['description']; ?>">Image #1</a>
 		<?php
 		endforeach;
 		?>
