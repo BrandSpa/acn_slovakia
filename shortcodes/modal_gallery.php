@@ -1,7 +1,7 @@
 <?php
 add_shortcode( 'bs_modal_gallery', 'bs_modal_gallery_sc' );
 
-function bs_example_sc($atts, $content = null) {
+function bs_modal_gallery_sc($atts, $content = null) {
 	$attributes = [
     'images' => ''
   ];
