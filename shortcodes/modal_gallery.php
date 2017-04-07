@@ -3,7 +3,7 @@ add_shortcode( 'bs_modal_gallery', 'bs_modal_gallery_sc' );
 
 function bs_modal_gallery_sc($atts, $content = null) {
 	$attributes = [
-    'groupName' => '',
+    'groupname' => '',
     'images' => ''
   ];
 
@@ -15,13 +15,13 @@ function bs_modal_gallery_sc($atts, $content = null) {
 <!-- Place somewhere in the <body> of your page -->
 <div class="flexslider">
 <h3>Wdjdhsakj</h3>
-<h2> <?php echo $at['groupName'] ?> </h2>
+<h2> <?php echo $at['groupname'] ?> </h2>
   <ul class="slides">
 
         
 		<?php foreach(explode(',', $at['images']) as $image):?>
 		 <li>
-     	 <img src="<?php echo wp_get_attachment_url($image)  ?>" data-lightbox="<?php echo $lGroupName[0]  ?>" rel="prueba" alt="<?php echo get_post_meta($image, '_wp_attachment_image_alt', true);;  ?>" data-title="" />
+     	 <img src="<?php echo wp_get_attachment_url($image)  ?>" data-lightbox="<?php echo $at['groupname']  ?>" rel="prueba" alt="<?php echo get_post_meta($image, '_wp_attachment_image_alt', true);;  ?>" data-title="" />
     </li>
 		<?php
 		endforeach;
@@ -47,8 +47,8 @@ add_action( 'vc_before_init', 'bs_modal_gallery_vc' );
 		$params = [
             [
         "type" => "textfield",
-        "heading" => "GroupName",
-        "param_name" => "groupName",
+        "heading" => "Groupname",
+        "param_name" => "groupname",
         "value" => ''
 			],
 			[
