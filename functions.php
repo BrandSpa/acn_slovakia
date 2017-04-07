@@ -113,6 +113,7 @@ require('shortcodes/share.php');
 require('shortcodes/breadcrumb.php');
 require('shortcodes/flexslider.php');
 require('shortcodes/skrollr.php');
+require('shortcodes/modal_gallery.php');
 
 
 
