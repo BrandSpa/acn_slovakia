@@ -30,7 +30,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
 <script>
 	onLoad(function() {
 		//jquery stuff iría acá
-		 $('.flexslider').flexslider();
+		// $('.flexslider').flexslider();
 	});
 </script>
 <?php
