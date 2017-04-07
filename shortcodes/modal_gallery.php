@@ -12,15 +12,31 @@ function bs_modal_gallery_sc($atts, $content = null) {
   ob_start();
 ?>
 
+<?php 
+  function wp_get_attachment( $attachment_id ) {
+
+    $attachment = get_post( $attachment_id );
+    return array(
+'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+'caption' => $attachment->post_excerpt,
+'description' => $attachment->post_content,
+'href' => get_permalink( $attachment->ID ),
+'src' => $attachment->guid,
+'title' => $attachment->post_title
+);
+}
+?>
+
 <!-- Place somewhere in the <body> of your page -->
 <div class="flexslider">
   <ul class="slides">
 
 		<?php foreach(explode(',', $at['images']) as $image):?>
-        <?php $attachment = get_post( $image);?>
-        <?php $get_description = get_post($image)->post_excerpt;?>
+        <?php //$attachment = get_post( $image);?>
+        <?php //$get_description = get_post($image)->post_excerpt;?>
+        <?php $attachment_meta = wp_get_attachment($image);?>
 		 <li>
-        <?php echo $get_description ?>
+        <?php echo $attachment_meta['description']; ?>
      	 <img src="<?php echo wp_get_attachment_url($image)  ?>" data-lightbox="<?php echo $at['groupname']  ?>" rel="prueba" alt="<?php echo get_post_meta($image, '_wp_attachment_image_alt', true);;  ?>" data-title="<?php echo $get_description ?>" />
     </li>
 		<?php
