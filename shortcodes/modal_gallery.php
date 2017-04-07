@@ -1,5 +1,5 @@
 <?php
-add_shortcode( 'bs_flexslider', 'bs_example_sc' );
+add_shortcode( 'bs_modal_gallery', 'bs_example_sc' );
 
 function bs_example_sc($atts, $content = null) {
 	$attributes = [
@@ -36,9 +36,9 @@ function bs_example_sc($atts, $content = null) {
 }
 
 
-add_action( 'vc_before_init', 'bs_example_vc' );
+add_action( 'vc_before_init', 'bs_modal_gallery_vc' );
 
-  function bs_example_vc() {
+  function bs_modal_gallery_vc() {
 		$params = [
 
 			[
@@ -52,8 +52,8 @@ add_action( 'vc_before_init', 'bs_example_vc' );
 
   	vc_map(
       array(
-        "name" =>  "BS flexslider",
-        "base" => "bs_flexslider",// igual a add_shortcode( 'bs_flexslider', 'bs_example_sc' );
+        "name" =>  "BS Modal_gallery",
+        "base" => "bs_modal_gallery",// igual a add_shortcode( 'bs_flexslider', 'bs_example_sc' );
         "category" =>  "BS",
         "params" => $params
       ) 
