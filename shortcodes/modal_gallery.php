@@ -3,6 +3,7 @@ add_shortcode( 'bs_modal_gallery', 'bs_modal_gallery_sc' );
 
 function bs_modal_gallery_sc($atts, $content = null) {
 	$attributes = [
+    'groupName' => '',
     'images' => ''
   ];
 
@@ -40,7 +41,12 @@ add_action( 'vc_before_init', 'bs_modal_gallery_vc' );
 
   function bs_modal_gallery_vc() {
 		$params = [
-
+            [
+        "type" => "textfield",
+        "heading" => "GroupName",
+        "param_name" => "groupName",
+        "value" => ''
+			],
 			[
         "type" => "attach_images",
         "heading" => "Images",
