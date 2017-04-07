@@ -17,7 +17,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
   <ul class="slides">
 		<?php foreach(explode(',', $at['images']) as $image):?>
 		 <li>
-     	 <img src="<?php echo wp_get_attachment_url($image)  ?>" data-lightbox="<?php echo$at['groupName']?>" rel="prueba" alt="<?php echo get_post_meta($image, '_wp_attachment_image_alt', true);;  ?>" data-title="" />
+     	 <img src="<?php echo wp_get_attachment_url($image)  ?>" data-lightbox="<?php echo $at['groupName']?>" rel="prueba" alt="<?php echo get_post_meta($image, '_wp_attachment_image_alt', true);;  ?>" data-title="" />
     </li>
 		<?php
 		endforeach;
