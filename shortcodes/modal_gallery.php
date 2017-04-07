@@ -29,19 +29,16 @@ function bs_modal_gallery_sc($atts, $content = null) {
 
 <!-- Place somewhere in the <body> of your page -->
 <link href="../public/css/lightbox.css" rel="stylesheet">
-<div class="flexslider">
-  <ul class="slides">
-
+<div class="modal_gallery">
 		<?php foreach(explode(',', $at['images']) as $image):?>
         <?php $attachment_meta = wp_get_attachment($image);?>
 		 
-      <a href="i<?php echo wp_get_attachment_url($image) ?>" data-lightbox="<?php echo $at['groupname'] ?>" data-title="<?php $attachment_meta['description']; ?>">
+      <a href="<?php echo wp_get_attachment_url($image) ?>" data-lightbox="<?php echo $at['groupname'] ?>" data-title="<?php $attachment_meta['description']; ?>">
         <img src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php $attachment_meta['alt']; ?>" />
       </a>
 		<?php
 		endforeach;
 		?>
-  </ul>
 </div>
 
 <script>
