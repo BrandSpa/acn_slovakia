@@ -47,7 +47,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
 		// $('.flexslider').flexslider();
 	});
 </script>
-<script src="../public/js/lightbox.js"></script>
+<script src="public/js/lightbox.js"></script>
 <?php
 
   return ob_get_clean();
