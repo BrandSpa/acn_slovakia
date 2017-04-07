@@ -28,7 +28,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
 ?>
 
 <!-- Place somewhere in the <body> of your page -->
-<link href="<?php echo get_template_directory_uri() ?>/public/css/lightbox.css" rel="stylesheet">
+<!--<link href="<?php echo get_template_directory_uri() ?>/public/css/lightbox.css" rel="stylesheet">-->
 <div class="modal_gallery">
 		<?php foreach(explode(',', $at['images']) as $image): ?>
         <?php $attachment_meta = wp_get_attachment($image); ?>
@@ -37,7 +37,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
         <img src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php $attachment_meta['alt']; ?>" />
       </a>
 
-      <a href="<?php echo wp_get_attachment_url($image) ?>" rel='lightbox'>>image #<?php echo $image ?></a>
+      <a href="<?php echo wp_get_attachment_url($image) ?>" rel='lightbox' title="<?php $attachment_meta['description']; ?>">image # <?php echo $image ?></a>
 		<?php
 		endforeach;
 		?>
@@ -49,7 +49,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
 		// $('.flexslider').flexslider();
 	});
 </script>
-<script src="<?php echo get_template_directory_uri() ?>/public/js/lightbox.js"></script>
+<!--<script src="<?php echo get_template_directory_uri() ?>/public/js/lightbox.js"></script>-->
 <?php
 
   return ob_get_clean();
