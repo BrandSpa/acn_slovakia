@@ -29,7 +29,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
 
 <!-- Place somewhere in the <body> of your page -->
 <!--<link href="<?php //echo get_template_directory_uri() ?>/public/css/lightbox.css" rel="stylesheet">-->
-<div class="modal_gallery">
+<div class="modal_gallery" style="margin:30px 0;">
     <?php $countmodal=0;?>
 		<?php foreach(explode(',', $at['images']) as $image): ?>
         <?php $attachment_meta = wp_get_attachment($image); ?>
