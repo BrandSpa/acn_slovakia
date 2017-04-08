@@ -42,7 +42,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
       <?php if($countmodal==0)
       {?>
         <img style="max-width:100%;" src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php echo $attachment_meta['alt']; ?>" />
-        <div class="modal_text" style="position:absolute; padding:20px; color:#FFF;"><h5>+ View Gallery</h5><div/>
+        <div class="modal_text" style="position:absolute; padding:20px; color:#FFF;"><h5>+ View Gallery</h5></div>
       <?php }else{?>
         <img style="display:none;" src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php echo $attachment_meta['alt']; ?>" />
       <?php }?>
