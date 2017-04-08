@@ -29,7 +29,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
 
 <!-- Place somewhere in the <body> of your page -->
 <!--<link href="<?php //echo get_template_directory_uri() ?>/public/css/lightbox.css" rel="stylesheet">-->
-<div class="modal_gallery" style="margin:30px 0;">
+<div class="modal_gallery" style="margin:20px 0;">
     <?php $countmodal=0;?>
 		<?php foreach(explode(',', $at['images']) as $image): ?>
         <?php $attachment_meta = wp_get_attachment($image); ?>
@@ -42,7 +42,7 @@ function bs_modal_gallery_sc($atts, $content = null) {
       <?php if($countmodal==0)
       {?>
         <img style="max-width:100%;" src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php echo $attachment_meta['alt']; ?>" />
-        <div class="modal_text" style="position:absolute; top:0; padding:20px; color:#FFF;"><h5>+ Photo Gallery</h5></div>
+        <div class="modal_text" style="position:absolute; top:10px; padding:20px; color:#FFF;"><h5>+ Photo Gallery</h5></div>
       <?php }else{?>
         <img style="display:none;" src="<?php echo wp_get_attachment_url($image) ?>" alt="<?php echo $attachment_meta['alt']; ?>" />
       <?php }?>
