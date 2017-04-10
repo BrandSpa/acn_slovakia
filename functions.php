@@ -114,6 +114,7 @@ require('shortcodes/breadcrumb.php');
 require('shortcodes/flexslider.php');
 require('shortcodes/skrollr.php');
 require('shortcodes/modal_gallery.php');
+require('shortcodes/single_modal.php');
 
 
 
@@ -171,6 +172,18 @@ function bs_logo_url() {
 	$url = get_option("logo_". $country);
 	$url = str_replace('http:', '',   $url);
 	return $url;
+}
+
+function wp_get_attachment( $attachment_id ) {
+    $attachment = get_post( $attachment_id );
+    return array(
+    'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+    'caption' => $attachment->post_excerpt,
+    'description' => $attachment->post_content,
+    'href' => get_permalink( $attachment->ID ),
+    'src' => $attachment->guid,
+    'title' => $attachment->post_title
+);
 }
 
 //remove emojies script
