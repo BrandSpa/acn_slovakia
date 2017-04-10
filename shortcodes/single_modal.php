@@ -1,9 +1,8 @@
 <?php
-add_shortcode( 'bs_modal_gallery', 'bs_modal_gallery_sc' );
+add_shortcode( 'bs_single_modal', 'bs_single_modal_sc' );
 
-function bs_modal_gallery_sc($atts, $content = null) {
+function bs_single_modal_sc($atts, $content = null) {
 	$attributes = [
-    'groupname' => '',
     'images' => ''
   ];
 
@@ -13,12 +12,23 @@ function bs_modal_gallery_sc($atts, $content = null) {
 ?>
 
 <?php 
- 
+  function wp_get_attachment( $attachment_id ) {
+
+    $attachment = get_post( $attachment_id );
+    return array(
+    'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+    'caption' => $attachment->post_excerpt,
+    'description' => $attachment->post_content,
+    'href' => get_permalink( $attachment->ID ),
+    'src' => $attachment->guid,
+    'title' => $attachment->post_title
+);
+}
 ?>
 
 <!-- Place somewhere in the <body> of your page -->
 <!--<link href="<?php //echo get_template_directory_uri() ?>/public/css/lightbox.css" rel="stylesheet">-->
-<div class="modal_gallery" style="margin:20px 0;">
+<div class="single_modal" style="margin:20px 0;">
     <?php $countmodal=0;?>
 		<?php foreach(explode(',', $at['images']) as $image): ?>
         <?php $attachment_meta = wp_get_attachment($image); ?>
@@ -55,16 +65,10 @@ function bs_modal_gallery_sc($atts, $content = null) {
 }
 
 
-add_action( 'vc_before_init', 'bs_modal_gallery_vc' );
+add_action( 'vc_before_init', 'bs_single_modal_vc' );
 
-  function bs_modal_gallery_vc() {
+  function bs_single_modal_vc() {
 		$params = [
-            [
-        "type" => "textfield",
-        "heading" => "Groupname",
-        "param_name" => "groupname",
-        "value" => ''
-			],
 			[
         "type" => "attach_images",
         "heading" => "Images",
@@ -76,8 +80,8 @@ add_action( 'vc_before_init', 'bs_modal_gallery_vc' );
 
   	vc_map(
       array(
-        "name" =>  "BS Modal_gallery",
-        "base" => "bs_modal_gallery",// igual a add_shortcode( 'bs_flexslider', 'bs_example_sc' );
+        "name" =>  "BS single_modal",
+        "base" => "bs_single_modal",// igual a add_shortcode( 'bs_flexslider', 'bs_example_sc' );
         "category" =>  "BS",
         "params" => $params
       ) 
