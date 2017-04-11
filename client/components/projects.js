@@ -22,9 +22,11 @@ const Projects = React.createClass({
   componentDidMount() {
     let patt = new RegExp(/#projects-[1-9]/);
     let hash = window.location.hash;
-    let num = 4;//1
-    let paf=location.pathname;
-    num=paf.charAt(paf.length-2);
+    let num = 1;
+    let paf=location.pathname;//Jul
+    num=paf.charAt(paf.length-2);//Jul
+    if(num>='1' && num<='9'){num=paf.charAt(paf.length-2);}//Jul
+    else{num=1}//Jul
 
     if (patt.test(hash)) {
       num = hash.split('-')[1];
