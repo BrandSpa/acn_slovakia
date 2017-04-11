@@ -16,14 +16,13 @@ const backgroundColors = {
 
 const Projects = React.createClass({
   getInitialState() {
-    let initialVal=4;
-    return {section: initialVal, bg: '#B91325', donateColor: '#B91325'};
+    return {section: 1, bg: '#B91325', donateColor: '#B91325'};
   },
 
   componentDidMount() {
     let patt = new RegExp(/#projects-[1-9]/);
     let hash = window.location.hash;
-    let num = 1;
+    let num = 4;//1
 
     if (patt.test(hash)) {
       num = hash.split('-')[1];
