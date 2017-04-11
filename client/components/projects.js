@@ -23,6 +23,9 @@ const Projects = React.createClass({
     let patt = new RegExp(/#projects-[1-9]/);
     let hash = window.location.hash;
     let num = 4;//1
+    let paf=location.pathname;
+    alert(paf);
+    //alert(paf.charAt(paf.length-1);
 
     if (patt.test(hash)) {
       num = hash.split('-')[1];
