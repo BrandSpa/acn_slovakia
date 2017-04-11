@@ -16,7 +16,8 @@ const backgroundColors = {
 
 const Projects = React.createClass({
   getInitialState() {
-    return {section: 1, bg: '#B91325', donateColor: '#B91325'};
+    let initialVal=4;
+    return {section: initialVal, bg: '#B91325', donateColor: '#B91325'};
   },
 
   componentDidMount() {
