@@ -24,7 +24,7 @@ const Projects = React.createClass({
     let hash = window.location.hash;
     let num = 4;//1
     let paf=location.pathname;
-    num=paf.charAt(paf.length-1);
+    num=paf.charAt(paf.length-2);
 
     if (patt.test(hash)) {
       num = hash.split('-')[1];
