@@ -16,7 +16,8 @@ const colors = {
 const ProjectsAbout = React.createClass({
 	getInitialState() {
 		return {
-			section: 0
+			//section: 0;
+			section: 4;
 		}
 	},
 
