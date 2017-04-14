@@ -24,7 +24,9 @@ const contactForm = React.createClass({
   },
 
   componentDidMount() {
-    request.post(endpoint, qs.stringify({action: 'office_countries'})).then(cons => {
+    const data = qs.stringify({action: 'office_countries'});
+
+    const req = request.post(endpoint, data).then(cons => {
       this.setState({
         contact: {
           ...this.state.contact, country: this.props.country
@@ -33,6 +35,8 @@ const contactForm = React.createClass({
         inOffice: cons.data.indexOf(this.props.country) !== -1
       });
     });
+
+    return req;
   },
 
   checkEmpty(field) {

@@ -13,6 +13,7 @@ Array [
                 "background": "#687f87",
                 "border": "none",
                 "borderRadius": "0",
+                "color": "",
                 "fontSize": "18px",
                 "fontWeight": "normal",
                 "height": "60px",

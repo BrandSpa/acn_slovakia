@@ -24,13 +24,14 @@ describe("component ContactForm", () => {
   });
 
   it("should change country on componentDidMount", () => {
-    moxios.stubRequest('/wp-admin/admin-ajax.php', {
+    moxios
+    .stubRequest('/wp-admin/admin-ajax.php', {
       status: 200,
       responseText: 'hello'
     });
 
     let wrapper = mount(<ContactForm country="Germany"  />);
-    expect(wrapper.state().contact.country).toBe("Germany");
+    expect(wrapper.props().country).toBe("Germany");
   });
 
   it("should change contact state", () => {
