@@ -182,7 +182,9 @@ const GalleryHeader = React.createClass({
               </div>
             </div>
             <div style={{position: 'absolute', textAlign:'center', bottom:'10px', left:'0', right: '0'}}>
-              <a><img
+              <a
+                href={'#post-content'}
+              ><img
 									onLoad={this.getImage}
                   src={'../../wp-content/themes/acn_int/public/images/down.png'}
                 /></a>
