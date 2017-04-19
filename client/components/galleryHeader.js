@@ -181,6 +181,7 @@ const GalleryHeader = React.createClass({
 
               </div>
             </div>
+            <div><a>DOWN</a></div>
           </div>
       
         </div>
