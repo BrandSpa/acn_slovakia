@@ -17,6 +17,9 @@ function bs_type_gallery_cb($post) {
 	<div 
 		class="bs-gallery-metabox" 
 		data-props='<?php echo cleanQuote(json_encode($props)) ?>'>
+    <a class="bs-down-btn" href="#post-content">
+			<?php require(__DIR__. '/templates/down_arrow.php')?>
+	</a>
 	</div>
 
 	<script src="<?php echo get_template_directory_uri() ?>/public/js/admin.js"></script>
