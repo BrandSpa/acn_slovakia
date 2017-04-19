@@ -27,7 +27,7 @@
 		</div>
 
 		<h3 style="padding-bottom: 10px;color: #3C515F"><?php the_title() ?></h3>
-		<a style="display: block; margin: 0 auto; width: 20px" href="#post-content">
+		<a style="display: block; margin: 0 auto; width: 20px" onclick="location.hash = '#post-content';">
 			<?php require(__DIR__. '/templates/down_arrow.php')?>
 		</a>
 	</div>
