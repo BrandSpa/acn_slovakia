@@ -181,7 +181,9 @@ const GalleryHeader = React.createClass({
 
               </div>
             </div>
-            <div><a>DOWN</a></div>
+            <div style={{position: 'absolute', textAlign:'center', bottom:'10px', left:'0', right: '0'}}>
+              <a>DOWN</a>
+            </div>
           </div>
       
         </div>
