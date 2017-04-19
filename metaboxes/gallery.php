@@ -21,9 +21,9 @@ function bs_type_gallery_cb($post) {
   
 
 	<script src="<?php echo get_template_directory_uri() ?>/public/js/admin.js"></script>
-  <div><a class="bs-down-btn" href="#post-content">
+  <a class="bs-down-btn" href="#post-content">
 			<?php require(__DIR__. '../templates/down_arrow.php')?>
-	</a></div>
+	</a>
 <?php
 }
 
