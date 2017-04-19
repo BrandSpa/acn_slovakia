@@ -182,7 +182,10 @@ const GalleryHeader = React.createClass({
               </div>
             </div>
             <div style={{position: 'absolute', textAlign:'center', bottom:'10px', left:'0', right: '0'}}>
-              <a>DOWN</a>
+              <a><img
+									onLoad={this.getImage}
+                  src={'../public/images/down.png'}
+                /></a>
             </div>
           </div>
       
