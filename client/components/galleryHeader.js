@@ -7,7 +7,8 @@ const GalleryHeader = React.createClass({
 			section: 0,
 			imageStyle: {
 				maxWidth: "100%", 
-				display: 'block', 
+				display: 'block',
+        maxHeight: "500px", 
 				margin: '0 auto'
 			} 
 		};
