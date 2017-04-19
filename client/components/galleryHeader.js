@@ -159,7 +159,7 @@ const GalleryHeader = React.createClass({
                   </ul>
                   <div style={{float: 'right', marginTop: '7px'}}>
                     <span style={{ color: "#fff", paddingRight: "10px" }}>
-                      {images.length} {this.props.texts.of} {this.state.section + 1}
+                      {this.state.section + 1} {this.props.texts.of} {images.length}
                     </span>
                     <button
                       key={'btn-1'}
