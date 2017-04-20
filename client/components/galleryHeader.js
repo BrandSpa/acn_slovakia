@@ -186,7 +186,7 @@ const GalleryHeader = React.createClass({
                 href={'#post-content'}
               ><img
 									onLoad={this.getImage}
-                  src={'../../wp-content/themes/acn_int/public/images/down.png'}
+                  src={'/wp-content/themes/acn_int/public/images/down.png'}
                 /></a>
             </div>
           </div>
