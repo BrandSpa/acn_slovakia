@@ -73,6 +73,11 @@
 			currency: 'USD',
     });
   <?php endif; ?>
+  <script>
+    $( document ).ready(function() {
+      console.log( "ready!" );
+    });
+  </script>
 </script>
 <!-- End Google Analytics -->
 
