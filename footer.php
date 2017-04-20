@@ -78,8 +78,9 @@
 <!-- End Google Analytics -->
 <script>
     $( document ).ready(function() {
-      $("a").css("background-color", "green");
-      console.log( "ready!" );
+      $("a").css("cursor", "pointer");
+      var downBtn = $('a[href="#post-content"]');
+      downBtn.css("background", "green");
     });
   </script>
 </body>
