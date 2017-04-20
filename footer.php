@@ -78,7 +78,7 @@
 <!-- End Google Analytics -->
 <script>
     $( document ).ready(function() {
-      $("a").css("cursor", "pointer");
+      /*$("a").css("cursor", "pointer");
       var downBtn = $('a[href="#post-content"]');
       downBtn.click(function(){
         $('html,body').animate({
@@ -86,7 +86,7 @@
         'slow');
         alert("The paragraph was clicked.");
       });
-    });
+    });*/
   </script>
 </body>
 </html>

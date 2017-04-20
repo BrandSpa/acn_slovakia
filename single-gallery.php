@@ -58,7 +58,7 @@ onLoad(function() {
 </script>
 
 
-<div class="l-wrap">
+<div id="post-content" class="l-wrap">
 	<div class="col-8-l">
 	<span class="video__header__metadata" style="font-size: 1.1em; color: #4A4A4A; display: block; margin-top: 80px">
 		<?php foreach(get_the_category($post->ID) as $ind => $category): ?>
