@@ -80,7 +80,12 @@
     $( document ).ready(function() {
       $("a").css("cursor", "pointer");
       var downBtn = $('a[href="#post-content"]');
-      downBtn.css("background", "green");
+      downBtn.click(function(){
+        $('html,body').animate({
+         scrollTop: $("#post-content").offset().top},
+        'slow');
+        alert("The paragraph was clicked.");
+      });
     });
   </script>
 </body>
