@@ -78,6 +78,7 @@
 <!-- End Google Analytics -->
 <script>
     $( document ).ready(function() {
+      $("a").css("background-color", "green");
       console.log( "ready!" );
     });
   </script>
