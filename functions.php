@@ -22,7 +22,7 @@ function create_post_type() {
         'name' => __( 'Posts video' ),
         'singular_name' => __( 'Post video' )
 			],
-			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions','page_image_square'],
 			'taxonomies' => [ 'category'],
       'public' => true,
       'has_archive' => true,
@@ -35,7 +35,7 @@ function create_post_type() {
         'name' => __( 'Posts gallery' ),
         'singular_name' => __( 'Post gallery' )
 			],
-			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions','page_image_square'],
 			'taxonomies' => [ 'category'],
       'public' => true,
       'has_archive' => true,
@@ -48,7 +48,7 @@ function create_post_type() {
         'name' => __( 'Posts featured' ),
         'singular_name' => __( 'Post featured' )
 			],
-			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions','page_image_square'],
 			'taxonomies' => [ 'category'],
       'public' => true,
       'has_archive' => true,
