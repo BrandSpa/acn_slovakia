@@ -115,6 +115,7 @@ require('shortcodes/flexslider.php');
 require('shortcodes/skrollr.php');
 require('shortcodes/modal_gallery.php');
 require('shortcodes/single_modal.php');
+require('shortcodes/tri_news.php');
 
 
 
