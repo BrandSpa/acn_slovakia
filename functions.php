@@ -35,7 +35,7 @@ function create_post_type() {
         'name' => __( 'Posts gallery' ),
         'singular_name' => __( 'Post gallery' )
 			],
-			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'Square Image'],
+			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page_image_square'],
 			'taxonomies' => [ 'category'],
       'public' => true,
       'has_archive' => true,
