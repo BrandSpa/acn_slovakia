@@ -26,8 +26,8 @@ function bs_tri_news_sc($atts, $content = null) {
     }
     @media (max-width: 760px){
        .main_niw{
-        width:100%; 
-        float:right;
+            width:100%; 
+            float:right;
         } 
     }
 
