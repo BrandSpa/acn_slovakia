@@ -16,6 +16,8 @@ function bs_tri_news_sc($atts, $content = null) {
 
   ob_start();
 ?>
+
+<div style="display:block; position:relative; margin:auto;">
 <?php 
 $countri=0;
 $customsty="width:60%;";
@@ -47,6 +49,7 @@ foreach($at as $ID_n):  ?>
  </div>
  <?php $countri++;?>
  <?php endforeach; ?>
+ </div>
 
 
 <script>
