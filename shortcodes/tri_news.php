@@ -18,10 +18,12 @@ function bs_tri_news_sc($atts, $content = null) {
 ?>
 <?php 
 $countri=0;
+$customsty="width:60%;";
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
+<?php if($countri>0){$customsty=" ";}?>
 <div class="" style="width:100%;">
-	<div class="bs-post__recent" style= <?php if($countri==0{echo('style="width:60%"')})?> >
+	<div class="bs-post__recent" style="<?php echo $customsty ?>">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
 		<a href="<?php echo get_permalink($recent->ID) ?>">
 			<img src="<?php echo get_post_meta($recent->ID, 'image_square_key', true) ?>" style="width: 100%" />
