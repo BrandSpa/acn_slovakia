@@ -18,7 +18,7 @@ function bs_tri_news_sc($atts, $content = null) {
 ?>
 
 <?php $recent =  get_post($at['id_1']); //?>
-<div class="l-wrap">
+<div class="" style="width:100%;">
 	<div class="bs-post__recent">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
 		<a href="<?php echo get_permalink($recent->ID) ?>">
