@@ -29,6 +29,9 @@ function bs_tri_news_sc($atts, $content = null) {
             width:100%; 
             float:right;
         } 
+        .hide_txt{
+            display:none;
+        }
     }
 
 </style>
@@ -59,7 +62,7 @@ foreach($at as $ID_n):  ?>
 				<?php endif; ?>
 				</a>
 			</h4>
-			<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, $trilen) ?>...</p>
+			<p class="hide_txt"><?php echo substr(wp_strip_all_tags($recent->post_content), 0, $trilen) ?>...</p>
 			<a href="<?php echo get_permalink($recent->ID) ?>"><?php echo gett('Read more') ?>...</a>
 		</div>
 	</div>
