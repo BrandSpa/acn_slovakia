@@ -265,7 +265,7 @@ if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
 	redirectToLang();
 }
 
-$post_types = array( 'single-video', 'single-gallery','single-featured' ); // and so forth
+$post_types = array( 'video', 'gallery','featured' ); // and so forth
 foreach( $post_types as $post_type) {
     add_meta_box('page_image_square', 'Square Image', 'bs_page_image_square_cb', 'post', 'normal', 'high', null);
 }
