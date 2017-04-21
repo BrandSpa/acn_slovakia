@@ -267,7 +267,7 @@ if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
 
 $post_types = array( 'video', 'gallery','featured' ); // and so forth
 foreach( $post_types as $post_type) {
-    add_meta_box('page_image_square', 'Square Image', 'bs_page_image_square_cb', 'post', 'normal', 'high', null);
+    add_meta_box('page_image_square', 'Square Image', 'bs_page_image_square_cb', $post_type, 'normal', 'high', null);
 }
 
 add_theme_support( 'post-thumbnails', ['post', 'gallery', 'video'] );
