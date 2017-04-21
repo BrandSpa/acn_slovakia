@@ -35,7 +35,7 @@ function create_post_type() {
         'name' => __( 'Posts gallery' ),
         'singular_name' => __( 'Post gallery' )
 			],
-			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page_image_square'],
+			'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
 			'taxonomies' => [ 'category'],
       'public' => true,
       'has_archive' => true,
@@ -263,6 +263,11 @@ if(!function_exists('wp_doing_ajax')) {
 
 if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
 	redirectToLang();
+}
+
+$post_types = array( 'single-video', 'single-gallery','single-featured' ); // and so forth
+foreach( $post_types as $post_type) {
+    add_meta_box('page_image_square', 'Square Image', 'bs_page_image_square_cb', 'post', 'normal', 'high', null);
 }
 
 add_theme_support( 'post-thumbnails', ['post', 'gallery', 'video'] );
