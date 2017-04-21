@@ -43,7 +43,7 @@ $customcla="main_niw";
 $trilen=400;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
-<?php if($countri>0){$customcla=" "; $trilen=35;}?>
+<?php if($countri>0){$customcla=" "; $trilen=25;}?>
 
 	<div class="bs-post__recent <?php echo $customcla ?>">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
