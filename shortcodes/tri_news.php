@@ -21,9 +21,16 @@ function bs_tri_news_sc($atts, $content = null) {
         float:right;
     }
     .main_niw{
-        width:65%; 
+        width:60%; 
         float:left;
     }
+    @media (max-width: 760px){
+       .main_niw{
+        width:100%; 
+        float:right;
+        } 
+    }
+
 </style>
 
 <div style="display:block; position:relative; margin:auto;">
@@ -33,7 +40,7 @@ $customcla="main_niw";
 $trilen=400;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
-<?php if($countri>0){$customcla=" "; $trilen=0;}?>
+<?php if($countri>0){$customcla=" "; $trilen=20;}?>
 
 	<div class="bs-post__recent <?php echo $customcla ?>">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
