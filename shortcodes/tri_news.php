@@ -24,7 +24,7 @@ $customsty="width:60%;";
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
 <?php if($countri>0){$customsty=" ";}?>
-<div class="" style="width:100%;">
+
 	<div class="bs-post__recent" style="<?php echo $customsty ?>">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
 		<a href="<?php echo get_permalink($recent->ID) ?>">
@@ -46,7 +46,7 @@ foreach($at as $ID_n):  ?>
 			<a href="<?php echo get_permalink($recent->ID) ?>"><?php echo gett('Read more') ?>...</a>
 		</div>
 	</div>
- </div>
+ 
  <?php $countri++;?>
  <?php endforeach; ?>
  </div>
