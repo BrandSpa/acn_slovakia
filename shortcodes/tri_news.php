@@ -17,7 +17,7 @@ function bs_tri_news_sc($atts, $content = null) {
   ob_start();
 ?>
 
-<?php $recent =  get_post($at['id_1']); ?>
+<?php $recent =  get_post($at['id_1']); //?>
 <div class="l-wrap">
 	<div class="bs-post__recent">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
