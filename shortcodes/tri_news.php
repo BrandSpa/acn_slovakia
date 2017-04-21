@@ -16,17 +16,26 @@ function bs_tri_news_sc($atts, $content = null) {
 
   ob_start();
 ?>
+<style>
+    .bs-post__recent{
+        float:right;
+    }
+    .main_niw{
+        width:65%; 
+        float:left;
+    }
+</style>
 
 <div style="display:block; position:relative; margin:auto;">
 <?php 
 $countri=0;
-$customsty="width:65%; float:left;";
+$customcla="main_niw";
 $trilen=400;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
-<?php if($countri>0){$customsty=" "; $trilen=0;}?>
+<?php if($countri>0){$customcla=" "; $trilen=0;}?>
 
-	<div class="bs-post__recent" style="float:right; <?php echo $customsty ?>">
+	<div class="bs-post__recent <?php echo $customcla ?>">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
 		<a href="<?php echo get_permalink($recent->ID) ?>">
 			<img src="<?php echo get_post_meta($recent->ID, 'image_square_key', true) ?>" style="width: 100%" />
