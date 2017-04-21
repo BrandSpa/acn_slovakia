@@ -24,7 +24,7 @@ $customsty="width:60%; float:left;";
 $trilen=400;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
-<?php if($countri>0){$customsty=" "; $trilen=80;}?>
+<?php if($countri>0){$customsty=" "; $trilen=0;}?>
 
 	<div class="bs-post__recent" style="float:right; <?php echo $customsty ?>">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
