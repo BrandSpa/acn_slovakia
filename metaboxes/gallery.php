@@ -13,10 +13,7 @@ function bs_type_gallery_cb($post) {
 	$excerpts = get_post_meta($post->ID, 'type_gallery_excerpts_key', true);
 	$props = ["images" => $images, "excerpts" => $excerpts];
 ?>
-    <h1>WORKING</h1>
-	<a class="bs-down-btn" href="#post-content">
-			<?php require(__DIR__. '../templates/down_arrow.php')?>
-	</a>
+
 	<div 
 		class="bs-gallery-metabox" 
 		data-props='<?php echo cleanQuote(json_encode($props)) ?>'>
