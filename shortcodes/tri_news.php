@@ -20,7 +20,7 @@ function bs_tri_news_sc($atts, $content = null) {
 <div style="display:block; position:relative; margin:auto;">
 <?php 
 $countri=0;
-$customsty="width:60%; float:left;";
+$customsty="width:65%; float:left;";
 $trilen=400;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
