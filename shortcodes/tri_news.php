@@ -21,9 +21,10 @@ function bs_tri_news_sc($atts, $content = null) {
 <?php 
 $countri=0;
 $customsty="width:60%;";
+$trilen=200;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
-<?php if($countri>0){$customsty=" ";}?>
+<?php if($countri>0){$customsty=" "; $trilen=80;}?>
 
 	<div class="bs-post__recent" style="<?php echo $customsty ?>">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
@@ -42,7 +43,7 @@ foreach($at as $ID_n):  ?>
 				<?php endif; ?>
 				</a>
 			</h4>
-			<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, 80) ?>...</p>
+			<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, $trilen) ?>...</p>
 			<a href="<?php echo get_permalink($recent->ID) ?>"><?php echo gett('Read more') ?>...</a>
 		</div>
 	</div>
