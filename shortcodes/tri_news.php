@@ -9,7 +9,7 @@ function bs_tri_news_sc($atts, $content = null) {
 	$attributes = [
 		'id_1' => '',
 		'id_2' => '',
-    'id_3' => ''
+        'id_3' => ''
   ];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -19,10 +19,32 @@ function bs_tri_news_sc($atts, $content = null) {
 
 
 <div class="bs-example">
-<img src="<?php echo wp_get_attachment_url($at['image']) ?>" alt="">
-<h1><?php echo $at['title'] ?></h1> 
-<h3><?php echo $at['subtitle'] ?></h3>
-<p><?php echo $content ?></p>
+<div class="l-wrap">
+	<div class="bs-post__recent">
+		<?php if(get_post_meta($at['id_1'], 'image_square_key', true)): ?>
+		<a href="<?php echo get_permalink($at['id_1']) ?>">
+			<img src="<?php echo get_post_meta($at['id_1'], 'image_square_key', true) ?>" style="width: 100%" />
+			</a>
+		<?php endif; ?>
+
+		<div class="bs-post__recent__content">
+			<h4>
+				<a href="<?php echo get_permalink($at['id_1']) ?>">
+				<?php if(is_mobile()) : ?>
+					<?php echo substr($at['id_1']->post_title, 0, 70) ?>...
+				<?php else: ?>
+					<?php echo $at['id_1']->post_title ?>
+				<?php endif; ?>
+				</a>
+			</h4>
+			<p><?php echo substr(wp_strip_all_tags($at['id_1']->post_content), 0, 80) ?>...</p>
+			<a href="<?php echo get_permalink($at['id_1']) ?>"><?php echo gett('Read more') ?>...</a>
+		</div>
+	</div>
+ </div>
+<div class="l-wrap" style="text-align:center">
+ <a href="<?php echo gett('https://acninternational.org/news/') ?>" class='btn bs-see-more' > <?php echo gett('See more') ?> </a>
+ </div>
 </div>
 
 <script>
@@ -43,19 +65,19 @@ add_action( 'vc_before_init', 'bs_tri_news_vc' );
 		$params = [
 			[
         "type" => "textfield",
-        "heading" => "Noticia 1",
+        "heading" => "ID Noticia 1",
         "param_name" => "id_1",
         "value" => ''
 			],
       [
         "type" => "textfield",
-        "heading" => "Noticia 2",
+        "heading" => "ID Noticia 2",
         "param_name" => "id_2",
         "value" => ''
 			],
       [
         "type" => "textfield",
-        "heading" => "Noticia 3",
+        "heading" => "ID Noticia 3",
         "param_name" => 'id_3',
         "value" => ""
       ]
