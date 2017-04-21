@@ -16,10 +16,12 @@ function bs_tri_news_sc($atts, $content = null) {
 
   ob_start();
 ?>
-<?php foreach($at as $ID_n):  ?>
+<?php 
+$countri=0;
+foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
 <div class="" style="width:100%;">
-	<div class="bs-post__recent">
+	<div class="bs-post__recent" style= <?php if($countri==0{echo('style="width:60%"')})?> >
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
 		<a href="<?php echo get_permalink($recent->ID) ?>">
 			<img src="<?php echo get_post_meta($recent->ID, 'image_square_key', true) ?>" style="width: 100%" />
@@ -41,14 +43,12 @@ function bs_tri_news_sc($atts, $content = null) {
 		</div>
 	</div>
  </div>
+ <?php $countri++;?>
  <?php endforeach; ?>
 
 
 <script>
-	onload(function() {
-		//jquery stuff iría acá
-
-	});
+	
 </script>
 <?php
 
