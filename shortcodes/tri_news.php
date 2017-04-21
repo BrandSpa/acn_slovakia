@@ -17,35 +17,33 @@ function bs_tri_news_sc($atts, $content = null) {
   ob_start();
 ?>
 
-
-<div class="bs-example">
+<?php $recent =  get_post($at['id_1']); ?>
 <div class="l-wrap">
 	<div class="bs-post__recent">
-		<?php if(get_post_meta($at['id_1'], 'image_square_key', true)): ?>
-		<a href="<?php echo get_permalink($at['id_1']) ?>">
-			<img src="<?php echo get_post_meta($at['id_1'], 'image_square_key', true) ?>" style="width: 100%" />
+		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
+		<a href="<?php echo get_permalink($recent->ID) ?>">
+			<img src="<?php echo get_post_meta($recent->ID, 'image_square_key', true) ?>" style="width: 100%" />
 			</a>
 		<?php endif; ?>
 
 		<div class="bs-post__recent__content">
 			<h4>
-				<a href="<?php echo get_permalink($at['id_1']) ?>">
+				<a href="<?php echo get_permalink($recent->ID) ?>">
 				<?php if(is_mobile()) : ?>
-					<?php echo substr($at['id_1']->post_title, 0, 70) ?>...
+					<?php echo substr($recent->post_title, 0, 70) ?>...
 				<?php else: ?>
-					<?php echo $at['id_1']->post_title ?>
+					<?php echo $recent->post_title ?>
 				<?php endif; ?>
 				</a>
 			</h4>
-			<p><?php echo substr(wp_strip_all_tags($at['id_1']->post_content), 0, 80) ?>...</p>
-			<a href="<?php echo get_permalink($at['id_1']) ?>"><?php echo gett('Read more') ?>...</a>
+			<p><?php echo substr(wp_strip_all_tags($recent->post_content), 0, 80) ?>...</p>
+			<a href="<?php echo get_permalink($recent->ID) ?>"><?php echo gett('Read more') ?>...</a>
 		</div>
 	</div>
  </div>
 <div class="l-wrap" style="text-align:center">
  <a href="<?php echo gett('https://acninternational.org/news/') ?>" class='btn bs-see-more' > <?php echo gett('See more') ?> </a>
  </div>
-</div>
 
 <script>
 	onload(function() {
