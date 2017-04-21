@@ -16,8 +16,8 @@ function bs_tri_news_sc($atts, $content = null) {
 
   ob_start();
 ?>
-
-<?php $recent =  get_post($at['id_1']); //?>
+<?php foreach($at as $ID_n):  ?>
+<?php $recent =  get_post($ID_n); //?>
 <div class="" style="width:100%;">
 	<div class="bs-post__recent">
 		<?php if(get_post_meta($recent->ID, 'image_square_key', true)): ?>
@@ -41,9 +41,8 @@ function bs_tri_news_sc($atts, $content = null) {
 		</div>
 	</div>
  </div>
-<div class="l-wrap" style="text-align:center">
- <a href="<?php echo gett('https://acninternational.org/news/') ?>" class='btn bs-see-more' > <?php echo gett('See more') ?> </a>
- </div>
+ <?php endforeach; ?>
+
 
 <script>
 	onload(function() {
