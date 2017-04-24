@@ -51,10 +51,13 @@ function bs_tri_news_sc($atts, $content = null) {
             display:none;
         }
         .tri_only_mob h4{
-
+            border-bottom-style:solid;
         }
         .tri_only_mob .main_a{
             display:block;
+        }
+        .first_new p{
+          display:none;
         }
     }
 
