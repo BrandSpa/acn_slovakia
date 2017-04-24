@@ -22,6 +22,7 @@ function bs_tri_news_sc($atts, $content = null) {
     }
     .main_niw{
         width:53%; 
+        margin-left:15%;
         /*float:left;*/
     }
     .tri_only_mob h4{
@@ -46,6 +47,7 @@ function bs_tri_news_sc($atts, $content = null) {
        .main_niw{
             width:100%; 
             float:right;
+            margin:auto;
         } 
         .hide_txt{
             display:none;
@@ -66,7 +68,7 @@ function bs_tri_news_sc($atts, $content = null) {
 
 </style>
 
-<div style="display:block; position:relative; margin:auto; padding-left:15%;">
+<div style="display:block; position:relative; margin:auto;">
 <?php 
 $countri=0;
 $customcla="main_niw";
