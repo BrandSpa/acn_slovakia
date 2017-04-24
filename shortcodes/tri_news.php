@@ -76,7 +76,7 @@ function bs_tri_news_sc($atts, $content = null) {
 <?php 
 $countri=0;
 $customcla="main_niw";
-$trilen=120;
+$trilen=148;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
 <?php if($countri>0){$customcla=" "; $trilen=25;}?>
