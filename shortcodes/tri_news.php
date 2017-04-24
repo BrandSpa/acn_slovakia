@@ -30,7 +30,7 @@ function bs_tri_news_sc($atts, $content = null) {
     .tri_only_mob p{
       display:none;
     }
-    .tri_only_mob a{
+    .tri_only_mob a.main_a{
       display:none;
     }
     .first_new h4{
@@ -87,7 +87,7 @@ foreach($at as $ID_n):  ?>
 				</a>
 			</h4>
 			<p class="hide_txt"><?php echo substr(wp_strip_all_tags($recent->post_content), 0, $trilen) ?>...</p>
-			<a href="<?php echo get_permalink($recent->ID) ?>"><?php echo gett('Read more') ?>...</a>
+			<a class="main_a" href="<?php echo get_permalink($recent->ID) ?>"><?php echo gett('Read more') ?>...</a>
 		</div>
 	</div>
  
