@@ -18,11 +18,11 @@ function bs_tri_news_sc($atts, $content = null) {
 ?>
 <style>
     .bs-post__recent{
-        float:right;
+        /*float:right;*/
     }
     .main_niw{
         width:53%; 
-        float:left;
+        /*float:left;*/
     }
     .tri_only_mob h4{
       border-bottom-style:none;
@@ -70,7 +70,7 @@ function bs_tri_news_sc($atts, $content = null) {
 <?php 
 $countri=0;
 $customcla="main_niw";
-$trilen=200;
+$trilen=100;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
 <?php if($countri>0){$customcla=" "; $trilen=25;}?>
