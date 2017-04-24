@@ -53,6 +53,9 @@ function bs_tri_news_sc($atts, $content = null) {
         .tri_only_mob h4{
             border-bottom-style:solid;
         }
+        .tri_only_mob a{
+            font-size:1.3em;
+        }
         .tri_only_mob .main_a{
             display:block;
         }
