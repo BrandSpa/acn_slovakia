@@ -66,11 +66,11 @@ function bs_tri_news_sc($atts, $content = null) {
 
 </style>
 
-<div style="display:block; position:relative; margin:auto; padding:0 5%;">
+<div style="display:block; position:relative; margin:auto; padding-left:15%;">
 <?php 
 $countri=0;
 $customcla="main_niw";
-$trilen=100;
+$trilen=120;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
 <?php if($countri>0){$customcla=" "; $trilen=25;}?>
