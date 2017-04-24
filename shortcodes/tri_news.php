@@ -24,6 +24,24 @@ function bs_tri_news_sc($atts, $content = null) {
         width:60%; 
         float:left;
     }
+    .tri_only_mob h4{
+      border-bottom-style:none;
+    }
+    .tri_only_mob p{
+      display:none;
+    }
+    .tri_only_mob a{
+      display:none;
+    }
+    .first_new h4{
+      border-bottom-style:solid;
+    }
+    .first_new p{
+      display:block;
+    }
+    .first_new a{
+      display:block;
+    }
     @media (max-width: 760px){
        .main_niw{
             width:100%; 
@@ -31,6 +49,12 @@ function bs_tri_news_sc($atts, $content = null) {
         } 
         .hide_txt{
             display:none;
+        }
+        .tri_only_mob h4{
+
+        }
+        .tri_only_mob a{
+            display:block
         }
     }
 
@@ -40,7 +64,7 @@ function bs_tri_news_sc($atts, $content = null) {
 <?php 
 $countri=0;
 $customcla="main_niw";
-$trilen=400;
+$trilen=200;
 foreach($at as $ID_n):  ?>
 <?php $recent =  get_post($ID_n); //?>
 <?php if($countri>0){$customcla=" "; $trilen=25;}?>
@@ -52,7 +76,7 @@ foreach($at as $ID_n):  ?>
 			</a>
 		<?php endif; ?>
 
-		<div class="bs-post__recent__content">
+		<div class="bs-post__recent__content tri_only_mob <?php if($countri>0){echo "first_new"}?>">
 			<h4>
 				<a href="<?php echo get_permalink($recent->ID) ?>">
 				<?php if(is_mobile()) : ?>
