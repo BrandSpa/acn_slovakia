@@ -22,7 +22,7 @@ function bs_tri_news_sc($atts, $content = null) {
     }
     .main_niw{
         width:53%; 
-        margin-left:15%;
+        margin-left:10%;
         /*float:left;*/
     }
     .tri_only_mob h4{
