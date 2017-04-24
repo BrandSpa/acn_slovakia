@@ -66,7 +66,7 @@ function bs_tri_news_sc($atts, $content = null) {
 
 </style>
 
-<div style="display:block; position:relative; margin:auto;">
+<div style="display:block; position:relative; margin:auto; padding:0 5%;">
 <?php 
 $countri=0;
 $customcla="main_niw";
