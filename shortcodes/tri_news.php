@@ -30,7 +30,7 @@ function bs_tri_news_sc($atts, $content = null) {
     .tri_only_mob p{
       display:none;
     }
-    .tri_only_mob a.main_a{
+    .tri_only_mob .main_a{
       display:none;
     }
     .first_new h4{
@@ -53,7 +53,7 @@ function bs_tri_news_sc($atts, $content = null) {
         .tri_only_mob h4{
 
         }
-        .tri_only_mob a.main_a{
+        .tri_only_mob .main_a{
             display:block;
         }
     }
