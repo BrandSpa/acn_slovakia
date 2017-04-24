@@ -40,7 +40,7 @@ function bs_tri_news_sc($atts, $content = null) {
       display:block;
     }
     .first_new a{
-      display:block;
+      display:block!important;
     }
     @media (max-width: 760px){
        .main_niw{
