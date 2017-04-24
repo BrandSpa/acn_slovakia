@@ -54,7 +54,7 @@ function bs_tri_news_sc($atts, $content = null) {
 
         }
         .tri_only_mob a{
-            display:block
+            display:block;
         }
     }
 
@@ -76,7 +76,7 @@ foreach($at as $ID_n):  ?>
 			</a>
 		<?php endif; ?>
 
-		<div class="bs-post__recent__content tri_only_mob <?php if($countri>0){echo "first_new"}?>">
+		<div class="bs-post__recent__content tri_only_mob <?php if($countri==0) echo("first_new"); ?> ">
 			<h4>
 				<a href="<?php echo get_permalink($recent->ID) ?>">
 				<?php if(is_mobile()) : ?>
