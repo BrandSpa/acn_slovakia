@@ -21,7 +21,7 @@ function bs_tri_news_sc($atts, $content = null) {
         float:right;
     }
     .main_niw{
-        width:60%; 
+        width:53%; 
         float:left;
     }
     .tri_only_mob h4{
