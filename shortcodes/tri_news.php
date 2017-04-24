@@ -19,6 +19,7 @@ function bs_tri_news_sc($atts, $content = null) {
 <style>
     .bs-post__recent{
         /*float:right;*/
+        margin-left:5%;
     }
     .main_niw{
         width:53%; 
