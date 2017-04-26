@@ -59,7 +59,7 @@ echo do_shortcode('[bs_accordion btn_title="'.gett('ACN International in the wor
 				<h5><?php echo gett('Contact') ?></h5>
 				<h6>ACN International</h6>
 				<h6>Aid to the Church in Need gGmbH</h6>
-				<h6>Westerbachstraße 23 (Germany)</h6>
+				<h6>Westerbachstraße 23 / Germany</h6>
 				<h6>61476 Kronberg</h6>
 				<h6>Ph.: +49-6174-291-0</h6>
 			</div>
