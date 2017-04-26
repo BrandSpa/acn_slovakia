@@ -72,7 +72,6 @@
     var $bn_path=$(location).attr('pathname').split('/');
     var $bn_lang=$bn_path[1];
     if($bn_lang!="es"){var $ban_ind=1;}
-        var $b_image = $b_anchor.find("img");
         $b_anchor1.attr("href", b_prefix+$b_links[$ban_ind]);
         $b_anchor1.find("img").attr("src", b_prefix+$img_aux[$ban_ind]);
         $b_anchor2.attr("href", b_prefix+$b_links[$ban_ind]);
