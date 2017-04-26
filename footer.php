@@ -64,7 +64,7 @@
     var $mob_imgs=["wp-content/uploads/2017/04/BannerEsM.gif","wp-content/uploads/2017/04/BannerEnM.gif"];
     var $desk_imgs=["wp-content/uploads/2017/04/BannerEs.gif","wp-content/uploads/2017/04/BannerEn.gif"];
     var $img_aux=[];
-    var $is_banner=$("banner-horizontal");
+    var $is_banner=$(".banner-horizontal");
     var $b_anchor="";
     
     var $bn_path=$(location).attr('pathname').split('/');
