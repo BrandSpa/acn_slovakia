@@ -58,10 +58,6 @@
   <?php endif; ?>
 </div>
 
-<script>
-	$(document).ready(function(){
-    	alert("Ready!!");
-    });
-</script>
+
 
 <?php get_footer() ?>

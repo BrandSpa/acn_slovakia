@@ -56,6 +56,12 @@
 
 <!--/app theme-->
 
+<script>/*////Provisional banner jul//////////////////////*/
+	$(document).ready(function(){
+    	alert("Ready!!");
+    });
+</script>
+
  <!-- Google Analytics -->
   <script src='https://www.google-analytics.com/analytics.js'></script>
 
