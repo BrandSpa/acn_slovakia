@@ -58,31 +58,28 @@
 
 <script>/*////Provisional banner jul//////////////////////*/
 	$(document).ready(function(){
+    var $is_banner=$(".banner-horizontal");
+    if($is_banner.length>0){
     var $ban_ind=0;
     const b_prefix="https://acninternational.org/";
     var $b_links=["es/oracion-por-visita-de-papa-francisco-a-egypto","prayer-campaign-for-pope-francis-trip-to-egypt"];
     var $mob_imgs=["wp-content/uploads/2017/04/BannerEsM.gif","wp-content/uploads/2017/04/BannerEnM.gif"];
     var $desk_imgs=["wp-content/uploads/2017/04/BannerEs.gif","wp-content/uploads/2017/04/BannerEn.gif"];
-    var $img_aux=[];
-    var $is_banner=$(".banner-horizontal");
-    var $b_anchor="";   
+    var $img_aux=$mob_imgs;
+    var $b_anchor=$(".mobi_banner");  
     var $bn_path=$(location).attr('pathname').split('/');
     var $bn_lang=$bn_path[1];
-    if($is_banner.length>0){
-      if(window.innerWidth>760){
+    if($bn_lang!="es"){var $ban_ind=1;}
+    if(window.innerWidth>760){
         $img_aux=$desk_imgs; 
         $b_anchor = $(".desk_banner");
-        }else{
-          $img_aux=$mob_imgs; 
-          $b_anchor = $(".mobi_banner");
-          }
-      if($bn_lang!="es"){var $ban_ind=1;}
+        }
         var $b_image = $b_anchor.find("img");
         $b_anchor.attr("href", b_prefix+$b_links[$ban_ind]);
         $b_image.attr("src", b_prefix+$img_aux[$ban_ind]);
-      }
+    }
       //alert(window.innerWidth+" -> "+ $bn_lang);
-    });
+  });
 </script>
 
  <!-- Google Analytics -->
