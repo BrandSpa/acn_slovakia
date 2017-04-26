@@ -65,8 +65,7 @@
     var $desk_imgs=["wp-content/uploads/2017/04/BannerEs.gif","wp-content/uploads/2017/04/BannerEn.gif"];
     var $img_aux=[];
     var $is_banner=$(".banner-horizontal");
-    var $b_anchor="";
-    
+    var $b_anchor="";   
     var $bn_path=$(location).attr('pathname').split('/');
     var $bn_lang=$bn_path[1];
     if($is_banner.length>0){
@@ -81,8 +80,8 @@
         var $b_image = $b_anchor.find("img");
         $b_anchor.attr("href", b_prefix+$b_links[$ban_ind]);
         $b_image.attr("src", b_prefix+$img_aux[$ban_ind]);
-        alert(window.innerWidth+" -> "+ $bn_lang);
       }
+      //alert(window.innerWidth+" -> "+ $bn_lang);
     });
 </script>
 
