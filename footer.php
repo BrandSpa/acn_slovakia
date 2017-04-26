@@ -66,10 +66,12 @@
     var $desk_imgs=["wp-content/uploads/2017/04/BannerEs.gif","wp-content/uploads/2017/04/BannerEn.gif"];
     var $b_anchor = $(".desk_banner");
     var $b_image = $(".desk_banner img");
+    var $bn_path=$(location).attr('pathname').split('/');
+    var $bn_lang=$bn_path[1];
     if($b_anchor.length>0){
       alert(window.innerWidth);
     }else{
-        alert($(location).attr('pathname'));
+        alert($bn_lang);
       }
     	
     });
