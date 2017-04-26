@@ -59,21 +59,21 @@
 <script>/*////Provisional banner jul//////////////////////*/
 	$(document).ready(function(){
     var $ban_ind=0;
-    var $isMobile=false;
     const b_prefix="https://acninternational.org/";
-    var $links=["es/oracion-por-visita-de-papa-francisco-a-egypto","prayer-campaign-for-pope-francis-trip-to-egypt"];
+    var $b_links=["es/oracion-por-visita-de-papa-francisco-a-egypto","prayer-campaign-for-pope-francis-trip-to-egypt"];
     var $mob_imgs=["wp-content/uploads/2017/04/BannerEsM.gif","wp-content/uploads/2017/04/BannerEnM.gif"];
     var $desk_imgs=["wp-content/uploads/2017/04/BannerEs.gif","wp-content/uploads/2017/04/BannerEn.gif"];
+    var $img_aux=[];
     var $b_anchor = $(".desk_banner");
     var $b_image = $(".desk_banner img");
     var $bn_path=$(location).attr('pathname').split('/');
     var $bn_lang=$bn_path[1];
     if($b_anchor.length>0){
-      alert(window.innerWidth);
-    }else{
-        alert($bn_lang);
+      if(window.innerWidth>760){$img_aux=$desk_imgs}else{$img_aux=$mob_imgs}
+      if($bn_lang!="es"){var $ban_ind=1;}
+        $b_anchor.attr("href", b_prefix+$b_links[$ban_ind]);
+        $b_image.attr("src", b_prefix+$img_aux[$ban_ind]);
       }
-    	
     });
 </script>
 
