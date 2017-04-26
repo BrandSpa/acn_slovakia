@@ -18,7 +18,7 @@ function bs_post_share_sc($atts, $content = null) {
 ?>
 
 	<?php 
-	$main_dir = str_replace('apis', '', __DIR__);
+	$main_dir = str_replace('shortcodes', '', __DIR__);
 	require($main_dir . '/templates/post_share.php') 
 	?>
 
