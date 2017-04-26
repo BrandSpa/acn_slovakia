@@ -64,13 +64,15 @@
     var $mob_imgs=["wp-content/uploads/2017/04/BannerEsM.gif","wp-content/uploads/2017/04/BannerEnM.gif"];
     var $desk_imgs=["wp-content/uploads/2017/04/BannerEs.gif","wp-content/uploads/2017/04/BannerEn.gif"];
     var $img_aux=[];
-    var $b_anchor = $(".desk_banner");
-    var $b_image = $(".desk_banner img");
+    var $b_anchor="";
+    
     var $bn_path=$(location).attr('pathname').split('/');
     var $bn_lang=$bn_path[1];
     if($b_anchor.length>0){
-      if(window.innerWidth>760){$img_aux=$desk_imgs}else{$img_aux=$mob_imgs}
+      if(window.innerWidth>760){$img_aux=$desk_imgs;$b_anchor = $(".desk_banner");}else{$img_aux=$mob_imgs; $b_anchor = $(".mobi_banner");}
       if($bn_lang!="es"){var $ban_ind=1;}
+        $b_anchor = $(".desk_banner");
+        var $b_image = $b_anchor.find("img");
         $b_anchor.attr("href", b_prefix+$b_links[$ban_ind]);
         $b_image.attr("src", b_prefix+$img_aux[$ban_ind]);
         alert(window.innerWidth+" -> "+ $bn_lang);
