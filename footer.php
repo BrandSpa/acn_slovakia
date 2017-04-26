@@ -73,7 +73,7 @@
         $b_anchor1.attr("href", b_prefix+$b_links[$ban_ind]);
         $b_anchor1.find("img").attr("src", b_prefix+$mob_imgs[$ban_ind]);
         $b_anchor2.attr("href", b_prefix+$b_links[$ban_ind]);
-        $b_anchor2.find("img").attr("src", b_prefix+$$desk_imgs[$ban_ind]);
+        $b_anchor2.find("img").attr("src", b_prefix+$desk_imgs[$ban_ind]);
     }
       //alert(window.innerWidth+" -> "+ $bn_lang);
   });
