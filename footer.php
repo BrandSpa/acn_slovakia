@@ -73,6 +73,7 @@
       if($bn_lang!="es"){var $ban_ind=1;}
         $b_anchor.attr("href", b_prefix+$b_links[$ban_ind]);
         $b_image.attr("src", b_prefix+$img_aux[$ban_ind]);
+        alert(window.innerWidth+" -> "+ $bn_lang);
       }
     });
 </script>
