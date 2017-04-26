@@ -69,7 +69,7 @@
     if($b_anchor.length>0){
       alert(window.innerWidth);
     }else{
-        alert("No banner");
+        alert($(location).attr('pathname'));
       }
     	
     });
