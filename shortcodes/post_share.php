@@ -35,7 +35,7 @@ add_action( 'vc_before_init', 'bs_share_post_vc' );
 
   	vc_map(
       array(
-        "name" =>  "BS Contact Form",
+        "name" =>  "BS Post Share Style",
         "base" => "bs_share_post",
         "category" =>  "BS",
         "params" => $params
