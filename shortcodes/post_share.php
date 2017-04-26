@@ -1,6 +1,6 @@
 <?php
 
-function bs_post_share_sc($atts, $content = null) {
+function bs_share_post_sc($atts, $content = null) {
 	$attributes = [
 		'name-placeholder' => 'Name',
 		'lastname-placeholder' => 'Lastname',
