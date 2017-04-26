@@ -66,7 +66,7 @@
     var $desk_imgs=["wp-content/uploads/2017/04/BannerEs.gif","wp-content/uploads/2017/04/BannerEn.gif"];
     var $b_anchor = $(".desk_banner");
     var $b_image = $(".desk_banner img");
-    if($b_anchor){
+    if($b_anchor.length>0){
       alert(window.innerWidth);
     }else{
         alert("No banner");
