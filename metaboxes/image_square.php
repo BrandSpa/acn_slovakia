@@ -8,6 +8,8 @@
 		if(isset($_POST['post_ID']) && $post_id == null) $post_id = $_POST['post_ID'] ? $_POST['post_ID']: null;
 
     add_meta_box('page_image_square', 'Square Image', 'bs_page_image_square_cb', 'post', 'normal', 'high', null);
+    add_meta_box('page_image_square', 'Square Image', 'bs_page_image_square_cb', 'video', 'normal', 'high', null);
+    add_meta_box('page_image_square', 'Square Image', 'bs_page_image_square_cb', 'gallery', 'normal', 'high', null);
   }
 
   add_action('add_meta_boxes', 'bs_page_image_square_metabox');
