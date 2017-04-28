@@ -9,7 +9,8 @@ function bs_contact_form_sc($atts, $content = null) {
 		'name-validation' => 'Name required',
 		'lastname-validation' => 'lastname required',
 		'email-validation' => 'Email required',
-		'button-text' => gett('Pray')
+		'button-text' => gett('Pray'),
+		'redirect' => ''
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -36,7 +37,7 @@ function bs_contact_form_sc($atts, $content = null) {
 			"lastname": "<?php echo $at['lastname-validation'] ?>",
 			"email": "<?php echo $at['email-validation'] ?>"
 		},
-		"redirect": "<?php echo get_option('subscribe_redirect') ?>"
+		"redirect": "<?php echo $at['redirect'] ? $at['redirect'] : get_option('subscribe_redirect') ?>"
 	}'
 >
 </div>
@@ -51,6 +52,12 @@ add_action( 'vc_before_init', 'bs_contact_form_vc' );
 
   function bs_contact_form_vc() {
 		$params = [
+			[
+        "type" => "textfield",
+        "heading" => "redirect page",
+        "param_name" => "redirect",
+        "value" => ''
+			],
 			[
         "type" => "textfield",
         "heading" => "name placeholder",
