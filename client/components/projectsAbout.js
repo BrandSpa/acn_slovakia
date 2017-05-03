@@ -66,7 +66,6 @@ const ProjectsAbout = React.createClass({
 							float: 'left', 
 							height: '100px', 
 							padding: '33px', 
-							textAlign: 'center', 
 							fontSize: '1.5em',
 							color: '#A0A0A0',
 						}}
