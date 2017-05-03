@@ -1,6 +1,8 @@
 import React from 'react';
+import Radium, { StyleRoot } from "radium";
 import Projects from './projects';
 import PostsAbout from './postsAbout';
+
 const colors = {
   1: '#b91325',
   2: '#00355f',
@@ -33,7 +35,7 @@ const ProjectsAbout = React.createClass({
 		const { section } = this.state;
 
 		return (
-			<div>
+			<StyleRoot>
 				<Projects 
 					contents={this.props.projects.map(project => {
 						project['text'] = project.content;
@@ -52,7 +54,12 @@ const ProjectsAbout = React.createClass({
 							float: 'left', 
 							height: '150px', 
 							background: '#fff',
-							color: colors[this.state.section + 1]
+							color: colors[this.state.section + 1],
+							'@media (max-width: 767px)': {
+								width: '100%',
+								height: 'auto',
+								textAlign: 'center'
+							}
 						}}
 					>
 						<h2>{this.props.projects[section] ? this.props.projects[section].number : ''}</h2>
@@ -68,30 +75,35 @@ const ProjectsAbout = React.createClass({
 							padding: '60px', 
 							fontSize: '1.5em',
 							color: '#A0A0A0',
+							'@media (max-width: 767px)': {
+								width: '100%',
+								height: 'auto',
+								textAlign: 'center'
+							}
 						}}
 					>
 						{this.props.projects[section] ? this.props.projects[section].number_text : ''}
-					</div>
+
 				</div>
 
 				<div style={{background: '#F8F6F8', padding: '80px 0', float: 'left', width: '100%'}}>
 					<div className="l-wrap">
-						<h3 style={{
+						<h4 style={{
 							color: '#324049', 
 							textTransform: 'uppercase', 
 							marginBottom: '20px',
 							marginLeft: '15px',
 							fontWeight: 'normal'
 						}}
-						>{this.props.texts.stories}</h3>
+						>{this.props.texts.stories}</h4>
 
 						<PostsAbout 
 							category={this.props.projects[section] ? this.props.projects[section].post_category : ''} 
 						/>
 					</div>
 				</div>
-
-			</div>
+				</div>
+			 </StyleRoot>
 		)
 	}
 });
