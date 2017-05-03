@@ -48,9 +48,9 @@ const ProjectsAbout = React.createClass({
 						style={{
 							width: '50%', 
 							textAlign: 'right',
-							paddingTop: '13px',
+							paddingTop: '40px',
 							float: 'left', 
-							height: '100px', 
+							height: '200px', 
 							background: '#fff',
 							color: colors[this.state.section + 1]
 						}}
@@ -64,8 +64,8 @@ const ProjectsAbout = React.createClass({
 							textAlign: 'left',
 							width: '50%',
 							float: 'left', 
-							height: '100px', 
-							padding: '33px', 
+							height: '200px', 
+							padding: '60px', 
 							fontSize: '1.5em',
 							color: '#A0A0A0',
 						}}
