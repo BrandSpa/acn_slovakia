@@ -52,13 +52,13 @@ const ProjectsAbout = React.createClass({
 							float: 'left', 
 							height: '100px', 
 							background: '#fff',
-							color: '#A0A0A0'
+							color: colors[this.state.section + 1]
 						}}
 					>
 						<h2>{this.props.projects[section] ? this.props.projects[section].number : ''}</h2>
 					</div>
 
-					<div 
+					<div
 						className="projects-about-num__text" 
 						style={{ 
 							textAlign: 'left',
@@ -68,7 +68,7 @@ const ProjectsAbout = React.createClass({
 							padding: '33px', 
 							textAlign: 'center', 
 							fontSize: '1.5em',
-							color: '#fff',
+							color: '#A0A0A0',
 						}}
 					>
 						{this.props.projects[section] ? this.props.projects[section].number_text : ''}
