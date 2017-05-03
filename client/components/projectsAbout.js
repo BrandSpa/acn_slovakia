@@ -26,13 +26,7 @@ const ProjectsAbout = React.createClass({
 	},
 
 	componentWillUpdate(nextProps, nextState) {
-		console.log('nextState', nextState);
-		const { section } = nextState;
-		let max = this.props.projects[section] ? this.props.projects[section].number : 0;
-		console.log(max);
-		for(var i = 0; i <= max; i++) {
-			console.log(i);
-		}
+	
 	},
 
 	render() {
@@ -58,6 +52,7 @@ const ProjectsAbout = React.createClass({
 							float: 'left', 
 							height: '100px', 
 							background: '#fff',
+							textAlign: 'right',
 							color: colors[this.state.section + 1]
 						}}
 					>
@@ -67,14 +62,14 @@ const ProjectsAbout = React.createClass({
 					<div 
 						className="projects-about-num__text" 
 						style={{ 
-							background: colors[this.state.section + 1],
+							textAlign: 'left',
 							width: '50%', 
 							float: 'left', 
 							height: '100px', 
 							padding: '33px', 
 							textAlign: 'center', 
 							fontSize: '1.5em',
-							color: '#fff'
+							color: '#fff',
 						}}
 					>
 						{this.props.projects[section] ? this.props.projects[section].number_text : ''}
