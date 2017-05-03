@@ -60,9 +60,9 @@ const ProjectsAbout = React.createClass({
 
 					<div
 						className="projects-about-num__text" 
-						style={{ 
+						style={{
 							textAlign: 'left',
-							width: '50%', 
+							width: '50%',
 							float: 'left', 
 							height: '100px', 
 							padding: '33px', 
