@@ -71,7 +71,7 @@
 				color: #fff;
 				margin-bottom: 30px;
 				font-size: (16 / $font-size-base) * 1em;
-					@media #{$s} {
+				@media #{$s} {
 					margin-bottom: 20px;
 				}
 			}

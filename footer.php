@@ -93,6 +93,8 @@
       revenue: "<?php echo $_GET['order_revenue'] ?>",
 			currency: 'USD',
     });
+
+    ga('ecommerce:send');
   <?php endif; ?>
   
 </script>
