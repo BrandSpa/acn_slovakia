@@ -20,7 +20,8 @@ body {
 	left: 0;
 	transition: left 300ms;
 	padding-top: 100px;
-
+	line-height: 1.44;
+	
 	@media #{$s} {
 		font-size: 12px;
 	}
