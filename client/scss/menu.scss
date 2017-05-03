@@ -40,9 +40,8 @@
 	margin-top: 10px;
 	float: left;
 	@media #{$s} {
-		margin: 4% 30% 0 0;
+		margin: 4% 30% auto;
 		float: left;
-		width: 100%;
 	}
 }
 
