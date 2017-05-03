@@ -25,7 +25,9 @@ const ProjectsAbout = React.createClass({
 		this.setState({section});
 	},
 
-	componentDidMount() {
+	componentWillUpdate(nextProps, nextState) {
+		console.log('nextState', nextState);
+		const { section } = this.state;
 		let max = this.props.projects[section] ? this.props.projects[section].number : 0;
 		for(var i = 0; i <= max; i++) {
 			console.log(i);
