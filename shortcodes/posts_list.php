@@ -18,10 +18,16 @@ function bs_posts_list_sc($atts, $content = null) {
 	$page = isset($_GET['posts']) ?  $_GET['posts'] : 0;
 	$offset = isset($_GET['posts']) ? intval($_GET['posts']) * 10 : 0;
 
+
   $at = shortcode_atts( $attributes , $atts );
 	$args = array( 'posts_per_page' => 10, 'offset' => $offset );
 
-  $recent_posts = get_posts( $args );
+  $recent_posts = new Wp_Query(array(
+    'post_type' => array('video','gallery','featured','post'),//$type, Jul*
+    'paged' => $page,
+		'posts_per_page' => 10,
+		'post_status' => 'publish'
+  ));
   ob_start();
 ?>
 
