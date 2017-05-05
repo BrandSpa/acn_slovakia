@@ -78,7 +78,8 @@ const ProjectsAbout = React.createClass({
 							'@media (max-width: 767px)': {
 								width: '100%',
 								height: 'auto',
-								textAlign: 'center'
+								textAlign: 'center',
+								padding: '0 0 60px 0'
 							}
 						}}
 					>
