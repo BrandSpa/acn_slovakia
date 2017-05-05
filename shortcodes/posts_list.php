@@ -88,7 +88,11 @@ function bs_posts_list_sc($atts, $content = null) {
 						</a>
 					</h2>
 					
-					<p><?php echo preg_replace('/\[(.*?)\]/', '', wp_strip_all_tags(substr($post->post_content, 0, 120)) ); ?>...</p>
+					<?php if(is_mobile()) : ?>
+						<p><?php echo preg_replace('/\[(.*?)\]/', '', wp_strip_all_tags(substr($post->post_content, 0, 120)) ); ?>...</p>
+					<?php else: ?>
+						<p><?php echo preg_replace('/\[(.*?)\]/', '', wp_strip_all_tags(substr($post->post_content, 0, 200)) ); ?>...</p>
+					<?php endif; ?>
 					<a class="bs-posts-list__item__readmore" href="<?php echo get_permalink($post->ID) ?>"><?php echo gett('Read more') ?>...</a>
 				</div>
 		</div>
