@@ -38,7 +38,7 @@ const PostsAbout = React.createClass({
 						<a href={post.post_permalink} style={{background: '#fff'}}>
 							<img src={post.post_image} alt="" style={{width: '100%'}} />
 						</a>
-						<div className="post-about__title" style={{background: '#fff', padding: '20px'}}>
+						<div className="post-about__title" style={{background: '#fff', padding: '20px', marginBottom: '20px'}}>
 							<h5><a style={{color: '#324049'}} href={post.post_permalink}>{post.post_title}</a></h5>
 						</div>
 					</div>
