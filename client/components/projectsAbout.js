@@ -87,7 +87,7 @@ const ProjectsAbout = React.createClass({
 
 				</div>
 
-				<div style={{background: '#F8F6F8', padding: '80px 0', float: 'left', width: '100%'}}>
+				<div style={{background: '#F8F6F8', padding: '80px 0', float: 'left', width: '100%', '@media (max-width: 767px)': {padding: '20px 0 0 0'}}}>
 					<div className="l-wrap">
 						<h4 style={{
 							color: '#324049', 
