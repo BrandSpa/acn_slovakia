@@ -328,6 +328,10 @@ button, .btn {
 .breadcrumbs {
 	margin: 40px 0;
 	color: #ccc;
+
+	@media #{$s} {
+		margin: 20px 0;
+	}
 	
 	a {
 		color: #bbb;
