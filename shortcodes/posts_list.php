@@ -23,7 +23,7 @@ function bs_posts_list_sc($atts, $content = null) {
 	$args = array( 'posts_per_page' => 10, 'offset' => $offset );
 
   $query = new Wp_Query(array(
-    'post_type' => array('video','gallery','featured','post'),//$type, Jul*
+    'post_type' => array('video','gallery','featured','post'),
     'paged' => $page,
 		'posts_per_page' => 10,
 		'post_status' => 'publish'
@@ -87,7 +87,8 @@ function bs_posts_list_sc($atts, $content = null) {
 						<?php endif; ?>
 						</a>
 					</h2>
-					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 120) ?>...</p>
+					
+					<p><?php echo preg_replace('/\[(.*?)\]/', '', wp_strip_all_tags(substr($post->post_content, 0, 120)) ); ?>...</p>
 					<a class="bs-posts-list__item__readmore" href="<?php echo get_permalink($post->ID) ?>"><?php echo gett('Read more') ?>...</a>
 				</div>
 		</div>
