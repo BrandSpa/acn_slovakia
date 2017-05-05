@@ -22,12 +22,15 @@ function bs_posts_list_sc($atts, $content = null) {
   $at = shortcode_atts( $attributes , $atts );
 	$args = array( 'posts_per_page' => 10, 'offset' => $offset );
 
-  $recent_posts = new Wp_Query(array(
+  $query = new Wp_Query(array(
     'post_type' => array('video','gallery','featured','post'),//$type, Jul*
     'paged' => $page,
 		'posts_per_page' => 10,
 		'post_status' => 'publish'
   ));
+	
+	$recent_posts = $query->get_posts();
+
   ob_start();
 ?>
 
