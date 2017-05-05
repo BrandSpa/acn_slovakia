@@ -56,7 +56,7 @@ function bs_posts_list_sc($atts, $content = null) {
 
 				<div class="bs-posts-list__main__content" style="background-color: #3C515F;">
 					<h3><a href="<?php echo get_permalink($post->ID) ?>" style="margin-top: 0"><?php echo $post->post_title ?></a></h3>
-					<p><?php echo substr(wp_strip_all_tags($post->post_content), 0, 150) ?>...</p>
+					<p><?php echo preg_replace('/\[(.*?)\]/', '', wp_strip_all_tags(substr($post->post_content, 0, 200)) );  ?>...</p>
 					<a href="<?php echo get_permalink($post->ID) ?>"><?php echo gett('Read more') ?> <i class="ion-chevron-down"></i> </a>
 				</div>
 			</div>
@@ -87,7 +87,7 @@ function bs_posts_list_sc($atts, $content = null) {
 						<?php endif; ?>
 						</a>
 					</h2>
-					
+
 					<?php if(is_mobile()) : ?>
 						<p><?php echo preg_replace('/\[(.*?)\]/', '', wp_strip_all_tags(substr($post->post_content, 0, 120)) ); ?>...</p>
 					<?php else: ?>
