@@ -51,8 +51,10 @@ const Projects = React.createClass({
 
   changeContent(num) {
     let color = backgroundColors[num];
+    let ind = (num - 1);
     this.setState({bg: color, donateColor: color, section: num});
     this.moveArrow(num);
+    history.pushState(null,null, this.props.contents[ind].hash_url);
     this.props.changeSection ? this.props.changeSection(num) : '';
   },
   
