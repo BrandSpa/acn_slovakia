@@ -843,7 +843,7 @@ var Projects = _react2.default.createClass({
     var ind = num - 1;
     this.setState({ bg: color, donateColor: color, section: num });
     this.moveArrow(num);
-    history.pushState(null, null, this.props.contents[ind].hash_url);
+    history.pushState(null, null, '#' + this.props.contents[ind].hash_url);
     this.props.changeSection ? this.props.changeSection(num) : '';
   },
   render: function render() {
@@ -10373,4 +10373,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.4fd182b1754aa6013509.js.map
+//# sourceMappingURL=app.6e0114a2b3359181f181.js.map
