@@ -817,9 +817,8 @@ var Projects = _react2.default.createClass({
     var num = 1;
 
     this.props.contents.map(function (content, ind) {
-      console.log(content.hash_url, window.location.hash.replace('#', ''));
       if (content.hash_url == window.location.hash.replace('#', '')) {
-        console.log(content, ind);
+        num = ind + 1;
       }
     });
 
@@ -10372,4 +10371,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.c4128b0f5d062d350b34.js.map
+//# sourceMappingURL=app.bb6b806759db6fa9d4af.js.map
