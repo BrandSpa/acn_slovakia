@@ -21,8 +21,9 @@ const Projects = React.createClass({
 
   componentDidMount() {
     var num = 1;
-    
+
     this.props.contents.map(function(content, ind) {
+      console.log(content.hash_url , window.location.hash.replace('#', ''));
       if(content.hash_url == window.location.hash.replace('#', '')) {
         console.log(content);
       }
