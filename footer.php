@@ -50,8 +50,8 @@
   bs.donate = '<?php echo gett('Donate') ?>'
 </script>
 
-<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.b68358cc7dfdf5a77e5c.js'></script>
-<script src='<?php echo get_template_directory_uri() ?>/public/js/app.23b5f9fa15e3c0fec891.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.71a25dafa6fbb9f20685.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/app.481ad4d7807029945813.js'></script>
 <!--<script src="<?php echo get_template_directory_uri() ?>/public/js/lightbox.js"></script>-->
 
 <!--/app theme-->

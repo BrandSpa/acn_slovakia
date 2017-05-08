@@ -1,20 +1,21 @@
 import debounce from 'lodash/debounce';
 
 export default function smoothScroll() {
-  $("a").on('click', function(event) {
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      event.preventDefault();
+  // $("a").on('click', function(event) {
 
-      const hash = this.hash;
-      const less = $('.nav') ? $('.nav').height() + 20 : 0;
+  //   // Make sure this.hash has a value before overriding default behavior
+  //   if (this.hash !== "") {
+  //     event.preventDefault();
 
-      const scrollTop = $(hash) ? ($(hash).offset().top - less) : 0;
-      $('html, body').animate({ scrollTop }, 800, () => {});
+  //     const hash = this.hash;
+  //     const less = $('.nav') ? $('.nav').height() + 20 : 0;
 
-    }
-  });
+  //     const scrollTop = $(hash) ? ($(hash).offset().top - less) : 0;
+  //     $('html, body').animate({ scrollTop }, 800, () => {});
+
+  //   }
+  // });
 
   window.addEventListener('scroll', debounce(function() {
      if($('.nav').offset().top > 0) {
