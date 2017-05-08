@@ -23,7 +23,7 @@ const PostsAbout = React.createClass({
 
 		request.post(endpoint, data)
 		.then(res => {
-        this.setState({posts: res.data});
+        this.setState({posts: res.data ? res.data : []});
       })
       .catch(err => console.error(err));
 	},

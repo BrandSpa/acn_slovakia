@@ -5285,7 +5285,7 @@ var PostsAbout = _react2.default.createClass({
 		var data = _qs2.default.stringify({ action: 'get_posts', 'post_perpage': 4, 'post_category': this.props.category });
 
 		_axios2.default.post(endpoint, data).then(function (res) {
-			_this.setState({ posts: res.data });
+			_this.setState({ posts: res.data ? res.data : [] });
 		}).catch(function (err) {
 			return console.error(err);
 		});
@@ -10373,4 +10373,4 @@ _webfontloader2.default.load({
 
 /***/ })
 ]),[632]);
-//# sourceMappingURL=app.6e0114a2b3359181f181.js.map
+//# sourceMappingURL=app.85513613f94f3ee475d7.js.map
