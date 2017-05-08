@@ -20,6 +20,7 @@ const Projects = React.createClass({
   },
 
   componentDidMount() {
+    console.log('contents', this.props.contents);
     let patt = new RegExp(/#projects-[1-9]/);
     let hash = window.location.hash;
     let num = 1;
