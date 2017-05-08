@@ -22,7 +22,8 @@ $general = [
 	'All the latest',
 	'Select country',
 	'¿Quiéres que el mundo conozca la realidad de la Iglesia que Sufre en el Mundo?',
-	'Comparte este artículo'
+	'Comparte este artículo',
+	'stories'
 ];
 
 foreach($general as $key => $trans) {
