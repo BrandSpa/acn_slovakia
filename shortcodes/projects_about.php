@@ -42,6 +42,11 @@ function bs_projects_about_sc($atts, $content = null) {
       ],
       [
         "type" => "textfield",
+        "heading" => "enter hash url",
+        "param_name" => "hash_url"
+      ],
+      [
+        "type" => "textfield",
         "heading" => "enter title",
         "param_name" => "title"
       ],
