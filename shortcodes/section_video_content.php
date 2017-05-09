@@ -7,7 +7,7 @@ function bs_section_video_content_sc($atts, $content = null) {
 		'image_width' => '100%',
 		'image_height' => 'auto',
 		'image_margin' => '0 auto',
-		'full_height' => false
+		'full_height' => ''
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -64,7 +64,7 @@ function bs_section_video_content_sc($atts, $content = null) {
         "type" => "checkbox",
         "heading" => "full height",
         "param_name" => "full_height",
-        "value" => false
+        "value" => ''
 			],
 			[
         "type" => "textfield",
