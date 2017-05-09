@@ -10,7 +10,7 @@ function bs_carousel_sc($atts, $content = null) {
 	$items = array_map(function($item) {
 		$item['imgUrl'] = isset($item['image']) ?  wp_get_attachment_url($item['image']) : '';
 		return $item;
-	}, vc_param_group_parse_atts( $at['projects'] ));;
+	}, vc_param_group_parse_atts( $at['items'] ));;
   ob_start();
 ?>
 
