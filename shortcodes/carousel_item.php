@@ -6,7 +6,9 @@ function bs_carousel_item_sc($atts, $content = null) {
   ob_start();
 ?>
 
-<?php echo json_encode($content) ?>
+<div class="bs-carousel-item">
+<?php echo $content ?>
+</div>
 
 <?php
   return ob_get_clean();

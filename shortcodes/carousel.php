@@ -9,10 +9,8 @@ function bs_carousel_sc($atts, $content = null) {
 <?php echo do_shortcode($content) ?>
 <div
   class="bs-carousel" 
-  data-props='{
-    "items": <?php echo cleanQuote(json_encode(do_shortcode($content)))  ?>
-  }'
 >
+	<?php echo do_shortcode($content) ?>
 </div>
 
 <?php
