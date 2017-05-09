@@ -6,7 +6,6 @@ function bs_carousel_sc($atts, $content = null) {
   ob_start();
 ?>
 
-<?php echo do_shortcode($content) ?>
 <div
   class="bs-carousel" 
 >
