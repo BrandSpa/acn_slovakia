@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoModal from './videoModal';
-
+import Radium, { StyleRoot } from "radium";
 const SectionVideoContent = React.createClass({
   getDefaultProps() {
     return {
@@ -34,12 +34,12 @@ const SectionVideoContent = React.createClass({
     imageStyle = {...imageStyle, ...this.props.imageStyle};
 
     return (
-      <div>
+      <StyleRoot>
         <VideoModal ref={modal => this.modal = modal} url={this.props.url} />
         <a href="#" className="image-video__link" style={linkStyle} onClick={this.showVideo}>
 					<div dangerouslySetInnerHTML={{__html: this.props.content}} />
         </a>
-      </div>
+      </StyleRoot>
     );
   }
 });
