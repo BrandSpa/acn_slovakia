@@ -28,7 +28,7 @@ function bs_carousel_sc($atts, $content = null) {
   function bs_carousel_vc() {
     $subparams = [
       [
-        "type" => "textarea",
+        "type" => "textarea_html",
         "heading" => "enter content",
         "param_name" => "content"
       ]
