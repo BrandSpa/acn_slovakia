@@ -32,8 +32,12 @@ const Carousel = React.createClass({
 			textAlign: 'center',
 			width: '40px',
 			height: '40px',
+			borderRadius: '40px',
 			position: 'absolute', 
-			top: '45%'
+			top: '45%',
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center'
 		};
 
 		let btnLeft = {...btnStyle, left: '0'};
