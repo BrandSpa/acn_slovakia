@@ -7,7 +7,7 @@ function bs_section_video_content_sc($atts, $content = null) {
 		'image_width' => '100%',
 		'image_height' => 'auto',
 		'image_margin' => '0 auto',
-		'full_height' => 'false'
+		'full_height' => false
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -26,7 +26,7 @@ function bs_section_video_content_sc($atts, $content = null) {
 			"height": "<?php echo $at['image_height'] ?>",
 			"margin": "<?php echo $at['image_margin'] ?>"
 		},
-		"fullHeight": "<?php echo $at['full_height'] ?>",
+		"fullHeight": <?php echo json_encode($at['full_height']) ?>,
 		"content": <?php echo json_encode(do_shortcode($content)) ?>
 	}'
 >
@@ -64,7 +64,7 @@ function bs_section_video_content_sc($atts, $content = null) {
         "type" => "checkbox",
         "heading" => "full height",
         "param_name" => "full_height",
-        "value" => 'false'
+        "value" => false
 			],
 			[
         "type" => "textfield",
