@@ -1,5 +1,17 @@
+<?php
 
-<a href="">
+function bs_arrow_sc($atts, $content = null) {
+	$attributes = [
+    'style' => '',
+		'anchor' => '#'
+  ];
+
+  $at = shortcode_atts( $attributes , $atts );
+	
+  ob_start();
+?>
+
+<a href="" style="<?php echo $at['style'] ?>">
 <svg width="20px" height="27px" viewBox="178 602 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs>
 							<polyline id="path-1" points="16.9743561 9.37612525 16.9743561 23.0775777 2.91233907 23.0775777"></polyline>
@@ -17,3 +29,38 @@
 					</g>
 </svg>
 </a>
+
+<?php
+
+  return ob_get_clean();
+}
+
+add_shortcode( 'bs_arrow', 'bs_arrow_sc' );
+add_action( 'vc_before_init', 'bs_arrow_vc' );
+
+  function bs_arrow_vc() {
+		$params = [
+      [
+        "type" => "textfield",
+        "heading" => "style",
+        "param_name" => 'style',
+        "value" => ''
+      ],
+			   [
+        "type" => "textfield",
+        "heading" => "anchor",
+        "param_name" => 'anchor',
+        "value" => '#'
+      ]
+		];
+
+  	vc_map(
+      array(
+        "name" =>  "BS Arrow",
+        "base" => "bs_arrow",
+        "category" =>  "BS",
+        "params" => $params
+      ) 
+    );
+  }
+
