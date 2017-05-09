@@ -7,9 +7,12 @@ function bs_carousel_sc($atts, $content = null) {
 ?>
 
 <div
-  class="bs-carousel" 
+  class="bs-carousel"
+  data-props='{
+    "content": <?php echo json_encode(do_shortcode($content)) ?>
+  }'
 >
-	<?php echo do_shortcode($content) ?>
+	
 </div>
 
 <?php

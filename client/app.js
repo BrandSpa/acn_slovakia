@@ -18,6 +18,7 @@ import DownloadPdf from './components/downloadPdf';
 import GalleryHeader from './components/galleryHeader';
 import ProjectsAbout from './components/projectsAbout';
 import VideoHeader from './components/videoHeader';
+import Carousel from './components/carousel';
 
 //jquery stuff :(
 import setMenu from './lib/set_menu';
@@ -51,6 +52,7 @@ multipleRender(DownloadPdf, '.bs-download-pdf');
 multipleRender(GalleryHeader, '.bs-gallery-header');
 multipleRender(ProjectsAbout, '.bs-projects-about');
 multipleRender(VideoHeader, '.bs-video-header');
+multipleRender(Carousel, '.bs-carousel');
 
 //jquery calls
 setMenu();
