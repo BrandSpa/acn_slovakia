@@ -120,6 +120,7 @@ require('shortcodes/tri_news.php');
 require('shortcodes/post_share.php');
 require('shortcodes/arrow.php');
 require('shortcodes/carousel.php');
+require('shortcodes/carousel_item.php');
 
 
 //metaboxes
