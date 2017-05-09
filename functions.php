@@ -121,7 +121,7 @@ require('shortcodes/post_share.php');
 require('shortcodes/arrow.php');
 require('shortcodes/carousel.php');
 require('shortcodes/carousel_item.php');
-
+require('shortcodes/post_item.php');
 
 //metaboxes
 require('metaboxes/image_square.php');
