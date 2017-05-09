@@ -19,8 +19,16 @@ const SectionVideoContent = React.createClass({
 
   render() {
     const h = window.innerHeight - 100;
-
     let linkStyle = {
+      left: '0',
+      right: '0',
+      bottom: '0',
+      top: '0',
+      width: '100%',
+      position: 'absolute'
+    };
+
+    let bgStyle = {
 			float: 'left', 
 			lineHeight: '0',
 			background: `url(${this.props.imgUrl})`,
@@ -39,9 +47,10 @@ const SectionVideoContent = React.createClass({
     return (
       <StyleRoot>
         <VideoModal ref={modal => this.modal = modal} url={this.props.url} />
-        <a href="#" className="image-video__link" style={linkStyle} onClick={this.showVideo}>
+        <div style={bgStyle}>
+        <a href="#" className="image-video__link" style={linkStyle} onClick={this.showVideo}></a>
 					<div dangerouslySetInnerHTML={{__html: this.props.content}} />
-        </a>
+        </div>
       </StyleRoot>
     );
   }
