@@ -10,7 +10,8 @@ function bs_contact_form_sc($atts, $content = null) {
 		'lastname-validation' => 'lastname required',
 		'email-validation' => 'Email required',
 		'button-text' => gett('Pray'),
-		'redirect' => ''
+		'redirect' => '',
+		'btn-bg' => '#F4334A'
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -37,7 +38,8 @@ function bs_contact_form_sc($atts, $content = null) {
 			"lastname": "<?php echo $at['lastname-validation'] ?>",
 			"email": "<?php echo $at['email-validation'] ?>"
 		},
-		"redirect": "<?php echo $at['redirect'] ? $at['redirect'] : get_option('subscribe_redirect') ?>"
+		"redirect": "<?php echo $at['redirect'] ? $at['redirect'] : get_option('subscribe_redirect') ?>",
+		"btnBg": "<?php echo $at['btn-bg'] ?>"
 	}'
 >
 </div>
@@ -94,6 +96,12 @@ add_action( 'vc_before_init', 'bs_contact_form_vc' );
         "heading" => "email validation",
         "param_name" => "email-validation",
         "value" => 'Email required'
+			],
+			[
+        "type" => "colorpicker",
+        "heading" => "button color",
+        "param_name" => "btn-bg",
+        "value" => '#F4334A'
 			]
 	];
 

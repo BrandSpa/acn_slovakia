@@ -7,7 +7,7 @@ const SectionVideoContent = React.createClass({
       imgUrl: '',
       url: 'https://www.youtube.com/embed/_lQvw2vSDbs',
       imageStyle: {},
-			content: ''
+			content: '',
     };
   },
 

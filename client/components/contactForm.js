@@ -15,12 +15,18 @@ const contactForm = React.createClass({
       officeCountries: [],
       inOffice: false,
       loading: false,
-      showMemberExists: false 
+      showMemberExists: false
     };
   },
 
   getDefaultProps() {
-    return {validationMessages: {}, placeholders: {}, texts: {}, redirect: ''};
+    return {
+      validationMessages: {}, 
+      placeholders: {}, 
+      texts: {}, 
+      redirect: '',
+      btnBg: ''
+    };
   },
 
   componentDidMount() {
@@ -115,7 +121,7 @@ const contactForm = React.createClass({
   render() {
     let {contact, errors} = this.state;
     let {placeholders, validationMessages, texts} = this.props;
-
+    
     return (
       <form
         style={{textAlign: 'center'}}
@@ -166,9 +172,11 @@ const contactForm = React.createClass({
             ))}
           </select>
         </div>
-        <button style={{marginLeft: '-2px'}} onClick={this.handleSubmit} disabled={this.state.loading}>
+
+        <button style={{marginLeft: '-2px', background: this.props.btnBg, color: '#fff'}} onClick={this.handleSubmit} disabled={this.state.loading}>
           {texts.button}{this.state.loading ? '...' : ''}
         </button>
+
         <span style={this.state.showMemberExists ? {color: '#fff',display: 'inline-block', width: '90%', padding: '10px', margin: '5px auto', background: '#f4334a', color: '#fff'} :{display: 'none'}}>{'you are already praying'}</span>
       </form>
     );
