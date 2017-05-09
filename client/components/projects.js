@@ -49,6 +49,10 @@ const Projects = React.createClass({
     this.el.querySelector('.projects__arrow').style.left = `${left}px`;
   },
 
+  updateUrl(hash) {
+    history.pushState(null,null, `#${hash}`);
+  },
+
   changeContent(num) {
     let color = backgroundColors[num];
     let ind = (num - 1);
@@ -56,7 +60,7 @@ const Projects = React.createClass({
     this.moveArrow(num);
     
     if(this.props.contents.length > 0 && this.props.contents[ind].hash_url) {
-      history.pushState(null,null, `#${this.props.contents[ind].hash_url}`);
+      this.updateUrl(this.props.contents[ind].hash_url);
     }
     
     this.props.changeSection ? this.props.changeSection(num) : '';
