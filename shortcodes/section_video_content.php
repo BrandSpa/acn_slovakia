@@ -25,7 +25,7 @@ function bs_section_video_content_sc($atts, $content = null) {
 			"height": "<?php echo $at['image_height'] ?>",
 			"margin": "<?php echo $at['image_margin'] ?>"
 		},
-		"content": "<?php echo $content ?>"
+		"content": "<?php echo json_encode($content) ?>"
 	}'
 >
 </div>
