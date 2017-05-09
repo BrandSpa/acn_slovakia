@@ -25,6 +25,7 @@ const headerSlider = React.createClass({
     let left = this.state.currentSlide < total
       ? this.state.currentSlide + 1
       : 0;
+      
     this.setState({left: '-' + left * 100 + '%', currentSlide: left});
   },
 
