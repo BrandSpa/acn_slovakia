@@ -51,7 +51,8 @@ function bs_carousel_sc($atts, $content = null) {
 				"content_element" => true,
 				"show_settings_on_create" => false,
 				"is_container" => true,
-        "params" => $params
+        "params" => $params,
+				"js_view" => 'VcColumnView'
       ) 
     );
   }
