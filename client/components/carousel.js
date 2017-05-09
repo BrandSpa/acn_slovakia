@@ -12,7 +12,7 @@ const Carousel = React.createClass({
 
 	componentDidMount() {
 		const num = $('.bs-carousel-item').length;
-		$('.bs-carousel-item').css({'width': `${100 / num}%`, 'display': 'inline-block'});
+		$('.bs-carousel-item').css({'width': `${100 / num}%`, 'float': 'left'});
 		this.setState({viewportWidth: `${num * 100}%`});
 	},
 
@@ -23,7 +23,7 @@ const Carousel = React.createClass({
     };
 
 		return (
-			<div>
+			<div style={{width: '100%', overflow: 'hidden'}}>
 				<div style={viewportStyle}>
 					<div dangerouslySetInnerHTML={{__html: this.props.content}} />
 				</div>
