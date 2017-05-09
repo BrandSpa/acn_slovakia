@@ -30,16 +30,7 @@ function bs_carousel_sc($atts, $content = null) {
 
   function bs_carousel_vc() {
     $subparams = [
-			[
-        "type" => "attach_image",
-        "heading" => "enter image",
-        "param_name" => "image"
-      ],
-      [
-        "type" => "textarea_raw_html",
-        "heading" => "enter content",
-        "param_name" => "content"
-      ]
+	
     ];
 
     $params = [
@@ -56,6 +47,10 @@ function bs_carousel_sc($atts, $content = null) {
         "name" =>  "BS Carousel",
         "base" => "bs_carousel",
         "category" =>  "BS",
+				"as_parent" => array('only' => 'single_img'), // Use only|except attributes to limit child shortcodes (separate multiple values with comma)
+				"content_element" => true,
+				"show_settings_on_create" => false,
+				"is_container" => true,
         "params" => $params
       ) 
     );
