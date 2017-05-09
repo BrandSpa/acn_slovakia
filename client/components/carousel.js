@@ -40,7 +40,7 @@ const Carousel = React.createClass({
       left: this.state.left,
 			position: 'relative'
     };
-
+		lorem
 		let btnStyle = {
 			display: 'block',
 			background: 'rgba(0,0,0, .5)',
@@ -58,8 +58,8 @@ const Carousel = React.createClass({
 			padding: 0
 		};
 
-		let btnLeft = {...btnStyle, left: '0'};
-		let btnRight = {...btnStyle, right: '0'};
+		let btnLeft = {...btnStyle, left: '20px'};
+		let btnRight = {...btnStyle, right: '20px'};
 
 		return (
 			<div style={{width: '100%', overflow: 'hidden'}}>
