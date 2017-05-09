@@ -16,6 +16,23 @@ const Carousel = React.createClass({
 		this.setState({viewportWidth: `${num * 100}%`});
 	},
 
+	nextSlide(clear = true) {
+    // if (clear) clearInterval(this.interval);
+    let total = $('.bs-carousel-item').length - 1;
+    let left = this.state.currentSlide < total
+      ? this.state.currentSlide + 1
+      : 0;
+      
+    this.setState({left: '-' + left * 100 + '%', currentSlide: left});
+  },
+
+  prevSlide() {
+    // clearInterval(this.interval);
+    let total = $('.bs-carousel-item').length - 1;
+    let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
+    this.setState({left: '-' + left * 100 + '%', currentSlide: left});
+  },
+
 	render() {
 		 let viewportStyle = {
       width: this.state.viewportWidth,
@@ -49,8 +66,8 @@ const Carousel = React.createClass({
 					<div dangerouslySetInnerHTML={{__html: this.props.content}} />
 				</div>
 				<div>
-					<span style={btnLeft}><i className="ion-chevron-left"></i></span>
-					<span style={btnRight}><i className="ion-chevron-right"></i></span>
+					<button onClick={this.prevSlide} style={btnLeft}><i className="ion-chevron-left"></i></button>
+					<button onClick={this.nextSlide} style={btnRight}><i className="ion-chevron-right"></i></button>
 				</div>
 			</div>
 		)
