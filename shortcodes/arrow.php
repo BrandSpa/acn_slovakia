@@ -13,7 +13,7 @@ function bs_arrow_sc($atts, $content = null) {
   ob_start();
 ?>
 
-<a href="" style="<?php echo $at['style'] ?>">
+<a href="<?php echo $at['anchor'] ?>" style="<?php echo $at['style'] ?>">
 <svg width="<?php echo $at['icon_width'] ?>" height="<?php echo $at['icon_height'] ?>" viewBox="178 602 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs>
 							<polyline id="path-1" points="16.9743561 9.37612525 16.9743561 23.0775777 2.91233907 23.0775777"></polyline>
