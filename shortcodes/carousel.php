@@ -7,14 +7,17 @@ function bs_carousel_sc($atts, $content = null) {
 
   $at = shortcode_atts( $attributes , $atts );
 	
-	$items = vc_param_group_parse_atts( $at['items'] );
+	$items = array_map(function($item) {
+		$item['imgUrl'] = isset($item['image']) ?  wp_get_attachment_url($item['image']) : '';
+		return $item;
+	}, vc_param_group_parse_atts( $at['projects'] ));;
   ob_start();
 ?>
 
 <div
   class="bs-carousel" 
   data-props='{
-    "items": <?php echo cleanQuote(json_encode($projects))  ?>
+    "items": <?php echo cleanQuote(json_encode($items))  ?>
   }'
 >
 </div>
@@ -27,8 +30,13 @@ function bs_carousel_sc($atts, $content = null) {
 
   function bs_carousel_vc() {
     $subparams = [
+			[
+        "type" => "attach_image",
+        "heading" => "enter image",
+        "param_name" => "image"
+      ],
       [
-        "type" => "textarea_html",
+        "type" => "textarea_raw_html",
         "heading" => "enter content",
         "param_name" => "content"
       ]
