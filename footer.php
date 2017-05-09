@@ -52,7 +52,6 @@
 
 <script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.7e6d73606f7447fa9e4c.js'></script>
 <script src='<?php echo get_template_directory_uri() ?>/public/js/app.3c8c236fc93d8eb31ee3.js'></script>
-<!--<script src="<?php echo get_template_directory_uri() ?>/public/js/lightbox.js"></script>-->
 
 <!--/app theme-->
 
@@ -73,7 +72,6 @@
         $(".desk_banner").attr("href", b_prefix+$b_links[$ban_ind]);
         $(".desk_banner").find("img").attr("src", b_prefix+$desk_imgs[$ban_ind]);
     }
-      //alert(window.innerWidth+" -> "+ $bn_lang);
   });
 </script>
 
