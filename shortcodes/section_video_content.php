@@ -6,7 +6,8 @@ function bs_section_video_content_sc($atts, $content = null) {
 		'video_url' => '',
 		'image_width' => '100%',
 		'image_height' => 'auto',
-		'image_margin' => '0 auto'
+		'image_margin' => '0 auto',
+		'full_height' => false
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -25,7 +26,8 @@ function bs_section_video_content_sc($atts, $content = null) {
 			"height": "<?php echo $at['image_height'] ?>",
 			"margin": "<?php echo $at['image_margin'] ?>"
 		},
-		"content": <?php echo json_encode(do_shortcode($content)) ?>
+		"content": <?php echo json_encode(do_shortcode($content)) ?>,
+		"fullHeight": <?php echo $at['full_height'] ?>
 	}'
 >
 </div>
@@ -59,10 +61,10 @@ function bs_section_video_content_sc($atts, $content = null) {
         "value" => '100%'
 			],
 			[
-        "type" => "textfield",
-        "heading" => "Image height",
-        "param_name" => "image_height",
-        "value" => 'auto'
+        "type" => "checkbox",
+        "heading" => "full height",
+        "param_name" => "full_height",
+        "value" => false
 			],
 			[
         "type" => "textfield",
@@ -74,7 +76,8 @@ function bs_section_video_content_sc($atts, $content = null) {
 				"type" => "textarea_html",
 				"heading" => "content",
 				"param_name" => "content"
-			]
+			],
+
 		];
 
   	vc_map(

@@ -8,6 +8,7 @@ const SectionVideoContent = React.createClass({
       url: 'https://www.youtube.com/embed/_lQvw2vSDbs',
       imageStyle: {},
 			content: '',
+      fullHeight: false
     };
   },
 
@@ -17,6 +18,8 @@ const SectionVideoContent = React.createClass({
   },
 
   render() {
+    const h = window.innerHeight - 100;
+
     let linkStyle = {
 			float: 'left', 
 			lineHeight: '0',
@@ -24,7 +27,7 @@ const SectionVideoContent = React.createClass({
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
 			width: '100%',
-			height: '900px',
+			height: this.props.fullHeight ?  h : '900px',
 			'@media (max-width: 767px)': {
 				height: 'auto'
 			}
