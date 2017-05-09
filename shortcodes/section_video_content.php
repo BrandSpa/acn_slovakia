@@ -16,7 +16,7 @@ function bs_section_video_content_sc($atts, $content = null) {
 ?>
 
 <div 
-	class="section-video" 
+	class="section-video-content" 
 	data-props='{
 		"url": "<?php echo $at['video_url'] ?>", 
 		"imgUrl": "<?php echo $imgUrl ?>",
