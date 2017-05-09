@@ -3,7 +3,9 @@
 function bs_arrow_sc($atts, $content = null) {
 	$attributes = [
     'style' => '',
-		'anchor' => '#'
+		'anchor' => '#',
+		'icon_width' => '20px',
+		'icon_height' => '27px',
   ];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -12,7 +14,7 @@ function bs_arrow_sc($atts, $content = null) {
 ?>
 
 <a href="" style="<?php echo $at['style'] ?>">
-<svg width="20px" height="27px" viewBox="178 602 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="<?php echo $at['icon_width'] ?>" height="<?php echo $at['icon_height'] ?>" viewBox="178 602 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs>
 							<polyline id="path-1" points="16.9743561 9.37612525 16.9743561 23.0775777 2.91233907 23.0775777"></polyline>
 							<mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="14.062017" height="13.7014524" fill="white">
@@ -46,11 +48,23 @@ add_action( 'vc_before_init', 'bs_arrow_vc' );
         "param_name" => 'style',
         "value" => ''
       ],
-			   [
+			[
         "type" => "textfield",
         "heading" => "anchor",
         "param_name" => 'anchor',
         "value" => '#'
+      ],
+			[
+        "type" => "textfield",
+        "heading" => "Icon width",
+        "param_name" => 'icon_width',
+        "value" => '20px'
+      ],
+			[
+        "type" => "textfield",
+        "heading" => "Icon height",
+        "param_name" => 'icon_height',
+        "value" => '27px'
       ]
 		];
 
