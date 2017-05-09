@@ -21,7 +21,8 @@ const SectionVideoContent = React.createClass({
 			float: 'left', 
 			lineHeight: '0',
 			background: `url(${this.props.imgUrl})`,
-			backgroundSize: 'cover'
+			backgroundSize: 'cover',
+			width: '100%'
 		};
 
     let imageStyle = {width: '100px', margin: '0 auto'};
