@@ -5,6 +5,8 @@ function bs_carousel_sc($atts, $content = null) {
   $at = shortcode_atts( $attributes , $atts );
   ob_start();
 ?>
+
+<?php echo do_shortcode($content) ?>
 <div
   class="bs-carousel" 
   data-props='{
