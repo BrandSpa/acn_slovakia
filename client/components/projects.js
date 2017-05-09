@@ -55,7 +55,7 @@ const Projects = React.createClass({
     this.setState({bg: color, donateColor: color, section: num});
     this.moveArrow(num);
     
-    if(this.props.contents[ind].hash_url) {
+    if(this.props.contents.length > 0 && this.props.contents[ind].hash_url) {
       history.pushState(null,null, `#${this.props.contents[ind].hash_url}`);
     }
     

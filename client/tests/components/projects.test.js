@@ -20,7 +20,7 @@ describe('component projects', () => {
 
 	it('should change background', () => {
 		// document.body.innerHTML = `<ul class="projects__icons"><li></li></ul> <div class="projects__arrow"></div>`;
-		let wrapper = mount(<Projects />);
+		let wrapper = mount(<Projects contents={[]} />);
 		
 		wrapper.instance().changeContent(2);
 		expect(wrapper.state().bg).toBe('#00355f');

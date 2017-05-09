@@ -1049,6 +1049,8 @@ Array [
         onClick={[Function]}
         style={
             Object {
+                "background": "",
+                "color": "#fff",
                 "marginLeft": "-2px",
               }
         }
