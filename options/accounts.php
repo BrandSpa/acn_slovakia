@@ -31,8 +31,12 @@ function bs_accounts_settings() {
   register_setting( 'bs_accounts_info_group', 'subscribe_redirect' );
   register_setting( 'bs_accounts_info_group', 'analytics_id' );
   register_setting( 'bs_accounts_info_group', 'gta_id' );
-  register_setting( 'bs_accounts_info_group', 'banner_vertical' );
-  register_setting( 'bs_accounts_info_group', 'banner_horizontal' );
+  register_setting( 'bs_accounts_info_group', 'banner_url_en' );
+  register_setting( 'bs_accounts_info_group', 'banner_vertical_en' );
+  register_setting( 'bs_accounts_info_group', 'banner_horizontal_en' );
+  register_setting( 'bs_accounts_info_group', 'banner_url_es' );
+  register_setting( 'bs_accounts_info_group', 'banner_vertical_es' );
+  register_setting( 'bs_accounts_info_group', 'banner_horizontal_es' );
 }
 
 function bs_accounts_options() {
@@ -223,15 +227,18 @@ function bs_accounts_options() {
         <button class="button update-geoip">Update Geoip Database</button>
         <span class="update-geoip-message"></span>
       </p>
-
+      <h4>Banner english</h4>
+      <p>
+        <input type="text" placeholder="Banner url" name="banner_url_en" value="<?php echo get_option('banner_url_en') ?>">
+      </p>
       <p>
         <textarea
           style="background: rgba(255,255,255,.4); width: 60%;"
           rows="4"
           type="text" 
           placeholder="Banner vertical" 
-          name="banner_vertical" 
-        ><?php echo get_option('banner_vertical') ?></textarea>
+          name="banner_vertical_en" 
+        ><?php echo get_option('banner_vertical_en') ?></textarea>
       </p>
 
       <p>
@@ -240,9 +247,34 @@ function bs_accounts_options() {
           rows="4"
           type="text" 
           placeholder="Banner horizontal" 
-          name="banner_horizontal"  
-        ><?php echo get_option('banner_horizontal') ?></textarea>
+          name="banner_horizontal_es"  
+        ><?php echo get_option('banner_horizontal_en') ?></textarea>
       </p>
+
+      <h4>Banner spanish</h4>
+      <p>
+        <input type="text" placeholder="Banner url" name="banner_url_en" value="<?php echo get_option('banner_url_es') ?>">
+      </p>
+      <p>
+        <textarea
+          style="background: rgba(255,255,255,.4); width: 60%;"
+          rows="4"
+          type="text" 
+          placeholder="Banner vertical" 
+          name="banner_vertical_es" 
+        ><?php echo get_option('banner_vertical_es') ?></textarea>
+      </p>
+
+      <p>
+        <textarea
+          style="background: rgba(255,255,255,.4); width: 60%;"
+          rows="4"
+          type="text" 
+          placeholder="Banner horizontal" 
+          name="banner_horizontal_es"  
+        ><?php echo get_option('banner_horizontal_es') ?></textarea>
+      </p>
+
     <p>
       <?php submit_button(); ?>
     </p>
