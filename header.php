@@ -29,7 +29,7 @@
 		<!-- /wordpress files-->
     
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.2f740f08bcb1802e22d2312568567205.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/public/js/app.a274957ad2ebdb18dbc67df12f2a7827.css">
 
 	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<script>

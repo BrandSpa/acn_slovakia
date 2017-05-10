@@ -426,8 +426,9 @@ button, .btn {
 .img-responsive {
 	max-width: 100%;
   height: auto;
+	margin: 0 auto;
+	display: block;
 }
-
 
 @import 'menu';
 @import 'header';
