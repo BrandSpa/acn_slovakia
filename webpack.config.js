@@ -7,7 +7,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
     filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === "development"
+    disable: false
 });
 
 const changeFilesNames = function() {
@@ -47,7 +47,7 @@ module.exports = {
 			{ 
 				test: /\.js$/, 
 				exclude: /node_modules/, 
-				loader: 'babel-loader' 
+				loader: 'babel-loader?cacheDirectory=true' 
 			},
       {
         test: /\.scss$/,
@@ -63,12 +63,11 @@ module.exports = {
       }
 		]
   },
-  devtool: 'cheap-source-map',
 	plugins: [
       new webpack.optimize.CommonsChunkPlugin({ 
         name: 'vendor', 
         filename: 'vendor.[chunkhash].js', 
-        minChunks: Infinity
+        minChunks: 2
       }),
       changeFilesNames,
       new WebpackCleanupPlugin({

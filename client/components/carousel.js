@@ -40,7 +40,7 @@ const Carousel = React.createClass({
       left: this.state.left,
 			position: 'relative'
     };
-		lorem
+
 		let btnStyle = {
 			display: 'block',
 			background: 'rgba(0,0,0, .5)',
