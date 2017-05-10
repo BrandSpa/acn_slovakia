@@ -423,6 +423,11 @@ button, .btn {
 	
 }
 
+.img-responsive {
+	max-width: 100%;
+  height: auto;
+}
+
 
 @import 'menu';
 @import 'header';
