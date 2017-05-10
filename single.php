@@ -32,18 +32,30 @@
 			<?php the_content() ?>
 
 			<div class="banner-horizontal">
-			<a href="<?php echo get_option('banner_url_en') ?>">
-				<?php echo get_option('banner_horizontal_en') ?>
-			</a>
+			<?php if(get_lang() == 'en'): ?>
+				<a href="<?php echo get_option('banner_url_en') ?>">
+					<?php echo get_option('banner_horizontal_en') ?>
+				</a>
+			<?php else: ?>
+				<a href="<?php echo get_option('banner_url_es') ?>">
+					<?php echo get_option('banner_horizontal_es') ?>
+				</a>
+			<?php endif; ?>
 			</div>
 		</div>
 
 		<div class="col-2-l"></div>
 		
 		<div class="col-3-l banner-vertical">
-			<a href="<?php echo get_option('banner_url_en') ?>">
-				<?php echo get_option('banner_vertical_en') ?>
-			</a>
+			<?php if(get_lang() == 'en'): ?>
+				<a href="<?php echo get_option('banner_url_en') ?>">
+					<?php echo get_option('banner_vertical_en') ?>
+				</a>
+			<?php else: ?>
+				<a href="<?php echo get_option('banner_url_es') ?>">
+					<?php echo get_option('banner_vertical_es') ?>
+				</a>
+			<?php endif; ?>
 		</div>
 
 	</div>
