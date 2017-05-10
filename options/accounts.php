@@ -247,13 +247,13 @@ function bs_accounts_options() {
           rows="4"
           type="text" 
           placeholder="Banner horizontal" 
-          name="banner_horizontal_es"  
+          name="banner_horizontal_en"  
         ><?php echo get_option('banner_horizontal_en') ?></textarea>
       </p>
 
       <h4>Banner spanish</h4>
       <p>
-        <input type="text" placeholder="Banner url" name="banner_url_en" value="<?php echo get_option('banner_url_es') ?>">
+        <input type="text" placeholder="Banner url" name="banner_url_es" value="<?php echo get_option('banner_url_es') ?>">
       </p>
       <p>
         <textarea
@@ -271,7 +271,7 @@ function bs_accounts_options() {
           rows="4"
           type="text" 
           placeholder="Banner horizontal" 
-          name="banner_horizontal_es"  
+          name="banner_horizontal_es"
         ><?php echo get_option('banner_horizontal_es') ?></textarea>
       </p>
 
