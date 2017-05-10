@@ -231,6 +231,7 @@ function bs_accounts_options() {
       <p>
         <input type="text" placeholder="Banner url" name="banner_url_en" value="<?php echo get_option('banner_url_en') ?>">
       </p>
+      <h4>Desktop</h4>
       <p>
         <textarea
           style="background: rgba(255,255,255,.4); width: 60%;"
@@ -240,7 +241,7 @@ function bs_accounts_options() {
           name="banner_vertical_en" 
         ><?php echo get_option('banner_vertical_en') ?></textarea>
       </p>
-
+      <h4>Mobile</h4>
       <p>
         <textarea
           style="background: rgba(255,255,255,.4); width: 60%;"
@@ -255,6 +256,7 @@ function bs_accounts_options() {
       <p>
         <input type="text" placeholder="Banner url" name="banner_url_es" value="<?php echo get_option('banner_url_es') ?>">
       </p>
+      <h4>Desktop</h4>
       <p>
         <textarea
           style="background: rgba(255,255,255,.4); width: 60%;"
@@ -264,7 +266,7 @@ function bs_accounts_options() {
           name="banner_vertical_es" 
         ><?php echo get_option('banner_vertical_es') ?></textarea>
       </p>
-
+      <h4>Mobile</h4>
       <p>
         <textarea
           style="background: rgba(255,255,255,.4); width: 60%;"
