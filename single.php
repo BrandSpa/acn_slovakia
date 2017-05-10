@@ -30,15 +30,20 @@
 		<div class="col-1-l"></div>
 		<div class="col-5-l col-12-s" style="word-wrap: break-word;">
 			<?php the_content() ?>
+
 			<div class="banner-horizontal">
-				<?php echo get_option('banner_horizontal') ?>
+			<a href="<?php echo get_option('banner_url_en') ?>">
+				<?php echo get_option('banner_horizontal_en') ?>
+			</a>
 			</div>
 		</div>
 
 		<div class="col-2-l"></div>
 		
 		<div class="col-3-l banner-vertical">
-			<?php echo get_option('banner_vertical') ?>
+			<a href="<?php echo get_option('banner_url_en') ?>">
+				<?php echo get_option('banner_vertical_en') ?>
+			</a>
 		</div>
 
 	</div>

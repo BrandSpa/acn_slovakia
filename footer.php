@@ -56,7 +56,7 @@
 <!--/app theme-->
 
 <script>/*////Provisional banner jul//////////////////////*/
-	$(document).ready(function(){
+	/*$(document).ready(function(){
     var $is_banner=$(".banner-horizontal");
     if($is_banner.length>0){
     var $ban_ind=0;
@@ -72,7 +72,7 @@
         $(".desk_banner").attr("href", b_prefix+$b_links[$ban_ind]);
         $(".desk_banner").find("img").attr("src", b_prefix+$desk_imgs[$ban_ind]);
     }
-  });
+  });*/
 </script>
 
  <!-- Google Analytics -->
