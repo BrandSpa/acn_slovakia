@@ -48,7 +48,7 @@
   var bs = {};
   bs.lang = '<?php echo getCountryLang(getCountry()) ?>'
   bs.donate = '<?php echo gett('Donate') ?>'
-  console.log('<?php echo pll_home_url() ?>', '<?php echo the_permalink() ?>');
+  console.log('<?php if(pll_home_url() == the_permalink()) echo 'nea' ?>');
 </script>
 
 <script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.9f72063ca4debba04511.js'></script>
