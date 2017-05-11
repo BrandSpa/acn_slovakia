@@ -96,7 +96,7 @@ const contactForm = React.createClass({
     const data = qs.stringify({data: event, action: 'convertloop_event'});
     return request.post(endpoint, data);
   },
-
+  
   storeInfusion() {
     const data = qs.stringify({data: this.state.contact, action: 'infusion_contact'});
     return request.post(endpoint, data);

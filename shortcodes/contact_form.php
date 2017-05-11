@@ -108,7 +108,13 @@ add_action( 'vc_before_init', 'bs_contact_form_vc' );
         "heading" => "button color",
         "param_name" => "btn-bg",
         "value" => '#F4334A'
-			]
+			],
+		[
+			"type" => "textfield",
+      "heading" => "event name",
+      "param_name" => "convertloop_event",
+      "value" => 'Subscription'
+		]
 	];
 
   	vc_map(
