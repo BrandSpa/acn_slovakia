@@ -64,5 +64,10 @@ toggleViaCrucisNav();
 scrollViaCrucisNav();
 stickyMenu();
 toggleMenu();
+let cookies = {};
 
-console.log(qs.parse(document.cookie));
+document.cookie.split(';').forEach(function(l) { 
+  cookies[l.split('=')[0]] = l.split('=')[1];
+});
+
+console.log(cookies);
