@@ -92,11 +92,12 @@ const contactForm = React.createClass({
  
   storeEventConvertLoop() {
     const { email, country } = this.state.contact;
-    const event = {name: this.props.cl.event, country , person: { email } };
+    const tags = typeof this.props.cl.tags == "string" ? this.props.cl.tags.trim().split(',') : [];
+    const event = {name: this.props.cl.event, country , person: { email, tags } };
     const data = qs.stringify({data: event, action: 'convertloop_event'});
     return request.post(endpoint, data);
   },
-  
+
   storeInfusion() {
     const data = qs.stringify({data: this.state.contact, action: 'infusion_contact'});
     return request.post(endpoint, data);
