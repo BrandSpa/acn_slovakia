@@ -71,7 +71,7 @@ document.cookie.split(';').forEach(function(l) {
 });
 
 document.querySelector('.bs-donate').addEventListener('click', () => {
-  console.log('click');
-  _dp("track", "donate_click");
+   _dp("track", "donate_click");
+  console.log('click', _dp);
 });
 
