@@ -119,7 +119,7 @@ add_action( 'vc_before_init', 'bs_contact_form_vc' );
 			"type" => "textfield",
       "heading" => "convertloop tags",
       "param_name" => "convertloop_tags",
-      "value" => 'Subscription',
+      "value" => '',
 			"description" => "fomart: tag1,tag2"
 		]
 	];
