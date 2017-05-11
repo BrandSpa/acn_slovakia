@@ -3,7 +3,7 @@
  
  geolify($post);
 
-  if(function_exists('pll_home_url()') && pll_home_url() == the_permalink()) {
+  if(function_exists('pll_home_url') && pll_home_url() == the_permalink()) {
     redirectToLang();
   }
  ?>
