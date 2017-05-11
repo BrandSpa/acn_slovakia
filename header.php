@@ -1,7 +1,9 @@
 <?php
  header('Access-Control-Allow-Origin: *');
  geolify($post);
+ redirectToLang();
  ?>
+ 
 <!DOCTYPE html>
 <html >
 <head>

@@ -266,9 +266,9 @@ if(!function_exists('wp_doing_ajax')) {
 	}
 }
 
-if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
-	redirectToLang();
-}
+// if(function_exists('wp_doing_ajax') && !wp_doing_ajax()) {
+// 	redirectToLang();
+// }
 
 $post_types = array( 'video', 'gallery','featured' ); // and so forth
 foreach( $post_types as $post_type) {
