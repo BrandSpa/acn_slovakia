@@ -25,8 +25,8 @@ function bs_contact_form_sc($atts, $content = null) {
 	class="contact-form"
 	data-props='{
 		"cl": {
-			"tags": <?php echo $at['convertloop_tags'] ?>,
-			"event": <?php echo $at['convertloop_event'] ?>
+			"tags": "<?php echo $at['convertloop_tags'] ?>",
+			"event": "<?php echo $at['convertloop_event'] ?>"
 		},
 		"country": "<?php echo getCountry() ?>",
 		"texts": {
