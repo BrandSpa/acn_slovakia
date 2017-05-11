@@ -86,14 +86,15 @@ const contactForm = React.createClass({
   },
   
   storeConvertLoop() {
-    const data = qs.stringify({data: this.state.contact, action: 'convertloop_contact'});
+    const tags = typeof this.props.cl.tags == "string" ? this.props.cl.tags.trim().split(',') : [];
+    const data = qs.stringify({data: {...this.state.contact, tags}, action: 'convertloop_contact'});
     return request.post(endpoint, data);
   },
  
   storeEventConvertLoop() {
     const { email, country } = this.state.contact;
-    const tags = typeof this.props.cl.tags == "string" ? this.props.cl.tags.trim().split(',') : [];
-    const event = {name: this.props.cl.event, country , person: { email, tags } };
+    
+    const event = {name: this.props.cl.event, country , person: { email } };
     const data = qs.stringify({data: event, action: 'convertloop_event'});
     return request.post(endpoint, data);
   },
