@@ -48,6 +48,7 @@
   var bs = {};
   bs.lang = '<?php echo getCountryLang(getCountry()) ?>'
   bs.donate = '<?php echo gett('Donate') ?>'
+  console.log('<?php echo pll_the_languages( array( 'raw' => 1 ) )['es']['url'] ?>');
 </script>
 
 <script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.9f72063ca4debba04511.js'></script>
@@ -55,25 +56,6 @@
 
 <!--/app theme-->
 
-<script>/*////Provisional banner jul//////////////////////*/
-	/*$(document).ready(function(){
-    var $is_banner=$(".banner-horizontal");
-    if($is_banner.length>0){
-    var $ban_ind=0;
-    const b_prefix="https://acninternational.org/";
-    var $b_links=["es/oracion-por-visita-de-papa-francisco-a-egypto","prayer-campaign-for-pope-francis-trip-to-egypt"];
-    var $mob_imgs=["wp-content/uploads/2017/04/BannerEsM.gif","wp-content/uploads/2017/04/BannerEnM.gif"];
-    var $desk_imgs=["wp-content/uploads/2017/04/BannerEs.gif","wp-content/uploads/2017/04/BannerEn.gif"]; 
-    var $bn_path=$(location).attr('pathname').split('/');
-    var $bn_lang=$bn_path[1];
-    if($bn_lang!="es"){var $ban_ind=1;}
-        $(".mobi_banner").attr("href", b_prefix+$b_links[$ban_ind]);
-        $(".mobi_banner").find("img").attr("src", b_prefix+$mob_imgs[$ban_ind]);
-        $(".desk_banner").attr("href", b_prefix+$b_links[$ban_ind]);
-        $(".desk_banner").find("img").attr("src", b_prefix+$desk_imgs[$ban_ind]);
-    }
-  });*/
-</script>
 
  <!-- Google Analytics -->
   <script src='https://www.google-analytics.com/analytics.js'></script>
