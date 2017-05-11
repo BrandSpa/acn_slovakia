@@ -3,7 +3,8 @@
  
  geolify($post);
  $homeUrl =  pll_home_url();
- $permalink =  the_permalink();
+ $permalink = get_permalink();
+
   if(function_exists('pll_home_url') &&   $homeUrl == $permalink) {
     redirectToLang();
   }
