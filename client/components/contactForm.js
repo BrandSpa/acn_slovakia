@@ -86,8 +86,8 @@ const contactForm = React.createClass({
   },
   
   storeConvertLoop() {
-    const tags = typeof this.props.cl.tags == "string" ? this.props.cl.tags.trim().split(',') : [];
-    const data = qs.stringify({data: {...this.state.contact, tags}, action: 'convertloop_contact'});
+    const add_tags = typeof this.props.cl.tags == "string" ? this.props.cl.tags.trim().split(',') : [];
+    const data = qs.stringify({data: {...this.state.contact, add_tags}, action: 'convertloop_contact'});
     return request.post(endpoint, data);
   },
  
