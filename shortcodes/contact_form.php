@@ -13,7 +13,7 @@ function bs_contact_form_sc($atts, $content = null) {
 		'redirect' => '',
 		'btn-bg' => '#F4334A',
 		'convertloop_tags' => '',
-		'convertloop_event' => ''
+		'convertloop_event' => 'Subscription'
 	];
 
   $at = shortcode_atts( $attributes , $atts );
