@@ -11,7 +11,9 @@ function bs_contact_form_sc($atts, $content = null) {
 		'email-validation' => 'Email required',
 		'button-text' => gett('Pray'),
 		'redirect' => '',
-		'btn-bg' => '#F4334A'
+		'btn-bg' => '#F4334A',
+		'convertloop_tags' => '',
+		'convertloop_event' => ''
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -20,8 +22,12 @@ function bs_contact_form_sc($atts, $content = null) {
 ?>
 
 <div 
-	class="contact-form" 
+	class="contact-form"
 	data-props='{
+		"cl": {
+			"tags": <?php echo $at['convertloop_tags'] ?>,
+			"event": <?php echo $at['convertloop_event'] ?>
+		},
 		"country": "<?php echo getCountry() ?>",
 		"texts": {
 			"button": "<?php echo $at['button-text'] ?>",

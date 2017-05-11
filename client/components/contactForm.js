@@ -7,9 +7,15 @@ import getCountries from '../lib/getCountries';
 const endpoint = '/wp-admin/admin-ajax.php';
 
 const contactForm = React.createClass({
+
   getInitialState() {
     return {
-      contact: {name: '', lastname: '', email: '', country: ''},
+      contact: {
+        name: '',
+        lastname: '', 
+        email: '', 
+        country: ''
+      },
       errors: {name: false, lastname: false, email: false},
       countries: getCountries,
       officeCountries: [],
@@ -25,7 +31,11 @@ const contactForm = React.createClass({
       placeholders: {}, 
       texts: {}, 
       redirect: '',
-      btnBg: ''
+      btnBg: '',
+      cl: {
+        event: 'Subscription',
+        tags: ''
+      }
     };
   },
 
@@ -82,7 +92,7 @@ const contactForm = React.createClass({
  
   storeEventConvertLoop() {
     const { email, country } = this.state.contact;
-    const event = {name: 'Subscription', country , person: { email } };
+    const event = {name: this.props.cl.event, country , person: { email } };
     const data = qs.stringify({data: event, action: 'convertloop_event'});
     return request.post(endpoint, data);
   },
