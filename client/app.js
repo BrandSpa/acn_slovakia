@@ -67,7 +67,7 @@ toggleMenu();
 let cookies = {};
 
 document.cookie.split(';').forEach(function(l) { 
-  cookies[l.split('=')[0]] = l.split('=')[1];
+  cookies[l.split('=')[0].trim()] = l.split('=')[1];
 });
 
 console.log(cookies);
