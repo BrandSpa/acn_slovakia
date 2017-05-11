@@ -49,10 +49,11 @@ const Donate = React.createClass({
   fetchCountries() {
     const data = qs.stringify({action: 'countries'});
 
-    return request.post(endpoint, data).then(res => {
+    return request.post(endpoint, data)
+    .then(res => {
       this.setState({countries: res.data});
       return res.data;
-    });
+    }).catch(err => err);
   },
 
   handleChange(field) {
@@ -108,7 +109,18 @@ const Donate = React.createClass({
 
   storeEventConvertLoop() {
     const { email, country } = this.state.contact;
-    const event = {name: `Donation-${this.state.donation_type}`, country , person: { email } };
+    const metadata =  {
+      amount: this.state.amount,
+      type: this.state.donation_type
+    };
+
+    const event = {
+      name: `Donation-${this.state.donation_type}`, 
+      person: { email },
+      country,
+      metadata
+    };
+
     const data = qs.stringify({data: event, action: 'convertloop_event'});
     return request.post(endpoint, data);
   },
