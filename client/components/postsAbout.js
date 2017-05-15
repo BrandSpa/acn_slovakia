@@ -44,7 +44,7 @@ const PostsAbout = React.createClass({
 							<h5><a style={{color: '#324049'}} href={post.post_permalink}>{post.post_title}</a></h5>
 						</div>
 					</div>
-					)
+				)
 			})}
 			</div>
 		)

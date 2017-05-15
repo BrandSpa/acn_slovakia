@@ -1,22 +1,19 @@
 import React from 'react';
 
-const Carousel = React.createClass({
-
-	getInitialState() {
-    return {
+class Carousel extends React.Component {
+    state = {
 			currentSlide: 0, 
 			left: '0',
 			viewportWidth: '100%'
 		};
-  },
 
-	componentDidMount() {
+    componentDidMount() {
 		const num = $('.bs-carousel-item').length;
 		$('.bs-carousel-item').css({'width': `${100 / num}%`, 'float': 'left'});
 		this.setState({viewportWidth: `${num * 100}%`});
-	},
+	}
 
-	nextSlide(clear = true) {
+    nextSlide = (clear=true) => {
     // if (clear) clearInterval(this.interval);
     let total = $('.bs-carousel-item').length - 1;
     let left = this.state.currentSlide < total
@@ -24,16 +21,16 @@ const Carousel = React.createClass({
       : 0;
       
     this.setState({left: '-' + left * 100 + '%', currentSlide: left});
-  },
+  };
 
-  prevSlide() {
-    // clearInterval(this.interval);
-    let total = $('.bs-carousel-item').length - 1;
-    let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
-    this.setState({left: '-' + left * 100 + '%', currentSlide: left});
-  },
+    prevSlide = () => {
+      // clearInterval(this.interval);
+      let total = $('.bs-carousel-item').length - 1;
+      let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
+      this.setState({left: '-' + left * 100 + '%', currentSlide: left});
+    };
 
-	render() {
+    render() {
 		 let viewportStyle = {
       width: this.state.viewportWidth,
 			transition: 'left 300ms',
@@ -73,6 +70,6 @@ const Carousel = React.createClass({
 			</div>
 		)
 	}
-});
+}
 
 export default Carousel;
