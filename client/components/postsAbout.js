@@ -12,11 +12,11 @@ const PostsAbout = React.createClass({
 	
 	componentWillReceiveProps(props) {
 		console.log(props);
-		this.fetchPosts();
+		this.fetchPosts(props);
 	},
 
 	componentDidMount() {
-		this.fetchPosts();
+		this.fetchPosts(this.props);
 	},
 
 	fetchPosts(props) {
