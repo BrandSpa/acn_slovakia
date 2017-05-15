@@ -1,14 +1,13 @@
 import React from 'react';
 import VideoModal from './videoModal';
 
-const headerSlide = React.createClass({
-
-  handleLink(e) {
+class headerSlide extends React.Component {
+  handleLink = (e) => {
     e.preventDefault();
     if (this.props.is_video) return this.modal.show();
     window.location.href = this.props.url;
-  },
-  
+  };
+
   render() {
     const {image, image_position, title, subtitle, url, width, height} = this.props;
 
@@ -50,6 +49,6 @@ const headerSlide = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default headerSlide;

@@ -1,14 +1,9 @@
 import React from 'react';
 import Slide from './headerSlide';
 
-const headerSlider = React.createClass({
-  getInitialState() {
-    return {currentSlide: 0, left: '0'};
-  },
-  
-  getDefaultProps() {
-    return {slides: [], interval: 5000, anchor: '#'};
-  },
+class headerSlider extends React.Component {
+  static defaultProps = {slides: [], interval: 5000, anchor: '#'};
+  state = {currentSlide: 0, left: '0'};
 
   componentDidMount() {
     this.interval = setInterval(
@@ -17,9 +12,9 @@ const headerSlider = React.createClass({
       },
       this.props.interval
     );
-  },
+  }
 
-  nextSlide(clear = true) {
+  nextSlide = (clear=true) => {
     if (clear) clearInterval(this.interval);
     let total = this.props.slides.length - 1;
     let left = this.state.currentSlide < total
@@ -27,14 +22,14 @@ const headerSlider = React.createClass({
       : 0;
       
     this.setState({left: '-' + left * 100 + '%', currentSlide: left});
-  },
+  };
 
-  prevSlide() {
+  prevSlide = () => {
     clearInterval(this.interval);
     let total = this.props.slides.length - 1;
     let left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
     this.setState({left: '-' + left * 100 + '%', currentSlide: left});
-  },
+  };
 
   render() {
     const {slides} = this.props;
@@ -81,6 +76,6 @@ const headerSlider = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default headerSlider;

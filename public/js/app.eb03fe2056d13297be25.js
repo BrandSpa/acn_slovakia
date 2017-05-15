@@ -3798,6 +3798,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
@@ -3808,84 +3810,105 @@ var _headerSlide2 = _interopRequireDefault(_headerSlide);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var headerSlider = _react2.default.createClass({
-  displayName: 'headerSlider',
-  getInitialState: function getInitialState() {
-    return { currentSlide: 0, left: '0' };
-  },
-  getDefaultProps: function getDefaultProps() {
-    return { slides: [], interval: 5000, anchor: '#' };
-  },
-  componentDidMount: function componentDidMount() {
-    var _this = this;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    this.interval = setInterval(function () {
-      _this.nextSlide(false);
-    }, this.props.interval);
-  },
-  nextSlide: function nextSlide() {
-    var clear = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-    if (clear) clearInterval(this.interval);
-    var total = this.props.slides.length - 1;
-    var left = this.state.currentSlide < total ? this.state.currentSlide + 1 : 0;
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
-  },
-  prevSlide: function prevSlide() {
-    clearInterval(this.interval);
-    var total = this.props.slides.length - 1;
-    var left = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0;
-    this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
-  },
-  render: function render() {
-    var slides = this.props.slides;
+var headerSlider = function (_React$Component) {
+  _inherits(headerSlider, _React$Component);
 
-    var viewportWidth = 100 * slides.length + '%';
-    var slideWidth = 100 / slides.length + '%';
-    var windowHeight = window.innerHeight;
-    var headerBannerHeight = document.querySelector('.header-banner') ? document.querySelector('.header-banner').offsetHeight : 0;
-    var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
-    var sliderHeight = windowHeight && navHeight && headerBannerHeight ? windowHeight - navHeight - headerBannerHeight : 'auto';
+  function headerSlider() {
+    var _ref;
 
-    var viewportStyle = {
-      width: viewportWidth,
-      left: this.state.left,
-      height: sliderHeight
-    };
+    var _temp, _this, _ret;
 
-    return _react2.default.createElement(
-      'div',
-      { className: 'slider', style: { height: sliderHeight } },
-      _react2.default.createElement(
-        'div',
-        {
-          className: 'slider__viewport',
-          style: viewportStyle
-        },
-        slides.map(function (slide, i) {
-          slide = _extends({}, slide, { width: slideWidth, height: sliderHeight });
-          return _react2.default.createElement(_headerSlide2.default, _extends({ key: i }, slide));
-        })
-      ),
-      slides.length > 1 ? _react2.default.createElement(
-        'div',
-        { className: 'slider__btns' },
-        _react2.default.createElement(
-          'button',
-          { className: 'slider__btns__prev', onClick: this.prevSlide },
-          _react2.default.createElement('i', { className: 'ion-chevron-left' })
-        ),
-        _react2.default.createElement(
-          'button',
-          { className: 'slider__btns__next', onClick: this.nextSlide },
-          _react2.default.createElement('i', { className: 'ion-chevron-right' })
-        )
-      ) : ''
-    );
+    _classCallCheck(this, headerSlider);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = headerSlider.__proto__ || Object.getPrototypeOf(headerSlider)).call.apply(_ref, [this].concat(args))), _this), _this.state = { currentSlide: 0, left: '0' }, _this.nextSlide = function () {
+      var clear = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+      if (clear) clearInterval(_this.interval);
+      var total = _this.props.slides.length - 1;
+      var left = _this.state.currentSlide < total ? _this.state.currentSlide + 1 : 0;
+
+      _this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
+    }, _this.prevSlide = function () {
+      clearInterval(_this.interval);
+      var total = _this.props.slides.length - 1;
+      var left = _this.state.currentSlide > 0 ? _this.state.currentSlide - 1 : 0;
+      _this.setState({ left: '-' + left * 100 + '%', currentSlide: left });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
-});
 
+  _createClass(headerSlider, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.interval = setInterval(function () {
+        _this2.nextSlide(false);
+      }, this.props.interval);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var slides = this.props.slides;
+
+      var viewportWidth = 100 * slides.length + '%';
+      var slideWidth = 100 / slides.length + '%';
+      var windowHeight = window.innerHeight;
+      var headerBannerHeight = document.querySelector('.header-banner') ? document.querySelector('.header-banner').offsetHeight : 0;
+      var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
+      var sliderHeight = windowHeight && navHeight && headerBannerHeight ? windowHeight - navHeight - headerBannerHeight : 'auto';
+
+      var viewportStyle = {
+        width: viewportWidth,
+        left: this.state.left,
+        height: sliderHeight
+      };
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'slider', style: { height: sliderHeight } },
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'slider__viewport',
+            style: viewportStyle
+          },
+          slides.map(function (slide, i) {
+            slide = _extends({}, slide, { width: slideWidth, height: sliderHeight });
+            return _react2.default.createElement(_headerSlide2.default, _extends({ key: i }, slide));
+          })
+        ),
+        slides.length > 1 ? _react2.default.createElement(
+          'div',
+          { className: 'slider__btns' },
+          _react2.default.createElement(
+            'button',
+            { className: 'slider__btns__prev', onClick: this.prevSlide },
+            _react2.default.createElement('i', { className: 'ion-chevron-left' })
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: 'slider__btns__next', onClick: this.nextSlide },
+            _react2.default.createElement('i', { className: 'ion-chevron-right' })
+          )
+        ) : ''
+      );
+    }
+  }]);
+
+  return headerSlider;
+}(_react2.default.Component);
+
+headerSlider.defaultProps = { slides: [], interval: 5000, anchor: '#' };
 exports.default = headerSlider;
 
 /***/ }),
@@ -5488,6 +5511,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
@@ -5498,79 +5523,104 @@ var _videoModal2 = _interopRequireDefault(_videoModal);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var headerSlide = _react2.default.createClass({
-  displayName: 'headerSlide',
-  handleLink: function handleLink(e) {
-    e.preventDefault();
-    if (this.props.is_video) return this.modal.show();
-    window.location.href = this.props.url;
-  },
-  render: function render() {
-    var _this = this;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    var _props = this.props,
-        image = _props.image,
-        image_position = _props.image_position,
-        title = _props.title,
-        subtitle = _props.subtitle,
-        url = _props.url,
-        width = _props.width,
-        height = _props.height;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var headerSlide = function (_React$Component) {
+  _inherits(headerSlide, _React$Component);
+
+  function headerSlide() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, headerSlide);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = headerSlide.__proto__ || Object.getPrototypeOf(headerSlide)).call.apply(_ref, [this].concat(args))), _this), _this.handleLink = function (e) {
+      e.preventDefault();
+      if (_this.props.is_video) return _this.modal.show();
+      window.location.href = _this.props.url;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(headerSlide, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          image = _props.image,
+          image_position = _props.image_position,
+          title = _props.title,
+          subtitle = _props.subtitle,
+          url = _props.url,
+          width = _props.width,
+          height = _props.height;
 
 
-    var bg = 'url(' + image + ')';
+      var bg = 'url(' + image + ')';
 
-    var style = {
-      backgroundImage: bg,
-      backgroundPosition: image_position,
-      width: width,
-      height: height
-    };
+      var style = {
+        backgroundImage: bg,
+        backgroundPosition: image_position,
+        width: width,
+        height: height
+      };
 
-    return _react2.default.createElement(
-      'div',
-      null,
-      this.props.is_video ? _react2.default.createElement(_videoModal2.default, { ref: function ref(modal) {
-          return _this.modal = modal;
-        }, url: this.props.url }) : '',
-      _react2.default.createElement(
+      return _react2.default.createElement(
         'div',
-        { className: 'slider__slide', style: style },
-        _react2.default.createElement('a', { href: '#', className: 'slider__slide__link-zone', onClick: this.handleLink }),
+        null,
+        this.props.is_video ? _react2.default.createElement(_videoModal2.default, { ref: function ref(modal) {
+            return _this2.modal = modal;
+          }, url: this.props.url }) : '',
         _react2.default.createElement(
-          'a',
-          { href: this.props.anchor, className: 'slider__slide__anchor' },
+          'div',
+          { className: 'slider__slide', style: style },
+          _react2.default.createElement('a', { href: '#', className: 'slider__slide__link-zone', onClick: this.handleLink }),
           _react2.default.createElement(
-            'svg',
-            { width: '50px', height: '57px', viewBox: '178 602 20 27', version: '1.1', xmlns: 'http://www.w3.org/2000/svg' },
+            'a',
+            { href: this.props.anchor, className: 'slider__slide__anchor' },
             _react2.default.createElement(
-              'defs',
-              null,
-              _react2.default.createElement('polyline', { id: 'path-1', points: '16.9743561 9.37612525 16.9743561 23.0775777 2.91233907 23.0775777' }),
+              'svg',
+              { width: '50px', height: '57px', viewBox: '178 602 20 27', version: '1.1', xmlns: 'http://www.w3.org/2000/svg' },
               _react2.default.createElement(
-                'mask',
-                { id: 'mask-2', maskContentUnits: 'userSpaceOnUse', maskUnits: 'objectBoundingBox', x: '0', y: '0', width: '14.062017', height: '13.7014524', fill: 'white' },
-                _react2.default.createElement('use', { xlinkHref: '#path-1' })
+                'defs',
+                null,
+                _react2.default.createElement('polyline', { id: 'path-1', points: '16.9743561 9.37612525 16.9743561 23.0775777 2.91233907 23.0775777' }),
+                _react2.default.createElement(
+                  'mask',
+                  { id: 'mask-2', maskContentUnits: 'userSpaceOnUse', maskUnits: 'objectBoundingBox', x: '0', y: '0', width: '14.062017', height: '13.7014524', fill: 'white' },
+                  _react2.default.createElement('use', { xlinkHref: '#path-1' })
+                ),
+                _react2.default.createElement('polyline', { id: 'path-3', points: '16.9743561 3.23766371 16.9743561 16.9391162 2.91233907 16.9391162' }),
+                _react2.default.createElement(
+                  'mask',
+                  { id: 'mask-4', maskContentUnits: 'userSpaceOnUse', maskUnits: 'objectBoundingBox', x: '0', y: '0', width: '14.062017', height: '13.7014524', fill: 'white' },
+                  _react2.default.createElement('use', { xlinkHref: '#path-3' })
+                )
               ),
-              _react2.default.createElement('polyline', { id: 'path-3', points: '16.9743561 3.23766371 16.9743561 16.9391162 2.91233907 16.9391162' }),
               _react2.default.createElement(
-                'mask',
-                { id: 'mask-4', maskContentUnits: 'userSpaceOnUse', maskUnits: 'objectBoundingBox', x: '0', y: '0', width: '14.062017', height: '13.7014524', fill: 'white' },
-                _react2.default.createElement('use', { xlinkHref: '#path-3' })
+                'g',
+                { id: 'Group-12', stroke: 'none', strokeWidth: '1', fill: 'none', fillRule: 'evenodd', transform: 'translate(178.000000, 602.000000)' },
+                _react2.default.createElement('use', { id: 'Rectangle', stroke: '#F1364E', mask: 'url(#mask-2)', strokeWidth: '4', transform: 'translate(9.943348, 16.226851) rotate(-315.000000) translate(-9.943348, -16.226851) ', xlinkHref: '#path-1' }),
+                _react2.default.createElement('use', { id: 'Rectangle-Copy', stroke: '#F1364E', mask: 'url(#mask-4)', strokeWidth: '4', transform: 'translate(9.943348, 10.088390) rotate(-315.000000) translate(-9.943348, -10.088390) ', xlinkHref: '#path-3' })
               )
-            ),
-            _react2.default.createElement(
-              'g',
-              { id: 'Group-12', stroke: 'none', strokeWidth: '1', fill: 'none', fillRule: 'evenodd', transform: 'translate(178.000000, 602.000000)' },
-              _react2.default.createElement('use', { id: 'Rectangle', stroke: '#F1364E', mask: 'url(#mask-2)', strokeWidth: '4', transform: 'translate(9.943348, 16.226851) rotate(-315.000000) translate(-9.943348, -16.226851) ', xlinkHref: '#path-1' }),
-              _react2.default.createElement('use', { id: 'Rectangle-Copy', stroke: '#F1364E', mask: 'url(#mask-4)', strokeWidth: '4', transform: 'translate(9.943348, 10.088390) rotate(-315.000000) translate(-9.943348, -10.088390) ', xlinkHref: '#path-3' })
             )
           )
         )
-      )
-    );
-  }
-});
+      );
+    }
+  }]);
+
+  return headerSlide;
+}(_react2.default.Component);
 
 exports.default = headerSlide;
 
