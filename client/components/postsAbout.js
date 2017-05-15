@@ -6,12 +6,12 @@ const endpoint = '/wp-admin/admin-ajax.php';
 const PostsAbout = React.createClass({
 	getInitialState() {
 		return {
-			posts: []
+			posts: [],
+			loading: false
 		}
 	},
 	
 	componentWillReceiveProps(props) {
-		console.log(props);
 		this.fetchPosts(props);
 	},
 
@@ -21,10 +21,11 @@ const PostsAbout = React.createClass({
 
 	fetchPosts(props) {
 		let data = qs.stringify({action: 'get_posts', 'post_perpage': 4, 'post_category': props.category });
+		this.setState({loading: true});
 
 		request.post(endpoint, data)
 		.then(res => {
-        this.setState({posts: res.data ? res.data : []});
+        this.setState({loading: false, posts: res.data ? res.data : []});
       })
       .catch(err => console.error(err));
 	},
@@ -32,7 +33,7 @@ const PostsAbout = React.createClass({
 	render() {
 		const { posts } = this.state;
 		return (
-			<div>
+			<div style={this.state.loading ? { transition: '300 ms', opacity: 0 } : { transition: '300 ms', opacity: 1 } }>
 			{posts.map((post, i) => {
 				return (
 					<div key={i} className="col-12 col-3-l" >
