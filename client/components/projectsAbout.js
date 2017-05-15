@@ -28,11 +28,13 @@ const ProjectsAbout = React.createClass({
 	},
 
 	componentWillUpdate(nextProps, nextState) {
-	
+		
 	},
 
 	render() {
 		const { section } = this.state;
+		
+		console.log(section);
 
 		return (
 			<StyleRoot>
