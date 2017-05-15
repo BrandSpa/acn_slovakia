@@ -10,7 +10,8 @@ const PostsAbout = React.createClass({
 		}
 	},
 	
-	componentWillReceiveProps() {
+	componentWillReceiveProps(props) {
+		console.log(props);
 		this.fetchPosts();
 	},
 
