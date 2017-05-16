@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const AmountBtns = React.createClass({
+class AmountBtns extends React.Component {
   render() {
-    const {changeAmount, texts} = this.props;
+    const { changeAmount, texts } = this.props;
 
     return (
-      <ul className="change-amount" style={{padding: 0}}>
+      <ul className="change-amount" style={{ padding: 0 }}>
         <li className="col-1-4">
           <a href="#" onClick={changeAmount.bind(null, 10)}>$10</a>
         </li>
@@ -24,6 +24,6 @@ const AmountBtns = React.createClass({
       </ul>
     );
   }
-});
+}
 
 export default AmountBtns;
