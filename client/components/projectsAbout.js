@@ -15,23 +15,21 @@ const colors = {
   9: '#E4A70F'
 };
 
-const ProjectsAbout = React.createClass({
-	getInitialState() {
-		return {
-			section: 0
-		}
-	},
+class ProjectsAbout extends React.Component {
+    state = {
+        section: 0
+    };
 
-	handleSection(i) {
+    handleSection = (i) => {
 		let section = (i - 1);
 		this.setState({section});
-	},
+	};
 
-	componentWillUpdate(nextProps, nextState) {
+    componentWillUpdate(nextProps, nextState) {
 		
-	},
+	}
 
-	render() {
+    render() {
 		const { section } = this.state;
 		
 		console.log(section);
@@ -109,6 +107,6 @@ const ProjectsAbout = React.createClass({
 			 </StyleRoot>
 		)
 	}
-});
+}
 
 export default ProjectsAbout;
