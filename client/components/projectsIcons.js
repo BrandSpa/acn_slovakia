@@ -1,10 +1,11 @@
 import React from 'react';
 
-const ProjectsIcons = React.createClass({
-  changeContent(num, e) {
+class ProjectsIcons extends React.Component {
+  changeContent = (num, e) => {
     e.preventDefault();
     this.props.onChange(num);
-  },
+  };
+
   render() {
     return (
       <ul className="projects__icons">
@@ -127,6 +128,6 @@ const ProjectsIcons = React.createClass({
       </ul>
     );
   }
-});
+}
 
 export default ProjectsIcons;
