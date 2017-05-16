@@ -1,35 +1,31 @@
-import React from 'react';
+import React from "react";
 
-const Accordion = React.createClass({
-  getDefaultProps() {
-    return {
-      background: '#687f87',
-      titleColor: ''
-    }
-  },
+class Accordion extends React.Component {
+  static defaultProps = {
+    background: "#687f87",
+    titleColor: ""
+  };
 
-  getInitialState() {
-    return {show: false};
-  },
-  
+  state = { show: false };
+
   componentDidMount() {
-    return {content: '', btnTitle: 'Toggle'};
-  },
+    return { content: "", btnTitle: "Toggle" };
+  }
 
-  toggle() {
-    this.setState({show: !this.state.show});
-  },
-  
+  toggle = () => {
+    this.setState({ show: !this.state.show });
+  };
+
   render() {
-    const {content, btnTitle, background, titleColor} = this.props;
+    const { content, btnTitle, background, titleColor } = this.props;
 
     const btnStyle = {
-      width: '100%',
-      height: '60px',
-      border: 'none',
-      borderRadius: '0',
-      fontSize: '18px',
-      fontWeight: 'normal',
+      width: "100%",
+      height: "60px",
+      border: "none",
+      borderRadius: "0",
+      fontSize: "18px",
+      fontWeight: "normal",
       color: titleColor,
       background
     };
@@ -42,20 +38,20 @@ const Accordion = React.createClass({
           onClick={this.toggle}
         >
           {btnTitle}
-          {' '}
+          {" "}
           <i
-            className={this.state.show ? 'ion-chevron-up' : 'ion-chevron-down'}
+            className={this.state.show ? "ion-chevron-up" : "ion-chevron-down"}
           />
         </button>
         <div
           className="accordion__content"
-          style={this.state.show ? {display: 'block'} : {display: 'none'}}
+          style={this.state.show ? { display: "block" } : { display: "none" }}
         >
-          <div dangerouslySetInnerHTML={{__html: content}} />
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
       </div>
     );
   }
-});
+}
 
 export default Accordion;
