@@ -1,5 +1,5 @@
 <?php
-$dir_base =  str_replace('shortcodes', '', __DIR__);
+
 
 add_shortcode( 'bs_latest_news', 'bs_latest_news_sc' );
 
@@ -7,7 +7,8 @@ function bs_latest_news_sc($atts, $content = null) {
 	$attributes = [ ];
 
   $at = shortcode_atts( $attributes , $atts );
-
+	$dir_base =  str_replace('shortcodes', '', __DIR__);
+	
   ob_start();
 ?>
 
