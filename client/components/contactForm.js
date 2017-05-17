@@ -159,6 +159,7 @@ class contactForm extends React.Component {
             placeholder={placeholders.name}
             onChange={this.handleChange.bind(null, "name")}
             value={contact.name}
+            style={inputStyle}
           />
           <div className={errors.name ? "input-error" : "hidden"}>
             {errors.name} {validationMessages.name}
@@ -170,6 +171,7 @@ class contactForm extends React.Component {
             placeholder={placeholders.lastname}
             onChange={this.handleChange.bind(null, "lastname")}
             value={contact.lastname}
+            style={inputStyle}
           />
           <div className={errors.lastname ? "input-error" : "hidden"}>
             {validationMessages.lastname}
@@ -181,6 +183,7 @@ class contactForm extends React.Component {
             placeholder={placeholders.email}
             onChange={this.handleChange.bind(null, "email")}
             value={contact.email}
+            style={inputStyle}
           />
           <div className={errors.email ? "input-error" : "hidden"}>
             {validationMessages.email}
