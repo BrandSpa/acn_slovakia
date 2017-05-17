@@ -12,8 +12,7 @@
     "build": "webpack --p",
     "build:watch": "webpack --watch --p",
     "build:admin": "webpack  --config=webpack.admin.js --p",
-    "prepush": "yarn test",
-    "precommit": "yarn test"
+    "prepush": "yarn test"
   },
   "author": "Alejandro Sanabria <alesanabriav@gmail.com>",
   "license": "MIT",

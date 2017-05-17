@@ -13,10 +13,23 @@ Array [
 >
     <div
         className="input-container"
+        style={
+            Object {
+                "(max-width: 767px)": Object {
+                  "width": "100%",
+                },
+                "width": "20%",
+              }
+        }
     >
         <input
             onChange={[Function]}
             placeholder={undefined}
+            style={
+                Object {
+                    "borderRadius": "",
+                  }
+            }
             type="text"
             value=""
         />
@@ -28,10 +41,23 @@ Array [
     </div>
     <div
         className="input-container"
+        style={
+            Object {
+                "(max-width: 767px)": Object {
+                  "width": "100%",
+                },
+                "width": "20%",
+              }
+        }
     >
         <input
             onChange={[Function]}
             placeholder={undefined}
+            style={
+                Object {
+                    "borderRadius": "",
+                  }
+            }
             type="text"
             value=""
         />
@@ -41,10 +67,23 @@ Array [
     </div>
     <div
         className="input-container"
+        style={
+            Object {
+                "(max-width: 767px)": Object {
+                  "width": "100%",
+                },
+                "width": "20%",
+              }
+        }
     >
         <input
             onChange={[Function]}
             placeholder={undefined}
+            style={
+                Object {
+                    "borderRadius": "",
+                  }
+            }
             type="text"
             value=""
         />
@@ -54,6 +93,14 @@ Array [
     </div>
     <div
         className="input-container"
+        style={
+            Object {
+                "(max-width: 767px)": Object {
+                  "width": "100%",
+                },
+                "width": "20%",
+              }
+        }
     >
         <select
             onChange={[Function]}
