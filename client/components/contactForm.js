@@ -143,6 +143,10 @@ class contactForm extends React.Component {
       }
     };
 
+    let inputStyle = {
+      borderRadius: this.props.vertical == 'true' ? '0' : '',
+    };
+
     return (
       <form
         style={{ textAlign: "center" }}
