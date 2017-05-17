@@ -13,7 +13,8 @@ function bs_contact_form_sc($atts, $content = null) {
 		'redirect' => '',
 		'btn-bg' => '#F4334A',
 		'convertloop_tags' => '',
-		'convertloop_event' => 'Subscription'
+		'convertloop_event' => 'Subscription',
+		'vertical' => false
 	];
 
   $at = shortcode_atts( $attributes , $atts );
@@ -45,7 +46,8 @@ function bs_contact_form_sc($atts, $content = null) {
 			"email": "<?php echo $at['email-validation'] ?>"
 		},
 		"redirect": "<?php echo $at['redirect'] ? $at['redirect'] : get_option('subscribe_redirect') ?>",
-		"btnBg": "<?php echo $at['btn-bg'] ?>"
+		"btnBg": "<?php echo $at['btn-bg'] ?>",
+		"vertical": "<?php echo $at['vertical'] ?>"
 	}'
 >
 </div>
@@ -121,6 +123,12 @@ add_action( 'vc_before_init', 'bs_contact_form_vc' );
       "param_name" => "convertloop_tags",
       "value" => '',
 			"description" => "fomart: tag1,tag2"
+		],
+		[
+			"type" => "checkbox",
+			"param_name" => "vertical",
+			"heading" => "Vertical",
+			"value" => ""
 		]
 	];
 

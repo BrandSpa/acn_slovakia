@@ -16,7 +16,8 @@ class contactForm extends React.Component {
     cl: {
       event: "Subscription",
       tags: ""
-    }
+    },
+    vertical: false
   };
 
   state = {
@@ -135,13 +136,20 @@ class contactForm extends React.Component {
     let { contact, errors } = this.state;
     let { placeholders, validationMessages, texts } = this.props;
 
+    let inputContainerStyle = {
+      width: this.props.vertical == 'true' ? '100%' : '20%',
+      '(max-width: 767px)': {
+        width: '100%'
+      }
+    };
+
     return (
       <form
         style={{ textAlign: "center" }}
         className="form-inline contact-form"
         onSubmit={this.handleSubmit}
       >
-        <div className="input-container">
+        <div style={inputContainerStyle}>
           <input
             type="text"
             placeholder={placeholders.name}
@@ -152,7 +160,7 @@ class contactForm extends React.Component {
             {errors.name} {validationMessages.name}
           </div>
         </div>
-        <div className="input-container">
+        <div style={inputContainerStyle}>
           <input
             type="text"
             placeholder={placeholders.lastname}
@@ -163,7 +171,7 @@ class contactForm extends React.Component {
             {validationMessages.lastname}
           </div>
         </div>
-        <div className="input-container">
+        <div style={inputContainerStyle}>
           <input
             type="text"
             placeholder={placeholders.email}
@@ -174,7 +182,7 @@ class contactForm extends React.Component {
             {validationMessages.email}
           </div>
         </div>
-        <div className="input-container">
+        <div style={inputContainerStyle}>
           <select
             onChange={this.handleChange.bind(null, "country")}
             value={contact.country}
