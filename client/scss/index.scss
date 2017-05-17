@@ -68,7 +68,10 @@ h1 {
 	font-style: normal;
 	font-stretch: normal;
 	letter-spacing: normal;
-	line-height: 76px;
+	line-height: 70px;
+	@media #{$s} {
+		line-height: 60px;
+	}
 }
 
 h2 {
