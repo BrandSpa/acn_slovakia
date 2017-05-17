@@ -149,7 +149,7 @@ class contactForm extends React.Component {
         className="form-inline contact-form"
         onSubmit={this.handleSubmit}
       >
-        <div style={inputContainerStyle}>
+        <div style={inputContainerStyle} className="input-container">
           <input
             type="text"
             placeholder={placeholders.name}
@@ -160,7 +160,7 @@ class contactForm extends React.Component {
             {errors.name} {validationMessages.name}
           </div>
         </div>
-        <div style={inputContainerStyle}>
+        <div style={inputContainerStyle} className="input-container">
           <input
             type="text"
             placeholder={placeholders.lastname}
@@ -171,7 +171,7 @@ class contactForm extends React.Component {
             {validationMessages.lastname}
           </div>
         </div>
-        <div style={inputContainerStyle}>
+        <div style={inputContainerStyle} className="input-container">
           <input
             type="text"
             placeholder={placeholders.email}
@@ -182,7 +182,7 @@ class contactForm extends React.Component {
             {validationMessages.email}
           </div>
         </div>
-        <div style={inputContainerStyle}>
+        <div style={inputContainerStyle} className="input-container">
           <select
             onChange={this.handleChange.bind(null, "country")}
             value={contact.country}
