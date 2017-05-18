@@ -2,7 +2,7 @@ import debounce from 'lodash/debounce';
 
 export default function smoothScroll() {
 
-  $(".bs-donate").on('click', function(event) {
+  $(".bs-donate .bs-anchor").on('click', function(event) {
 
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
