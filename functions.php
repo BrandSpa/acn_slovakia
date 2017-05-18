@@ -124,6 +124,7 @@ require('shortcodes/carousel_item.php');
 require('shortcodes/post_item.php');
 require('shortcodes/latest_news.php');
 require('shortcodes/banner_donation.php');
+require('shortcodes/candle.php');
 
 //metaboxes
 require('metaboxes/image_square.php');
