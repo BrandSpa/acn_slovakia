@@ -12,57 +12,17 @@ function bs_candle_sc($atts, $content = null) {
 <style>
 
 .candle {
-	animation: show 2s ease-in infinite;
+	animation: show 5s ease-in;
 }
 
 @keyframes show {
-  0%{transform: skewX(0deg) skewY(0deg) scale(1); opacity: .5}
+  0%{ opacity: 0}
 
-  50% {
-    transform: skewX(0deg) skewY(0deg) scale(.9); opacity: 1
-  }
-  
-  100%{transform: skewX(0deg) skewY(0deg) scale(1); opacity: .5}
-}
-
-
-@-moz-keyframes air{
-  0%{-moz-transform: skewX(0deg) skewY(0deg) scale(1,1);}
-  31%{-moz-transform: skewX(0deg) skewY(0deg) scale(1,1);}
-  32%{-moz-transform: skewX(0deg) skewY(0deg) scale(-1.2,1.5);}
-  33%{-moz-transform: skewX(5deg) skewY(5deg) scale(1,0.9);}
-  34%{-moz-transform: skewX(-1deg) skewY(-1deg) scale(1,1);}
-  36%{-moz-transform: skewX(0deg) skewY(0deg);}
-  98%{-moz-transform: skewX(0deg) skewY(0deg);}
-  99%{-moz-transform: skewX(2deg) skewY(2deg);}
-  100%{-moz-transform: skewX(0deg) skewY(0deg) scale(0.9,1.4);}
-}
-@-webkit-keyframes air{
-  0%{-webkit-transform: skewX(0deg) skewY(0deg) scale(1,1);}
-  31%{-webkit-transform: skewX(0deg) skewY(0deg) scale(1,1);}
-  32%{-webkit-transform: skewX(0deg) skewY(0deg) scale(-1.2,1.5);}
-  33%{-webkit-transform: skewX(5deg) skewY(5deg) scale(1,0.9);}
-  34%{-webkit-transform: skewX(-1deg) skewY(-1deg) scale(1,1);}
-  36%{-webkit-transform: skewX(0deg) skewY(0deg);}
-  98%{-webkit-transform: skewX(0deg) skewY(0deg);}
-  99%{-webkit-transform: skewX(2deg) skewY(2deg);}
-  100%{-webkit-transform: skewX(0deg) skewY(0deg) scale(0.9,1.4);}
-}
-@keyframes air{
-  0%{transform: skewX(0deg) skewY(0deg) scale(1,1);}
-  31%{transform: skewX(0deg) skewY(0deg) scale(1,1);}
-  32%{transform: skewX(0deg) skewY(0deg) scale(-1.2,1.5);}
-  33%{transform: skewX(5deg) skewY(5deg) scale(1,0.9);}
-  34%{transform: skewX(-1deg) skewY(-1deg) scale(1,1);}
-  36%{transform: skewX(0deg) skewY(0deg);}
-  98%{transform: skewX(0deg) skewY(0deg);}
-  99%{transform: skewX(2deg) skewY(2deg);}
-  100%{transform: skewX(0deg) skewY(0deg) scale(0.9,1.4);}
+  100%{ opacity: 1}
 }
 
 </style>
 
-<?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -74,7 +34,7 @@ function bs_candle_sc($atts, $content = null) {
 	.st4{fill:#E5E5E5;}
 </style>
 <g>
-	<g>
+	<g >
 		<circle class="st0" cx="256" cy="256" r="239.5"/>
 		<g class="candle">
 			<path class="st1" d="M288,110.2c8.4,14.5,6,32.8-5.9,44.7l0,0c-14.4,14.4-37.9,14.4-52.3,0l0,0c-11.8-11.8-14.2-30.2-5.9-44.7
@@ -92,6 +52,7 @@ function bs_candle_sc($atts, $content = null) {
 	</g>
 </g>
 </svg>
+
 <script>
 	onload(function() {
 		//jquery stuff
