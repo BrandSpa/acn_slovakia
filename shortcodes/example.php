@@ -27,7 +27,7 @@ function bs_example_sc($atts, $content = null) {
 
 <script>
 	onload(function() {
-		//jquery stuff iría acá
+		//jquery stuff
 
 	});
 </script>
