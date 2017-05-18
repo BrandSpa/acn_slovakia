@@ -138,7 +138,7 @@ class contactForm extends React.Component {
 
     let inputContainerStyle = {
       width: this.props.vertical == 'true' ? '100%' : '20%',
-      '@media (max-width: 767px)': {
+      '@media (maxWidth: 767px)': {
         width: '100%'
       }
     };
