@@ -55,7 +55,7 @@ function bs_banner_ddonation_sc($atts, $content = null) {
 
   return ob_get_clean();
 }
-add_action( 'vc_before_init', 'bs_example_vc' );
+add_action( 'vc_before_init', 'bs_banner_donation_vc' );
 
   function bs_example_vc() {
 		$params = [
