@@ -2,7 +2,7 @@ import debounce from 'lodash/debounce';
 
 export default function smoothScroll() {
 
-  $(".bs-donate .bs-anchor").on('click', function(event) {
+  $(".bs-donate, .bs-anchor").on('click', function(event) {
     
     console.log(this.hash, event);
 
@@ -17,6 +17,7 @@ export default function smoothScroll() {
       $('html, body').animate({ scrollTop }, 800, () => {});
 
     }
+
   });
 
   window.addEventListener('scroll', debounce(function() {
