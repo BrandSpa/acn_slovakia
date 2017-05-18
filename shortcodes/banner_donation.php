@@ -49,7 +49,9 @@ function bs_banner_donation_sc($atts, $content = null) {
 >
 </div>
 <?php else: ?>
-	<?php echo $at['banner'] ?>
+	<a href="<?php echo $at['banner'] ?>">
+		<img src="<?php echo $at['banner'] ?>" alt="">
+	</a>
 <?php endif; ?>
 <?php
 
@@ -61,8 +63,8 @@ add_action( 'vc_before_init', 'bs_banner_donation_vc' );
   function bs_banner_donation_vc() {
 		$params = [
 			[
-        "type" => "textarea_raw_html",
-        "heading" => "Banner",
+        "type" => "textfield",
+        "heading" => "Banner url",
         "param_name" => "banner",
         "value" => ''
 			]
@@ -96,7 +98,6 @@ add_action( 'vc_before_init', 'bs_banner_donation_vc' );
          "heading" =>  str_replace('_', ' ', $key),
          "param_name" => $key,
          "value" => $val
-
       ]);
     }
 
