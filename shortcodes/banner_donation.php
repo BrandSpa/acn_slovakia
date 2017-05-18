@@ -4,7 +4,7 @@ add_shortcode( 'bs_banner_donation', 'bs_banner_donation_sc' );
 
 function bs_banner_donation_sc($atts, $content = null) {
 	$attributes = [
-		'banner' => '',
+		'banner' => "",
 		"country" => getCountry(),
 		"other" => gett("Other"),
 		"monthly" => gett("Monthly"),
@@ -37,6 +37,7 @@ function bs_banner_donation_sc($atts, $content = null) {
 ?>
 
 <?php if(show_donate()): ?>
+
 <div 
 	class="bs-donate-react" 
 	data-props='{
@@ -48,11 +49,11 @@ function bs_banner_donation_sc($atts, $content = null) {
   }'
 >
 </div>
+
 <?php else: ?>
-	<a href="<?php echo $at['banner'] ?>">
-		<img src="<?php echo $at['banner'] ?>" alt="">
-	</a>
+	<img src="<?php echo $at['banner'] ?>" />
 <?php endif; ?>
+
 <?php
 
   return ob_get_clean();
