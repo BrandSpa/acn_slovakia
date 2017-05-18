@@ -15,16 +15,14 @@ function bs_candle_sc($atts, $content = null) {
 	animation: show 2s ease-in infinite;
 }
 
-@keyframes show{
-  0%{
-    opacity: 1;
-    }
-    50% {
-      opacity: .3;
-    }
-  100%{
-     opacity: 1;
-    }
+@keyframes show {
+  0%{transform: skewX(0deg) skewY(0deg) scale(1); opacity: .5}
+  
+  50% {
+    transform: skewX(0deg) skewY(0deg) scale(.9); opacity: 1
+  }
+  
+  100%{transform: skewX(0deg) skewY(0deg) scale(1); opacity: .5}
 }
 
 
