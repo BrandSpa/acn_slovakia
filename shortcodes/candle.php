@@ -12,8 +12,20 @@ function bs_candle_sc($atts, $content = null) {
 <style>
 
 .candle {
-	animation: air 2s ease-in infinite;
+	animation: show 2s ease-in infinite;
 }
+
+@keyframes show{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+    }
+  100%{
+    transform: scale(1);
+     opacity: 1;
+    }
+}
+
 
 @-moz-keyframes air{
   0%{-moz-transform: skewX(0deg) skewY(0deg) scale(1,1);}
