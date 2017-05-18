@@ -51,6 +51,11 @@ function bs_banner_donation_sc($atts, $content = null) {
 </div>
 
 <?php else: ?>
+	<script>
+		onload(function() {
+			jQuery('.donate-bg').removeClass('donate-bg');
+		})
+	</script>
 	<img src="<?php echo $at['banner'] ?>" />
 <?php endif; ?>
 
