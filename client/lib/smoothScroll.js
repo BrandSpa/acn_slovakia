@@ -3,6 +3,8 @@ import debounce from 'lodash/debounce';
 export default function smoothScroll() {
 
   $(".bs-donate .bs-anchor").on('click', function(event) {
+    
+    console.log(this.hash, event);
 
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
