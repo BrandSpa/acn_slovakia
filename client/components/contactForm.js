@@ -138,11 +138,11 @@ class contactForm extends React.Component {
 
     let inputContainerStyle = {
       width: this.props.vertical == 'true' ? '100%' : '20%',
-      '(max-width: 767px)': {
-        width: '100% !important'
+      '@media (max-width: 767px)': {
+        width: '100%'
       }
     };
-
+ 
     let inputStyle = {
       borderRadius: this.props.vertical == 'true' ? '0' : '',
     };

@@ -15,8 +15,8 @@ Array [
         className="input-container"
         style={
             Object {
-                "(max-width: 767px)": Object {
-                  "width": "100% !important",
+                "@media (max-width: 767px)": Object {
+                  "width": "100%",
                 },
                 "width": "20%",
               }
@@ -43,8 +43,8 @@ Array [
         className="input-container"
         style={
             Object {
-                "(max-width: 767px)": Object {
-                  "width": "100% !important",
+                "@media (max-width: 767px)": Object {
+                  "width": "100%",
                 },
                 "width": "20%",
               }
@@ -69,8 +69,8 @@ Array [
         className="input-container"
         style={
             Object {
-                "(max-width: 767px)": Object {
-                  "width": "100% !important",
+                "@media (max-width: 767px)": Object {
+                  "width": "100%",
                 },
                 "width": "20%",
               }
@@ -95,8 +95,8 @@ Array [
         className="input-container"
         style={
             Object {
-                "(max-width: 767px)": Object {
-                  "width": "100% !important",
+                "@media (max-width: 767px)": Object {
+                  "width": "100%",
                 },
                 "width": "20%",
               }
