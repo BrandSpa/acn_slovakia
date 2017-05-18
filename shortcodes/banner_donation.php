@@ -61,7 +61,7 @@ add_action( 'vc_before_init', 'bs_banner_donation_vc' );
   function bs_banner_donation_vc() {
 		$params = [
 			[
-        "type" => "textarea",
+        "type" => "textarea_raw_html",
         "heading" => "Banner",
         "param_name" => "banner",
         "value" => ''
