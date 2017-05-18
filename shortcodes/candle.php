@@ -17,11 +17,9 @@ function bs_candle_sc($atts, $content = null) {
 
 @keyframes show{
   0%{
-    transform: scale(0);
     opacity: 0;
     }
   100%{
-    transform: scale(1);
      opacity: 1;
     }
 }
