@@ -1,8 +1,8 @@
 <?php
 
-add_shortcode( 'bs_banner_ddonation', 'bs_banner_ddonation_sc' );
+add_shortcode( 'bs_banner_donation', 'bs_banner_donation_sc' );
 
-function bs_banner_ddonation_sc($atts, $content = null) {
+function bs_banner_donation_sc($atts, $content = null) {
 	$attributes = [
 		'banner' => '',
 				 "country" => getCountry(),
