@@ -5,12 +5,12 @@ add_shortcode( 'bs_banner_donation', 'bs_banner_donation_sc' );
 function bs_banner_donation_sc($atts, $content = null) {
 	$attributes = [
 		'banner' => '',
-				 "country" => getCountry(),
-		 "other" => gett("Other"),
-		 "monthly" => gett("Monthly"),
-		 "once" => gett("Once"),
-		 "donate" => gett("Donate"),
-		 "next" => gett("Next"),
+		"country" => getCountry(),
+		"other" => gett("Other"),
+		"monthly" => gett("Monthly"),
+		"once" => gett("Once"),
+		"donate" => gett("Donate"),
+		"next" => gett("Next"),
 		 "back" => gett("Back"),
 		 "placeholder_amount" => gett("Amount"),
     "placeholder_credit_card" => gett("Credit Card Number"),
@@ -55,19 +55,20 @@ function bs_banner_donation_sc($atts, $content = null) {
 
   return ob_get_clean();
 }
+
 add_action( 'vc_before_init', 'bs_banner_donation_vc' );
 
   function bs_banner_donation_vc() {
 		$params = [
 			[
         "type" => "textarea",
-        "heading" => "banner",
+        "heading" => "Banner",
         "param_name" => "banner",
         "value" => ''
 			]
 		];
 
-		  $atts = [
+		$atts = [
       "other" => "Other",
       "monthly" => "Monthly",
       "once" => "Once",
@@ -86,7 +87,7 @@ add_action( 'vc_before_init', 'bs_banner_donation_vc' );
       "validation_cvc" => "Incorrect cvc",
       "validation_name" => "Incorrect name",
       "validation_email" => "Incorrect email",
-      "validation_country" => "Incorrect country",
+      "validation_country" => "Incorrect country"
     ];
     
     foreach($atts as $key => $val) {
