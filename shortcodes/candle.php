@@ -25,7 +25,7 @@ function bs_candle_sc($atts, $content = null) {
 </style>
 
 <div class="candle-container" style="width: <?php echo $at['width'] ?>;margin: 80px auto -100px auto; position: relative">
-	<img style="width: 100%; position: absolute; top: -100px" src="<?php echo get_template_directory_uri() ?>/public/img/candle_flame.png" class="candle" alt="">
+	<img style="width: 100%; position: absolute; top: -75px" src="<?php echo get_template_directory_uri() ?>/public/img/candle_flame.png" class="candle" alt="">
 	<img style="width: 100%" src="<?php echo get_template_directory_uri() ?>/public/img/candle_base.png" alt="">
 </div>
 
