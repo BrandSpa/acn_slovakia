@@ -64,7 +64,7 @@
 		console.log(window.innerWidth < '767');
 		if(window.innerWidth < '767') {
 			jQuery('.post-text').addClass('post-text--trim');
-			jQuery('.post-text').append('<div class="post-text__see_more"><button><?php echo gett("Read more") ?>></button>');
+			jQuery('.post-text').append('<div class="post-text__see_more"><button><?php echo gett("Read more") ?></button>');
 
 			jQuery(document).on('click', '.post-text__see_more > button', function() {
 				jQuery('.post-text').removeClass('post-text--trim');
