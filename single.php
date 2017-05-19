@@ -94,6 +94,15 @@
 .post-text--trim {
 	overflow: hidden;
 	height: 500px;
+	position: relative;
+}
+
+.posts-text__see-more {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
 }
 </style>
 
