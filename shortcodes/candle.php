@@ -14,7 +14,7 @@ function bs_candle_sc($atts, $content = null) {
 <style>
 
 .candle {
-	animation: show 5s ease-in;
+	animation: show 8s ease-in;
 }
 
 @keyframes show {
