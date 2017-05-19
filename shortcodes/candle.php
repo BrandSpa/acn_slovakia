@@ -2,7 +2,9 @@
 add_shortcode( 'bs_candle', 'bs_candle_sc' );
 
 function bs_candle_sc($atts, $content = null) {
-	$attributes = [];
+	$attributes = [
+		"width" => "200px"
+	];
 
   $at = shortcode_atts( $attributes , $atts );
 
@@ -24,7 +26,7 @@ function bs_candle_sc($atts, $content = null) {
 </style>
 
 <!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" width="<?php echo $at['width'] ?>" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#3C515F;}
