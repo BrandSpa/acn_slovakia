@@ -98,7 +98,7 @@
 	position: relative;
 }
 
-.posts-text__see-more {
+.post-text__see-more {
 	position: absolute;
 	bottom: 0;
 	left: 0;
