@@ -80,10 +80,11 @@
 		console.log(window.innerWidth < '767');
 		if(window.innerWidth < '767') {
 			jQuery('.post-text').addClass('post-text--trim');
-			jQuery('.post-text').append('<button class="posts-text__see-more">see more</button>');
+			jQuery('.post-text').append('<div class="post-text__see_more"><button>see more</button>');
 
 			jQuery(document).on('click', '.posts-text__see-more', function() {
 				jQuery('.post-text').removeClass('post-text--trim');
+				jQuery(this).remove();
 			});
 		}
 		
@@ -103,6 +104,11 @@
 	left: 0;
 	right: 0;
 	margin: 0 auto;
+	width: 100%;
+	background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 </style>
 
