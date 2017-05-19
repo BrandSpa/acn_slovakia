@@ -10,22 +10,6 @@
 	<?php require('templates/post_header.php') ?>
 <?php endif; ?>
 
-<!--<div class="l-wrap">
-	<div class="breadcrumbs" style="margin-top: 20px; text-align: center; color: #b9b9b9" typeof="BreadcrumbList" vocab="https://schema.org/">
-    <?php if(function_exists('bcn_display'))
-    {
-       // bcn_display();
-    }?>
-</div>-->
-<!-- Nuevo Jul -->
-
-<!-- Fin Nuevo-->
-
-		<!--<div class="bs-post__content col-8-l col-12-s" id="post-content" style="margin-top:80px;">
-			<?php //the_content() ?>
-		</div>-->
-		
-		<!--Banners new --> 
 		<div id="post-content" class="l-wrap" style="margin-top: 80px">
 		<div class="col-1-l"></div>
 		<div class="col-5-l col-12-s post-text" style="word-wrap: break-word;">
@@ -98,13 +82,14 @@
 	position: relative;
 }
 
-.post-text__see-more {
+.post-text__see_more {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
 	width: 100%;
+	
 	background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
