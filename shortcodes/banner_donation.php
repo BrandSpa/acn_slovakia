@@ -62,7 +62,9 @@ function bs_banner_donation_sc($atts, $content = null) {
 			
 		})
 	</script>
-	<img src="<?php echo $at['banner'] ?>" />
+
+	<img class="hide-s" src="<?php echo $at['banner'] ?>" />
+  
 <?php endif; ?>
 
 <?php

@@ -43,7 +43,7 @@
 		</div>
 
 	</div>
-		<!--fin banners new-->
+
 	</div>
 	
 	<?php require('templates/post_share.php') ?>

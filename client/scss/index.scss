@@ -433,6 +433,12 @@ button, .btn {
 	display: block;
 }
 
+.hide-s {
+	@media #{$s} {
+		display: none !important;
+	}
+}
+
 @import 'menu';
 @import 'header';
 @import 'footer';
