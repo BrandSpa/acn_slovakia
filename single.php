@@ -28,7 +28,7 @@
 		<!--Banners new --> 
 		<div id="post-content" class="l-wrap" style="margin-top: 80px">
 		<div class="col-1-l"></div>
-		<div class="col-5-l col-12-s" style="word-wrap: break-word;">
+		<div class="col-5-l col-12-s post-text" style="word-wrap: break-word;">
 			<?php the_content() ?>
 
 			<div class="banner-horizontal">
@@ -75,6 +75,27 @@
   <?php endif; ?>
 </div>
 
+<script>
+	onLoad(function() {
+		console.log(window.innerWidth < '767');
+		if(window.innerWidth < '767') {
+			jQuery('.post-text').addClass('post-text--trim');
+			jQuery('.post-text').append('<button class="posts-text__see-more">see more</button>');
+
+			jQuery(document).on('click', '.posts-text__see-more', function() {
+				jQuery('.post-text').removeClass('post-text--trim');
+			});
+		}
+		
+	})
+</script>
+
+<style>
+.post-text--trim {
+	overflow: hidden;
+	height: 500px;
+}
+</style>
 
 
 <?php get_footer() ?>
