@@ -21,11 +21,12 @@ function bs_candle_sc($atts, $content = null) {
   0%{ opacity: 0}
   100%{ opacity: 1}
 }
-a
+
 </style>
-<div class="candle-container">
-<img src="<?php echo get_template_directory_uri() ?>/public/img/candle_flame.png" class="candle" alt="">
-<img src="<?php echo get_template_directory_uri() ?>/public/img/candle_base.png" alt="">
+
+<div class="candle-container" style="width: <?php echo $at['width'] ?>">
+<img style="width: 100%" src="<?php echo get_template_directory_uri() ?>/public/img/candle_flame.png" class="candle" alt="">
+<img style="width: 100%" src="<?php echo get_template_directory_uri() ?>/public/img/candle_base.png" alt="">
 </div>
 
 
