@@ -35,7 +35,7 @@ export function stripeCharge(state) {
   return request.post(endpoint, dataAjax);
 }
 
-export function storeConvertloop(state) {
+export function storeConvertLoop(state) {
   const data = qs.stringify({
     data: state.contact,
     action: "convertloop_contact"

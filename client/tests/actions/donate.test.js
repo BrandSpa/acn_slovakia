@@ -27,7 +27,7 @@ describe("donate actions", () => {
     return actions
       .stripeToken(state)
       .then(res =>
-        expect(res).toEqual({ card_type: "", token: "token_12345" })
+        expect(res).toEqual(response)
       );
   });
 
@@ -51,7 +51,7 @@ describe("donate actions", () => {
     const response = { ok: true };
     moxios.stubRequest(endpoint, { response });
     return actions
-      .storeConvertloop(state)
+      .storeConvertLoop(state)
       .then(res => expect(res.data).toEqual(response));
   });
 
@@ -123,7 +123,7 @@ describe("donate actions", () => {
 
     moxios.stubRequest(endpoint, { response });
 
-    return actions.storeConvertloop(state)
+    return actions.storeConvertLoop(state)
       .then(actions.storeEventConvertLoop.bind(null, state))
       .then(actions.storeInfusion)
       .then(res => console.log(res.data));

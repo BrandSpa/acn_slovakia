@@ -93,7 +93,7 @@ class Donate extends Component {
           this.setState({ ...this.state, stripe });
           return stripe;
         }
-
+Ô
         if (res.stripeCode) {
           this.setState({ ...this.state, loading: false, declined: true });
         }
