@@ -7,7 +7,8 @@ class Contact extends React.Component {
     contact: {},
     countries: [],
     errors: { contact: {} },
-    texts: {}
+    texts: {},
+    inline: false
   };
 
   validate = (field, val = "") => {
@@ -77,7 +78,7 @@ class Contact extends React.Component {
             </span>
           </div>
 
-          <div className="form-group col-12-l">
+          <div className={this.props.inline ? "form-group col-6-l" : "form-group col-12-l"}>
             <input
               type="text"
               className={`form-control ${this.inputErrStyle("email")}`}
@@ -90,7 +91,7 @@ class Contact extends React.Component {
             </span>
           </div>
 
-          <div className="form-group col-12-l">
+          <div className={this.props.inline ? "form-group col-6-l" : "form-group col-12-l"}>
             <select
               type="text"
               className="form-control"

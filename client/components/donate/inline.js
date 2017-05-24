@@ -63,8 +63,9 @@ class DonateInline extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
-    if (this.creditCardIsValid() && this.contactIsValid()) {
+    let contactIsValid = this.contactIsValid();
+    let creditCardIsValid = this.creditCardIsValid();
+    if(contactIsValid && creditCardIsValid) {
       actions.stripeToken(this.state).then(res => {
         if (res.data.id) {
           const stripe = { ...this.state.stripe, token: res.data.id };
@@ -128,9 +129,10 @@ class DonateInline extends Component {
             {...this.state}
             {...this.props}
             width={sectionWidth}
+            inline={true}
             onChange={this.handleChange}
           />
-          
+
           <Amount
             {...this.state}
             {...this.props}
