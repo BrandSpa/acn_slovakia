@@ -70,16 +70,14 @@ class DonateInline extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    
+
     this.contactIsValid().then(res => {
       if(!res) return false;
     })
     .then(this.creditCardIsValid)
     .then(res => {
       if(!res) return false;
-    });
-
-    if(contactIsValid && creditCardIsValid) {
+  
       actions.stripeToken(this.state).then(res => {
         if (res.data.id) {
           const stripe = { ...this.state.stripe, token: res.data.id };
@@ -94,7 +92,7 @@ class DonateInline extends Component {
           this.setState({ loading: false, declined: true });		
         }
       });
-    }
+     });
   };
 
   completeTransaction = (stripeResponse = {}) => {
