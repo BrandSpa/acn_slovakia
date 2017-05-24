@@ -336,4 +336,10 @@ a {
     color: #3C515F;
     top: 25%;
   }
+
+  .donate_react__submit {
+    &:hover {
+      background: #ed344e;
+    }
+  }
 }
