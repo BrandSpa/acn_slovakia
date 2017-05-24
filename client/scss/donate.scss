@@ -327,6 +327,9 @@ a {
 
   .donate_react__type {
     color: #3C515F;
+    &:after {
+      background: #3C515F;
+    }
   }
 
   .form-group__addon {
