@@ -1,3 +1,4 @@
+
 .donate_react {
   position: relative;
   overflow: hidden;
@@ -287,4 +288,16 @@ a {
     padding: 20px;
   }
 
+}
+
+.donate_inline {
+  input {
+    border-color: #3C515F;
+    color: #3C515F;
+  }
+
+  select {
+    border-color: #3C515F;
+    color: #3C515F;
+  }
 }

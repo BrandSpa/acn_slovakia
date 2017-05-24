@@ -133,7 +133,7 @@ class DonateInline extends Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className="donate_react"
+        className="donate_react donate_inline"
         ref={donate => (this.donateForm = donate)}
       >
         <div className="donate_react__viewport" style={viewPortStyle}>
