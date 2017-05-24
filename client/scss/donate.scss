@@ -294,10 +294,34 @@ a {
   input {
     border-color: #3C515F;
     color: #3C515F;
+    &::-webkit-input-placeholder {
+      color: #3C515F;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: #3C515F;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: #3C515F;  
+    }
+
+    &:-ms-input-placeholder { 
+      color: #3C515F;  
+    }
   }
 
   select {
     border-color: #3C515F;
     color: #3C515F;
+  }
+
+  .change-amount {
+    li {
+      a {
+        border-color: #3C515F;
+        color: #3C515F;
+      }
+    }
   }
 }
