@@ -55,23 +55,24 @@ class DonateInline extends Component {
   creditCardIsValid = () => {
     return new Promise((resolve, reject) => {
       let errs = this.creditCard.validateAll();
-      let isAllValid = isAllValid(errs.stripe);
-      return resolve(isAllValid);
+      let isValid = isAllValid(errs.stripe);
+      return resolve(isValid);
     })
   };
 
   contactIsValid = () => {
     return new Promise((resolve, reject) => {
       let errs = this.contact.validateAll();
-      let isAllValid = isAllValid(errs.contact);
-      return resolve(isAllValid);
+      let isValid = isAllValid(errs.contact);
+      return resolve(isValid);
     })
   };
 
   handleSubmit = e => {
     e.preventDefault();
 
-    this.contactIsValid().then(res => {
+    this.contactIsValid()
+    .then(res => {
       if(!res) return false;
     })
     .then(this.creditCardIsValid)
@@ -92,7 +93,7 @@ class DonateInline extends Component {
           this.setState({ loading: false, declined: true });		
         }
       });
-     });
+    });
   };
 
   completeTransaction = (stripeResponse = {}) => {
