@@ -65,6 +65,7 @@ class DonateInline extends Component {
     e.preventDefault();
     let contactIsValid = this.contactIsValid();
     let creditCardIsValid = this.creditCardIsValid();
+    console.log(contactIsValid, creditCardIsValid);
     if(contactIsValid && creditCardIsValid) {
       actions.stripeToken(this.state).then(res => {
         if (res.data.id) {
