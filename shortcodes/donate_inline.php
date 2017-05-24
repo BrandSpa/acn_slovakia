@@ -31,7 +31,6 @@ function bs_donate_inline_sc($atts, $content = null) {
 	ob_start();
 ?>
 
-
 <div 
 	class="bs-donate-inline" 
 	data-props='{

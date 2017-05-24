@@ -98,7 +98,12 @@ class DonateInline extends Component {
 
   render() {
     let sectionWidth = `100%`;
-    let viewPortStyle = { width: "100%", left: this.state.left };
+    let viewPortStyle = { 
+      width: "100%", 
+      left: this.state.left,
+      display: 'block'
+    };
+
     let donationTypeStyle = {
       display: "inline",
       marginLeft: "15px",
