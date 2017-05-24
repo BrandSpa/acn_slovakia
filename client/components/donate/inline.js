@@ -89,7 +89,7 @@ class DonateInline extends Component {
     const { amount, donation_type } = this.state;
     const base = this.props.redirect[donation_type];
     const { customer, id } = stripeResponse;
-
+Ô
     actions.storeConvertLoop(this.state)
       .then(actions.storeEventConvertLoop.bind(null, this.state))
       .then(actions.storeInfusion.bind(null, this.state))
