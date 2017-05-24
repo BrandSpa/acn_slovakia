@@ -4,7 +4,7 @@ import qs from "qs";
 import Amount from "./amount";
 import CreditCard from "./creditCard";
 import Contact from "./contact";
-import * as actions from '../../actions/donate';
+import * as actions from "../../actions/donate";
 const endpoint = "/wp-admin/admin-ajax.php";
 
 function isAllValid(errors = {}) {
@@ -37,7 +37,7 @@ class Donate extends Component {
   componentWillMount() {
     actions.fetchCountries().then(countries => this.setState({ countries }));
   }
- 
+
   componentDidMount() {
     this.donateForm.addEventListener("keydown", e => {
       if (e.which == 9) {
@@ -61,7 +61,8 @@ class Donate extends Component {
     const base = this.props.redirect[donation_type];
     const { customer, id } = stripeResponse;
 
-    actions.storeConvertLoop(this.state)
+    actions
+      .storeConvertLoop(this.state)
       .then(actions.storeEventConvertLoop.bind(null, this.state))
       .then(actions.storeInfusion.bind(null, this.state))
       .then(res => {
@@ -85,12 +86,24 @@ class Donate extends Component {
 
     if (this.state.section == 1) {
       if (!this.creditCardIsValid()) return false;
-      actions.stripeToken(this.state);
+      actions.stripeToken(this.state).then(res => {
+        if (res.id) {
+          const stripe = { ...state.stripe, token: res.id };
+          this.setState({ ...this.state, stripe });
+          return stripe;
+        }
+
+        if (res.stripeCode) {
+          this.setState({ ...this.state, loading: false, declined: true });
+        }
+      });
     }
 
     if (this.state.section == 2) {
       if (!this.contactIsValid()) return false;
-      actions.stripeCharge(this.state).then(res => this.completeTransaction(res.data));
+      actions
+        .stripeCharge(this.state)
+        .then(res => this.completeTransaction(res.data));
     }
 
     let left = `-${section * 100}%`;

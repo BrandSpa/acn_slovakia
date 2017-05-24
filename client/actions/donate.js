@@ -16,16 +16,7 @@ export function stripeToken(state) {
     data: state.stripe
   });
 
-  return request.post(endpoint, data).then(res => {
-    if (res.data.id) {
-      const stripe = { ...state.stripe, token: res.data.id };
-      return stripe;
-    }
-
-    if (res.data.stripeCode) {
-      return { loading: false, declined: true };
-    }
-  });
+  return request.post(endpoint, data).then(res => res.data);
 }
 
 export function stripeCharge(state) {
