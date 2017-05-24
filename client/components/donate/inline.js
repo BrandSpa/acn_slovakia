@@ -147,7 +147,7 @@ class DonateInline extends Component {
           />
         </div>
         
-        <div className="form-group">
+        <div style={{marginBottom: '10px'}}>
           <button
             className="donate_react__submit pull-left"
             onClick={this.handleSubmit}
