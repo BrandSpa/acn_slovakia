@@ -86,9 +86,10 @@ class Donate extends Component {
 
     if (this.state.section == 1) {
       if (!this.creditCardIsValid()) return false;
+
       actions.stripeToken(this.state).then(res => {
         if (res.id) {
-          const stripe = { ...state.stripe, token: res.id };
+          const stripe = { ...this.state.stripe, token: res.id };
           this.setState({ ...this.state, stripe });
           return stripe;
         }
