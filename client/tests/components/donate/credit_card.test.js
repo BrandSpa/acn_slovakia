@@ -43,7 +43,7 @@ describe('donate amount component', () => {
 			/>
 		);
 		
-		wrapper.instance().allValidations();
+		wrapper.instance().validateAll();
 		
 		let expected = { errors: {
 			stripe: {
@@ -73,7 +73,7 @@ describe('donate amount component', () => {
 			/>
 		);
 		
-		wrapper.instance().allValidations();
+		wrapper.instance().validateAll();
 		
 		let expected = { errors: {
 			stripe: {

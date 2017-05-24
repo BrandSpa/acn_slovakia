@@ -32,8 +32,6 @@ class ProjectsAbout extends React.Component {
     render() {
 		const { section } = this.state;
 		
-		console.log(section);
-
 		return (
 			<StyleRoot>
 				<Projects 

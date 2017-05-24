@@ -19,17 +19,6 @@ describe('donate component', () => {
 		expect(wrapper.state().section).toBe(1);
 	})
 
-	it('should fetch countries', () => {
-		let response = ['Argentina', 'Colombia'];
-		moxios.stubRequest('/wp-admin/admin-ajax.php', { response });
-		let wrapper = shallow(<Donate />);
-
-		return wrapper
-			.instance()
-			.fetchCountries()
-			.then(res => expect(res).toEqual(['Argentina', 'Colombia']));
-	}) 
-
 	it('should validate credit card and stop next section', () => {
 		let wrapper = mount(<Donate />);
 		wrapper.instance().nextSection();
@@ -80,46 +69,7 @@ describe('donate component', () => {
 		wrapper.simulate('keyDown', {wich: 9, keyCode: 9});
 		wrapper.simulate('keyDown', {wich: 9, keyCode: 9});
 	})
-	
-	it('should send data to endpoint convertloop', () => {
-		let response = {occurred_at: "", metadata: {}, person: {}, event: {}};
-		moxios.stubRequest('/wp-admin/admin-ajax.php', { response });
-		let wrapper = shallow(<Donate />);
-		let expected = { 
-			name: `Donation-monthly`, 
-      person: { email: '' },
-      country: '',
-      metadata: {
-				type: 'monthly',
-				amount: "30"
-			}
-		};
 
-		return wrapper
-			.instance()
-			.storeEventConvertLoop()
-			.then(res => {
-				const dataSend = qs.parse(res.config.data);
-				expect(res.data).toEqual(response);
-				expect(expected).toEqual(dataSend.data);
-			});
-	})
-
-	it('should send data to endpoint infusion', () => {
-		let response = {success: true, data: {}};
-		moxios.stubRequest('/wp-admin/admin-ajax.php', { response });
-		let wrapper = shallow(<Donate />);
-		let expected = {country: "", email: "", name: "", tags: ["870", "924"]};
-
-		return wrapper
-			.instance()
-			.storeInfusion()
-			.then(res => {
-				const dataSend = qs.parse(res.config.data);
-				expect(res.data).toEqual(response);
-				expect(expected).toEqual(dataSend.data);
-			});
-	})
 
 })
 

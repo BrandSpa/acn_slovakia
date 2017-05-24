@@ -86,7 +86,7 @@ class CedritCard extends React.Component {
     return "";
   };
 
-  allValidations = e => {
+  validateAll = e => {
     if (e) e.preventDefault();
     const { stripe } = this.props;
     const number = this.validateCard(stripe.number);

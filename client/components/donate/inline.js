@@ -1,18 +1,15 @@
-import React, { Component } from "react";
-import request from "axios";
+import React from "react";
 import qs from "qs";
+import request from "axios";
 import Amount from "./amount";
 import CreditCard from "./creditCard";
 import Contact from "./contact";
-import * as actions from '../../actions/donate';
 const endpoint = "/wp-admin/admin-ajax.php";
 
-function isAllValid(errors = {}) {
-  return Object.keys(errors).every(key => errors[key] == true);
-}
-
-class Donate extends Component {
-  static defaultProps = { texts: {}, redirect: {} };
+class Donate extends React.Component {
+  static defaultProps = { 
+		texts: {}, 
+		redirect: {} };
 
   state = {
     section: 0,
@@ -35,9 +32,9 @@ class Donate extends Component {
   };
 
   componentWillMount() {
-    actions.fetchCountries().then(countries => this.setState({ countries }));
+    this.fetchCountries();
   }
- 
+
   componentDidMount() {
     this.donateForm.addEventListener("keydown", e => {
       if (e.which == 9) {
@@ -46,6 +43,18 @@ class Donate extends Component {
       }
     });
   }
+
+  fetchCountries = () => {
+    const data = qs.stringify({ action: "countries" });
+
+    return request
+      .post(endpoint, data)
+      .then(res => {
+        this.setState({ countries: res.data });
+        return res.data;
+      })
+      .catch(err => err);
+  };
 
   handleChange = field => {
     this.setState({ ...this.state, ...field });
@@ -56,14 +65,90 @@ class Donate extends Component {
     this.nextSection();
   };
 
+  stripeToken = () => {
+    let data = qs.stringify({
+      action: "stripe_token",
+      data: this.state.stripe
+    });
+
+    return request.post(endpoint, data).then(res => {
+      if (res.data.id) {
+        const stripe = { ...this.state.stripe, token: res.data.id };
+        this.setState({ loading: false, stripe });
+      }
+
+      if (res.data.stripeCode) {
+        this.setState({ loading: false, declined: true });
+      }
+    });
+  };
+
+  stripeCharge = () => {
+    const {
+      contact,
+      currency,
+      amount,
+      donation_type,
+      stripe: { token }
+    } = this.state;
+
+    const data = {
+      ...contact,
+      currency,
+      amount,
+      donation_type,
+      stripe_token: token
+    };
+
+    const dataAjax = qs.stringify({ action: "stripe_charge", data });
+
+    return request.post(endpoint, dataAjax);
+  };
+
+  storeConvertLoop = () => {
+    const data = qs.stringify({
+      data: this.state.contact,
+      action: "convertloop_contact"
+    });
+    return request.post(endpoint, data);
+  };
+
+  storeEventConvertLoop = () => {
+    const { email, country } = this.state.contact;
+    const metadata = {
+      amount: this.state.amount,
+      type: this.state.donation_type
+    };
+
+    const event = {
+      name: `Donation-${this.state.donation_type}`,
+      person: { email },
+      country,
+      metadata
+    };
+
+    const data = qs.stringify({ data: event, action: "convertloop_event" });
+    return request.post(endpoint, data);
+  };
+
+  storeInfusion = () => {
+    let tags = "";
+    if (this.state.donation_type == "monthly") tags = ["870", "924"];
+    if (this.state.donation_type == "once") tags = ["868", "926"];
+    const data = qs.stringify({
+      data: { ...this.state.contact, tags },
+      action: "infusion_contact"
+    });
+    return request.post(endpoint, data);
+  };
+
   completeTransaction = (stripeResponse = {}) => {
     const { amount, donation_type } = this.state;
     const base = this.props.redirect[donation_type];
     const { customer, id } = stripeResponse;
-
-    actions.storeConvertLoop(this.state)
-      .then(actions.storeEventConvertLoop.bind(null, this.state))
-      .then(actions.storeInfusion.bind(null, this.state))
+    this.storeConvertLoop()
+      .then(this.storeEventConvertLoop)
+      .then(this.storeInfusion)
       .then(res => {
         const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
         window.location = url;
@@ -71,13 +156,13 @@ class Donate extends Component {
   };
 
   creditCardIsValid = () => {
-    let errs = this.creditCard.validateAll();
-    return isAllValid(errs.stripe);
+    let errs = this.creditCard.allValidations();
+    return Object.keys(errs.stripe).every(key => errs.stripe[key] == true);
   };
 
   contactIsValid = () => {
     let errs = this.contact.validateAll();
-    return isAllValid(errs.contact);
+    return Object.keys(errs.contact).every(key => errs.contact[key] == true);
   };
 
   nextSection = () => {
@@ -85,12 +170,12 @@ class Donate extends Component {
 
     if (this.state.section == 1) {
       if (!this.creditCardIsValid()) return false;
-      actions.stripeToken(this.state);
+      this.stripeToken();
     }
 
     if (this.state.section == 2) {
       if (!this.contactIsValid()) return false;
-      actions.stripeCharge(this.state).then(res => this.completeTransaction(res.data));
+      this.stripeCharge().then(res => this.completeTransaction(res.data));
     }
 
     let left = `-${section * 100}%`;

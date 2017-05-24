@@ -1,0 +1,85 @@
+import request from "axios";
+import qs from "qs";
+const endpoint = "/wp-admin/admin-ajax.php";
+
+export function fetchCountries() {
+  const data = qs.stringify({ action: "countries" });
+
+  return request
+    .post(endpoint, data)
+    .then(res => (Array.isArray(res.data) ? res.data : []));
+}
+
+export function stripeToken(state) {
+  let data = qs.stringify({
+    action: "stripe_token",
+    data: state.stripe
+  });
+
+  return request.post(endpoint, data).then(res => {
+    if (res.data.id) {
+      const stripe = { ...state.stripe, token: res.data.id };
+      return stripe;
+    }
+
+    if (res.data.stripeCode) {
+      return { loading: false, declined: true };
+    }
+  });
+}
+
+export function stripeCharge(state) {
+  const { contact, currency, amount, donation_type, stripe: { token } } = state;
+
+  const data = {
+    ...contact,
+    currency,
+    amount,
+    donation_type,
+    stripe_token: token
+  };
+
+  const dataAjax = qs.stringify({ action: "stripe_charge", data });
+
+  return request.post(endpoint, dataAjax);
+}
+
+export function storeConvertloop(state) {
+  const data = qs.stringify({
+    data: state.contact,
+    action: "convertloop_contact"
+  });
+
+  return request.post(endpoint, data);
+}
+
+export function storeEventConvertLoop(state) {
+  const { email, country } = state.contact;
+
+  const metadata = {
+    amount: state.amount,
+    type: state.donation_type
+  };
+
+  const event = {
+    name: `Donation-${state.donation_type}`,
+    person: { email },
+    country,
+    metadata
+  };
+
+  const data = qs.stringify({ data: event, action: "convertloop_event" });
+  return request.post(endpoint, data);
+}
+
+export function storeInfusion(state) {
+  let tags = "";
+  if (state.donation_type == "monthly") tags = ["870", "924"];
+  if (state.donation_type == "once") tags = ["868", "926"];
+  const data = qs.stringify({
+    data: { ...state.contact, tags },
+    action: "infusion_contact"
+  });
+
+  return request.post(endpoint, data);
+}
