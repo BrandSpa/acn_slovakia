@@ -123,6 +123,14 @@ class DonateInline extends Component {
         ref={donate => (this.donateForm = donate)}
       >
         <div className="donate_react__viewport" style={viewPortStyle}>
+          <Contact
+            ref={contact => (this.contact = contact)}
+            {...this.state}
+            {...this.props}
+            width={sectionWidth}
+            onChange={this.handleChange}
+          />
+          
           <Amount
             {...this.state}
             {...this.props}
@@ -132,14 +140,6 @@ class DonateInline extends Component {
 
           <CreditCard
             ref={creditCard => (this.creditCard = creditCard)}
-            {...this.state}
-            {...this.props}
-            width={sectionWidth}
-            onChange={this.handleChange}
-          />
-
-          <Contact
-            ref={contact => (this.contact = contact)}
             {...this.state}
             {...this.props}
             width={sectionWidth}
