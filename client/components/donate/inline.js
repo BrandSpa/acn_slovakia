@@ -53,19 +53,31 @@ class DonateInline extends Component {
   };
 
   creditCardIsValid = () => {
-    let errs = this.creditCard.validateAll();
-    return isAllValid(errs.stripe);
+    return new Promise((resolve, reject) => {
+      let errs = this.creditCard.validateAll();
+      let isAllValid = isAllValid(errs.stripe);
+      return resolve(isAllValid);
+    })
   };
 
   contactIsValid = () => {
-    let errs = this.contact.validateAll();
-    return isAllValid(errs.contact);
+    return new Promise((resolve, reject) => {
+      let errs = this.contact.validateAll();
+      let isAllValid = isAllValid(errs.contact);
+      return resolve(isAllValid);
+    })
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    let contactIsValid = this.contactIsValid();
-    let creditCardIsValid = this.creditCardIsValid();
+    
+    this.contactIsValid().then(res => {
+      if(!res) return false;
+    })
+    .then(this.creditCardIsValid)
+    .then(res => {
+      if(!res) return false;
+    });
 
     if(contactIsValid && creditCardIsValid) {
       actions.stripeToken(this.state).then(res => {

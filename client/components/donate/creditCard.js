@@ -95,7 +95,7 @@ class CedritCard extends React.Component {
 
     const errors = {
       ...this.props.errors,
-      stripe: { number: number.stripe, exp_month: exp_month.stripe, cvc: cvc.stripe }
+      stripe: { ...number.stripe, ...exp_month.stripe, ...cvc.stripe }
     };
     
     this.props.onChange({ errors });
