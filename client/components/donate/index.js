@@ -48,6 +48,7 @@ class Donate extends Component {
   }
 
   handleChange = field => {
+    console.log(this.state, field);
     this.setState({ ...this.state, ...field });
   };
 
