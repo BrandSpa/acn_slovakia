@@ -209,8 +209,8 @@ class CedritCard extends React.Component {
             style={{
               display: "block",
               position: "absolute",
-              top: 0,
-              right: 0,
+              top: "2px",
+              right: "2px",
               width: "15px",
               height: "15px",
               color: "red"
