@@ -136,7 +136,8 @@ class Donate extends Component {
     let backBtnStyle = {
       float: "right",
       background: "transparent",
-      border: "none"
+      border: "none",
+      padding: "0 20px"
     };
 
     return (

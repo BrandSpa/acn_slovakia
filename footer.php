@@ -51,8 +51,8 @@
   console.log('<?php if(pll_home_url() == get_permalink()) echo 'nea' ?>');
 </script>
 
-<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.d8682b320befd47dac81.js'></script>
-<script src='<?php echo get_template_directory_uri() ?>/public/js/app.9f799e5a7393ff5b54c4.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.76886c01bb0775bff33c.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/app.b33afe5124c5a87118f0.js'></script>
 
 <!--/app theme-->
 
