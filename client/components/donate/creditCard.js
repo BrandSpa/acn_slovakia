@@ -167,7 +167,18 @@ class CedritCard extends React.Component {
             className="form-group col-3-l col-12"
             style={{ position: "relative" }}
           >
-            <a style={{display: "block", background: "#3C515F", width: "20px", height: "20px", borderRadius: "20px"}} onClick={e => console.log(e)}>
+            <a
+              style={{
+                display: "block",
+                background: "#3C515F",
+                width: "20px",
+                height: "20px",
+                borderRadius: "20px",
+                color: "#fff",
+                textAlign: "center"
+              }}
+              onClick={e => console.log(e)}
+            >
               <i className="ion-ios-help-empty" />
             </a>
             <div
@@ -184,7 +195,7 @@ class CedritCard extends React.Component {
                   display: "block",
                   color: "#3C515F",
                   padding: "10px",
-                  fontSize: "14px"
+                  fontSize: "14px",
                 }}
               >
                 The last 3 digits displayed on the back of your credit card.
