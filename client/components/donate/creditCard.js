@@ -164,7 +164,7 @@ class CedritCard extends React.Component {
           </div>
 
           <div
-            className="form-group col-3-l col-3"
+            className="form-group col-3-l col-12"
             style={{ position: "relative" }}
           >
             <a className="show-popover" onClick={e => console.log(e)}>
