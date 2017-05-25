@@ -199,7 +199,8 @@ class CedritCard extends React.Component {
                   textAlign: "center",
                   display: "block",
                   margin: "15px 0",
-                  position: "relative"
+                  position: "relative",
+                  zIndex: "100"
                 }
               : { display: "none" }
           }
