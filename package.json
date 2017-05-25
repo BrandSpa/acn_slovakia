@@ -12,7 +12,7 @@
     "build": "webpack --p",
     "build:watch": "webpack --watch --p",
     "build:admin": "webpack  --config=webpack.admin.js --p",
-    "post-update": "echo nea"
+    "postreceive": "echo nea"
   },
   "author": "Alejandro Sanabria <alesanabriav@gmail.com>",
   "license": "MIT",
