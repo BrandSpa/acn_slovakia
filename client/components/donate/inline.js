@@ -69,7 +69,7 @@ class DonateInline extends Component {
   };
 
   handleSubmit = e => {
-    e.preventDefault();
+    if(e) e.preventDefault();
 
     this.contactIsValid()
       .then(res => {
