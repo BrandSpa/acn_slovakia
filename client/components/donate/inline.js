@@ -80,7 +80,7 @@ class DonateInline extends Component {
         if (!res) return false;
 
         actions.stripeToken(this.state).then(res => {
-          if (res.data.id) {
+          if (res.id) {
             const stripe = { ...this.state.stripe, token: res.data.id };
             this.setState({ loading: false, stripe });
 
@@ -89,7 +89,7 @@ class DonateInline extends Component {
               .then(res => this.completeTransaction(res.data));
           }
 
-          if (res.data.stripeCode) {
+          if (res.stripeCode) {
             this.setState({ loading: false, declined: true });
           }
         });
