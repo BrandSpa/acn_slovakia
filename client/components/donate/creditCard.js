@@ -162,6 +162,12 @@ class CedritCard extends React.Component {
               {texts.validation_cvc}
             </span>
           </div>
+          
+          <div className="form-group col-3-l col-3">
+            <div className="show-popover" onMouseOver={e => console.log(e)}>
+              <i className="ion-ios-help-empty"></i>
+            </div>
+          </div>
         </div>
       </div>
     );

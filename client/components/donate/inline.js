@@ -136,6 +136,7 @@ class DonateInline extends Component {
         className={this.props.is_blue ? "donate_react donate_inline" : "donate_react"}
         ref={donate => (this.donateForm = donate)}
       >
+      
         <div className="donate_react__viewport" style={viewPortStyle}>
           <Contact
             ref={contact => (this.contact = contact)}
