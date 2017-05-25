@@ -189,6 +189,7 @@ class CedritCard extends React.Component {
           </div>
 
         </div>
+
         <div
           style={
             this.state.showPopover
@@ -217,7 +218,7 @@ class CedritCard extends React.Component {
               color: "red",
               cursor: "pointer"
             }}
-            onclick={e =>
+            onClick={e =>
                 this.setState({ showPopover: !this.state.showPopover })}
           >
             <i className="ion-close" />
