@@ -23,7 +23,8 @@ $general = [
 	'Select country',
 	'¿Quiéres que el mundo conozca la realidad de la Iglesia que Sufre en el Mundo?',
 	'Comparte este artículo',
-	'stories'
+	'stories',
+	'The last 3 digits displayed on the back of your credit card.'
 ];
 
 foreach($general as $key => $trans) {

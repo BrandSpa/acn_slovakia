@@ -14,6 +14,7 @@ function bs_donate_inline_sc($atts, $content = null) {
     "placeholder_month" => gett("MM"),
     "placeholder_year" => gett("YY"),
     "placeholder_cvc" => gett("CVC"),
+    "explain_cvc" => gett("The last 3 digits displayed on the back of your credit card."),
     "placeholder_name" => gett("Name"),
     "placeholder_email" => gett("Email"),
     "placeholder_country" => gett("Country"),
@@ -64,6 +65,7 @@ add_action( 'vc_before_init', 'bs_donate_inline_vc' );
       "placeholder_month" => "MM",
       "placeholder_year" => "YY",
       "placeholder_cvc" => "CVC",
+      "explain_cvc" =>  "The last 3 digits displayed on the back of your credit card.",
       "placeholder_name" => "Name",
       "placeholder_email" => "Email",
       "placeholder_country" => "Country",
@@ -74,7 +76,7 @@ add_action( 'vc_before_init', 'bs_donate_inline_vc' );
       "validation_cvc" => "Incorrect cvc",
       "validation_name" => "Incorrect name",
       "validation_email" => "Incorrect email",
-      "validation_country" => "Incorrect country",
+      "validation_country" => "Incorrect country"
     ];
     
     foreach($atts as $key => $val) {

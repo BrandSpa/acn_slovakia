@@ -212,9 +212,9 @@ class CedritCard extends React.Component {
                   fontSize: "14px"
                 }}
               >
-                The last 3 digits displayed on the back of your credit card.
+                
               </span>
-              <img src={`${texts.template_uri}/public/img/cvc.png`} alt="" />
+              <img width="60px" src={`${texts.template_uri}/public/img/cvc.png`} alt="" />
             </div>
           </div>
         </div>
