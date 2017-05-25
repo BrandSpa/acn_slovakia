@@ -166,6 +166,7 @@ class CedritCard extends React.Component {
               value={stripe.cvc}
             />
             <a
+              href="#"
               style={{
                 display: "block",
                 background: "#3C515F",
