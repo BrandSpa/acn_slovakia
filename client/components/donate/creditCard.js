@@ -110,6 +110,11 @@ class CedritCard extends React.Component {
     return errors;
   };
 
+  togglePopover = e => {
+    if(e) e.preventDefault();
+    this.setState({showPopover: !this.showPopover});
+  }
+
   render() {
     const { texts, stripe, errors } = this.props;
 
@@ -179,8 +184,7 @@ class CedritCard extends React.Component {
                 top: "12px",
                 right: "25px"
               }}
-              onClick={e =>
-                this.setState({ showPopover: !this.state.showPopover })}
+              onClick={this.props.togglePopover}
             >
               <i className="ion-help" />
             </a>
@@ -219,8 +223,7 @@ class CedritCard extends React.Component {
               color: "red",
               cursor: "pointer"
             }}
-            onClick={e =>
-                this.setState({ showPopover: !this.state.showPopover })}
+            onClick={this.props.togglePopover}
           >
             <i className="ion-close" />
           </span>
