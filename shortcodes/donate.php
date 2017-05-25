@@ -26,7 +26,8 @@ function bs_donate_react_sc($atts, $content = null) {
     "validation_name" => gett("Incorrect name"),
     "validation_email" => gett("Incorrect email"),
     "validation_country" => gett("Incorrect country"),
-		"template_uri" => str_replace("http:", "", get_template_directory_uri())
+		"template_uri" => str_replace("http:", "", get_template_directory_uri()),
+    "is_blue" => false
 	 ], $atts);
 
 	ob_start();
