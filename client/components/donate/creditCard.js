@@ -212,7 +212,7 @@ class CedritCard extends React.Component {
                   fontSize: "14px"
                 }}
               >
-                
+                {texts.explain_cvc}
               </span>
               <img width="60px" src={`${texts.template_uri}/public/img/cvc.png`} alt="" />
             </div>
