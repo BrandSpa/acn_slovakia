@@ -188,38 +188,53 @@ class CedritCard extends React.Component {
             </span>
           </div>
 
-  
         </div>
-          <div
-              style={
-                this.state.showPopover
-                  ? {
-                      background: "#fff",
-                      boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
-                      borderRadius: "2px",
-                      textAlign: "center",
-                      display: "block",
-                      margin: "15px 0",
-                      position: "relative"
-                    }
-                  : { display: "none" }
-              }
-            >
-
-            <span style={{ position: "absolute", top: 0, right: 0,  width: '15px', height: '15px', color: 'red'}}><i className="ion-close"></i></span>
-            
-              <span
-                style={{
+        <div
+          style={
+            this.state.showPopover
+              ? {
+                  background: "#fff",
+                  boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
+                  borderRadius: "2px",
+                  textAlign: "center",
                   display: "block",
-                  color: "#3C515F",
-                  padding: "10px",
-                  fontSize: "14px"
-                }}
-              >
-                {texts.explain_cvc}
-              </span>
-              <img width="60px" src={`${texts.template_uri}/public/img/cvc.png`} alt="" />
-            </div>
+                  margin: "15px 0",
+                  position: "relative"
+                }
+              : { display: "none" }
+          }
+        >
+
+          <span
+            style={{
+              display: "block",
+              position: "absolute",
+              top: 0,
+              right: 0,
+              width: "15px",
+              height: "15px",
+              color: "red"
+            }}
+          >
+            <i className="ion-close" />
+          </span>
+
+          <span
+            style={{
+              display: "block",
+              color: "#3C515F",
+              padding: "10px",
+              fontSize: "14px"
+            }}
+          >
+            {texts.explain_cvc}
+          </span>
+          <img
+            width="60px"
+            src={`${texts.template_uri}/public/img/cvc.png`}
+            alt=""
+          />
+        </div>
       </div>
     );
   }
