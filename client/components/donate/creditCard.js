@@ -132,7 +132,7 @@ class CedritCard extends React.Component {
           </span>
         </div>
         <div className="row donate_react__creditcard__row">
-          <div className="form-group col-3-l col-3">
+          <div className="form-group col-4-l col-4">
             <input
               type="text"
               placeholder={texts.placeholder_month}
@@ -144,7 +144,7 @@ class CedritCard extends React.Component {
               {texts.validation_month}
             </span>
           </div>
-          <div className="form-group col-3-l col-3">
+          <div className="form-group col-4-l col-4">
             <input
               type="text"
               placeholder={texts.placeholder_year}
@@ -157,7 +157,7 @@ class CedritCard extends React.Component {
             </span>
           </div>
 
-          <div className="form-group col-3-l col-3">
+          <div className="form-group col-4-l col-4">
             <input
               type="text"
               placeholder={texts.placeholder_cvc}
@@ -165,17 +165,7 @@ class CedritCard extends React.Component {
               onChange={this.handleCvc}
               value={stripe.cvc}
             />
-            <span className={this.showErr("cvc")}>
-              {texts.validation_cvc}
-            </span>
-          </div>
-
-          <div
-            className="form-group col-3-l col-12"
-            style={{ position: "relative" }}
-          >
             <a
-              ref={btnPopover => this.btnPopover = btnPopover}
               style={{
                 display: "block",
                 background: "#3C515F",
@@ -190,7 +180,12 @@ class CedritCard extends React.Component {
             >
               <i className="ion-help" />
             </a>
+            <span className={this.showErr("cvc")}>
+              {texts.validation_cvc}
+            </span>
           </div>
+
+  
         </div>
           <div
               style={
@@ -201,9 +196,7 @@ class CedritCard extends React.Component {
                       borderRadius: "2px",
                       textAlign: "center",
                       display: "block",
-                      position: "absolute",
-                      top: 0,
-                      left: "40px"
+                      margin: "10px 0"
                     }
                   : { display: "none" }
               }
