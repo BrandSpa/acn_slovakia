@@ -170,8 +170,7 @@ class CedritCard extends React.Component {
               onChange={this.handleCvc}
               value={stripe.cvc}
             />
-            <a
-              href="#"
+            <span
               style={{
                 display: "block",
                 background: "#3C515F",
@@ -182,12 +181,13 @@ class CedritCard extends React.Component {
                 textAlign: "center",
                 position: "absolute",
                 top: "12px",
-                right: "25px"
+                right: "25px",
+                cursor: "pointer"
               }}
               onClick={this.props.togglePopover}
             >
               <i className="ion-help" />
-            </a>
+            </span>
             <span className={this.showErr("cvc")}>
               {texts.validation_cvc}
             </span>
