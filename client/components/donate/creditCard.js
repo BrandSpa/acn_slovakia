@@ -167,7 +167,7 @@ class CedritCard extends React.Component {
             className="form-group col-3-l col-12"
             style={{ position: "relative" }}
           >
-            <a className="show-popover" onClick={e => console.log(e)}>
+            <a style={{display: "block", background: "#3C515F", width: "30px", height: "30px", borderRadius: "30px"}} onClick={e => console.log(e)}>
               <i className="ion-ios-help-empty" />
             </a>
             <div
