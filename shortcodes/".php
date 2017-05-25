@@ -87,11 +87,11 @@ add_action( 'vc_before_init', 'bs_donate_inline_vc' );
     }
 
     array_push($params, [
-      "type" => "textfield",
-      "heading" =>  "Blue?",
-      "param_name" => "is_blue",
-      "value" => false
-    ]);
+         "type" => "textfield",
+         "heading" =>  "Blue?",
+         "param_name" => "isbli",
+         "value" => $val
+      ]);
 
   	vc_map(
       array(

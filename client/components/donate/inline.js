@@ -15,7 +15,6 @@ class DonateInline extends Component {
   static defaultProps = { texts: {}, redirect: {} };
 
   state = {
-    isBlue: false,
     section: 0,
     left: 0,
     loading: false,
@@ -32,7 +31,8 @@ class DonateInline extends Component {
       cvc: "",
       token: ""
     },
-    errors: { stripe: {}, contact: {} }
+    errors: { stripe: {}, contact: {} },
+    is_blue: false
   };
 
   componentWillMount() {
@@ -133,7 +133,7 @@ class DonateInline extends Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className={this.props.isBlue ? "donate_react donate_inline" : "donate_react"}
+        className={this.props.is_blue ? "donate_react donate_inline" : "donate_react"}
         ref={donate => (this.donateForm = donate)}
       >
         <div className="donate_react__viewport" style={viewPortStyle}>

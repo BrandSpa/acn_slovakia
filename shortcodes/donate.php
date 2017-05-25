@@ -101,6 +101,14 @@ add_action( 'vc_before_init', 'bs_donate_react_vc' );
       ]);
     }
 
+    array_push($params, [
+      "type" => "textfield",
+      "heading" =>  "Blue?",
+      "param_name" => "is_blue",
+      "value" => false
+    ]);
+
+
   	vc_map(
       array(
         "name" =>  "BS Donate",

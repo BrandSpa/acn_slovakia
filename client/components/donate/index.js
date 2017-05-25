@@ -31,7 +31,8 @@ class Donate extends Component {
       cvc: "",
       token: ""
     },
-    errors: { stripe: {}, contact: {} }
+    errors: { stripe: {}, contact: {} },
+    is_blue: false
   };
 
   componentWillMount() {
@@ -93,7 +94,7 @@ class Donate extends Component {
           this.setState({ ...this.state, stripe });
           return stripe;
         }
-Ô
+
         if (res.stripeCode) {
           this.setState({ ...this.state, loading: false, declined: true });
         }
@@ -141,10 +142,11 @@ class Donate extends Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className="donate_react"
+        className={this.props.is_blue ? "donate_react donate_inline" : "donate_react"}
         ref={donate => (this.donateForm = donate)}
       >
         <div className="donate_react__viewport" style={viewPortStyle}>
+
           <Amount
             {...this.state}
             {...this.props}
@@ -167,7 +169,9 @@ class Donate extends Component {
             width={sectionWidth}
             onChange={this.handleChange}
           />
+
         </div>
+
         <div className="form-group">
           <button
             className="donate_react__submit pull-left"
