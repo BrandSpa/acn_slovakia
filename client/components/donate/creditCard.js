@@ -1,5 +1,6 @@
 import React from "react";
 import validCard from "card-validator";
+import Popper from 'popper.js';
 import Cards from "./cards";
 import { onlyNum, maxLength } from "../../lib/clean_inputs";
 
@@ -9,6 +10,18 @@ class CedritCard extends React.Component {
     this.state = {
       showPopover: false
     };
+  }
+
+  componentDidMount() {
+    var reference = this.btnPopover;
+    var popper = this.popover;
+    var anotherPopper = new Popper(
+        reference,
+        popper,
+        {
+           placement: 'right'
+        }
+    );
   }
 
   static defaultProps = { texts: {}, stripe: {}, errors: {} };
@@ -175,6 +188,7 @@ class CedritCard extends React.Component {
             style={{ position: "relative" }}
           >
             <a
+              ref={btnPopover => this.btnPopover = btnPopover}
               style={{
                 display: "block",
                 background: "#3C515F",
@@ -191,6 +205,7 @@ class CedritCard extends React.Component {
             </a>
 
             <div
+              ref={popover => this.popover = popover}
               style={
                 this.state.showPopover
                   ? {
