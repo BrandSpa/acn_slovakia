@@ -213,8 +213,11 @@ class CedritCard extends React.Component {
               right: "2px",
               width: "15px",
               height: "15px",
-              color: "red"
+              color: "red",
+              cursor: "pointer"
             }}
+            onclick={e =>
+                this.setState({ showPopover: !this.state.showPopover })}
           >
             <i className="ion-close" />
           </span>
