@@ -102,7 +102,7 @@ add_action( 'vc_before_init', 'bs_donate_react_vc' );
     }
 
     array_push($params, [
-      "type" => "textfield",
+      "type" => "checkbox",
       "heading" =>  "Blue?",
       "param_name" => "is_blue",
       "value" => false
