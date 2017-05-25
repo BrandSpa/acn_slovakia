@@ -125,7 +125,7 @@ class CedritCard extends React.Component {
           </span>
         </div>
         <div className="row donate_react__creditcard__row">
-          <div className="form-group col-4-l col-4">
+          <div className="form-group col-3-l col-3">
             <input
               type="text"
               placeholder={texts.placeholder_month}
@@ -137,7 +137,7 @@ class CedritCard extends React.Component {
               {texts.validation_month}
             </span>
           </div>
-          <div className="form-group col-4-l col-4">
+          <div className="form-group col-3-l col-3">
             <input
               type="text"
               placeholder={texts.placeholder_year}
@@ -149,7 +149,8 @@ class CedritCard extends React.Component {
               {texts.validation_year}
             </span>
           </div>
-          <div className="form-group col-4-l col-4">
+          
+          <div className="form-group col-3-l col-3">
             <input
               type="text"
               placeholder={texts.placeholder_cvc}
