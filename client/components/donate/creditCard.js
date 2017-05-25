@@ -164,8 +164,12 @@ class CedritCard extends React.Component {
           </div>
           
           <div className="form-group col-3-l col-3">
-            <div className="show-popover" onMouseOver={e => console.log(e)}>
+            <a className="show-popover" onClick={e => console.log(e)}>
               <i className="ion-ios-help-empty"></i>
+            </a>
+            <div className="popover-content" style={{background: "#fff", boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)", borderRadius: "2px"}}>
+              The last 3 digits displayed on the back of your credit card.
+              <img src={`${texts.template_uri}/public/img/cvc.png`} alt=""/>
             </div>
           </div>
         </div>
