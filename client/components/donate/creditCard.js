@@ -116,7 +116,7 @@ class CedritCard extends React.Component {
     return (
       <div
         className="donate_react__creditcard"
-        style={{ width: this.props.width, float: "left", padding: "1px" }}
+        style={{ width: this.props.width, float: "left", padding: "1px", overflow: "visible" }}
       >
         <Cards {...this.props} />
         <div className="form-group">
@@ -188,14 +188,15 @@ class CedritCard extends React.Component {
             >
               <i className="ion-help" />
             </a>
-            
+
             <div
               style={this.state.showPopover ? {
                 background: "#fff",
                 boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
                 borderRadius: "2px",
                 textAlign: "center",
-                display: "block"
+                display: "block",
+                position: "absolute"
               } : {display: "none"}}
             >
               <span
