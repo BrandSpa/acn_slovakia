@@ -22,6 +22,7 @@ class CedritCard extends React.Component {
            placement: 'right'
         }
     );
+    console.log(anotherPopper);
   }
 
   static defaultProps = { texts: {}, stripe: {}, errors: {} };
