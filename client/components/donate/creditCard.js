@@ -204,6 +204,9 @@ class CedritCard extends React.Component {
                   : { display: "none" }
               }
             >
+
+            <span style={{ position: "absolute", top: 0, right: 0,  width: '15px', height: '15px', color: 'red'}}><i className="ion-close"></i></span>
+            
               <span
                 style={{
                   display: "block",
