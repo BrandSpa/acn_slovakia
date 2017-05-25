@@ -1,6 +1,5 @@
 import React from "react";
 import validCard from "card-validator";
-import Popper from 'popper.js';
 import Cards from "./cards";
 import { onlyNum, maxLength } from "../../lib/clean_inputs";
 
@@ -10,19 +9,6 @@ class CedritCard extends React.Component {
     this.state = {
       showPopover: false
     };
-  }
-
-  componentDidMount() {
-    var reference = this.btnPopover;
-    var popper = this.popover;
-    var anotherPopper = new Popper(
-        reference,
-        popper,
-        {
-           placement: 'right'
-        }
-    );
-    console.log(anotherPopper);
   }
 
   static defaultProps = { texts: {}, stripe: {}, errors: {} };
@@ -204,11 +190,12 @@ class CedritCard extends React.Component {
             >
               <i className="ion-help" />
             </a>
-
-            <div
-              ref={popover => this.popover = popover}
+          </div>
+        </div>
+          <div
               style={
-                {
+                this.state.showPopover
+                  ? {
                       background: "#fff",
                       boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
                       borderRadius: "2px",
@@ -217,7 +204,8 @@ class CedritCard extends React.Component {
                       position: "absolute",
                       top: 0,
                       left: "40px"
-                }
+                    }
+                  : { display: "none" }
               }
             >
               <span
@@ -232,8 +220,6 @@ class CedritCard extends React.Component {
               </span>
               <img width="60px" src={`${texts.template_uri}/public/img/cvc.png`} alt="" />
             </div>
-          </div>
-        </div>
       </div>
     );
   }
