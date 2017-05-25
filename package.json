@@ -10,7 +10,7 @@
     "test:watch": "jest -- --watch",
     "test": "jest",
     "build:admin": "webpack  --config=webpack.admin.js --p",
-    "prepush": "yarn test"
+    "prepush": "cd && cd apps/keys && ssh  acninternational@34.192.18.0 'cd wp/wp-content/themes/acn_int && git pull origin master'"
   },
   "author": "Alejandro Sanabria <alesanabriav@gmail.com>",
   "license": "MIT",
