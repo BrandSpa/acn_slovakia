@@ -10,7 +10,6 @@
     "test:watch": "jest -- --watch",
     "test": "jest",
     "build": "webpack --p",
-    "build:watch": "webpack --watch --p",
     "build:admin": "webpack  --config=webpack.admin.js --p",
     "precommit": "echo nea"
   },
