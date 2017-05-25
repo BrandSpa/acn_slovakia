@@ -174,6 +174,7 @@ class CedritCard extends React.Component {
                 borderRadius: "20px",
                 color: "#fff",
                 textAlign: "center",
+                position: "absolute",
                 top: 0,
                 right: "20px"
               }}
