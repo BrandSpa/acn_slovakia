@@ -4,6 +4,13 @@ import Cards from "./cards";
 import { onlyNum, maxLength } from "../../lib/clean_inputs";
 
 class CedritCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPopover: false
+    }
+  }
+
   static defaultProps = { texts: {}, stripe: {}, errors: {} };
 
   validateCard = card => {
@@ -177,18 +184,19 @@ class CedritCard extends React.Component {
                 color: "#fff",
                 textAlign: "center"
               }}
-              onClick={e => console.log(e)}
+              onClick={e => this.setState({showPopover: !this.state.showPopover}) }
             >
               <i className="ion-help" />
             </a>
+            
             <div
-              className="popover-content"
-              style={{
+              style={this.state.showPopover ? {
                 background: "#fff",
                 boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
                 borderRadius: "2px",
-                textAlign: "center"
-              }}
+                textAlign: "center",
+                display: "block"
+              } : {display: "none"}}
             >
               <span
                 style={{
