@@ -4,7 +4,7 @@ import qs from "qs";
 import Amount from "./amount";
 import CreditCard from "./creditCard";
 import Contact from "./contact";
-import * as actions from '../../actions/donate';
+import * as actions from "../../actions/donate";
 const endpoint = "/wp-admin/admin-ajax.php";
 
 function isAllValid(errors = {}) {
@@ -38,7 +38,7 @@ class DonateInline extends Component {
   componentWillMount() {
     actions.fetchCountries().then(countries => this.setState({ countries }));
   }
- 
+
   componentDidMount() {
     this.donateForm.addEventListener("keydown", e => {
       if (e.which == 9) {
@@ -57,7 +57,7 @@ class DonateInline extends Component {
       let errs = this.creditCard.validateAll();
       let isValid = isAllValid(errs.stripe);
       return resolve(isValid);
-    })
+    });
   };
 
   contactIsValid = () => {
@@ -65,35 +65,35 @@ class DonateInline extends Component {
       let errs = this.contact.validateAll();
       let isValid = isAllValid(errs.contact);
       return resolve(isValid);
-    })
+    });
   };
 
   handleSubmit = e => {
     e.preventDefault();
 
     this.contactIsValid()
-    .then(res => {
-      if(!res) return false;
-    })
-    .then(this.creditCardIsValid)
-    .then(res => {
-      if(!res) return false;
-  
-      actions.stripeToken(this.state).then(res => {
-        if (res.data.id) {
-          const stripe = { ...this.state.stripe, token: res.data.id };
-          this.setState({ loading: false, stripe });
+      .then(res => {
+        if (!res) return false;
+      })
+      .then(this.creditCardIsValid)
+      .then(res => {
+        if (!res) return false;
 
-          actions
-          .stripeCharge({...this.state, stripe})
-          .then(res => this.completeTransaction(res.data));
-        }
+        actions.stripeToken(this.state).then(res => {
+          if (res.data.id) {
+            const stripe = { ...this.state.stripe, token: res.data.id };
+            this.setState({ loading: false, stripe });
 
-        if (res.data.stripeCode) {		
-          this.setState({ loading: false, declined: true });		
-        }
+            actions
+              .stripeCharge({ ...this.state, stripe })
+              .then(res => this.completeTransaction(res.data));
+          }
+
+          if (res.data.stripeCode) {
+            this.setState({ loading: false, declined: true });
+          }
+        });
       });
-    });
   };
 
   completeTransaction = (stripeResponse = {}) => {
@@ -101,7 +101,8 @@ class DonateInline extends Component {
     const base = this.props.redirect[donation_type];
     const { customer, id } = stripeResponse;
 
-    actions.storeConvertLoop(this.state)
+    actions
+      .storeConvertLoop(this.state)
       .then(actions.storeEventConvertLoop.bind(null, this.state))
       .then(actions.storeInfusion.bind(null, this.state))
       .then(res => {
@@ -112,16 +113,16 @@ class DonateInline extends Component {
 
   render() {
     let sectionWidth = `100%`;
-    let viewPortStyle = { 
-      width: "100%", 
+    let viewPortStyle = {
+      width: "100%",
       left: this.state.left,
-      display: 'block'
+      display: "block"
     };
 
     let donationTypeStyle = {
       display: "inline",
       marginLeft: "15px",
-      color: this.props.is_blue ?  "#3C515F" : "#fff" 
+      color: this.props.is_blue ? "#3C515F" : "#fff"
     };
 
     let backBtnStyle = {
@@ -133,10 +134,13 @@ class DonateInline extends Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className={this.props.is_blue ? "donate_react donate_inline" : "donate_react"}
+        className={
+          this.props.is_blue ? "donate_react donate_inline" : "donate_react"
+        }
+        style={{ overflow: "visible" }}
         ref={donate => (this.donateForm = donate)}
       >
-      
+
         <div className="donate_react__viewport" style={viewPortStyle}>
           <Contact
             ref={contact => (this.contact = contact)}
@@ -162,8 +166,8 @@ class DonateInline extends Component {
             onChange={this.handleChange}
           />
         </div>
-        
-        <div style={{marginBottom: '10px'}}>
+
+        <div style={{ marginBottom: "10px" }}>
           <button
             className="donate_react__submit pull-left"
             onClick={this.handleSubmit}
@@ -175,7 +179,7 @@ class DonateInline extends Component {
           <span style={donationTypeStyle}>
             {`${this.state.amount} USD ${this.props.texts[this.state.donation_type]}`}
           </span>
-         
+
         </div>
       </form>
     );

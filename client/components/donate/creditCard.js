@@ -8,7 +8,7 @@ class CedritCard extends React.Component {
     super(props);
     this.state = {
       showPopover: false
-    }
+    };
   }
 
   static defaultProps = { texts: {}, stripe: {}, errors: {} };
@@ -116,7 +116,7 @@ class CedritCard extends React.Component {
     return (
       <div
         className="donate_react__creditcard"
-        style={{ width: this.props.width, float: "left", padding: "1px", overflow: "visible" }}
+        style={{ width: this.props.width, float: "left", padding: "1px" }}
       >
         <Cards {...this.props} />
         <div className="form-group">
@@ -184,27 +184,32 @@ class CedritCard extends React.Component {
                 color: "#fff",
                 textAlign: "center"
               }}
-              onClick={e => this.setState({showPopover: !this.state.showPopover}) }
+              onClick={e =>
+                this.setState({ showPopover: !this.state.showPopover })}
             >
               <i className="ion-help" />
             </a>
 
             <div
-              style={this.state.showPopover ? {
-                background: "#fff",
-                boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
-                borderRadius: "2px",
-                textAlign: "center",
-                display: "block",
-                position: "absolute"
-              } : {display: "none"}}
+              style={
+                this.state.showPopover
+                  ? {
+                      background: "#fff",
+                      boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
+                      borderRadius: "2px",
+                      textAlign: "center",
+                      display: "block",
+                      position: "absolute"
+                    }
+                  : { display: "none" }
+              }
             >
               <span
                 style={{
                   display: "block",
                   color: "#3C515F",
                   padding: "10px",
-                  fontSize: "14px",
+                  fontSize: "14px"
                 }}
               >
                 The last 3 digits displayed on the back of your credit card.
