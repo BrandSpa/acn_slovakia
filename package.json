@@ -9,7 +9,6 @@
   "scripts": {
     "test:watch": "jest -- --watch",
     "test": "jest",
-    "build": "webpack --p",
     "build:admin": "webpack  --config=webpack.admin.js --p",
     "prepush": "cd && cd apps/keys &&  ssh -i acninternational.pem acninternational@34.192.18.0 'cd wp/wp-content/themes/acn_int && git pull origin master'"
   },
