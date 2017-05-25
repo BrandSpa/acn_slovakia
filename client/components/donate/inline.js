@@ -121,7 +121,7 @@ class DonateInline extends Component {
     let donationTypeStyle = {
       display: "inline",
       marginLeft: "15px",
-      color: "#fff"
+      color: this.props.is_blue ?  "#3C515F" : "#fff" 
     };
 
     let backBtnStyle = {

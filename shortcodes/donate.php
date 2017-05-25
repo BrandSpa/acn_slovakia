@@ -32,8 +32,9 @@ function bs_donate_react_sc($atts, $content = null) {
 ?>
 
 <?php if(show_donate()): ?>
+
 <div 
-	class="bs-donate-react" Ô
+	class="bs-donate-react"
 	data-props='{
     "texts": <?php echo json_encode($at) ?>,
     "is_blue": "<?php echo $at['is_blue'] ?>",
