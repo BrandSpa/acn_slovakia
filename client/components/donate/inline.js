@@ -43,7 +43,7 @@ class DonateInline extends Component {
     this.donateForm.addEventListener("keydown", e => {
       if (e.which == 9) {
         e.preventDefault();
-        this.nextSection();
+        this.handleSubmit();
       }
     });
   }
