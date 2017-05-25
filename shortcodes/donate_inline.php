@@ -36,7 +36,7 @@ function bs_donate_inline_sc($atts, $content = null) {
 	class="bs-donate-inline"
 	data-props='{
     "texts": <?php echo json_encode($at) ?>,
-    "is_blue" => <?php echo $at['is_blue'] ?>,
+    "is_blue" => "<?php echo $at['is_blue'] ?>",
     "redirect": {
       "monthly": "<?php echo get_option('donate_monthly_redirect') ?>",
       "once": "<?php echo get_option('donate_once_redirect') ?>"
