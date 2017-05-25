@@ -208,8 +208,7 @@ class CedritCard extends React.Component {
             <div
               ref={popover => this.popover = popover}
               style={
-                this.state.showPopover
-                  ? {
+                {
                       background: "#fff",
                       boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
                       borderRadius: "2px",
@@ -218,8 +217,7 @@ class CedritCard extends React.Component {
                       position: "absolute",
                       top: 0,
                       left: "40px"
-                    }
-                  : { display: "none" }
+                }
               }
             >
               <span
