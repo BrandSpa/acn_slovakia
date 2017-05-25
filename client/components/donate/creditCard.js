@@ -173,7 +173,9 @@ class CedritCard extends React.Component {
                 height: "20px",
                 borderRadius: "20px",
                 color: "#fff",
-                textAlign: "center"
+                textAlign: "center",
+                top: 0,
+                right: "20px"
               }}
               onClick={e =>
                 this.setState({ showPopover: !this.state.showPopover })}
