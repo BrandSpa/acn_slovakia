@@ -179,7 +179,7 @@ class CedritCard extends React.Component {
               }}
               onClick={e => console.log(e)}
             >
-              <i className="ion-ios-help-empty" />
+              <i className="ion-ios-help-outline" />
             </a>
             <div
               className="popover-content"
