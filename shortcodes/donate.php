@@ -33,7 +33,7 @@ function bs_donate_react_sc($atts, $content = null) {
 
 <?php if(show_donate()): ?>
 <div 
-	class="bs-donate-react" 
+	class="bs-donate-react" Ô
 	data-props='{
     "texts": <?php echo json_encode($at) ?>, 
     "redirect": {
