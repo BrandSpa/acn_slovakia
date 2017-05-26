@@ -97,6 +97,14 @@ add_action( 'vc_before_init', 'bs_donate_inline_section_vc' );
       "value" => false
     ]);
 
+
+		 array_push($params, [
+      "type" => "textarea_html",
+      "heading" =>  "Left content",
+      "param_name" => "content",
+      "value" => ""
+    ]);
+
   	vc_map(
       array(
         "name" =>  "BS Donate inline section",
