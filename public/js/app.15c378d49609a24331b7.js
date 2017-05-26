@@ -1589,7 +1589,11 @@ var amount = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         { style: { width: this.props.width, float: "left", padding: "1px" } },
-        _react2.default.createElement(_amountBtns2.default, { texts: texts, changeAmount: this.changeAmount }),
+        _react2.default.createElement(_amountBtns2.default, {
+          amount: amount,
+          texts: texts,
+          changeAmount: this.changeAmount
+        }),
         _react2.default.createElement(
           "div",
           { className: "row" },
@@ -6648,7 +6652,8 @@ var AmountBtns = function (_React$Component) {
     value: function render() {
       var _props = this.props,
           changeAmount = _props.changeAmount,
-          texts = _props.texts;
+          texts = _props.texts,
+          amount = _props.amount;
 
 
       return _react2.default.createElement(
@@ -6659,7 +6664,7 @@ var AmountBtns = function (_React$Component) {
           { className: "col-1-4" },
           _react2.default.createElement(
             "a",
-            { href: "#", onClick: changeAmount.bind(null, 10) },
+            { href: "#", className: amount == 10 ? 'active' : '', onClick: changeAmount.bind(null, 10) },
             "$10"
           )
         ),
@@ -6668,7 +6673,7 @@ var AmountBtns = function (_React$Component) {
           { className: "col-1-4" },
           _react2.default.createElement(
             "a",
-            { href: "#", onClick: changeAmount.bind(null, 30) },
+            { href: "#", className: amount == 30 ? 'active' : '', onClick: changeAmount.bind(null, 30) },
             "$30"
           )
         ),
@@ -6677,7 +6682,7 @@ var AmountBtns = function (_React$Component) {
           { className: "col-1-4" },
           _react2.default.createElement(
             "a",
-            { href: "#", onClick: changeAmount.bind(null, 50) },
+            { href: "#", className: amount == 50 ? 'active' : '', onClick: changeAmount.bind(null, 50) },
             "$50"
           )
         ),
@@ -6686,7 +6691,7 @@ var AmountBtns = function (_React$Component) {
           { className: "col-1-4" },
           _react2.default.createElement(
             "a",
-            { href: "#", onClick: changeAmount.bind(null, 100) },
+            { href: "#", className: amount == 100 ? 'active' : '', onClick: changeAmount.bind(null, 100) },
             "$100"
           )
         ),

@@ -28,7 +28,11 @@ class amount extends React.Component {
 
     return (
       <div style={{ width: this.props.width, float: "left", padding: "1px" }}>
-        <AmountBtns texts={texts} changeAmount={this.changeAmount} />
+        <AmountBtns
+          amount={amount}
+          texts={texts}
+          changeAmount={this.changeAmount}
+        />
         <div className="row">
           <div className="form-group form-group--addon col-7-l">
             <span className="form-group__addon">
