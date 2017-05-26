@@ -5799,7 +5799,7 @@ var DonateInlineSection = function (_Component) {
         { className: containerStyle },
         _react2.default.createElement(
           "div",
-          { className: "col-12-l" },
+          { className: "col-12-l", style: { margin: "40px 0" } },
           _react2.default.createElement(
             "h3",
             {
@@ -5828,7 +5828,7 @@ var DonateInlineSection = function (_Component) {
           "div",
           {
             className: "col-12 col-4-l",
-            style: this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px", margin: "40px 0" } : { display: "none" }
+            style: this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px" } : { display: "none" }
           },
           _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: this.props.content } })
         ),

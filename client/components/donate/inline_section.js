@@ -29,7 +29,7 @@ class DonateInlineSection extends Component {
 
     return (
       <div className={containerStyle}>
-        <div className="col-12-l">
+        <div className="col-12-l" style={{margin: "40px 0" }}>
           <h3
             style={{
               color: "#fff",
@@ -53,7 +53,7 @@ class DonateInlineSection extends Component {
         
         <div
           className="col-12 col-4-l"
-          style={this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px", margin: "40px 0"  } : { display: "none" } }
+          style={this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px" } : { display: "none" } }
         >
           <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
         </div>
