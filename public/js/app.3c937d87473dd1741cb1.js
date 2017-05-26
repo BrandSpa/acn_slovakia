@@ -1057,14 +1057,15 @@ var Donate = function (_Component) {
       var donationTypeStyle = {
         display: "inline",
         marginLeft: "15px",
-        color: "#fff"
+        color: this.props.is_blue ? "rgb(60, 81, 95)" : "#fff"
       };
 
       var backBtnStyle = {
         float: "right",
         background: "transparent",
         border: "none",
-        padding: "0 20px"
+        padding: "0 20px",
+        color: this.props.is_blue ? "rgb(60, 81, 95)" : "#fff"
       };
 
       return _react2.default.createElement(
