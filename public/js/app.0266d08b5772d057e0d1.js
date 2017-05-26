@@ -1956,7 +1956,7 @@ var CedritCard = function (_React$Component) {
     };
 
     _this.togglePopover = function () {
-      _this.setState({ showPopover: !_this.showPopover });
+      _this.setState({ showPopover: !_this.state.showPopover });
     };
 
     _this.state = {

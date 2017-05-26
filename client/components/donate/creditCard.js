@@ -111,7 +111,7 @@ class CedritCard extends React.Component {
   };
 
   togglePopover = () => {
-    this.setState({showPopover: !this.showPopover});
+    this.setState({showPopover: !this.state.showPopover});
   };
 
   render() {
