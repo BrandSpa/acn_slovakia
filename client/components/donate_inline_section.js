@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import DonateInline from "./donate/inline";
+import React, { Component } from 'react';
+import DonateInline from './donate/inline';
+import { css } from 'glamor';
 
 class DonateInlineSection extends Component {
   constructor(props) {
@@ -11,13 +12,18 @@ class DonateInlineSection extends Component {
   }
 
   static defaultProps = {
-    content: "",
+    content: '',
     titles: []
   };
 
   render() {
+    let containerStyle = css({
+      display: 'flex',
+      flexWrap: 'wrap'
+    });
+
     return (
-      <div>
+      <div className={containerStyle}>
         <h2>
           {this.props.titles.length > 0
             ? this.props.titles[this.state.section]
