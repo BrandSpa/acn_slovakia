@@ -33,11 +33,11 @@ class DonateInlineSection extends Component {
       </div>
         <div
           className="col-12 col-4-l"
-          style={{ background: "RGBA(43, 58, 68, .9)" }}
+          style={{ background: "RGBA(43, 58, 68, .9)", padding: "20px" }}
         >
           <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
         </div>
-        <div className="col-12 col-8-l" style={{ background: "#fff" }}>
+        <div className="col-12 col-8-l" style={{ background: "#fff", padding: "40px" }}>
           <DonateInline {...this.props} />
         </div>
       </div>

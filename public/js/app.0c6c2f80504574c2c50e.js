@@ -4790,13 +4790,13 @@ var DonateInlineSection = function (_Component) {
           'div',
           {
             className: 'col-12 col-4-l',
-            style: { background: "RGBA(43, 58, 68, .9)" }
+            style: { background: "RGBA(43, 58, 68, .9)", padding: "20px" }
           },
           _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: this.props.content } })
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-12 col-8-l', style: { background: "#fff" } },
+          { className: 'col-12 col-8-l', style: { background: "#fff", padding: "40px" } },
           _react2.default.createElement(_inline2.default, this.props)
         )
       );
