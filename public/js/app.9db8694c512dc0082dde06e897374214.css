@@ -1502,7 +1502,11 @@ a:hover {
 
 .donate_inline .change-amount li a {
   border-color: #3C515F;
-  color: #3C515F; }
+  color: #3C515F;
+  transition: all 300ms; }
+  .donate_inline .change-amount li a:hover {
+    background: #3C515F;
+    color: #fff; }
 
 .donate_inline .donate_react__type {
   color: #3C515F; }

@@ -321,6 +321,11 @@ a {
       a {
         border-color: #3C515F;
         color: #3C515F;
+        transition: all 300ms;
+        &:hover {
+          background: #3C515F;
+          color: #fff;
+        }
       }
     }
   }
