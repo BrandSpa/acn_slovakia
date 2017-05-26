@@ -70,10 +70,6 @@ class Projects extends React.Component {
     let content = contents[this.state.section - 1] || {};
     const { title, text, imgUrl } = content;
 
-    // let title = content.title;
-    // let text = content.content;
-    // let imgUrl = content.imgUrl;
-
     let styleRight = {
       backgroundImage: `url(${imgUrl})`,
       backgroundSize: "cover",

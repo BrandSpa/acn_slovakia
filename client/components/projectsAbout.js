@@ -17,21 +17,48 @@ const colors = {
 
 class ProjectsAbout extends React.Component {
     state = {
-        section: 0
+      section: 0
     };
 
-    handleSection = (i) => {
+	handleSection = (i) => {
 		let section = (i - 1);
 		this.setState({section});
 	};
 
-    componentWillUpdate(nextProps, nextState) {
-		
-	}
-
-    render() {
+  render() {
 		const { section } = this.state;
-		
+
+		let aboutNum = {
+			width: "50%",
+			textAlign: "right",
+			paddingTop: "40px",
+			float: "left",
+			height: "150px",
+			background: "#fff",
+			color: colors[this.state.section + 1],
+			"@media (max-width: 767px)": {
+				width: "100%",
+				height: "auto",
+				textAlign: "center"
+			}
+		};
+
+		let aboutNumTextStyle = {
+			textAlign: "left",
+			width: "50%",
+			float: "left",
+			height: "150px",
+			padding: "60px",
+			fontSize: "1.5em",
+			color: "#A0A0A0",
+			"@media (max-width: 767px)": {
+				width: "100%",
+				height: "auto",
+				textAlign: "center",
+				padding: "0 0 60px 0"
+			}
+		};
+
 		return (
 			<StyleRoot>
 				<Projects 
@@ -42,47 +69,21 @@ class ProjectsAbout extends React.Component {
 					donate={this.props.donate} 
 					changeSection={this.handleSection} 
 				/>
+
 				<div className="projects-about-num">
+
 					<div
-						className="projects-about-num__num" 
-						style={{
-							width: "50%", 
-							textAlign: "right",
-							paddingTop: "40px",
-							float: "left", 
-							height: "150px", 
-							background: "#fff",
-							color: colors[this.state.section + 1],
-							"@media (max-width: 767px)": {
-								width: "100%",
-								height: "auto",
-								textAlign: "center"
-							}
-						}}
+						className="projects-about-num__num"
+						style={aboutNumStyle}
 					>
 						<h2>{this.props.projects[section] ? this.props.projects[section].number : ""}</h2>
 					</div>
 
 					<div
-						className="projects-about-num__text" 
-						style={{
-							textAlign: "left",
-							width: "50%",
-							float: "left", 
-							height: "150px", 
-							padding: "60px", 
-							fontSize: "1.5em",
-							color: "#A0A0A0",
-							"@media (max-width: 767px)": {
-								width: "100%",
-								height: "auto",
-								textAlign: "center",
-								padding: "0 0 60px 0"
-							}
-						}}
+						className={"projects-about-num__text"}
+						style={aboutNumTextStyle}
 					>
 						{this.props.projects[section] ? this.props.projects[section].number_text : ""}
-
 				</div>
 
 				<div style={{background: "#F8F6F8", padding: "80px 0", float: "left", width: "100%", "@media (max-width: 767px)": {padding: "20px 0 0 0"}}}>

@@ -2508,9 +2508,6 @@ var Projects = function (_React$Component) {
           text = content.text,
           imgUrl = content.imgUrl;
 
-      // let title = content.title;
-      // let text = content.content;
-      // let imgUrl = content.imgUrl;
 
       var styleRight = {
         backgroundImage: "url(" + imgUrl + ")",
@@ -5204,6 +5201,7 @@ var CampaignsSlider = function (_React$Component) {
       var viewportWidth = 100 * slides.length + "%";
       var slideWidth = 100 / slides.length + "%";
       var viewportStyle = { width: viewportWidth, left: this.state.left };
+
       return _react2.default.createElement(
         "div",
         { className: "campaigns-slider" },
@@ -5538,7 +5536,6 @@ var contactForm = function (_React$Component) {
         _this.setState({ loading: true });
         if (_this.state.inOffice) {
           _this.storeConvertLoop().then(_this.storeEventConvertLoop).then(function (res) {
-            console.log(res.data);
             if (res.data.person.email) window.location = _this.props.redirect;
           });
         } else {
@@ -5841,9 +5838,9 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _donate = __webpack_require__(157);
+var _index = __webpack_require__(157);
 
-var _donate2 = _interopRequireDefault(_donate);
+var _index2 = _interopRequireDefault(_index);
 
 var _glamor = __webpack_require__(131);
 
@@ -5909,7 +5906,7 @@ var DonateSection = function (_Component) {
             className: "col-12 col-8-l",
             style: { background: "#fff", padding: "40px" }
           },
-          _react2.default.createElement(_donate2.default, this.props)
+          _react2.default.createElement(_index2.default, this.props)
         )
       );
     }
@@ -6814,13 +6811,41 @@ var ProjectsAbout = function (_React$Component) {
 	}
 
 	_createClass(ProjectsAbout, [{
-		key: "componentWillUpdate",
-		value: function componentWillUpdate(nextProps, nextState) {}
-	}, {
 		key: "render",
 		value: function render() {
 			var section = this.state.section;
 
+
+			var aboutNum = {
+				width: "50%",
+				textAlign: "right",
+				paddingTop: "40px",
+				float: "left",
+				height: "150px",
+				background: "#fff",
+				color: colors[this.state.section + 1],
+				"@media (max-width: 767px)": {
+					width: "100%",
+					height: "auto",
+					textAlign: "center"
+				}
+			};
+
+			var aboutNumTextStyle = {
+				textAlign: "left",
+				width: "50%",
+				float: "left",
+				height: "150px",
+				padding: "60px",
+				fontSize: "1.5em",
+				color: "#A0A0A0",
+				"@media (max-width: 767px)": {
+					width: "100%",
+					height: "auto",
+					textAlign: "center",
+					padding: "0 0 60px 0"
+				}
+			};
 
 			return _react2.default.createElement(
 				_radium.StyleRoot,
@@ -6840,20 +6865,7 @@ var ProjectsAbout = function (_React$Component) {
 						"div",
 						{
 							className: "projects-about-num__num",
-							style: {
-								width: "50%",
-								textAlign: "right",
-								paddingTop: "40px",
-								float: "left",
-								height: "150px",
-								background: "#fff",
-								color: colors[this.state.section + 1],
-								"@media (max-width: 767px)": {
-									width: "100%",
-									height: "auto",
-									textAlign: "center"
-								}
-							}
+							style: aboutNumStyle
 						},
 						_react2.default.createElement(
 							"h2",
@@ -6865,21 +6877,7 @@ var ProjectsAbout = function (_React$Component) {
 						"div",
 						{
 							className: "projects-about-num__text",
-							style: {
-								textAlign: "left",
-								width: "50%",
-								float: "left",
-								height: "150px",
-								padding: "60px",
-								fontSize: "1.5em",
-								color: "#A0A0A0",
-								"@media (max-width: 767px)": {
-									width: "100%",
-									height: "auto",
-									textAlign: "center",
-									padding: "0 0 60px 0"
-								}
-							}
+							style: aboutNumTextStyle
 						},
 						this.props.projects[section] ? this.props.projects[section].number_text : ""
 					),
@@ -7601,13 +7599,13 @@ var _inline = __webpack_require__(158);
 
 var _inline2 = _interopRequireDefault(_inline);
 
-var _donate_inline_section = __webpack_require__(254);
+var _inline_section = __webpack_require__(254);
 
-var _donate_inline_section2 = _interopRequireDefault(_donate_inline_section);
+var _inline_section2 = _interopRequireDefault(_inline_section);
 
-var _donate_section = __webpack_require__(255);
+var _section = __webpack_require__(255);
 
-var _donate_section2 = _interopRequireDefault(_donate_section);
+var _section2 = _interopRequireDefault(_section);
 
 var _campaignsSlider = __webpack_require__(251);
 
@@ -7678,14 +7676,15 @@ _webfontloader2.default.load({
 
 //react renders
 
+
 //React components :)
 (0, _reactMultipleRender2.default)(_headerSlider2.default, ".header-slider");
 (0, _reactMultipleRender2.default)(_contactForm2.default, ".contact-form");
 (0, _reactMultipleRender2.default)(_posts2.default, ".bs-posts");
 (0, _reactMultipleRender2.default)(_donate2.default, ".bs-donate-react");
 (0, _reactMultipleRender2.default)(_inline2.default, ".bs-donate-inline");
-(0, _reactMultipleRender2.default)(_donate_inline_section2.default, ".bs-donate-inline-section");
-(0, _reactMultipleRender2.default)(_donate_section2.default, ".bs-donate-section");
+(0, _reactMultipleRender2.default)(_inline_section2.default, ".bs-donate-inline-section");
+(0, _reactMultipleRender2.default)(_section2.default, ".bs-donate-section");
 (0, _reactMultipleRender2.default)(_projects2.default, ".projects-container");
 (0, _reactMultipleRender2.default)(_accordion2.default, ".bs-accordion");
 (0, _reactMultipleRender2.default)(_sectionVideo2.default, ".section-video");

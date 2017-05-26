@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Donate from "./donate";
+import DonateInline from "./inline";
 import { css } from "glamor";
 
-class DonateSection extends Component {
+class DonateInlineSection extends Component {
   constructor(props) {
     super(props);
 
@@ -48,11 +48,11 @@ class DonateSection extends Component {
           className="col-12 col-8-l"
           style={{ background: "#fff", padding: "40px" }}
         >
-          <Donate {...this.props} />
+          <DonateInline {...this.props} />
         </div>
       </div>
     );
   }
 }
 
-export default DonateSection;
+export default DonateInlineSection;

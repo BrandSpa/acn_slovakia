@@ -6,6 +6,7 @@ import "babel-polyfill";
 import WebFont from "webfontloader";
 import multipleRender from "react-multiple-render";
 import qs from "qs";
+
 //React components :)
 import ContactForm from "./components/contactForm";
 import HeaderSlider from "./components/headerSlider";
@@ -16,8 +17,8 @@ import Accordion from "./components/accordion";
 import Posts from "./components/posts";
 import Donate from "./components/donate";
 import DonateInline from "./components/donate/inline";
-import DonateInlineSection from "./components/donate_inline_section";
-import DonateSection from "./components/donate_section";
+import DonateInlineSection from "./components/donate/inline_section";
+import DonateSection from "./components/donate/section";
 import CampaignsSlider from "./components/campaignsSlider";
 import DownloadPdf from "./components/downloadPdf";
 import GalleryHeader from "./components/galleryHeader";
