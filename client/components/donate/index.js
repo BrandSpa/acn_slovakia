@@ -4,6 +4,7 @@ import qs from "qs";
 import Amount from "./amount";
 import CreditCard from "./creditCard";
 import Contact from "./contact";
+
 import * as actions from "../../actions/donate";
 const endpoint = "/wp-admin/admin-ajax.php";
 
@@ -32,7 +33,8 @@ class Donate extends Component {
       token: ""
     },
     errors: { stripe: {}, contact: {} },
-    is_blue: false
+    is_blue: false,
+    show_four_step: false
   };
 
   componentWillMount() {

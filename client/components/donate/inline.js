@@ -4,6 +4,7 @@ import qs from "qs";
 import Amount from "./amount";
 import CreditCard from "./creditCard";
 import Contact from "./contact";
+import FourStep from './four';
 import * as actions from "../../actions/donate";
 const endpoint = "/wp-admin/admin-ajax.php";
 
@@ -32,7 +33,8 @@ class DonateInline extends Component {
       token: ""
     },
     errors: { stripe: {}, contact: {} },
-    is_blue: false
+    is_blue: false,
+    show_four: true
   };
 
   componentWillMount() {
@@ -134,7 +136,8 @@ class DonateInline extends Component {
     };
 
     return (
-      <form
+     this.state.show_four ? 
+       <form
         onSubmit={this.handleSubmit}
         className={
           this.props.is_blue ? "donate_react donate_inline" : "donate_react"
@@ -184,6 +187,7 @@ class DonateInline extends Component {
 
         </div>
       </form>
+     : <FourStep {...this.props} {...this.state}  />
     );
   }
 }
