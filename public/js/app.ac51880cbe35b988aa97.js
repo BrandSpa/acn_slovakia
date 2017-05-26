@@ -2449,7 +2449,7 @@ var DonateInline = function (_Component) {
         border: "none"
       };
 
-      return this.state.show_four ? _react2.default.createElement(
+      return !this.state.show_four ? _react2.default.createElement(
         "form",
         {
           onSubmit: this.handleSubmit,

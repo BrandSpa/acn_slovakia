@@ -136,7 +136,7 @@ class DonateInline extends Component {
     };
 
     return (
-     this.state.show_four ? 
+     !this.state.show_four ? 
        <form
         onSubmit={this.handleSubmit}
         className={
