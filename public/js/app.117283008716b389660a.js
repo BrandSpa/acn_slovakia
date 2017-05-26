@@ -8003,7 +8003,7 @@ var Four = function (_Component) {
 				"div",
 				null,
 				_react2.default.createElement(
-					"h3",
+					"h5",
 					null,
 					'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sequi ut, natus nesciunt quod, assumenda perspiciatis doloremque voluptatum, labore ipsam minima eius in modi culpa tenetur. Animi, incidunt nulla vel?'
 				),
@@ -8013,14 +8013,22 @@ var Four = function (_Component) {
 					"donar diario: $" + d
 				),
 				_react2.default.createElement(
-					"button",
-					{ onClick: this.handleYes, style: { background: "RGBA(93, 232, 123, 1.00)" } },
-					"SI"
+					"div",
+					{ className: "col-6 col-6-l" },
+					_react2.default.createElement(
+						"button",
+						{ onClick: this.handleYes, style: { background: "RGBA(93, 232, 123, 1.00)", width: "100%" } },
+						"SI"
+					)
 				),
 				_react2.default.createElement(
-					"button",
-					{ onClick: this.handleNo, style: { background: "red" } },
-					"NO"
+					"div",
+					{ className: "col-6 col-6-l" },
+					_react2.default.createElement(
+						"button",
+						{ onClick: this.handleNo, style: { background: "red", width: "100%" } },
+						"NO"
+					)
 				)
 			);
 		}

@@ -47,10 +47,15 @@ class Four extends Component {
 
 		return (
 			<div>
-				<h3>{'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sequi ut, natus nesciunt quod, assumenda perspiciatis doloremque voluptatum, labore ipsam minima eius in modi culpa tenetur. Animi, incidunt nulla vel?'}</h3>
+				<h5>{'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sequi ut, natus nesciunt quod, assumenda perspiciatis doloremque voluptatum, labore ipsam minima eius in modi culpa tenetur. Animi, incidunt nulla vel?'}</h5>
 				<p>{`donar diario: $${d}`}</p>
-				<button onClick={this.handleYes} style={{ background: "RGBA(93, 232, 123, 1.00)" }}>SI</button>
-				<button onClick={this.handleNo} style={{ background: "red" }}>NO</button>
+				<div className="col-6 col-6-l">
+				<button onClick={this.handleYes} style={{ background: "RGBA(93, 232, 123, 1.00)", width:"100%" }}>SI</button>
+				</div>
+				<div className="col-6 col-6-l">
+					<button onClick={this.handleNo} style={{ background: "red", width:"100%" }}>NO</button>
+				</div>
+				
 			</div>
 		)
 	}
