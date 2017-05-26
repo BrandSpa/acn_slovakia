@@ -5775,7 +5775,7 @@ var DonateInlineSection = function (_Component) {
 
     _this.changeSection = function (section) {
       _this.setState({ section: section });
-      console.log('hi section', section);
+      console.log("hi section", section);
     };
 
     _this.state = {
@@ -5787,6 +5787,8 @@ var DonateInlineSection = function (_Component) {
   _createClass(DonateInlineSection, [{
     key: "render",
     value: function render() {
+      var texts = this.props.texts;
+
       var containerStyle = (0, _glamor.css)({
         display: "flex",
         flexWrap: "wrap"
@@ -5825,14 +5827,14 @@ var DonateInlineSection = function (_Component) {
           "div",
           {
             className: "col-12 col-4-l",
-            style: { background: "RGBA(43, 58, 68, .9)", padding: "20px" }
+            style: this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px" } : { display: "none" }
           },
           _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: this.props.content } })
         ),
         _react2.default.createElement(
           "div",
           {
-            className: "col-12 col-8-l",
+            className: this.state.section == 0 ? "col-12 col-8-l" : "col-12 col-12-l",
             style: { background: "#fff", padding: "40px" }
           },
           _react2.default.createElement(_inline2.default, _extends({ changeSection: this.changeSection }, this.props))
