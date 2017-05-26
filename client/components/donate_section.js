@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Donate from "./donate";
 import { css } from "glamor";
 
-class DonateInlineSection extends Component {
+class DonateSection extends Component {
   constructor(props) {
     super(props);
 

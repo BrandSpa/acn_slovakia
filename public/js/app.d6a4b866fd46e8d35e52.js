@@ -5854,13 +5854,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var DonateInlineSection = function (_Component) {
-  _inherits(DonateInlineSection, _Component);
+var DonateSection = function (_Component) {
+  _inherits(DonateSection, _Component);
 
-  function DonateInlineSection(props) {
-    _classCallCheck(this, DonateInlineSection);
+  function DonateSection(props) {
+    _classCallCheck(this, DonateSection);
 
-    var _this = _possibleConstructorReturn(this, (DonateInlineSection.__proto__ || Object.getPrototypeOf(DonateInlineSection)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (DonateSection.__proto__ || Object.getPrototypeOf(DonateSection)).call(this, props));
 
     _this.state = {
       section: 0
@@ -5868,7 +5868,7 @@ var DonateInlineSection = function (_Component) {
     return _this;
   }
 
-  _createClass(DonateInlineSection, [{
+  _createClass(DonateSection, [{
     key: "render",
     value: function render() {
       var containerStyle = (0, _glamor.css)({
@@ -5914,10 +5914,10 @@ var DonateInlineSection = function (_Component) {
     }
   }]);
 
-  return DonateInlineSection;
+  return DonateSection;
 }(_react.Component);
 
-DonateInlineSection.defaultProps = {
+DonateSection.defaultProps = {
   content: "",
   titles: []
 };
