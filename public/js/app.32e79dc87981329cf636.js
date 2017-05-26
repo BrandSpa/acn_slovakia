@@ -5801,7 +5801,7 @@ var DonateInlineSection = function (_Component) {
           "div",
           { className: "col-12-l" },
           _react2.default.createElement(
-            "h2",
+            "h3",
             {
               style: {
                 color: "#fff",
@@ -5812,7 +5812,7 @@ var DonateInlineSection = function (_Component) {
             this.state.section == 0 ? texts.title : texts.success_title
           ),
           _react2.default.createElement(
-            "h4",
+            "h5",
             {
               style: {
                 color: "#fff",
