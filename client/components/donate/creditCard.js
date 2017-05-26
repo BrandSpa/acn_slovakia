@@ -183,7 +183,7 @@ class CedritCard extends React.Component {
                 right: "25px",
                 cursor: "pointer"
               }}
-              onClick={this.props.togglePopover}
+              onClick={this.togglePopover}
             >
               <i className="ion-help" />
             </span>
