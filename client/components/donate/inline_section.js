@@ -12,8 +12,7 @@ class DonateInlineSection extends Component {
   }
 
   static defaultProps = {
-    content: "",
-    titles: []
+    content: ""
   };
 
   changeSection = (section) => {
@@ -37,11 +36,19 @@ class DonateInlineSection extends Component {
               textShadow: "0 2px 20px rgba(0,0,0,0.47)"
             }}
           >
-            {this.props.titles.length > 0
-              ? this.props.titles[this.state.section]
-              : ""}
+            {this.state.section == 0 ? texts.title : texts.success_title}
           </h2>
+          <h4
+             style={{
+              color: "#fff",
+              textAlign: "center",
+              textShadow: "0 2px 20px rgba(0,0,0,0.47)"
+            }}
+          >
+             {this.state.section == 0 ? texts.subtitle : texts.success_subtitle}
+          </h4>
         </div>
+        
         <div
           className="col-12 col-4-l"
           style={{ background: "RGBA(43, 58, 68, .9)", padding: "20px" }}

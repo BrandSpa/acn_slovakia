@@ -27,6 +27,12 @@ function bs_donate_inline_section_sc($atts, $content = null) {
     "validation_email" => gett("Incorrect email"),
     "validation_country" => gett("Incorrect country"),
 		"template_uri" => str_replace("http:", "", get_template_directory_uri()),
+    "title" => "SUPPORT A PERSECUTED CHRISTIAN",
+    "subtitle" => "My gift to support the ACN",
+    "success_title" => "TU DONACIÓN SE HA REALIZADO CON ÉXITO",
+    "success_subtitle" => "¡GRACIAS POR TU GENEROSIDAD!",
+    "text_four_step" => "ACN tiene un mayor impacto cuándo cuenta con la estabilidad proporcionada por la generosidad de sus benefactores.",
+    "subtext_four_step" => "Podrías ayudarnos con un pequeño valor diario de:",
     "is_blue" => false
 	 ], $atts);
 
@@ -78,7 +84,13 @@ add_action( 'vc_before_init', 'bs_donate_inline_section_vc' );
       "validation_cvc" => "Incorrect cvc",
       "validation_name" => "Incorrect name",
       "validation_email" => "Incorrect email",
-      "validation_country" => "Incorrect country"
+      "validation_country" => "Incorrect country",
+      "title" => "SUPPORT A PERSECUTED CHRISTIAN",
+      "subtitle" => "My gift to support the ACN",
+      "success_title" => "TU DONACIÓN SE HA REALIZADO CON ÉXITO",
+      "success_subtitle" => "¡GRACIAS POR TU GENEROSIDAD!",
+      "text_four_step" => "ACN tiene un mayor impacto cuándo cuenta con la estabilidad proporcionada por la generosidad de sus benefactores.",
+      "subtext_four_step" => "Podrías ayudarnos con un pequeño valor diario de:"
     ];
     
     foreach($atts as $key => $val) {

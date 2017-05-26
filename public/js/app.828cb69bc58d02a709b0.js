@@ -5807,7 +5807,18 @@ var DonateInlineSection = function (_Component) {
                 textShadow: "0 2px 20px rgba(0,0,0,0.47)"
               }
             },
-            this.props.titles.length > 0 ? this.props.titles[this.state.section] : ""
+            this.state.section == 0 ? texts.title : texts.success_title
+          ),
+          _react2.default.createElement(
+            "h4",
+            {
+              style: {
+                color: "#fff",
+                textAlign: "center",
+                textShadow: "0 2px 20px rgba(0,0,0,0.47)"
+              }
+            },
+            this.state.section == 0 ? texts.subtitle : texts.success_subtitle
           )
         ),
         _react2.default.createElement(
@@ -5834,8 +5845,7 @@ var DonateInlineSection = function (_Component) {
 }(_react.Component);
 
 DonateInlineSection.defaultProps = {
-  content: "",
-  titles: []
+  content: ""
 };
 exports.default = DonateInlineSection;
 
@@ -8004,7 +8014,6 @@ var Four = function (_Component) {
 
 			var d = parseInt(amount) / 30;
 			d = d.toFixed(2);
-			console.log(this.props);
 
 			return _react2.default.createElement(
 				"div",
@@ -8012,12 +8021,12 @@ var Four = function (_Component) {
 				_react2.default.createElement(
 					"h5",
 					null,
-					'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sequi ut, natus nesciunt quod, assumenda perspiciatis doloremque voluptatum, labore ipsam minima eius in modi culpa tenetur. Animi, incidunt nulla vel?'
+					texts.text_four_step
 				),
 				_react2.default.createElement(
 					"p",
 					null,
-					"donar diario: $" + d
+					texts.subtext_four_step + " $" + d
 				),
 				_react2.default.createElement(
 					"div",

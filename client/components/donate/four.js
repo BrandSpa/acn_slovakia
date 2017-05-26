@@ -43,12 +43,11 @@ class Four extends Component {
 		const { texts, amount } = this.props;
 		let d = parseInt(amount) / 30;
 		d = d.toFixed(2);
-		console.log(this.props);
 
 		return (
 			<div>
-				<h5>{'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sequi ut, natus nesciunt quod, assumenda perspiciatis doloremque voluptatum, labore ipsam minima eius in modi culpa tenetur. Animi, incidunt nulla vel?'}</h5>
-				<p>{`donar diario: $${d}`}</p>
+				<h5>{texts.text_four_step}</h5>
+				<p>{`${texts.subtext_four_step} $${d}`}</p>
 				<div className="col-6 col-6-l">
 				<button onClick={this.handleYes} style={{ background: "RGBA(93, 232, 123, 1.00)", width:"100%" }}>SI</button>
 				</div>
