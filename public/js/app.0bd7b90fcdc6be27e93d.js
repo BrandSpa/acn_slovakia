@@ -5817,7 +5817,8 @@ var DonateInlineSection = function (_Component) {
               style: {
                 color: "#fff",
                 textAlign: "center",
-                textShadow: "0 2px 20px rgba(0,0,0,0.47)"
+                textShadow: "0 2px 20px rgba(0,0,0,0.47)",
+                fontWeight: "300"
               }
             },
             this.state.section == 0 ? texts.subtitle : texts.success_subtitle
@@ -5827,7 +5828,7 @@ var DonateInlineSection = function (_Component) {
           "div",
           {
             className: "col-12 col-4-l",
-            style: this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px" } : { display: "none" }
+            style: this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px", margin: "40px 0" } : { display: "none" }
           },
           _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: this.props.content } })
         ),
