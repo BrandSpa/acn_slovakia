@@ -55,3 +55,5 @@ class Four extends Component {
 		)
 	}
 }
+
+export default Four;
