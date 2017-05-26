@@ -6314,7 +6314,7 @@ var GalleryHeader = function (_React$Component) {
               _react2.default.createElement("img", {
                 onLoad: this.getImage,
                 src: images[this.state.section],
-                style: this.state.imageStyle
+                className: (0, _glamor.css)(this.state.imageStyle)
               }),
               _react2.default.createElement(
                 "div",

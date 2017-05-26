@@ -133,7 +133,7 @@ class GalleryHeader extends React.Component {
                 <img
                   onLoad={this.getImage}
                   src={images[this.state.section]}
-                  style={this.state.imageStyle}
+                  className={css(this.state.imageStyle)}
                 />
 
                 <div style={{ width: "100%", float: "left" }}>
