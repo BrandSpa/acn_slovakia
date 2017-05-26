@@ -21,7 +21,7 @@ class Four extends Component {
 
 	handleNo = (e) => {
 		e.preventDefault();
-		this.props.changeSection();
+		this.props.changeSection(1);
 	};
 	
 	completeTransaction = (stripeResponse = {}) => {

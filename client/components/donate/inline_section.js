@@ -16,10 +16,10 @@ class DonateInlineSection extends Component {
     titles: []
   };
 
-  changeSection(section) {
+  changeSection = (section) => {
     this.setState({section});
     console.log('hi section', section);
-  }
+  };
 
   render() {
     let containerStyle = css({

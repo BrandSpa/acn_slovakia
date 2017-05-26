@@ -5773,6 +5773,11 @@ var DonateInlineSection = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (DonateInlineSection.__proto__ || Object.getPrototypeOf(DonateInlineSection)).call(this, props));
 
+    _this.changeSection = function (section) {
+      _this.setState({ section: section });
+      console.log('hi section', section);
+    };
+
     _this.state = {
       section: 0
     };
@@ -5780,12 +5785,6 @@ var DonateInlineSection = function (_Component) {
   }
 
   _createClass(DonateInlineSection, [{
-    key: "changeSection",
-    value: function changeSection(section) {
-      this.setState({ section: section });
-      console.log('hi section', section);
-    }
-  }, {
     key: "render",
     value: function render() {
       var containerStyle = (0, _glamor.css)({
@@ -7973,7 +7972,7 @@ var Four = function (_Component) {
 
 		_this.handleNo = function (e) {
 			e.preventDefault();
-			_this.props.changeSection();
+			_this.props.changeSection(1);
 		};
 
 		_this.completeTransaction = function () {
