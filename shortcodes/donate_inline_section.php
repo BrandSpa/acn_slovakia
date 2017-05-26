@@ -43,7 +43,7 @@ function bs_donate_inline_section_sc($atts, $content = null) {
       "once": "<?php echo get_option('donate_once_redirect') ?>"
     },
 		"titles": ["SUPPORT A PERSECUTED CHRISTIAN", "THANK YOU"],
-		"content": "<?php echo $content ?>"
+		"content": "<?php echo json_encode($content) ?>"
   }'
 >
 </div>
