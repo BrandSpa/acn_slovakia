@@ -52,6 +52,7 @@ class Four extends Component {
 				<div className="col-6 col-6-l">
 				<button onClick={this.handleYes} style={{ background: "RGBA(93, 232, 123, 1.00)", width:"100%" }}>SI</button>
 				</div>
+				
 				<div className="col-6 col-6-l">
 					<button onClick={this.handleNo} style={{ background: "red", width:"100%" }}>NO</button>
 				</div>

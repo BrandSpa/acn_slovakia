@@ -142,7 +142,7 @@ class DonateInline extends Component {
           className={
             this.props.is_blue ? "donate_react donate_inline" : "donate_react"
           }
-          style={!this.state.show_four ? { display: "none" } : { overflow: "visible" }}
+          style={this.state.show_four ? { display: "none" } : { overflow: "visible" }}
           ref={donate => (this.donateForm = donate)}
         >
 

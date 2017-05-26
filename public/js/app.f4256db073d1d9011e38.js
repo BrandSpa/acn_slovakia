@@ -2457,7 +2457,7 @@ var DonateInline = function (_Component) {
           {
             onSubmit: this.handleSubmit,
             className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
-            style: !this.state.show_four ? { display: "none" } : { overflow: "visible" },
+            style: this.state.show_four ? { display: "none" } : { overflow: "visible" },
             ref: function ref(donate) {
               return _this4.donateForm = donate;
             }
