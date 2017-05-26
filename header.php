@@ -2,10 +2,10 @@
  header('Access-Control-Allow-Origin: *');
  
  geolify($post);
- $homeUrl =  pll_home_url();
+ $homeUrl =  function_exists(' pll_home_url') ?  pll_home_url() : '/';
  $permalink = get_permalink();
 
-  if(function_exists('pll_home_url') &&   $homeUrl == $permalink) {
+  if(function_exists('pll_home_url') && $homeUrl == $permalink) {
     redirectToLang();
   }
 
