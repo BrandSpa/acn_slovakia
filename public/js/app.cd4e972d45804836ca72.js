@@ -2449,60 +2449,65 @@ var DonateInline = function (_Component) {
         border: "none"
       };
 
-      return !this.state.show_four ? _react2.default.createElement(
-        "form",
-        {
-          onSubmit: this.handleSubmit,
-          className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
-          style: { overflow: "visible" },
-          ref: function ref(donate) {
-            return _this4.donateForm = donate;
-          }
-        },
+      return _react2.default.createElement(
+        "div",
+        null,
         _react2.default.createElement(
-          "div",
-          { className: "donate_react__viewport", style: viewPortStyle },
-          _react2.default.createElement(_contact2.default, _extends({
-            ref: function ref(contact) {
-              return _this4.contact = contact;
+          "form",
+          {
+            onSubmit: this.handleSubmit,
+            className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
+            style: !this.state.show_four ? { display: "none" } : { overflow: "visible" },
+            ref: function ref(donate) {
+              return _this4.donateForm = donate;
             }
-          }, this.state, this.props, {
-            width: sectionWidth,
-            inline: true,
-            onChange: this.handleChange
-          })),
-          _react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          })),
-          _react2.default.createElement(_creditCard2.default, _extends({
-            ref: function ref(creditCard) {
-              return _this4.creditCard = creditCard;
-            }
-          }, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          }))
-        ),
-        _react2.default.createElement(
-          "div",
-          { style: { marginBottom: "10px" } },
+          },
           _react2.default.createElement(
-            "button",
-            {
-              className: "donate_react__submit pull-left",
-              onClick: this.handleSubmit,
-              disabled: this.state.loading
-            },
-            this.props.texts.donate
+            "div",
+            { className: "donate_react__viewport", style: viewPortStyle },
+            _react2.default.createElement(_contact2.default, _extends({
+              ref: function ref(contact) {
+                return _this4.contact = contact;
+              }
+            }, this.state, this.props, {
+              width: sectionWidth,
+              inline: true,
+              onChange: this.handleChange
+            })),
+            _react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
+              width: sectionWidth,
+              onChange: this.handleChange
+            })),
+            _react2.default.createElement(_creditCard2.default, _extends({
+              ref: function ref(creditCard) {
+                return _this4.creditCard = creditCard;
+              }
+            }, this.state, this.props, {
+              width: sectionWidth,
+              onChange: this.handleChange
+            }))
           ),
           _react2.default.createElement(
-            "span",
-            { style: donationTypeStyle },
-            this.state.amount + " USD " + this.props.texts[this.state.donation_type]
+            "div",
+            { style: { marginBottom: "10px" } },
+            _react2.default.createElement(
+              "button",
+              {
+                className: "donate_react__submit pull-left",
+                onClick: this.handleSubmit,
+                disabled: this.state.loading
+              },
+              this.props.texts.donate
+            ),
+            _react2.default.createElement(
+              "span",
+              { style: donationTypeStyle },
+              this.state.amount + " USD " + this.props.texts[this.state.donation_type]
+            )
           )
-        )
-      ) : _react2.default.createElement(_four2.default, _extends({}, this.props, this.state));
+        ),
+        _react2.default.createElement(_four2.default, _extends({ style: this.state.show_four ? { display: "block" } : { display: "none" } }, this.props, this.state))
+      );
     }
   }]);
 

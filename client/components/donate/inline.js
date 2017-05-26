@@ -136,58 +136,59 @@ class DonateInline extends Component {
     };
 
     return (
-     !this.state.show_four ? 
-       <form
-        onSubmit={this.handleSubmit}
-        className={
-          this.props.is_blue ? "donate_react donate_inline" : "donate_react"
-        }
-        style={{ overflow: "visible" }}
-        ref={donate => (this.donateForm = donate)}
-      >
+      <div>
+        <form
+          onSubmit={this.handleSubmit}
+          className={
+            this.props.is_blue ? "donate_react donate_inline" : "donate_react"
+          }
+          style={!this.state.show_four ? { display: "none" } : { overflow: "visible" }}
+          ref={donate => (this.donateForm = donate)}
+        >
 
-        <div className="donate_react__viewport" style={viewPortStyle}>
-          <Contact
-            ref={contact => (this.contact = contact)}
-            {...this.state}
-            {...this.props}
-            width={sectionWidth}
-            inline={true}
-            onChange={this.handleChange}
-          />
+          <div className="donate_react__viewport" style={viewPortStyle}>
+            <Contact
+              ref={contact => (this.contact = contact)}
+              {...this.state}
+              {...this.props}
+              width={sectionWidth}
+              inline={true}
+              onChange={this.handleChange}
+            />
 
-          <Amount
-            {...this.state}
-            {...this.props}
-            width={sectionWidth}
-            onChange={this.handleChange}
-          />
+            <Amount
+              {...this.state}
+              {...this.props}
+              width={sectionWidth}
+              onChange={this.handleChange}
+            />
 
-          <CreditCard
-            ref={creditCard => (this.creditCard = creditCard)}
-            {...this.state}
-            {...this.props}
-            width={sectionWidth}
-            onChange={this.handleChange}
-          />
-        </div>
+            <CreditCard
+              ref={creditCard => (this.creditCard = creditCard)}
+              {...this.state}
+              {...this.props}
+              width={sectionWidth}
+              onChange={this.handleChange}
+            />
+          </div>
 
-        <div style={{ marginBottom: "10px" }}>
-          <button
-            className="donate_react__submit pull-left"
-            onClick={this.handleSubmit}
-            disabled={this.state.loading}
-          >
-            {this.props.texts.donate}
-          </button>
+          <div style={{ marginBottom: "10px" }}>
+            <button
+              className="donate_react__submit pull-left"
+              onClick={this.handleSubmit}
+              disabled={this.state.loading}
+            >
+              {this.props.texts.donate}
+            </button>
 
-          <span style={donationTypeStyle}>
-            {`${this.state.amount} USD ${this.props.texts[this.state.donation_type]}`}
-          </span>
+            <span style={donationTypeStyle}>
+              {`${this.state.amount} USD ${this.props.texts[this.state.donation_type]}`}
+            </span>
 
-        </div>
-      </form>
-     : <FourStep {...this.props} {...this.state}  />
+          </div>
+        </form>
+        <FourStep style={this.state.show_four ? { display: "block" } : { display: "none" }} {...this.props} {...this.state}  />
+      </div>
     );
   }
 }
