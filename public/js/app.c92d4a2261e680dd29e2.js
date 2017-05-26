@@ -4782,7 +4782,7 @@ var DonateInlineSection = function (_Component) {
           { className: 'col-12-l' },
           _react2.default.createElement(
             'h2',
-            { style: { color: '#fff' } },
+            { style: { color: '#fff', textAlign: 'center' } },
             this.props.titles.length > 0 ? this.props.titles[this.state.section] : ""
           )
         ),
