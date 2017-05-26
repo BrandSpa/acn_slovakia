@@ -1,6 +1,7 @@
 'use strict';
 //get sass file and compiled to css
 import './scss/index.scss';
+
 import 'babel-polyfill';
 import WebFont from 'webfontloader';
 import multipleRender from 'react-multiple-render';
