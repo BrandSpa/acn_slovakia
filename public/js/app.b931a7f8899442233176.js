@@ -560,2147 +560,6 @@ module.exports = expirationYear;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-exports['default'] = function (value) {
-  if (Array.isArray(value)) value = value.join(',');
-
-  return value.match(/-webkit-|-moz-|-ms-/) !== null;
-};
-
-module.exports = exports['default'];
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = cssRuleSetToString;
-
-var _appendPxIfNeeded = __webpack_require__(215);
-
-var _appendPxIfNeeded2 = _interopRequireDefault(_appendPxIfNeeded);
-
-var _camelCasePropsToDashCase = __webpack_require__(554);
-
-var _camelCasePropsToDashCase2 = _interopRequireDefault(_camelCasePropsToDashCase);
-
-var _mapObject = __webpack_require__(220);
-
-var _mapObject2 = _interopRequireDefault(_mapObject);
-
-var _prefixer = __webpack_require__(134);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function createMarkupForStyles(style) {
-  return Object.keys(style).map(function (property) {
-    return property + ': ' + style[property] + ';';
-  }).join('\n');
-}
-
-function cssRuleSetToString(selector, rules, userAgent) {
-  if (!rules) {
-    return '';
-  }
-
-  var rulesWithPx = (0, _mapObject2.default)(rules, function (value, key) {
-    return (0, _appendPxIfNeeded2.default)(key, value);
-  });
-  var prefixedRules = (0, _prefixer.getPrefixedStyle)(rulesWithPx, userAgent);
-  var cssPrefixedRules = (0, _camelCasePropsToDashCase2.default)(prefixedRules);
-  var serializedRules = createMarkupForStyles(cssPrefixedRules);
-
-  return selector + '{' + serializedRules + '}';
-}
-module.exports = exports['default'];
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _enhancer = __webpack_require__(216);
-
-var _enhancer2 = _interopRequireDefault(_enhancer);
-
-var _plugins = __webpack_require__(221);
-
-var _plugins2 = _interopRequireDefault(_plugins);
-
-var _style = __webpack_require__(557);
-
-var _style2 = _interopRequireDefault(_style);
-
-var _styleRoot = __webpack_require__(555);
-
-var _styleRoot2 = _interopRequireDefault(_styleRoot);
-
-var _getState = __webpack_require__(218);
-
-var _getState2 = _interopRequireDefault(_getState);
-
-var _keyframes = __webpack_require__(558);
-
-var _keyframes2 = _interopRequireDefault(_keyframes);
-
-var _resolveStyles = __webpack_require__(222);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Radium(ComposedComponent) {
-  return (0, _enhancer2.default)(ComposedComponent);
-}
-
-Radium.Plugins = _plugins2.default;
-Radium.Style = _style2.default;
-Radium.StyleRoot = _styleRoot2.default;
-Radium.getState = _getState2.default;
-Radium.keyframes = _keyframes2.default;
-
-if (process.env.NODE_ENV !== 'production') {
-  Radium.TestMode = {
-    clearState: _resolveStyles.__clearStateForTests,
-    disable: _resolveStyles.__setTestMode.bind(null, false),
-    enable: _resolveStyles.__setTestMode.bind(null, true)
-  };
-}
-
-exports.default = Radium;
-module.exports = exports['default'];
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global, process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; }; /**
-                                                                                                                                                                                                                                                   * Based on https://github.com/jsstyles/css-vendor, but without having to
-                                                                                                                                                                                                                                                   * convert between different cases all the time.
-                                                                                                                                                                                                                                                   *
-                                                                                                                                                                                                                                                   * 
-                                                                                                                                                                                                                                                   */
-
-exports.getPrefixedKeyframes = getPrefixedKeyframes;
-exports.getPrefixedStyle = getPrefixedStyle;
-
-var _inlineStylePrefixer = __webpack_require__(528);
-
-var _inlineStylePrefixer2 = _interopRequireDefault(_inlineStylePrefixer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function transformValues(style) {
-  return Object.keys(style).reduce(function (newStyle, key) {
-    var value = style[key];
-    if (Array.isArray(value)) {
-      value = value.join(';' + key + ':');
-    } else if (value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object' && typeof value.toString === 'function') {
-      value = value.toString();
-    }
-
-    newStyle[key] = value;
-    return newStyle;
-  }, {});
-}
-
-var _hasWarnedAboutUserAgent = false;
-var _lastUserAgent = void 0;
-var _cachedPrefixer = void 0;
-
-function getPrefixer(userAgent) {
-  var actualUserAgent = userAgent || global && global.navigator && global.navigator.userAgent;
-
-  if (process.env.NODE_ENV !== 'production') {
-    if (!actualUserAgent && !_hasWarnedAboutUserAgent) {
-      /* eslint-disable no-console */
-      console.warn('Radium: userAgent should be supplied for server-side rendering. See ' + 'https://github.com/FormidableLabs/radium/tree/master/docs/api#radium ' + 'for more information.');
-      /* eslint-enable no-console */
-      _hasWarnedAboutUserAgent = true;
-    }
-  }
-
-  if (!_cachedPrefixer || actualUserAgent !== _lastUserAgent) {
-    if (actualUserAgent === 'all') {
-      _cachedPrefixer = {
-        prefix: _inlineStylePrefixer2.default.prefixAll,
-        prefixedKeyframes: 'keyframes'
-      };
-    } else {
-      _cachedPrefixer = new _inlineStylePrefixer2.default({ userAgent: actualUserAgent });
-    }
-    _lastUserAgent = actualUserAgent;
-  }
-  return _cachedPrefixer;
-}
-
-function getPrefixedKeyframes(userAgent) {
-  return getPrefixer(userAgent).prefixedKeyframes;
-}
-
-// Returns a new style object with vendor prefixes added to property names
-// and values.
-function getPrefixedStyle(style, userAgent) {
-  var styleWithFallbacks = transformValues(style);
-  var prefixer = getPrefixer(userAgent);
-  var prefixedStyle = prefixer.prefix(styleWithFallbacks);
-  return prefixedStyle;
-}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(100), __webpack_require__(1)))
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var StyleKeeper = function () {
-  function StyleKeeper(userAgent) {
-    _classCallCheck(this, StyleKeeper);
-
-    this._userAgent = userAgent;
-    this._listeners = [];
-    this._cssSet = {};
-  }
-
-  StyleKeeper.prototype.subscribe = function subscribe(listener) {
-    var _this = this;
-
-    if (this._listeners.indexOf(listener) === -1) {
-      this._listeners.push(listener);
-    }
-
-    return {
-      // Must be fat arrow to capture `this`
-      remove: function remove() {
-        var listenerIndex = _this._listeners.indexOf(listener);
-        if (listenerIndex > -1) {
-          _this._listeners.splice(listenerIndex, 1);
-        }
-      }
-    };
-  };
-
-  StyleKeeper.prototype.addCSS = function addCSS(css) {
-    var _this2 = this;
-
-    if (!this._cssSet[css]) {
-      this._cssSet[css] = true;
-      this._emitChange();
-    }
-
-    return {
-      // Must be fat arrow to capture `this`
-      remove: function remove() {
-        delete _this2._cssSet[css];
-        _this2._emitChange();
-      }
-    };
-  };
-
-  StyleKeeper.prototype.getCSS = function getCSS() {
-    return Object.keys(this._cssSet).join('\n');
-  };
-
-  StyleKeeper.prototype._emitChange = function _emitChange() {
-    this._listeners.forEach(function (listener) {
-      return listener();
-    });
-  };
-
-  return StyleKeeper;
-}();
-
-exports.default = StyleKeeper;
-module.exports = exports['default'];
-
-/***/ }),
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _axios = __webpack_require__(38);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _qs = __webpack_require__(39);
-
-var _qs2 = _interopRequireDefault(_qs);
-
-var _amount = __webpack_require__(167);
-
-var _amount2 = _interopRequireDefault(_amount);
-
-var _creditCard = __webpack_require__(169);
-
-var _creditCard2 = _interopRequireDefault(_creditCard);
-
-var _contact = __webpack_require__(168);
-
-var _contact2 = _interopRequireDefault(_contact);
-
-var _donate = __webpack_require__(166);
-
-var actions = _interopRequireWildcard(_donate);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var endpoint = "/wp-admin/admin-ajax.php";
-
-function isAllValid() {
-  var errors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-  return Object.keys(errors).every(function (key) {
-    return errors[key] == true;
-  });
-}
-
-var Donate = function (_Component) {
-  _inherits(Donate, _Component);
-
-  function Donate() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, Donate);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Donate.__proto__ || Object.getPrototypeOf(Donate)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      section: 0,
-      left: 0,
-      loading: false,
-      donation_type: "monthly",
-      amount: 30,
-      currency: "usd",
-      countries: [],
-      contact: { name: "", email: "", country: "" },
-      stripe: {
-        card_type: "",
-        number: "",
-        exp_month: "",
-        exp_year: "",
-        cvc: "",
-        token: ""
-      },
-      errors: { stripe: {}, contact: {} },
-      is_blue: false
-    }, _this.handleChange = function (field) {
-      _this.setState(_extends({}, _this.state, field));
-    }, _this.handleSubmit = function (e) {
-      e.preventDefault();
-      _this.nextSection();
-    }, _this.completeTransaction = function () {
-      var stripeResponse = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      var _this$state = _this.state,
-          amount = _this$state.amount,
-          donation_type = _this$state.donation_type;
-
-      var base = _this.props.redirect[donation_type];
-      var customer = stripeResponse.customer,
-          id = stripeResponse.id;
-
-
-      actions.storeConvertLoop(_this.state).then(actions.storeEventConvertLoop.bind(null, _this.state)).then(actions.storeInfusion.bind(null, _this.state)).then(function (res) {
-        var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
-        window.location = url;
-      });
-    }, _this.creditCardIsValid = function () {
-      var errs = _this.creditCard.validateAll();
-      return isAllValid(errs.stripe);
-    }, _this.contactIsValid = function () {
-      var errs = _this.contact.validateAll();
-      return isAllValid(errs.contact);
-    }, _this.nextSection = function () {
-      var section = _this.state.section < 2 ? _this.state.section + 1 : 2;
-
-      if (_this.state.section == 1) {
-        if (!_this.creditCardIsValid()) return false;
-
-        actions.stripeToken(_this.state).then(function (res) {
-          if (res.id) {
-            var stripe = _extends({}, _this.state.stripe, { token: res.id });
-            _this.setState(_extends({}, _this.state, { stripe: stripe }));
-            return stripe;
-          }
-
-          if (res.stripeCode) {
-            _this.setState(_extends({}, _this.state, { loading: false, declined: true }));
-          }
-        });
-      }
-
-      if (_this.state.section == 2) {
-        if (!_this.contactIsValid()) return false;
-        actions.stripeCharge(_this.state).then(function (res) {
-          return _this.completeTransaction(res.data);
-        });
-      }
-
-      var left = "-" + section * 100 + "%";
-
-      if (_this.state.section == 0) {
-        _this.setState({ section: section, left: left, loading: false });
-      } else {
-        _this.setState({ section: section, left: left });
-      }
-    }, _this.prevSection = function (e) {
-      e.preventDefault();
-      var section = _this.state.section >= 0 ? _this.state.section - 1 : 0;
-      var left = "-" + section * 100 + "%";
-      _this.setState({ section: section, left: left });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(Donate, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      var _this2 = this;
-
-      actions.fetchCountries().then(function (countries) {
-        return _this2.setState({ countries: countries });
-      });
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this3 = this;
-
-      this.donateForm.addEventListener("keydown", function (e) {
-        if (e.which == 9) {
-          e.preventDefault();
-          _this3.nextSection();
-        }
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this4 = this;
-
-      var sectionWidth = 100 / 3 + "%";
-      var viewPortStyle = { width: "300%", left: this.state.left };
-      var donationTypeStyle = {
-        display: "inline",
-        marginLeft: "15px",
-        color: this.props.is_blue ? "rgb(60, 81, 95)" : "#fff"
-      };
-
-      var backBtnStyle = {
-        float: "right",
-        background: "transparent",
-        border: "none",
-        padding: "0 20px",
-        color: this.props.is_blue ? "rgb(60, 81, 95)" : "#fff"
-      };
-
-      return _react2.default.createElement(
-        "form",
-        {
-          onSubmit: this.handleSubmit,
-          className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
-          ref: function ref(donate) {
-            return _this4.donateForm = donate;
-          }
-        },
-        _react2.default.createElement(
-          "div",
-          { className: "donate_react__viewport", style: viewPortStyle },
-          _react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          })),
-          _react2.default.createElement(_creditCard2.default, _extends({
-            ref: function ref(creditCard) {
-              return _this4.creditCard = creditCard;
-            }
-          }, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          })),
-          _react2.default.createElement(_contact2.default, _extends({
-            ref: function ref(contact) {
-              return _this4.contact = contact;
-            }
-          }, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          }))
-        ),
-        _react2.default.createElement(
-          "div",
-          { className: "form-group" },
-          _react2.default.createElement(
-            "button",
-            {
-              className: "donate_react__submit pull-left",
-              onClick: this.handleSubmit,
-              disabled: this.state.loading
-            },
-            this.state.section == 1 ? this.props.texts.next : this.props.texts.donate
-          ),
-          _react2.default.createElement(
-            "span",
-            { style: donationTypeStyle },
-            this.state.amount + " USD " + this.props.texts[this.state.donation_type]
-          ),
-          this.state.section > 0 ? _react2.default.createElement(
-            "button",
-            { style: backBtnStyle, onClick: this.prevSection },
-            this.props.texts.back
-          ) : ""
-        )
-      );
-    }
-  }]);
-
-  return Donate;
-}(_react.Component);
-
-Donate.defaultProps = { texts: {}, redirect: {} };
-exports.default = Donate;
-
-/***/ }),
-/* 157 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _axios = __webpack_require__(38);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _qs = __webpack_require__(39);
-
-var _qs2 = _interopRequireDefault(_qs);
-
-var _amount = __webpack_require__(167);
-
-var _amount2 = _interopRequireDefault(_amount);
-
-var _creditCard = __webpack_require__(169);
-
-var _creditCard2 = _interopRequireDefault(_creditCard);
-
-var _contact = __webpack_require__(168);
-
-var _contact2 = _interopRequireDefault(_contact);
-
-var _donate = __webpack_require__(166);
-
-var actions = _interopRequireWildcard(_donate);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var endpoint = "/wp-admin/admin-ajax.php";
-
-function isAllValid() {
-  var errors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-  return Object.keys(errors).every(function (key) {
-    return errors[key] == true;
-  });
-}
-
-var DonateInline = function (_Component) {
-  _inherits(DonateInline, _Component);
-
-  function DonateInline() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, DonateInline);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DonateInline.__proto__ || Object.getPrototypeOf(DonateInline)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      section: 0,
-      left: 0,
-      loading: false,
-      donation_type: "monthly",
-      amount: 30,
-      currency: "usd",
-      countries: [],
-      contact: { name: "", email: "", country: "" },
-      stripe: {
-        card_type: "",
-        number: "",
-        exp_month: "",
-        exp_year: "",
-        cvc: "",
-        token: ""
-      },
-      errors: { stripe: {}, contact: {} },
-      is_blue: false
-    }, _this.handleChange = function (field) {
-      _this.setState(_extends({}, _this.state, field));
-    }, _this.creditCardIsValid = function () {
-      return new Promise(function (resolve, reject) {
-        var errs = _this.creditCard.validateAll();
-        var isValid = isAllValid(errs.stripe);
-        return resolve(isValid);
-      });
-    }, _this.contactIsValid = function () {
-      return new Promise(function (resolve, reject) {
-        var errs = _this.contact.validateAll();
-        var isValid = isAllValid(errs.contact);
-        return resolve(isValid);
-      });
-    }, _this.handleSubmit = function (e) {
-      if (e) e.preventDefault();
-
-      _this.contactIsValid().then(function (res) {
-        if (!res) return false;
-      }).then(_this.creditCardIsValid).then(function (res) {
-        if (!res) return false;
-
-        actions.stripeToken(_this.state).then(function (res) {
-          if (res.id) {
-            var stripe = _extends({}, _this.state.stripe, { token: res.data.id });
-            _this.setState({ loading: false, stripe: stripe });
-
-            actions.stripeCharge(_extends({}, _this.state, { stripe: stripe })).then(function (res) {
-              return _this.completeTransaction(res.data);
-            });
-          }
-
-          if (res.stripeCode) {
-            _this.setState({ loading: false, declined: true });
-          }
-        });
-      });
-    }, _this.completeTransaction = function () {
-      var stripeResponse = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      var _this$state = _this.state,
-          amount = _this$state.amount,
-          donation_type = _this$state.donation_type;
-
-      var base = _this.props.redirect[donation_type];
-      var customer = stripeResponse.customer,
-          id = stripeResponse.id;
-
-
-      actions.storeConvertLoop(_this.state).then(actions.storeEventConvertLoop.bind(null, _this.state)).then(actions.storeInfusion.bind(null, _this.state)).then(function (res) {
-        if (donation_type == 'monthly') {
-          var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
-          window.location = url;
-        }
-      });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(DonateInline, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      var _this2 = this;
-
-      actions.fetchCountries().then(function (countries) {
-        return _this2.setState({ countries: countries });
-      });
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this3 = this;
-
-      this.donateForm.addEventListener("keydown", function (e) {
-        if (e.which == 9) {
-          e.preventDefault();
-          _this3.handleSubmit();
-        }
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this4 = this;
-
-      var sectionWidth = "100%";
-      var viewPortStyle = {
-        width: "100%",
-        left: this.state.left,
-        display: "block"
-      };
-
-      var donationTypeStyle = {
-        display: "inline",
-        marginLeft: "15px",
-        color: this.props.is_blue ? "#3C515F" : "#fff"
-      };
-
-      var backBtnStyle = {
-        float: "right",
-        background: "transparent",
-        border: "none"
-      };
-
-      return _react2.default.createElement(
-        "form",
-        {
-          onSubmit: this.handleSubmit,
-          className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
-          style: { overflow: "visible" },
-          ref: function ref(donate) {
-            return _this4.donateForm = donate;
-          }
-        },
-        _react2.default.createElement(
-          "div",
-          { className: "donate_react__viewport", style: viewPortStyle },
-          _react2.default.createElement(_contact2.default, _extends({
-            ref: function ref(contact) {
-              return _this4.contact = contact;
-            }
-          }, this.state, this.props, {
-            width: sectionWidth,
-            inline: true,
-            onChange: this.handleChange
-          })),
-          _react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          })),
-          _react2.default.createElement(_creditCard2.default, _extends({
-            ref: function ref(creditCard) {
-              return _this4.creditCard = creditCard;
-            }
-          }, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          }))
-        ),
-        _react2.default.createElement(
-          "div",
-          { style: { marginBottom: "10px" } },
-          _react2.default.createElement(
-            "button",
-            {
-              className: "donate_react__submit pull-left",
-              onClick: this.handleSubmit,
-              disabled: this.state.loading
-            },
-            this.props.texts.donate
-          ),
-          _react2.default.createElement(
-            "span",
-            { style: donationTypeStyle },
-            this.state.amount + " USD " + this.props.texts[this.state.donation_type]
-          )
-        )
-      );
-    }
-  }]);
-
-  return DonateInline;
-}(_react.Component);
-
-DonateInline.defaultProps = { texts: {}, redirect: {} };
-exports.default = DonateInline;
-
-/***/ }),
-/* 158 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _debounce = __webpack_require__(92);
-
-var _debounce2 = _interopRequireDefault(_debounce);
-
-var _projectsIcons = __webpack_require__(297);
-
-var _projectsIcons2 = _interopRequireDefault(_projectsIcons);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var backgroundColors = {
-  1: "#b91325",
-  2: "#00355f",
-  3: "#6e5785",
-  4: "#95a0ad",
-  5: "#156734",
-  6: "#689038",
-  7: "#7a2d04",
-  8: "#b27009",
-  9: "#E4A70F"
-};
-
-var Projects = function (_React$Component) {
-  _inherits(Projects, _React$Component);
-
-  function Projects() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, Projects);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Projects.__proto__ || Object.getPrototypeOf(Projects)).call.apply(_ref, [this].concat(args))), _this), _this.state = { section: 1, bg: "#B91325", donateColor: "#B91325" }, _this.moveArrow = function (num) {
-      var left = _this.el.querySelector(".projects__icons li:nth-child(" + num + ")").offsetLeft;
-      _this.el.querySelector(".projects__arrow").style.left = left + "px";
-    }, _this.updateUrl = function (hash) {
-      history.pushState(null, null, "#" + hash);
-    }, _this.changeContent = function (num) {
-      var color = backgroundColors[num];
-      var ind = num - 1;
-      _this.setState({ bg: color, donateColor: color, section: num });
-      _this.moveArrow(num);
-
-      if (_this.props.contents.length > 0 && _this.props.contents[ind].hash_url) {
-        _this.updateUrl(_this.props.contents[ind].hash_url);
-      }
-
-      _this.props.changeSection ? _this.props.changeSection(num) : "";
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(Projects, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      var num = 1;
-
-      this.props.contents.map(function (content, ind) {
-        if (content.hash_url == window.location.hash.replace("#", "")) {
-          num = ind + 1;
-        }
-      });
-
-      var patt = new RegExp(/#projects-[1-9]/);
-      var hash = window.location.hash;
-
-      window.addEventListener("resize", (0, _debounce2.default)(function (event) {
-        _this2.moveArrow(_this2.state.section);
-      }, 200));
-
-      setTimeout(function () {
-        _this2.moveArrow(num);
-        _this2.changeContent(num);
-      }, 1000);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this3 = this;
-
-      var _props$contents = this.props.contents,
-          contents = _props$contents === undefined ? [] : _props$contents;
-
-      var content = contents[this.state.section - 1] || {};
-      var title = content.title,
-          text = content.text,
-          imgUrl = content.imgUrl;
-
-      // let title = content.title;
-      // let text = content.content;
-      // let imgUrl = content.imgUrl;
-
-      var styleRight = {
-        backgroundImage: "url(" + imgUrl + ")",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "500px"
-      };
-
-      var styleLeft = { background: this.state.bg, minHeight: "500px" };
-
-      var donateStyle = {
-        background: "#fff",
-        borderColor: "#fff",
-        textTransform: "uppercase",
-        color: this.state.donateColor
-      };
-
-      return _react2.default.createElement(
-        "div",
-        { className: "projects", ref: function ref(el) {
-            return _this3.el = el;
-          } },
-        _react2.default.createElement(_projectsIcons2.default, { ref: "projectIcons", onChange: this.changeContent }),
-        _react2.default.createElement(
-          "div",
-          { className: "projects__content" },
-          _react2.default.createElement("div", { className: "projects__arrow" }),
-          _react2.default.createElement(
-            "div",
-            {
-              className: "col-4-l projects__content__content-left",
-              style: styleLeft
-            },
-            _react2.default.createElement(
-              "h4",
-              null,
-              title
-            ),
-            _react2.default.createElement("div", {
-              className: "projects__content__content-left__text",
-              dangerouslySetInnerHTML: { __html: text }
-            }),
-            _react2.default.createElement(
-              "button",
-              { className: "bs-donate", style: donateStyle },
-              this.props.donate
-            )
-          ),
-          _react2.default.createElement("div", {
-            className: "col-8-l projects__content__content-right",
-            style: styleRight
-          })
-        )
-      );
-    }
-  }]);
-
-  return Projects;
-}(_react2.default.Component);
-
-exports.default = Projects;
-
-/***/ }),
-/* 159 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _videoModal = __webpack_require__(78);
-
-var _videoModal2 = _interopRequireDefault(_videoModal);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var SectionVideo = function (_React$Component) {
-  _inherits(SectionVideo, _React$Component);
-
-  function SectionVideo() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, SectionVideo);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SectionVideo.__proto__ || Object.getPrototypeOf(SectionVideo)).call.apply(_ref, [this].concat(args))), _this), _this.showVideo = function (e) {
-      e.preventDefault();
-      _this.modal.show();
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(SectionVideo, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var linkStyle = { float: "left", lineHeight: "0" };
-      var imageStyle = { width: "100px", margin: "0 auto" };
-      imageStyle = _extends({}, imageStyle, this.props.imageStyle);
-
-      return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(_videoModal2.default, { ref: function ref(modal) {
-            return _this2.modal = modal;
-          }, url: this.props.url }),
-        _react2.default.createElement(
-          "a",
-          {
-            href: "#",
-            className: "image-video__link",
-            style: linkStyle,
-            onClick: this.showVideo
-          },
-          _react2.default.createElement("img", { style: imageStyle, src: this.props.imgUrl, alt: "" })
-        )
-      );
-    }
-  }]);
-
-  return SectionVideo;
-}(_react2.default.Component);
-
-SectionVideo.defaultProps = {
-  imgUrl: "",
-  url: "https://www.youtube.com/embed/_lQvw2vSDbs",
-  imageStyle: {}
-};
-exports.default = SectionVideo;
-
-/***/ }),
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-exports.fetchCountries = fetchCountries;
-exports.stripeToken = stripeToken;
-exports.stripeCharge = stripeCharge;
-exports.storeConvertLoop = storeConvertLoop;
-exports.storeEventConvertLoop = storeEventConvertLoop;
-exports.storeInfusion = storeInfusion;
-
-var _axios = __webpack_require__(38);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _qs = __webpack_require__(39);
-
-var _qs2 = _interopRequireDefault(_qs);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var endpoint = "/wp-admin/admin-ajax.php";
-
-function fetchCountries() {
-  var data = _qs2.default.stringify({ action: "countries" });
-
-  return _axios2.default.post(endpoint, data).then(function (res) {
-    return Array.isArray(res.data) ? res.data : [];
-  });
-}
-
-function stripeToken(state) {
-  var data = _qs2.default.stringify({
-    action: "stripe_token",
-    data: state.stripe
-  });
-
-  return _axios2.default.post(endpoint, data).then(function (res) {
-    return res.data;
-  });
-}
-
-function stripeCharge(state) {
-  var contact = state.contact,
-      currency = state.currency,
-      amount = state.amount,
-      donation_type = state.donation_type,
-      token = state.stripe.token;
-
-
-  var data = _extends({}, contact, {
-    currency: currency,
-    amount: amount,
-    donation_type: donation_type,
-    stripe_token: token
-  });
-
-  var dataAjax = _qs2.default.stringify({ action: "stripe_charge", data: data });
-
-  return _axios2.default.post(endpoint, dataAjax);
-}
-
-function storeConvertLoop(state) {
-  var data = _qs2.default.stringify({
-    data: state.contact,
-    action: "convertloop_contact"
-  });
-
-  return _axios2.default.post(endpoint, data);
-}
-
-function storeEventConvertLoop(state) {
-  var _state$contact = state.contact,
-      email = _state$contact.email,
-      country = _state$contact.country;
-
-
-  var metadata = {
-    amount: state.amount,
-    type: state.donation_type
-  };
-
-  var event = {
-    name: "Donation-" + state.donation_type,
-    person: { email: email },
-    country: country,
-    metadata: metadata
-  };
-
-  var data = _qs2.default.stringify({ data: event, action: "convertloop_event" });
-  return _axios2.default.post(endpoint, data);
-}
-
-function storeInfusion(state) {
-  var tags = "";
-  if (state.donation_type == "monthly") tags = ["870", "924"];
-  if (state.donation_type == "once") tags = ["868", "926"];
-  var data = _qs2.default.stringify({
-    data: _extends({}, state.contact, { tags: tags }),
-    action: "infusion_contact"
-  });
-
-  return _axios2.default.post(endpoint, data);
-}
-
-/***/ }),
-/* 167 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _amountBtns = __webpack_require__(292);
-
-var _amountBtns2 = _interopRequireDefault(_amountBtns);
-
-var _clean_inputs = __webpack_require__(170);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var amount = function (_React$Component) {
-  _inherits(amount, _React$Component);
-
-  function amount() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, amount);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = amount.__proto__ || Object.getPrototypeOf(amount)).call.apply(_ref, [this].concat(args))), _this), _this.changeAmount = function (amount, e) {
-      if (e) e.preventDefault();
-      var el = _this.amountInput;
-      if (amount == 5) el.focus();
-      _this.props.onChange({ amount: amount });
-    }, _this.handleAmount = function (e) {
-      var val = e.currentTarget.value;
-      var amount = (0, _clean_inputs.onlyNum)(val);
-      _this.props.onChange({ amount: amount });
-    }, _this.changeType = function (donation_type, e) {
-      if (e) e.preventDefault();
-      _this.props.onChange({ donation_type: donation_type });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(amount, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          texts = _props.texts,
-          donation_type = _props.donation_type,
-          amount = _props.amount;
-
-
-      return _react2.default.createElement(
-        "div",
-        { style: { width: this.props.width, float: "left", padding: "1px" } },
-        _react2.default.createElement(_amountBtns2.default, {
-          amount: amount,
-          texts: texts,
-          changeAmount: this.changeAmount
-        }),
-        _react2.default.createElement(
-          "div",
-          { className: "row" },
-          _react2.default.createElement(
-            "div",
-            { className: "form-group form-group--addon col-7-l" },
-            _react2.default.createElement(
-              "span",
-              { className: "form-group__addon" },
-              "USD"
-            ),
-            _react2.default.createElement("input", {
-              ref: function ref(amountInput) {
-                return _this2.amountInput = amountInput;
-              },
-              className: "form-control",
-              type: "text",
-              onChange: this.handleAmount,
-              value: amount
-            })
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-5-l" },
-            _react2.default.createElement(
-              "a",
-              {
-                href: "#",
-                onClick: this.changeType.bind(null, "monthly"),
-                className: donation_type == "monthly" ? "donate_react__type donate_react__type--active" : "donate_react__type "
-              },
-              texts.monthly
-            ),
-            _react2.default.createElement(
-              "a",
-              {
-                href: "#",
-                onClick: this.changeType.bind(null, "once"),
-                className: donation_type == "once" ? "donate_react__type donate_react__type--active" : "donate_react__type "
-              },
-              texts.once
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return amount;
-}(_react2.default.Component);
-
-amount.defaultProps = { texts: {}, amount: 30 };
-exports.default = amount;
-
-/***/ }),
-/* 168 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _isEmail = __webpack_require__(247);
-
-var _isEmail2 = _interopRequireDefault(_isEmail);
-
-var _isEmpty = __webpack_require__(248);
-
-var _isEmpty2 = _interopRequireDefault(_isEmpty);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Contact = function (_React$Component) {
-  _inherits(Contact, _React$Component);
-
-  function Contact() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, Contact);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Contact.__proto__ || Object.getPrototypeOf(Contact)).call.apply(_ref, [this].concat(args))), _this), _this.validate = function (field) {
-      var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-
-      var valid = !(0, _isEmpty2.default)(val);
-      if (field == "email") valid = (0, _isEmail2.default)(val);
-      var contact = _extends({}, _this.props.errors.contact, _defineProperty({}, field, valid));
-      return _extends({}, _this.props.errors, { contact: contact });
-    }, _this.handleChange = function (field, e) {
-      var val = e.currentTarget.value;
-      var errors = _this.validate(field, val);
-
-      _this.props.onChange({
-        contact: _extends({}, _this.props.contact, _defineProperty({}, field, val)),
-        errors: errors
-      });
-    }, _this.showErr = function (field) {
-      return _this.props.errors.contact[field] == false ? "form-group__error" : "hidden";
-    }, _this.inputErrStyle = function (field) {
-      return _this.props.errors.contact[field] == false ? "form-group--error" : "";
-    }, _this.validateAll = function () {
-      var _this$props = _this.props,
-          contact = _this$props.contact,
-          texts = _this$props.texts;
-
-      var name = _this.validate("name", contact.name);
-      var email = _this.validate("email", contact.email);
-      var country = contact.country || texts.country;
-      var countryValidation = _this.validate("country", country);
-
-      var errors = _extends({}, _this.props.errors, {
-        contact: _extends({}, name.contact, email.contact, countryValidation.contact)
-      });
-
-      _this.props.onChange({ errors: errors });
-      return errors;
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(Contact, [{
-    key: "render",
-    value: function render() {
-      var _props = this.props,
-          texts = _props.texts,
-          contact = _props.contact;
-
-
-      return _react2.default.createElement(
-        "div",
-        { style: { width: this.props.width, float: "left", padding: "1px" } },
-        _react2.default.createElement(
-          "div",
-          { className: "row" },
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-12-l" },
-            _react2.default.createElement("input", {
-              type: "text",
-              className: "form-control " + this.inputErrStyle("name"),
-              placeholder: texts.placeholder_name,
-              onChange: this.handleChange.bind(null, "name"),
-              value: contact.name
-            }),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("name") },
-              texts.validation_name
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: this.props.inline ? "form-group col-6-l" : "form-group col-12-l" },
-            _react2.default.createElement("input", {
-              type: "text",
-              className: "form-control " + this.inputErrStyle("email"),
-              placeholder: texts.placeholder_email,
-              onChange: this.handleChange.bind(null, "email"),
-              value: contact.email
-            }),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("email") },
-              texts.validation_email
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: this.props.inline ? "form-group col-6-l" : "form-group col-12-l" },
-            _react2.default.createElement(
-              "select",
-              {
-                type: "text",
-                className: "form-control",
-                placeholder: texts.placeholder_country,
-                onChange: this.handleChange.bind(null, "country"),
-                value: contact.country || texts.country
-              },
-              this.props.countries.map(function (country, i) {
-                return _react2.default.createElement(
-                  "option",
-                  { key: i, value: country },
-                  country
-                );
-              })
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Contact;
-}(_react2.default.Component);
-
-Contact.defaultProps = {
-  contact: {},
-  countries: [],
-  errors: { contact: {} },
-  texts: {},
-  inline: false
-};
-exports.default = Contact;
-
-/***/ }),
-/* 169 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _cardValidator = __webpack_require__(300);
-
-var _cardValidator2 = _interopRequireDefault(_cardValidator);
-
-var _cards = __webpack_require__(293);
-
-var _cards2 = _interopRequireDefault(_cards);
-
-var _clean_inputs = __webpack_require__(170);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var CedritCard = function (_React$Component) {
-  _inherits(CedritCard, _React$Component);
-
-  function CedritCard(props) {
-    _classCallCheck(this, CedritCard);
-
-    var _this = _possibleConstructorReturn(this, (CedritCard.__proto__ || Object.getPrototypeOf(CedritCard)).call(this, props));
-
-    _this.validateCard = function (card) {
-      var number = _cardValidator2.default.number(card).isValid;
-      return _this.updateErrors({ number: number });
-    };
-
-    _this.validateExpiry = function (month, year) {
-      var valid = _cardValidator2.default.expirationDate({ month: month, year: year });
-      var exp_month = valid.isValid;
-      var exp_year = valid.isValid;
-      return _this.updateErrors({ exp_month: exp_month, exp_year: exp_year });
-    };
-
-    _this.validateCvc = function (cvc) {
-      cvc = cvc.length >= 3;
-      return _this.updateErrors({ cvc: cvc });
-    };
-
-    _this.getCardType = function (cardNum) {
-      return _cardValidator2.default.number(cardNum).card ? _cardValidator2.default.number(cardNum).card.type : null;
-    };
-
-    _this.updateErrors = function (field) {
-      return _extends({}, _this.props.errors, { stripe: field });
-    };
-
-    _this.handleCard = function (e) {
-      var val = e.currentTarget.value;
-      var number = (0, _clean_inputs.onlyNum)(val);
-      number = (0, _clean_inputs.maxLength)(number, 16);
-      var errors = _this.validateCard(number);
-      var card_type = _this.getCardType(number);
-      var stripe = _extends({}, _this.props.stripe, { number: number, card_type: card_type });
-      _this.props.onChange({ stripe: stripe, errors: errors });
-    };
-
-    _this.handleExpiry = function (type, e) {
-      var stripe = _this.props.stripe;
-
-      var val = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
-      val = (0, _clean_inputs.maxLength)(val, 2);
-      var exp_month = stripe.exp_month;
-      var exp_year = stripe.exp_year;
-      if (type == "exp_month") exp_month = val;
-      if (type == "exp_year") exp_year = val;
-      var errors = _this.validateExpiry(exp_month, exp_year);
-      stripe = _extends({}, stripe, { exp_month: exp_month, exp_year: exp_year });
-
-      _this.props.onChange({ stripe: stripe, errors: errors });
-    };
-
-    _this.handleCvc = function (e) {
-      var stripe = _this.props.stripe;
-
-      var cvc = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
-      cvc = (0, _clean_inputs.maxLength)(cvc, 4);
-      stripe = _extends({}, stripe, { cvc: cvc });
-      var errors = _this.validateCvc(cvc);
-      _this.props.onChange({ stripe: stripe, errors: errors });
-    };
-
-    _this.showErr = function (field) {
-      if (_this.props.errors.stripe) {
-        return _this.props.errors.stripe[field] == false ? "form-group__error" : "hidden";
-      }
-
-      return "";
-    };
-
-    _this.inputErrStyle = function (field) {
-      if (_this.props.errors.stripe) {
-        return _this.props.errors.stripe[field] == false ? "form-group--error" : "";
-      }
-
-      return "";
-    };
-
-    _this.validateAll = function (e) {
-      if (e) e.preventDefault();
-      var stripe = _this.props.stripe;
-
-      var number = _this.validateCard(stripe.number);
-      var exp_month = _this.validateExpiry(stripe.exp_month, stripe.exp_year);
-      var cvc = _this.validateCvc(stripe.cvc);
-
-      var errors = _extends({}, _this.props.errors, {
-        stripe: _extends({}, number.stripe, exp_month.stripe, cvc.stripe)
-      });
-
-      _this.props.onChange({ errors: errors });
-
-      return errors;
-    };
-
-    _this.togglePopover = function () {
-      _this.setState({ showPopover: !_this.state.showPopover });
-    };
-
-    _this.state = {
-      showPopover: false
-    };
-    return _this;
-  }
-
-  _createClass(CedritCard, [{
-    key: "render",
-    value: function render() {
-      var _props = this.props,
-          texts = _props.texts,
-          stripe = _props.stripe,
-          errors = _props.errors;
-
-
-      return _react2.default.createElement(
-        "div",
-        {
-          className: "donate_react__creditcard",
-          style: { width: this.props.width, float: "left", padding: "1px" }
-        },
-        _react2.default.createElement(_cards2.default, this.props),
-        _react2.default.createElement(
-          "div",
-          { className: "form-group" },
-          _react2.default.createElement("input", {
-            type: "text",
-            placeholder: texts.placeholder_credit_card,
-            className: "form-control " + this.inputErrStyle("number"),
-            onChange: this.handleCard,
-            value: stripe.number
-          }),
-          _react2.default.createElement(
-            "span",
-            { className: this.showErr("number") },
-            texts.validation_card
-          )
-        ),
-        _react2.default.createElement(
-          "div",
-          { className: "row donate_react__creditcard__row" },
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-4-l col-4" },
-            _react2.default.createElement("input", {
-              type: "text",
-              placeholder: texts.placeholder_month,
-              className: "form-control",
-              onChange: this.handleExpiry.bind(null, "exp_month"),
-              value: stripe.exp_month
-            }),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("exp_month") },
-              texts.validation_month
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-4-l col-4" },
-            _react2.default.createElement("input", {
-              type: "text",
-              placeholder: texts.placeholder_year,
-              className: "form-control",
-              onChange: this.handleExpiry.bind(null, "exp_year"),
-              value: stripe.exp_year
-            }),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("exp_year") },
-              texts.validation_year
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-4-l col-4" },
-            _react2.default.createElement("input", {
-              type: "text",
-              placeholder: texts.placeholder_cvc,
-              className: "form-control",
-              onChange: this.handleCvc,
-              value: stripe.cvc
-            }),
-            _react2.default.createElement(
-              "span",
-              {
-                style: {
-                  display: "block",
-                  background: "#3C515F",
-                  width: "20px",
-                  height: "20px",
-                  borderRadius: "20px",
-                  color: "#fff",
-                  textAlign: "center",
-                  position: "absolute",
-                  top: "12px",
-                  right: "25px",
-                  cursor: "pointer"
-                },
-                onClick: this.togglePopover
-              },
-              _react2.default.createElement("i", { className: "ion-help" })
-            ),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("cvc") },
-              texts.validation_cvc
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "div",
-          {
-            style: this.state.showPopover ? {
-              background: "#fff",
-              boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
-              borderRadius: "2px",
-              textAlign: "center",
-              display: "block",
-              margin: "15px 0",
-              position: "relative",
-              zIndex: "100"
-            } : { display: "none" }
-          },
-          _react2.default.createElement(
-            "span",
-            {
-              style: {
-                display: "block",
-                position: "absolute",
-                top: "2px",
-                right: "2px",
-                width: "15px",
-                height: "15px",
-                color: "red",
-                cursor: "pointer"
-              },
-              onClick: this.togglePopover
-            },
-            _react2.default.createElement("i", { className: "ion-close" })
-          ),
-          _react2.default.createElement(
-            "span",
-            {
-              style: {
-                display: "block",
-                color: "#3C515F",
-                padding: "10px",
-                fontSize: "14px"
-              }
-            },
-            texts.explain_cvc
-          ),
-          _react2.default.createElement("img", {
-            width: "60px",
-            src: texts.template_uri + "/public/img/cvc.png",
-            alt: ""
-          })
-        )
-      );
-    }
-  }]);
-
-  return CedritCard;
-}(_react2.default.Component);
-
-CedritCard.defaultProps = { texts: {}, stripe: {}, errors: {} };
-exports.default = CedritCard;
-
-/***/ }),
-/* 170 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.maxLength = maxLength;
-exports.onlyNum = onlyNum;
-function maxLength() {
-  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  var length = arguments[1];
-
-  return val.substring(0, length);
-}
-
-function onlyNum() {
-  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-
-  if (typeof val == 'string') {
-    return val.replace(/[^0-9]+/, '');
-  }
-
-  if (typeof val == 'number') {
-    return val.toString().replace(/[^0-9]+/, '');
-  }
-
-  console.error('onlyNum val is not a string or number: ', val);
-}
-
-/***/ }),
-/* 171 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-   value: true
-});
-
-var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar [Burma]", "Namibia", "Nauru", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Republic of Korea", "Republic of the Congo", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "São Tomé and Príncipe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovak Republic", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe", "Guinea Conakry", "Jordan", "Lithuania", "Micronesia", "Moldova"].sort();
-
-exports.default = countries;
-
-/***/ }),
-/* 172 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function verification(isValid, isPotentiallyValid, isValidForThisYear) {
-  return {
-    isValid: isValid,
-    isPotentiallyValid: isPotentiallyValid,
-    isValidForThisYear: isValidForThisYear || false
-  };
-}
-
-function expirationMonth(value) {
-  var month, result;
-  var currentMonth = new Date().getMonth() + 1;
-
-  if (typeof value !== 'string') {
-    return verification(false, false);
-  }
-  if (value.replace(/\s/g, '') === '' || value === '0') {
-    return verification(false, true);
-  }
-  if (!/^\d*$/.test(value)) {
-    return verification(false, false);
-  }
-
-  month = parseInt(value, 10);
-
-  if (isNaN(value)) {
-    return verification(false, false);
-  }
-
-  result = month > 0 && month < 13;
-
-  return verification(result, result, result && month >= currentMonth);
-}
-
-module.exports = expirationMonth;
-
-
-/***/ }),
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.processStyleName = undefined;
-exports.createMarkupForStyles = createMarkupForStyles;
-
-var _camelizeStyleName = __webpack_require__(513);
-
-var _camelizeStyleName2 = _interopRequireDefault(_camelizeStyleName);
-
-var _dangerousStyleValue = __webpack_require__(506);
-
-var _dangerousStyleValue2 = _interopRequireDefault(_dangerousStyleValue);
-
-var _hyphenateStyleName = __webpack_require__(516);
-
-var _hyphenateStyleName2 = _interopRequireDefault(_hyphenateStyleName);
-
-var _memoizeStringOnly = __webpack_require__(517);
-
-var _memoizeStringOnly2 = _interopRequireDefault(_memoizeStringOnly);
-
-var _warning = __webpack_require__(206);
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var processStyleName = exports.processStyleName = (0, _memoizeStringOnly2.default)(_hyphenateStyleName2.default); /**
-                                                                                                                   * Copyright 2013-present, Facebook, Inc.
-                                                                                                                   * All rights reserved.
-                                                                                                                   *
-                                                                                                                   * This source code is licensed under the BSD-style license found in the
-                                                                                                                   * LICENSE file in the root directory of this source tree. An additional grant
-                                                                                                                   * of patent rights can be found in the PATENTS file in the same directory.
-                                                                                                                   *
-                                                                                                                   * @providesModule CSSPropertyOperations
-                                                                                                                   */
-
-if (process.env.NODE_ENV !== 'production') {
-  var warnValidStyle;
-
-  (function () {
-    // 'msTransform' is correct, but the other prefixes should be capitalized
-    var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/;
-
-    // style values shouldn't contain a semicolon
-    var badStyleValueWithSemicolonPattern = /;\s*$/;
-
-    var warnedStyleNames = {};
-    var warnedStyleValues = {};
-    var warnedForNaNValue = false;
-
-    var warnHyphenatedStyleName = function warnHyphenatedStyleName(name, owner) {
-      if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
-        return;
-      }
-
-      warnedStyleNames[name] = true;
-      process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(false, 'Unsupported style property %s. Did you mean %s?%s', name, (0, _camelizeStyleName2.default)(name), checkRenderMessage(owner)) : void 0;
-    };
-
-    var warnBadVendoredStyleName = function warnBadVendoredStyleName(name, owner) {
-      if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
-        return;
-      }
-
-      warnedStyleNames[name] = true;
-      process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(false, 'Unsupported vendor-prefixed style property %s. Did you mean %s?%s', name, name.charAt(0).toUpperCase() + name.slice(1), checkRenderMessage(owner)) : void 0;
-    };
-
-    var warnStyleValueWithSemicolon = function warnStyleValueWithSemicolon(name, value, owner) {
-      if (warnedStyleValues.hasOwnProperty(value) && warnedStyleValues[value]) {
-        return;
-      }
-
-      warnedStyleValues[value] = true;
-      process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(false, 'Style property values shouldn\'t contain a semicolon.%s ' + 'Try "%s: %s" instead.', checkRenderMessage(owner), name, value.replace(badStyleValueWithSemicolonPattern, '')) : void 0;
-    };
-
-    var warnStyleValueIsNaN = function warnStyleValueIsNaN(name, value, owner) {
-      if (warnedForNaNValue) {
-        return;
-      }
-
-      warnedForNaNValue = true;
-      process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(false, '`NaN` is an invalid value for the `%s` css style property.%s', name, checkRenderMessage(owner)) : void 0;
-    };
-
-    var checkRenderMessage = function checkRenderMessage(owner) {
-      if (owner) {
-        var name = owner.getName();
-        if (name) {
-          return ' Check the render method of `' + name + '`.';
-        }
-      }
-      return '';
-    };
-
-    /**
-     * @param {string} name
-     * @param {*} value
-     * @param {ReactDOMComponent} component
-     */
-
-    warnValidStyle = function warnValidStyle(name, value, component) {
-      //eslint-disable-line no-var
-      var owner = void 0;
-      if (component) {
-        owner = component._currentElement._owner;
-      }
-      if (name.indexOf('-') > -1) {
-        warnHyphenatedStyleName(name, owner);
-      } else if (badVendoredStyleNamePattern.test(name)) {
-        warnBadVendoredStyleName(name, owner);
-      } else if (badStyleValueWithSemicolonPattern.test(value)) {
-        warnStyleValueWithSemicolon(name, value, owner);
-      }
-
-      if (typeof value === 'number' && isNaN(value)) {
-        warnStyleValueIsNaN(name, value, owner);
-      }
-    };
-  })();
-}
-
-/**
-   * Serializes a mapping of style properties for use as inline styles:
-   *
-   *   > createMarkupForStyles({width: '200px', height: 0})
-   *   "width:200px;height:0;"
-   *
-   * Undefined values are ignored so that declarative programming is easier.
-   * The result should be HTML-escaped before insertion into the DOM.
-   *
-   * @param {object} styles
-   * @param {ReactDOMComponent} component
-   * @return {?string}
-   */
-
-function createMarkupForStyles(styles, component) {
-  var serialized = '';
-  for (var styleName in styles) {
-    var isCustomProp = styleName.indexOf('--') === 0;
-    if (!styles.hasOwnProperty(styleName)) {
-      continue;
-    }
-    var styleValue = styles[styleName];
-    if (process.env.NODE_ENV !== 'production' && !isCustomProp) {
-      warnValidStyle(styleName, styleValue, component);
-    }
-    if (styleValue != null) {
-      if (isCustomProp) {
-        serialized += styleName + ':' + styleValue + ';';
-      } else {
-        serialized += processStyleName(styleName) + ':';
-        serialized += (0, _dangerousStyleValue2.default)(styleName, styleValue, component) + ';';
-      }
-    }
-  }
-  return serialized || null;
-}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 205 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 Object.defineProperty(exports, "__esModule", {
@@ -2776,7 +635,7 @@ var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
 var _sheet = __webpack_require__(511);
 
-var _CSSPropertyOperations = __webpack_require__(204);
+var _CSSPropertyOperations = __webpack_require__(205);
 
 var _clean = __webpack_require__(507);
 
@@ -3694,6 +1553,2147 @@ function attribsFor() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+exports['default'] = function (value) {
+  if (Array.isArray(value)) value = value.join(',');
+
+  return value.match(/-webkit-|-moz-|-ms-/) !== null;
+};
+
+module.exports = exports['default'];
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = cssRuleSetToString;
+
+var _appendPxIfNeeded = __webpack_require__(215);
+
+var _appendPxIfNeeded2 = _interopRequireDefault(_appendPxIfNeeded);
+
+var _camelCasePropsToDashCase = __webpack_require__(554);
+
+var _camelCasePropsToDashCase2 = _interopRequireDefault(_camelCasePropsToDashCase);
+
+var _mapObject = __webpack_require__(220);
+
+var _mapObject2 = _interopRequireDefault(_mapObject);
+
+var _prefixer = __webpack_require__(135);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function createMarkupForStyles(style) {
+  return Object.keys(style).map(function (property) {
+    return property + ': ' + style[property] + ';';
+  }).join('\n');
+}
+
+function cssRuleSetToString(selector, rules, userAgent) {
+  if (!rules) {
+    return '';
+  }
+
+  var rulesWithPx = (0, _mapObject2.default)(rules, function (value, key) {
+    return (0, _appendPxIfNeeded2.default)(key, value);
+  });
+  var prefixedRules = (0, _prefixer.getPrefixedStyle)(rulesWithPx, userAgent);
+  var cssPrefixedRules = (0, _camelCasePropsToDashCase2.default)(prefixedRules);
+  var serializedRules = createMarkupForStyles(cssPrefixedRules);
+
+  return selector + '{' + serializedRules + '}';
+}
+module.exports = exports['default'];
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _enhancer = __webpack_require__(216);
+
+var _enhancer2 = _interopRequireDefault(_enhancer);
+
+var _plugins = __webpack_require__(221);
+
+var _plugins2 = _interopRequireDefault(_plugins);
+
+var _style = __webpack_require__(557);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _styleRoot = __webpack_require__(555);
+
+var _styleRoot2 = _interopRequireDefault(_styleRoot);
+
+var _getState = __webpack_require__(218);
+
+var _getState2 = _interopRequireDefault(_getState);
+
+var _keyframes = __webpack_require__(558);
+
+var _keyframes2 = _interopRequireDefault(_keyframes);
+
+var _resolveStyles = __webpack_require__(222);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Radium(ComposedComponent) {
+  return (0, _enhancer2.default)(ComposedComponent);
+}
+
+Radium.Plugins = _plugins2.default;
+Radium.Style = _style2.default;
+Radium.StyleRoot = _styleRoot2.default;
+Radium.getState = _getState2.default;
+Radium.keyframes = _keyframes2.default;
+
+if (process.env.NODE_ENV !== 'production') {
+  Radium.TestMode = {
+    clearState: _resolveStyles.__clearStateForTests,
+    disable: _resolveStyles.__setTestMode.bind(null, false),
+    enable: _resolveStyles.__setTestMode.bind(null, true)
+  };
+}
+
+exports.default = Radium;
+module.exports = exports['default'];
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global, process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; }; /**
+                                                                                                                                                                                                                                                   * Based on https://github.com/jsstyles/css-vendor, but without having to
+                                                                                                                                                                                                                                                   * convert between different cases all the time.
+                                                                                                                                                                                                                                                   *
+                                                                                                                                                                                                                                                   * 
+                                                                                                                                                                                                                                                   */
+
+exports.getPrefixedKeyframes = getPrefixedKeyframes;
+exports.getPrefixedStyle = getPrefixedStyle;
+
+var _inlineStylePrefixer = __webpack_require__(528);
+
+var _inlineStylePrefixer2 = _interopRequireDefault(_inlineStylePrefixer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function transformValues(style) {
+  return Object.keys(style).reduce(function (newStyle, key) {
+    var value = style[key];
+    if (Array.isArray(value)) {
+      value = value.join(';' + key + ':');
+    } else if (value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object' && typeof value.toString === 'function') {
+      value = value.toString();
+    }
+
+    newStyle[key] = value;
+    return newStyle;
+  }, {});
+}
+
+var _hasWarnedAboutUserAgent = false;
+var _lastUserAgent = void 0;
+var _cachedPrefixer = void 0;
+
+function getPrefixer(userAgent) {
+  var actualUserAgent = userAgent || global && global.navigator && global.navigator.userAgent;
+
+  if (process.env.NODE_ENV !== 'production') {
+    if (!actualUserAgent && !_hasWarnedAboutUserAgent) {
+      /* eslint-disable no-console */
+      console.warn('Radium: userAgent should be supplied for server-side rendering. See ' + 'https://github.com/FormidableLabs/radium/tree/master/docs/api#radium ' + 'for more information.');
+      /* eslint-enable no-console */
+      _hasWarnedAboutUserAgent = true;
+    }
+  }
+
+  if (!_cachedPrefixer || actualUserAgent !== _lastUserAgent) {
+    if (actualUserAgent === 'all') {
+      _cachedPrefixer = {
+        prefix: _inlineStylePrefixer2.default.prefixAll,
+        prefixedKeyframes: 'keyframes'
+      };
+    } else {
+      _cachedPrefixer = new _inlineStylePrefixer2.default({ userAgent: actualUserAgent });
+    }
+    _lastUserAgent = actualUserAgent;
+  }
+  return _cachedPrefixer;
+}
+
+function getPrefixedKeyframes(userAgent) {
+  return getPrefixer(userAgent).prefixedKeyframes;
+}
+
+// Returns a new style object with vendor prefixes added to property names
+// and values.
+function getPrefixedStyle(style, userAgent) {
+  var styleWithFallbacks = transformValues(style);
+  var prefixer = getPrefixer(userAgent);
+  var prefixedStyle = prefixer.prefix(styleWithFallbacks);
+  return prefixedStyle;
+}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(100), __webpack_require__(1)))
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var StyleKeeper = function () {
+  function StyleKeeper(userAgent) {
+    _classCallCheck(this, StyleKeeper);
+
+    this._userAgent = userAgent;
+    this._listeners = [];
+    this._cssSet = {};
+  }
+
+  StyleKeeper.prototype.subscribe = function subscribe(listener) {
+    var _this = this;
+
+    if (this._listeners.indexOf(listener) === -1) {
+      this._listeners.push(listener);
+    }
+
+    return {
+      // Must be fat arrow to capture `this`
+      remove: function remove() {
+        var listenerIndex = _this._listeners.indexOf(listener);
+        if (listenerIndex > -1) {
+          _this._listeners.splice(listenerIndex, 1);
+        }
+      }
+    };
+  };
+
+  StyleKeeper.prototype.addCSS = function addCSS(css) {
+    var _this2 = this;
+
+    if (!this._cssSet[css]) {
+      this._cssSet[css] = true;
+      this._emitChange();
+    }
+
+    return {
+      // Must be fat arrow to capture `this`
+      remove: function remove() {
+        delete _this2._cssSet[css];
+        _this2._emitChange();
+      }
+    };
+  };
+
+  StyleKeeper.prototype.getCSS = function getCSS() {
+    return Object.keys(this._cssSet).join('\n');
+  };
+
+  StyleKeeper.prototype._emitChange = function _emitChange() {
+    this._listeners.forEach(function (listener) {
+      return listener();
+    });
+  };
+
+  return StyleKeeper;
+}();
+
+exports.default = StyleKeeper;
+module.exports = exports['default'];
+
+/***/ }),
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(38);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _qs = __webpack_require__(39);
+
+var _qs2 = _interopRequireDefault(_qs);
+
+var _amount = __webpack_require__(168);
+
+var _amount2 = _interopRequireDefault(_amount);
+
+var _creditCard = __webpack_require__(170);
+
+var _creditCard2 = _interopRequireDefault(_creditCard);
+
+var _contact = __webpack_require__(169);
+
+var _contact2 = _interopRequireDefault(_contact);
+
+var _donate = __webpack_require__(167);
+
+var actions = _interopRequireWildcard(_donate);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var endpoint = "/wp-admin/admin-ajax.php";
+
+function isAllValid() {
+  var errors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  return Object.keys(errors).every(function (key) {
+    return errors[key] == true;
+  });
+}
+
+var Donate = function (_Component) {
+  _inherits(Donate, _Component);
+
+  function Donate() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Donate);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Donate.__proto__ || Object.getPrototypeOf(Donate)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      section: 0,
+      left: 0,
+      loading: false,
+      donation_type: "monthly",
+      amount: 30,
+      currency: "usd",
+      countries: [],
+      contact: { name: "", email: "", country: "" },
+      stripe: {
+        card_type: "",
+        number: "",
+        exp_month: "",
+        exp_year: "",
+        cvc: "",
+        token: ""
+      },
+      errors: { stripe: {}, contact: {} },
+      is_blue: false
+    }, _this.handleChange = function (field) {
+      _this.setState(_extends({}, _this.state, field));
+    }, _this.handleSubmit = function (e) {
+      e.preventDefault();
+      _this.nextSection();
+    }, _this.completeTransaction = function () {
+      var stripeResponse = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var _this$state = _this.state,
+          amount = _this$state.amount,
+          donation_type = _this$state.donation_type;
+
+      var base = _this.props.redirect[donation_type];
+      var customer = stripeResponse.customer,
+          id = stripeResponse.id;
+
+
+      actions.storeConvertLoop(_this.state).then(actions.storeEventConvertLoop.bind(null, _this.state)).then(actions.storeInfusion.bind(null, _this.state)).then(function (res) {
+        var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
+        window.location = url;
+      });
+    }, _this.creditCardIsValid = function () {
+      var errs = _this.creditCard.validateAll();
+      return isAllValid(errs.stripe);
+    }, _this.contactIsValid = function () {
+      var errs = _this.contact.validateAll();
+      return isAllValid(errs.contact);
+    }, _this.nextSection = function () {
+      var section = _this.state.section < 2 ? _this.state.section + 1 : 2;
+
+      if (_this.state.section == 1) {
+        if (!_this.creditCardIsValid()) return false;
+
+        actions.stripeToken(_this.state).then(function (res) {
+          if (res.id) {
+            var stripe = _extends({}, _this.state.stripe, { token: res.id });
+            _this.setState(_extends({}, _this.state, { stripe: stripe }));
+            return stripe;
+          }
+
+          if (res.stripeCode) {
+            _this.setState(_extends({}, _this.state, { loading: false, declined: true }));
+          }
+        });
+      }
+
+      if (_this.state.section == 2) {
+        if (!_this.contactIsValid()) return false;
+        actions.stripeCharge(_this.state).then(function (res) {
+          return _this.completeTransaction(res.data);
+        });
+      }
+
+      var left = "-" + section * 100 + "%";
+
+      if (_this.state.section == 0) {
+        _this.setState({ section: section, left: left, loading: false });
+      } else {
+        _this.setState({ section: section, left: left });
+      }
+    }, _this.prevSection = function (e) {
+      e.preventDefault();
+      var section = _this.state.section >= 0 ? _this.state.section - 1 : 0;
+      var left = "-" + section * 100 + "%";
+      _this.setState({ section: section, left: left });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Donate, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      actions.fetchCountries().then(function (countries) {
+        return _this2.setState({ countries: countries });
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this3 = this;
+
+      this.donateForm.addEventListener("keydown", function (e) {
+        if (e.which == 9) {
+          e.preventDefault();
+          _this3.nextSection();
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      var sectionWidth = 100 / 3 + "%";
+      var viewPortStyle = { width: "300%", left: this.state.left };
+      var donationTypeStyle = {
+        display: "inline",
+        marginLeft: "15px",
+        color: this.props.is_blue ? "rgb(60, 81, 95)" : "#fff"
+      };
+
+      var backBtnStyle = {
+        float: "right",
+        background: "transparent",
+        border: "none",
+        padding: "0 20px",
+        color: this.props.is_blue ? "rgb(60, 81, 95)" : "#fff"
+      };
+
+      return _react2.default.createElement(
+        "form",
+        {
+          onSubmit: this.handleSubmit,
+          className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
+          ref: function ref(donate) {
+            return _this4.donateForm = donate;
+          }
+        },
+        _react2.default.createElement(
+          "div",
+          { className: "donate_react__viewport", style: viewPortStyle },
+          _react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
+            width: sectionWidth,
+            onChange: this.handleChange
+          })),
+          _react2.default.createElement(_creditCard2.default, _extends({
+            ref: function ref(creditCard) {
+              return _this4.creditCard = creditCard;
+            }
+          }, this.state, this.props, {
+            width: sectionWidth,
+            onChange: this.handleChange
+          })),
+          _react2.default.createElement(_contact2.default, _extends({
+            ref: function ref(contact) {
+              return _this4.contact = contact;
+            }
+          }, this.state, this.props, {
+            width: sectionWidth,
+            onChange: this.handleChange
+          }))
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "form-group" },
+          _react2.default.createElement(
+            "button",
+            {
+              className: "donate_react__submit pull-left",
+              onClick: this.handleSubmit,
+              disabled: this.state.loading
+            },
+            this.state.section == 1 ? this.props.texts.next : this.props.texts.donate
+          ),
+          _react2.default.createElement(
+            "span",
+            { style: donationTypeStyle },
+            this.state.amount + " USD " + this.props.texts[this.state.donation_type]
+          ),
+          this.state.section > 0 ? _react2.default.createElement(
+            "button",
+            { style: backBtnStyle, onClick: this.prevSection },
+            this.props.texts.back
+          ) : ""
+        )
+      );
+    }
+  }]);
+
+  return Donate;
+}(_react.Component);
+
+Donate.defaultProps = { texts: {}, redirect: {} };
+exports.default = Donate;
+
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(38);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _qs = __webpack_require__(39);
+
+var _qs2 = _interopRequireDefault(_qs);
+
+var _amount = __webpack_require__(168);
+
+var _amount2 = _interopRequireDefault(_amount);
+
+var _creditCard = __webpack_require__(170);
+
+var _creditCard2 = _interopRequireDefault(_creditCard);
+
+var _contact = __webpack_require__(169);
+
+var _contact2 = _interopRequireDefault(_contact);
+
+var _donate = __webpack_require__(167);
+
+var actions = _interopRequireWildcard(_donate);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var endpoint = "/wp-admin/admin-ajax.php";
+
+function isAllValid() {
+  var errors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  return Object.keys(errors).every(function (key) {
+    return errors[key] == true;
+  });
+}
+
+var DonateInline = function (_Component) {
+  _inherits(DonateInline, _Component);
+
+  function DonateInline() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, DonateInline);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DonateInline.__proto__ || Object.getPrototypeOf(DonateInline)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      section: 0,
+      left: 0,
+      loading: false,
+      donation_type: "monthly",
+      amount: 30,
+      currency: "usd",
+      countries: [],
+      contact: { name: "", email: "", country: "" },
+      stripe: {
+        card_type: "",
+        number: "",
+        exp_month: "",
+        exp_year: "",
+        cvc: "",
+        token: ""
+      },
+      errors: { stripe: {}, contact: {} },
+      is_blue: false
+    }, _this.handleChange = function (field) {
+      _this.setState(_extends({}, _this.state, field));
+    }, _this.creditCardIsValid = function () {
+      return new Promise(function (resolve, reject) {
+        var errs = _this.creditCard.validateAll();
+        var isValid = isAllValid(errs.stripe);
+        return resolve(isValid);
+      });
+    }, _this.contactIsValid = function () {
+      return new Promise(function (resolve, reject) {
+        var errs = _this.contact.validateAll();
+        var isValid = isAllValid(errs.contact);
+        return resolve(isValid);
+      });
+    }, _this.handleSubmit = function (e) {
+      if (e) e.preventDefault();
+
+      _this.contactIsValid().then(function (res) {
+        if (!res) return false;
+      }).then(_this.creditCardIsValid).then(function (res) {
+        if (!res) return false;
+
+        actions.stripeToken(_this.state).then(function (res) {
+          if (res.id) {
+            var stripe = _extends({}, _this.state.stripe, { token: res.data.id });
+            _this.setState({ loading: false, stripe: stripe });
+
+            actions.stripeCharge(_extends({}, _this.state, { stripe: stripe })).then(function (res) {
+              return _this.completeTransaction(res.data);
+            });
+          }
+
+          if (res.stripeCode) {
+            _this.setState({ loading: false, declined: true });
+          }
+        });
+      });
+    }, _this.completeTransaction = function () {
+      var stripeResponse = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var _this$state = _this.state,
+          amount = _this$state.amount,
+          donation_type = _this$state.donation_type;
+
+      var base = _this.props.redirect[donation_type];
+      var customer = stripeResponse.customer,
+          id = stripeResponse.id;
+
+
+      actions.storeConvertLoop(_this.state).then(actions.storeEventConvertLoop.bind(null, _this.state)).then(actions.storeInfusion.bind(null, _this.state)).then(function (res) {
+        if (donation_type == 'monthly') {
+          var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
+          window.location = url;
+        }
+      });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(DonateInline, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      actions.fetchCountries().then(function (countries) {
+        return _this2.setState({ countries: countries });
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this3 = this;
+
+      this.donateForm.addEventListener("keydown", function (e) {
+        if (e.which == 9) {
+          e.preventDefault();
+          _this3.handleSubmit();
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      var sectionWidth = "100%";
+      var viewPortStyle = {
+        width: "100%",
+        left: this.state.left,
+        display: "block"
+      };
+
+      var donationTypeStyle = {
+        display: "inline",
+        marginLeft: "15px",
+        color: this.props.is_blue ? "#3C515F" : "#fff"
+      };
+
+      var backBtnStyle = {
+        float: "right",
+        background: "transparent",
+        border: "none"
+      };
+
+      return _react2.default.createElement(
+        "form",
+        {
+          onSubmit: this.handleSubmit,
+          className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
+          style: { overflow: "visible" },
+          ref: function ref(donate) {
+            return _this4.donateForm = donate;
+          }
+        },
+        _react2.default.createElement(
+          "div",
+          { className: "donate_react__viewport", style: viewPortStyle },
+          _react2.default.createElement(_contact2.default, _extends({
+            ref: function ref(contact) {
+              return _this4.contact = contact;
+            }
+          }, this.state, this.props, {
+            width: sectionWidth,
+            inline: true,
+            onChange: this.handleChange
+          })),
+          _react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
+            width: sectionWidth,
+            onChange: this.handleChange
+          })),
+          _react2.default.createElement(_creditCard2.default, _extends({
+            ref: function ref(creditCard) {
+              return _this4.creditCard = creditCard;
+            }
+          }, this.state, this.props, {
+            width: sectionWidth,
+            onChange: this.handleChange
+          }))
+        ),
+        _react2.default.createElement(
+          "div",
+          { style: { marginBottom: "10px" } },
+          _react2.default.createElement(
+            "button",
+            {
+              className: "donate_react__submit pull-left",
+              onClick: this.handleSubmit,
+              disabled: this.state.loading
+            },
+            this.props.texts.donate
+          ),
+          _react2.default.createElement(
+            "span",
+            { style: donationTypeStyle },
+            this.state.amount + " USD " + this.props.texts[this.state.donation_type]
+          )
+        )
+      );
+    }
+  }]);
+
+  return DonateInline;
+}(_react.Component);
+
+DonateInline.defaultProps = { texts: {}, redirect: {} };
+exports.default = DonateInline;
+
+/***/ }),
+/* 159 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _debounce = __webpack_require__(92);
+
+var _debounce2 = _interopRequireDefault(_debounce);
+
+var _projectsIcons = __webpack_require__(297);
+
+var _projectsIcons2 = _interopRequireDefault(_projectsIcons);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var backgroundColors = {
+  1: "#b91325",
+  2: "#00355f",
+  3: "#6e5785",
+  4: "#95a0ad",
+  5: "#156734",
+  6: "#689038",
+  7: "#7a2d04",
+  8: "#b27009",
+  9: "#E4A70F"
+};
+
+var Projects = function (_React$Component) {
+  _inherits(Projects, _React$Component);
+
+  function Projects() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Projects);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Projects.__proto__ || Object.getPrototypeOf(Projects)).call.apply(_ref, [this].concat(args))), _this), _this.state = { section: 1, bg: "#B91325", donateColor: "#B91325" }, _this.moveArrow = function (num) {
+      var left = _this.el.querySelector(".projects__icons li:nth-child(" + num + ")").offsetLeft;
+      _this.el.querySelector(".projects__arrow").style.left = left + "px";
+    }, _this.updateUrl = function (hash) {
+      history.pushState(null, null, "#" + hash);
+    }, _this.changeContent = function (num) {
+      var color = backgroundColors[num];
+      var ind = num - 1;
+      _this.setState({ bg: color, donateColor: color, section: num });
+      _this.moveArrow(num);
+
+      if (_this.props.contents.length > 0 && _this.props.contents[ind].hash_url) {
+        _this.updateUrl(_this.props.contents[ind].hash_url);
+      }
+
+      _this.props.changeSection ? _this.props.changeSection(num) : "";
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Projects, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var num = 1;
+
+      this.props.contents.map(function (content, ind) {
+        if (content.hash_url == window.location.hash.replace("#", "")) {
+          num = ind + 1;
+        }
+      });
+
+      var patt = new RegExp(/#projects-[1-9]/);
+      var hash = window.location.hash;
+
+      window.addEventListener("resize", (0, _debounce2.default)(function (event) {
+        _this2.moveArrow(_this2.state.section);
+      }, 200));
+
+      setTimeout(function () {
+        _this2.moveArrow(num);
+        _this2.changeContent(num);
+      }, 1000);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var _props$contents = this.props.contents,
+          contents = _props$contents === undefined ? [] : _props$contents;
+
+      var content = contents[this.state.section - 1] || {};
+      var title = content.title,
+          text = content.text,
+          imgUrl = content.imgUrl;
+
+      // let title = content.title;
+      // let text = content.content;
+      // let imgUrl = content.imgUrl;
+
+      var styleRight = {
+        backgroundImage: "url(" + imgUrl + ")",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "500px"
+      };
+
+      var styleLeft = { background: this.state.bg, minHeight: "500px" };
+
+      var donateStyle = {
+        background: "#fff",
+        borderColor: "#fff",
+        textTransform: "uppercase",
+        color: this.state.donateColor
+      };
+
+      return _react2.default.createElement(
+        "div",
+        { className: "projects", ref: function ref(el) {
+            return _this3.el = el;
+          } },
+        _react2.default.createElement(_projectsIcons2.default, { ref: "projectIcons", onChange: this.changeContent }),
+        _react2.default.createElement(
+          "div",
+          { className: "projects__content" },
+          _react2.default.createElement("div", { className: "projects__arrow" }),
+          _react2.default.createElement(
+            "div",
+            {
+              className: "col-4-l projects__content__content-left",
+              style: styleLeft
+            },
+            _react2.default.createElement(
+              "h4",
+              null,
+              title
+            ),
+            _react2.default.createElement("div", {
+              className: "projects__content__content-left__text",
+              dangerouslySetInnerHTML: { __html: text }
+            }),
+            _react2.default.createElement(
+              "button",
+              { className: "bs-donate", style: donateStyle },
+              this.props.donate
+            )
+          ),
+          _react2.default.createElement("div", {
+            className: "col-8-l projects__content__content-right",
+            style: styleRight
+          })
+        )
+      );
+    }
+  }]);
+
+  return Projects;
+}(_react2.default.Component);
+
+exports.default = Projects;
+
+/***/ }),
+/* 160 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _videoModal = __webpack_require__(78);
+
+var _videoModal2 = _interopRequireDefault(_videoModal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SectionVideo = function (_React$Component) {
+  _inherits(SectionVideo, _React$Component);
+
+  function SectionVideo() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, SectionVideo);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SectionVideo.__proto__ || Object.getPrototypeOf(SectionVideo)).call.apply(_ref, [this].concat(args))), _this), _this.showVideo = function (e) {
+      e.preventDefault();
+      _this.modal.show();
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(SectionVideo, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var linkStyle = { float: "left", lineHeight: "0" };
+      var imageStyle = { width: "100px", margin: "0 auto" };
+      imageStyle = _extends({}, imageStyle, this.props.imageStyle);
+
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(_videoModal2.default, { ref: function ref(modal) {
+            return _this2.modal = modal;
+          }, url: this.props.url }),
+        _react2.default.createElement(
+          "a",
+          {
+            href: "#",
+            className: "image-video__link",
+            style: linkStyle,
+            onClick: this.showVideo
+          },
+          _react2.default.createElement("img", { style: imageStyle, src: this.props.imgUrl, alt: "" })
+        )
+      );
+    }
+  }]);
+
+  return SectionVideo;
+}(_react2.default.Component);
+
+SectionVideo.defaultProps = {
+  imgUrl: "",
+  url: "https://www.youtube.com/embed/_lQvw2vSDbs",
+  imageStyle: {}
+};
+exports.default = SectionVideo;
+
+/***/ }),
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.fetchCountries = fetchCountries;
+exports.stripeToken = stripeToken;
+exports.stripeCharge = stripeCharge;
+exports.storeConvertLoop = storeConvertLoop;
+exports.storeEventConvertLoop = storeEventConvertLoop;
+exports.storeInfusion = storeInfusion;
+
+var _axios = __webpack_require__(38);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _qs = __webpack_require__(39);
+
+var _qs2 = _interopRequireDefault(_qs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var endpoint = "/wp-admin/admin-ajax.php";
+
+function fetchCountries() {
+  var data = _qs2.default.stringify({ action: "countries" });
+
+  return _axios2.default.post(endpoint, data).then(function (res) {
+    return Array.isArray(res.data) ? res.data : [];
+  });
+}
+
+function stripeToken(state) {
+  var data = _qs2.default.stringify({
+    action: "stripe_token",
+    data: state.stripe
+  });
+
+  return _axios2.default.post(endpoint, data).then(function (res) {
+    return res.data;
+  });
+}
+
+function stripeCharge(state) {
+  var contact = state.contact,
+      currency = state.currency,
+      amount = state.amount,
+      donation_type = state.donation_type,
+      token = state.stripe.token;
+
+
+  var data = _extends({}, contact, {
+    currency: currency,
+    amount: amount,
+    donation_type: donation_type,
+    stripe_token: token
+  });
+
+  var dataAjax = _qs2.default.stringify({ action: "stripe_charge", data: data });
+
+  return _axios2.default.post(endpoint, dataAjax);
+}
+
+function storeConvertLoop(state) {
+  var data = _qs2.default.stringify({
+    data: state.contact,
+    action: "convertloop_contact"
+  });
+
+  return _axios2.default.post(endpoint, data);
+}
+
+function storeEventConvertLoop(state) {
+  var _state$contact = state.contact,
+      email = _state$contact.email,
+      country = _state$contact.country;
+
+
+  var metadata = {
+    amount: state.amount,
+    type: state.donation_type
+  };
+
+  var event = {
+    name: "Donation-" + state.donation_type,
+    person: { email: email },
+    country: country,
+    metadata: metadata
+  };
+
+  var data = _qs2.default.stringify({ data: event, action: "convertloop_event" });
+  return _axios2.default.post(endpoint, data);
+}
+
+function storeInfusion(state) {
+  var tags = "";
+  if (state.donation_type == "monthly") tags = ["870", "924"];
+  if (state.donation_type == "once") tags = ["868", "926"];
+  var data = _qs2.default.stringify({
+    data: _extends({}, state.contact, { tags: tags }),
+    action: "infusion_contact"
+  });
+
+  return _axios2.default.post(endpoint, data);
+}
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _amountBtns = __webpack_require__(292);
+
+var _amountBtns2 = _interopRequireDefault(_amountBtns);
+
+var _clean_inputs = __webpack_require__(171);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var amount = function (_React$Component) {
+  _inherits(amount, _React$Component);
+
+  function amount() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, amount);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = amount.__proto__ || Object.getPrototypeOf(amount)).call.apply(_ref, [this].concat(args))), _this), _this.changeAmount = function (amount, e) {
+      if (e) e.preventDefault();
+      var el = _this.amountInput;
+      if (amount == 5) el.focus();
+      _this.props.onChange({ amount: amount });
+    }, _this.handleAmount = function (e) {
+      var val = e.currentTarget.value;
+      var amount = (0, _clean_inputs.onlyNum)(val);
+      _this.props.onChange({ amount: amount });
+    }, _this.changeType = function (donation_type, e) {
+      if (e) e.preventDefault();
+      _this.props.onChange({ donation_type: donation_type });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(amount, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          texts = _props.texts,
+          donation_type = _props.donation_type,
+          amount = _props.amount;
+
+
+      return _react2.default.createElement(
+        "div",
+        { style: { width: this.props.width, float: "left", padding: "1px" } },
+        _react2.default.createElement(_amountBtns2.default, {
+          amount: amount,
+          texts: texts,
+          changeAmount: this.changeAmount
+        }),
+        _react2.default.createElement(
+          "div",
+          { className: "row" },
+          _react2.default.createElement(
+            "div",
+            { className: "form-group form-group--addon col-7-l" },
+            _react2.default.createElement(
+              "span",
+              { className: "form-group__addon" },
+              "USD"
+            ),
+            _react2.default.createElement("input", {
+              ref: function ref(amountInput) {
+                return _this2.amountInput = amountInput;
+              },
+              className: "form-control",
+              type: "text",
+              onChange: this.handleAmount,
+              value: amount
+            })
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-5-l" },
+            _react2.default.createElement(
+              "a",
+              {
+                href: "#",
+                onClick: this.changeType.bind(null, "monthly"),
+                className: donation_type == "monthly" ? "donate_react__type donate_react__type--active" : "donate_react__type "
+              },
+              texts.monthly
+            ),
+            _react2.default.createElement(
+              "a",
+              {
+                href: "#",
+                onClick: this.changeType.bind(null, "once"),
+                className: donation_type == "once" ? "donate_react__type donate_react__type--active" : "donate_react__type "
+              },
+              texts.once
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return amount;
+}(_react2.default.Component);
+
+amount.defaultProps = { texts: {}, amount: 30 };
+exports.default = amount;
+
+/***/ }),
+/* 169 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _isEmail = __webpack_require__(247);
+
+var _isEmail2 = _interopRequireDefault(_isEmail);
+
+var _isEmpty = __webpack_require__(248);
+
+var _isEmpty2 = _interopRequireDefault(_isEmpty);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Contact = function (_React$Component) {
+  _inherits(Contact, _React$Component);
+
+  function Contact() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Contact);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Contact.__proto__ || Object.getPrototypeOf(Contact)).call.apply(_ref, [this].concat(args))), _this), _this.validate = function (field) {
+      var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+
+      var valid = !(0, _isEmpty2.default)(val);
+      if (field == "email") valid = (0, _isEmail2.default)(val);
+      var contact = _extends({}, _this.props.errors.contact, _defineProperty({}, field, valid));
+      return _extends({}, _this.props.errors, { contact: contact });
+    }, _this.handleChange = function (field, e) {
+      var val = e.currentTarget.value;
+      var errors = _this.validate(field, val);
+
+      _this.props.onChange({
+        contact: _extends({}, _this.props.contact, _defineProperty({}, field, val)),
+        errors: errors
+      });
+    }, _this.showErr = function (field) {
+      return _this.props.errors.contact[field] == false ? "form-group__error" : "hidden";
+    }, _this.inputErrStyle = function (field) {
+      return _this.props.errors.contact[field] == false ? "form-group--error" : "";
+    }, _this.validateAll = function () {
+      var _this$props = _this.props,
+          contact = _this$props.contact,
+          texts = _this$props.texts;
+
+      var name = _this.validate("name", contact.name);
+      var email = _this.validate("email", contact.email);
+      var country = contact.country || texts.country;
+      var countryValidation = _this.validate("country", country);
+
+      var errors = _extends({}, _this.props.errors, {
+        contact: _extends({}, name.contact, email.contact, countryValidation.contact)
+      });
+
+      _this.props.onChange({ errors: errors });
+      return errors;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Contact, [{
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          texts = _props.texts,
+          contact = _props.contact;
+
+
+      return _react2.default.createElement(
+        "div",
+        { style: { width: this.props.width, float: "left", padding: "1px" } },
+        _react2.default.createElement(
+          "div",
+          { className: "row" },
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-12-l" },
+            _react2.default.createElement("input", {
+              type: "text",
+              className: "form-control " + this.inputErrStyle("name"),
+              placeholder: texts.placeholder_name,
+              onChange: this.handleChange.bind(null, "name"),
+              value: contact.name
+            }),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("name") },
+              texts.validation_name
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: this.props.inline ? "form-group col-6-l" : "form-group col-12-l" },
+            _react2.default.createElement("input", {
+              type: "text",
+              className: "form-control " + this.inputErrStyle("email"),
+              placeholder: texts.placeholder_email,
+              onChange: this.handleChange.bind(null, "email"),
+              value: contact.email
+            }),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("email") },
+              texts.validation_email
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: this.props.inline ? "form-group col-6-l" : "form-group col-12-l" },
+            _react2.default.createElement(
+              "select",
+              {
+                type: "text",
+                className: "form-control",
+                placeholder: texts.placeholder_country,
+                onChange: this.handleChange.bind(null, "country"),
+                value: contact.country || texts.country
+              },
+              this.props.countries.map(function (country, i) {
+                return _react2.default.createElement(
+                  "option",
+                  { key: i, value: country },
+                  country
+                );
+              })
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Contact;
+}(_react2.default.Component);
+
+Contact.defaultProps = {
+  contact: {},
+  countries: [],
+  errors: { contact: {} },
+  texts: {},
+  inline: false
+};
+exports.default = Contact;
+
+/***/ }),
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _cardValidator = __webpack_require__(300);
+
+var _cardValidator2 = _interopRequireDefault(_cardValidator);
+
+var _cards = __webpack_require__(293);
+
+var _cards2 = _interopRequireDefault(_cards);
+
+var _clean_inputs = __webpack_require__(171);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CedritCard = function (_React$Component) {
+  _inherits(CedritCard, _React$Component);
+
+  function CedritCard(props) {
+    _classCallCheck(this, CedritCard);
+
+    var _this = _possibleConstructorReturn(this, (CedritCard.__proto__ || Object.getPrototypeOf(CedritCard)).call(this, props));
+
+    _this.validateCard = function (card) {
+      var number = _cardValidator2.default.number(card).isValid;
+      return _this.updateErrors({ number: number });
+    };
+
+    _this.validateExpiry = function (month, year) {
+      var valid = _cardValidator2.default.expirationDate({ month: month, year: year });
+      var exp_month = valid.isValid;
+      var exp_year = valid.isValid;
+      return _this.updateErrors({ exp_month: exp_month, exp_year: exp_year });
+    };
+
+    _this.validateCvc = function (cvc) {
+      cvc = cvc.length >= 3;
+      return _this.updateErrors({ cvc: cvc });
+    };
+
+    _this.getCardType = function (cardNum) {
+      return _cardValidator2.default.number(cardNum).card ? _cardValidator2.default.number(cardNum).card.type : null;
+    };
+
+    _this.updateErrors = function (field) {
+      return _extends({}, _this.props.errors, { stripe: field });
+    };
+
+    _this.handleCard = function (e) {
+      var val = e.currentTarget.value;
+      var number = (0, _clean_inputs.onlyNum)(val);
+      number = (0, _clean_inputs.maxLength)(number, 16);
+      var errors = _this.validateCard(number);
+      var card_type = _this.getCardType(number);
+      var stripe = _extends({}, _this.props.stripe, { number: number, card_type: card_type });
+      _this.props.onChange({ stripe: stripe, errors: errors });
+    };
+
+    _this.handleExpiry = function (type, e) {
+      var stripe = _this.props.stripe;
+
+      var val = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
+      val = (0, _clean_inputs.maxLength)(val, 2);
+      var exp_month = stripe.exp_month;
+      var exp_year = stripe.exp_year;
+      if (type == "exp_month") exp_month = val;
+      if (type == "exp_year") exp_year = val;
+      var errors = _this.validateExpiry(exp_month, exp_year);
+      stripe = _extends({}, stripe, { exp_month: exp_month, exp_year: exp_year });
+
+      _this.props.onChange({ stripe: stripe, errors: errors });
+    };
+
+    _this.handleCvc = function (e) {
+      var stripe = _this.props.stripe;
+
+      var cvc = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
+      cvc = (0, _clean_inputs.maxLength)(cvc, 4);
+      stripe = _extends({}, stripe, { cvc: cvc });
+      var errors = _this.validateCvc(cvc);
+      _this.props.onChange({ stripe: stripe, errors: errors });
+    };
+
+    _this.showErr = function (field) {
+      if (_this.props.errors.stripe) {
+        return _this.props.errors.stripe[field] == false ? "form-group__error" : "hidden";
+      }
+
+      return "";
+    };
+
+    _this.inputErrStyle = function (field) {
+      if (_this.props.errors.stripe) {
+        return _this.props.errors.stripe[field] == false ? "form-group--error" : "";
+      }
+
+      return "";
+    };
+
+    _this.validateAll = function (e) {
+      if (e) e.preventDefault();
+      var stripe = _this.props.stripe;
+
+      var number = _this.validateCard(stripe.number);
+      var exp_month = _this.validateExpiry(stripe.exp_month, stripe.exp_year);
+      var cvc = _this.validateCvc(stripe.cvc);
+
+      var errors = _extends({}, _this.props.errors, {
+        stripe: _extends({}, number.stripe, exp_month.stripe, cvc.stripe)
+      });
+
+      _this.props.onChange({ errors: errors });
+
+      return errors;
+    };
+
+    _this.togglePopover = function () {
+      _this.setState({ showPopover: !_this.state.showPopover });
+    };
+
+    _this.state = {
+      showPopover: false
+    };
+    return _this;
+  }
+
+  _createClass(CedritCard, [{
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          texts = _props.texts,
+          stripe = _props.stripe,
+          errors = _props.errors;
+
+
+      return _react2.default.createElement(
+        "div",
+        {
+          className: "donate_react__creditcard",
+          style: { width: this.props.width, float: "left", padding: "1px" }
+        },
+        _react2.default.createElement(_cards2.default, this.props),
+        _react2.default.createElement(
+          "div",
+          { className: "form-group" },
+          _react2.default.createElement("input", {
+            type: "text",
+            placeholder: texts.placeholder_credit_card,
+            className: "form-control " + this.inputErrStyle("number"),
+            onChange: this.handleCard,
+            value: stripe.number
+          }),
+          _react2.default.createElement(
+            "span",
+            { className: this.showErr("number") },
+            texts.validation_card
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "row donate_react__creditcard__row" },
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-4-l col-4" },
+            _react2.default.createElement("input", {
+              type: "text",
+              placeholder: texts.placeholder_month,
+              className: "form-control",
+              onChange: this.handleExpiry.bind(null, "exp_month"),
+              value: stripe.exp_month
+            }),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("exp_month") },
+              texts.validation_month
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-4-l col-4" },
+            _react2.default.createElement("input", {
+              type: "text",
+              placeholder: texts.placeholder_year,
+              className: "form-control",
+              onChange: this.handleExpiry.bind(null, "exp_year"),
+              value: stripe.exp_year
+            }),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("exp_year") },
+              texts.validation_year
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-4-l col-4" },
+            _react2.default.createElement("input", {
+              type: "text",
+              placeholder: texts.placeholder_cvc,
+              className: "form-control",
+              onChange: this.handleCvc,
+              value: stripe.cvc
+            }),
+            _react2.default.createElement(
+              "span",
+              {
+                style: {
+                  display: "block",
+                  background: "#3C515F",
+                  width: "20px",
+                  height: "20px",
+                  borderRadius: "20px",
+                  color: "#fff",
+                  textAlign: "center",
+                  position: "absolute",
+                  top: "12px",
+                  right: "25px",
+                  cursor: "pointer"
+                },
+                onClick: this.togglePopover
+              },
+              _react2.default.createElement("i", { className: "ion-help" })
+            ),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("cvc") },
+              texts.validation_cvc
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          {
+            style: this.state.showPopover ? {
+              background: "#fff",
+              boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
+              borderRadius: "2px",
+              textAlign: "center",
+              display: "block",
+              margin: "15px 0",
+              position: "relative",
+              zIndex: "100"
+            } : { display: "none" }
+          },
+          _react2.default.createElement(
+            "span",
+            {
+              style: {
+                display: "block",
+                position: "absolute",
+                top: "2px",
+                right: "2px",
+                width: "15px",
+                height: "15px",
+                color: "red",
+                cursor: "pointer"
+              },
+              onClick: this.togglePopover
+            },
+            _react2.default.createElement("i", { className: "ion-close" })
+          ),
+          _react2.default.createElement(
+            "span",
+            {
+              style: {
+                display: "block",
+                color: "#3C515F",
+                padding: "10px",
+                fontSize: "14px"
+              }
+            },
+            texts.explain_cvc
+          ),
+          _react2.default.createElement("img", {
+            width: "60px",
+            src: texts.template_uri + "/public/img/cvc.png",
+            alt: ""
+          })
+        )
+      );
+    }
+  }]);
+
+  return CedritCard;
+}(_react2.default.Component);
+
+CedritCard.defaultProps = { texts: {}, stripe: {}, errors: {} };
+exports.default = CedritCard;
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.maxLength = maxLength;
+exports.onlyNum = onlyNum;
+function maxLength() {
+  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var length = arguments[1];
+
+  return val.substring(0, length);
+}
+
+function onlyNum() {
+  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+  if (typeof val == 'string') {
+    return val.replace(/[^0-9]+/, '');
+  }
+
+  if (typeof val == 'number') {
+    return val.toString().replace(/[^0-9]+/, '');
+  }
+
+  console.error('onlyNum val is not a string or number: ', val);
+}
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+
+var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar [Burma]", "Namibia", "Nauru", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Republic of Korea", "Republic of the Congo", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "São Tomé and Príncipe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovak Republic", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe", "Guinea Conakry", "Jordan", "Lithuania", "Micronesia", "Moldova"].sort();
+
+exports.default = countries;
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function verification(isValid, isPotentiallyValid, isValidForThisYear) {
+  return {
+    isValid: isValid,
+    isPotentiallyValid: isPotentiallyValid,
+    isValidForThisYear: isValidForThisYear || false
+  };
+}
+
+function expirationMonth(value) {
+  var month, result;
+  var currentMonth = new Date().getMonth() + 1;
+
+  if (typeof value !== 'string') {
+    return verification(false, false);
+  }
+  if (value.replace(/\s/g, '') === '' || value === '0') {
+    return verification(false, true);
+  }
+  if (!/^\d*$/.test(value)) {
+    return verification(false, false);
+  }
+
+  month = parseInt(value, 10);
+
+  if (isNaN(value)) {
+    return verification(false, false);
+  }
+
+  result = month > 0 && month < 13;
+
+  return verification(result, result, result && month >= currentMonth);
+}
+
+module.exports = expirationMonth;
+
+
+/***/ }),
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.processStyleName = undefined;
+exports.createMarkupForStyles = createMarkupForStyles;
+
+var _camelizeStyleName = __webpack_require__(513);
+
+var _camelizeStyleName2 = _interopRequireDefault(_camelizeStyleName);
+
+var _dangerousStyleValue = __webpack_require__(506);
+
+var _dangerousStyleValue2 = _interopRequireDefault(_dangerousStyleValue);
+
+var _hyphenateStyleName = __webpack_require__(516);
+
+var _hyphenateStyleName2 = _interopRequireDefault(_hyphenateStyleName);
+
+var _memoizeStringOnly = __webpack_require__(517);
+
+var _memoizeStringOnly2 = _interopRequireDefault(_memoizeStringOnly);
+
+var _warning = __webpack_require__(206);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var processStyleName = exports.processStyleName = (0, _memoizeStringOnly2.default)(_hyphenateStyleName2.default); /**
+                                                                                                                   * Copyright 2013-present, Facebook, Inc.
+                                                                                                                   * All rights reserved.
+                                                                                                                   *
+                                                                                                                   * This source code is licensed under the BSD-style license found in the
+                                                                                                                   * LICENSE file in the root directory of this source tree. An additional grant
+                                                                                                                   * of patent rights can be found in the PATENTS file in the same directory.
+                                                                                                                   *
+                                                                                                                   * @providesModule CSSPropertyOperations
+                                                                                                                   */
+
+if (process.env.NODE_ENV !== 'production') {
+  var warnValidStyle;
+
+  (function () {
+    // 'msTransform' is correct, but the other prefixes should be capitalized
+    var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/;
+
+    // style values shouldn't contain a semicolon
+    var badStyleValueWithSemicolonPattern = /;\s*$/;
+
+    var warnedStyleNames = {};
+    var warnedStyleValues = {};
+    var warnedForNaNValue = false;
+
+    var warnHyphenatedStyleName = function warnHyphenatedStyleName(name, owner) {
+      if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
+        return;
+      }
+
+      warnedStyleNames[name] = true;
+      process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(false, 'Unsupported style property %s. Did you mean %s?%s', name, (0, _camelizeStyleName2.default)(name), checkRenderMessage(owner)) : void 0;
+    };
+
+    var warnBadVendoredStyleName = function warnBadVendoredStyleName(name, owner) {
+      if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
+        return;
+      }
+
+      warnedStyleNames[name] = true;
+      process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(false, 'Unsupported vendor-prefixed style property %s. Did you mean %s?%s', name, name.charAt(0).toUpperCase() + name.slice(1), checkRenderMessage(owner)) : void 0;
+    };
+
+    var warnStyleValueWithSemicolon = function warnStyleValueWithSemicolon(name, value, owner) {
+      if (warnedStyleValues.hasOwnProperty(value) && warnedStyleValues[value]) {
+        return;
+      }
+
+      warnedStyleValues[value] = true;
+      process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(false, 'Style property values shouldn\'t contain a semicolon.%s ' + 'Try "%s: %s" instead.', checkRenderMessage(owner), name, value.replace(badStyleValueWithSemicolonPattern, '')) : void 0;
+    };
+
+    var warnStyleValueIsNaN = function warnStyleValueIsNaN(name, value, owner) {
+      if (warnedForNaNValue) {
+        return;
+      }
+
+      warnedForNaNValue = true;
+      process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(false, '`NaN` is an invalid value for the `%s` css style property.%s', name, checkRenderMessage(owner)) : void 0;
+    };
+
+    var checkRenderMessage = function checkRenderMessage(owner) {
+      if (owner) {
+        var name = owner.getName();
+        if (name) {
+          return ' Check the render method of `' + name + '`.';
+        }
+      }
+      return '';
+    };
+
+    /**
+     * @param {string} name
+     * @param {*} value
+     * @param {ReactDOMComponent} component
+     */
+
+    warnValidStyle = function warnValidStyle(name, value, component) {
+      //eslint-disable-line no-var
+      var owner = void 0;
+      if (component) {
+        owner = component._currentElement._owner;
+      }
+      if (name.indexOf('-') > -1) {
+        warnHyphenatedStyleName(name, owner);
+      } else if (badVendoredStyleNamePattern.test(name)) {
+        warnBadVendoredStyleName(name, owner);
+      } else if (badStyleValueWithSemicolonPattern.test(value)) {
+        warnStyleValueWithSemicolon(name, value, owner);
+      }
+
+      if (typeof value === 'number' && isNaN(value)) {
+        warnStyleValueIsNaN(name, value, owner);
+      }
+    };
+  })();
+}
+
+/**
+   * Serializes a mapping of style properties for use as inline styles:
+   *
+   *   > createMarkupForStyles({width: '200px', height: 0})
+   *   "width:200px;height:0;"
+   *
+   * Undefined values are ignored so that declarative programming is easier.
+   * The result should be HTML-escaped before insertion into the DOM.
+   *
+   * @param {object} styles
+   * @param {ReactDOMComponent} component
+   * @return {?string}
+   */
+
+function createMarkupForStyles(styles, component) {
+  var serialized = '';
+  for (var styleName in styles) {
+    var isCustomProp = styleName.indexOf('--') === 0;
+    if (!styles.hasOwnProperty(styleName)) {
+      continue;
+    }
+    var styleValue = styles[styleName];
+    if (process.env.NODE_ENV !== 'production' && !isCustomProp) {
+      warnValidStyle(styleName, styleValue, component);
+    }
+    if (styleValue != null) {
+      if (isCustomProp) {
+        serialized += styleName + ':' + styleValue + ';';
+      } else {
+        serialized += processStyleName(styleName) + ':';
+        serialized += (0, _dangerousStyleValue2.default)(styleName, styleValue, component) + ';';
+      }
+    }
+  }
+  return serialized || null;
+}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
 /* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4165,7 +4165,7 @@ exports.default = enhanceWithRadium;
 
 var _react = __webpack_require__(5);
 
-var _styleKeeper = __webpack_require__(135);
+var _styleKeeper = __webpack_require__(136);
 
 var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 
@@ -4511,7 +4511,7 @@ var _appendImportantToEachValue = __webpack_require__(553);
 
 var _appendImportantToEachValue2 = _interopRequireDefault(_appendImportantToEachValue);
 
-var _cssRuleSetToString = __webpack_require__(132);
+var _cssRuleSetToString = __webpack_require__(133);
 
 var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 
@@ -5146,7 +5146,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _sectionVideo = __webpack_require__(159);
+var _sectionVideo = __webpack_require__(160);
 
 var _sectionVideo2 = _interopRequireDefault(_sectionVideo);
 
@@ -5441,7 +5441,7 @@ var _obj_to_formdata = __webpack_require__(298);
 
 var _obj_to_formdata2 = _interopRequireDefault(_obj_to_formdata);
 
-var _getCountries = __webpack_require__(171);
+var _getCountries = __webpack_require__(172);
 
 var _getCountries2 = _interopRequireDefault(_getCountries);
 
@@ -5741,11 +5741,11 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _inline = __webpack_require__(157);
+var _inline = __webpack_require__(158);
 
 var _inline2 = _interopRequireDefault(_inline);
 
-var _glamor = __webpack_require__(205);
+var _glamor = __webpack_require__(131);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5841,11 +5841,11 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _donate = __webpack_require__(156);
+var _donate = __webpack_require__(157);
 
 var _donate2 = _interopRequireDefault(_donate);
 
-var _glamor = __webpack_require__(205);
+var _glamor = __webpack_require__(131);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5955,7 +5955,7 @@ var _isEmail = __webpack_require__(247);
 
 var _isEmail2 = _interopRequireDefault(_isEmail);
 
-var _getCountries = __webpack_require__(171);
+var _getCountries = __webpack_require__(172);
 
 var _getCountries2 = _interopRequireDefault(_getCountries);
 
@@ -6148,7 +6148,9 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _radium = __webpack_require__(133);
+var _glamor = __webpack_require__(131);
+
+var _radium = __webpack_require__(134);
 
 var _radium2 = _interopRequireDefault(_radium);
 
@@ -6217,12 +6219,12 @@ var GalleryHeader = function (_React$Component) {
       var h = window.innerHeight - 100;
       var w = window.innerHeight;
 
-      var btnsStyle = {
+      var btnsStyle = (0, _glamor.css)({
         float: "right",
         marginTop: "7px"
-      };
+      });
 
-      var btnStyle = {
+      var btnStyle = (0, _glamor.css)({
         border: "1px solid #fff",
         background: "transparent",
         width: "40px",
@@ -6232,39 +6234,39 @@ var GalleryHeader = function (_React$Component) {
         ":hover": {
           background: "rgba(255, 255, 255, .2)"
         }
-      };
+      });
 
-      var linkLeft = {
+      var linkLeft = (0, _glamor.css)({
         position: "absolute",
         height: "100%",
         top: "0",
         bottom: "auto",
         left: 0,
         width: "50%"
-      };
+      });
 
-      var linkRight = _extends({}, linkLeft, { left: "auto", right: 0 });
+      var linkRight = (0, _glamor.css)(_extends({}, linkLeft, { left: "auto", right: 0 }));
 
-      var mainStyle = {
+      var mainStyle = (0, _glamor.css)({
         height: h + "px",
         background: "#222",
         position: "relative",
         overflow: "hidden",
         "@media(max-width: 767px)": { margin: "0 -20px" }
-      };
+      });
 
       var viewportStyle = {
         height: h + "px"
       };
 
-      var excerptStyle = {
+      var excerptStyle = (0, _glamor.css)({
         color: "#fff",
         marginTop: "20px",
         display: "block",
         textShadow: "2px 2px 2px #222"
-      };
+      });
 
-      var shareBtn = {
+      var shareBtn = (0, _glamor.css)({
         color: "#fff",
         width: "30px",
         height: "30px",
@@ -6277,170 +6279,169 @@ var GalleryHeader = function (_React$Component) {
         ":hover": {
           background: "rgba(255, 255, 255, .2)"
         }
-      };
+      });
 
-      var liStyle = { display: "inline-block", marginLeft: "5px" };
+      var liStyle = (0, _glamor.css)({
+        marginLeft: "5px",
+        display: "none",
+        "@media(max-width: 767px)": {
+          display: "inline-block"
+        }
+      });
 
       return _react2.default.createElement(
-        _radium.StyleRoot,
-        null,
+        "div",
+        { className: mainStyle },
         _react2.default.createElement(
           "div",
-          { style: mainStyle },
+          { className: viewportStyle },
           _react2.default.createElement(
             "div",
-            { style: viewportStyle },
+            { style: { maxWidth: w, margin: "0 auto", padding: "0 20px" } },
             _react2.default.createElement(
-              "div",
-              { style: { maxWidth: w, margin: "0 auto", padding: "0 20px" } },
-              _react2.default.createElement(
-                "h5",
-                { style: { color: "#fff", marginBottom: "20px" } },
-                this.props.texts.gallery,
-                " ",
-                _react2.default.createElement("i", { className: "ion-camera" })
-              ),
-              _react2.default.createElement(
-                "div",
-                {
-                  className: "gallery-header__item",
-                  style: { position: "relative" }
-                },
-                _react2.default.createElement("img", {
-                  onLoad: this.getImage,
-                  src: images[this.state.section],
-                  style: this.state.imageStyle
-                }),
-                _react2.default.createElement(
-                  "div",
-                  { style: { width: "100%", float: "left" } },
-                  _react2.default.createElement(
-                    "span",
-                    { style: excerptStyle },
-                    excerpts[this.state.section]
-                  )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  {
-                    style: { width: "100%", float: "left", marginTop: "10px" }
-                  },
-                  _react2.default.createElement(
-                    "ul",
-                    {
-                      style: { listStyle: "none", padding: "0", float: "left" }
-                    },
-                    _react2.default.createElement(
-                      "li",
-                      { style: liStyle },
-                      _react2.default.createElement(
-                        "a",
-                        {
-                          key: 1,
-                          style: shareBtn,
-                          href: "https://www.facebook.com/sharer/sharer.php?u=" + window.location.href
-                        },
-                        _react2.default.createElement("i", { className: "ion-social-facebook" })
-                      )
-                    ),
-                    _react2.default.createElement(
-                      "li",
-                      { style: liStyle },
-                      _react2.default.createElement(
-                        "a",
-                        {
-                          key: 2,
-                          style: shareBtn,
-                          href: "https://twitter.com/intent/tweet?text=" + window.location.href
-                        },
-                        _react2.default.createElement("i", { className: "ion-social-twitter" })
-                      )
-                    ),
-                    _react2.default.createElement(
-                      "li",
-                      { style: liStyle },
-                      _react2.default.createElement(
-                        "a",
-                        {
-                          key: 3,
-                          style: shareBtn,
-                          href: "https://www.linkedin.com/shareArticle?mini=true&url=" + window.location.href
-                        },
-                        _react2.default.createElement("i", { className: "ion-social-linkedin" })
-                      )
-                    ),
-                    _react2.default.createElement(
-                      "li",
-                      {
-                        style: _extends({}, liStyle, {
-                          display: "none",
-                          "@media(max-width: 767px)": { display: "inline-block" }
-                        })
-                      },
-                      _react2.default.createElement(
-                        "a",
-                        {
-                          key: 4,
-                          style: shareBtn,
-                          href: "whatsapp://send?text=" + window.location.href
-                        },
-                        _react2.default.createElement("i", { className: "ion-social-whatsapp-outline" })
-                      )
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "div",
-                    { style: { float: "right", marginTop: "7px" } },
-                    _react2.default.createElement(
-                      "span",
-                      { style: { color: "#fff", paddingRight: "10px" } },
-                      this.state.section + 1,
-                      " ",
-                      this.props.texts.of,
-                      " ",
-                      images.length
-                    ),
-                    _react2.default.createElement(
-                      "button",
-                      {
-                        key: "btn-1",
-                        onClick: this.changeSection.bind(null, "prev"),
-                        style: btnStyle
-                      },
-                      _react2.default.createElement("i", { className: "ion-chevron-left" })
-                    ),
-                    _react2.default.createElement(
-                      "button",
-                      {
-                        key: "btn-2",
-                        onClick: this.changeSection.bind(null, "next"),
-                        style: btnStyle
-                      },
-                      _react2.default.createElement("i", { className: "ion-chevron-right" })
-                    )
-                  )
-                )
-              )
+              "h5",
+              { style: { color: "#fff", marginBottom: "20px" } },
+              this.props.texts.gallery,
+              " ",
+              _react2.default.createElement("i", { className: "ion-camera" })
             ),
             _react2.default.createElement(
               "div",
               {
-                style: {
-                  position: "absolute",
-                  textAlign: "center",
-                  bottom: "10px",
-                  left: "0",
-                  right: "0"
-                }
+                className: "gallery-header__item",
+                style: { position: "relative" }
               },
+              _react2.default.createElement("img", {
+                onLoad: this.getImage,
+                src: images[this.state.section],
+                style: this.state.imageStyle
+              }),
               _react2.default.createElement(
-                "a",
-                { href: "#post-content" },
-                _react2.default.createElement("img", {
-                  onLoad: this.getImage,
-                  src: "/wp-content/themes/acn_int/public/images/down.png"
-                })
+                "div",
+                { style: { width: "100%", float: "left" } },
+                _react2.default.createElement(
+                  "span",
+                  { className: excerptStyle },
+                  excerpts[this.state.section]
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                {
+                  style: { width: "100%", float: "left", marginTop: "10px" }
+                },
+                _react2.default.createElement(
+                  "ul",
+                  {
+                    style: { listStyle: "none", padding: "0", float: "left" }
+                  },
+                  _react2.default.createElement(
+                    "li",
+                    { className: liStyle },
+                    _react2.default.createElement(
+                      "a",
+                      {
+                        key: 1,
+                        className: shareBtn,
+                        href: "https://www.facebook.com/sharer/sharer.php?u=" + window.location.href
+                      },
+                      _react2.default.createElement("i", { className: "ion-social-facebook" })
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "li",
+                    { className: liStyle },
+                    _react2.default.createElement(
+                      "a",
+                      {
+                        key: 2,
+                        className: shareBtn,
+                        href: "https://twitter.com/intent/tweet?text=" + window.location.href
+                      },
+                      _react2.default.createElement("i", { className: "ion-social-twitter" })
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "li",
+                    { className: liStyle },
+                    _react2.default.createElement(
+                      "a",
+                      {
+                        key: 3,
+                        className: shareBtn,
+                        href: "https://www.linkedin.com/shareArticle?mini=true&url=" + window.location.href
+                      },
+                      _react2.default.createElement("i", { className: "ion-social-linkedin" })
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "li",
+                    {
+                      className: liStyle
+                    },
+                    _react2.default.createElement(
+                      "a",
+                      {
+                        key: 4,
+                        style: shareBtn,
+                        href: "whatsapp://send?text=" + window.location.href
+                      },
+                      _react2.default.createElement("i", { className: "ion-social-whatsapp-outline" })
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { style: { float: "right", marginTop: "7px" } },
+                  _react2.default.createElement(
+                    "span",
+                    { style: { color: "#fff", paddingRight: "10px" } },
+                    this.state.section + 1,
+                    " ",
+                    this.props.texts.of,
+                    " ",
+                    images.length
+                  ),
+                  _react2.default.createElement(
+                    "button",
+                    {
+                      key: "btn-1",
+                      onClick: this.changeSection.bind(null, "prev"),
+                      className: btnStyle
+                    },
+                    _react2.default.createElement("i", { className: "ion-chevron-left" })
+                  ),
+                  _react2.default.createElement(
+                    "button",
+                    {
+                      key: "btn-2",
+                      onClick: this.changeSection.bind(null, "next"),
+                      className: btnStyle
+                    },
+                    _react2.default.createElement("i", { className: "ion-chevron-right" })
+                  )
+                )
               )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            {
+              style: {
+                position: "absolute",
+                textAlign: "center",
+                bottom: "10px",
+                left: "0",
+                right: "0"
+              }
+            },
+            _react2.default.createElement(
+              "a",
+              { href: "#post-content" },
+              _react2.default.createElement("img", {
+                onLoad: this.getImage,
+                src: "/wp-content/themes/acn_int/public/images/down.png"
+              })
             )
           )
         )
@@ -6758,11 +6759,11 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _radium = __webpack_require__(133);
+var _radium = __webpack_require__(134);
 
 var _radium2 = _interopRequireDefault(_radium);
 
-var _projects = __webpack_require__(158);
+var _projects = __webpack_require__(159);
 
 var _projects2 = _interopRequireDefault(_projects);
 
@@ -6938,7 +6939,7 @@ var _videoModal = __webpack_require__(78);
 
 var _videoModal2 = _interopRequireDefault(_videoModal);
 
-var _radium = __webpack_require__(133);
+var _radium = __webpack_require__(134);
 
 var _radium2 = _interopRequireDefault(_radium);
 
@@ -7464,7 +7465,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(160);
+var _reactDom = __webpack_require__(161);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7572,7 +7573,7 @@ var _headerSlider = __webpack_require__(258);
 
 var _headerSlider2 = _interopRequireDefault(_headerSlider);
 
-var _sectionVideo = __webpack_require__(159);
+var _sectionVideo = __webpack_require__(160);
 
 var _sectionVideo2 = _interopRequireDefault(_sectionVideo);
 
@@ -7580,7 +7581,7 @@ var _sectionVideoContent = __webpack_require__(261);
 
 var _sectionVideoContent2 = _interopRequireDefault(_sectionVideoContent);
 
-var _projects = __webpack_require__(158);
+var _projects = __webpack_require__(159);
 
 var _projects2 = _interopRequireDefault(_projects);
 
@@ -7592,11 +7593,11 @@ var _posts = __webpack_require__(259);
 
 var _posts2 = _interopRequireDefault(_posts);
 
-var _donate = __webpack_require__(156);
+var _donate = __webpack_require__(157);
 
 var _donate2 = _interopRequireDefault(_donate);
 
-var _inline = __webpack_require__(157);
+var _inline = __webpack_require__(158);
 
 var _inline2 = _interopRequireDefault(_inline);
 
@@ -9137,7 +9138,7 @@ exports.default = objToFormData;
 module.exports = {
   number: __webpack_require__(301),
   expirationDate: __webpack_require__(303),
-  expirationMonth: __webpack_require__(172),
+  expirationMonth: __webpack_require__(173),
   expirationYear: __webpack_require__(103),
   cvv: __webpack_require__(302),
   postalCode: __webpack_require__(307)
@@ -9260,7 +9261,7 @@ module.exports = cvv;
 
 
 var parseDate = __webpack_require__(306);
-var expirationMonth = __webpack_require__(172);
+var expirationMonth = __webpack_require__(173);
 var expirationYear = __webpack_require__(103);
 
 function verification(isValid, isPotentiallyValid, month, year) {
@@ -10658,7 +10659,7 @@ var _objectAssign = __webpack_require__(10);
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var _CSSPropertyOperations = __webpack_require__(204);
+var _CSSPropertyOperations = __webpack_require__(205);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11234,7 +11235,7 @@ var _utilsJoinPrefixedRules = __webpack_require__(91);
 
 var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 
-var _utilsIsPrefixedValue = __webpack_require__(131);
+var _utilsIsPrefixedValue = __webpack_require__(132);
 
 var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 
@@ -11419,7 +11420,7 @@ var _utilsJoinPrefixedRules = __webpack_require__(91);
 
 var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 
-var _utilsIsPrefixedValue = __webpack_require__(131);
+var _utilsIsPrefixedValue = __webpack_require__(132);
 
 var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 
@@ -11502,7 +11503,7 @@ var _utilsCapitalizeString = __webpack_require__(208);
 
 var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 
-var _utilsIsPrefixedValue = __webpack_require__(131);
+var _utilsIsPrefixedValue = __webpack_require__(132);
 
 var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 
@@ -13375,7 +13376,7 @@ var _enhancer = __webpack_require__(216);
 
 var _enhancer2 = _interopRequireDefault(_enhancer);
 
-var _styleKeeper = __webpack_require__(135);
+var _styleKeeper = __webpack_require__(136);
 
 var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 
@@ -13470,7 +13471,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styleKeeper = __webpack_require__(135);
+var _styleKeeper = __webpack_require__(136);
 
 var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 
@@ -13545,7 +13546,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
-var _cssRuleSetToString = __webpack_require__(132);
+var _cssRuleSetToString = __webpack_require__(133);
 
 var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 
@@ -13642,7 +13643,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = keyframes;
 
-var _cssRuleSetToString = __webpack_require__(132);
+var _cssRuleSetToString = __webpack_require__(133);
 
 var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 
@@ -13650,7 +13651,7 @@ var _hash = __webpack_require__(219);
 
 var _hash2 = _interopRequireDefault(_hash);
 
-var _prefixer = __webpack_require__(134);
+var _prefixer = __webpack_require__(135);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13928,7 +13929,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = prefixPlugin;
 
-var _prefixer = __webpack_require__(134);
+var _prefixer = __webpack_require__(135);
 
 function prefixPlugin(_ref // eslint-disable-line no-shadow
 ) {

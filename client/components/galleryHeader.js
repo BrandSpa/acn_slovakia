@@ -1,4 +1,5 @@
 import React from "react";
+import { css } from 'glamor';
 import Radium, { StyleRoot } from "radium";
 
 class GalleryHeader extends React.Component {
@@ -48,12 +49,12 @@ class GalleryHeader extends React.Component {
     const h = window.innerHeight - 100;
     const w = window.innerHeight;
 
-    const btnsStyle = {
+    const btnsStyle = css({
       float: "right",
       marginTop: "7px"
-    };
+    });
 
-    const btnStyle = {
+    const btnStyle = css({
       border: "1px solid #fff",
       background: "transparent",
       width: "40px",
@@ -63,39 +64,39 @@ class GalleryHeader extends React.Component {
       ":hover": {
         background: "rgba(255, 255, 255, .2)"
       }
-    };
+    });
 
-    const linkLeft = {
+    const linkLeft = css({
       position: "absolute",
       height: "100%",
       top: "0",
       bottom: "auto",
       left: 0,
       width: "50%"
-    };
+    });
 
-    const linkRight = { ...linkLeft, left: "auto", right: 0 };
+    const linkRight = css({ ...linkLeft, left: "auto", right: 0 });
 
-    const mainStyle = {
+    const mainStyle = css({
       height: `${h}px`,
       background: "#222",
       position: "relative",
       overflow: "hidden",
       "@media(max-width: 767px)": { margin: "0 -20px" }
-    };
+    });
 
-    const viewportStyle = {
+    const viewportStyle = ({
       height: `${h}px`
-    };
+    });
 
-    const excerptStyle = {
+    const excerptStyle = css({
       color: "#fff",
       marginTop: "20px",
       display: "block",
       textShadow: "2px 2px 2px #222"
-    };
+    });
 
-    const shareBtn = {
+    const shareBtn = css({
       color: "#fff",
       width: "30px",
       height: "30px",
@@ -108,14 +109,19 @@ class GalleryHeader extends React.Component {
       ":hover": {
         background: "rgba(255, 255, 255, .2)"
       }
-    };
-
-    const liStyle = { display: "inline-block", marginLeft: "5px" };
+    });
+    
+    const liStyle = css({ 
+      marginLeft: "5px",
+      display: "none",
+      "@media(max-width: 767px)": { 
+        display: "inline-block" 
+      }
+    });
 
     return (
-      <StyleRoot>
-        <div style={mainStyle}>
-          <div style={viewportStyle}>
+        <div className={mainStyle}>
+          <div className={viewportStyle}>
             <div style={{ maxWidth: w, margin: "0 auto", padding: "0 20px" }}>
               <h5 style={{ color: "#fff", marginBottom: "20px" }}>
                 {this.props.texts.gallery} <i className="ion-camera" />
@@ -131,7 +137,7 @@ class GalleryHeader extends React.Component {
                 />
 
                 <div style={{ width: "100%", float: "left" }}>
-                  <span style={excerptStyle}>
+                  <span className={excerptStyle}>
                     {excerpts[this.state.section]}
                   </span>
                 </div>
@@ -142,39 +148,35 @@ class GalleryHeader extends React.Component {
                   <ul
                     style={{ listStyle: "none", padding: "0", float: "left" }}
                   >
-                    <li style={liStyle}>
+                    <li className={liStyle}>
                       <a
                         key={1}
-                        style={shareBtn}
+                        className={shareBtn}
                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
                       >
                         <i className="ion-social-facebook" />
                       </a>
                     </li>
-                    <li style={liStyle}>
+                    <li className={liStyle}>
                       <a
                         key={2}
-                        style={shareBtn}
+                        className={shareBtn}
                         href={`https://twitter.com/intent/tweet?text=${window.location.href}`}
                       >
                         <i className="ion-social-twitter" />
                       </a>
                     </li>
-                    <li style={liStyle}>
+                    <li className={liStyle}>
                       <a
                         key={3}
-                        style={shareBtn}
+                        className={shareBtn}
                         href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`}
                       >
                         <i className="ion-social-linkedin" />
                       </a>
                     </li>
                     <li
-                      style={{
-                        ...liStyle,
-                        display: "none",
-                        "@media(max-width: 767px)": { display: "inline-block" }
-                      }}
+                      className={liStyle}
                     >
                       <a
                         key={4}
@@ -196,14 +198,14 @@ class GalleryHeader extends React.Component {
                     <button
                       key={"btn-1"}
                       onClick={this.changeSection.bind(null, "prev")}
-                      style={btnStyle}
+                      className={btnStyle}
                     >
                       <i className="ion-chevron-left" />
                     </button>
                     <button
                       key={"btn-2"}
                       onClick={this.changeSection.bind(null, "next")}
-                      style={btnStyle}
+                      className={btnStyle}
                     >
                       <i className="ion-chevron-right" />
                     </button>
@@ -231,7 +233,6 @@ class GalleryHeader extends React.Component {
           </div>
 
         </div>
-      </StyleRoot>
     );
   }
 }
