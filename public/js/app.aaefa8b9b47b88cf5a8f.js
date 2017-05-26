@@ -4778,9 +4778,13 @@ var DonateInlineSection = function (_Component) {
         'div',
         { className: containerStyle },
         _react2.default.createElement(
-          'h2',
-          null,
-          this.props.titles.length > 0 ? this.props.titles[this.state.section] : ""
+          'div',
+          { className: 'col-12-l' },
+          _react2.default.createElement(
+            'h2',
+            { style: { color: '#fff' } },
+            this.props.titles.length > 0 ? this.props.titles[this.state.section] : ""
+          )
         ),
         _react2.default.createElement(
           'div',

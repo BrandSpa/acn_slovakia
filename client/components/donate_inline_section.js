@@ -24,11 +24,13 @@ class DonateInlineSection extends Component {
 
     return (
       <div className={containerStyle}>
-        <h2>
+      <div className="col-12-l">
+        <h2 style={{ color: '#fff' }}>
           {this.props.titles.length > 0
             ? this.props.titles[this.state.section]
             : ""}
         </h2>
+      </div>
         <div
           className="col-12 col-4-l"
           style={{ background: "RGBA(43, 58, 68, .9)" }}
