@@ -99,7 +99,7 @@ add_action( 'vc_before_init', 'bs_donate_inline_section_vc' );
 
   	vc_map(
       array(
-        "name" =>  "BS Donate inline",
+        "name" =>  "BS Donate inline section",
         "base" => "bs_donate_inline_section",
         "category" =>  "BS",
         "params" => $params
