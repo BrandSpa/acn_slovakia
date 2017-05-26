@@ -2058,7 +2058,7 @@ var CedritCard = function (_React$Component) {
                   right: "25px",
                   cursor: "pointer"
                 },
-                onClick: this.props.togglePopover
+                onClick: this.togglePopover
               },
               _react2.default.createElement("i", { className: "ion-help" })
             ),
