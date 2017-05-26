@@ -46,9 +46,8 @@
 	<!--/async load app-->
 <script>
   var bs = {};
-  bs.lang = '<?php echo getCountryLang(getCountry()) ?>'
-  bs.donate = '<?php echo gett('Donate') ?>'
-  console.log('<?php if(pll_home_url() == get_permalink()) echo 'nea' ?>');
+  bs.lang = '<?php echo getCountryLang(getCountry()) ?>';
+  bs.donate = '<?php echo gett('Donate') ?>';
 </script>
 
 <script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.7cc7c0eb3c4f835ecc03.js'></script>
