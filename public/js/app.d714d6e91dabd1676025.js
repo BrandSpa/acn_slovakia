@@ -6255,9 +6255,9 @@ var GalleryHeader = function (_React$Component) {
         "@media(max-width: 767px)": { margin: "0 -20px" }
       });
 
-      var viewportStyle = {
+      var viewportStyle = (0, _glamor.css)({
         height: h + "px"
-      };
+      });
 
       var excerptStyle = (0, _glamor.css)({
         color: "#fff",

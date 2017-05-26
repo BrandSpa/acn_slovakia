@@ -85,7 +85,7 @@ class GalleryHeader extends React.Component {
       "@media(max-width: 767px)": { margin: "0 -20px" }
     });
 
-    const viewportStyle = ({
+    const viewportStyle = css({
       height: `${h}px`
     });
 
