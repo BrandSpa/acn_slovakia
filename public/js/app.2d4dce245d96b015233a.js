@@ -5743,6 +5743,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(4);
@@ -5778,6 +5780,12 @@ var DonateInlineSection = function (_Component) {
   }
 
   _createClass(DonateInlineSection, [{
+    key: "changeSection",
+    value: function changeSection(section) {
+      this.setState({ section: section });
+      console.log('hi section', section);
+    }
+  }, {
     key: "render",
     value: function render() {
       var containerStyle = (0, _glamor.css)({
@@ -5817,7 +5825,7 @@ var DonateInlineSection = function (_Component) {
             className: "col-12 col-8-l",
             style: { background: "#fff", padding: "40px" }
           },
-          _react2.default.createElement(_inline2.default, this.props)
+          _react2.default.createElement(_inline2.default, _extends({ changeSection: this.changeSection }, this.props))
         )
       );
     }
@@ -7965,7 +7973,7 @@ var Four = function (_Component) {
 
 		_this.handleNo = function (e) {
 			e.preventDefault();
-			console.log('no');
+			_this.props.changeSection();
 		};
 
 		_this.completeTransaction = function () {
