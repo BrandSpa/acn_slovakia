@@ -9,7 +9,8 @@
   "scripts": {
     "test:watch": "jest -- --watch",
     "test": "jest",
-    "build:admin": "webpack  --config=webpack.admin.js --p"
+    "build:admin": "webpack  --config=webpack.admin.js --p",
+    "lint": "eslint client/components"
   },
   "author": "Alejandro Sanabria <alesanabriav@gmail.com>",
   "license": "MIT",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "babel": "^6.23.0",
+    "babel-eslint": "^7.2.3",
     "babel-jest": "^18.0.0",
     "babel-loader": "7.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -41,6 +43,8 @@
     "babel-preset-react": "^6.23.0",
     "css-loader": "^0.27.3",
     "enzyme": "^2.7.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "husky": "^0.13.3",
     "jest": "^19.0.2",

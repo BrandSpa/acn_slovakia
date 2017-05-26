@@ -2276,7 +2276,7 @@ var DonateInline = function (_Component) {
 
 
       actions.storeConvertLoop(_this.state).then(actions.storeEventConvertLoop.bind(null, _this.state)).then(actions.storeInfusion.bind(null, _this.state)).then(function (res) {
-        if (donation_type == 'monthly') {
+        if (donation_type == "monthly") {
           var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
           window.location = url;
         }
@@ -5585,14 +5585,14 @@ var contactForm = function (_React$Component) {
 
 
       var inputContainerStyle = {
-        width: this.props.vertical == 'true' ? '100%' : '20%',
-        '@media (maxWidth: 767px)': {
-          width: '100%'
+        width: this.props.vertical == "true" ? "100%" : "20%",
+        "@media (maxWidth: 767px)": {
+          width: "100%"
         }
       };
 
       var inputStyle = {
-        borderRadius: this.props.vertical == 'true' ? '0' : ''
+        borderRadius: this.props.vertical == "true" ? "0" : ""
       };
 
       return _react2.default.createElement(
@@ -6780,15 +6780,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var colors = {
-	1: '#b91325',
-	2: '#00355f',
-	3: '#6e5785',
-	4: '#95a0ad',
-	5: '#156734',
-	6: '#689038',
-	7: '#7a2d04',
-	8: '#b27009',
-	9: '#E4A70F'
+	1: "#b91325",
+	2: "#00355f",
+	3: "#6e5785",
+	4: "#95a0ad",
+	5: "#156734",
+	6: "#689038",
+	7: "#7a2d04",
+	8: "#b27009",
+	9: "#E4A70F"
 };
 
 var ProjectsAbout = function (_React$Component) {
@@ -6814,10 +6814,10 @@ var ProjectsAbout = function (_React$Component) {
 	}
 
 	_createClass(ProjectsAbout, [{
-		key: 'componentWillUpdate',
+		key: "componentWillUpdate",
 		value: function componentWillUpdate(nextProps, nextState) {}
 	}, {
-		key: 'render',
+		key: "render",
 		value: function render() {
 			var section = this.state.section;
 
@@ -6827,82 +6827,82 @@ var ProjectsAbout = function (_React$Component) {
 				null,
 				_react2.default.createElement(_projects2.default, {
 					contents: this.props.projects.map(function (project) {
-						project['text'] = project.content;
+						project["text"] = project.content;
 						return project;
 					}),
 					donate: this.props.donate,
 					changeSection: this.handleSection
 				}),
 				_react2.default.createElement(
-					'div',
-					{ className: 'projects-about-num' },
+					"div",
+					{ className: "projects-about-num" },
 					_react2.default.createElement(
-						'div',
+						"div",
 						{
-							className: 'projects-about-num__num',
+							className: "projects-about-num__num",
 							style: {
-								width: '50%',
-								textAlign: 'right',
-								paddingTop: '40px',
-								float: 'left',
-								height: '150px',
-								background: '#fff',
+								width: "50%",
+								textAlign: "right",
+								paddingTop: "40px",
+								float: "left",
+								height: "150px",
+								background: "#fff",
 								color: colors[this.state.section + 1],
-								'@media (max-width: 767px)': {
-									width: '100%',
-									height: 'auto',
-									textAlign: 'center'
+								"@media (max-width: 767px)": {
+									width: "100%",
+									height: "auto",
+									textAlign: "center"
 								}
 							}
 						},
 						_react2.default.createElement(
-							'h2',
+							"h2",
 							null,
-							this.props.projects[section] ? this.props.projects[section].number : ''
+							this.props.projects[section] ? this.props.projects[section].number : ""
 						)
 					),
 					_react2.default.createElement(
-						'div',
+						"div",
 						{
-							className: 'projects-about-num__text',
+							className: "projects-about-num__text",
 							style: {
-								textAlign: 'left',
-								width: '50%',
-								float: 'left',
-								height: '150px',
-								padding: '60px',
-								fontSize: '1.5em',
-								color: '#A0A0A0',
-								'@media (max-width: 767px)': {
-									width: '100%',
-									height: 'auto',
-									textAlign: 'center',
-									padding: '0 0 60px 0'
+								textAlign: "left",
+								width: "50%",
+								float: "left",
+								height: "150px",
+								padding: "60px",
+								fontSize: "1.5em",
+								color: "#A0A0A0",
+								"@media (max-width: 767px)": {
+									width: "100%",
+									height: "auto",
+									textAlign: "center",
+									padding: "0 0 60px 0"
 								}
 							}
 						},
-						this.props.projects[section] ? this.props.projects[section].number_text : ''
+						this.props.projects[section] ? this.props.projects[section].number_text : ""
 					),
 					_react2.default.createElement(
-						'div',
-						{ style: { background: '#F8F6F8', padding: '80px 0', float: 'left', width: '100%', '@media (max-width: 767px)': { padding: '20px 0 0 0' } } },
+						"div",
+						{ style: { background: "#F8F6F8", padding: "80px 0", float: "left", width: "100%", "@media (max-width: 767px)": { padding: "20px 0 0 0" } } },
 						_react2.default.createElement(
-							'div',
-							{ className: 'l-wrap' },
+							"div",
+							{ className: "l-wrap" },
 							_react2.default.createElement(
-								'h4',
+								"h4",
 								{ style: {
-										color: '#324049',
-										textTransform: 'uppercase',
-										marginBottom: '20px',
-										marginLeft: '15px',
-										fontWeight: 'normal'
+										color: "#324049",
+										textTransform: "uppercase",
+										marginBottom: "20px",
+										marginLeft: "15px",
+										fontWeight: "normal"
 									}
 								},
 								this.props.texts.stories
 							),
 							_react2.default.createElement(_postsAbout2.default, {
-								category: this.props.projects[section] ? this.props.projects[section].post_category : ''
+								category: this.props.projects[section] ? this.props.projects[section].post_category : ""
 							})
 						)
 					)
@@ -7669,33 +7669,33 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //jquery stuff :(
 _webfontloader2.default.load({
-  google: { families: ['Source Sans Pro:400,600,700'] },
-  custom: { families: ['Ionicons'], testStrings: { Ionicons: '\uF10C\uF109' } },
+  google: { families: ["Source Sans Pro:400,600,700"] },
+  custom: { families: ["Ionicons"], testStrings: { Ionicons: "\uF10C\uF109" } },
   fontinactive: function fontinactive(familyName, fvd) {
-    console.error(familyName + ' failed to load');
+    console.error(familyName + " failed to load");
   }
 });
 
 //react renders
 
 //React components :)
-(0, _reactMultipleRender2.default)(_headerSlider2.default, '.header-slider');
-(0, _reactMultipleRender2.default)(_contactForm2.default, '.contact-form');
-(0, _reactMultipleRender2.default)(_posts2.default, '.bs-posts');
-(0, _reactMultipleRender2.default)(_donate2.default, '.bs-donate-react');
-(0, _reactMultipleRender2.default)(_inline2.default, '.bs-donate-inline');
-(0, _reactMultipleRender2.default)(_donate_inline_section2.default, '.bs-donate-inline-section');
-(0, _reactMultipleRender2.default)(_donate_section2.default, '.bs-donate-section');
-(0, _reactMultipleRender2.default)(_projects2.default, '.projects-container');
-(0, _reactMultipleRender2.default)(_accordion2.default, '.bs-accordion');
-(0, _reactMultipleRender2.default)(_sectionVideo2.default, '.section-video');
-(0, _reactMultipleRender2.default)(_sectionVideoContent2.default, '.section-video-content');
-(0, _reactMultipleRender2.default)(_campaignsSlider2.default, '.bs-campaings-slider');
-(0, _reactMultipleRender2.default)(_downloadPdf2.default, '.bs-download-pdf');
-(0, _reactMultipleRender2.default)(_galleryHeader2.default, '.bs-gallery-header');
-(0, _reactMultipleRender2.default)(_projectsAbout2.default, '.bs-projects-about');
-(0, _reactMultipleRender2.default)(_videoHeader2.default, '.bs-video-header');
-(0, _reactMultipleRender2.default)(_carousel2.default, '.bs-carousel');
+(0, _reactMultipleRender2.default)(_headerSlider2.default, ".header-slider");
+(0, _reactMultipleRender2.default)(_contactForm2.default, ".contact-form");
+(0, _reactMultipleRender2.default)(_posts2.default, ".bs-posts");
+(0, _reactMultipleRender2.default)(_donate2.default, ".bs-donate-react");
+(0, _reactMultipleRender2.default)(_inline2.default, ".bs-donate-inline");
+(0, _reactMultipleRender2.default)(_donate_inline_section2.default, ".bs-donate-inline-section");
+(0, _reactMultipleRender2.default)(_donate_section2.default, ".bs-donate-section");
+(0, _reactMultipleRender2.default)(_projects2.default, ".projects-container");
+(0, _reactMultipleRender2.default)(_accordion2.default, ".bs-accordion");
+(0, _reactMultipleRender2.default)(_sectionVideo2.default, ".section-video");
+(0, _reactMultipleRender2.default)(_sectionVideoContent2.default, ".section-video-content");
+(0, _reactMultipleRender2.default)(_campaignsSlider2.default, ".bs-campaings-slider");
+(0, _reactMultipleRender2.default)(_downloadPdf2.default, ".bs-download-pdf");
+(0, _reactMultipleRender2.default)(_galleryHeader2.default, ".bs-gallery-header");
+(0, _reactMultipleRender2.default)(_projectsAbout2.default, ".bs-projects-about");
+(0, _reactMultipleRender2.default)(_videoHeader2.default, ".bs-video-header");
+(0, _reactMultipleRender2.default)(_carousel2.default, ".bs-carousel");
 
 //jquery calls
 (0, _set_menu2.default)();
@@ -7708,13 +7708,13 @@ _webfontloader2.default.load({
 (0, _toggleMenu2.default)();
 var cookies = {};
 
-document.cookie.split(';').forEach(function (l) {
-  cookies[l.split('=')[0].trim()] = l.split('=')[1];
+document.cookie.split(";").forEach(function (l) {
+  cookies[l.split("=")[0].trim()] = l.split("=")[1];
 });
 
-document.querySelector('.bs-donate').addEventListener('click', function () {
+document.querySelector(".bs-donate").addEventListener("click", function () {
   _dp("track", "donate_click");
-  console.log('click', _dp);
+  console.log("click", _dp);
 });
 
 /***/ }),
@@ -7768,7 +7768,7 @@ var AmountBtns = function (_React$Component) {
           { className: "col-1-4" },
           _react2.default.createElement(
             "a",
-            { href: "#", className: amount == 10 ? 'active' : '', onClick: changeAmount.bind(null, 10) },
+            { href: "#", className: amount == 10 ? "active" : "", onClick: changeAmount.bind(null, 10) },
             "$10"
           )
         ),
@@ -7777,7 +7777,7 @@ var AmountBtns = function (_React$Component) {
           { className: "col-1-4" },
           _react2.default.createElement(
             "a",
-            { href: "#", className: amount == 30 ? 'active' : '', onClick: changeAmount.bind(null, 30) },
+            { href: "#", className: amount == 30 ? "active" : "", onClick: changeAmount.bind(null, 30) },
             "$30"
           )
         ),
@@ -7786,7 +7786,7 @@ var AmountBtns = function (_React$Component) {
           { className: "col-1-4" },
           _react2.default.createElement(
             "a",
-            { href: "#", className: amount == 50 ? 'active' : '', onClick: changeAmount.bind(null, 50) },
+            { href: "#", className: amount == 50 ? "active" : "", onClick: changeAmount.bind(null, 50) },
             "$50"
           )
         ),
@@ -7795,7 +7795,7 @@ var AmountBtns = function (_React$Component) {
           { className: "col-1-4" },
           _react2.default.createElement(
             "a",
-            { href: "#", className: amount == 100 ? 'active' : '', onClick: changeAmount.bind(null, 100) },
+            { href: "#", className: amount == 100 ? "active" : "", onClick: changeAmount.bind(null, 100) },
             "$100"
           )
         ),
@@ -7950,7 +7950,7 @@ var headerSlide = function (_React$Component) {
   }
 
   _createClass(headerSlide, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       var _this2 = this;
 
@@ -7964,7 +7964,7 @@ var headerSlide = function (_React$Component) {
           height = _props.height;
 
 
-      var bg = 'url(' + image + ')';
+      var bg = "url(" + image + ")";
 
       var style = {
         backgroundImage: bg,
@@ -7974,42 +7974,42 @@ var headerSlide = function (_React$Component) {
       };
 
       return _react2.default.createElement(
-        'div',
+        "div",
         null,
         this.props.is_video ? _react2.default.createElement(_videoModal2.default, { ref: function ref(modal) {
             return _this2.modal = modal;
-          }, url: this.props.url }) : '',
+          }, url: this.props.url }) : "",
         _react2.default.createElement(
-          'div',
-          { className: 'slider__slide', style: style },
-          _react2.default.createElement('a', { href: '#', className: 'slider__slide__link-zone', onClick: this.handleLink }),
+          "div",
+          { className: "slider__slide", style: style },
+          _react2.default.createElement("a", { href: "#", className: "slider__slide__link-zone", onClick: this.handleLink }),
           _react2.default.createElement(
-            'a',
-            { href: this.props.anchor, className: 'slider__slide__anchor' },
+            "a",
+            { href: this.props.anchor, className: "slider__slide__anchor" },
             _react2.default.createElement(
-              'svg',
-              { width: '50px', height: '57px', viewBox: '178 602 20 27', version: '1.1', xmlns: 'http://www.w3.org/2000/svg' },
+              "svg",
+              { width: "50px", height: "57px", viewBox: "178 602 20 27", version: "1.1", xmlns: "http://www.w3.org/2000/svg" },
               _react2.default.createElement(
-                'defs',
+                "defs",
                 null,
-                _react2.default.createElement('polyline', { id: 'path-1', points: '16.9743561 9.37612525 16.9743561 23.0775777 2.91233907 23.0775777' }),
+                _react2.default.createElement("polyline", { id: "path-1", points: "16.9743561 9.37612525 16.9743561 23.0775777 2.91233907 23.0775777" }),
                 _react2.default.createElement(
-                  'mask',
-                  { id: 'mask-2', maskContentUnits: 'userSpaceOnUse', maskUnits: 'objectBoundingBox', x: '0', y: '0', width: '14.062017', height: '13.7014524', fill: 'white' },
-                  _react2.default.createElement('use', { xlinkHref: '#path-1' })
+                  "mask",
+                  { id: "mask-2", maskContentUnits: "userSpaceOnUse", maskUnits: "objectBoundingBox", x: "0", y: "0", width: "14.062017", height: "13.7014524", fill: "white" },
+                  _react2.default.createElement("use", { xlinkHref: "#path-1" })
                 ),
-                _react2.default.createElement('polyline', { id: 'path-3', points: '16.9743561 3.23766371 16.9743561 16.9391162 2.91233907 16.9391162' }),
+                _react2.default.createElement("polyline", { id: "path-3", points: "16.9743561 3.23766371 16.9743561 16.9391162 2.91233907 16.9391162" }),
                 _react2.default.createElement(
-                  'mask',
-                  { id: 'mask-4', maskContentUnits: 'userSpaceOnUse', maskUnits: 'objectBoundingBox', x: '0', y: '0', width: '14.062017', height: '13.7014524', fill: 'white' },
-                  _react2.default.createElement('use', { xlinkHref: '#path-3' })
+                  "mask",
+                  { id: "mask-4", maskContentUnits: "userSpaceOnUse", maskUnits: "objectBoundingBox", x: "0", y: "0", width: "14.062017", height: "13.7014524", fill: "white" },
+                  _react2.default.createElement("use", { xlinkHref: "#path-3" })
                 )
               ),
               _react2.default.createElement(
-                'g',
-                { id: 'Group-12', stroke: 'none', strokeWidth: '1', fill: 'none', fillRule: 'evenodd', transform: 'translate(178.000000, 602.000000)' },
-                _react2.default.createElement('use', { id: 'Rectangle', stroke: '#F1364E', mask: 'url(#mask-2)', strokeWidth: '4', transform: 'translate(9.943348, 16.226851) rotate(-315.000000) translate(-9.943348, -16.226851) ', xlinkHref: '#path-1' }),
-                _react2.default.createElement('use', { id: 'Rectangle-Copy', stroke: '#F1364E', mask: 'url(#mask-4)', strokeWidth: '4', transform: 'translate(9.943348, 10.088390) rotate(-315.000000) translate(-9.943348, -10.088390) ', xlinkHref: '#path-3' })
+                "g",
+                { id: "Group-12", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", transform: "translate(178.000000, 602.000000)" },
+                _react2.default.createElement("use", { id: "Rectangle", stroke: "#F1364E", mask: "url(#mask-2)", strokeWidth: "4", transform: "translate(9.943348, 16.226851) rotate(-315.000000) translate(-9.943348, -16.226851) ", xlinkHref: "#path-1" }),
+                _react2.default.createElement("use", { id: "Rectangle-Copy", stroke: "#F1364E", mask: "url(#mask-4)", strokeWidth: "4", transform: "translate(9.943348, 10.088390) rotate(-315.000000) translate(-9.943348, -10.088390) ", xlinkHref: "#path-3" })
               )
             )
           )

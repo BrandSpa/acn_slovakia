@@ -1,5 +1,5 @@
 import React from "react";
-import { css } from 'glamor';
+import { css } from "glamor";
 import Radium, { StyleRoot } from "radium";
 
 class GalleryHeader extends React.Component {

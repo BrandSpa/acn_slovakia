@@ -1,5 +1,5 @@
-import React from 'react';
-import VideoModal from './videoModal';
+import React from "react";
+import VideoModal from "./videoModal";
 
 class headerSlide extends React.Component {
   handleLink = (e) => {
@@ -22,7 +22,7 @@ class headerSlide extends React.Component {
 
     return (
       <div>
-        { this.props.is_video ? <VideoModal ref={modal => this.modal = modal} url={this.props.url} /> : '' }
+        { this.props.is_video ? <VideoModal ref={modal => this.modal = modal} url={this.props.url} /> : "" }
 
         <div className="slider__slide" style={style}>
           <a href="#" className="slider__slide__link-zone" onClick={this.handleLink}></a>

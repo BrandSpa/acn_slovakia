@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class ProjectsIcons extends React.Component {
   changeContent = (num, e) => {

@@ -32,6 +32,7 @@ class CampaignsSlider extends React.Component {
     let viewportWidth = `${100 * slides.length}%`;
     let slideWidth = `${100 / slides.length}%`;
     let viewportStyle = { width: viewportWidth, left: this.state.left };
+    
     return (
       <div className="campaigns-slider">
         <div className="campaigns-slider__viewport" style={viewportStyle}>

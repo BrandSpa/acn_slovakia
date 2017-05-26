@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Campaigns extends React.Component {
   static defaultProps = {
@@ -20,13 +20,13 @@ class Campaigns extends React.Component {
               <SectionVideo
                 imgUrl={slide.image}
                 url={slide.url}
-                imageStyle={{width: '100%'}}
+                imageStyle={{width: "100%"}}
               />
               <div
                 className="campaigns-slider__slide__content"
                 style={{background: slide.bg}}
               >
-                <h4><a href={slide.url ? slide.url : '#'}>{slide.title}</a></h4>
+                <h4><a href={slide.url ? slide.url : "#"}>{slide.title}</a></h4>
                 <p>{slide.content}</p>
               </div>
             </div>

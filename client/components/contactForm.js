@@ -113,7 +113,6 @@ class contactForm extends React.Component {
       this.setState({ loading: true });
       if (this.state.inOffice) {
         this.storeConvertLoop().then(this.storeEventConvertLoop).then(res => {
-          console.log(res.data);
           if (res.data.person.email) window.location = this.props.redirect;
         });
       } else {
@@ -137,14 +136,14 @@ class contactForm extends React.Component {
     let { placeholders, validationMessages, texts } = this.props;
 
     let inputContainerStyle = {
-      width: this.props.vertical == 'true' ? '100%' : '20%',
-      '@media (maxWidth: 767px)': {
-        width: '100%'
+      width: this.props.vertical == "true" ? "100%" : "20%",
+      "@media (maxWidth: 767px)": {
+        width: "100%"
       }
     };
  
     let inputStyle = {
-      borderRadius: this.props.vertical == 'true' ? '0' : '',
+      borderRadius: this.props.vertical == "true" ? "0" : "",
     };
 
     return (

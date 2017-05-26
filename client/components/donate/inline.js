@@ -69,7 +69,7 @@ class DonateInline extends Component {
   };
 
   handleSubmit = e => {
-    if(e) e.preventDefault();
+    if (e) e.preventDefault();
 
     this.contactIsValid()
       .then(res => {
@@ -106,7 +106,7 @@ class DonateInline extends Component {
       .then(actions.storeEventConvertLoop.bind(null, this.state))
       .then(actions.storeInfusion.bind(null, this.state))
       .then(res => {
-        if(donation_type == 'monthly') {
+        if (donation_type == "monthly") {
           const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
           window.location = url;
         }
@@ -114,7 +114,7 @@ class DonateInline extends Component {
   };
 
   render() {
-    let sectionWidth = `100%`;
+    let sectionWidth = "100%";
     let viewPortStyle = {
       width: "100%",
       left: this.state.left,
