@@ -35,7 +35,7 @@ function bs_donate_section_sc($atts, $content = null) {
 ?>
 
 <div 
-	class="bs-donate-inline-section"
+	class="bs-donate-section"
 	data-props='{
     "texts": <?php echo json_encode($at) ?>,
     "is_blue": "<?php echo $at['is_blue'] ?>",
