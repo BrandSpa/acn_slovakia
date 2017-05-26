@@ -16,6 +16,11 @@ class DonateInlineSection extends Component {
     titles: []
   };
 
+  changeSection(section) {
+    this.setState({section});
+    console.log('hi section', section);
+  }
+
   render() {
     let containerStyle = css({
       display: "flex",
@@ -48,7 +53,7 @@ class DonateInlineSection extends Component {
           className="col-12 col-8-l"
           style={{ background: "#fff", padding: "40px" }}
         >
-          <DonateInline {...this.props} />
+          <DonateInline changeSection={this.changeSection} {...this.props} />
         </div>
       </div>
     );

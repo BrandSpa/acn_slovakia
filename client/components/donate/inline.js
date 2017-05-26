@@ -134,7 +134,7 @@ class DonateInline extends Component {
       background: "transparent",
       border: "none"
     };
-
+    
     return (
       <div>
         <form
