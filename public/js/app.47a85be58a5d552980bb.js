@@ -2346,7 +2346,7 @@ var DonateInline = function (_Component) {
       },
       errors: { stripe: {}, contact: {} },
       is_blue: false,
-      show_four: true
+      show_four: false
     }, _this.handleChange = function (field) {
       _this.setState(_extends({}, _this.state, field));
     }, _this.creditCardIsValid = function () {
