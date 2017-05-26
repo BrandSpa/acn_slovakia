@@ -65,7 +65,7 @@ module.exports = {
   },
 	plugins: [
       new webpack.optimize.CommonsChunkPlugin({ 
-        name: 'vendor', 
+        name: 'vendor',
         filename: 'vendor.[chunkhash].js', 
         minChunks: 2
       }),

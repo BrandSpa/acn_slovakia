@@ -106,6 +106,7 @@ require('shortcodes/section_video_content.php');
 require('shortcodes/accordion.php');
 require('shortcodes/donate.php');
 require('shortcodes/donate_inline.php');
+require('shortcodes/donate_inline_section.php');
 require('shortcodes/posts.php');
 require('shortcodes/contact_info.php');
 require('shortcodes/posts_list.php');

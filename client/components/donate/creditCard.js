@@ -223,7 +223,7 @@ class CedritCard extends React.Component {
               color: "red",
               cursor: "pointer"
             }}
-            onClick={this.props.togglePopover}
+            onClick={this.togglePopover}
           >
             <i className="ion-close" />
           </span>
