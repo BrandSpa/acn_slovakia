@@ -6383,7 +6383,7 @@ var GalleryHeader = function (_React$Component) {
                       "a",
                       {
                         key: 4,
-                        style: shareBtn,
+                        className: shareBtn,
                         href: "whatsapp://send?text=" + window.location.href
                       },
                       _react2.default.createElement("i", { className: "ion-social-whatsapp-outline" })

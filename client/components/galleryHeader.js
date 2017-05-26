@@ -180,7 +180,7 @@ class GalleryHeader extends React.Component {
                     >
                       <a
                         key={4}
-                        style={shareBtn}
+                        className={shareBtn}
                         href={`whatsapp://send?text=${window.location.href}`}
                       >
                         <i className="ion-social-whatsapp-outline" />
