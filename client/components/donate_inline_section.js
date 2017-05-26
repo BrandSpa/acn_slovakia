@@ -24,12 +24,12 @@ class DonateInlineSection extends Component {
             : ""}
         </h2>
         <div
-          className="col-12 col-lg-4"
+          className="col-12 col-4-l"
           style={{ background: "RGBA(43, 58, 68, .9)" }}
         >
           <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
         </div>
-        <div className="col-12 col-lg-8" style={{ background: "#fff" }}>
+        <div className="col-12 col-8-l" style={{ background: "#fff" }}>
           <DonateInline {...this.props} />
         </div>
       </div>

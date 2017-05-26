@@ -4534,14 +4534,14 @@ var DonateInlineSection = function (_Component) {
         _react2.default.createElement(
           "div",
           {
-            className: "col-12 col-lg-4",
+            className: "col-12 col-4-l",
             style: { background: "RGBA(43, 58, 68, .9)" }
           },
           _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: this.props.content } })
         ),
         _react2.default.createElement(
           "div",
-          { className: "col-12 col-lg-8", style: { background: "#fff" } },
+          { className: "col-12 col-8-l", style: { background: "#fff" } },
           _react2.default.createElement(_inline2.default, this.props)
         )
       );
