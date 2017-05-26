@@ -1008,8 +1008,10 @@ var DonateInline = function (_Component) {
 
 
       actions.storeConvertLoop(_this.state).then(actions.storeEventConvertLoop.bind(null, _this.state)).then(actions.storeInfusion.bind(null, _this.state)).then(function (res) {
-        var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
-        window.location = url;
+        if (donation_type == 'monthly') {
+          var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
+          window.location = url;
+        }
       });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -1953,8 +1955,7 @@ var CedritCard = function (_React$Component) {
       return errors;
     };
 
-    _this.togglePopover = function (e) {
-      e.preventDefault();
+    _this.togglePopover = function () {
       _this.setState({ showPopover: !_this.showPopover });
     };
 
@@ -4767,36 +4768,45 @@ var DonateInlineSection = function (_Component) {
   }
 
   _createClass(DonateInlineSection, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       var containerStyle = (0, _glamor.css)({
-        display: 'flex',
-        flexWrap: 'wrap'
+        display: "flex",
+        flexWrap: "wrap"
       });
 
       return _react2.default.createElement(
-        'div',
+        "div",
         { className: containerStyle },
         _react2.default.createElement(
-          'div',
-          { className: 'col-12-l' },
+          "div",
+          { className: "col-12-l" },
           _react2.default.createElement(
-            'h2',
-            { style: { color: '#fff', textAlign: 'center' } },
+            "h2",
+            {
+              style: {
+                color: "#fff",
+                textAlign: "center",
+                textShadow: "0 2px 20px rgba(0,0,0,0.47)"
+              }
+            },
             this.props.titles.length > 0 ? this.props.titles[this.state.section] : ""
           )
         ),
         _react2.default.createElement(
-          'div',
+          "div",
           {
-            className: 'col-12 col-4-l',
+            className: "col-12 col-4-l",
             style: { background: "RGBA(43, 58, 68, .9)", padding: "20px" }
           },
-          _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: this.props.content } })
+          _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: this.props.content } })
         ),
         _react2.default.createElement(
-          'div',
-          { className: 'col-12 col-8-l', style: { background: "#fff", padding: "40px" } },
+          "div",
+          {
+            className: "col-12 col-8-l",
+            style: { background: "#fff", padding: "40px" }
+          },
           _react2.default.createElement(_inline2.default, this.props)
         )
       );
@@ -4807,7 +4817,7 @@ var DonateInlineSection = function (_Component) {
 }(_react.Component);
 
 DonateInlineSection.defaultProps = {
-  content: '',
+  content: "",
   titles: []
 };
 exports.default = DonateInlineSection;
