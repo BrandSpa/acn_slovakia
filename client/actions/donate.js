@@ -1,8 +1,9 @@
+/* @flow */
 import request from "axios";
 import qs from "qs";
 const endpoint = "/wp-admin/admin-ajax.php";
 
-export function fetchCountries() {
+export function fetchCountries() : Function {
   const data = qs.stringify({ action: "countries" });
 
   return request
@@ -10,7 +11,7 @@ export function fetchCountries() {
     .then(res => (Array.isArray(res.data) ? res.data : []));
 }
 
-export function stripeToken(state) {
+export function stripeToken(state: Object) : Function {
   let data = qs.stringify({
     action: "stripe_token",
     data: state.stripe
@@ -19,7 +20,7 @@ export function stripeToken(state) {
   return request.post(endpoint, data).then(res => res.data);
 }
 
-export function stripeCharge(state) {
+export function stripeCharge(state: Object) {
   const { contact, currency, amount, donation_type, stripe: { token } } = state;
 
   const data = {
@@ -35,7 +36,7 @@ export function stripeCharge(state) {
   return request.post(endpoint, dataAjax);
 }
 
-export function storeConvertLoop(state) {
+export function storeConvertLoop(state: Object) {
   const data = qs.stringify({
     data: state.contact,
     action: "convertloop_contact"
@@ -44,7 +45,7 @@ export function storeConvertLoop(state) {
   return request.post(endpoint, data);
 }
 
-export function storeEventConvertLoop(state) {
+export function storeEventConvertLoop(state: Object) {
   const { email, country } = state.contact;
 
   const metadata = {
@@ -63,7 +64,7 @@ export function storeEventConvertLoop(state) {
   return request.post(endpoint, data);
 }
 
-export function storeInfusion(state) {
+export function storeInfusion(state: Object) {
   let tags = "";
   if (state.donation_type == "monthly") tags = ["870", "924"];
   if (state.donation_type == "once") tags = ["868", "926"];
