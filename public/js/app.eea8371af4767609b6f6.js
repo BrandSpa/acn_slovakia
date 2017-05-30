@@ -5687,7 +5687,7 @@ var DonateInlineSection = function (_Component) {
           "div",
           { className: "col-12-l", style: { margin: "40px 0" } },
           _react2.default.createElement(
-            "h3",
+            "h2",
             {
               style: {
                 color: "#fff",
@@ -5698,7 +5698,7 @@ var DonateInlineSection = function (_Component) {
             this.state.section == 0 ? texts.title : texts.success_title
           ),
           _react2.default.createElement(
-            "h5",
+            "h3",
             {
               style: {
                 color: "#fff",
@@ -5812,7 +5812,12 @@ var DonateSection = function (_Component) {
                 textShadow: "0 2px 20px rgba(0,0,0,0.47)"
               }
             },
-            this.props.titles.length > 0 ? this.props.titles[this.state.section] : ""
+            this.state.section == 0 ? texts.title : texts.success_title
+          ),
+          _react2.default.createElement(
+            "h3",
+            null,
+            this.state.section == 0 ? texts.subtitle : texts.success_subtitle
           )
         ),
         _react2.default.createElement(

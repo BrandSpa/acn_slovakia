@@ -36,10 +36,11 @@ class DonateSection extends Component {
               textShadow: "0 2px 20px rgba(0,0,0,0.47)"
             }}
           >
-            {this.props.titles.length > 0
-              ? this.props.titles[this.state.section]
-              : ""}
+            {this.state.section == 0 ? texts.title : texts.success_title}
           </h2>
+          <h3>
+            {this.state.section == 0 ? texts.subtitle : texts.success_subtitle}
+          </h3>
         </div>
         <div
           className="col-12 col-4-l"

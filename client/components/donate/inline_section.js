@@ -30,7 +30,7 @@ class DonateInlineSection extends Component {
     return (
       <div className={containerStyle}>
         <div className="col-12-l" style={{margin: "40px 0" }}>
-          <h3
+          <h2
             style={{
               color: "#fff",
               textAlign: "center",
@@ -38,8 +38,8 @@ class DonateInlineSection extends Component {
             }}
           >
             {this.state.section == 0 ? texts.title : texts.success_title}
-          </h3>
-          <h5
+          </h2>
+          <h3
              style={{
               color: "#fff",
               textAlign: "center",
@@ -48,7 +48,7 @@ class DonateInlineSection extends Component {
             }}
           >
              {this.state.section == 0 ? texts.subtitle : texts.success_subtitle}
-          </h5>
+          </h3>
         </div>
         
         <div
