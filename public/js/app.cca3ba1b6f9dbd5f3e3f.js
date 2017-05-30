@@ -7403,8 +7403,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _glamor = __webpack_require__(91);
 
-var _glamor2 = _interopRequireDefault(_glamor);
-
 var _projectsIcons = __webpack_require__(171);
 
 var _projectsIcons2 = _interopRequireDefault(_projectsIcons);
@@ -7452,7 +7450,7 @@ var ProjectsInfo = function (_Component) {
 		key: 'render',
 		value: function render() {
 
-			var infoSectionStyle = (0, _glamor2.default)({
+			var infoSectionStyle = (0, _glamor.css)({
 				background: colors[this.state.section],
 				padding: '40px',
 				textAlign: 'center',
@@ -7462,7 +7460,7 @@ var ProjectsInfo = function (_Component) {
 				alignItems: 'center'
 			});
 
-			var numTextStyle = (0, _glamor2.default)({
+			var numTextStyle = (0, _glamor.css)({
 				fontSize: '60px',
 				marginRight: '60px',
 				'@media (max-width: 767px)': {
