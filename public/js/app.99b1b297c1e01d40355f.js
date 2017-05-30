@@ -821,7 +821,7 @@ var Contact = function (_React$Component) {
         { style: { width: this.props.width, float: "left", padding: "1px" } },
         this.props.show_titles ? _react2.default.createElement(
           "h5",
-          null,
+          { style: { color: "#3C515F", paddingBottom: '20px' } },
           texts.step_contact_text
         ) : '',
         _react2.default.createElement(
@@ -1062,7 +1062,7 @@ var CedritCard = function (_React$Component) {
         },
         this.props.show_titles ? _react2.default.createElement(
           "h5",
-          null,
+          { style: { color: "#3C515F", paddingBottom: '20px' } },
           texts.step_payment_text
         ) : '',
         _react2.default.createElement(_cards2.default, this.props),
