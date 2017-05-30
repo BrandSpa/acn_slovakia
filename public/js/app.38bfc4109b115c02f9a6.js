@@ -7483,13 +7483,13 @@ var ProjectsInfo = function (_Component) {
 				color: '#fff',
 				display: 'flex',
 				justifyContent: 'center',
-				alignItems: 'center'
+				alignItems: 'center',
+				position: 'relative'
 			});
 
 			var numTextStyle = (0, _glamor.css)({
 				fontSize: '60px',
 				marginRight: '60px',
-				position: 'relative',
 				'@media (max-width: 767px)': {
 					margin: '0'
 				}
