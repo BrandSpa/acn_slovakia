@@ -655,6 +655,11 @@ var amount = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         { style: { width: this.props.width, float: "left", padding: "1px" } },
+        this.props.show_titles ? _react2.default.createElement(
+          "h5",
+          null,
+          texts.step_amount_text
+        ) : '',
         _react2.default.createElement(_amountBtns2.default, {
           amount: amount,
           texts: texts,
@@ -814,6 +819,11 @@ var Contact = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         { style: { width: this.props.width, float: "left", padding: "1px" } },
+        this.props.show_titles ? _react2.default.createElement(
+          "h5",
+          null,
+          texts.step_contact_text
+        ) : '',
         _react2.default.createElement(
           "div",
           { className: "row" },
@@ -1050,6 +1060,11 @@ var CedritCard = function (_React$Component) {
           className: "donate_react__creditcard",
           style: { width: this.props.width, float: "left", padding: "1px" }
         },
+        this.props.show_titles ? _react2.default.createElement(
+          "h5",
+          null,
+          texts.step_payment_text
+        ) : '',
         _react2.default.createElement(_cards2.default, this.props),
         _react2.default.createElement(
           "div",
@@ -2696,7 +2711,8 @@ var DonateInline = function (_Component) {
       },
       errors: { stripe: {}, contact: {} },
       is_blue: false,
-      show_four: false
+      show_four: false,
+      show_titles: false
     }, _this.handleChange = function (field) {
       _this.setState(_extends({}, _this.state, field));
     }, _this.creditCardIsValid = function () {
@@ -5924,7 +5940,8 @@ var Donate = function (_Component) {
       },
       errors: { stripe: {}, contact: {} },
       is_blue: false,
-      show_four_step: false
+      show_four_step: false,
+      show_titles: true
     }, _this.handleChange = function (field) {
       _this.setState(_extends({}, _this.state, field));
     }, _this.handleSubmit = function (e) {
@@ -7019,7 +7036,7 @@ var ProjectsAbout = function (_React$Component) {
 			var section = this.state.section;
 
 
-			var aboutNum = {
+			var aboutNumStyle = {
 				width: "50%",
 				textAlign: "right",
 				paddingTop: "40px",
@@ -8203,7 +8220,8 @@ var Donate = function (_Component) {
       },
       errors: { stripe: {}, contact: {} },
       is_blue: false,
-      show_four_step: false
+      show_four_step: false,
+      show_titles: true
     }, _this.handleChange = function (field) {
       _this.setState(_extends({}, _this.state, field));
     }, _this.handleSubmit = function (e) {

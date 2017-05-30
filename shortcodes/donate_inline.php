@@ -79,7 +79,10 @@ add_action( 'vc_before_init', 'bs_donate_inline_vc' );
       "validation_cvc" => "Incorrect cvc",
       "validation_name" => "Incorrect name",
       "validation_email" => "Incorrect email",
-      "validation_country" => "Incorrect country"
+      "validation_country" => "Incorrect country",
+       "step_amount_text" => "Select Gift Amount",
+      "step_payment_text" => "Payment Details",
+      "step_contact_text" => "Your Information"
     ];
     
     foreach($atts as $key => $val) {
