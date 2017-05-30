@@ -101,6 +101,7 @@ require('shortcodes/contact_form.php');
 require('shortcodes/header_slider.php');
 require('shortcodes/projects.php');
 require('shortcodes/projects_about.php');
+require('shortcodes/projects_info.php');
 require('shortcodes/section_video.php');
 require('shortcodes/section_video_content.php');
 require('shortcodes/accordion.php');
