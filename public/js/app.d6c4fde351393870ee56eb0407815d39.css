@@ -1027,7 +1027,10 @@ button, .btn {
   .footer-donate__bottom--left {
     padding: 60px 0;
     background: RGBA(60, 81, 95, 1);
-    color: #fff; }
+    color: #fff;
+    text-align: center; }
+    .footer-donate__bottom--left p {
+      color: #fff; }
   .footer-donate__bottom--right {
     padding: 60px 60px;
     background: RGBA(43, 58, 68, 1);
@@ -1049,7 +1052,7 @@ button, .btn {
         background: #fff;
         display: block; }
     .footer-donate__bottom--right p {
-      color: #fff;
+      color: #F2F2F2;
       float: left;
       width: 100%; }
 
