@@ -1019,7 +1019,8 @@ button, .btn {
   background: #F7F7F7;
   padding: 20px 0;
   font-size: 14px;
-  color: #9B9B9B; }
+  color: #9B9B9B;
+  text-align: center; }
 
 .footer-donate__bottom {
   display: flex;
@@ -1045,7 +1046,8 @@ button, .btn {
       float: left; }
       .footer-donate__bottom--right ul li {
         float: left;
-        margin-right: 20px; }
+        margin-right: 20px;
+        list-style: none; }
         .footer-donate__bottom--right ul li a {
           color: #F2F2F2; }
     .footer-donate__bottom--right h3 {
