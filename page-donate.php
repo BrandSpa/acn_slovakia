@@ -1,9 +1,11 @@
+<?php
 /**
  * Template Name: Page Donate
  *
  * @package WordPress
  * @since acn_int 1.0
  */
+?>
 
 <?php get_header() ?>
 
