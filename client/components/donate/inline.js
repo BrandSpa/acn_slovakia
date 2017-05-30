@@ -196,7 +196,7 @@ class DonateInline extends Component {
           </div>
         </form>
 
-        <FourStep style={this.state.show_four == true ? { display: "block" } : { display: "none" }} {...this.props} {...this.state}  />
+        <FourStep {...this.props} {...this.state}  />
       </div>
     );
   }

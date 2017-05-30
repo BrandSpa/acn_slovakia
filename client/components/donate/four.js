@@ -45,7 +45,7 @@ class Four extends Component {
 		d = d.toFixed(2);
 
 		return (
-			<div>
+			<div style={this.props.show_four ? { display: "block" } : { display: "none" }}>
 				<h5>{texts.text_four_step}</h5>
 				<p>{`${texts.subtext_four_step} $${d}`}</p>
 				<div className="col-6 col-6-l">

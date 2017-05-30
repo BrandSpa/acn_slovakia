@@ -2512,7 +2512,7 @@ var DonateInline = function (_Component) {
             )
           )
         ),
-        _react2.default.createElement(_four2.default, _extends({ style: this.state.show_four == true ? { display: "block" } : { display: "none" } }, this.props, this.state))
+        _react2.default.createElement(_four2.default, _extends({}, this.props, this.state))
       );
     }
   }]);
@@ -8026,7 +8026,7 @@ var Four = function (_Component) {
 
 			return _react2.default.createElement(
 				"div",
-				null,
+				{ style: this.props.show_four ? { display: "block" } : { display: "none" } },
 				_react2.default.createElement(
 					"h5",
 					null,
