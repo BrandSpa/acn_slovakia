@@ -3263,12 +3263,12 @@ var Four = function (_Component) {
 				{ style: this.props.show_four ? { display: "block", textAlign: "center" } : { display: "none" } },
 				_react2.default.createElement(
 					"h5",
-					{ style: { fontSize: "18px", color: "#3C515F" } },
+					{ style: { fontSize: "18px", color: "#3C515F", marginBottom: "20px" } },
 					texts.text_four_step
 				),
 				_react2.default.createElement(
 					"h3",
-					{ style: { color: "#3C515F" } },
+					{ style: { color: "#3C515F", marginBottom: "20px" } },
 					texts.subtext_four_step + " $" + d
 				),
 				_react2.default.createElement(

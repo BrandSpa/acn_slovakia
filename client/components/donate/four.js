@@ -50,8 +50,8 @@ class Four extends Component {
 
 		return (
 			<div style={this.props.show_four ? { display: "block", textAlign: "center" } : { display: "none" }}>
-				<h5 style={{fontSize: "18px", color: "#3C515F"}}>{texts.text_four_step}</h5>
-				<h3 style={{ color: "#3C515F" }}>{`${texts.subtext_four_step} $${d}`}</h3>
+				<h5 style={{fontSize: "18px", color: "#3C515F", marginBottom: "20px"}}>{texts.text_four_step}</h5>
+				<h3 style={{ color: "#3C515F", marginBottom: "20px" }}>{`${texts.subtext_four_step} $${d}`}</h3>
 				<div className="col-6 col-6-l">
 					<button
 						onClick={this.handleYes}
