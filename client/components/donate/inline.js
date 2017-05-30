@@ -141,6 +141,8 @@ class DonateInline extends Component {
       border: "none"
     };
     
+    console.log('four', this.state.show_four);
+
     return (
       <div>
         <form

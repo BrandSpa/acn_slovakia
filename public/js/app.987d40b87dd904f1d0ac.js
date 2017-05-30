@@ -2453,6 +2453,8 @@ var DonateInline = function (_Component) {
         border: "none"
       };
 
+      console.log('four', this.state.show_four);
+
       return _react2.default.createElement(
         "div",
         null,
