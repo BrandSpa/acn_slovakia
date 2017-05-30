@@ -46,7 +46,7 @@ class DonateInline extends Component {
   }
 
   componentDidMount() {
-    if(this.donateForm) {
+  if(this.donateForm) {
       this.donateForm.addEventListener("keydown", e => {
         if (e.which == 9) {
           e.preventDefault();

@@ -78,8 +78,10 @@ document.cookie.split(";").forEach(function(l) {
   cookies[l.split("=")[0].trim()] = l.split("=")[1];
 });
 
-document.querySelector(".bs-donate").addEventListener("click", () => {
+if(document.querySelector(".bs-donate")) {
+  document.querySelector(".bs-donate").addEventListener("click", () => {
    _dp("track", "donate_click");
-  console.log("click", _dp);
-});
+    console.log("click", _dp);
+  });
+}
 

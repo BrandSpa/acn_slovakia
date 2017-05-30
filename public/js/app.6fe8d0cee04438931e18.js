@@ -7748,10 +7748,12 @@ document.cookie.split(";").forEach(function (l) {
   cookies[l.split("=")[0].trim()] = l.split("=")[1];
 });
 
-document.querySelector(".bs-donate").addEventListener("click", function () {
-  _dp("track", "donate_click");
-  console.log("click", _dp);
-});
+if (document.querySelector(".bs-donate")) {
+  document.querySelector(".bs-donate").addEventListener("click", function () {
+    _dp("track", "donate_click");
+    console.log("click", _dp);
+  });
+}
 
 /***/ }),
 /* 292 */
