@@ -1025,7 +1025,7 @@ button, .btn {
   display: flex;
   flex-wrap: wrap; }
   .footer-donate__bottom--left {
-    padding: 60px 0;
+    padding: 60px 60px;
     background: RGBA(60, 81, 95, 1);
     color: #fff;
     text-align: center; }
