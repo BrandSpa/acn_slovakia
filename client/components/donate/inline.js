@@ -115,6 +115,7 @@ class DonateInline extends Component {
           window.location = url;
         } else {
           this.setState({show_four: true});
+          this.props.changeSection(1);
         }
       });
   };

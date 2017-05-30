@@ -2401,6 +2401,7 @@ var DonateInline = function (_Component) {
           window.location = url;
         } else {
           _this.setState({ show_four: true });
+          _this.props.changeSection(1);
         }
       });
     }, _temp), _possibleConstructorReturn(_this, _ret);
