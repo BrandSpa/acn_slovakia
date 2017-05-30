@@ -7,13 +7,14 @@ class Four extends Component {
 	}
 
 	handleYes = () => {
+		
 		actions.stripeToken(this.props).then(res => {
 			if (res.id) {
-				const stripe = { ...this.props.stripe, token: res.id, donation_type: "monthly" };
+				const stripe = { ...this.props.stripe, token: res.id};
 				this.setState({ loading: true, stripe });
 
 				actions
-					.stripeCharge({ ...this.props, stripe })
+					.stripeCharge({ ...this.props, stripe, donation_type: "monthly"  })
 					.then(res => this.completeTransaction(res));
 			}
 		});

@@ -7980,12 +7980,13 @@ var Four = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (Four.__proto__ || Object.getPrototypeOf(Four)).call(this, props));
 
 		_this.handleYes = function () {
+
 			actions.stripeToken(_this.props).then(function (res) {
 				if (res.id) {
-					var stripe = _extends({}, _this.props.stripe, { token: res.id, donation_type: "monthly" });
+					var stripe = _extends({}, _this.props.stripe, { token: res.id });
 					_this.setState({ loading: true, stripe: stripe });
 
-					actions.stripeCharge(_extends({}, _this.props, { stripe: stripe })).then(function (res) {
+					actions.stripeCharge(_extends({}, _this.props, { stripe: stripe, donation_type: "monthly" })).then(function (res) {
 						return _this.completeTransaction(res);
 					});
 				}
