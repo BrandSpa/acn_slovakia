@@ -3242,6 +3242,9 @@ var Four = function (_Component) {
 			});
 		};
 
+		_this.state = {
+			loading: false
+		};
 		return _this;
 	}
 

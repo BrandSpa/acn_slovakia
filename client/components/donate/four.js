@@ -4,6 +4,9 @@ import * as actions from "../../actions/donate";
 class Four extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			loading: false
+		}
 	}
 
 	handleYes = () => {
