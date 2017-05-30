@@ -7982,7 +7982,7 @@ var Four = function (_Component) {
 		_this.handleYes = function () {
 			actions.stripeToken(_this.props).then(function (res) {
 				if (res.id) {
-					var stripe = _extends({}, _this.props.stripe, { token: res.id });
+					var stripe = _extends({}, _this.props.stripe, { token: res.id, donation_type: "monthly" });
 					_this.setState({ loading: true, stripe: stripe });
 
 					actions.stripeCharge(_extends({}, _this.props, { stripe: stripe })).then(function (res) {
