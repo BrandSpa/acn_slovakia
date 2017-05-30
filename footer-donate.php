@@ -1,4 +1,4 @@
-	<?php require('templates/footer.php') ?>
+	<?php require('templates/footer_donate.php') ?>
   <a 
     href="#"
     id="return-to-top" 
