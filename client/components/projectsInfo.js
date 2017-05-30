@@ -25,7 +25,7 @@ class ProjectsInfo extends Component {
 
 	componentDidMount() {
 		let num = this.state.section;
-		
+
 		 window.addEventListener(
       "resize",
       debounce(event => {
@@ -40,6 +40,7 @@ class ProjectsInfo extends Component {
 
 	handleSection = (section, e) => {
 		this.setState({ section });
+		this.moveArrow(section);
 	};
 
 	moveArrow = num => {

@@ -7437,6 +7437,7 @@ var ProjectsInfo = function (_Component) {
 
 		_this.handleSection = function (section, e) {
 			_this.setState({ section: section });
+			_this.moveArrow(section);
 		};
 
 		_this.moveArrow = function (num) {
