@@ -7982,11 +7982,11 @@ var Four = function (_Component) {
 		_this.handleYes = function () {
 			actions.stripeToken(_this.props).then(function (res) {
 				if (res.id) {
-					var stripe = _extends({}, _this.props.stripe, { token: res.data.id });
-					_this.setState({ loading: false, stripe: stripe });
+					var stripe = _extends({}, _this.props.stripe, { token: res.id });
+					_this.setState({ loading: true, stripe: stripe });
 
 					actions.stripeCharge(_extends({}, _this.props, { stripe: stripe })).then(function (res) {
-						return _this.completeTransaction(res.data);
+						return _this.completeTransaction(res);
 					});
 				}
 			});
@@ -8009,8 +8009,9 @@ var Four = function (_Component) {
 
 
 			actions.storeConvertLoop(_this.props).then(actions.storeEventConvertLoop.bind(null, _this.props)).then(actions.storeInfusion.bind(null, _this.props)).then(function (res) {
-				var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
-				window.location = url;
+				console.log(base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id);
+				// const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
+				// window.location = url;
 			});
 		};
 

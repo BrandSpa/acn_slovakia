@@ -9,12 +9,12 @@ class Four extends Component {
 	handleYes = () => {
 		actions.stripeToken(this.props).then(res => {
 			if (res.id) {
-				const stripe = { ...this.props.stripe, token: res.data.id };
-				this.setState({ loading: false, stripe });
+				const stripe = { ...this.props.stripe, token: res.id };
+				this.setState({ loading: true, stripe });
 
 				actions
 					.stripeCharge({ ...this.props, stripe })
-					.then(res => this.completeTransaction(res.data));
+					.then(res => this.completeTransaction(res));
 			}
 		});
 	};
@@ -34,8 +34,9 @@ class Four extends Component {
       .then(actions.storeEventConvertLoop.bind(null, this.props))
       .then(actions.storeInfusion.bind(null, this.props))
       .then(res => {
-        const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
-        window.location = url;
+				console.log(`${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`);
+        // const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
+        // window.location = url;
       });
   };
 
