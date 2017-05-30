@@ -8010,9 +8010,8 @@ var Four = function (_Component) {
 
 
 			actions.storeConvertLoop(_this.props).then(actions.storeEventConvertLoop.bind(null, _this.props)).then(actions.storeInfusion.bind(null, _this.props)).then(function (res) {
-				console.log(base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id);
-				// const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
-				// window.location = url;
+				var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
+				window.location = url;
 			});
 		};
 

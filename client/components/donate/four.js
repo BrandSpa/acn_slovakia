@@ -35,9 +35,8 @@ class Four extends Component {
       .then(actions.storeEventConvertLoop.bind(null, this.props))
       .then(actions.storeInfusion.bind(null, this.props))
       .then(res => {
-				console.log(`${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`);
-        // const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
-        // window.location = url;
+				const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
+          window.location = url;
       });
   };
 
