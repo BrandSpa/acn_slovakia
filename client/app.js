@@ -15,7 +15,7 @@ import sectionVideoContent from "./components/sectionVideoContent";
 import Projects from "./components/projects";
 import Accordion from "./components/accordion";
 import Posts from "./components/posts";
-import Donate from "./components/donate";
+import Donate from "./components/donate/single";
 import DonateInline from "./components/donate/inline";
 import DonateInlineSection from "./components/donate/inline_section";
 import DonateSection from "./components/donate/section";
