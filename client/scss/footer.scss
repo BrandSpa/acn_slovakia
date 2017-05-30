@@ -201,7 +201,7 @@
 		}
 
 		&--right {
-				padding: 60px 0;
+				padding: 60px 60px;
 			background: RGBA(43, 58, 68, 1.00);
 			color: #fff;
 
@@ -212,6 +212,7 @@
 			&__content {
 				float: left;
 				padding-left: 40px;
+				width: 80%
 			}
 
 			h3 {
