@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { css } from 'glamor';
+import debounce from "lodash/debounce";
 import ProjectsIcons from './projectsIcons';
 
 const colors = {
