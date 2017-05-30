@@ -149,10 +149,13 @@ class Donate extends Component {
     };
 
     return (
+      <div>
+
       <form
         onSubmit={this.handleSubmit}
-        className={this.props.is_blue ? "donate_react donate_inline" : "donate_react"}
-        ref={donate => (this.donateForm = donate)}
+       className={ this.props.is_blue ? "donate_react donate_inline" : "donate_react" }
+       style={this.state.show_four ? { display: "none" } : { display: "block" }}
+      ref={donate => (this.donateForm = donate)}
       >
         <div className="donate_react__viewport" style={viewPortStyle}>
 
@@ -201,6 +204,8 @@ class Donate extends Component {
             : ""}
         </div>
       </form>
+       <FourStep {...this.props} {...this.state}  />
+      </div>
     );
   }
 }

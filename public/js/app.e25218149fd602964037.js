@@ -2186,61 +2186,67 @@ var Donate = function (_Component) {
       };
 
       return _react2.default.createElement(
-        "form",
-        {
-          onSubmit: this.handleSubmit,
-          className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
-          ref: function ref(donate) {
-            return _this4.donateForm = donate;
-          }
-        },
+        "div",
+        null,
         _react2.default.createElement(
-          "div",
-          { className: "donate_react__viewport", style: viewPortStyle },
-          _react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          })),
-          _react2.default.createElement(_creditCard2.default, _extends({
-            ref: function ref(creditCard) {
-              return _this4.creditCard = creditCard;
+          "form",
+          {
+            onSubmit: this.handleSubmit,
+            className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
+            style: this.state.show_four ? { display: "none" } : { display: "block" },
+            ref: function ref(donate) {
+              return _this4.donateForm = donate;
             }
-          }, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          })),
-          _react2.default.createElement(_contact2.default, _extends({
-            ref: function ref(contact) {
-              return _this4.contact = contact;
-            }
-          }, this.state, this.props, {
-            width: sectionWidth,
-            onChange: this.handleChange
-          }))
+          },
+          _react2.default.createElement(
+            "div",
+            { className: "donate_react__viewport", style: viewPortStyle },
+            _react2.default.createElement(_amount2.default, _extends({}, this.state, this.props, {
+              width: sectionWidth,
+              onChange: this.handleChange
+            })),
+            _react2.default.createElement(_creditCard2.default, _extends({
+              ref: function ref(creditCard) {
+                return _this4.creditCard = creditCard;
+              }
+            }, this.state, this.props, {
+              width: sectionWidth,
+              onChange: this.handleChange
+            })),
+            _react2.default.createElement(_contact2.default, _extends({
+              ref: function ref(contact) {
+                return _this4.contact = contact;
+              }
+            }, this.state, this.props, {
+              width: sectionWidth,
+              onChange: this.handleChange
+            }))
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "form-group" },
+            _react2.default.createElement(
+              "button",
+              {
+                className: "donate_react__submit pull-left",
+                onClick: this.handleSubmit,
+                disabled: this.state.loading
+              },
+              this.state.section == 1 ? this.props.texts.next : this.props.texts.donate
+            ),
+            _react2.default.createElement(
+              "span",
+              { style: donationTypeStyle },
+              this.state.amount + " USD " + this.props.texts[this.state.donation_type]
+            ),
+            this.state.section > 0 ? _react2.default.createElement(
+              "button",
+              { style: backBtnStyle, onClick: this.prevSection },
+              this.props.texts.back
+            ) : ""
+          )
         ),
-        _react2.default.createElement(
-          "div",
-          { className: "form-group" },
-          _react2.default.createElement(
-            "button",
-            {
-              className: "donate_react__submit pull-left",
-              onClick: this.handleSubmit,
-              disabled: this.state.loading
-            },
-            this.state.section == 1 ? this.props.texts.next : this.props.texts.donate
-          ),
-          _react2.default.createElement(
-            "span",
-            { style: donationTypeStyle },
-            this.state.amount + " USD " + this.props.texts[this.state.donation_type]
-          ),
-          this.state.section > 0 ? _react2.default.createElement(
-            "button",
-            { style: backBtnStyle, onClick: this.prevSection },
-            this.props.texts.back
-          ) : ""
-        )
+        _react2.default.createElement(FourStep, _extends({}, this.props, this.state))
       );
     }
   }]);
