@@ -35,7 +35,7 @@ class ProjectsInfo extends Component {
 			textAlign: 'center',
 			color: '#fff',
 			display: 'flex',
-			alignContent: 'center',
+			justifyContent: 'center',
 			alignItems: 'center'
 		});
 
