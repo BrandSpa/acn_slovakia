@@ -1041,6 +1041,13 @@ button, .btn {
       float: left;
       padding-left: 40px;
       width: 80%; }
+    .footer-donate__bottom--right ul {
+      float: left; }
+      .footer-donate__bottom--right ul li {
+        float: left;
+        margin-right: 20px; }
+        .footer-donate__bottom--right ul li a {
+          color: #F2F2F2; }
     .footer-donate__bottom--right h3 {
       padding-bottom: 20px;
       color: #fff;
