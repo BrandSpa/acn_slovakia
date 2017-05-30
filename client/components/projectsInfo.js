@@ -29,7 +29,10 @@ class ProjectsInfo extends Component {
 	render() {
 
 		let infoSectionStyle = {
-			background: colors[this.state.section]
+			background: colors[this.state.section],
+			minHeight: '150px',
+			textAlign: 'center',
+			color: '#fff'
 		};
 
 		let section = this.state.section - 1;
@@ -38,8 +41,8 @@ class ProjectsInfo extends Component {
 			<div>
 				<ProjectsIcons onChange={this.handleSection} />
 				<div style={infoSectionStyle}>
-					{this.props.projects[section] ? this.props.projects[section].number : ""}
-					{this.props.projects[section] ? this.props.projects[section].number_text : ""}
+					<span style={{ fontSize: '60px' }}>{this.props.projects[section] ? this.props.projects[section].number : ""}</span> 
+					<span style={{ fontSize: '30px' }}>{this.props.projects[section] ? this.props.projects[section].number_text : ""}</span>
 				</div>
 			</div>
 			

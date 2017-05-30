@@ -7449,7 +7449,10 @@ var ProjectsInfo = function (_Component) {
 		value: function render() {
 
 			var infoSectionStyle = {
-				background: colors[this.state.section]
+				background: colors[this.state.section],
+				minHeight: '150px',
+				textAlign: 'center',
+				color: '#fff'
 			};
 
 			var section = this.state.section - 1;
@@ -7461,8 +7464,16 @@ var ProjectsInfo = function (_Component) {
 				_react2.default.createElement(
 					'div',
 					{ style: infoSectionStyle },
-					this.props.projects[section] ? this.props.projects[section].number : "",
-					this.props.projects[section] ? this.props.projects[section].number_text : ""
+					_react2.default.createElement(
+						'span',
+						{ style: { fontSize: '60px' } },
+						this.props.projects[section] ? this.props.projects[section].number : ""
+					),
+					_react2.default.createElement(
+						'span',
+						{ style: { fontSize: '30px' } },
+						this.props.projects[section] ? this.props.projects[section].number_text : ""
+					)
 				)
 			);
 		}
