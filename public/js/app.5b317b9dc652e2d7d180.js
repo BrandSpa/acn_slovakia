@@ -3260,15 +3260,15 @@ var Four = function (_Component) {
 
 			return _react2.default.createElement(
 				"div",
-				{ style: this.props.show_four ? { display: "block" } : { display: "none" } },
+				{ style: this.props.show_four ? { display: "block", textAlign: "center" } : { display: "none" } },
 				_react2.default.createElement(
 					"h5",
-					null,
+					{ style: { fontSize: "18px", color: "#3C515F" } },
 					texts.text_four_step
 				),
 				_react2.default.createElement(
-					"p",
-					null,
+					"h3",
+					{ style: { color: "#3C515F" } },
 					texts.subtext_four_step + " $" + d
 				),
 				_react2.default.createElement(

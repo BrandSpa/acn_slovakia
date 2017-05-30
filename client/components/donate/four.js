@@ -49,9 +49,9 @@ class Four extends Component {
 		d = d.toFixed(2);
 
 		return (
-			<div style={this.props.show_four ? { display: "block" } : { display: "none" }}>
-				<h5>{texts.text_four_step}</h5>
-				<p>{`${texts.subtext_four_step} $${d}`}</p>
+			<div style={this.props.show_four ? { display: "block", textAlign: "center" } : { display: "none" }}>
+				<h5 style={{fontSize: "18px", color: "#3C515F"}}>{texts.text_four_step}</h5>
+				<h3 style={{ color: "#3C515F" }}>{`${texts.subtext_four_step} $${d}`}</h3>
 				<div className="col-6 col-6-l">
 					<button
 						onClick={this.handleYes}
