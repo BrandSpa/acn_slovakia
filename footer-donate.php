@@ -1,4 +1,4 @@
-	<?php require('templates/footer_donate.php') ?>
+	<?php require('templates/footer.php') ?>
   <a 
     href="#"
     id="return-to-top" 
@@ -50,8 +50,8 @@
   bs.donate = '<?php echo gett('Donate') ?>';
 </script>
 
-<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.d7592752b47b2326a60a.js'></script>
-<script src='<?php echo get_template_directory_uri() ?>/public/js/app.415c38dafec03ed960f8.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/vendor.77e0f8aab1c95f017229.js'></script>
+<script src='<?php echo get_template_directory_uri() ?>/public/js/app.d291537ba22e0f7a4c48.js'></script>
 
 <!--/app theme-->
 

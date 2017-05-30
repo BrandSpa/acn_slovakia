@@ -16,6 +16,7 @@ const changeFilesNames = function() {
 
     if (!stats.errors.length) {
       const footerFile = Path.join(__dirname, "footer.php");
+      const footerDonateFile = Path.join(__dirname, "footer-donate.php");
       const headerFile = Path.join(__dirname, "header.php");
       const appName = stats.chunks[0].files[0];
       const appCss = stats.chunks[0].files[1];
@@ -29,6 +30,11 @@ const changeFilesNames = function() {
       let footerHtmlOutput = footerHtml.replace(/app.*\.js/, appName);
       footerHtmlOutput = footerHtmlOutput.replace(/vendor.*\.js/, vendorName);
       fs.writeFileSync(footerFile, footerHtmlOutput);
+
+      const footerDonateHtml = fs.readFileSync(footerDonateFile, "utf8");
+      let footerDonateHtmlOutput = footerHtml.replace(/app.*\.js/, appName);
+      footerDonateHtmlOutput = footerHtmlOutput.replace(/vendor.*\.js/, vendorName);
+      fs.writeFileSync(footerDonateFile, footerDonateHtmlOutput);
     }
   });
 };
