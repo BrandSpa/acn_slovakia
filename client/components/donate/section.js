@@ -25,6 +25,8 @@ class DonateSection extends Component {
       display: "flex",
       flexWrap: "wrap"
     });
+    
+    const { texts } = this.props;
 
     return (
       <div className={containerStyle}>

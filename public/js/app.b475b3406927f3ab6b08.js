@@ -5805,6 +5805,9 @@ var DonateSection = function (_Component) {
         flexWrap: "wrap"
       });
 
+      var texts = this.props.texts;
+
+
       return _react2.default.createElement(
         "div",
         { className: containerStyle },
