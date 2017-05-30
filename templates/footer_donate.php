@@ -1,8 +1,6 @@
 <div class="footer-donate" >
 	<div class="footer-donate__top">
-		<div class="l-wrap">
 				<?php echo gett('Your donation is made to ACN Aid to the Church in Need gGmbH, a non-profit organization officially registered in Germany and audited internationally by KPMG.  Any question about your donation can be send to info@acninternational.org  Ph.: +49-6174-291-0');	?>
-		</div>
 	</div>
 
 	<div class="footer-donate__bottom">
