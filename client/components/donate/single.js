@@ -92,7 +92,6 @@ class Donate extends Component {
       if (!this.creditCardIsValid()) return false;
 
       actions.stripeToken(this.state).then(res => {
-        console.log('res', res);
         if (res.id) {
           const stripe = { ...this.state.stripe, token: res.id };
           this.setState({ ...this.state, stripe });
@@ -101,6 +100,7 @@ class Donate extends Component {
 
         if (res.stripeCode) {
           this.setState({ ...this.state, loading: false, declined: true });
+          return false;
         }
       });
     }
@@ -197,6 +197,7 @@ class Donate extends Component {
               </button>
             : ""}
         </div>
+       <div className="form-group--error" style={this.state.declined ? {display: "block"} : {display: "none"}}> {texts.validation_declined}</div> 
       </form>
       </div>
     );

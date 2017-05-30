@@ -5958,7 +5958,6 @@ var Donate = function (_Component) {
         if (!_this.creditCardIsValid()) return false;
 
         actions.stripeToken(_this.state).then(function (res) {
-          console.log('res', res);
           if (res.id) {
             var stripe = _extends({}, _this.state.stripe, { token: res.id });
             _this.setState(_extends({}, _this.state, { stripe: stripe }));
@@ -5967,6 +5966,7 @@ var Donate = function (_Component) {
 
           if (res.stripeCode) {
             _this.setState(_extends({}, _this.state, { loading: false, declined: true }));
+            return false;
           }
         });
       }
@@ -6097,6 +6097,12 @@ var Donate = function (_Component) {
               { style: backBtnStyle, onClick: this.prevSection },
               this.props.texts.back
             ) : ""
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "form-group--error", style: this.state.declined ? { display: "block" } : { display: "none" } },
+            " ",
+            texts.validation_declined
           )
         )
       );
