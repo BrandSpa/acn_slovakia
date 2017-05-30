@@ -26,6 +26,9 @@ function bs_donate_react_sc($atts, $content = null) {
     "validation_name" => gett("Incorrect name"),
     "validation_email" => gett("Incorrect email"),
     "validation_country" => gett("Incorrect country"),
+    "step_amount_text" => gett("Select Gift Amount"),
+    "step_payment_text" => gett("Payment Details"),
+    "step_contact_text" => gett("Your Information"),
 		"template_uri" => str_replace("http:", "", get_template_directory_uri()),
     "is_blue" => false
 	 ], $atts);
@@ -94,6 +97,9 @@ add_action( 'vc_before_init', 'bs_donate_react_vc' );
       "validation_name" => "Incorrect name",
       "validation_email" => "Incorrect email",
       "validation_country" => "Incorrect country",
+      "step_amount_text" => "Select Gift Amount",
+      "step_payment_text" => "Payment Details",
+      "step_contact_text" => "Your Information"
     ];
     
     foreach($atts as $key => $val) {

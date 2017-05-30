@@ -34,7 +34,8 @@ class DonateInline extends Component {
     },
     errors: { stripe: {}, contact: {} },
     is_blue: false,
-    show_four: false
+    show_four: false,
+    show_titles: false
   };
 
   componentWillMount() {

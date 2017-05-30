@@ -122,6 +122,7 @@ class CedritCard extends React.Component {
         className="donate_react__creditcard"
         style={{ width: this.props.width, float: "left", padding: "1px" }}
       >
+      { this.props.show_titles ? <h5>{texts.step_payment_text}</h5> : '' }
         <Cards {...this.props} />
         <div className="form-group">
           <input

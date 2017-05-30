@@ -63,6 +63,7 @@ class Contact extends React.Component {
 
     return (
       <div style={{ width: this.props.width, float: "left", padding: "1px" }}>
+      { this.props.show_titles ? <h5>{texts.step_contact_text}</h5> : '' }
         <div className="row">
           <div className="form-group col-12-l">
             <input

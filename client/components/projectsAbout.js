@@ -28,7 +28,7 @@ class ProjectsAbout extends React.Component {
   render() {
 		const { section } = this.state;
 
-		let aboutNum = {
+		let aboutNumStyle = {
 			width: "50%",
 			textAlign: "right",
 			paddingTop: "40px",
