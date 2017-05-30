@@ -1015,6 +1015,20 @@ button, .btn {
       .learn-more-link {
         font-size: 1em; } }
 
+.footer-donate__top {
+  background: #F7F7F7;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #9B9B9B; }
+
+.footer-donate__bottom {
+  display: flex;
+  flex-wrap: wrap; }
+  .footer-donate__bottom--left {
+    background: RGBA(60, 81, 95, 1); }
+  .footer-donate__bottom--right {
+    background: RGBA(43, 58, 68, 1); }
+
 @keyframes moveAnchor {
   from {
     bottom: 40px; }
