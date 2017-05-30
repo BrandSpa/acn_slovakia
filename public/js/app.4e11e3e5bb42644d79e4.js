@@ -7476,10 +7476,10 @@ var ProjectsInfo = function (_Component) {
 				_react2.default.createElement(_projectsIcons2.default, { onChange: this.handleSection }),
 				_react2.default.createElement(
 					'div',
-					{ style: infoSectionStyle },
+					{ className: infoSectionStyle },
 					_react2.default.createElement(
 						'span',
-						{ style: numTextStyle },
+						{ className: numTextStyle },
 						this.props.projects[section] ? this.props.projects[section].number : ""
 					),
 					_react2.default.createElement(
