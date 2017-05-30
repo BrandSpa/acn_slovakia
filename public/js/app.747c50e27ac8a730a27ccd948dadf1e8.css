@@ -1061,7 +1061,8 @@ button, .btn {
         width: 70%;
         height: 2px;
         background: #fff;
-        display: block; }
+        display: block;
+        margin-top: 20px; }
     .footer-donate__bottom--right p {
       color: #F2F2F2;
       float: left;
