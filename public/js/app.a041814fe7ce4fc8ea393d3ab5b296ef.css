@@ -1028,6 +1028,9 @@ button, .btn {
     padding: 60px 0;
     background: RGBA(60, 81, 95, 1);
     color: #fff; }
+    .footer-donate__bottom--left img {
+      float: left;
+      margin-right: 40px; }
   .footer-donate__bottom--right {
     padding: 60px 0;
     background: RGBA(43, 58, 68, 1);

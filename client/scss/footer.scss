@@ -196,7 +196,11 @@
 		&--left {
 				padding: 60px 0;
 			background: RGBA(60, 81, 95, 1.00);
-			color: #fff;
+			color: #fff; 
+			img {
+				float: left;
+				margin-right: 40px;
+			}
 		}
 
 		&--right {
