@@ -197,7 +197,7 @@ class Donate extends Component {
               </button>
             : ""}
         </div>
-       <div className="form-group--error" style={this.state.declined ? {display: "block"} : {display: "none"}}> {texts.validation_declined}</div> 
+       <div className="form-group--error" style={this.state.declined ? {display: "block"} : {display: "none"}}> {this.props.texts.validation_declined}</div> 
       </form>
       </div>
     );

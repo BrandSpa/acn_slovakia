@@ -6102,7 +6102,7 @@ var Donate = function (_Component) {
             "div",
             { className: "form-group--error", style: this.state.declined ? { display: "block" } : { display: "none" } },
             " ",
-            texts.validation_declined
+            this.props.texts.validation_declined
           )
         )
       );
