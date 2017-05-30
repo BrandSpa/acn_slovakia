@@ -2870,7 +2870,9 @@ var DonateInline = function (_Component) {
                 onClick: this.handleSubmit,
                 disabled: this.state.loading
               },
-              this.props.texts.donate
+              this.props.texts.donate,
+              " ",
+              this.state.loading ? '...' : ''
             ),
             _react2.default.createElement(
               "span",
