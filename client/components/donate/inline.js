@@ -42,12 +42,14 @@ class DonateInline extends Component {
   }
 
   componentDidMount() {
-    this.donateForm.addEventListener("keydown", e => {
-      if (e.which == 9) {
-        e.preventDefault();
-        this.handleSubmit();
-      }
-    });
+    if(this.donateForm) {
+      this.donateForm.addEventListener("keydown", e => {
+        if (e.which == 9) {
+          e.preventDefault();
+          this.handleSubmit();
+        }
+      });
+    } 
   }
 
   handleChange = field => {
@@ -142,7 +144,7 @@ class DonateInline extends Component {
           className={
             this.props.is_blue ? "donate_react donate_inline" : "donate_react"
           }
-          style={this.state.show_four ? { display: "none" } : { overflow: "visible" }}
+          style={!this.state.show_four ? { display: "none" } : { display: "block" }}
           ref={donate => (this.donateForm = donate)}
         >
 
@@ -187,6 +189,7 @@ class DonateInline extends Component {
 
           </div>
         </form>
+
         <FourStep style={this.state.show_four ? { display: "block" } : { display: "none" }} {...this.props} {...this.state}  />
       </div>
     );

@@ -2418,12 +2418,14 @@ var DonateInline = function (_Component) {
     value: function componentDidMount() {
       var _this3 = this;
 
-      this.donateForm.addEventListener("keydown", function (e) {
-        if (e.which == 9) {
-          e.preventDefault();
-          _this3.handleSubmit();
-        }
-      });
+      if (this.donateForm) {
+        this.donateForm.addEventListener("keydown", function (e) {
+          if (e.which == 9) {
+            e.preventDefault();
+            _this3.handleSubmit();
+          }
+        });
+      }
     }
   }, {
     key: "render",
@@ -2457,7 +2459,7 @@ var DonateInline = function (_Component) {
           {
             onSubmit: this.handleSubmit,
             className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
-            style: this.state.show_four ? { display: "none" } : { overflow: "visible" },
+            style: !this.state.show_four ? { display: "none" } : { display: "block" },
             ref: function ref(donate) {
               return _this4.donateForm = donate;
             }
