@@ -6100,7 +6100,7 @@ var Donate = function (_Component) {
           ),
           _react2.default.createElement(
             "div",
-            { className: "form-group--error", style: this.state.declined ? { display: "block" } : { display: "none" } },
+            { style: this.state.declined ? { display: "block", background: "red", color: "#fff", float: "left", width: "100%", padding: "10px" } : { display: "none" } },
             " ",
             this.props.texts.validation_declined
           )
