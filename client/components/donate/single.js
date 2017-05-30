@@ -41,12 +41,14 @@ class Donate extends Component {
   }
 
   componentDidMount() {
-    this.donateForm.addEventListener("keydown", e => {
-      if (e.which == 9) {
-        e.preventDefault();
-        this.nextSection();
-      }
-    });
+    if(this.donateForm) {
+      this.donateForm.addEventListener("keydown", e => {
+        if (e.which == 9) {
+          e.preventDefault();
+          this.nextSection();
+        }
+      });
+    }
   }
 
   handleChange = field => {
@@ -90,6 +92,7 @@ class Donate extends Component {
       if (!this.creditCardIsValid()) return false;
 
       actions.stripeToken(this.state).then(res => {
+        console.log('res', res);
         if (res.id) {
           const stripe = { ...this.state.stripe, token: res.id };
           this.setState({ ...this.state, stripe });

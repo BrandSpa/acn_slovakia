@@ -5958,6 +5958,7 @@ var Donate = function (_Component) {
         if (!_this.creditCardIsValid()) return false;
 
         actions.stripeToken(_this.state).then(function (res) {
+          console.log('res', res);
           if (res.id) {
             var stripe = _extends({}, _this.state.stripe, { token: res.id });
             _this.setState(_extends({}, _this.state, { stripe: stripe }));
@@ -6006,12 +6007,14 @@ var Donate = function (_Component) {
     value: function componentDidMount() {
       var _this3 = this;
 
-      this.donateForm.addEventListener("keydown", function (e) {
-        if (e.which == 9) {
-          e.preventDefault();
-          _this3.nextSection();
-        }
-      });
+      if (this.donateForm) {
+        this.donateForm.addEventListener("keydown", function (e) {
+          if (e.which == 9) {
+            e.preventDefault();
+            _this3.nextSection();
+          }
+        });
+      }
     }
   }, {
     key: "render",
