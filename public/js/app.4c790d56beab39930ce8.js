@@ -6086,7 +6086,7 @@ var Donate = function (_Component) {
               },
               this.state.section == 1 ? this.props.texts.next : this.props.texts.donate,
               " ",
-              this.state.loading ? '...' : ''
+              this.state.loading ? "..." : ""
             ),
             _react2.default.createElement(
               "span",
@@ -6101,8 +6101,16 @@ var Donate = function (_Component) {
           ),
           _react2.default.createElement(
             "div",
-            { style: this.state.declined ? { display: "block", background: "red", color: "#fff", float: "left", width: "100%", padding: "10px" } : { display: "none" } },
-            " ",
+            {
+              style: this.state.declined ? {
+                display: "block",
+                background: "red",
+                color: "#fff",
+                float: "left",
+                width: "100%",
+                padding: "10px"
+              } : { display: "none" }
+            },
             this.props.texts.validation_declined
           )
         )
@@ -8369,6 +8377,20 @@ var Donate = function (_Component) {
               { style: backBtnStyle, onClick: this.prevSection },
               this.props.texts.back
             ) : ""
+          ),
+          _react2.default.createElement(
+            "div",
+            {
+              style: this.state.declined ? {
+                display: "block",
+                background: "red",
+                color: "#fff",
+                float: "left",
+                width: "100%",
+                padding: "10px"
+              } : { display: "none" }
+            },
+            this.props.texts.validation_declined
           )
         ),
         _react2.default.createElement(_four2.default, _extends({}, this.props, this.state))

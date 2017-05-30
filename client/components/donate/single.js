@@ -41,7 +41,7 @@ class Donate extends Component {
   }
 
   componentDidMount() {
-    if(this.donateForm) {
+    if (this.donateForm) {
       this.donateForm.addEventListener("keydown", e => {
         if (e.which == 9) {
           e.preventDefault();
@@ -149,57 +149,78 @@ class Donate extends Component {
     return (
       <div>
 
-      <form
-        onSubmit={this.handleSubmit}
-       className={ this.props.is_blue ? "donate_react donate_inline" : "donate_react" }
-      ref={donate => (this.donateForm = donate)}
-      >
-        <div className="donate_react__viewport" style={viewPortStyle}>
+        <form
+          onSubmit={this.handleSubmit}
+          className={
+            this.props.is_blue ? "donate_react donate_inline" : "donate_react"
+          }
+          ref={donate => (this.donateForm = donate)}
+        >
+          <div className="donate_react__viewport" style={viewPortStyle}>
 
-          <Amount
-            {...this.state}
-            {...this.props}
-            width={sectionWidth}
-            onChange={this.handleChange}
-          />
+            <Amount
+              {...this.state}
+              {...this.props}
+              width={sectionWidth}
+              onChange={this.handleChange}
+            />
 
-          <CreditCard
-            ref={creditCard => (this.creditCard = creditCard)}
-            {...this.state}
-            {...this.props}
-            width={sectionWidth}
-            onChange={this.handleChange}
-          />
+            <CreditCard
+              ref={creditCard => (this.creditCard = creditCard)}
+              {...this.state}
+              {...this.props}
+              width={sectionWidth}
+              onChange={this.handleChange}
+            />
 
-          <Contact
-            ref={contact => (this.contact = contact)}
-            {...this.state}
-            {...this.props}
-            width={sectionWidth}
-            onChange={this.handleChange}
-          />
+            <Contact
+              ref={contact => (this.contact = contact)}
+              {...this.state}
+              {...this.props}
+              width={sectionWidth}
+              onChange={this.handleChange}
+            />
 
-        </div>
+          </div>
 
-        <div className="form-group">
-          <button
-            className="donate_react__submit pull-left"
-            onClick={this.handleSubmit}
-            disabled={this.state.loading}
+          <div className="form-group">
+            <button
+              className="donate_react__submit pull-left"
+              onClick={this.handleSubmit}
+              disabled={this.state.loading}
+            >
+              {this.state.section == 1
+                ? this.props.texts.next
+                : this.props.texts.donate}
+              {" "}
+              {this.state.loading ? "..." : ""}
+            </button>
+            <span style={donationTypeStyle}>
+              {`${this.state.amount} USD ${this.props.texts[this.state.donation_type]}`}
+            </span>
+            {this.state.section > 0
+              ? <button style={backBtnStyle} onClick={this.prevSection}>
+                  {this.props.texts.back}
+                </button>
+              : ""}
+          </div>
+          <div
+            style={
+              this.state.declined
+                ? {
+                    display: "block",
+                    background: "red",
+                    color: "#fff",
+                    float: "left",
+                    width: "100%",
+                    padding: "10px"
+                  }
+                : { display: "none" }
+            }
           >
-            {this.state.section == 1 ? this.props.texts.next : this.props.texts.donate} { this.state.loading ? '...' : '' }
-          </button>
-          <span style={donationTypeStyle}>
-            {`${this.state.amount} USD ${this.props.texts[this.state.donation_type]}`}
-          </span>
-          {this.state.section > 0
-            ? <button style={backBtnStyle} onClick={this.prevSection}>
-                {this.props.texts.back}
-              </button>
-            : ""}
-        </div>
-       <div style={this.state.declined ? {display: "block", background: "red", color: "#fff", float: "left", width: "100%", padding: "10px"} : {display: "none"}}> {this.props.texts.validation_declined}</div> 
-      </form>
+           {this.props.texts.validation_declined}
+          </div>
+        </form>
       </div>
     );
   }

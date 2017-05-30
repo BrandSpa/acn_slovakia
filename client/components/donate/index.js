@@ -203,8 +203,25 @@ class Donate extends Component {
               </button>
             : ""}
         </div>
+        <div
+            style={
+              this.state.declined
+                ? {
+                    display: "block",
+                    background: "red",
+                    color: "#fff",
+                    float: "left",
+                    width: "100%",
+                    padding: "10px"
+                  }
+                : { display: "none" }
+            }
+          >
+           {this.props.texts.validation_declined}
+          </div>
       </form>
        <FourStep {...this.props} {...this.state}  />
+
       </div>
     );
   }
