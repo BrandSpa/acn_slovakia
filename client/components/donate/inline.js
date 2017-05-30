@@ -37,10 +37,6 @@ class DonateInline extends Component {
     show_four: false
   };
 
-  componentDidMount = () => {
-    console.log(this.state);
-  };
-
   componentWillMount() {
     actions.fetchCountries().then(countries => this.setState({ countries }));
   }
@@ -117,6 +113,8 @@ class DonateInline extends Component {
         if (donation_type == "monthly") {
           const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
           window.location = url;
+        } else {
+          this.setState({show_four: true});
         }
       });
   };

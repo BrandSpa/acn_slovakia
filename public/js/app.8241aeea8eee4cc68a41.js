@@ -2347,8 +2347,6 @@ var DonateInline = function (_Component) {
       errors: { stripe: {}, contact: {} },
       is_blue: false,
       show_four: false
-    }, _this.componentDidMount = function () {
-      console.log(_this.state);
     }, _this.handleChange = function (field) {
       _this.setState(_extends({}, _this.state, field));
     }, _this.creditCardIsValid = function () {
@@ -2401,6 +2399,8 @@ var DonateInline = function (_Component) {
         if (donation_type == "monthly") {
           var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
           window.location = url;
+        } else {
+          _this.setState({ show_four: true });
         }
       });
     }, _temp), _possibleConstructorReturn(_this, _ret);
