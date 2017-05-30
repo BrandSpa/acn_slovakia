@@ -4,7 +4,7 @@ import qs from "qs";
 const endpoint = "/wp-admin/admin-ajax.php";
 
 export function fetchCountries() : Function {
-  const data = qs.stringify({ action: "countries" });
+  const data: { action: string } = qs.stringify({ action: "countries" });
 
   return request
     .post(endpoint, data)

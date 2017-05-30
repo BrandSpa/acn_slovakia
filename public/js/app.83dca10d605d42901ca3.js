@@ -2375,7 +2375,7 @@ var DonateInline = function (_Component) {
             _this.setState({ stripe: stripe });
 
             actions.stripeCharge(_extends({}, _this.state, { stripe: stripe })).then(function (res) {
-              return _this.completeTransaction(res);
+              return _this.completeTransaction(res.data);
             });
           }
 
@@ -8005,7 +8005,6 @@ var Four = function (_Component) {
 			    donation_type = _this$props.donation_type;
 
 			var base = _this.props.redirect["monthly"];
-			console.log(stripeResponse);
 			var customer = stripeResponse.customer,
 			    id = stripeResponse.id;
 

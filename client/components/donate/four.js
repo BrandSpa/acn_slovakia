@@ -28,7 +28,6 @@ class Four extends Component {
 	completeTransaction = (stripeResponse = {}) => {
     const { amount, donation_type } = this.props;
     const base = this.props.redirect["monthly"];
-		console.log(stripeResponse);
     const { customer, id } = stripeResponse;
 
     actions

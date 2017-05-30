@@ -90,7 +90,7 @@ class DonateInline extends Component {
 
             actions
               .stripeCharge({ ...this.state, stripe })
-              .then(res => this.completeTransaction(res));
+              .then(res => this.completeTransaction(res.data));
           }
 
           if (res.stripeCode) {
