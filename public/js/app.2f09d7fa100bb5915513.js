@@ -2088,8 +2088,13 @@ var Donate = function (_Component) {
 
 
       actions.storeConvertLoop(_this.state).then(actions.storeEventConvertLoop.bind(null, _this.state)).then(actions.storeInfusion.bind(null, _this.state)).then(function (res) {
-        var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
-        window.location = url;
+        if (donation_type == "monthly") {
+          var url = base + "?customer_id=" + customer + "-" + id + "&order_revenue=" + amount + "&order_id=" + id;
+          window.location = url;
+        } else {
+          _this.setState({ show_four: true });
+          _this.props.changeSection(1);
+        }
       });
     }, _this.creditCardIsValid = function () {
       var errs = _this.creditCard.validateAll();
@@ -5898,6 +5903,10 @@ var DonateSection = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (DonateSection.__proto__ || Object.getPrototypeOf(DonateSection)).call(this, props));
 
+    _this.changeSection = function (section) {
+      _this.setState({ section: section });
+    };
+
     _this.state = {
       section: 0
     };
@@ -5934,14 +5943,14 @@ var DonateSection = function (_Component) {
           "div",
           {
             className: "col-12 col-4-l",
-            style: { background: "RGBA(43, 58, 68, .9)", padding: "20px" }
+            style: this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px" } : { display: "none" }
           },
           _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: this.props.content } })
         ),
         _react2.default.createElement(
           "div",
           {
-            className: "col-12 col-8-l",
+            className: this.state.section == 0 ? "col-12 col-8-l" : "col-12 col-12-l",
             style: { background: "#fff", padding: "40px" }
           },
           _react2.default.createElement(_index2.default, this.props)

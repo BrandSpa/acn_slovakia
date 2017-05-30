@@ -69,8 +69,13 @@ class Donate extends Component {
       .then(actions.storeEventConvertLoop.bind(null, this.state))
       .then(actions.storeInfusion.bind(null, this.state))
       .then(res => {
-        const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
-        window.location = url;
+         if (donation_type == "monthly") {
+          const url = `${base}?customer_id=${customer}-${id}&order_revenue=${amount}&order_id=${id}`;
+          window.location = url;
+        } else {
+          this.setState({show_four: true});
+          this.props.changeSection(1);
+        }
       });
   };
 

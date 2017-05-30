@@ -16,6 +16,10 @@ class DonateSection extends Component {
     titles: []
   };
 
+  changeSection = (section) => {
+    this.setState({section});
+  };
+
   render() {
     let containerStyle = css({
       display: "flex",
@@ -39,13 +43,13 @@ class DonateSection extends Component {
         </div>
         <div
           className="col-12 col-4-l"
-          style={{ background: "RGBA(43, 58, 68, .9)", padding: "20px" }}
+          style={this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px" } : { display: "none" } }
         >
           <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
         </div>
 
         <div
-          className="col-12 col-8-l"
+          className={this.state.section == 0 ? "col-12 col-8-l" : "col-12 col-12-l"}
           style={{ background: "#fff", padding: "40px" }}
         >
           <Donate {...this.props} />
