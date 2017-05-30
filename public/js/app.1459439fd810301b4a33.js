@@ -5966,6 +5966,7 @@ var Donate = function (_Component) {
 
           if (res.stripeCode) {
             _this.setState(_extends({}, _this.state, { loading: false, declined: true }));
+            section = 1;
             return false;
           }
         });

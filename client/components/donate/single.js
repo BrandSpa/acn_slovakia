@@ -100,6 +100,7 @@ class Donate extends Component {
 
         if (res.stripeCode) {
           this.setState({ ...this.state, loading: false, declined: true });
+          section = 1;
           return false;
         }
       });
