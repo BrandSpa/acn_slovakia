@@ -197,16 +197,22 @@
 				padding: 60px 0;
 			background: RGBA(60, 81, 95, 1.00);
 			color: #fff; 
-			img {
-				float: left;
-				margin-right: 40px;
-			}
+		
 		}
 
 		&--right {
 				padding: 60px 0;
 			background: RGBA(43, 58, 68, 1.00);
 			color: #fff;
+
+			img {
+				float: left;
+			}
+
+			&__content {
+				float: left;
+				padding-left: 40px;
+			}
 
 			h3 {
 				padding-bottom: 20px;

@@ -13,8 +13,10 @@
 
 		<div class="col-9-l footer-donate__bottom--right">
 			<img src="<?php echo get_template_directory_uri() ?>/public/img/minilogo.png ?>">
+			<div class="footer-donate__bottom--right__content">
 			<h3><?php echo gett('ABOUT US') ?></h3>
 			<p><?php echo gett('Founded in 1947 as a Catholic aid organization for war refugees and recognized as a papal foundation since 2011, ACN is dedicated to the service of Christians around the world, through information, prayer and action, wherever they are persecuted or oppressed or suffering material need. ACN supports every year an average of 6000 projects in close to 150 countries, thanks to private donations, as the foundation receives no public funding.') ?></p>
+			</div>
 		</div>
 	</div>
 </div>
