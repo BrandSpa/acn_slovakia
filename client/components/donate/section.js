@@ -31,7 +31,7 @@ class DonateSection extends Component {
     return (
       <div className={containerStyle}>
         <div className="col-12-l">
-          <h2
+            <h2
             style={{
               color: "#fff",
               textAlign: "center",
@@ -40,8 +40,15 @@ class DonateSection extends Component {
           >
             {this.state.section == 0 ? texts.title : texts.success_title}
           </h2>
-          <h3>
-            {this.state.section == 0 ? texts.subtitle : texts.success_subtitle}
+          <h3
+             style={{
+              color: "#fff",
+              textAlign: "center",
+              textShadow: "0 2px 20px rgba(0,0,0,0.47)",
+              fontWeight: "300"
+            }}
+          >
+             {this.state.section == 0 ? texts.subtitle : texts.success_subtitle}
           </h3>
         </div>
         <div

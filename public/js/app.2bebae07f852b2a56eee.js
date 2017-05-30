@@ -5827,7 +5827,14 @@ var DonateSection = function (_Component) {
           ),
           _react2.default.createElement(
             "h3",
-            null,
+            {
+              style: {
+                color: "#fff",
+                textAlign: "center",
+                textShadow: "0 2px 20px rgba(0,0,0,0.47)",
+                fontWeight: "300"
+              }
+            },
             this.state.section == 0 ? texts.subtitle : texts.success_subtitle
           )
         ),
