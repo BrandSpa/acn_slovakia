@@ -82,11 +82,11 @@ class DonateInline extends Component {
       .then(this.creditCardIsValid)
       .then(res => {
         if (!res) return false;
-
+        this.setState({loading: true});
         actions.stripeToken(this.state).then(res => {
           if (res.id) {
             const stripe = { ...this.state.stripe, token: res.id };
-            this.setState({ loading: false, stripe });
+            this.setState({ stripe });
 
             actions
               .stripeCharge({ ...this.state, stripe })

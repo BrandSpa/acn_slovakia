@@ -2368,11 +2368,11 @@ var DonateInline = function (_Component) {
         if (!res) return false;
       }).then(_this.creditCardIsValid).then(function (res) {
         if (!res) return false;
-
+        _this.setState({ loading: true });
         actions.stripeToken(_this.state).then(function (res) {
           if (res.id) {
             var stripe = _extends({}, _this.state.stripe, { token: res.id });
-            _this.setState({ loading: false, stripe: stripe });
+            _this.setState({ stripe: stripe });
 
             actions.stripeCharge(_extends({}, _this.state, { stripe: stripe })).then(function (res) {
               return _this.completeTransaction(res);
