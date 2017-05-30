@@ -34,7 +34,7 @@ class Donate extends Component {
     errors: { stripe: {}, contact: {} },
     is_blue: false,
     show_four_step: false,
-    show_titles: true
+    show_titles: false
   };
 
   componentWillMount() {

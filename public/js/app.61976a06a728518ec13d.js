@@ -5941,7 +5941,7 @@ var Donate = function (_Component) {
       errors: { stripe: {}, contact: {} },
       is_blue: false,
       show_four_step: false,
-      show_titles: true
+      show_titles: false
     }, _this.handleChange = function (field) {
       _this.setState(_extends({}, _this.state, field));
     }, _this.handleSubmit = function (e) {
