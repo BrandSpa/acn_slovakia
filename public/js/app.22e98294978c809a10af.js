@@ -657,7 +657,7 @@ var amount = function (_React$Component) {
         { style: { width: this.props.width, float: "left", padding: "1px" } },
         this.props.show_titles ? _react2.default.createElement(
           "h5",
-          null,
+          { style: { color: "3C515F", paddingBottom: '20px' } },
           texts.step_amount_text
         ) : '',
         _react2.default.createElement(_amountBtns2.default, {
