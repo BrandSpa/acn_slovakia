@@ -4,7 +4,7 @@ import qs from "qs";
 import Amount from "./amount";
 import CreditCard from "./creditCard";
 import Contact from "./contact";
-
+import FourStep from './four';
 import * as actions from "../../actions/donate";
 const endpoint = "/wp-admin/admin-ajax.php";
 
