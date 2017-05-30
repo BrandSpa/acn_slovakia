@@ -32,7 +32,7 @@ const changeFilesNames = function() {
       fs.writeFileSync(footerFile, footerHtmlOutput);
 
       const footerDonateHtml = fs.readFileSync(footerDonateFile, "utf8");
-      let footerDonateHtmlOutput = footerHtml.replace(/app.*\.js/, appName);
+      let footerDonateHtmlOutput = footerDonateHtml.replace(/app.*\.js/, appName);
       footerDonateHtmlOutput = footerHtmlOutput.replace(/vendor.*\.js/, vendorName);
       fs.writeFileSync(footerDonateFile, footerDonateHtmlOutput);
     }
