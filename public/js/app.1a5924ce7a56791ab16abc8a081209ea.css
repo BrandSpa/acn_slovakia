@@ -1023,12 +1023,13 @@ button, .btn {
 
 .footer-donate__bottom {
   display: flex;
-  flex-wrap: wrap;
-  padding: 60px 0; }
+  flex-wrap: wrap; }
   .footer-donate__bottom--left {
+    padding: 60px 0;
     background: RGBA(60, 81, 95, 1);
     color: #fff; }
   .footer-donate__bottom--right {
+    padding: 60px 0;
     background: RGBA(43, 58, 68, 1);
     color: #fff; }
     .footer-donate__bottom--right h3 {

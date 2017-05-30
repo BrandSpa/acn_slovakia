@@ -192,14 +192,15 @@
 	&__bottom {
 		display: flex;
 		flex-wrap: wrap;
-		padding: 60px 0;
 
 		&--left {
+				padding: 60px 0;
 			background: RGBA(60, 81, 95, 1.00);
 			color: #fff;
 		}
 
 		&--right {
+				padding: 60px 0;
 			background: RGBA(43, 58, 68, 1.00);
 			color: #fff;
 
