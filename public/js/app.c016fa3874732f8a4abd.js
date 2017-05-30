@@ -7439,6 +7439,11 @@ var ProjectsInfo = function (_Component) {
 			_this.setState({ section: section });
 		};
 
+		_this.moveArrow = function (num) {
+			var left = _this.el.querySelector('.projects__icons li:nth-child(' + num + ')').offsetLeft;
+			_this.el.querySelector(".projects__arrow").style.left = left + 'px';
+		};
+
 		_this.state = {
 			section: 1,
 			projects: []
@@ -7447,8 +7452,24 @@ var ProjectsInfo = function (_Component) {
 	}
 
 	_createClass(ProjectsInfo, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			var num = this.state.section;
+
+			window.addEventListener("resize", debounce(function (event) {
+				_this2.moveArrow(_this2.state.section);
+			}, 200));
+
+			setTimeout(function () {
+				_this2.moveArrow(num);
+			}, 1000);
+		}
+	}, {
 		key: 'render',
 		value: function render() {
+			var _this3 = this;
 
 			var infoSectionStyle = (0, _glamor.css)({
 				background: colors[this.state.section],
@@ -7472,8 +7493,11 @@ var ProjectsInfo = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				null,
+				{ ref: function ref(el) {
+						return _this3.el = el;
+					} },
 				_react2.default.createElement(_projectsIcons2.default, { onChange: this.handleSection }),
+				_react2.default.createElement('div', { className: 'projects__arrow' }),
 				_react2.default.createElement(
 					'div',
 					{ className: infoSectionStyle },

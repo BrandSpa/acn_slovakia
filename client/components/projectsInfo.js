@@ -23,9 +23,30 @@ class ProjectsInfo extends Component {
 		}
 	}
 
+	componentDidMount() {
+		let num = this.state.section;
+		
+		 window.addEventListener(
+      "resize",
+      debounce(event => {
+        this.moveArrow(this.state.section);
+      }, 200)
+    );
+
+    setTimeout(() => {
+      this.moveArrow(num);
+    }, 1000);
+	}
+
 	handleSection = (section, e) => {
 		this.setState({ section });
 	};
+
+	moveArrow = num => {
+    let left = this.el.querySelector(`.projects__icons li:nth-child(${num})`)
+      .offsetLeft;
+    this.el.querySelector(".projects__arrow").style.left = `${left}px`;
+  };
 
 	render() {
 
@@ -50,8 +71,9 @@ class ProjectsInfo extends Component {
 		let section = this.state.section - 1;
 
 		return (
-			<div>
+			<div ref={el => (this.el = el)}>
 				<ProjectsIcons onChange={this.handleSection} />
+				 <div className="projects__arrow" />
 				<div className={infoSectionStyle}>
 					<span className={ numTextStyle }>{this.props.projects[section] ? this.props.projects[section].number : ""}</span> 
 					<span style={{ fontSize: '30px' }}>{this.props.projects[section] ? this.props.projects[section].number_text : ""}</span>

@@ -15,6 +15,7 @@ const backgroundColors = {
 };
 
 class Projects extends React.Component {
+  
   state = { section: 1, bg: "#B91325", donateColor: "#B91325" };
 
   componentDidMount() {
