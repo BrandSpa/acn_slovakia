@@ -193,7 +193,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		padding: 60px 0;
-		
+
 		&--left {
 			background: RGBA(60, 81, 95, 1.00);
 			color: #fff;
@@ -206,10 +206,11 @@
 			h3 {
 				padding-bottom: 20px;
 				color: #fff;
+				float: left;
 
 				&:after {
 					content: '';
-					width: 100%;
+					width: 70%;
 					height: 2px;
 					background: #fff;
 					display: block;
@@ -219,6 +220,8 @@
 
 			p {
 				color: #fff;
+				float: left;
+				width: 100%;
 			}
 		}
 	}

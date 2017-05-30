@@ -1033,15 +1033,18 @@ button, .btn {
     color: #fff; }
     .footer-donate__bottom--right h3 {
       padding-bottom: 20px;
-      color: #fff; }
+      color: #fff;
+      float: left; }
       .footer-donate__bottom--right h3:after {
         content: '';
-        width: 100%;
+        width: 70%;
         height: 2px;
         background: #fff;
         display: block; }
     .footer-donate__bottom--right p {
-      color: #fff; }
+      color: #fff;
+      float: left;
+      width: 100%; }
 
 @keyframes moveAnchor {
   from {
