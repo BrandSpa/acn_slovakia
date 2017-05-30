@@ -64,6 +64,7 @@ class ProjectsInfo extends Component {
 		let numTextStyle = css({
 			fontSize: '60px',
 			marginRight: '60px',
+			position: 'relative',
 			'@media (max-width: 767px)': {
 				margin: '0'
 			}
@@ -74,8 +75,8 @@ class ProjectsInfo extends Component {
 		return (
 			<div ref={el => (this.el = el)}>
 				<ProjectsIcons onChange={this.handleSection} />
-				 <div className="projects__arrow" />
 				<div className={infoSectionStyle}>
+					<div className="projects__arrow" />
 					<span className={ numTextStyle }>{this.props.projects[section] ? this.props.projects[section].number : ""}</span> 
 					<span style={{ fontSize: '30px' }}>{this.props.projects[section] ? this.props.projects[section].number_text : ""}</span>
 				</div>

@@ -7485,6 +7485,7 @@ var ProjectsInfo = function (_Component) {
 			var numTextStyle = (0, _glamor.css)({
 				fontSize: '60px',
 				marginRight: '60px',
+				position: 'relative',
 				'@media (max-width: 767px)': {
 					margin: '0'
 				}
@@ -7498,10 +7499,10 @@ var ProjectsInfo = function (_Component) {
 						return _this3.el = el;
 					} },
 				_react2.default.createElement(_projectsIcons2.default, { onChange: this.handleSection }),
-				_react2.default.createElement('div', { className: 'projects__arrow' }),
 				_react2.default.createElement(
 					'div',
 					{ className: infoSectionStyle },
+					_react2.default.createElement('div', { className: 'projects__arrow' }),
 					_react2.default.createElement(
 						'span',
 						{ className: numTextStyle },
