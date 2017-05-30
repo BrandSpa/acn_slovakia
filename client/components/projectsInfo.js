@@ -17,7 +17,7 @@ class ProjectsInfo extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			section: 0,
+			section: 1,
 			projects: []
 		}
 	}
@@ -27,10 +27,12 @@ class ProjectsInfo extends Component {
 	};
 
 	render() {
-		const { section } = this.state;
+
 		let infoSectionStyle = {
-			background: colors[section + 1]
+			background: colors[this.state.section]
 		};
+
+		let section = this.state.section - 1;
 
 		return (
 			<div>

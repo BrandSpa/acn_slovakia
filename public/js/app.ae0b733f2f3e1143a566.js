@@ -7438,7 +7438,7 @@ var ProjectsInfo = function (_Component) {
 		};
 
 		_this.state = {
-			section: 0,
+			section: 1,
 			projects: []
 		};
 		return _this;
@@ -7447,11 +7447,12 @@ var ProjectsInfo = function (_Component) {
 	_createClass(ProjectsInfo, [{
 		key: 'render',
 		value: function render() {
-			var section = this.state.section;
 
 			var infoSectionStyle = {
-				background: colors[section + 1]
+				background: colors[this.state.section]
 			};
+
+			var section = this.state.section - 1;
 
 			return _react2.default.createElement(
 				'div',
