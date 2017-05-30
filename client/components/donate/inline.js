@@ -37,6 +37,10 @@ class DonateInline extends Component {
     show_four: false
   };
 
+  componentDidMount = () => {
+    console.log(this.state);
+  };
+
   componentWillMount() {
     actions.fetchCountries().then(countries => this.setState({ countries }));
   }
