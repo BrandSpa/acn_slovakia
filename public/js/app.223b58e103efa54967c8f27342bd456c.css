@@ -1023,7 +1023,8 @@ button, .btn {
 
 .footer-donate__bottom {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  padding: 60px 0; }
   .footer-donate__bottom--left {
     background: RGBA(60, 81, 95, 1);
     color: #fff; }
@@ -1033,12 +1034,14 @@ button, .btn {
     .footer-donate__bottom--right h3 {
       padding-bottom: 20px;
       color: #fff; }
-      .footer-donate__bottom--right h3:before {
+      .footer-donate__bottom--right h3:after {
         content: '';
         width: 100%;
         height: 2px;
         background: #fff;
         display: block; }
+    .footer-donate__bottom--right p {
+      color: #fff; }
 
 @keyframes moveAnchor {
   from {

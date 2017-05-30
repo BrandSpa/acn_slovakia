@@ -192,6 +192,8 @@
 	&__bottom {
 		display: flex;
 		flex-wrap: wrap;
+		padding: 60px 0;
+		
 		&--left {
 			background: RGBA(60, 81, 95, 1.00);
 			color: #fff;
@@ -205,13 +207,18 @@
 				padding-bottom: 20px;
 				color: #fff;
 
-				&:before {
+				&:after {
 					content: '';
 					width: 100%;
 					height: 2px;
 					background: #fff;
 					display: block;
 				}
+
+			}
+
+			p {
+				color: #fff;
 			}
 		}
 	}
