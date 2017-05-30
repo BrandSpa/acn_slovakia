@@ -2463,7 +2463,7 @@ var DonateInline = function (_Component) {
           {
             onSubmit: this.handleSubmit,
             className: this.props.is_blue ? "donate_react donate_inline" : "donate_react",
-            style: !this.state.show_four ? { display: "none" } : { display: "block" },
+            style: this.state.show_four ? { display: "none" } : { display: "block" },
             ref: function ref(donate) {
               return _this4.donateForm = donate;
             }
@@ -2512,7 +2512,7 @@ var DonateInline = function (_Component) {
             )
           )
         ),
-        _react2.default.createElement(_four2.default, _extends({ style: this.state.show_four ? { display: "block" } : { display: "none" } }, this.props, this.state))
+        _react2.default.createElement(_four2.default, _extends({ style: this.state.show_four == true ? { display: "block" } : { display: "none" } }, this.props, this.state))
       );
     }
   }]);

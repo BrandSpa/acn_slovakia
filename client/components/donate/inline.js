@@ -150,7 +150,7 @@ class DonateInline extends Component {
           className={
             this.props.is_blue ? "donate_react donate_inline" : "donate_react"
           }
-          style={!this.state.show_four ? { display: "none" } : { display: "block" }}
+          style={this.state.show_four ? { display: "none" } : { display: "block" }}
           ref={donate => (this.donateForm = donate)}
         >
 
@@ -196,7 +196,7 @@ class DonateInline extends Component {
           </div>
         </form>
 
-        <FourStep style={this.state.show_four ? { display: "block" } : { display: "none" }} {...this.props} {...this.state}  />
+        <FourStep style={this.state.show_four == true ? { display: "block" } : { display: "none" }} {...this.props} {...this.state}  />
       </div>
     );
   }
