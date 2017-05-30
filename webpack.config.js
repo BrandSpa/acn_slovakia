@@ -33,7 +33,7 @@ const changeFilesNames = function() {
 
       const footerDonateHtml = fs.readFileSync(footerDonateFile, "utf8");
       let footerDonateHtmlOutput = footerDonateHtml.replace(/app.*\.js/, appName);
-      footerDonateHtmlOutput = footerHtmlOutput.replace(/vendor.*\.js/, vendorName);
+      footerDonateHtmlOutput = footerDonateHtmlOutput.replace(/vendor.*\.js/, vendorName);
       fs.writeFileSync(footerDonateFile, footerDonateHtmlOutput);
     }
   });
