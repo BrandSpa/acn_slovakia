@@ -2373,11 +2373,11 @@ var DonateInline = function (_Component) {
 
         actions.stripeToken(_this.state).then(function (res) {
           if (res.id) {
-            var stripe = _extends({}, _this.state.stripe, { token: res.data.id });
+            var stripe = _extends({}, _this.state.stripe, { token: res.id });
             _this.setState({ loading: false, stripe: stripe });
 
             actions.stripeCharge(_extends({}, _this.state, { stripe: stripe })).then(function (res) {
-              return _this.completeTransaction(res.data);
+              return _this.completeTransaction(res);
             });
           }
 
