@@ -33,6 +33,12 @@ function bs_donate_section_sc($atts, $content = null) {
     "step_payment_text" => gett("Payment Details"),
     "step_contact_text" => gett("Your Information"),
 		"template_uri" => str_replace("http:", "", get_template_directory_uri()),
+    "title" => gett("SUPPORT A PERSECUTED CHRISTIAN"),
+    "subtitle" => gett("My gift to support the ACN"),
+    "success_title" => gett("TU DONACIÓN SE HA REALIZADO CON ÉXITO"),
+    "success_subtitle" => gett("¡GRACIAS POR TU GENEROSIDAD!"),
+    "text_four_step" => gett("ACN tiene un mayor impacto cuándo cuenta con la estabilidad proporcionada por la generosidad de sus benefactores."),
+    "subtext_four_step" => gett("Podrías ayudarnos con un pequeño valor diario de:"),
     "is_blue" => false
 	 ], $atts);
 
@@ -87,7 +93,13 @@ add_action( 'vc_before_init', 'bs_donate_section_vc' );
       "validation_country" => "Incorrect country",
       "step_amount_text" => "Select Gift Amount",
       "step_payment_text" => "Payment Details",
-      "step_contact_text" => "Your Information"
+      "step_contact_text" => "Your Information",
+      "title" => "SUPPORT A PERSECUTED CHRISTIAN",
+      "subtitle" => "My gift to support the ACN",
+      "success_title" => "TU DONACIÓN SE HA REALIZADO CON ÉXITO",
+      "success_subtitle" => "¡GRACIAS POR TU GENEROSIDAD!",
+      "text_four_step" => "ACN tiene un mayor impacto cuándo cuenta con la estabilidad proporcionada por la generosidad de sus benefactores.",
+      "subtext_four_step" => "Podrías ayudarnos con un pequeño valor diario de:"
     ];
     
     foreach($atts as $key => $val) {
