@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import css from 'glamor';
 import ProjectsIcons from './projectsIcons';
 
 const colors = {
@@ -28,12 +29,23 @@ class ProjectsInfo extends Component {
 
 	render() {
 
-		let infoSectionStyle = {
+		let infoSectionStyle = css({
 			background: colors[this.state.section],
-			minHeight: '150px',
+			padding: '40px',
 			textAlign: 'center',
-			color: '#fff'
-		};
+			color: '#fff',
+			display: 'flex',
+			alignContent: 'center',
+			alignItems: 'center'
+		});
+
+		let numTextStyle = css({
+			fontSize: '60px',
+			marginRight: '60px',
+			'@media (max-width: 767px)': {
+				margin: '0'
+			}
+		});
 
 		let section = this.state.section - 1;
 
@@ -41,7 +53,7 @@ class ProjectsInfo extends Component {
 			<div>
 				<ProjectsIcons onChange={this.handleSection} />
 				<div style={infoSectionStyle}>
-					<span style={{ fontSize: '60px' }}>{this.props.projects[section] ? this.props.projects[section].number : ""}</span> 
+					<span style={ numTextStyle }>{this.props.projects[section] ? this.props.projects[section].number : ""}</span> 
 					<span style={{ fontSize: '30px' }}>{this.props.projects[section] ? this.props.projects[section].number_text : ""}</span>
 				</div>
 			</div>

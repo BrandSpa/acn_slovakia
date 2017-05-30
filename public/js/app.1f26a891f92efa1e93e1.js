@@ -308,1009 +308,6 @@ exports.default = Modal;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/**
- * Converts a camel-case string to a dash-case string
- * @param {string} str - str that gets converted to dash-case
- */
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-exports['default'] = function (str) {
-  return str.replace(/([a-z]|^)([A-Z])/g, function (match, p1, p2) {
-    return p1 + '-' + p2.toLowerCase();
-  }).replace('ms-', '-ms-');
-};
-
-module.exports = exports['default'];
-
-/***/ }),
-/* 92 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var _camelToDashCase = __webpack_require__(91);
-
-var _camelToDashCase2 = _interopRequireDefault(_camelToDashCase);
-
-// returns a style object with a single concated prefixed value string
-
-exports['default'] = function (property, value) {
-  var replacer = arguments.length <= 2 || arguments[2] === undefined ? function (prefix, value) {
-    return prefix + value;
-  } : arguments[2];
-  return (function () {
-    return _defineProperty({}, property, ['-webkit-', '-moz-', ''].map(function (prefix) {
-      return replacer(prefix, value);
-    }));
-  })();
-};
-
-module.exports = exports['default'];
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(213),
-    now = __webpack_require__(551),
-    toNumber = __webpack_require__(552);
-
-/** Error message constants. */
-var FUNC_ERROR_TEXT = 'Expected a function';
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeMax = Math.max,
-    nativeMin = Math.min;
-
-/**
- * Creates a debounced function that delays invoking `func` until after `wait`
- * milliseconds have elapsed since the last time the debounced function was
- * invoked. The debounced function comes with a `cancel` method to cancel
- * delayed `func` invocations and a `flush` method to immediately invoke them.
- * Provide `options` to indicate whether `func` should be invoked on the
- * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
- * with the last arguments provided to the debounced function. Subsequent
- * calls to the debounced function return the result of the last `func`
- * invocation.
- *
- * **Note:** If `leading` and `trailing` options are `true`, `func` is
- * invoked on the trailing edge of the timeout only if the debounced function
- * is invoked more than once during the `wait` timeout.
- *
- * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
- * until to the next tick, similar to `setTimeout` with a timeout of `0`.
- *
- * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
- * for details over the differences between `_.debounce` and `_.throttle`.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Function
- * @param {Function} func The function to debounce.
- * @param {number} [wait=0] The number of milliseconds to delay.
- * @param {Object} [options={}] The options object.
- * @param {boolean} [options.leading=false]
- *  Specify invoking on the leading edge of the timeout.
- * @param {number} [options.maxWait]
- *  The maximum time `func` is allowed to be delayed before it's invoked.
- * @param {boolean} [options.trailing=true]
- *  Specify invoking on the trailing edge of the timeout.
- * @returns {Function} Returns the new debounced function.
- * @example
- *
- * // Avoid costly calculations while the window size is in flux.
- * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
- *
- * // Invoke `sendMail` when clicked, debouncing subsequent calls.
- * jQuery(element).on('click', _.debounce(sendMail, 300, {
- *   'leading': true,
- *   'trailing': false
- * }));
- *
- * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
- * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
- * var source = new EventSource('/stream');
- * jQuery(source).on('message', debounced);
- *
- * // Cancel the trailing debounced invocation.
- * jQuery(window).on('popstate', debounced.cancel);
- */
-function debounce(func, wait, options) {
-  var lastArgs,
-      lastThis,
-      maxWait,
-      result,
-      timerId,
-      lastCallTime,
-      lastInvokeTime = 0,
-      leading = false,
-      maxing = false,
-      trailing = true;
-
-  if (typeof func != 'function') {
-    throw new TypeError(FUNC_ERROR_TEXT);
-  }
-  wait = toNumber(wait) || 0;
-  if (isObject(options)) {
-    leading = !!options.leading;
-    maxing = 'maxWait' in options;
-    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
-    trailing = 'trailing' in options ? !!options.trailing : trailing;
-  }
-
-  function invokeFunc(time) {
-    var args = lastArgs,
-        thisArg = lastThis;
-
-    lastArgs = lastThis = undefined;
-    lastInvokeTime = time;
-    result = func.apply(thisArg, args);
-    return result;
-  }
-
-  function leadingEdge(time) {
-    // Reset any `maxWait` timer.
-    lastInvokeTime = time;
-    // Start the timer for the trailing edge.
-    timerId = setTimeout(timerExpired, wait);
-    // Invoke the leading edge.
-    return leading ? invokeFunc(time) : result;
-  }
-
-  function remainingWait(time) {
-    var timeSinceLastCall = time - lastCallTime,
-        timeSinceLastInvoke = time - lastInvokeTime,
-        result = wait - timeSinceLastCall;
-
-    return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
-  }
-
-  function shouldInvoke(time) {
-    var timeSinceLastCall = time - lastCallTime,
-        timeSinceLastInvoke = time - lastInvokeTime;
-
-    // Either this is the first call, activity has stopped and we're at the
-    // trailing edge, the system time has gone backwards and we're treating
-    // it as the trailing edge, or we've hit the `maxWait` limit.
-    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
-      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
-  }
-
-  function timerExpired() {
-    var time = now();
-    if (shouldInvoke(time)) {
-      return trailingEdge(time);
-    }
-    // Restart the timer.
-    timerId = setTimeout(timerExpired, remainingWait(time));
-  }
-
-  function trailingEdge(time) {
-    timerId = undefined;
-
-    // Only invoke if we have `lastArgs` which means `func` has been
-    // debounced at least once.
-    if (trailing && lastArgs) {
-      return invokeFunc(time);
-    }
-    lastArgs = lastThis = undefined;
-    return result;
-  }
-
-  function cancel() {
-    if (timerId !== undefined) {
-      clearTimeout(timerId);
-    }
-    lastInvokeTime = 0;
-    lastArgs = lastCallTime = lastThis = timerId = undefined;
-  }
-
-  function flush() {
-    return timerId === undefined ? result : trailingEdge(now());
-  }
-
-  function debounced() {
-    var time = now(),
-        isInvoking = shouldInvoke(time);
-
-    lastArgs = arguments;
-    lastThis = this;
-    lastCallTime = time;
-
-    if (isInvoking) {
-      if (timerId === undefined) {
-        return leadingEdge(lastCallTime);
-      }
-      if (maxing) {
-        // Handle invocations in a tight loop.
-        timerId = setTimeout(timerExpired, wait);
-        return invokeFunc(lastCallTime);
-      }
-    }
-    if (timerId === undefined) {
-      timerId = setTimeout(timerExpired, wait);
-    }
-    return result;
-  }
-  debounced.cancel = cancel;
-  debounced.flush = flush;
-  return debounced;
-}
-
-module.exports = debounce;
-
-
-/***/ }),
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = assertString;
-function assertString(input) {
-  if (typeof input !== 'string') {
-    throw new TypeError('This library (validator.js) validates strings only');
-  }
-}
-module.exports = exports['default'];
-
-/***/ }),
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _amountBtns = __webpack_require__(295);
-
-var _amountBtns2 = _interopRequireDefault(_amountBtns);
-
-var _clean_inputs = __webpack_require__(172);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var amount = function (_React$Component) {
-  _inherits(amount, _React$Component);
-
-  function amount() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, amount);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = amount.__proto__ || Object.getPrototypeOf(amount)).call.apply(_ref, [this].concat(args))), _this), _this.changeAmount = function (amount, e) {
-      if (e) e.preventDefault();
-      var el = _this.amountInput;
-      if (amount == 5) el.focus();
-      _this.props.onChange({ amount: amount });
-    }, _this.handleAmount = function (e) {
-      var val = e.currentTarget.value;
-      var amount = (0, _clean_inputs.onlyNum)(val);
-      _this.props.onChange({ amount: amount });
-    }, _this.changeType = function (donation_type, e) {
-      if (e) e.preventDefault();
-      _this.props.onChange({ donation_type: donation_type });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(amount, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          texts = _props.texts,
-          donation_type = _props.donation_type,
-          amount = _props.amount;
-
-
-      return _react2.default.createElement(
-        "div",
-        { style: { width: this.props.width, float: "left", padding: "1px" } },
-        this.props.show_titles ? _react2.default.createElement(
-          "h5",
-          { style: { color: "#3C515F", paddingBottom: '20px' } },
-          texts.step_amount_text
-        ) : '',
-        _react2.default.createElement(_amountBtns2.default, {
-          amount: amount,
-          texts: texts,
-          changeAmount: this.changeAmount
-        }),
-        _react2.default.createElement(
-          "div",
-          { className: "row" },
-          _react2.default.createElement(
-            "div",
-            { className: "form-group form-group--addon col-7-l" },
-            _react2.default.createElement(
-              "span",
-              { className: "form-group__addon" },
-              "USD"
-            ),
-            _react2.default.createElement("input", {
-              ref: function ref(amountInput) {
-                return _this2.amountInput = amountInput;
-              },
-              className: "form-control",
-              type: "text",
-              onChange: this.handleAmount,
-              value: amount
-            })
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-5-l" },
-            _react2.default.createElement(
-              "a",
-              {
-                href: "#",
-                onClick: this.changeType.bind(null, "monthly"),
-                className: donation_type == "monthly" ? "donate_react__type donate_react__type--active" : "donate_react__type "
-              },
-              texts.monthly
-            ),
-            _react2.default.createElement(
-              "a",
-              {
-                href: "#",
-                onClick: this.changeType.bind(null, "once"),
-                className: donation_type == "once" ? "donate_react__type donate_react__type--active" : "donate_react__type "
-              },
-              texts.once
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return amount;
-}(_react2.default.Component);
-
-amount.defaultProps = { texts: {}, amount: 30 };
-exports.default = amount;
-
-/***/ }),
-/* 105 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _isEmail = __webpack_require__(248);
-
-var _isEmail2 = _interopRequireDefault(_isEmail);
-
-var _isEmpty = __webpack_require__(249);
-
-var _isEmpty2 = _interopRequireDefault(_isEmpty);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Contact = function (_React$Component) {
-  _inherits(Contact, _React$Component);
-
-  function Contact() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, Contact);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Contact.__proto__ || Object.getPrototypeOf(Contact)).call.apply(_ref, [this].concat(args))), _this), _this.validate = function (field) {
-      var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-
-      var valid = !(0, _isEmpty2.default)(val);
-      if (field == "email") valid = (0, _isEmail2.default)(val);
-      var contact = _extends({}, _this.props.errors.contact, _defineProperty({}, field, valid));
-      return _extends({}, _this.props.errors, { contact: contact });
-    }, _this.handleChange = function (field, e) {
-      var val = e.currentTarget.value;
-      var errors = _this.validate(field, val);
-
-      _this.props.onChange({
-        contact: _extends({}, _this.props.contact, _defineProperty({}, field, val)),
-        errors: errors
-      });
-    }, _this.showErr = function (field) {
-      return _this.props.errors.contact[field] == false ? "form-group__error" : "hidden";
-    }, _this.inputErrStyle = function (field) {
-      return _this.props.errors.contact[field] == false ? "form-group--error" : "";
-    }, _this.validateAll = function () {
-      var _this$props = _this.props,
-          contact = _this$props.contact,
-          texts = _this$props.texts;
-
-      var name = _this.validate("name", contact.name);
-      var email = _this.validate("email", contact.email);
-      var country = contact.country || texts.country;
-      var countryValidation = _this.validate("country", country);
-
-      var errors = _extends({}, _this.props.errors, {
-        contact: _extends({}, name.contact, email.contact, countryValidation.contact)
-      });
-
-      _this.props.onChange({ errors: errors });
-      return errors;
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(Contact, [{
-    key: "render",
-    value: function render() {
-      var _props = this.props,
-          texts = _props.texts,
-          contact = _props.contact;
-
-
-      return _react2.default.createElement(
-        "div",
-        { style: { width: this.props.width, float: "left", padding: "1px" } },
-        this.props.show_titles ? _react2.default.createElement(
-          "h5",
-          { style: { color: "#3C515F", paddingBottom: '20px' } },
-          texts.step_contact_text
-        ) : '',
-        _react2.default.createElement(
-          "div",
-          { className: "row" },
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-12-l" },
-            _react2.default.createElement("input", {
-              type: "text",
-              className: "form-control " + this.inputErrStyle("name"),
-              placeholder: texts.placeholder_name,
-              onChange: this.handleChange.bind(null, "name"),
-              value: contact.name
-            }),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("name") },
-              texts.validation_name
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: this.props.inline ? "form-group col-6-l" : "form-group col-12-l" },
-            _react2.default.createElement("input", {
-              type: "text",
-              className: "form-control " + this.inputErrStyle("email"),
-              placeholder: texts.placeholder_email,
-              onChange: this.handleChange.bind(null, "email"),
-              value: contact.email
-            }),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("email") },
-              texts.validation_email
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: this.props.inline ? "form-group col-6-l" : "form-group col-12-l" },
-            _react2.default.createElement(
-              "select",
-              {
-                type: "text",
-                className: "form-control",
-                placeholder: texts.placeholder_country,
-                onChange: this.handleChange.bind(null, "country"),
-                value: contact.country || texts.country
-              },
-              this.props.countries.map(function (country, i) {
-                return _react2.default.createElement(
-                  "option",
-                  { key: i, value: country },
-                  country
-                );
-              })
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Contact;
-}(_react2.default.Component);
-
-Contact.defaultProps = {
-  contact: {},
-  countries: [],
-  errors: { contact: {} },
-  texts: {},
-  inline: false
-};
-exports.default = Contact;
-
-/***/ }),
-/* 106 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _cardValidator = __webpack_require__(303);
-
-var _cardValidator2 = _interopRequireDefault(_cardValidator);
-
-var _cards = __webpack_require__(296);
-
-var _cards2 = _interopRequireDefault(_cards);
-
-var _clean_inputs = __webpack_require__(172);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var CedritCard = function (_React$Component) {
-  _inherits(CedritCard, _React$Component);
-
-  function CedritCard(props) {
-    _classCallCheck(this, CedritCard);
-
-    var _this = _possibleConstructorReturn(this, (CedritCard.__proto__ || Object.getPrototypeOf(CedritCard)).call(this, props));
-
-    _this.validateCard = function (card) {
-      var number = _cardValidator2.default.number(card).isValid;
-      return _this.updateErrors({ number: number });
-    };
-
-    _this.validateExpiry = function (month, year) {
-      var valid = _cardValidator2.default.expirationDate({ month: month, year: year });
-      var exp_month = valid.isValid;
-      var exp_year = valid.isValid;
-      return _this.updateErrors({ exp_month: exp_month, exp_year: exp_year });
-    };
-
-    _this.validateCvc = function (cvc) {
-      cvc = cvc.length >= 3;
-      return _this.updateErrors({ cvc: cvc });
-    };
-
-    _this.getCardType = function (cardNum) {
-      return _cardValidator2.default.number(cardNum).card ? _cardValidator2.default.number(cardNum).card.type : null;
-    };
-
-    _this.updateErrors = function (field) {
-      return _extends({}, _this.props.errors, { stripe: field });
-    };
-
-    _this.handleCard = function (e) {
-      var val = e.currentTarget.value;
-      var number = (0, _clean_inputs.onlyNum)(val);
-      number = (0, _clean_inputs.maxLength)(number, 16);
-      var errors = _this.validateCard(number);
-      var card_type = _this.getCardType(number);
-      var stripe = _extends({}, _this.props.stripe, { number: number, card_type: card_type });
-      _this.props.onChange({ stripe: stripe, errors: errors });
-    };
-
-    _this.handleExpiry = function (type, e) {
-      var stripe = _this.props.stripe;
-
-      var val = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
-      val = (0, _clean_inputs.maxLength)(val, 2);
-      var exp_month = stripe.exp_month;
-      var exp_year = stripe.exp_year;
-      if (type == "exp_month") exp_month = val;
-      if (type == "exp_year") exp_year = val;
-      var errors = _this.validateExpiry(exp_month, exp_year);
-      stripe = _extends({}, stripe, { exp_month: exp_month, exp_year: exp_year });
-
-      _this.props.onChange({ stripe: stripe, errors: errors });
-    };
-
-    _this.handleCvc = function (e) {
-      var stripe = _this.props.stripe;
-
-      var cvc = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
-      cvc = (0, _clean_inputs.maxLength)(cvc, 4);
-      stripe = _extends({}, stripe, { cvc: cvc });
-      var errors = _this.validateCvc(cvc);
-      _this.props.onChange({ stripe: stripe, errors: errors });
-    };
-
-    _this.showErr = function (field) {
-      if (_this.props.errors.stripe) {
-        return _this.props.errors.stripe[field] == false ? "form-group__error" : "hidden";
-      }
-
-      return "";
-    };
-
-    _this.inputErrStyle = function (field) {
-      if (_this.props.errors.stripe) {
-        return _this.props.errors.stripe[field] == false ? "form-group--error" : "";
-      }
-
-      return "";
-    };
-
-    _this.validateAll = function (e) {
-      if (e) e.preventDefault();
-      var stripe = _this.props.stripe;
-
-      var number = _this.validateCard(stripe.number);
-      var exp_month = _this.validateExpiry(stripe.exp_month, stripe.exp_year);
-      var cvc = _this.validateCvc(stripe.cvc);
-
-      var errors = _extends({}, _this.props.errors, {
-        stripe: _extends({}, number.stripe, exp_month.stripe, cvc.stripe)
-      });
-
-      _this.props.onChange({ errors: errors });
-
-      return errors;
-    };
-
-    _this.togglePopover = function () {
-      _this.setState({ showPopover: !_this.state.showPopover });
-    };
-
-    _this.state = {
-      showPopover: false
-    };
-    return _this;
-  }
-
-  _createClass(CedritCard, [{
-    key: "render",
-    value: function render() {
-      var _props = this.props,
-          texts = _props.texts,
-          stripe = _props.stripe,
-          errors = _props.errors;
-
-
-      return _react2.default.createElement(
-        "div",
-        {
-          className: "donate_react__creditcard",
-          style: { width: this.props.width, float: "left", padding: "1px" }
-        },
-        this.props.show_titles ? _react2.default.createElement(
-          "h5",
-          { style: { color: "#3C515F", paddingBottom: '20px' } },
-          texts.step_payment_text
-        ) : '',
-        _react2.default.createElement(_cards2.default, this.props),
-        _react2.default.createElement(
-          "div",
-          { className: "form-group" },
-          _react2.default.createElement("input", {
-            type: "text",
-            placeholder: texts.placeholder_credit_card,
-            className: "form-control " + this.inputErrStyle("number"),
-            onChange: this.handleCard,
-            value: stripe.number
-          }),
-          _react2.default.createElement(
-            "span",
-            { className: this.showErr("number") },
-            texts.validation_card
-          )
-        ),
-        _react2.default.createElement(
-          "div",
-          { className: "row donate_react__creditcard__row" },
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-4-l col-4" },
-            _react2.default.createElement("input", {
-              type: "text",
-              placeholder: texts.placeholder_month,
-              className: "form-control",
-              onChange: this.handleExpiry.bind(null, "exp_month"),
-              value: stripe.exp_month
-            }),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("exp_month") },
-              texts.validation_month
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-4-l col-4" },
-            _react2.default.createElement("input", {
-              type: "text",
-              placeholder: texts.placeholder_year,
-              className: "form-control",
-              onChange: this.handleExpiry.bind(null, "exp_year"),
-              value: stripe.exp_year
-            }),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("exp_year") },
-              texts.validation_year
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "form-group col-4-l col-4" },
-            _react2.default.createElement("input", {
-              type: "text",
-              placeholder: texts.placeholder_cvc,
-              className: "form-control",
-              onChange: this.handleCvc,
-              value: stripe.cvc
-            }),
-            _react2.default.createElement(
-              "span",
-              {
-                style: {
-                  display: "block",
-                  background: "#3C515F",
-                  width: "20px",
-                  height: "20px",
-                  borderRadius: "20px",
-                  color: "#fff",
-                  textAlign: "center",
-                  position: "absolute",
-                  top: "12px",
-                  right: "25px",
-                  cursor: "pointer"
-                },
-                onClick: this.togglePopover
-              },
-              _react2.default.createElement("i", { className: "ion-help" })
-            ),
-            _react2.default.createElement(
-              "span",
-              { className: this.showErr("cvc") },
-              texts.validation_cvc
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "div",
-          {
-            style: this.state.showPopover ? {
-              background: "#fff",
-              boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
-              borderRadius: "2px",
-              textAlign: "center",
-              display: "block",
-              margin: "15px 0",
-              position: "relative",
-              zIndex: "100"
-            } : { display: "none" }
-          },
-          _react2.default.createElement(
-            "span",
-            {
-              style: {
-                display: "block",
-                position: "absolute",
-                top: "2px",
-                right: "2px",
-                width: "15px",
-                height: "15px",
-                color: "red",
-                cursor: "pointer"
-              },
-              onClick: this.togglePopover
-            },
-            _react2.default.createElement("i", { className: "ion-close" })
-          ),
-          _react2.default.createElement(
-            "span",
-            {
-              style: {
-                display: "block",
-                color: "#3C515F",
-                padding: "10px",
-                fontSize: "14px"
-              }
-            },
-            texts.explain_cvc
-          ),
-          _react2.default.createElement("img", {
-            width: "60px",
-            src: texts.template_uri + "/public/img/cvc.png",
-            alt: ""
-          })
-        )
-      );
-    }
-  }]);
-
-  return CedritCard;
-}(_react2.default.Component);
-
-CedritCard.defaultProps = { texts: {}, stripe: {}, errors: {} };
-exports.default = CedritCard;
-
-/***/ }),
-/* 107 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var maxYear = 19;
-
-function verification(isValid, isPotentiallyValid, isCurrentYear) {
-  return {
-    isValid: isValid,
-    isPotentiallyValid: isPotentiallyValid,
-    isCurrentYear: isCurrentYear || false
-  };
-}
-
-function expirationYear(value) {
-  var currentFirstTwo, currentYear, firstTwo, len, twoDigitYear, valid, isCurrentYear;
-
-  if (typeof value !== 'string') {
-    return verification(false, false);
-  }
-  if (value.replace(/\s/g, '') === '') {
-    return verification(false, true);
-  }
-  if (!/^\d*$/.test(value)) {
-    return verification(false, false);
-  }
-
-  len = value.length;
-
-  if (len < 2) {
-    return verification(false, true);
-  }
-
-  currentYear = new Date().getFullYear();
-
-  if (len === 3) {
-    // 20x === 20x
-    firstTwo = value.slice(0, 2);
-    currentFirstTwo = String(currentYear).slice(0, 2);
-    return verification(false, firstTwo === currentFirstTwo);
-  }
-
-  if (len > 4) {
-    return verification(false, false);
-  }
-
-  value = parseInt(value, 10);
-  twoDigitYear = Number(String(currentYear).substr(2, 2));
-
-  if (len === 2) {
-    isCurrentYear = twoDigitYear === value;
-    valid = value >= twoDigitYear && value <= twoDigitYear + maxYear;
-  } else if (len === 4) {
-    isCurrentYear = currentYear === value;
-    valid = value >= currentYear && value <= currentYear + maxYear;
-  }
-
-  return verification(valid, valid, isCurrentYear);
-}
-
-module.exports = expirationYear;
-
-
-/***/ }),
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 Object.defineProperty(exports, "__esModule", {
@@ -2304,6 +1301,1009 @@ function attribsFor() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Converts a camel-case string to a dash-case string
+ * @param {string} str - str that gets converted to dash-case
+ */
+
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+exports['default'] = function (str) {
+  return str.replace(/([a-z]|^)([A-Z])/g, function (match, p1, p2) {
+    return p1 + '-' + p2.toLowerCase();
+  }).replace('ms-', '-ms-');
+};
+
+module.exports = exports['default'];
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _camelToDashCase = __webpack_require__(92);
+
+var _camelToDashCase2 = _interopRequireDefault(_camelToDashCase);
+
+// returns a style object with a single concated prefixed value string
+
+exports['default'] = function (property, value) {
+  var replacer = arguments.length <= 2 || arguments[2] === undefined ? function (prefix, value) {
+    return prefix + value;
+  } : arguments[2];
+  return (function () {
+    return _defineProperty({}, property, ['-webkit-', '-moz-', ''].map(function (prefix) {
+      return replacer(prefix, value);
+    }));
+  })();
+};
+
+module.exports = exports['default'];
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(213),
+    now = __webpack_require__(551),
+    toNumber = __webpack_require__(552);
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */
+function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        result = wait - timeSinceLastCall;
+
+    return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+module.exports = debounce;
+
+
+/***/ }),
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = assertString;
+function assertString(input) {
+  if (typeof input !== 'string') {
+    throw new TypeError('This library (validator.js) validates strings only');
+  }
+}
+module.exports = exports['default'];
+
+/***/ }),
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _amountBtns = __webpack_require__(295);
+
+var _amountBtns2 = _interopRequireDefault(_amountBtns);
+
+var _clean_inputs = __webpack_require__(172);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var amount = function (_React$Component) {
+  _inherits(amount, _React$Component);
+
+  function amount() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, amount);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = amount.__proto__ || Object.getPrototypeOf(amount)).call.apply(_ref, [this].concat(args))), _this), _this.changeAmount = function (amount, e) {
+      if (e) e.preventDefault();
+      var el = _this.amountInput;
+      if (amount == 5) el.focus();
+      _this.props.onChange({ amount: amount });
+    }, _this.handleAmount = function (e) {
+      var val = e.currentTarget.value;
+      var amount = (0, _clean_inputs.onlyNum)(val);
+      _this.props.onChange({ amount: amount });
+    }, _this.changeType = function (donation_type, e) {
+      if (e) e.preventDefault();
+      _this.props.onChange({ donation_type: donation_type });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(amount, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          texts = _props.texts,
+          donation_type = _props.donation_type,
+          amount = _props.amount;
+
+
+      return _react2.default.createElement(
+        "div",
+        { style: { width: this.props.width, float: "left", padding: "1px" } },
+        this.props.show_titles ? _react2.default.createElement(
+          "h5",
+          { style: { color: "#3C515F", paddingBottom: '20px' } },
+          texts.step_amount_text
+        ) : '',
+        _react2.default.createElement(_amountBtns2.default, {
+          amount: amount,
+          texts: texts,
+          changeAmount: this.changeAmount
+        }),
+        _react2.default.createElement(
+          "div",
+          { className: "row" },
+          _react2.default.createElement(
+            "div",
+            { className: "form-group form-group--addon col-7-l" },
+            _react2.default.createElement(
+              "span",
+              { className: "form-group__addon" },
+              "USD"
+            ),
+            _react2.default.createElement("input", {
+              ref: function ref(amountInput) {
+                return _this2.amountInput = amountInput;
+              },
+              className: "form-control",
+              type: "text",
+              onChange: this.handleAmount,
+              value: amount
+            })
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-5-l" },
+            _react2.default.createElement(
+              "a",
+              {
+                href: "#",
+                onClick: this.changeType.bind(null, "monthly"),
+                className: donation_type == "monthly" ? "donate_react__type donate_react__type--active" : "donate_react__type "
+              },
+              texts.monthly
+            ),
+            _react2.default.createElement(
+              "a",
+              {
+                href: "#",
+                onClick: this.changeType.bind(null, "once"),
+                className: donation_type == "once" ? "donate_react__type donate_react__type--active" : "donate_react__type "
+              },
+              texts.once
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return amount;
+}(_react2.default.Component);
+
+amount.defaultProps = { texts: {}, amount: 30 };
+exports.default = amount;
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _isEmail = __webpack_require__(248);
+
+var _isEmail2 = _interopRequireDefault(_isEmail);
+
+var _isEmpty = __webpack_require__(249);
+
+var _isEmpty2 = _interopRequireDefault(_isEmpty);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Contact = function (_React$Component) {
+  _inherits(Contact, _React$Component);
+
+  function Contact() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Contact);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Contact.__proto__ || Object.getPrototypeOf(Contact)).call.apply(_ref, [this].concat(args))), _this), _this.validate = function (field) {
+      var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+
+      var valid = !(0, _isEmpty2.default)(val);
+      if (field == "email") valid = (0, _isEmail2.default)(val);
+      var contact = _extends({}, _this.props.errors.contact, _defineProperty({}, field, valid));
+      return _extends({}, _this.props.errors, { contact: contact });
+    }, _this.handleChange = function (field, e) {
+      var val = e.currentTarget.value;
+      var errors = _this.validate(field, val);
+
+      _this.props.onChange({
+        contact: _extends({}, _this.props.contact, _defineProperty({}, field, val)),
+        errors: errors
+      });
+    }, _this.showErr = function (field) {
+      return _this.props.errors.contact[field] == false ? "form-group__error" : "hidden";
+    }, _this.inputErrStyle = function (field) {
+      return _this.props.errors.contact[field] == false ? "form-group--error" : "";
+    }, _this.validateAll = function () {
+      var _this$props = _this.props,
+          contact = _this$props.contact,
+          texts = _this$props.texts;
+
+      var name = _this.validate("name", contact.name);
+      var email = _this.validate("email", contact.email);
+      var country = contact.country || texts.country;
+      var countryValidation = _this.validate("country", country);
+
+      var errors = _extends({}, _this.props.errors, {
+        contact: _extends({}, name.contact, email.contact, countryValidation.contact)
+      });
+
+      _this.props.onChange({ errors: errors });
+      return errors;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Contact, [{
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          texts = _props.texts,
+          contact = _props.contact;
+
+
+      return _react2.default.createElement(
+        "div",
+        { style: { width: this.props.width, float: "left", padding: "1px" } },
+        this.props.show_titles ? _react2.default.createElement(
+          "h5",
+          { style: { color: "#3C515F", paddingBottom: '20px' } },
+          texts.step_contact_text
+        ) : '',
+        _react2.default.createElement(
+          "div",
+          { className: "row" },
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-12-l" },
+            _react2.default.createElement("input", {
+              type: "text",
+              className: "form-control " + this.inputErrStyle("name"),
+              placeholder: texts.placeholder_name,
+              onChange: this.handleChange.bind(null, "name"),
+              value: contact.name
+            }),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("name") },
+              texts.validation_name
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: this.props.inline ? "form-group col-6-l" : "form-group col-12-l" },
+            _react2.default.createElement("input", {
+              type: "text",
+              className: "form-control " + this.inputErrStyle("email"),
+              placeholder: texts.placeholder_email,
+              onChange: this.handleChange.bind(null, "email"),
+              value: contact.email
+            }),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("email") },
+              texts.validation_email
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: this.props.inline ? "form-group col-6-l" : "form-group col-12-l" },
+            _react2.default.createElement(
+              "select",
+              {
+                type: "text",
+                className: "form-control",
+                placeholder: texts.placeholder_country,
+                onChange: this.handleChange.bind(null, "country"),
+                value: contact.country || texts.country
+              },
+              this.props.countries.map(function (country, i) {
+                return _react2.default.createElement(
+                  "option",
+                  { key: i, value: country },
+                  country
+                );
+              })
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Contact;
+}(_react2.default.Component);
+
+Contact.defaultProps = {
+  contact: {},
+  countries: [],
+  errors: { contact: {} },
+  texts: {},
+  inline: false
+};
+exports.default = Contact;
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _cardValidator = __webpack_require__(303);
+
+var _cardValidator2 = _interopRequireDefault(_cardValidator);
+
+var _cards = __webpack_require__(296);
+
+var _cards2 = _interopRequireDefault(_cards);
+
+var _clean_inputs = __webpack_require__(172);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CedritCard = function (_React$Component) {
+  _inherits(CedritCard, _React$Component);
+
+  function CedritCard(props) {
+    _classCallCheck(this, CedritCard);
+
+    var _this = _possibleConstructorReturn(this, (CedritCard.__proto__ || Object.getPrototypeOf(CedritCard)).call(this, props));
+
+    _this.validateCard = function (card) {
+      var number = _cardValidator2.default.number(card).isValid;
+      return _this.updateErrors({ number: number });
+    };
+
+    _this.validateExpiry = function (month, year) {
+      var valid = _cardValidator2.default.expirationDate({ month: month, year: year });
+      var exp_month = valid.isValid;
+      var exp_year = valid.isValid;
+      return _this.updateErrors({ exp_month: exp_month, exp_year: exp_year });
+    };
+
+    _this.validateCvc = function (cvc) {
+      cvc = cvc.length >= 3;
+      return _this.updateErrors({ cvc: cvc });
+    };
+
+    _this.getCardType = function (cardNum) {
+      return _cardValidator2.default.number(cardNum).card ? _cardValidator2.default.number(cardNum).card.type : null;
+    };
+
+    _this.updateErrors = function (field) {
+      return _extends({}, _this.props.errors, { stripe: field });
+    };
+
+    _this.handleCard = function (e) {
+      var val = e.currentTarget.value;
+      var number = (0, _clean_inputs.onlyNum)(val);
+      number = (0, _clean_inputs.maxLength)(number, 16);
+      var errors = _this.validateCard(number);
+      var card_type = _this.getCardType(number);
+      var stripe = _extends({}, _this.props.stripe, { number: number, card_type: card_type });
+      _this.props.onChange({ stripe: stripe, errors: errors });
+    };
+
+    _this.handleExpiry = function (type, e) {
+      var stripe = _this.props.stripe;
+
+      var val = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
+      val = (0, _clean_inputs.maxLength)(val, 2);
+      var exp_month = stripe.exp_month;
+      var exp_year = stripe.exp_year;
+      if (type == "exp_month") exp_month = val;
+      if (type == "exp_year") exp_year = val;
+      var errors = _this.validateExpiry(exp_month, exp_year);
+      stripe = _extends({}, stripe, { exp_month: exp_month, exp_year: exp_year });
+
+      _this.props.onChange({ stripe: stripe, errors: errors });
+    };
+
+    _this.handleCvc = function (e) {
+      var stripe = _this.props.stripe;
+
+      var cvc = (0, _clean_inputs.onlyNum)(e.currentTarget.value);
+      cvc = (0, _clean_inputs.maxLength)(cvc, 4);
+      stripe = _extends({}, stripe, { cvc: cvc });
+      var errors = _this.validateCvc(cvc);
+      _this.props.onChange({ stripe: stripe, errors: errors });
+    };
+
+    _this.showErr = function (field) {
+      if (_this.props.errors.stripe) {
+        return _this.props.errors.stripe[field] == false ? "form-group__error" : "hidden";
+      }
+
+      return "";
+    };
+
+    _this.inputErrStyle = function (field) {
+      if (_this.props.errors.stripe) {
+        return _this.props.errors.stripe[field] == false ? "form-group--error" : "";
+      }
+
+      return "";
+    };
+
+    _this.validateAll = function (e) {
+      if (e) e.preventDefault();
+      var stripe = _this.props.stripe;
+
+      var number = _this.validateCard(stripe.number);
+      var exp_month = _this.validateExpiry(stripe.exp_month, stripe.exp_year);
+      var cvc = _this.validateCvc(stripe.cvc);
+
+      var errors = _extends({}, _this.props.errors, {
+        stripe: _extends({}, number.stripe, exp_month.stripe, cvc.stripe)
+      });
+
+      _this.props.onChange({ errors: errors });
+
+      return errors;
+    };
+
+    _this.togglePopover = function () {
+      _this.setState({ showPopover: !_this.state.showPopover });
+    };
+
+    _this.state = {
+      showPopover: false
+    };
+    return _this;
+  }
+
+  _createClass(CedritCard, [{
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          texts = _props.texts,
+          stripe = _props.stripe,
+          errors = _props.errors;
+
+
+      return _react2.default.createElement(
+        "div",
+        {
+          className: "donate_react__creditcard",
+          style: { width: this.props.width, float: "left", padding: "1px" }
+        },
+        this.props.show_titles ? _react2.default.createElement(
+          "h5",
+          { style: { color: "#3C515F", paddingBottom: '20px' } },
+          texts.step_payment_text
+        ) : '',
+        _react2.default.createElement(_cards2.default, this.props),
+        _react2.default.createElement(
+          "div",
+          { className: "form-group" },
+          _react2.default.createElement("input", {
+            type: "text",
+            placeholder: texts.placeholder_credit_card,
+            className: "form-control " + this.inputErrStyle("number"),
+            onChange: this.handleCard,
+            value: stripe.number
+          }),
+          _react2.default.createElement(
+            "span",
+            { className: this.showErr("number") },
+            texts.validation_card
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "row donate_react__creditcard__row" },
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-4-l col-4" },
+            _react2.default.createElement("input", {
+              type: "text",
+              placeholder: texts.placeholder_month,
+              className: "form-control",
+              onChange: this.handleExpiry.bind(null, "exp_month"),
+              value: stripe.exp_month
+            }),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("exp_month") },
+              texts.validation_month
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-4-l col-4" },
+            _react2.default.createElement("input", {
+              type: "text",
+              placeholder: texts.placeholder_year,
+              className: "form-control",
+              onChange: this.handleExpiry.bind(null, "exp_year"),
+              value: stripe.exp_year
+            }),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("exp_year") },
+              texts.validation_year
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "form-group col-4-l col-4" },
+            _react2.default.createElement("input", {
+              type: "text",
+              placeholder: texts.placeholder_cvc,
+              className: "form-control",
+              onChange: this.handleCvc,
+              value: stripe.cvc
+            }),
+            _react2.default.createElement(
+              "span",
+              {
+                style: {
+                  display: "block",
+                  background: "#3C515F",
+                  width: "20px",
+                  height: "20px",
+                  borderRadius: "20px",
+                  color: "#fff",
+                  textAlign: "center",
+                  position: "absolute",
+                  top: "12px",
+                  right: "25px",
+                  cursor: "pointer"
+                },
+                onClick: this.togglePopover
+              },
+              _react2.default.createElement("i", { className: "ion-help" })
+            ),
+            _react2.default.createElement(
+              "span",
+              { className: this.showErr("cvc") },
+              texts.validation_cvc
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          {
+            style: this.state.showPopover ? {
+              background: "#fff",
+              boxShadow: "0 1px 3px 0 rgba(0,0,0,0.26)",
+              borderRadius: "2px",
+              textAlign: "center",
+              display: "block",
+              margin: "15px 0",
+              position: "relative",
+              zIndex: "100"
+            } : { display: "none" }
+          },
+          _react2.default.createElement(
+            "span",
+            {
+              style: {
+                display: "block",
+                position: "absolute",
+                top: "2px",
+                right: "2px",
+                width: "15px",
+                height: "15px",
+                color: "red",
+                cursor: "pointer"
+              },
+              onClick: this.togglePopover
+            },
+            _react2.default.createElement("i", { className: "ion-close" })
+          ),
+          _react2.default.createElement(
+            "span",
+            {
+              style: {
+                display: "block",
+                color: "#3C515F",
+                padding: "10px",
+                fontSize: "14px"
+              }
+            },
+            texts.explain_cvc
+          ),
+          _react2.default.createElement("img", {
+            width: "60px",
+            src: texts.template_uri + "/public/img/cvc.png",
+            alt: ""
+          })
+        )
+      );
+    }
+  }]);
+
+  return CedritCard;
+}(_react2.default.Component);
+
+CedritCard.defaultProps = { texts: {}, stripe: {}, errors: {} };
+exports.default = CedritCard;
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var maxYear = 19;
+
+function verification(isValid, isPotentiallyValid, isCurrentYear) {
+  return {
+    isValid: isValid,
+    isPotentiallyValid: isPotentiallyValid,
+    isCurrentYear: isCurrentYear || false
+  };
+}
+
+function expirationYear(value) {
+  var currentFirstTwo, currentYear, firstTwo, len, twoDigitYear, valid, isCurrentYear;
+
+  if (typeof value !== 'string') {
+    return verification(false, false);
+  }
+  if (value.replace(/\s/g, '') === '') {
+    return verification(false, true);
+  }
+  if (!/^\d*$/.test(value)) {
+    return verification(false, false);
+  }
+
+  len = value.length;
+
+  if (len < 2) {
+    return verification(false, true);
+  }
+
+  currentYear = new Date().getFullYear();
+
+  if (len === 3) {
+    // 20x === 20x
+    firstTwo = value.slice(0, 2);
+    currentFirstTwo = String(currentYear).slice(0, 2);
+    return verification(false, firstTwo === currentFirstTwo);
+  }
+
+  if (len > 4) {
+    return verification(false, false);
+  }
+
+  value = parseInt(value, 10);
+  twoDigitYear = Number(String(currentYear).substr(2, 2));
+
+  if (len === 2) {
+    isCurrentYear = twoDigitYear === value;
+    valid = value >= twoDigitYear && value <= twoDigitYear + maxYear;
+  } else if (len === 4) {
+    isCurrentYear = currentYear === value;
+    valid = value >= currentYear && value <= currentYear + maxYear;
+  }
+
+  return verification(valid, valid, isCurrentYear);
+}
+
+module.exports = expirationYear;
+
+
+/***/ }),
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
 /* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2516,7 +2516,7 @@ function getPrefixedStyle(style, userAgent) {
   var prefixedStyle = prefixer.prefix(styleWithFallbacks);
   return prefixedStyle;
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(101), __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(102), __webpack_require__(1)))
 
 /***/ }),
 /* 140 */
@@ -2638,15 +2638,15 @@ var _qs = __webpack_require__(34);
 
 var _qs2 = _interopRequireDefault(_qs);
 
-var _amount = __webpack_require__(104);
+var _amount = __webpack_require__(105);
 
 var _amount2 = _interopRequireDefault(_amount);
 
-var _creditCard = __webpack_require__(106);
+var _creditCard = __webpack_require__(107);
 
 var _creditCard2 = _interopRequireDefault(_creditCard);
 
-var _contact = __webpack_require__(105);
+var _contact = __webpack_require__(106);
 
 var _contact2 = _interopRequireDefault(_contact);
 
@@ -2908,7 +2908,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _debounce = __webpack_require__(93);
+var _debounce = __webpack_require__(94);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
@@ -5020,7 +5020,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = isEmail;
 
-var _assertString = __webpack_require__(100);
+var _assertString = __webpack_require__(101);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
@@ -5115,7 +5115,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = isEmpty;
 
-var _assertString = __webpack_require__(100);
+var _assertString = __webpack_require__(101);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
@@ -5876,7 +5876,7 @@ var _inline = __webpack_require__(161);
 
 var _inline2 = _interopRequireDefault(_inline);
 
-var _glamor = __webpack_require__(135);
+var _glamor = __webpack_require__(91);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5996,7 +5996,7 @@ var _index = __webpack_require__(297);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _glamor = __webpack_require__(135);
+var _glamor = __webpack_require__(91);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6121,15 +6121,15 @@ var _qs = __webpack_require__(34);
 
 var _qs2 = _interopRequireDefault(_qs);
 
-var _amount = __webpack_require__(104);
+var _amount = __webpack_require__(105);
 
 var _amount2 = _interopRequireDefault(_amount);
 
-var _creditCard = __webpack_require__(106);
+var _creditCard = __webpack_require__(107);
 
 var _creditCard2 = _interopRequireDefault(_creditCard);
 
-var _contact = __webpack_require__(105);
+var _contact = __webpack_require__(106);
 
 var _contact2 = _interopRequireDefault(_contact);
 
@@ -6615,7 +6615,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _glamor = __webpack_require__(135);
+var _glamor = __webpack_require__(91);
 
 var _radium = __webpack_require__(138);
 
@@ -7076,7 +7076,7 @@ var _minigrid = __webpack_require__(553);
 
 var _minigrid2 = _interopRequireDefault(_minigrid);
 
-var _debounce = __webpack_require__(93);
+var _debounce = __webpack_require__(94);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
@@ -7401,6 +7401,10 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _glamor = __webpack_require__(91);
+
+var _glamor2 = _interopRequireDefault(_glamor);
+
 var _projectsIcons = __webpack_require__(171);
 
 var _projectsIcons2 = _interopRequireDefault(_projectsIcons);
@@ -7448,12 +7452,23 @@ var ProjectsInfo = function (_Component) {
 		key: 'render',
 		value: function render() {
 
-			var infoSectionStyle = {
+			var infoSectionStyle = (0, _glamor2.default)({
 				background: colors[this.state.section],
-				minHeight: '150px',
+				padding: '40px',
 				textAlign: 'center',
-				color: '#fff'
-			};
+				color: '#fff',
+				display: 'flex',
+				alignContent: 'center',
+				alignItems: 'center'
+			});
+
+			var numTextStyle = (0, _glamor2.default)({
+				fontSize: '60px',
+				marginRight: '60px',
+				'@media (max-width: 767px)': {
+					margin: '0'
+				}
+			});
 
 			var section = this.state.section - 1;
 
@@ -7466,7 +7481,7 @@ var ProjectsInfo = function (_Component) {
 					{ style: infoSectionStyle },
 					_react2.default.createElement(
 						'span',
-						{ style: { fontSize: '60px' } },
+						{ style: numTextStyle },
 						this.props.projects[section] ? this.props.projects[section].number : ""
 					),
 					_react2.default.createElement(
@@ -7759,7 +7774,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = scrollViaCrucisNav;
 
-var _debounce = __webpack_require__(93);
+var _debounce = __webpack_require__(94);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
@@ -7872,7 +7887,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = smoothScroll;
 
-var _debounce = __webpack_require__(93);
+var _debounce = __webpack_require__(94);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
@@ -8119,7 +8134,7 @@ g,0<d.length&&(d=Ba[d[0]])&&(a.c[e]=d))}a.c[e]||(d=Ba[e])&&(a.c[e]=d);for(d=0;d<
 
 __webpack_require__(274);
 
-__webpack_require__(102);
+__webpack_require__(103);
 
 var _webfontloader = __webpack_require__(276);
 
@@ -8502,15 +8517,15 @@ var _qs = __webpack_require__(34);
 
 var _qs2 = _interopRequireDefault(_qs);
 
-var _amount = __webpack_require__(104);
+var _amount = __webpack_require__(105);
 
 var _amount2 = _interopRequireDefault(_amount);
 
-var _creditCard = __webpack_require__(106);
+var _creditCard = __webpack_require__(107);
 
 var _creditCard2 = _interopRequireDefault(_creditCard);
 
-var _contact = __webpack_require__(105);
+var _contact = __webpack_require__(106);
 
 var _contact2 = _interopRequireDefault(_contact);
 
@@ -9790,7 +9805,7 @@ module.exports = {
   number: __webpack_require__(304),
   expirationDate: __webpack_require__(306),
   expirationMonth: __webpack_require__(174),
-  expirationYear: __webpack_require__(107),
+  expirationYear: __webpack_require__(108),
   cvv: __webpack_require__(305),
   postalCode: __webpack_require__(310)
 };
@@ -9913,7 +9928,7 @@ module.exports = cvv;
 
 var parseDate = __webpack_require__(309);
 var expirationMonth = __webpack_require__(174);
-var expirationYear = __webpack_require__(107);
+var expirationYear = __webpack_require__(108);
 
 function verification(isValid, isPotentiallyValid, month, year) {
   return {
@@ -10042,7 +10057,7 @@ module.exports = luhn10;
 "use strict";
 
 
-var expirationYear = __webpack_require__(107);
+var expirationYear = __webpack_require__(108);
 var isArray = __webpack_require__(307);
 
 function parseDate(value) {
@@ -11882,7 +11897,7 @@ exports['default'] = calc;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _utilsJoinPrefixedRules = __webpack_require__(92);
+var _utilsJoinPrefixedRules = __webpack_require__(93);
 
 var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 
@@ -11916,7 +11931,7 @@ exports['default'] = cursor;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _utilsJoinPrefixedRules = __webpack_require__(92);
+var _utilsJoinPrefixedRules = __webpack_require__(93);
 
 var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 
@@ -11949,7 +11964,7 @@ exports['default'] = flex;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _utilsCamelToDashCase = __webpack_require__(91);
+var _utilsCamelToDashCase = __webpack_require__(92);
 
 var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 
@@ -12020,7 +12035,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var _utilsCamelToDashCase = __webpack_require__(91);
+var _utilsCamelToDashCase = __webpack_require__(92);
 
 var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 
@@ -12067,7 +12082,7 @@ exports['default'] = gradient;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _utilsJoinPrefixedRules = __webpack_require__(92);
+var _utilsJoinPrefixedRules = __webpack_require__(93);
 
 var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 
@@ -12101,7 +12116,7 @@ exports['default'] = sizing;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _utilsJoinPrefixedRules = __webpack_require__(92);
+var _utilsJoinPrefixedRules = __webpack_require__(93);
 
 var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 
@@ -12146,7 +12161,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var _utilsCamelToDashCase = __webpack_require__(91);
+var _utilsCamelToDashCase = __webpack_require__(92);
 
 var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 
@@ -13186,7 +13201,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(101)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(102)))
 
 /***/ }),
 /* 547 */
@@ -15081,7 +15096,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = isByteLength;
 
-var _assertString = __webpack_require__(100);
+var _assertString = __webpack_require__(101);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
@@ -15117,7 +15132,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = isFDQN;
 
-var _assertString = __webpack_require__(100);
+var _assertString = __webpack_require__(101);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
