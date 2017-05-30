@@ -186,7 +186,7 @@ class DonateInline extends Component {
               onClick={this.handleSubmit}
               disabled={this.state.loading}
             >
-              {this.props.texts.donate} {this.state.loading ? '...' : ''}
+              {this.props.texts.donate}{this.state.loading ? '...' : ''}
             </button>
 
             <span style={donationTypeStyle}>

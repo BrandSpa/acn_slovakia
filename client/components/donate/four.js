@@ -50,11 +50,16 @@ class Four extends Component {
 				<h5>{texts.text_four_step}</h5>
 				<p>{`${texts.subtext_four_step} $${d}`}</p>
 				<div className="col-6 col-6-l">
-				<button onClick={this.handleYes} style={{ background: "RGBA(93, 232, 123, 1.00)", width:"100%" }}>SI</button>
+					<button
+						onClick={this.handleYes}
+						style={{ background: "#50B45A", width: "100%" }}
+					>
+						{texts.yes}{this.state.loading ? "..." : ""}
+					</button>
 				</div>
 
 				<div className="col-6 col-6-l">
-					<button onClick={this.handleNo} style={{ background: "red", width:"100%" }}>NO</button>
+					<button onClick={this.handleNo} style={{ background: "transparent", border: "1px solid #F1364E", width:"100%", color: "#F1364E" }}>{texts.no}</button>
 				</div>
 				
 			</div>

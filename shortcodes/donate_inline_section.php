@@ -2,14 +2,16 @@
 
 function bs_donate_inline_section_sc($atts, $content = null) {
 	 $at = shortcode_atts([
-		 "country" => getCountry(),
-		 "other" => gett("Other"),
-		 "monthly" => gett("Monthly"),
-		 "once" => gett("Once"),
-		 "donate" => gett("Donate"),
-		 "next" => gett("Next"),
-		 "back" => gett("Back"),
-		 "placeholder_amount" => gett("Amount"),
+		"country" => getCountry(),
+		"other" => gett("Other"),
+		"monthly" => gett("Monthly"),
+		"once" => gett("Once"),
+		"donate" => gett("Donate"),
+		"next" => gett("Next"),
+		"back" => gett("Back"),
+    "yes" => gett("Yes"),
+    "no" => gett("No"),
+		"placeholder_amount" => gett("Amount"),
     "placeholder_credit_card" => gett("Credit Card Number"),
     "placeholder_month" => gett("MM"),
     "placeholder_year" => gett("YY"),
@@ -27,12 +29,12 @@ function bs_donate_inline_section_sc($atts, $content = null) {
     "validation_email" => gett("Incorrect email"),
     "validation_country" => gett("Incorrect country"),
 		"template_uri" => str_replace("http:", "", get_template_directory_uri()),
-    "title" => "SUPPORT A PERSECUTED CHRISTIAN",
-    "subtitle" => "My gift to support the ACN",
-    "success_title" => "TU DONACIÓN SE HA REALIZADO CON ÉXITO",
-    "success_subtitle" => "¡GRACIAS POR TU GENEROSIDAD!",
-    "text_four_step" => "ACN tiene un mayor impacto cuándo cuenta con la estabilidad proporcionada por la generosidad de sus benefactores.",
-    "subtext_four_step" => "Podrías ayudarnos con un pequeño valor diario de:",
+    "title" => gett("SUPPORT A PERSECUTED CHRISTIAN"),
+    "subtitle" => gett("My gift to support the ACN"),
+    "success_title" => gett("TU DONACIÓN SE HA REALIZADO CON ÉXITO"),
+    "success_subtitle" => gett("¡GRACIAS POR TU GENEROSIDAD!"),
+    "text_four_step" => gett("ACN tiene un mayor impacto cuándo cuenta con la estabilidad proporcionada por la generosidad de sus benefactores."),
+    "subtext_four_step" => gett("Podrías ayudarnos con un pequeño valor diario de:"),
     "is_blue" => false
 	 ], $atts);
 
