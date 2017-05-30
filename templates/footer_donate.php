@@ -23,4 +23,7 @@
 			</div>
 		</div>
 	</div>
+		<div class="bs-footer__bottom--bottom">
+			<img width="173" height="84" src="//acninternational.org/wp-content/uploads/2016/11/llaves-4.png" class="vc_single_image-img attachment-full" alt="llaves">
+	</div>
 </div>
