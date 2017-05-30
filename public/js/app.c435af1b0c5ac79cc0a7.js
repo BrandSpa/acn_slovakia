@@ -5,9 +5,9 @@ webpackJsonp([0],Array(34).concat([
 "use strict";
 
 
-var stringify = __webpack_require__(554);
-var parse = __webpack_require__(553);
-var formats = __webpack_require__(213);
+var stringify = __webpack_require__(555);
+var parse = __webpack_require__(554);
+var formats = __webpack_require__(214);
 
 module.exports = {
     formats: formats,
@@ -364,9 +364,9 @@ module.exports = exports['default'];
 /* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(212),
-    now = __webpack_require__(550),
-    toNumber = __webpack_require__(551);
+var isObject = __webpack_require__(213),
+    now = __webpack_require__(551),
+    toNumber = __webpack_require__(552);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -598,11 +598,11 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _amountBtns = __webpack_require__(293);
+var _amountBtns = __webpack_require__(295);
 
 var _amountBtns2 = _interopRequireDefault(_amountBtns);
 
-var _clean_inputs = __webpack_require__(171);
+var _clean_inputs = __webpack_require__(172);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -738,11 +738,11 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _isEmail = __webpack_require__(247);
+var _isEmail = __webpack_require__(248);
 
 var _isEmail2 = _interopRequireDefault(_isEmail);
 
-var _isEmpty = __webpack_require__(248);
+var _isEmpty = __webpack_require__(249);
 
 var _isEmpty2 = _interopRequireDefault(_isEmpty);
 
@@ -916,15 +916,15 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _cardValidator = __webpack_require__(302);
+var _cardValidator = __webpack_require__(303);
 
 var _cardValidator2 = _interopRequireDefault(_cardValidator);
 
-var _cards = __webpack_require__(294);
+var _cards = __webpack_require__(296);
 
 var _cards2 = _interopRequireDefault(_cards);
 
-var _clean_inputs = __webpack_require__(171);
+var _clean_inputs = __webpack_require__(172);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1384,17 +1384,17 @@ var _objectAssign = __webpack_require__(10);
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var _sheet = __webpack_require__(513);
+var _sheet = __webpack_require__(514);
 
-var _CSSPropertyOperations = __webpack_require__(205);
+var _CSSPropertyOperations = __webpack_require__(206);
 
-var _clean = __webpack_require__(509);
+var _clean = __webpack_require__(510);
 
 var _clean2 = _interopRequireDefault(_clean);
 
-var _plugins = __webpack_require__(512);
+var _plugins = __webpack_require__(513);
 
-var _hash = __webpack_require__(510);
+var _hash = __webpack_require__(511);
 
 var _hash2 = _interopRequireDefault(_hash);
 
@@ -2334,15 +2334,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = cssRuleSetToString;
 
-var _appendPxIfNeeded = __webpack_require__(215);
+var _appendPxIfNeeded = __webpack_require__(216);
 
 var _appendPxIfNeeded2 = _interopRequireDefault(_appendPxIfNeeded);
 
-var _camelCasePropsToDashCase = __webpack_require__(556);
+var _camelCasePropsToDashCase = __webpack_require__(557);
 
 var _camelCasePropsToDashCase2 = _interopRequireDefault(_camelCasePropsToDashCase);
 
-var _mapObject = __webpack_require__(220);
+var _mapObject = __webpack_require__(221);
 
 var _mapObject2 = _interopRequireDefault(_mapObject);
 
@@ -2383,31 +2383,31 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _enhancer = __webpack_require__(216);
+var _enhancer = __webpack_require__(217);
 
 var _enhancer2 = _interopRequireDefault(_enhancer);
 
-var _plugins = __webpack_require__(221);
+var _plugins = __webpack_require__(222);
 
 var _plugins2 = _interopRequireDefault(_plugins);
 
-var _style = __webpack_require__(559);
+var _style = __webpack_require__(560);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _styleRoot = __webpack_require__(557);
+var _styleRoot = __webpack_require__(558);
 
 var _styleRoot2 = _interopRequireDefault(_styleRoot);
 
-var _getState = __webpack_require__(218);
+var _getState = __webpack_require__(219);
 
 var _getState2 = _interopRequireDefault(_getState);
 
-var _keyframes = __webpack_require__(560);
+var _keyframes = __webpack_require__(561);
 
 var _keyframes2 = _interopRequireDefault(_keyframes);
 
-var _resolveStyles = __webpack_require__(222);
+var _resolveStyles = __webpack_require__(223);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2454,7 +2454,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 exports.getPrefixedKeyframes = getPrefixedKeyframes;
 exports.getPrefixedStyle = getPrefixedStyle;
 
-var _inlineStylePrefixer = __webpack_require__(530);
+var _inlineStylePrefixer = __webpack_require__(531);
 
 var _inlineStylePrefixer2 = _interopRequireDefault(_inlineStylePrefixer);
 
@@ -2912,7 +2912,7 @@ var _debounce = __webpack_require__(93);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
-var _projectsIcons = __webpack_require__(299);
+var _projectsIcons = __webpack_require__(171);
 
 var _projectsIcons2 = _interopRequireDefault(_projectsIcons);
 
@@ -3312,6 +3312,233 @@ exports.default = Four;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProjectsIcons = function (_React$Component) {
+  _inherits(ProjectsIcons, _React$Component);
+
+  function ProjectsIcons() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ProjectsIcons);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectsIcons.__proto__ || Object.getPrototypeOf(ProjectsIcons)).call.apply(_ref, [this].concat(args))), _this), _this.changeContent = function (num, e) {
+      e.preventDefault();
+      _this.props.onChange(num);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(ProjectsIcons, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "ul",
+        { className: "projects__icons" },
+        _react2.default.createElement(
+          "li",
+          { id: "projects-1" },
+          _react2.default.createElement(
+            "a",
+            { onClick: this.changeContent.bind(null, 1), href: "#" },
+            _react2.default.createElement(
+              "svg",
+              { width: "68px", height: "67px", viewBox: "0 0 68 67", version: "1.1" },
+              _react2.default.createElement("path", { d: "M67.3673112,32.026012 C67.2600797,30.6734635 66.0912564,29.6302188 64.6758007,29.6302188 L3.22679192,29.6302188 C1.81669775,29.6302188 0.647874444,30.6734635 0.540642948,32.026012 C0.513835074,32.3667703 -0.043768705,40.471576 6.54560672,47.2972274 C11.8750121,52.8227547 20.2015377,55.7952158 31.2517434,56.2146107 L31.2517434,61.006197 L21.5365699,61.006197 C20.0460521,61.006197 18.8396977,62.1647753 18.8396977,63.5959602 C18.8396977,65.0271452 20.0460521,66.1857235 21.5365699,66.1857235 L45.9102889,66.1857235 C47.4008067,66.1857235 48.6125226,65.0271452 48.6125226,63.5959602 C48.6125226,62.1647753 47.4008067,61.006197 45.9102889,61.006197 L36.6454876,61.006197 L36.6454876,56.2146107 C47.6956933,55.7952158 56.0275805,52.8227547 61.3569859,47.2972274 C67.9463613,40.471576 67.3941191,32.3667703 67.3673112,32.026012 L67.3673112,32.026012 Z M61.8395276,34.8097454 C61.5017484,37.0797201 60.4669644,40.5973945 57.4055052,43.7743106 C52.7034041,48.6445334 44.811166,51.1137206 33.9539771,51.1137206 C23.1450423,51.1137206 15.2796121,48.6655031 10.5667878,43.8424622 C7.45171286,40.6498188 6.40620578,37.0954474 6.06306499,34.8097454 L61.8395276,34.8097454 Z M46.6501862,13.3734255 C46.6501862,6.44292538 40.7846234,0.80206448 33.5679437,0.80206448 C26.351264,0.80206448 20.4803396,6.44292538 20.4803396,13.3734255 C20.4803396,20.3039256 26.351264,25.9447865 33.5679437,25.9447865 C40.7846234,25.9447865 46.6501862,20.3039256 46.6501862,13.3734255 L46.6501862,13.3734255 Z M41.256442,13.3734255 C41.256442,17.4467981 37.8089494,20.7600175 33.5679437,20.7600175 C29.326938,20.7600175 25.8740839,17.4467981 25.8740839,13.3734255 C25.8740839,9.30005288 29.326938,5.98683346 33.5679437,5.98683346 C37.8089494,5.98683346 41.256442,9.30005288 41.256442,13.3734255 L41.256442,13.3734255 Z", id: "Fill-7", stroke: "none", fill: "#B91325", fillRule: "evenodd" })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { id: "projects-2" },
+          _react2.default.createElement(
+            "a",
+            { onClick: this.changeContent.bind(null, 2), href: "#" },
+            _react2.default.createElement(
+              "svg",
+              { width: "59px", height: "58px", viewBox: "115 0 59 58", version: "1.1" },
+              _react2.default.createElement("defs", null),
+              _react2.default.createElement("path", {
+                d: "M167.517255,38.9955022 C167.707985,38.6134211 167.824284,38.3996377 167.828936,38.3905405 C168.359259,37.4034978 168.070837,36.1844773 167.14975,35.5294812 L159.00883,29.7436824 C158.338948,29.2660811 157.450425,29.1842065 156.692156,29.5208018 C156.231613,29.7300366 154.556909,30.6352048 152.663564,33.4416812 C150.146856,33.1323774 147.244037,32.9322397 144.201658,32.9322397 C141.131368,32.9322397 138.25646,33.1323774 135.749057,33.4416812 C133.855711,30.6352048 132.181008,29.7300366 131.720464,29.5208018 C130.962195,29.179658 130.073672,29.2615325 129.403791,29.7436824 L121.267522,35.5294812 C120.341783,36.1844773 120.053362,37.4034978 120.583685,38.3905405 C120.588337,38.3996377 120.695332,38.5997754 120.876758,38.9545649 C117.83438,41.3016343 115.196721,44.672135 115.196721,49.2798506 C115.196721,57.6674395 121.704806,57.6674395 127.654656,57.6674395 L160.962651,57.6674395 C164.135284,57.6674395 166.879937,57.6674395 169.098919,56.6940425 C171.834269,55.4886677 173.215899,52.9914951 173.215899,49.2798506 C173.215899,44.7039751 170.564285,41.3425715 167.517255,38.9955022 L167.517255,38.9955022 Z M124.979782,53.0551753 C120.47669,52.9187178 119.890544,52.2227844 119.890544,49.2798506 C119.890544,47.2056963 120.69068,44.9950845 122.728236,43.0573877 C123.109696,43.994396 123.50046,45.0269246 123.863313,46.1185847 C124.654145,48.488397 124.910003,51.1948044 124.979782,53.0551753 L124.979782,53.0551753 Z M136.921349,53.1779871 L129.594521,53.1779871 C129.524741,51.0174097 129.23632,47.7151377 128.240802,44.726718 C127.319715,41.9702761 126.263721,39.5777209 125.533364,38.0493967 L130.683078,34.3877866 C131.678596,35.4294124 133.283521,37.6263784 134.716323,41.8974988 C136.344507,46.7690322 136.80505,50.8491121 136.921349,53.1779871 L136.921349,53.1779871 Z M150.356194,37.7764817 C150.002646,38.604324 149.658401,39.5049436 149.32346,40.5056321 C147.504546,45.9366414 147.006787,50.4533853 146.885836,53.0870154 L141.526784,53.0870154 C141.410485,50.4533853 140.908074,45.9366414 139.08916,40.5056321 C138.754219,39.5049436 138.409975,38.604324 138.056426,37.7764817 C139.926512,37.6081841 141.964068,37.5126638 144.201658,37.5126638 C146.4439,37.5126638 148.481456,37.6081841 150.356194,37.7764817 L150.356194,37.7764817 Z M162.879256,38.0493967 C162.148899,39.5777209 161.092905,41.9702761 160.171818,44.726718 C159.1763,47.7151377 158.892531,51.0174097 158.822752,53.1779871 L151.491271,53.1779871 C151.60757,50.8491121 152.068113,46.7690322 153.696298,41.8974988 C155.138404,37.6036355 156.74798,35.411218 157.72489,34.3877866 L162.879256,38.0493967 Z M168.526729,49.2798506 C168.526729,51.9180293 167.642858,52.3046589 167.168358,52.5184424 C166.307747,52.8959749 164.967984,53.0187866 163.432839,53.0642725 C163.502618,51.2039016 163.753823,48.5020427 164.549308,46.1185847 C164.91216,45.0269246 165.302924,43.994396 165.684385,43.0573877 C167.726593,44.9996331 168.526729,47.2056963 168.526729,49.2798506 L168.526729,49.2798506 Z M158.725061,15.1973108 C158.725061,7.33280908 152.170456,0.9375 144.108619,0.9375 C136.051434,0.9375 129.492178,7.33280908 129.492178,15.1973108 C129.492178,23.0572639 136.051434,29.452573 144.108619,29.452573 C152.170456,29.452573 158.725061,23.0572639 158.725061,15.1973108 L158.725061,15.1973108 Z M154.026586,15.1973108 C154.026586,20.5327998 149.579318,24.8721489 144.108619,24.8721489 C138.637921,24.8721489 134.186,20.5327998 134.186,15.1973108 C134.186,9.85727319 138.637921,5.51792407 144.108619,5.51792407 C149.579318,5.51792407 154.026586,9.85727319 154.026586,15.1973108 L154.026586,15.1973108 Z",
+                id: "Fill-10",
+                stroke: "none",
+                fill: "#00355F",
+                fillRule: "evenodd"
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { id: "projects-3" },
+          _react2.default.createElement(
+            "a",
+            { onClick: this.changeContent.bind(null, 3), href: "#" },
+            _react2.default.createElement(
+              "svg",
+              { width: "59px", height: "58px", viewBox: "226 0 59 58", version: "1.1" },
+              _react2.default.createElement("defs", null),
+              _react2.default.createElement("path", {
+                d: "M284.41262,48.4019739 C284.398665,47.8243037 283.975337,34.0284485 276.662464,18.376771 C272.261715,8.97029932 266.483987,4.6582417 262.241405,2.6705105 C260.836515,1.91999414 259.282762,1.40600415 257.645274,1.14218628 C257.021912,1.02847168 256.61254,0.992083008 256.533456,0.987534424 L256.533456,1.00118018 C256.114781,0.964791504 255.700757,0.9375 255.272777,0.9375 C251.593081,0.9375 248.229718,2.28842944 245.661839,4.49449268 C241.986794,6.96892236 237.818643,11.1900083 234.459932,18.376771 C228.831067,30.4168728 227.286618,41.3334744 226.86329,46.0048701 C226.560913,47.0192043 226.393443,48.1108645 226.393443,49.2843992 C226.393443,57.671988 232.892223,57.671988 238.837421,57.671988 L272.108201,57.671988 C275.280834,57.671988 278.020835,57.671988 280.239817,56.6940425 C282.970515,55.4886677 284.352145,52.9960437 284.352145,49.2843992 C284.352145,48.979644 284.310277,48.6976318 284.287018,48.4065225 L284.41262,48.4019739 Z M265.186092,15.1973108 C265.186092,20.5327998 260.738823,24.8766975 255.272777,24.8766975 C249.80673,24.8766975 245.364113,20.5327998 245.364113,15.1973108 C245.364113,12.067885 246.917866,9.30689453 249.285711,7.53749536 C251.151145,6.43673804 252.742113,5.90910229 253.746936,5.67257593 C254.249347,5.59525 254.751758,5.51792407 255.272777,5.51792407 C260.738823,5.51792407 265.186092,9.86182178 265.186092,15.1973108 L265.186092,15.1973108 Z M238.642039,20.2416904 C239.311921,18.8088865 240.014366,17.5443801 240.735419,16.375394 C241.354129,23.6895171 247.634267,29.4571216 255.272777,29.4571216 C263.213663,29.4571216 269.67988,23.2301101 269.856654,15.5157117 C270.763786,16.8939326 271.643005,18.4586455 272.480357,20.2416904 C275.727421,27.1919268 277.527728,33.8101165 278.541854,38.9090791 C275.39248,36.5119753 271.866299,35.1883374 270.428845,34.733479 C267.591153,33.8283108 261.780861,32.9322397 255.370468,32.9322397 C248.969378,32.9322397 243.400989,33.7919221 240.316743,34.733479 C238.851377,35.1792402 235.622921,36.3891636 232.64567,38.5360952 C233.6691,33.4962642 235.464754,27.0372749 238.642039,20.2416904 L238.642039,20.2416904 Z M278.309256,52.5184424 C277.011361,53.091564 274.634212,53.091564 272.108201,53.091564 L238.637387,53.091564 C231.859489,53.091564 231.077961,52.7003857 231.077961,49.2843992 C231.077961,49.0296785 231.101221,48.7704092 231.129132,48.5065913 L231.301255,48.5111399 C231.301255,48.488397 231.319863,47.9880527 231.389642,47.0965303 C232.752665,42.2977742 238.967676,37.5126638 255.370468,37.5126638 C274.280663,37.5126638 279.667627,43.8670356 279.667627,49.2843992 C279.667627,51.9225779 278.783755,52.3092075 278.309256,52.5184424 L278.309256,52.5184424 Z",
+                id: "Fill-5",
+                stroke: "none",
+                fill: "#6E5785",
+                fillRule: "evenodd"
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { id: "projects-4" },
+          _react2.default.createElement(
+            "a",
+            { onClick: this.changeContent.bind(null, 4), href: "#" },
+            _react2.default.createElement(
+              "svg",
+              { width: "59px", height: "58px", viewBox: "337 0 59 58", version: "1.1" },
+              _react2.default.createElement("defs", null),
+              _react2.default.createElement("path", {
+                d: "M395.609342,49.2843992 C395.609342,39.9279619 384.51443,35.6386472 381.672086,34.733479 C378.829741,33.8283108 373.014798,32.9322397 366.595101,32.9322397 C360.189359,32.9322397 354.616318,33.7964707 351.52742,34.733479 C348.443174,35.6704873 337.590164,39.9279619 337.590164,49.2843992 C337.590164,57.671988 344.098248,57.671988 350.048098,57.671988 L383.351441,57.671988 C386.528726,57.671988 389.27338,57.671988 391.492362,56.6940425 C394.227711,55.4886677 395.609342,52.9960437 395.609342,49.2843992 M390.91552,49.2843992 C390.91552,51.9225779 390.031648,52.3092075 389.561801,52.5184424 C388.263905,53.091564 385.877453,53.091564 383.351441,53.091564 L349.843412,53.091564 C343.060863,53.091564 342.279334,52.7003857 342.279334,49.2843992 C342.279334,43.8670356 347.666298,37.5126638 366.595101,37.5126638 C385.523904,37.5126638 390.91552,43.8670356 390.91552,49.2843992 M381.113851,15.1973108 C381.113851,7.33280908 374.559247,0.9375 366.502062,0.9375 C358.444876,0.9375 351.88562,7.33280908 351.88562,15.1973108 C351.88562,23.0618125 358.444876,29.4571216 366.502062,29.4571216 C374.559247,29.4571216 381.113851,23.0618125 381.113851,15.1973108 M376.420029,15.1973108 C376.420029,20.5327998 371.968108,24.8766975 366.502062,24.8766975 C361.026711,24.8766975 356.579443,20.5327998 356.579443,15.1973108 C356.579443,9.86182178 361.026711,5.51792407 366.502062,5.51792407 C371.968108,5.51792407 376.420029,9.86182178 376.420029,15.1973108",
+                id: "Fill-3",
+                stroke: "none",
+                fill: "#8B97A6",
+                fillRule: "evenodd"
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { id: "projects-5" },
+          _react2.default.createElement(
+            "a",
+            { onClick: this.changeContent.bind(null, 5), href: "#" },
+            _react2.default.createElement(
+              "svg",
+              { width: "59px", height: "58px", viewBox: "448 0 59 58", version: "1.1" },
+              _react2.default.createElement("defs", null),
+              _react2.default.createElement("path", {
+                d: "M487.667922,57.6674395 L455.457788,57.6674395 C452.140945,57.6674395 448.786885,55.2475928 448.786885,50.6262314 C448.786885,49.3480793 449.066003,48.247322 449.526546,47.3194109 C454.108721,33.9283796 462.789269,8.46540649 463.380067,6.28663477 C464.370933,2.58863599 467.631953,0.9375 470.418474,0.9375 L495.42273,0.9375 C497.176517,0.9375 498.851221,1.79718237 499.92117,3.24363208 C501.107419,4.85383081 501.39584,6.94617944 500.702699,8.98849365 C499.772308,11.7267412 492.743204,37.6946072 491.738382,41.5427092 C490.691692,45.5409146 487.556275,47.9243726 483.35556,47.9243726 L455.760165,47.9243726 C455.746209,47.9243726 454.471574,48.0153442 453.8203,49.0979072 C453.769129,49.220719 453.713305,49.3389822 453.648178,49.4526968 C453.522575,49.7710977 453.443492,50.1577273 453.443492,50.6262314 C453.443492,52.9369121 454.983289,53.1188555 455.457788,53.1188555 L487.667922,53.1188555 C489.705478,53.1188555 492.031455,52.2910132 492.626905,50.4397395 C493.054885,49.1524902 499.70718,25.5134993 502.233192,16.5164001 C502.572784,15.3064768 503.838116,14.583252 505.094144,14.9243958 C506.336216,15.2564424 507.066573,16.5118516 506.72698,17.7217749 C506.350172,19.0454128 497.599845,50.1895674 497.060218,51.822509 C495.915837,55.3704045 492.222185,57.6674395 487.667922,57.6674395 M455.783425,43.3757886 L483.35556,43.3757886 C485.411724,43.3757886 486.714271,42.3751001 487.230638,40.4101118 C488.174985,36.7939875 495.287823,10.4986235 496.283342,7.55114111 C496.506636,6.90524219 496.455464,6.32302344 496.148435,5.90455371 C495.953053,5.64528442 495.678588,5.48608398 495.42273,5.48608398 L470.418474,5.48608398 C470.083533,5.48608398 468.380918,5.58160425 467.883159,7.44652368 C467.278405,9.67987842 459.495685,32.5092214 455.783425,43.3757886",
+                id: "Fill-1",
+                stroke: "none",
+                fill: "#005921",
+                fillRule: "evenodd"
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { id: "projects-6" },
+          _react2.default.createElement(
+            "a",
+            { onClick: this.changeContent.bind(null, 6), href: "#" },
+            _react2.default.createElement(
+              "svg",
+              { width: "59px", height: "58px", viewBox: "558 0 59 58", version: "1.1" },
+              _react2.default.createElement("defs", null),
+              _react2.default.createElement("path", {
+                d: "M616.051965,55.2748843 C616.051965,53.9512463 615.028535,52.8777805 613.763203,52.8777805 L589.331137,52.8777805 L589.331137,46.5552488 C597.458102,45.5409146 605.436204,39.2092856 605.436204,29.4889617 L605.436204,21.6335571 C605.436204,20.3099192 604.408122,19.241002 603.147443,19.241002 C601.882111,19.241002 600.858681,20.3099192 600.858681,21.6335571 L600.858681,29.4889617 C600.858681,37.1624229 593.690019,41.9156931 587.042376,41.9156931 C580.394733,41.9156931 573.226071,37.1624229 573.226071,29.4889617 L573.226071,21.6335571 C573.226071,20.3099192 572.202641,19.241002 570.937309,19.241002 C569.676629,19.241002 568.648547,20.3099192 568.648547,21.6335571 L568.648547,29.4889617 C568.648547,39.2092856 576.626649,45.5409146 584.753614,46.5552488 L584.753614,52.8777805 L560.316897,52.8777805 C559.056217,52.8777805 558.032787,53.9512463 558.032787,55.2748843 C558.032787,56.5985222 559.056217,57.6674395 560.316897,57.6674395 L613.763203,57.6674395 C615.028535,57.6674395 616.051965,56.5985222 616.051965,55.2748843 L616.051965,55.2748843 Z M597.146421,27.3010928 L597.146421,11.5948323 C597.146421,5.71806177 592.615417,0.9375 587.042376,0.9375 C581.469334,0.9375 576.93833,5.71806177 576.93833,11.5948323 L576.93833,27.3010928 C576.93833,33.1778633 581.469334,37.958425 587.042376,37.958425 C592.615417,37.958425 597.146421,33.1778633 597.146421,27.3010928 L597.146421,27.3010928 Z M592.57355,27.3010928 C592.57355,30.5396846 590.089406,33.1687661 587.042376,33.1687661 C583.995346,33.1687661 581.515854,30.5396846 581.515854,27.3010928 L581.515854,11.5948323 C581.515854,8.36078906 583.995346,5.72715894 587.042376,5.72715894 C590.089406,5.72715894 592.57355,8.36078906 592.57355,11.5948323 L592.57355,27.3010928 Z",
+                id: "Fill-19",
+                stroke: "none",
+                fill: "#689038",
+                fillRule: "evenodd"
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { id: "projects-7" },
+          _react2.default.createElement(
+            "a",
+            { onClick: this.changeContent.bind(null, 7), href: "#" },
+            _react2.default.createElement(
+              "svg",
+              { width: "59px", height: "58px", viewBox: "671 0 59 58", version: "1.1" },
+              _react2.default.createElement("defs", null),
+              _react2.default.createElement("path", {
+                d: "M729.204158,29.3024697 C729.204158,13.8099927 719.351318,1.1922207 707.172501,0.96024292 L707.172501,0.9375 L693.55623,0.9375 C681.219246,0.9375 671.180328,13.664438 671.180328,29.3024697 C671.180328,44.9405015 681.219246,57.6674395 693.55623,57.6674395 L706.8143,57.6674395 L706.832908,57.6674395 C719.169892,57.6674395 729.204158,44.9405015 729.204158,29.3024697 L729.204158,29.3024697 Z M694.812257,5.42240381 C688.597246,10.4667834 684.461658,19.272842 684.461658,29.3024697 C684.461658,39.3275488 688.597246,48.138156 694.807605,53.1825356 L693.55623,53.1825356 C683.726649,53.1825356 675.734591,42.4706204 675.734591,29.3024697 C675.734591,16.1343191 683.726649,5.42240381 693.55623,5.42240381 L694.812257,5.42240381 Z M724.649894,29.3024697 C724.649894,42.4706204 716.657836,53.1870842 706.832908,53.1870842 L706.832908,53.1825356 L706.8143,53.1825356 C696.998676,53.1734385 689.015922,42.4660718 689.015922,29.3024697 C689.015922,16.1343191 697.00798,5.42240381 706.832908,5.42240381 C716.657836,5.42240381 724.649894,16.1343191 724.649894,29.3024697 L724.649894,29.3024697 Z M721.072541,29.3024697 C721.072541,19.1818704 715.341333,11.2491399 708.02846,11.2491399 C700.715588,11.2491399 694.989032,19.1818704 694.989032,29.3024697 C694.989032,39.4276177 700.715588,47.3557996 708.02846,47.3557996 C715.341333,47.3557996 721.072541,39.4276177 721.072541,29.3024697 L721.072541,29.3024697 Z M716.518277,29.3024697 C716.518277,36.65753 712.629243,42.8708958 708.02846,42.8708958 C703.427677,42.8708958 699.543295,36.65753 699.543295,29.3024697 C699.543295,21.9474094 703.427677,15.7340437 708.02846,15.7340437 C712.629243,15.7340437 716.518277,21.9474094 716.518277,29.3024697 L716.518277,29.3024697 Z",
+                id: "Fill-12-Copy",
+                stroke: "none",
+                fill: "#7A2D04",
+                fillRule: "evenodd"
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { id: "projects-8" },
+          _react2.default.createElement(
+            "a",
+            { onClick: this.changeContent.bind(null, 8), href: "#" },
+            _react2.default.createElement(
+              "svg",
+              { width: "59px", height: "58px", viewBox: "784 0 59 58", version: "1.1" },
+              _react2.default.createElement("defs", null),
+              _react2.default.createElement("path", {
+                d: "M842.347047,44.1308535 L842.347047,43.020999 L841.458523,42.3296143 C834.196822,36.7166616 830.033323,27.801437 830.033323,17.8809753 C830.033323,11.2536885 824.734747,6.08194849 819.319871,5.00393408 C819.115185,2.23839502 815.356406,0.9375 813.337458,0.9375 C811.323161,0.9375 807.94119,2.23839502 807.596946,4.86747656 C801.702919,6.28208618 796.646245,11.2536885 796.646245,17.8809753 C796.646245,27.801437 792.478093,36.712113 785.21174,42.3296143 L784.327869,43.020999 L784.327869,44.1308535 C784.327869,47.460417 787.212081,50.1668245 790.75687,50.1668245 L803.089202,50.1668245 C804.201019,54.4697849 808.378474,57.6674395 813.337458,57.6674395 C818.301093,57.6674395 822.469245,54.4697849 823.581062,50.1668245 L835.913393,50.1668245 C839.462835,50.1668245 842.347047,47.460417 842.347047,44.1308535 M837.374107,44.9495986 C837.043818,45.3316797 836.49954,45.590949 835.913393,45.590949 L819.22218,45.590949 L819.22218,47.8834353 C819.22218,50.7535918 816.57987,53.091564 813.337458,53.091564 C810.090393,53.091564 807.452735,50.7535918 807.452735,47.8834353 L807.452735,45.590949 L790.75687,45.590949 C790.170724,45.590949 789.631097,45.3316797 789.300808,44.9495986 C796.948622,38.4314778 801.298199,28.6565708 801.298199,17.8809753 C801.298199,11.2491399 808.085401,9.56616382 811.006828,9.14314551 C811.016132,8.94300781 811.239426,5.5088269 813.421193,5.5088269 C815.60296,5.5088269 815.668087,8.94300781 815.668087,9.14314551 C818.584863,9.56616382 825.376716,11.2491399 825.376716,17.8809753 C825.376716,28.6565708 829.726294,38.4314778 837.374107,44.9495986",
+                id: "Fill-17",
+                stroke: "none",
+                fill: "#B27008",
+                fillRule: "evenodd"
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { id: "projects-9" },
+          _react2.default.createElement(
+            "a",
+            { onClick: this.changeContent.bind(null, 9), href: "#" },
+            _react2.default.createElement(
+              "svg",
+              { width: "59px", height: "57px", viewBox: "1087 230 59 57", version: "1.1" },
+              _react2.default.createElement("defs", null),
+              _react2.default.createElement("path", { d: "M1118.82862,280.5659 L1105.40362,258.2959 L1125.27162,236.1169 L1139.72962,258.2369 L1118.82862,280.5659 Z M1144.70762,257.4459 L1127.81162,231.1589 C1127.44362,230.5319 1126.79762,230.1089 1126.06662,230.0179 C1125.33162,229.9309 1124.60162,230.1719 1124.08562,230.6909 L1100.78362,256.2989 C1100.55562,256.5309 1100.40262,256.8039 1100.29062,257.0859 C1100.27162,257.1229 1100.23962,257.1449 1100.22062,257.1819 L1087.20462,283.4729 C1086.67462,284.6369 1087.20962,286.0109 1088.40062,286.5289 C1088.71162,286.6659 1089.03762,286.7289 1089.35862,286.7289 C1090.26062,286.7289 1091.12162,286.2199 1091.51662,285.3559 L1102.72862,263.0399 L1116.28862,285.5329 C1116.65662,286.1649 1117.30262,286.5879 1118.03762,286.6789 C1118.13562,286.6929 1118.23762,286.7019 1118.33562,286.7019 C1118.96862,286.7019 1119.57762,286.4519 1120.02462,286.0019 L1144.34962,260.2159 C1145.08862,259.4739 1145.23262,258.3419 1144.70762,257.4459 L1144.70762,257.4459 Z", id: "Page-1", stroke: "none", fill: "#DFAB26", fillRule: "evenodd" })
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return ProjectsIcons;
+}(_react2.default.Component);
+
+exports.default = ProjectsIcons;
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.maxLength = maxLength;
 exports.onlyNum = onlyNum;
 function maxLength() {
@@ -3336,7 +3563,7 @@ function onlyNum() {
 }
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3351,7 +3578,7 @@ var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anti
 exports.default = countries;
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3394,7 +3621,6 @@ module.exports = expirationMonth;
 
 
 /***/ }),
-/* 174 */,
 /* 175 */,
 /* 176 */,
 /* 177 */,
@@ -3425,7 +3651,8 @@ module.exports = expirationMonth;
 /* 202 */,
 /* 203 */,
 /* 204 */,
-/* 205 */
+/* 205 */,
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3437,23 +3664,23 @@ Object.defineProperty(exports, "__esModule", {
 exports.processStyleName = undefined;
 exports.createMarkupForStyles = createMarkupForStyles;
 
-var _camelizeStyleName = __webpack_require__(515);
+var _camelizeStyleName = __webpack_require__(516);
 
 var _camelizeStyleName2 = _interopRequireDefault(_camelizeStyleName);
 
-var _dangerousStyleValue = __webpack_require__(508);
+var _dangerousStyleValue = __webpack_require__(509);
 
 var _dangerousStyleValue2 = _interopRequireDefault(_dangerousStyleValue);
 
-var _hyphenateStyleName = __webpack_require__(518);
+var _hyphenateStyleName = __webpack_require__(519);
 
 var _hyphenateStyleName2 = _interopRequireDefault(_hyphenateStyleName);
 
-var _memoizeStringOnly = __webpack_require__(519);
+var _memoizeStringOnly = __webpack_require__(520);
 
 var _memoizeStringOnly2 = _interopRequireDefault(_memoizeStringOnly);
 
-var _warning = __webpack_require__(206);
+var _warning = __webpack_require__(207);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -3596,7 +3823,7 @@ function createMarkupForStyles(styles, component) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3612,7 +3839,7 @@ function createMarkupForStyles(styles, component) {
 
 
 
-var emptyFunction = __webpack_require__(516);
+var emptyFunction = __webpack_require__(517);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -3669,7 +3896,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3679,24 +3906,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = { "Webkit": { "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "backfaceVisibility": true, "perspective": true, "perspectiveOrigin": true, "transformStyle": true, "transformOriginZ": true, "animation": true, "animationDelay": true, "animationDirection": true, "animationFillMode": true, "animationDuration": true, "animationIterationCount": true, "animationName": true, "animationPlayState": true, "animationTimingFunction": true, "appearance": true, "userSelect": true, "fontKerning": true, "textEmphasisPosition": true, "textEmphasis": true, "textEmphasisStyle": true, "textEmphasisColor": true, "boxDecorationBreak": true, "clipPath": true, "maskImage": true, "maskMode": true, "maskRepeat": true, "maskPosition": true, "maskClip": true, "maskOrigin": true, "maskSize": true, "maskComposite": true, "mask": true, "maskBorderSource": true, "maskBorderMode": true, "maskBorderSlice": true, "maskBorderWidth": true, "maskBorderOutset": true, "maskBorderRepeat": true, "maskBorder": true, "maskType": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "filter": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true, "flex": true, "flexBasis": true, "flexDirection": true, "flexGrow": true, "flexFlow": true, "flexShrink": true, "flexWrap": true, "alignContent": true, "alignItems": true, "alignSelf": true, "justifyContent": true, "order": true, "transition": true, "transitionDelay": true, "transitionDuration": true, "transitionProperty": true, "transitionTimingFunction": true, "backdropFilter": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "shapeImageThreshold": true, "shapeImageMargin": true, "shapeImageOutside": true, "hyphens": true, "flowInto": true, "flowFrom": true, "regionFragment": true, "textSizeAdjust": true, "borderImage": true, "borderImageOutset": true, "borderImageRepeat": true, "borderImageSlice": true, "borderImageSource": true, "borderImageWidth": true, "tabSize": true, "objectFit": true, "objectPosition": true }, "Moz": { "appearance": true, "userSelect": true, "boxSizing": true, "textAlignLast": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "tabSize": true, "hyphens": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true }, "ms": { "flex": true, "flexBasis": false, "flexDirection": true, "flexGrow": false, "flexFlow": true, "flexShrink": false, "flexWrap": true, "alignContent": false, "alignItems": false, "alignSelf": false, "justifyContent": false, "order": false, "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "userSelect": true, "wrapFlow": true, "wrapThrough": true, "wrapMargin": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "touchAction": true, "hyphens": true, "flowInto": true, "flowFrom": true, "breakBefore": true, "breakAfter": true, "breakInside": true, "regionFragment": true, "gridTemplateColumns": true, "gridTemplateRows": true, "gridTemplateAreas": true, "gridTemplate": true, "gridAutoColumns": true, "gridAutoRows": true, "gridAutoFlow": true, "grid": true, "gridRowStart": true, "gridColumnStart": true, "gridRowEnd": true, "gridRow": true, "gridColumn": true, "gridColumnEnd": true, "gridColumnGap": true, "gridRowGap": true, "gridArea": true, "gridGap": true, "textSizeAdjust": true } };
-module.exports = exports["default"];
-
-/***/ }),
-/* 208 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-// helper to capitalize strings
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports["default"] = function (str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-};
-
 module.exports = exports["default"];
 
 /***/ }),
@@ -3721,7 +3930,25 @@ module.exports = exports["default"];
 /* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(211);
+"use strict";
+// helper to capitalize strings
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports["default"] = function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+module.exports = exports["default"];
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(212);
 
 /** Built-in value references. */
 var Symbol = root.Symbol;
@@ -3730,10 +3957,10 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(545);
+var freeGlobal = __webpack_require__(546);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -3745,7 +3972,7 @@ module.exports = root;
 
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports) {
 
 /**
@@ -3782,7 +4009,7 @@ module.exports = isObject;
 
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3807,7 +4034,7 @@ module.exports = {
 
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3994,7 +4221,7 @@ exports.isBuffer = function (obj) {
 
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4049,7 +4276,7 @@ function appendPxIfNeeded(propertyName, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4071,7 +4298,7 @@ var _styleKeeper = __webpack_require__(140);
 
 var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 
-var _resolveStyles = __webpack_require__(222);
+var _resolveStyles = __webpack_require__(223);
 
 var _resolveStyles2 = _interopRequireDefault(_resolveStyles);
 
@@ -4239,7 +4466,7 @@ module.exports = exports['default'];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4258,7 +4485,7 @@ exports.default = getStateKey;
 module.exports = exports['default'];
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4268,7 +4495,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getStateKey = __webpack_require__(217);
+var _getStateKey = __webpack_require__(218);
 
 var _getStateKey2 = _interopRequireDefault(_getStateKey);
 
@@ -4284,7 +4511,7 @@ exports.default = getState;
 module.exports = exports['default'];
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4317,7 +4544,7 @@ function hash(text) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4336,7 +4563,7 @@ function mapObject(object, mapper) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4346,35 +4573,35 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _checkPropsPlugin = __webpack_require__(562);
+var _checkPropsPlugin = __webpack_require__(563);
 
 var _checkPropsPlugin2 = _interopRequireDefault(_checkPropsPlugin);
 
-var _keyframesPlugin = __webpack_require__(563);
+var _keyframesPlugin = __webpack_require__(564);
 
 var _keyframesPlugin2 = _interopRequireDefault(_keyframesPlugin);
 
-var _mergeStyleArrayPlugin = __webpack_require__(564);
+var _mergeStyleArrayPlugin = __webpack_require__(565);
 
 var _mergeStyleArrayPlugin2 = _interopRequireDefault(_mergeStyleArrayPlugin);
 
-var _prefixPlugin = __webpack_require__(566);
+var _prefixPlugin = __webpack_require__(567);
 
 var _prefixPlugin2 = _interopRequireDefault(_prefixPlugin);
 
-var _removeNestedStylesPlugin = __webpack_require__(567);
+var _removeNestedStylesPlugin = __webpack_require__(568);
 
 var _removeNestedStylesPlugin2 = _interopRequireDefault(_removeNestedStylesPlugin);
 
-var _resolveInteractionStylesPlugin = __webpack_require__(568);
+var _resolveInteractionStylesPlugin = __webpack_require__(569);
 
 var _resolveInteractionStylesPlugin2 = _interopRequireDefault(_resolveInteractionStylesPlugin);
 
-var _resolveMediaQueriesPlugin = __webpack_require__(569);
+var _resolveMediaQueriesPlugin = __webpack_require__(570);
 
 var _resolveMediaQueriesPlugin2 = _interopRequireDefault(_resolveMediaQueriesPlugin);
 
-var _visitedPlugin = __webpack_require__(570);
+var _visitedPlugin = __webpack_require__(571);
 
 var _visitedPlugin2 = _interopRequireDefault(_visitedPlugin);
 
@@ -4395,7 +4622,7 @@ exports.default = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4409,7 +4636,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
-var _appendImportantToEachValue = __webpack_require__(555);
+var _appendImportantToEachValue = __webpack_require__(556);
 
 var _appendImportantToEachValue2 = _interopRequireDefault(_appendImportantToEachValue);
 
@@ -4417,25 +4644,25 @@ var _cssRuleSetToString = __webpack_require__(137);
 
 var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 
-var _getState = __webpack_require__(218);
+var _getState = __webpack_require__(219);
 
 var _getState2 = _interopRequireDefault(_getState);
 
-var _getStateKey = __webpack_require__(217);
+var _getStateKey = __webpack_require__(218);
 
 var _getStateKey2 = _interopRequireDefault(_getStateKey);
 
-var _hash = __webpack_require__(219);
+var _hash = __webpack_require__(220);
 
 var _hash2 = _interopRequireDefault(_hash);
 
-var _mergeStyles = __webpack_require__(561);
+var _mergeStyles = __webpack_require__(562);
 
-var _plugins = __webpack_require__(221);
+var _plugins = __webpack_require__(222);
 
 var _plugins2 = _interopRequireDefault(_plugins);
 
-var _exenv = __webpack_require__(492);
+var _exenv = __webpack_require__(493);
 
 var _exenv2 = _interopRequireDefault(_exenv);
 
@@ -4758,7 +4985,6 @@ module.exports = exports['default'];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 223 */,
 /* 224 */,
 /* 225 */,
 /* 226 */,
@@ -4782,7 +5008,8 @@ module.exports = exports['default'];
 /* 244 */,
 /* 245 */,
 /* 246 */,
-/* 247 */
+/* 247 */,
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4797,15 +5024,15 @@ var _assertString = __webpack_require__(100);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _merge = __webpack_require__(249);
+var _merge = __webpack_require__(250);
 
 var _merge2 = _interopRequireDefault(_merge);
 
-var _isByteLength = __webpack_require__(654);
+var _isByteLength = __webpack_require__(655);
 
 var _isByteLength2 = _interopRequireDefault(_isByteLength);
 
-var _isFQDN = __webpack_require__(655);
+var _isFQDN = __webpack_require__(656);
 
 var _isFQDN2 = _interopRequireDefault(_isFQDN);
 
@@ -4877,7 +5104,7 @@ function isEmail(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4901,7 +5128,7 @@ function isEmpty(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4925,7 +5152,7 @@ function merge() {
 module.exports = exports['default'];
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5032,7 +5259,7 @@ Accordion.defaultProps = {
 exports.default = Accordion;
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5181,7 +5408,7 @@ CampaignsSlider.defaultProps = { slides: [], interval: 0 };
 exports.default = CampaignsSlider;
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5310,7 +5537,7 @@ var Carousel = function (_React$Component) {
 exports.default = Carousel;
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5332,7 +5559,7 @@ var _axios = __webpack_require__(33);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _isEmpty = __webpack_require__(248);
+var _isEmpty = __webpack_require__(249);
 
 var _isEmpty2 = _interopRequireDefault(_isEmpty);
 
@@ -5340,11 +5567,11 @@ var _qs = __webpack_require__(34);
 
 var _qs2 = _interopRequireDefault(_qs);
 
-var _obj_to_formdata = __webpack_require__(300);
+var _obj_to_formdata = __webpack_require__(301);
 
 var _obj_to_formdata2 = _interopRequireDefault(_obj_to_formdata);
 
-var _getCountries = __webpack_require__(172);
+var _getCountries = __webpack_require__(173);
 
 var _getCountries2 = _interopRequireDefault(_getCountries);
 
@@ -5627,7 +5854,7 @@ contactForm.defaultProps = {
 exports.default = contactForm;
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5747,7 +5974,7 @@ DonateInlineSection.defaultProps = {
 exports.default = DonateInlineSection;
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5765,7 +5992,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _index = __webpack_require__(295);
+var _index = __webpack_require__(297);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -5868,7 +6095,7 @@ DonateSection.defaultProps = {
 exports.default = DonateSection;
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6165,7 +6392,7 @@ Donate.defaultProps = { texts: {}, redirect: {} };
 exports.default = Donate;
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6191,11 +6418,11 @@ var _qs = __webpack_require__(34);
 
 var _qs2 = _interopRequireDefault(_qs);
 
-var _isEmail = __webpack_require__(247);
+var _isEmail = __webpack_require__(248);
 
 var _isEmail2 = _interopRequireDefault(_isEmail);
 
-var _getCountries = __webpack_require__(172);
+var _getCountries = __webpack_require__(173);
 
 var _getCountries2 = _interopRequireDefault(_getCountries);
 
@@ -6370,7 +6597,7 @@ var _initialiseProps = function _initialiseProps() {
 exports.default = DownloadPdf;
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6696,7 +6923,7 @@ GalleryHeader.defaultProps = { images: [], excerpts: [], texts: {} };
 exports.default = GalleryHeader;
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6714,7 +6941,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _headerSlide = __webpack_require__(296);
+var _headerSlide = __webpack_require__(298);
 
 var _headerSlide2 = _interopRequireDefault(_headerSlide);
 
@@ -6819,7 +7046,7 @@ headerSlider.defaultProps = { slides: [], interval: 5000, anchor: "#" };
 exports.default = headerSlider;
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6845,7 +7072,7 @@ var _axios = __webpack_require__(33);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _minigrid = __webpack_require__(552);
+var _minigrid = __webpack_require__(553);
 
 var _minigrid2 = _interopRequireDefault(_minigrid);
 
@@ -6853,7 +7080,7 @@ var _debounce = __webpack_require__(93);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
-var _post = __webpack_require__(297);
+var _post = __webpack_require__(299);
 
 var _post2 = _interopRequireDefault(_post);
 
@@ -6983,7 +7210,7 @@ var Posts = function (_React$Component) {
 exports.default = Posts;
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7007,7 +7234,7 @@ var _projects = __webpack_require__(162);
 
 var _projects2 = _interopRequireDefault(_projects);
 
-var _postsAbout = __webpack_require__(298);
+var _postsAbout = __webpack_require__(300);
 
 var _postsAbout2 = _interopRequireDefault(_postsAbout);
 
@@ -7158,7 +7385,95 @@ var ProjectsAbout = function (_React$Component) {
 exports.default = ProjectsAbout;
 
 /***/ }),
-/* 262 */
+/* 263 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _projectsIcons = __webpack_require__(171);
+
+var _projectsIcons2 = _interopRequireDefault(_projectsIcons);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var colors = {
+	1: "#b91325",
+	2: "#00355f",
+	3: "#6e5785",
+	4: "#95a0ad",
+	5: "#156734",
+	6: "#689038",
+	7: "#7a2d04",
+	8: "#b27009",
+	9: "#E4A70F"
+};
+
+var ProjectsInfo = function (_Component) {
+	_inherits(ProjectsInfo, _Component);
+
+	function ProjectsInfo(props) {
+		_classCallCheck(this, ProjectsInfo);
+
+		var _this = _possibleConstructorReturn(this, (ProjectsInfo.__proto__ || Object.getPrototypeOf(ProjectsInfo)).call(this, props));
+
+		_this.handleSection = function (section, e) {
+			_this.setState({ section: section });
+		};
+
+		_this.state = {
+			section: 0,
+			projects: []
+		};
+		return _this;
+	}
+
+	_createClass(ProjectsInfo, [{
+		key: 'render',
+		value: function render() {
+			var section = this.state.section;
+
+			var infoSectionStyle = {
+				background: colors[section + 1]
+			};
+
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(_projectsIcons2.default, { onChange: this.handleSection }),
+				_react2.default.createElement(
+					'div',
+					{ style: infoSectionStyle },
+					this.props.projects[section] ? this.props.projects[section].number : "",
+					this.props.projects[section] ? this.props.projects[section].number_text : ""
+				)
+			);
+		}
+	}]);
+
+	return ProjectsInfo;
+}(_react.Component);
+
+exports.default = ProjectsInfo;
+
+/***/ }),
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7277,7 +7592,7 @@ SectionVideoContent.defaultProps = {
 exports.default = SectionVideoContent;
 
 /***/ }),
-/* 263 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7386,7 +7701,7 @@ VideoHeader.defaultProps = {
 exports.default = VideoHeader;
 
 /***/ }),
-/* 264 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7421,7 +7736,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 265 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7463,7 +7778,7 @@ function scrollViaCrucisNav() {
 }
 
 /***/ }),
-/* 266 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7505,7 +7820,7 @@ var setMenu = function setMenu() {
 exports.default = setMenu;
 
 /***/ }),
-/* 267 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7534,7 +7849,7 @@ var setMenuMobile = function setMenuMobile() {
 exports.default = setMenuMobile;
 
 /***/ }),
-/* 268 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7585,7 +7900,7 @@ function smoothScroll() {
 }
 
 /***/ }),
-/* 269 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7623,7 +7938,7 @@ function stickyMenu() {
 }
 
 /***/ }),
-/* 270 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7661,7 +7976,7 @@ function toggleMenu() {
 }
 
 /***/ }),
-/* 271 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7682,13 +7997,13 @@ function toggleViaCrucisNav() {
 }
 
 /***/ }),
-/* 272 */
+/* 274 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 273 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7741,7 +8056,7 @@ function multipleRender(component, selector) {
 }
 
 /***/ }),
-/* 274 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* Web Font Loader v1.6.27 - (c) Adobe Systems, Google. License: Apache 2.0 */(function(){function aa(a,b,c){return a.call.apply(a.bind,arguments)}function ba(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}function p(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?aa:ba;return p.apply(null,arguments)}var q=Date.now||function(){return+new Date};function ca(a,b){this.a=a;this.m=b||a;this.c=this.m.document}var da=!!window.FontFace;function t(a,b,c,d){b=a.c.createElement(b);if(c)for(var e in c)c.hasOwnProperty(e)&&("style"==e?b.style.cssText=c[e]:b.setAttribute(e,c[e]));d&&b.appendChild(a.c.createTextNode(d));return b}function u(a,b,c){a=a.c.getElementsByTagName(b)[0];a||(a=document.documentElement);a.insertBefore(c,a.lastChild)}function v(a){a.parentNode&&a.parentNode.removeChild(a)}
@@ -7766,8 +8081,6 @@ g,0<d.length&&(d=Ba[d[0]])&&(a.c[e]=d))}a.c[e]||(d=Ba[e])&&(a.c[e]=d);for(d=0;d<
 
 
 /***/ }),
-/* 275 */,
-/* 276 */,
 /* 277 */,
 /* 278 */,
 /* 279 */,
@@ -7783,22 +8096,24 @@ g,0<d.length&&(d=Ba[d[0]])&&(a.c[e]=d))}a.c[e]||(d=Ba[e])&&(a.c[e]=d);for(d=0;d<
 /* 289 */,
 /* 290 */,
 /* 291 */,
-/* 292 */
+/* 292 */,
+/* 293 */,
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 //get sass file and compiled to css
 
-__webpack_require__(272);
+__webpack_require__(274);
 
 __webpack_require__(102);
 
-var _webfontloader = __webpack_require__(274);
+var _webfontloader = __webpack_require__(276);
 
 var _webfontloader2 = _interopRequireDefault(_webfontloader);
 
-var _reactMultipleRender = __webpack_require__(273);
+var _reactMultipleRender = __webpack_require__(275);
 
 var _reactMultipleRender2 = _interopRequireDefault(_reactMultipleRender);
 
@@ -7806,11 +8121,11 @@ var _qs = __webpack_require__(34);
 
 var _qs2 = _interopRequireDefault(_qs);
 
-var _contactForm = __webpack_require__(253);
+var _contactForm = __webpack_require__(254);
 
 var _contactForm2 = _interopRequireDefault(_contactForm);
 
-var _headerSlider = __webpack_require__(259);
+var _headerSlider = __webpack_require__(260);
 
 var _headerSlider2 = _interopRequireDefault(_headerSlider);
 
@@ -7818,7 +8133,7 @@ var _sectionVideo = __webpack_require__(163);
 
 var _sectionVideo2 = _interopRequireDefault(_sectionVideo);
 
-var _sectionVideoContent = __webpack_require__(262);
+var _sectionVideoContent = __webpack_require__(264);
 
 var _sectionVideoContent2 = _interopRequireDefault(_sectionVideoContent);
 
@@ -7826,15 +8141,19 @@ var _projects = __webpack_require__(162);
 
 var _projects2 = _interopRequireDefault(_projects);
 
-var _accordion = __webpack_require__(250);
+var _projectsInfo = __webpack_require__(263);
+
+var _projectsInfo2 = _interopRequireDefault(_projectsInfo);
+
+var _accordion = __webpack_require__(251);
 
 var _accordion2 = _interopRequireDefault(_accordion);
 
-var _posts = __webpack_require__(260);
+var _posts = __webpack_require__(261);
 
 var _posts2 = _interopRequireDefault(_posts);
 
-var _single = __webpack_require__(256);
+var _single = __webpack_require__(257);
 
 var _single2 = _interopRequireDefault(_single);
 
@@ -7842,73 +8161,76 @@ var _inline = __webpack_require__(161);
 
 var _inline2 = _interopRequireDefault(_inline);
 
-var _inline_section = __webpack_require__(254);
+var _inline_section = __webpack_require__(255);
 
 var _inline_section2 = _interopRequireDefault(_inline_section);
 
-var _section = __webpack_require__(255);
+var _section = __webpack_require__(256);
 
 var _section2 = _interopRequireDefault(_section);
 
-var _campaignsSlider = __webpack_require__(251);
+var _campaignsSlider = __webpack_require__(252);
 
 var _campaignsSlider2 = _interopRequireDefault(_campaignsSlider);
 
-var _downloadPdf = __webpack_require__(257);
+var _downloadPdf = __webpack_require__(258);
 
 var _downloadPdf2 = _interopRequireDefault(_downloadPdf);
 
-var _galleryHeader = __webpack_require__(258);
+var _galleryHeader = __webpack_require__(259);
 
 var _galleryHeader2 = _interopRequireDefault(_galleryHeader);
 
-var _projectsAbout = __webpack_require__(261);
+var _projectsAbout = __webpack_require__(262);
 
 var _projectsAbout2 = _interopRequireDefault(_projectsAbout);
 
-var _videoHeader = __webpack_require__(263);
+var _videoHeader = __webpack_require__(265);
 
 var _videoHeader2 = _interopRequireDefault(_videoHeader);
 
-var _carousel = __webpack_require__(252);
+var _carousel = __webpack_require__(253);
 
 var _carousel2 = _interopRequireDefault(_carousel);
 
-var _set_menu = __webpack_require__(266);
+var _set_menu = __webpack_require__(268);
 
 var _set_menu2 = _interopRequireDefault(_set_menu);
 
-var _set_menu_mobile = __webpack_require__(267);
+var _set_menu_mobile = __webpack_require__(269);
 
 var _set_menu_mobile2 = _interopRequireDefault(_set_menu_mobile);
 
-var _donate_redirect = __webpack_require__(264);
+var _donate_redirect = __webpack_require__(266);
 
 var _donate_redirect2 = _interopRequireDefault(_donate_redirect);
 
-var _smoothScroll = __webpack_require__(268);
+var _smoothScroll = __webpack_require__(270);
 
 var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
 
-var _scrollViaCrucisNav = __webpack_require__(265);
+var _scrollViaCrucisNav = __webpack_require__(267);
 
 var _scrollViaCrucisNav2 = _interopRequireDefault(_scrollViaCrucisNav);
 
-var _toggleViaCrucisNav = __webpack_require__(271);
+var _toggleViaCrucisNav = __webpack_require__(273);
 
 var _toggleViaCrucisNav2 = _interopRequireDefault(_toggleViaCrucisNav);
 
-var _toggleMenu = __webpack_require__(270);
+var _toggleMenu = __webpack_require__(272);
 
 var _toggleMenu2 = _interopRequireDefault(_toggleMenu);
 
-var _stickMenu = __webpack_require__(269);
+var _stickMenu = __webpack_require__(271);
 
 var _stickMenu2 = _interopRequireDefault(_stickMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //jquery stuff :(
+
+
+//React components :)
 _webfontloader2.default.load({
   google: { families: ["Source Sans Pro:400,600,700"] },
   custom: { families: ["Ionicons"], testStrings: { Ionicons: "\uF10C\uF109" } },
@@ -7918,9 +8240,6 @@ _webfontloader2.default.load({
 });
 
 //react renders
-
-
-//React components :)
 (0, _reactMultipleRender2.default)(_headerSlider2.default, ".header-slider");
 (0, _reactMultipleRender2.default)(_contactForm2.default, ".contact-form");
 (0, _reactMultipleRender2.default)(_posts2.default, ".bs-posts");
@@ -7929,6 +8248,7 @@ _webfontloader2.default.load({
 (0, _reactMultipleRender2.default)(_inline_section2.default, ".bs-donate-inline-section");
 (0, _reactMultipleRender2.default)(_section2.default, ".bs-donate-section");
 (0, _reactMultipleRender2.default)(_projects2.default, ".projects-container");
+(0, _reactMultipleRender2.default)(_projectsInfo2.default, ".bs-projects-info");
 (0, _reactMultipleRender2.default)(_accordion2.default, ".bs-accordion");
 (0, _reactMultipleRender2.default)(_sectionVideo2.default, ".section-video");
 (0, _reactMultipleRender2.default)(_sectionVideoContent2.default, ".section-video-content");
@@ -7962,7 +8282,7 @@ if (document.querySelector(".bs-donate")) {
 }
 
 /***/ }),
-/* 293 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8062,7 +8382,7 @@ var AmountBtns = function (_React$Component) {
 exports.default = AmountBtns;
 
 /***/ }),
-/* 294 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8144,7 +8464,7 @@ var Cards = function (_React$Component) {
 exports.default = Cards;
 
 /***/ }),
-/* 295 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8446,7 +8766,7 @@ Donate.defaultProps = { texts: {}, redirect: {} };
 exports.default = Donate;
 
 /***/ }),
-/* 296 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8570,7 +8890,7 @@ var headerSlide = function (_React$Component) {
 exports.default = headerSlide;
 
 /***/ }),
-/* 297 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8688,7 +9008,7 @@ Post.defaultProps = {
 exports.default = Post;
 
 /***/ }),
-/* 298 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8816,234 +9136,7 @@ var PostsAbout = function (_React$Component) {
 exports.default = PostsAbout;
 
 /***/ }),
-/* 299 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ProjectsIcons = function (_React$Component) {
-  _inherits(ProjectsIcons, _React$Component);
-
-  function ProjectsIcons() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, ProjectsIcons);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectsIcons.__proto__ || Object.getPrototypeOf(ProjectsIcons)).call.apply(_ref, [this].concat(args))), _this), _this.changeContent = function (num, e) {
-      e.preventDefault();
-      _this.props.onChange(num);
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(ProjectsIcons, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "ul",
-        { className: "projects__icons" },
-        _react2.default.createElement(
-          "li",
-          { id: "projects-1" },
-          _react2.default.createElement(
-            "a",
-            { onClick: this.changeContent.bind(null, 1), href: "#" },
-            _react2.default.createElement(
-              "svg",
-              { width: "68px", height: "67px", viewBox: "0 0 68 67", version: "1.1" },
-              _react2.default.createElement("path", { d: "M67.3673112,32.026012 C67.2600797,30.6734635 66.0912564,29.6302188 64.6758007,29.6302188 L3.22679192,29.6302188 C1.81669775,29.6302188 0.647874444,30.6734635 0.540642948,32.026012 C0.513835074,32.3667703 -0.043768705,40.471576 6.54560672,47.2972274 C11.8750121,52.8227547 20.2015377,55.7952158 31.2517434,56.2146107 L31.2517434,61.006197 L21.5365699,61.006197 C20.0460521,61.006197 18.8396977,62.1647753 18.8396977,63.5959602 C18.8396977,65.0271452 20.0460521,66.1857235 21.5365699,66.1857235 L45.9102889,66.1857235 C47.4008067,66.1857235 48.6125226,65.0271452 48.6125226,63.5959602 C48.6125226,62.1647753 47.4008067,61.006197 45.9102889,61.006197 L36.6454876,61.006197 L36.6454876,56.2146107 C47.6956933,55.7952158 56.0275805,52.8227547 61.3569859,47.2972274 C67.9463613,40.471576 67.3941191,32.3667703 67.3673112,32.026012 L67.3673112,32.026012 Z M61.8395276,34.8097454 C61.5017484,37.0797201 60.4669644,40.5973945 57.4055052,43.7743106 C52.7034041,48.6445334 44.811166,51.1137206 33.9539771,51.1137206 C23.1450423,51.1137206 15.2796121,48.6655031 10.5667878,43.8424622 C7.45171286,40.6498188 6.40620578,37.0954474 6.06306499,34.8097454 L61.8395276,34.8097454 Z M46.6501862,13.3734255 C46.6501862,6.44292538 40.7846234,0.80206448 33.5679437,0.80206448 C26.351264,0.80206448 20.4803396,6.44292538 20.4803396,13.3734255 C20.4803396,20.3039256 26.351264,25.9447865 33.5679437,25.9447865 C40.7846234,25.9447865 46.6501862,20.3039256 46.6501862,13.3734255 L46.6501862,13.3734255 Z M41.256442,13.3734255 C41.256442,17.4467981 37.8089494,20.7600175 33.5679437,20.7600175 C29.326938,20.7600175 25.8740839,17.4467981 25.8740839,13.3734255 C25.8740839,9.30005288 29.326938,5.98683346 33.5679437,5.98683346 C37.8089494,5.98683346 41.256442,9.30005288 41.256442,13.3734255 L41.256442,13.3734255 Z", id: "Fill-7", stroke: "none", fill: "#B91325", fillRule: "evenodd" })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "li",
-          { id: "projects-2" },
-          _react2.default.createElement(
-            "a",
-            { onClick: this.changeContent.bind(null, 2), href: "#" },
-            _react2.default.createElement(
-              "svg",
-              { width: "59px", height: "58px", viewBox: "115 0 59 58", version: "1.1" },
-              _react2.default.createElement("defs", null),
-              _react2.default.createElement("path", {
-                d: "M167.517255,38.9955022 C167.707985,38.6134211 167.824284,38.3996377 167.828936,38.3905405 C168.359259,37.4034978 168.070837,36.1844773 167.14975,35.5294812 L159.00883,29.7436824 C158.338948,29.2660811 157.450425,29.1842065 156.692156,29.5208018 C156.231613,29.7300366 154.556909,30.6352048 152.663564,33.4416812 C150.146856,33.1323774 147.244037,32.9322397 144.201658,32.9322397 C141.131368,32.9322397 138.25646,33.1323774 135.749057,33.4416812 C133.855711,30.6352048 132.181008,29.7300366 131.720464,29.5208018 C130.962195,29.179658 130.073672,29.2615325 129.403791,29.7436824 L121.267522,35.5294812 C120.341783,36.1844773 120.053362,37.4034978 120.583685,38.3905405 C120.588337,38.3996377 120.695332,38.5997754 120.876758,38.9545649 C117.83438,41.3016343 115.196721,44.672135 115.196721,49.2798506 C115.196721,57.6674395 121.704806,57.6674395 127.654656,57.6674395 L160.962651,57.6674395 C164.135284,57.6674395 166.879937,57.6674395 169.098919,56.6940425 C171.834269,55.4886677 173.215899,52.9914951 173.215899,49.2798506 C173.215899,44.7039751 170.564285,41.3425715 167.517255,38.9955022 L167.517255,38.9955022 Z M124.979782,53.0551753 C120.47669,52.9187178 119.890544,52.2227844 119.890544,49.2798506 C119.890544,47.2056963 120.69068,44.9950845 122.728236,43.0573877 C123.109696,43.994396 123.50046,45.0269246 123.863313,46.1185847 C124.654145,48.488397 124.910003,51.1948044 124.979782,53.0551753 L124.979782,53.0551753 Z M136.921349,53.1779871 L129.594521,53.1779871 C129.524741,51.0174097 129.23632,47.7151377 128.240802,44.726718 C127.319715,41.9702761 126.263721,39.5777209 125.533364,38.0493967 L130.683078,34.3877866 C131.678596,35.4294124 133.283521,37.6263784 134.716323,41.8974988 C136.344507,46.7690322 136.80505,50.8491121 136.921349,53.1779871 L136.921349,53.1779871 Z M150.356194,37.7764817 C150.002646,38.604324 149.658401,39.5049436 149.32346,40.5056321 C147.504546,45.9366414 147.006787,50.4533853 146.885836,53.0870154 L141.526784,53.0870154 C141.410485,50.4533853 140.908074,45.9366414 139.08916,40.5056321 C138.754219,39.5049436 138.409975,38.604324 138.056426,37.7764817 C139.926512,37.6081841 141.964068,37.5126638 144.201658,37.5126638 C146.4439,37.5126638 148.481456,37.6081841 150.356194,37.7764817 L150.356194,37.7764817 Z M162.879256,38.0493967 C162.148899,39.5777209 161.092905,41.9702761 160.171818,44.726718 C159.1763,47.7151377 158.892531,51.0174097 158.822752,53.1779871 L151.491271,53.1779871 C151.60757,50.8491121 152.068113,46.7690322 153.696298,41.8974988 C155.138404,37.6036355 156.74798,35.411218 157.72489,34.3877866 L162.879256,38.0493967 Z M168.526729,49.2798506 C168.526729,51.9180293 167.642858,52.3046589 167.168358,52.5184424 C166.307747,52.8959749 164.967984,53.0187866 163.432839,53.0642725 C163.502618,51.2039016 163.753823,48.5020427 164.549308,46.1185847 C164.91216,45.0269246 165.302924,43.994396 165.684385,43.0573877 C167.726593,44.9996331 168.526729,47.2056963 168.526729,49.2798506 L168.526729,49.2798506 Z M158.725061,15.1973108 C158.725061,7.33280908 152.170456,0.9375 144.108619,0.9375 C136.051434,0.9375 129.492178,7.33280908 129.492178,15.1973108 C129.492178,23.0572639 136.051434,29.452573 144.108619,29.452573 C152.170456,29.452573 158.725061,23.0572639 158.725061,15.1973108 L158.725061,15.1973108 Z M154.026586,15.1973108 C154.026586,20.5327998 149.579318,24.8721489 144.108619,24.8721489 C138.637921,24.8721489 134.186,20.5327998 134.186,15.1973108 C134.186,9.85727319 138.637921,5.51792407 144.108619,5.51792407 C149.579318,5.51792407 154.026586,9.85727319 154.026586,15.1973108 L154.026586,15.1973108 Z",
-                id: "Fill-10",
-                stroke: "none",
-                fill: "#00355F",
-                fillRule: "evenodd"
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "li",
-          { id: "projects-3" },
-          _react2.default.createElement(
-            "a",
-            { onClick: this.changeContent.bind(null, 3), href: "#" },
-            _react2.default.createElement(
-              "svg",
-              { width: "59px", height: "58px", viewBox: "226 0 59 58", version: "1.1" },
-              _react2.default.createElement("defs", null),
-              _react2.default.createElement("path", {
-                d: "M284.41262,48.4019739 C284.398665,47.8243037 283.975337,34.0284485 276.662464,18.376771 C272.261715,8.97029932 266.483987,4.6582417 262.241405,2.6705105 C260.836515,1.91999414 259.282762,1.40600415 257.645274,1.14218628 C257.021912,1.02847168 256.61254,0.992083008 256.533456,0.987534424 L256.533456,1.00118018 C256.114781,0.964791504 255.700757,0.9375 255.272777,0.9375 C251.593081,0.9375 248.229718,2.28842944 245.661839,4.49449268 C241.986794,6.96892236 237.818643,11.1900083 234.459932,18.376771 C228.831067,30.4168728 227.286618,41.3334744 226.86329,46.0048701 C226.560913,47.0192043 226.393443,48.1108645 226.393443,49.2843992 C226.393443,57.671988 232.892223,57.671988 238.837421,57.671988 L272.108201,57.671988 C275.280834,57.671988 278.020835,57.671988 280.239817,56.6940425 C282.970515,55.4886677 284.352145,52.9960437 284.352145,49.2843992 C284.352145,48.979644 284.310277,48.6976318 284.287018,48.4065225 L284.41262,48.4019739 Z M265.186092,15.1973108 C265.186092,20.5327998 260.738823,24.8766975 255.272777,24.8766975 C249.80673,24.8766975 245.364113,20.5327998 245.364113,15.1973108 C245.364113,12.067885 246.917866,9.30689453 249.285711,7.53749536 C251.151145,6.43673804 252.742113,5.90910229 253.746936,5.67257593 C254.249347,5.59525 254.751758,5.51792407 255.272777,5.51792407 C260.738823,5.51792407 265.186092,9.86182178 265.186092,15.1973108 L265.186092,15.1973108 Z M238.642039,20.2416904 C239.311921,18.8088865 240.014366,17.5443801 240.735419,16.375394 C241.354129,23.6895171 247.634267,29.4571216 255.272777,29.4571216 C263.213663,29.4571216 269.67988,23.2301101 269.856654,15.5157117 C270.763786,16.8939326 271.643005,18.4586455 272.480357,20.2416904 C275.727421,27.1919268 277.527728,33.8101165 278.541854,38.9090791 C275.39248,36.5119753 271.866299,35.1883374 270.428845,34.733479 C267.591153,33.8283108 261.780861,32.9322397 255.370468,32.9322397 C248.969378,32.9322397 243.400989,33.7919221 240.316743,34.733479 C238.851377,35.1792402 235.622921,36.3891636 232.64567,38.5360952 C233.6691,33.4962642 235.464754,27.0372749 238.642039,20.2416904 L238.642039,20.2416904 Z M278.309256,52.5184424 C277.011361,53.091564 274.634212,53.091564 272.108201,53.091564 L238.637387,53.091564 C231.859489,53.091564 231.077961,52.7003857 231.077961,49.2843992 C231.077961,49.0296785 231.101221,48.7704092 231.129132,48.5065913 L231.301255,48.5111399 C231.301255,48.488397 231.319863,47.9880527 231.389642,47.0965303 C232.752665,42.2977742 238.967676,37.5126638 255.370468,37.5126638 C274.280663,37.5126638 279.667627,43.8670356 279.667627,49.2843992 C279.667627,51.9225779 278.783755,52.3092075 278.309256,52.5184424 L278.309256,52.5184424 Z",
-                id: "Fill-5",
-                stroke: "none",
-                fill: "#6E5785",
-                fillRule: "evenodd"
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "li",
-          { id: "projects-4" },
-          _react2.default.createElement(
-            "a",
-            { onClick: this.changeContent.bind(null, 4), href: "#" },
-            _react2.default.createElement(
-              "svg",
-              { width: "59px", height: "58px", viewBox: "337 0 59 58", version: "1.1" },
-              _react2.default.createElement("defs", null),
-              _react2.default.createElement("path", {
-                d: "M395.609342,49.2843992 C395.609342,39.9279619 384.51443,35.6386472 381.672086,34.733479 C378.829741,33.8283108 373.014798,32.9322397 366.595101,32.9322397 C360.189359,32.9322397 354.616318,33.7964707 351.52742,34.733479 C348.443174,35.6704873 337.590164,39.9279619 337.590164,49.2843992 C337.590164,57.671988 344.098248,57.671988 350.048098,57.671988 L383.351441,57.671988 C386.528726,57.671988 389.27338,57.671988 391.492362,56.6940425 C394.227711,55.4886677 395.609342,52.9960437 395.609342,49.2843992 M390.91552,49.2843992 C390.91552,51.9225779 390.031648,52.3092075 389.561801,52.5184424 C388.263905,53.091564 385.877453,53.091564 383.351441,53.091564 L349.843412,53.091564 C343.060863,53.091564 342.279334,52.7003857 342.279334,49.2843992 C342.279334,43.8670356 347.666298,37.5126638 366.595101,37.5126638 C385.523904,37.5126638 390.91552,43.8670356 390.91552,49.2843992 M381.113851,15.1973108 C381.113851,7.33280908 374.559247,0.9375 366.502062,0.9375 C358.444876,0.9375 351.88562,7.33280908 351.88562,15.1973108 C351.88562,23.0618125 358.444876,29.4571216 366.502062,29.4571216 C374.559247,29.4571216 381.113851,23.0618125 381.113851,15.1973108 M376.420029,15.1973108 C376.420029,20.5327998 371.968108,24.8766975 366.502062,24.8766975 C361.026711,24.8766975 356.579443,20.5327998 356.579443,15.1973108 C356.579443,9.86182178 361.026711,5.51792407 366.502062,5.51792407 C371.968108,5.51792407 376.420029,9.86182178 376.420029,15.1973108",
-                id: "Fill-3",
-                stroke: "none",
-                fill: "#8B97A6",
-                fillRule: "evenodd"
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "li",
-          { id: "projects-5" },
-          _react2.default.createElement(
-            "a",
-            { onClick: this.changeContent.bind(null, 5), href: "#" },
-            _react2.default.createElement(
-              "svg",
-              { width: "59px", height: "58px", viewBox: "448 0 59 58", version: "1.1" },
-              _react2.default.createElement("defs", null),
-              _react2.default.createElement("path", {
-                d: "M487.667922,57.6674395 L455.457788,57.6674395 C452.140945,57.6674395 448.786885,55.2475928 448.786885,50.6262314 C448.786885,49.3480793 449.066003,48.247322 449.526546,47.3194109 C454.108721,33.9283796 462.789269,8.46540649 463.380067,6.28663477 C464.370933,2.58863599 467.631953,0.9375 470.418474,0.9375 L495.42273,0.9375 C497.176517,0.9375 498.851221,1.79718237 499.92117,3.24363208 C501.107419,4.85383081 501.39584,6.94617944 500.702699,8.98849365 C499.772308,11.7267412 492.743204,37.6946072 491.738382,41.5427092 C490.691692,45.5409146 487.556275,47.9243726 483.35556,47.9243726 L455.760165,47.9243726 C455.746209,47.9243726 454.471574,48.0153442 453.8203,49.0979072 C453.769129,49.220719 453.713305,49.3389822 453.648178,49.4526968 C453.522575,49.7710977 453.443492,50.1577273 453.443492,50.6262314 C453.443492,52.9369121 454.983289,53.1188555 455.457788,53.1188555 L487.667922,53.1188555 C489.705478,53.1188555 492.031455,52.2910132 492.626905,50.4397395 C493.054885,49.1524902 499.70718,25.5134993 502.233192,16.5164001 C502.572784,15.3064768 503.838116,14.583252 505.094144,14.9243958 C506.336216,15.2564424 507.066573,16.5118516 506.72698,17.7217749 C506.350172,19.0454128 497.599845,50.1895674 497.060218,51.822509 C495.915837,55.3704045 492.222185,57.6674395 487.667922,57.6674395 M455.783425,43.3757886 L483.35556,43.3757886 C485.411724,43.3757886 486.714271,42.3751001 487.230638,40.4101118 C488.174985,36.7939875 495.287823,10.4986235 496.283342,7.55114111 C496.506636,6.90524219 496.455464,6.32302344 496.148435,5.90455371 C495.953053,5.64528442 495.678588,5.48608398 495.42273,5.48608398 L470.418474,5.48608398 C470.083533,5.48608398 468.380918,5.58160425 467.883159,7.44652368 C467.278405,9.67987842 459.495685,32.5092214 455.783425,43.3757886",
-                id: "Fill-1",
-                stroke: "none",
-                fill: "#005921",
-                fillRule: "evenodd"
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "li",
-          { id: "projects-6" },
-          _react2.default.createElement(
-            "a",
-            { onClick: this.changeContent.bind(null, 6), href: "#" },
-            _react2.default.createElement(
-              "svg",
-              { width: "59px", height: "58px", viewBox: "558 0 59 58", version: "1.1" },
-              _react2.default.createElement("defs", null),
-              _react2.default.createElement("path", {
-                d: "M616.051965,55.2748843 C616.051965,53.9512463 615.028535,52.8777805 613.763203,52.8777805 L589.331137,52.8777805 L589.331137,46.5552488 C597.458102,45.5409146 605.436204,39.2092856 605.436204,29.4889617 L605.436204,21.6335571 C605.436204,20.3099192 604.408122,19.241002 603.147443,19.241002 C601.882111,19.241002 600.858681,20.3099192 600.858681,21.6335571 L600.858681,29.4889617 C600.858681,37.1624229 593.690019,41.9156931 587.042376,41.9156931 C580.394733,41.9156931 573.226071,37.1624229 573.226071,29.4889617 L573.226071,21.6335571 C573.226071,20.3099192 572.202641,19.241002 570.937309,19.241002 C569.676629,19.241002 568.648547,20.3099192 568.648547,21.6335571 L568.648547,29.4889617 C568.648547,39.2092856 576.626649,45.5409146 584.753614,46.5552488 L584.753614,52.8777805 L560.316897,52.8777805 C559.056217,52.8777805 558.032787,53.9512463 558.032787,55.2748843 C558.032787,56.5985222 559.056217,57.6674395 560.316897,57.6674395 L613.763203,57.6674395 C615.028535,57.6674395 616.051965,56.5985222 616.051965,55.2748843 L616.051965,55.2748843 Z M597.146421,27.3010928 L597.146421,11.5948323 C597.146421,5.71806177 592.615417,0.9375 587.042376,0.9375 C581.469334,0.9375 576.93833,5.71806177 576.93833,11.5948323 L576.93833,27.3010928 C576.93833,33.1778633 581.469334,37.958425 587.042376,37.958425 C592.615417,37.958425 597.146421,33.1778633 597.146421,27.3010928 L597.146421,27.3010928 Z M592.57355,27.3010928 C592.57355,30.5396846 590.089406,33.1687661 587.042376,33.1687661 C583.995346,33.1687661 581.515854,30.5396846 581.515854,27.3010928 L581.515854,11.5948323 C581.515854,8.36078906 583.995346,5.72715894 587.042376,5.72715894 C590.089406,5.72715894 592.57355,8.36078906 592.57355,11.5948323 L592.57355,27.3010928 Z",
-                id: "Fill-19",
-                stroke: "none",
-                fill: "#689038",
-                fillRule: "evenodd"
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "li",
-          { id: "projects-7" },
-          _react2.default.createElement(
-            "a",
-            { onClick: this.changeContent.bind(null, 7), href: "#" },
-            _react2.default.createElement(
-              "svg",
-              { width: "59px", height: "58px", viewBox: "671 0 59 58", version: "1.1" },
-              _react2.default.createElement("defs", null),
-              _react2.default.createElement("path", {
-                d: "M729.204158,29.3024697 C729.204158,13.8099927 719.351318,1.1922207 707.172501,0.96024292 L707.172501,0.9375 L693.55623,0.9375 C681.219246,0.9375 671.180328,13.664438 671.180328,29.3024697 C671.180328,44.9405015 681.219246,57.6674395 693.55623,57.6674395 L706.8143,57.6674395 L706.832908,57.6674395 C719.169892,57.6674395 729.204158,44.9405015 729.204158,29.3024697 L729.204158,29.3024697 Z M694.812257,5.42240381 C688.597246,10.4667834 684.461658,19.272842 684.461658,29.3024697 C684.461658,39.3275488 688.597246,48.138156 694.807605,53.1825356 L693.55623,53.1825356 C683.726649,53.1825356 675.734591,42.4706204 675.734591,29.3024697 C675.734591,16.1343191 683.726649,5.42240381 693.55623,5.42240381 L694.812257,5.42240381 Z M724.649894,29.3024697 C724.649894,42.4706204 716.657836,53.1870842 706.832908,53.1870842 L706.832908,53.1825356 L706.8143,53.1825356 C696.998676,53.1734385 689.015922,42.4660718 689.015922,29.3024697 C689.015922,16.1343191 697.00798,5.42240381 706.832908,5.42240381 C716.657836,5.42240381 724.649894,16.1343191 724.649894,29.3024697 L724.649894,29.3024697 Z M721.072541,29.3024697 C721.072541,19.1818704 715.341333,11.2491399 708.02846,11.2491399 C700.715588,11.2491399 694.989032,19.1818704 694.989032,29.3024697 C694.989032,39.4276177 700.715588,47.3557996 708.02846,47.3557996 C715.341333,47.3557996 721.072541,39.4276177 721.072541,29.3024697 L721.072541,29.3024697 Z M716.518277,29.3024697 C716.518277,36.65753 712.629243,42.8708958 708.02846,42.8708958 C703.427677,42.8708958 699.543295,36.65753 699.543295,29.3024697 C699.543295,21.9474094 703.427677,15.7340437 708.02846,15.7340437 C712.629243,15.7340437 716.518277,21.9474094 716.518277,29.3024697 L716.518277,29.3024697 Z",
-                id: "Fill-12-Copy",
-                stroke: "none",
-                fill: "#7A2D04",
-                fillRule: "evenodd"
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "li",
-          { id: "projects-8" },
-          _react2.default.createElement(
-            "a",
-            { onClick: this.changeContent.bind(null, 8), href: "#" },
-            _react2.default.createElement(
-              "svg",
-              { width: "59px", height: "58px", viewBox: "784 0 59 58", version: "1.1" },
-              _react2.default.createElement("defs", null),
-              _react2.default.createElement("path", {
-                d: "M842.347047,44.1308535 L842.347047,43.020999 L841.458523,42.3296143 C834.196822,36.7166616 830.033323,27.801437 830.033323,17.8809753 C830.033323,11.2536885 824.734747,6.08194849 819.319871,5.00393408 C819.115185,2.23839502 815.356406,0.9375 813.337458,0.9375 C811.323161,0.9375 807.94119,2.23839502 807.596946,4.86747656 C801.702919,6.28208618 796.646245,11.2536885 796.646245,17.8809753 C796.646245,27.801437 792.478093,36.712113 785.21174,42.3296143 L784.327869,43.020999 L784.327869,44.1308535 C784.327869,47.460417 787.212081,50.1668245 790.75687,50.1668245 L803.089202,50.1668245 C804.201019,54.4697849 808.378474,57.6674395 813.337458,57.6674395 C818.301093,57.6674395 822.469245,54.4697849 823.581062,50.1668245 L835.913393,50.1668245 C839.462835,50.1668245 842.347047,47.460417 842.347047,44.1308535 M837.374107,44.9495986 C837.043818,45.3316797 836.49954,45.590949 835.913393,45.590949 L819.22218,45.590949 L819.22218,47.8834353 C819.22218,50.7535918 816.57987,53.091564 813.337458,53.091564 C810.090393,53.091564 807.452735,50.7535918 807.452735,47.8834353 L807.452735,45.590949 L790.75687,45.590949 C790.170724,45.590949 789.631097,45.3316797 789.300808,44.9495986 C796.948622,38.4314778 801.298199,28.6565708 801.298199,17.8809753 C801.298199,11.2491399 808.085401,9.56616382 811.006828,9.14314551 C811.016132,8.94300781 811.239426,5.5088269 813.421193,5.5088269 C815.60296,5.5088269 815.668087,8.94300781 815.668087,9.14314551 C818.584863,9.56616382 825.376716,11.2491399 825.376716,17.8809753 C825.376716,28.6565708 829.726294,38.4314778 837.374107,44.9495986",
-                id: "Fill-17",
-                stroke: "none",
-                fill: "#B27008",
-                fillRule: "evenodd"
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "li",
-          { id: "projects-9" },
-          _react2.default.createElement(
-            "a",
-            { onClick: this.changeContent.bind(null, 9), href: "#" },
-            _react2.default.createElement(
-              "svg",
-              { width: "59px", height: "57px", viewBox: "1087 230 59 57", version: "1.1" },
-              _react2.default.createElement("defs", null),
-              _react2.default.createElement("path", { d: "M1118.82862,280.5659 L1105.40362,258.2959 L1125.27162,236.1169 L1139.72962,258.2369 L1118.82862,280.5659 Z M1144.70762,257.4459 L1127.81162,231.1589 C1127.44362,230.5319 1126.79762,230.1089 1126.06662,230.0179 C1125.33162,229.9309 1124.60162,230.1719 1124.08562,230.6909 L1100.78362,256.2989 C1100.55562,256.5309 1100.40262,256.8039 1100.29062,257.0859 C1100.27162,257.1229 1100.23962,257.1449 1100.22062,257.1819 L1087.20462,283.4729 C1086.67462,284.6369 1087.20962,286.0109 1088.40062,286.5289 C1088.71162,286.6659 1089.03762,286.7289 1089.35862,286.7289 C1090.26062,286.7289 1091.12162,286.2199 1091.51662,285.3559 L1102.72862,263.0399 L1116.28862,285.5329 C1116.65662,286.1649 1117.30262,286.5879 1118.03762,286.6789 C1118.13562,286.6929 1118.23762,286.7019 1118.33562,286.7019 C1118.96862,286.7019 1119.57762,286.4519 1120.02462,286.0019 L1144.34962,260.2159 C1145.08862,259.4739 1145.23262,258.3419 1144.70762,257.4459 L1144.70762,257.4459 Z", id: "Page-1", stroke: "none", fill: "#DFAB26", fillRule: "evenodd" })
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return ProjectsIcons;
-}(_react2.default.Component);
-
-exports.default = ProjectsIcons;
-
-/***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9089,7 +9182,7 @@ var objToFormData = function objToFormData(ob) {
 exports.default = objToFormData;
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -9100,7 +9193,7 @@ exports.default = objToFormData;
 
 !function (root, name, definition) {
   if (typeof module != 'undefined' && module.exports) module.exports = definition()
-  else if (true) __webpack_require__(656)(name, definition)
+  else if (true) __webpack_require__(657)(name, definition)
   else root[name] = definition()
 }(this, 'bowser', function () {
   /**
@@ -9675,31 +9768,31 @@ exports.default = objToFormData;
 
 
 /***/ }),
-/* 302 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = {
-  number: __webpack_require__(303),
-  expirationDate: __webpack_require__(305),
-  expirationMonth: __webpack_require__(173),
-  expirationYear: __webpack_require__(107),
-  cvv: __webpack_require__(304),
-  postalCode: __webpack_require__(309)
-};
-
-
-/***/ }),
 /* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var luhn10 = __webpack_require__(307);
-var getCardTypes = __webpack_require__(491);
+module.exports = {
+  number: __webpack_require__(304),
+  expirationDate: __webpack_require__(306),
+  expirationMonth: __webpack_require__(174),
+  expirationYear: __webpack_require__(107),
+  cvv: __webpack_require__(305),
+  postalCode: __webpack_require__(310)
+};
+
+
+/***/ }),
+/* 304 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var luhn10 = __webpack_require__(308);
+var getCardTypes = __webpack_require__(492);
 
 function verification(card, isPotentiallyValid, isValid) {
   return {card: card, isPotentiallyValid: isPotentiallyValid, isValid: isValid};
@@ -9750,7 +9843,7 @@ module.exports = cardNumber;
 
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9800,14 +9893,14 @@ module.exports = cvv;
 
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var parseDate = __webpack_require__(308);
-var expirationMonth = __webpack_require__(173);
+var parseDate = __webpack_require__(309);
+var expirationMonth = __webpack_require__(174);
 var expirationYear = __webpack_require__(107);
 
 function verification(isValid, isPotentiallyValid, month, year) {
@@ -9859,7 +9952,7 @@ module.exports = expirationDate;
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9873,7 +9966,7 @@ module.exports = Array.isArray || function (arg) {
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9931,14 +10024,14 @@ module.exports = luhn10;
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var expirationYear = __webpack_require__(107);
-var isArray = __webpack_require__(306);
+var isArray = __webpack_require__(307);
 
 function parseDate(value) {
   var month, len, year, yearValid;
@@ -9978,7 +10071,7 @@ module.exports = parseDate;
 
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10004,7 +10097,6 @@ module.exports = postalCode;
 
 
 /***/ }),
-/* 310 */,
 /* 311 */,
 /* 312 */,
 /* 313 */,
@@ -10185,7 +10277,8 @@ module.exports = postalCode;
 /* 488 */,
 /* 489 */,
 /* 490 */,
-/* 491 */
+/* 491 */,
+/* 492 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10381,7 +10474,7 @@ module.exports = creditCardType;
 
 
 /***/ }),
-/* 492 */
+/* 493 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10428,7 +10521,6 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 493 */,
 /* 494 */,
 /* 495 */,
 /* 496 */,
@@ -10442,7 +10534,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /* 504 */,
 /* 505 */,
 /* 506 */,
-/* 507 */
+/* 507 */,
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10599,7 +10692,7 @@ var CSSProperty = {
 exports.default = CSSProperty;
 
 /***/ }),
-/* 508 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10609,11 +10702,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _CSSProperty = __webpack_require__(507);
+var _CSSProperty = __webpack_require__(508);
 
 var _CSSProperty2 = _interopRequireDefault(_CSSProperty);
 
-var _warning = __webpack_require__(206);
+var _warning = __webpack_require__(207);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -10696,7 +10789,7 @@ exports.default = dangerousStyleValue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 509 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10756,7 +10849,7 @@ function clean(input) {
 }
 
 /***/ }),
-/* 510 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10832,7 +10925,7 @@ function Umul32(n, m) {
 }
 
 /***/ }),
-/* 511 */
+/* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11185,7 +11278,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 512 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11205,7 +11298,7 @@ var _objectAssign = __webpack_require__(10);
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var _CSSPropertyOperations = __webpack_require__(205);
+var _CSSPropertyOperations = __webpack_require__(206);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11274,7 +11367,7 @@ function fallbacks(node) {
   return node;
 }
 
-var prefixAll = __webpack_require__(511);
+var prefixAll = __webpack_require__(512);
 
 function prefixes(node) {
   return (0, _objectAssign2.default)({}, node, { style: prefixAll(node.style) });
@@ -11282,7 +11375,7 @@ function prefixes(node) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 513 */
+/* 514 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11521,7 +11614,7 @@ function StyleSheet() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 514 */
+/* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11558,7 +11651,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 515 */
+/* 516 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11575,7 +11668,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(514);
+var camelize = __webpack_require__(515);
 
 var msPattern = /^-ms-/;
 
@@ -11603,7 +11696,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 516 */
+/* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11647,7 +11740,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 517 */
+/* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11685,7 +11778,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 518 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11702,7 +11795,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(517);
+var hyphenate = __webpack_require__(518);
 
 var msPattern = /^ms-/;
 
@@ -11729,7 +11822,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 519 */
+/* 520 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11764,7 +11857,7 @@ function memoizeStringOnly(callback) {
 module.exports = memoizeStringOnly;
 
 /***/ }),
-/* 520 */
+/* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11798,7 +11891,7 @@ function calc(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 521 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11831,7 +11924,7 @@ function cursor(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 522 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11861,7 +11954,7 @@ function flex(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 523 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11900,7 +11993,7 @@ function flexboxIE(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 524 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11949,7 +12042,7 @@ function flexboxOld(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 525 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11983,7 +12076,7 @@ function gradient(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 526 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12026,7 +12119,7 @@ function sizing(property, value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 527 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12045,7 +12138,7 @@ var _utilsCamelToDashCase = __webpack_require__(91);
 
 var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 
-var _utilsCapitalizeString = __webpack_require__(208);
+var _utilsCapitalizeString = __webpack_require__(209);
 
 var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 
@@ -12053,7 +12146,7 @@ var _utilsIsPrefixedValue = __webpack_require__(136);
 
 var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 
-var _prefixProps = __webpack_require__(207);
+var _prefixProps = __webpack_require__(208);
 
 var _prefixProps2 = _interopRequireDefault(_prefixProps);
 
@@ -12114,7 +12207,7 @@ function prefixValue(value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 528 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12127,49 +12220,49 @@ exports['default'] = prefixAll;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _prefixProps = __webpack_require__(207);
+var _prefixProps = __webpack_require__(208);
 
 var _prefixProps2 = _interopRequireDefault(_prefixProps);
 
-var _utilsCapitalizeString = __webpack_require__(208);
+var _utilsCapitalizeString = __webpack_require__(209);
 
 var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 
-var _utilsAssign = __webpack_require__(529);
+var _utilsAssign = __webpack_require__(530);
 
 var _utilsAssign2 = _interopRequireDefault(_utilsAssign);
 
-var _pluginsCalc = __webpack_require__(520);
+var _pluginsCalc = __webpack_require__(521);
 
 var _pluginsCalc2 = _interopRequireDefault(_pluginsCalc);
 
-var _pluginsCursor = __webpack_require__(521);
+var _pluginsCursor = __webpack_require__(522);
 
 var _pluginsCursor2 = _interopRequireDefault(_pluginsCursor);
 
-var _pluginsFlex = __webpack_require__(522);
+var _pluginsFlex = __webpack_require__(523);
 
 var _pluginsFlex2 = _interopRequireDefault(_pluginsFlex);
 
-var _pluginsSizing = __webpack_require__(526);
+var _pluginsSizing = __webpack_require__(527);
 
 var _pluginsSizing2 = _interopRequireDefault(_pluginsSizing);
 
-var _pluginsGradient = __webpack_require__(525);
+var _pluginsGradient = __webpack_require__(526);
 
 var _pluginsGradient2 = _interopRequireDefault(_pluginsGradient);
 
-var _pluginsTransition = __webpack_require__(527);
+var _pluginsTransition = __webpack_require__(528);
 
 var _pluginsTransition2 = _interopRequireDefault(_pluginsTransition);
 
 // special flexbox specifications
 
-var _pluginsFlexboxIE = __webpack_require__(523);
+var _pluginsFlexboxIE = __webpack_require__(524);
 
 var _pluginsFlexboxIE2 = _interopRequireDefault(_pluginsFlexboxIE);
 
-var _pluginsFlexboxOld = __webpack_require__(524);
+var _pluginsFlexboxOld = __webpack_require__(525);
 
 var _pluginsFlexboxOld2 = _interopRequireDefault(_pluginsFlexboxOld);
 
@@ -12209,7 +12302,7 @@ function prefixAll(styles) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 529 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12231,7 +12324,7 @@ exports["default"] = function (base) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 530 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12247,61 +12340,61 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var _inlineStylePrefixAll = __webpack_require__(528);
+var _inlineStylePrefixAll = __webpack_require__(529);
 
 var _inlineStylePrefixAll2 = _interopRequireDefault(_inlineStylePrefixAll);
 
-var _utilsGetBrowserInformation = __webpack_require__(541);
+var _utilsGetBrowserInformation = __webpack_require__(542);
 
 var _utilsGetBrowserInformation2 = _interopRequireDefault(_utilsGetBrowserInformation);
 
-var _utilsGetPrefixedKeyframes = __webpack_require__(542);
+var _utilsGetPrefixedKeyframes = __webpack_require__(543);
 
 var _utilsGetPrefixedKeyframes2 = _interopRequireDefault(_utilsGetPrefixedKeyframes);
 
-var _utilsCapitalizeString = __webpack_require__(209);
+var _utilsCapitalizeString = __webpack_require__(210);
 
 var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 
-var _utilsAssign = __webpack_require__(540);
+var _utilsAssign = __webpack_require__(541);
 
 var _utilsAssign2 = _interopRequireDefault(_utilsAssign);
 
-var _prefixProps = __webpack_require__(539);
+var _prefixProps = __webpack_require__(540);
 
 var _prefixProps2 = _interopRequireDefault(_prefixProps);
 
-var _pluginsCalc = __webpack_require__(531);
+var _pluginsCalc = __webpack_require__(532);
 
 var _pluginsCalc2 = _interopRequireDefault(_pluginsCalc);
 
-var _pluginsCursor = __webpack_require__(532);
+var _pluginsCursor = __webpack_require__(533);
 
 var _pluginsCursor2 = _interopRequireDefault(_pluginsCursor);
 
-var _pluginsFlex = __webpack_require__(533);
+var _pluginsFlex = __webpack_require__(534);
 
 var _pluginsFlex2 = _interopRequireDefault(_pluginsFlex);
 
-var _pluginsSizing = __webpack_require__(537);
+var _pluginsSizing = __webpack_require__(538);
 
 var _pluginsSizing2 = _interopRequireDefault(_pluginsSizing);
 
-var _pluginsGradient = __webpack_require__(536);
+var _pluginsGradient = __webpack_require__(537);
 
 var _pluginsGradient2 = _interopRequireDefault(_pluginsGradient);
 
-var _pluginsTransition = __webpack_require__(538);
+var _pluginsTransition = __webpack_require__(539);
 
 var _pluginsTransition2 = _interopRequireDefault(_pluginsTransition);
 
 // special flexbox specifications
 
-var _pluginsFlexboxIE = __webpack_require__(534);
+var _pluginsFlexboxIE = __webpack_require__(535);
 
 var _pluginsFlexboxIE2 = _interopRequireDefault(_pluginsFlexboxIE);
 
-var _pluginsFlexboxOld = __webpack_require__(535);
+var _pluginsFlexboxOld = __webpack_require__(536);
 
 var _pluginsFlexboxOld2 = _interopRequireDefault(_pluginsFlexboxOld);
 
@@ -12435,7 +12528,7 @@ exports['default'] = Prefixer;
 module.exports = exports['default'];
 
 /***/ }),
-/* 531 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12471,7 +12564,7 @@ function calc(_ref2) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 532 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12514,7 +12607,7 @@ function cursor(_ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 533 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12555,7 +12648,7 @@ function flex(_ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 534 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12626,7 +12719,7 @@ function flexboxIE(_ref2) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 535 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12703,7 +12796,7 @@ function flexboxOld(_ref2) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 536 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12741,7 +12834,7 @@ function gradient(_ref2) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 537 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12793,7 +12886,7 @@ function sizing(_ref2) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 538 */
+/* 539 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12812,11 +12905,11 @@ var _utilsCamelToDashCase = __webpack_require__(48);
 
 var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 
-var _utilsCapitalizeString = __webpack_require__(209);
+var _utilsCapitalizeString = __webpack_require__(210);
 
 var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 
-var _utilsUnprefixProperty = __webpack_require__(543);
+var _utilsUnprefixProperty = __webpack_require__(544);
 
 var _utilsUnprefixProperty2 = _interopRequireDefault(_utilsUnprefixProperty);
 
@@ -12860,7 +12953,7 @@ function transition(_ref2) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 539 */
+/* 540 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12873,7 +12966,7 @@ exports["default"] = { "chrome": { "transform": 35, "transformOrigin": 35, "tran
 module.exports = exports["default"];
 
 /***/ }),
-/* 540 */
+/* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12896,7 +12989,7 @@ exports["default"] = function (base) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 541 */
+/* 542 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12908,7 +13001,7 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _bowser = __webpack_require__(301);
+var _bowser = __webpack_require__(302);
 
 var _bowser2 = _interopRequireDefault(_bowser);
 
@@ -12995,7 +13088,7 @@ exports['default'] = function (userAgent) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 542 */
+/* 543 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13021,7 +13114,7 @@ exports['default'] = function (_ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 543 */
+/* 544 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13039,12 +13132,12 @@ exports['default'] = function (property) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 544 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(210),
-    getRawTag = __webpack_require__(546),
-    objectToString = __webpack_require__(547);
+var Symbol = __webpack_require__(211),
+    getRawTag = __webpack_require__(547),
+    objectToString = __webpack_require__(548);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -13073,7 +13166,7 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 545 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -13084,10 +13177,10 @@ module.exports = freeGlobal;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(101)))
 
 /***/ }),
-/* 546 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(210);
+var Symbol = __webpack_require__(211);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -13136,7 +13229,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 547 */
+/* 548 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -13164,7 +13257,7 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 548 */
+/* 549 */
 /***/ (function(module, exports) {
 
 /**
@@ -13199,11 +13292,11 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 549 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(544),
-    isObjectLike = __webpack_require__(548);
+var baseGetTag = __webpack_require__(545),
+    isObjectLike = __webpack_require__(549);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -13234,10 +13327,10 @@ module.exports = isSymbol;
 
 
 /***/ }),
-/* 550 */
+/* 551 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(211);
+var root = __webpack_require__(212);
 
 /**
  * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -13263,11 +13356,11 @@ module.exports = now;
 
 
 /***/ }),
-/* 551 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(212),
-    isSymbol = __webpack_require__(549);
+var isObject = __webpack_require__(213),
+    isSymbol = __webpack_require__(550);
 
 /** Used as references for various `Number` constants. */
 var NAN = 0 / 0;
@@ -13335,7 +13428,7 @@ module.exports = toNumber;
 
 
 /***/ }),
-/* 552 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* @license Minigrid v3.1.1 – minimal cascading grid layout http://alves.im/minigrid */
@@ -13467,13 +13560,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* @license Mi
 
 
 /***/ }),
-/* 553 */
+/* 554 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(214);
+var utils = __webpack_require__(215);
 
 var has = Object.prototype.hasOwnProperty;
 
@@ -13640,14 +13733,14 @@ module.exports = function (str, opts) {
 
 
 /***/ }),
-/* 554 */
+/* 555 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(214);
-var formats = __webpack_require__(213);
+var utils = __webpack_require__(215);
+var formats = __webpack_require__(214);
 
 var arrayPrefixGenerators = {
     brackets: function brackets(prefix) {
@@ -13834,7 +13927,7 @@ module.exports = function (object, opts) {
 
 
 /***/ }),
-/* 555 */
+/* 556 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13845,11 +13938,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = appendImportantToEachValue;
 
-var _appendPxIfNeeded = __webpack_require__(215);
+var _appendPxIfNeeded = __webpack_require__(216);
 
 var _appendPxIfNeeded2 = _interopRequireDefault(_appendPxIfNeeded);
 
-var _mapObject = __webpack_require__(220);
+var _mapObject = __webpack_require__(221);
 
 var _mapObject2 = _interopRequireDefault(_mapObject);
 
@@ -13863,7 +13956,7 @@ function appendImportantToEachValue(style) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 556 */
+/* 557 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13904,7 +13997,7 @@ exports.default = camelCasePropsToDashCase;
 module.exports = exports['default'];
 
 /***/ }),
-/* 557 */
+/* 558 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13918,7 +14011,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _enhancer = __webpack_require__(216);
+var _enhancer = __webpack_require__(217);
 
 var _enhancer2 = _interopRequireDefault(_enhancer);
 
@@ -13926,7 +14019,7 @@ var _styleKeeper = __webpack_require__(140);
 
 var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 
-var _styleSheet = __webpack_require__(558);
+var _styleSheet = __webpack_require__(559);
 
 var _styleSheet2 = _interopRequireDefault(_styleSheet);
 
@@ -14000,7 +14093,7 @@ exports.default = StyleRoot;
 module.exports = exports['default'];
 
 /***/ }),
-/* 558 */
+/* 559 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14080,7 +14173,7 @@ exports.default = StyleSheet;
 module.exports = exports['default'];
 
 /***/ }),
-/* 559 */
+/* 560 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14178,7 +14271,7 @@ exports.default = Style;
 module.exports = exports['default'];
 
 /***/ }),
-/* 560 */
+/* 561 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14193,7 +14286,7 @@ var _cssRuleSetToString = __webpack_require__(137);
 
 var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 
-var _hash = __webpack_require__(219);
+var _hash = __webpack_require__(220);
 
 var _hash2 = _interopRequireDefault(_hash);
 
@@ -14218,7 +14311,7 @@ function keyframes(keyframeRules, name) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 561 */
+/* 562 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14283,7 +14376,7 @@ function mergeStyles(styles) {
 }
 
 /***/ }),
-/* 562 */
+/* 563 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14351,7 +14444,7 @@ module.exports = exports['default'];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 563 */
+/* 564 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14389,7 +14482,7 @@ function keyframesPlugin(_ref // eslint-disable-line no-shadow
 module.exports = exports['default'];
 
 /***/ }),
-/* 564 */
+/* 565 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14414,7 +14507,7 @@ exports.default = mergeStyleArrayPlugin;
 module.exports = exports['default'];
 
 /***/ }),
-/* 565 */
+/* 566 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14464,7 +14557,7 @@ exports.default = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 566 */
+/* 567 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14488,7 +14581,7 @@ function prefixPlugin(_ref // eslint-disable-line no-shadow
 module.exports = exports['default'];
 
 /***/ }),
-/* 567 */
+/* 568 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14517,7 +14610,7 @@ function removeNestedStyles(_ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 568 */
+/* 569 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14527,7 +14620,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _mouseUpListener = __webpack_require__(565);
+var _mouseUpListener = __webpack_require__(566);
 
 var _mouseUpListener2 = _interopRequireDefault(_mouseUpListener);
 
@@ -14651,7 +14744,7 @@ exports.default = resolveInteractionStyles;
 module.exports = exports['default'];
 
 /***/ }),
-/* 569 */
+/* 570 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14833,7 +14926,7 @@ function resolveMediaQueries(_ref3) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 570 */
+/* 571 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14879,7 +14972,6 @@ function visited(_ref) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 571 */,
 /* 572 */,
 /* 573 */,
 /* 574 */,
@@ -14962,7 +15054,8 @@ module.exports = exports['default'];
 /* 651 */,
 /* 652 */,
 /* 653 */,
-/* 654 */
+/* 654 */,
+/* 655 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15001,7 +15094,7 @@ function isByteLength(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 655 */
+/* 656 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15016,7 +15109,7 @@ var _assertString = __webpack_require__(100);
 
 var _assertString2 = _interopRequireDefault(_assertString);
 
-var _merge = __webpack_require__(249);
+var _merge = __webpack_require__(250);
 
 var _merge2 = _interopRequireDefault(_merge);
 
@@ -15064,7 +15157,7 @@ function isFDQN(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 656 */
+/* 657 */
 /***/ (function(module, exports) {
 
 module.exports = function() {
@@ -15073,4 +15166,4 @@ module.exports = function() {
 
 
 /***/ })
-]),[292]);
+]),[294]);
