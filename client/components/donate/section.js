@@ -30,7 +30,7 @@ class DonateSection extends Component {
 
     return (
       <div className={containerStyle}>
-        <div className="col-12-l">
+        <div className="col-12-l" style={{margin: "40px 0" }}>
             <h2
             style={{
               color: "#fff",
@@ -51,6 +51,7 @@ class DonateSection extends Component {
              {this.state.section == 0 ? texts.subtitle : texts.success_subtitle}
           </h3>
         </div>
+
         <div
           className="col-12 col-4-l"
           style={this.state.section == 0 ? { display: "block", background: "RGBA(43, 58, 68, .9)", padding: "20px" } : { display: "none" } }

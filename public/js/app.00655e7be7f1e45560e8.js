@@ -5813,7 +5813,7 @@ var DonateSection = function (_Component) {
         { className: containerStyle },
         _react2.default.createElement(
           "div",
-          { className: "col-12-l" },
+          { className: "col-12-l", style: { margin: "40px 0" } },
           _react2.default.createElement(
             "h2",
             {
