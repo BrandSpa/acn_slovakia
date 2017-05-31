@@ -51,8 +51,31 @@
       }
 
 			onLoad(function() {
-				$('body').css({'padding-top': '0'});
-			})
+	function changeColor() {
+		$('.nav img').css({filter: 'grayscale() invert()'});
+		$('.nav img').css({'-ms-filter': 'grayscale() invert()'});
+		$('.nav li > a').css('color', ' #fff');
+		$('.nav').css({background: 'transparent'});
+	}
+	
+	changeColor();
+
+	function changeColorNormal() {
+		$('.nav').css('background-color', '#fff');
+		$('.nav img').css('filter', 'none');
+		$('.nav li > a').css('color', ' #3C515F');
+	}
+	
+	  window.addEventListener('scroll', function() {
+    if(document.querySelector('.bs-donate-header').getBoundingClientRect().bottom < 0 ) {
+			changeColorNormal();
+    }
+
+    if(document.querySelector('.bs-donate-header').getBoundingClientRect().bottom > 0) {
+      changeColor();
+    }
+		});
+})
   </script>
   
   <!-- ConvertLoop -->
