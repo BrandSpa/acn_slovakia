@@ -215,7 +215,7 @@
 				float: left;
 				
 				@media #{$s} {
-					margin: 0 auto;
+					margin: 40px auto;
 					display: block;
 					float: none
 				}
@@ -226,10 +226,10 @@
 				float: left;
 				padding-left: 40px;
 				width: 80%;
+
 				@media #{$s} {
 					width: 100%;
 					padding: 0;
-					text-align: center;
 				}
 			}
 
