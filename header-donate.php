@@ -49,6 +49,10 @@
           window.onload = cb;
         }
       }
+
+			onLoad(function() {
+				$('body').css({'padding-top': '0'});
+			})
   </script>
   
   <!-- ConvertLoop -->
@@ -82,3 +86,4 @@
       	<img src='<?php echo bs_logo_url(); ?>'  alt="ACN logo" class="img-responsive" width="170"  />
      </a>
 </div>
+
