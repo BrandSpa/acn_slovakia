@@ -1038,10 +1038,19 @@ button, .btn {
     color: #fff; }
     .footer-donate__bottom--right img {
       float: left; }
+      @media (max-width: 767px) {
+        .footer-donate__bottom--right img {
+          margin: 0 auto;
+          display: block;
+          float: none; } }
     .footer-donate__bottom--right__content {
       float: left;
       padding-left: 40px;
       width: 80%; }
+      @media (max-width: 767px) {
+        .footer-donate__bottom--right__content {
+          width: 100%;
+          padding: 0; } }
     .footer-donate__bottom--right ul {
       float: left;
       padding: 0; }

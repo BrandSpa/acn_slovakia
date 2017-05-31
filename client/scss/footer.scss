@@ -213,12 +213,23 @@
 
 			img {
 				float: left;
+				
+				@media #{$s} {
+					margin: 0 auto;
+					display: block;
+					float: none
+				}
+
 			}
 
 			&__content {
 				float: left;
 				padding-left: 40px;
-				width: 80%
+				width: 80%;
+				@media #{$s} {
+					width: 100%;
+					padding: 0;
+				}
 			}
 
 			ul {
