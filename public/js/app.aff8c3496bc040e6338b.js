@@ -7491,7 +7491,7 @@ var ProjectsInfo = function (_Component) {
 			});
 
 			var numTextStyle = (0, _glamor.css)({
-				fontSize: '60px',
+				fontSize: 60 / 15 * 1 + 'rem',
 				marginRight: '60px',
 				'@media (max-width: 767px)': {
 					margin: '0',
