@@ -18,23 +18,22 @@ const changeFilesNames = function() {
       const footerFile = Path.join(__dirname, "footer.php");
       const footerDonateFile = Path.join(__dirname, "footer-donate.php");
       const headerFile = Path.join(__dirname, "header.php");
+      const headerDonateFile = Path.join(__dirname, "header-donate.php");
       const appName = stats.chunks[0].files[0];
       const appCss = stats.chunks[0].files[1];
       const vendorName = stats.chunks[1].files[0];
 
-      const headerHtml = fs.readFileSync(headerFile, "utf8");
-      let headerHtmlOutput = headerHtml.replace(/app.*\.css/, appCss);
-      fs.writeFileSync(headerFile, headerHtmlOutput);
+      const files = [footerFile, footerDonateFile, headerFile, headerDonateFile];
 
-      const footerHtml = fs.readFileSync(footerFile, "utf8");
-      let footerHtmlOutput = footerHtml.replace(/app.*\.js/, appName);
-      footerHtmlOutput = footerHtmlOutput.replace(/vendor.*\.js/, vendorName);
-      fs.writeFileSync(footerFile, footerHtmlOutput);
+      files.forEach(file => {
+        let fileHtml = fs.readFileSync(file, "utf8");
+        let fileHtmlOutput = fileHtml.replace(/app.*\.js/, appName);
+        fileHtmlOutput = fileHtmlOutput.replace(/vendor.*\.js/, vendorName);
+        fileHtmlOutput = fileHtmlOutput.replace(/app.*\.css/, appCss);
+        fs.writeFileSync(file, fileHtmlOutput);
+        
+      });
 
-      const footerDonateHtml = fs.readFileSync(footerDonateFile, "utf8");
-      let footerDonateHtmlOutput = footerDonateHtml.replace(/app.*\.js/, appName);
-      footerDonateHtmlOutput = footerDonateHtmlOutput.replace(/vendor.*\.js/, vendorName);
-      fs.writeFileSync(footerDonateFile, footerDonateHtmlOutput);
     }
   });
 };

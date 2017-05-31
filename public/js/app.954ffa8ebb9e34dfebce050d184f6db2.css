@@ -1050,7 +1050,8 @@ button, .btn {
       @media (max-width: 767px) {
         .footer-donate__bottom--right__content {
           width: 100%;
-          padding: 0; } }
+          padding: 0;
+          text-align: center; } }
     .footer-donate__bottom--right ul {
       float: left;
       padding: 0; }
