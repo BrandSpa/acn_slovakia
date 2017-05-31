@@ -60,14 +60,18 @@ class ProjectsInfo extends Component {
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'center',
-			position: 'relative'
+			position: 'relative',
+			'@media (max-width: 767px)': {
+				display: 'block'
+			}
 		});
 
 		let numTextStyle = css({
 			fontSize: '60px',
 			marginRight: '60px',
 			'@media (max-width: 767px)': {
-				margin: '0'
+				margin: '0',
+				display: 'block'
 			}
 		});
 
