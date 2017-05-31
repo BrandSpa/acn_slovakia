@@ -67,7 +67,7 @@ class ProjectsInfo extends Component {
 		});
 
 		let numTextStyle = css({
-			fontSize: `${(60 / 15) * 1}rem`,
+			fontSize: `${(60 / 15) * 1}em`,
 			marginRight: '60px',
 			'@media (max-width: 767px)': {
 				margin: '0',
