@@ -7,7 +7,7 @@
  */
 ?>
 
-<?php get_header() ?>
+<?php get_header('donate') ?>
 
 <div id="acn_int" class="l-wrap" >
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
