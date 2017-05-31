@@ -1036,6 +1036,9 @@ button, .btn {
     padding: 60px 60px;
     background: RGBA(43, 58, 68, 1);
     color: #fff; }
+    @media (max-width: 767px) {
+      .footer-donate__bottom--right {
+        padding: 0 60px; } }
     .footer-donate__bottom--right img {
       float: left; }
       @media (max-width: 767px) {

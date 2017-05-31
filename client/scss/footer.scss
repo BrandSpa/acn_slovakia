@@ -210,6 +210,10 @@
 			padding: 60px 60px;
 			background: RGBA(43, 58, 68, 1.00);
 			color: #fff;
+			
+			@media #{$s} { 
+				padding: 0 60px;
+			}
 
 			img {
 				float: left;
