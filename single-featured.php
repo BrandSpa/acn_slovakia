@@ -77,7 +77,7 @@
 		</div>
 
 	</div>
-
+</div>
     <?php require('templates/post_share.php') ?>
 	<?php require('templates/post_donate.php') ?>
 
@@ -90,7 +90,7 @@
   <?php endwhile; else : ?>
     <h2> <?php echo gett('404') ?> </h2>
   <?php endif; ?>
-</div>
+
 
 <script>
     onLoad(function() {
