@@ -2,7 +2,7 @@
 
 function bs_get_posts($type = 'post', $paged = 1, $category = '', $perpage = '6') {
 	$query = new Wp_Query(array(
-    'post_type' => array('video','gallery','featured','post'),//$type, Jul*
+    'post_type' => array('video','gallery','featured','post'),
     'paged' => $paged,
     'category_name' => $category,
 		'posts_per_page' => $perpage,

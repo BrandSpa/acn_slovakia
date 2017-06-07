@@ -1,5 +1,5 @@
 <?php
-	$args = array( 'posts_per_page' => 4, 'exclude' => isset($post) ? $post->ID : null );
+	$args = array( 'posts_per_page' => 4, 'exclude' => isset($post) ? $post->ID : null, 'post_type' => array('video','gallery','featured','post') );
   $recent_posts = get_posts( $args );
 ?>
 
