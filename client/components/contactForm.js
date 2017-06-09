@@ -36,20 +36,9 @@ class contactForm extends React.Component {
   };
 
   componentDidMount() {
-    const data = qs.stringify({ action: "office_countries" });
 
-    const req = request.post(endpoint, data).then(cons => {
-      this.setState({
-        contact: {
-          ...this.state.contact,
-          country: this.props.country
-        },
-        officeCountries: cons.data,
-        inOffice: cons.data.indexOf(this.props.country) !== -1
-      });
-    });
 
-    return req;
+ 
   }
 
   checkEmpty = field => {
@@ -188,18 +177,7 @@ class contactForm extends React.Component {
             {validationMessages.email}
           </div>
         </div>
-        <div style={inputContainerStyle} className="input-container">
-          <select
-            onChange={this.handleChange.bind(null, "country")}
-            value={contact.country}
-          >
-            <option value="">{texts.select_country}</option>
-            {this.state.countries.map((country, i) => (
-              <option key={i} value={country}>{country}</option>
-            ))}
-          </select>
-        </div>
-
+     
         <button
           style={{
             marginLeft: "-2px",
