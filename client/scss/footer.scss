@@ -2,7 +2,7 @@
 
 	&__left {
 		text-align: right;
-		padding: 40px 0 0 0;
+		padding: 0;
 
 		@media #{$s} {
 			text-align: center;
@@ -10,7 +10,7 @@
 	}
 
 	&__right {
-			padding: 40px;
+			padding: 0;
 			@media #{$s} {
 				text-align: center;
 			}
