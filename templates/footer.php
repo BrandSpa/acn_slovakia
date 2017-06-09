@@ -13,16 +13,7 @@ foreach(getOfficesCountries() as $office) {
 
 echo do_shortcode('[bs_accordion btn_title="'.gett('ACN International in the world').'"]<ul class="offices-list">'. $offices .'</ul>[/bs_accordion]') ?>
 
-<div class="bs-about">
-	<div class="col-3-l bs-about__left">
-		<img width="76" height="103" src="//acninternational.org/wp-content/uploads/2016/11/logoACNwhy2.png" class="vc_single_image-img attachment-full" alt="logoacnwhy2">
-	</div>
-	<div class="col-9-l bs-about__right">
-		<h3><?php echo gett('ABOUT US') ?></h3>
-		<p><?php echo gett('Founded in 1947 as a Catholic aid organization for war refugees and recognized as a papal foundation since 2011, ACN is dedicated to the service of Christians around the world, through information, prayer and action, wherever they are persecuted or oppressed or suffering material need. ACN supports every year an average of 6000 projects in close to 150 countries, thanks to private donations, as the foundation receives no public funding.') ?></p>
-	</div>
 
-</div>
 
 <div class="bs-footer">
 	<div class="bs-footer__left col-3-l">
@@ -32,20 +23,17 @@ echo do_shortcode('[bs_accordion btn_title="'.gett('ACN International in the wor
 	</div>
 	<div class="bs-footer__right col-9-l">
 		<div class="bs-footer__right--top">
-			<ul class="bs-footer__menu">
-				<?php
-					$args = array(
-						'theme_location' => 'footer',
-						'container' => false,
-						'echo' => false
-					);
+			<div class="bs-about">
+	<div class="col-3-l bs-about__left">
+		<img width="76" height="103" src="//acninternational.org/wp-content/uploads/2016/11/logoACNwhy2.png" class="vc_single_image-img attachment-full" alt="logoacnwhy2">
+	</div>
+	<div class="col-9-l bs-about__right">
+		<h3><?php echo gett('ABOUT US') ?></h3>
+		<p><?php echo gett('Founded in 1947 as a Catholic aid organization for war refugees and recognized as a papal foundation since 2011, ACN is dedicated to the service of Christians around the world, through information, prayer and action, wherever they are persecuted or oppressed or suffering material need. ACN supports every year an average of 6000 projects in close to 150 countries, thanks to private donations, as the foundation receives no public funding.') ?></p>
+	</div>
 
-					$menu = wp_nav_menu( $args);
-					echo clean_menu($menu);
-				?>
-			</ul>
+</div>
 		</div>
-		
 		<div class="bs-footer__right--bottom">
 			<div class="col-3-l">
 				<h5><?php echo gett('Contact') ?></h5>
