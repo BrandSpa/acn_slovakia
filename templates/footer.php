@@ -17,10 +17,11 @@ echo do_shortcode('[bs_accordion btn_title="'.gett('ACN International in the wor
 
 <div class="bs-footer">
 	<div class="bs-footer__left col-3-l">
-		<img width="86" height="86" src="//acninternational.org/wp-content/uploads/2017/02/pope.png" class="vc_single_image-img attachment-medium" alt="pope">
+		<img width="86" src="//acninternational.org/wp-content/uploads/2017/02/pope.png" class="vc_single_image-img attachment-medium" alt="pope">
 			<p><?php echo gett('“I invite you all, together with ACN, to do everywhere in the world, a work of mercy.”'); ?></p>
 			<img width="122" height="23" src="//acninternational.org/wp-content/uploads/2017/02/SignPope.png" class="vc_single_image-img attachment-thumbnail" alt="signpope">
 	</div>
+
 	<div class="bs-footer__right col-9-l">
 		<div class="bs-footer__right--top">
 			<div class="bs-about">
@@ -57,7 +58,8 @@ echo do_shortcode('[bs_accordion btn_title="'.gett('ACN International in the wor
 	<div class="bs-footer__bottom--top">
 		<h6><?php echo gett('ACN – Aid to the Church in Need gGmbH, HRB 8446 is non-profit organization officially registered in Germany and audited internationally by KPMG.') ?></h6>
 	</div>
+	
 	<div class="bs-footer__bottom--bottom">
-			<img width="173" height="84" src="/wp-content/uploads/sites/28/2017/06/acn-slovensko-pontificial.png" class="vc_single_image-img attachment-full" alt="llaves">
+			<img src="/wp-content/uploads/sites/28/2017/06/acn-slovensko-pontificial.png" class="vc_single_image-img attachment-full" alt="llaves">
 	</div>
 </div>
