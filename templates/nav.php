@@ -2,7 +2,7 @@
 	<a href="<?php echo bs_home_url(); ?>" class="logo">
     <img src='<?php echo get_option("logo_default"); ?>'  alt="ACN logo" class="img-responsive" width="170"  />
   </a>
-
+  
 	<a href="#" class="open-menu">
 			<svg width="33px" height="18px" viewBox="40 55 33 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs></defs>
@@ -32,7 +32,7 @@
 			<a href="#close" class="close-menu" style="color: #F1364E"><i class="ion-close"></i></a>
 		</li>
 	  <?php
-			$args = array(
+	$args = array(
         'theme_location' => 'header',
         'container' => false,
         'echo' => false
