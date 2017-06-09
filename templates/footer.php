@@ -57,15 +57,14 @@ echo do_shortcode('[bs_accordion btn_title="'.gett('ACN International in the wor
 		<div class="bs-footer__right--bottom">
 			<div class="col-3-l">
 				<h5><?php echo gett('Contact') ?></h5>
-				<h6>ACN International</h6>
-				<h6>Aid to the Church in Need gGmbH</h6>
-				<h6>Westerbachstraße 23</h6>
-				<h6>61476 Kronberg / Germany</h6>
-				<h6>Ph.: +49-6174-291-0</h6>
+				<h6>ACN Slovensko – Pomoc trpiacej Cirkvi</h6>
+				<h6>Hviezdoslavovo nám. 170/ 13</h6>
+				<h6>811 01 Bratislava</h6>
+				<h6><a href="mailto:info@acn-slovensko.org">info@acn-slovensko.org</a></h6>
 			</div>
 
 			<div class="col-3-l">
-				<?php echo do_shortcode('[bs_contact_info]') ?>
+
 			</div>
 
 			<div class="col-6-l privacy-terms">
