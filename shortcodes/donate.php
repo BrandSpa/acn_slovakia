@@ -38,8 +38,6 @@ function bs_donate_react_sc($atts, $content = null) {
 	ob_start();
 ?>
 
-<?php if(show_donate()): ?>
-
 <div 
 	class="bs-donate-react"
 	data-props='{
@@ -52,22 +50,7 @@ function bs_donate_react_sc($atts, $content = null) {
   }'
 >
 </div>
-<?php else: ?>
 
-<script type="text/javascript">
-  onLoad(function() {
-    if(typeof jQuery !== 'undefined') {
-      if(jQuery('.donate-react__container')) {
-        jQuery('.donate-react__container').remove();
-      }
-
-      if(jQuery('.bs-post__donate')) {
-        jQuery('.bs-post__donate').remove();
-      }
-    }
-  });
-</script>
-<?php endif; ?>
 <?php
 return ob_get_clean();
 }
