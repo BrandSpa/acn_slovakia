@@ -8,7 +8,7 @@ add_action('admin_menu', 'bs_admin_options_menu');
 function bs_admin_options_menu() {
 		add_menu_page(
     'Brandspa theme options',
-    'Offices Info', //menu name
+    'Office Info', //menu name
     'manage_options', //allow it options
     'bs-offices', //slug
     'logos_settings_page',
@@ -21,9 +21,9 @@ function bs_admin_options_menu() {
 }
 
 function bs_add_country_info_settings() {
-	$options = getOfficesCountries();
+	$options = ['default'];
 
-	 register_setting( 'bs_country_info_group', 'translations');
+	register_setting( 'bs_country_info_group', 'translations');
 
   foreach ($options as $value) {
 		$value = str_replace(' ', '_', $value);
@@ -43,12 +43,12 @@ function bs_add_country_info_settings() {
 function logos_settings_page() {
 ?>
   <?php
-  	$countries = getOfficesCountries();
+  	$countries = ['default'];
   ?>
 
   <div style="background: #f1f1f1; background-size: contain; padding: 15px">
 		<div style="text-align: center; text-shadow: 1px 1px 3px rgba(0,0,0, .1)">
-			<h1>BS Offices Options</h1>
+			<h1>BS Office Options</h1>
 		</div>
 
   <form method="post" action="options.php" style="position: relative; width: 80%; margin: 0 auto">
