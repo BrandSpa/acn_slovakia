@@ -70,7 +70,7 @@
     ga('ecommerce:addTransaction', {
       id: "<?php echo $_GET['customer_id'] ?>",
       revenue: "<?php echo $_GET['order_revenue'] ?>",
-			currency: 'USD',
+			currency: 'USD'
     });
 
     ga('ecommerce:send');

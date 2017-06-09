@@ -1,8 +1,9 @@
 <div class="nav">
-	  <a href="<?php echo bs_home_url(); ?>" class="logo">
-      	<img src='<?php echo bs_logo_url(); ?>'  alt="ACN logo" class="img-responsive" width="170"  />
-     </a>
-		<a href="#" class="open-menu">
+	<a href="<?php echo bs_home_url(); ?>" class="logo">
+    <img src='<?php echo get_option("logo_default"); ?>'  alt="ACN logo" class="img-responsive" width="170"  />
+  </a>
+
+	<a href="#" class="open-menu">
 			<svg width="33px" height="18px" viewBox="40 55 33 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs></defs>
 					<g id="Group-18" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(41.000000, 56.000000)" stroke-linecap="round" stroke-linejoin="round">
@@ -12,6 +13,7 @@
 					</g>
 			</svg>
 		</a>
+
 	<ul class="menu">
 	  <?php
 			$args = array(
