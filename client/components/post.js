@@ -1,5 +1,11 @@
 import React from "react";
 
+const cleanEmpty = (arrArg) => {
+  return arrArg.filter(item => {
+    return item.length > 0;
+  })
+}
+
 class Post extends React.Component {
   static defaultProps = {
     post: {
@@ -13,8 +19,9 @@ class Post extends React.Component {
 
   render() {
     const { post, type, read_more } = this.props;
-    const img = post.post_image
-      ? <img src={post.post_image} onLoad={this.handleImageLoaded} />
+    const imgUrl = cleanEmpty(post.post_image);
+    const img = imgUrl.length > 0
+      ? <img src={imgUrl} onLoad={this.handleImageLoaded} />
       : "";
     let title = post.post_title;
     if (window.innerWidth <= "767") {
