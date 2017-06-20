@@ -17,13 +17,13 @@ function bs_posts_sc($atts, $content = null) {
 	
   ob_start();
 ?>
-<?php if(show_posts()): ?>
+
 <div
 	class="bs-posts" 
 	data-props='<?php echo json_encode($props) ?>'
 >
 </div>
-<?php endif; ?>
+
 <?php
 
   return ob_get_clean();
