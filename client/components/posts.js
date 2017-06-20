@@ -39,7 +39,7 @@ class Posts extends React.Component {
   };
 
   goToPosts = () => {
-    window.location = this.props.see_more_link;
+    window.location = this.props.url;
   };
 
   render() {
