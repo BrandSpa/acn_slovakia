@@ -52,7 +52,7 @@ add_action( 'wp_ajax_get_posts', 'wp_get_posts' );
 
 function wp_get_posts() {
   $paged = $_POST['paged'];
-  $post_type = isset($_POST['post_type']) ? $_POST['post_type'] : array('video','gallery','featured','post');//'post';
+  $post_type = $post_type = isset($_POST['post_type']) ? $_POST['post_type'] : array('video','gallery','featured','post');
   $category = isset($_POST['post_category']) ? $_POST['post_category'] : '';
   $perpage = isset($_POST['post_perpage']) ? $_POST['post_perpage'] : '6';
 

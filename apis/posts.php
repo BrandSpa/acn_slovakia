@@ -1,6 +1,6 @@
 <?php
 
-function bs_get_posts($type = 'post', $paged = 1, $category = '', $perpage = '6') {
+function bs_get_posts($type = array('video','gallery','featured','post'), $paged = 1, $category = '', $perpage = '6') {
 	$query = new Wp_Query(array(
     'post_type' => array('video','gallery','featured','post'),
     'paged' => $paged,
